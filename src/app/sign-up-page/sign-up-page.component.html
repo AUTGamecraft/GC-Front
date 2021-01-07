@@ -1,0 +1,70 @@
+<header>ثبت نام</header>
+
+<body>
+    <div style="text-align: center;">
+        <div >
+            <form class="example-form">
+                <mat-form-field class="example-full-width" style="text-align: right;">
+                    <mat-label>ایمیل</mat-label>
+                    <input matInput [formControl]="emailFormControl1" placeholder="Ex. pat@example.com"
+                        style="text-align: right;" >
+                    <mat-error *ngIf="emailFormControl1.hasError('email') && !emailFormControl1.hasError('required')">
+                        لطفا یک ایمیل صحیح وارد کنید
+                    </mat-error>
+                    <mat-error *ngIf="emailFormControl1.hasError('required')">
+                        وارد کردن ایمیل <strong>اجباری</strong> است
+                    </mat-error>
+                </mat-form-field>
+            </form>
+        </div>
+        <div>
+            <form class="example-form">
+                <mat-form-field class="example-full-width" style="text-align: right;">
+                    <mat-label>شماره همراه</mat-label>
+                    <input matInput [formControl]="emailFormControl2" placeholder="09*********"
+                        style="text-align: right;" >
+                    <mat-error *ngIf="emailFormControl2.hasError('email') && !emailFormControl2.hasError('required')">
+                        لطفا یک شماره همراه صحیح وارد کنید
+                    </mat-error>
+                    <mat-error *ngIf="emailFormControl2.hasError('required')">
+                        وارد کردن شماره همراه <strong>اجباری</strong> است
+                    </mat-error>
+                </mat-form-field>
+            </form>
+        </div>
+        <div>
+            <form class="example-form">
+                <mat-form-field class="example-full-width" style="text-align: right;">
+                    <mat-label>رمز عبور</mat-label>
+                    <input matInput [formControl]="emailFormControl3" style="text-align: right;"  >
+                    <mat-error *ngIf=" !emailFormControl3.hasError('required')">
+                        لطفا یک رمز عبور صحیح وارد کنید
+                    </mat-error>
+                    <mat-error *ngIf="emailFormControl3.hasError('required')">
+                        وارد کردن رمز عبور <strong>اجباری</strong> است
+                    </mat-error>
+                </mat-form-field>
+            </form>
+        </div>
+        <div>
+            <form class="example-form">
+                <mat-form-field class="example-full-width" style="text-align: right;">
+                    <mat-label>رمز عبور</mat-label>
+                    <input matInput [formControl]="emailFormControl4" style="text-align: right;">
+                    <mat-error *ngIf=" !emailFormControl4.hasError('required')">
+                        لطفا یک رمز عبور صحیح وارد کنید
+                    </mat-error>
+                    <mat-error *ngIf="emailFormControl4.hasError('required')">
+                        وارد کردن رمز عبور <strong>اجباری</strong> است
+                    </mat-error>
+                </mat-form-field>
+            </form>
+        </div>
+        <div>
+            <button mat-raised-button color="primary" >ثبت نام</button>
+        </div>
+        <div>
+            <button mat-button [mat-dialog-close]="true" (click)="openDialogSignIn()">قبلا ثبت نام کرده ام</button>
+        </div>
+    </div>
+</body>
