@@ -16,11 +16,13 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatCardModule} from '@angular/material/card';
 import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
+import { HomeComponent } from './home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    SignUpPageComponent
+    SignUpPageComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
