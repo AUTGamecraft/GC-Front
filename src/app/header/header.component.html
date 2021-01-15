@@ -1,1 +1,51 @@
-<p>header works!</p>
+<header>
+    <div style="direction: rtl;margin: 10px 10px 10px 10px;justify-content: space-between;display: flex;">
+        <div style="display: flex;">
+            <div style="margin-right: 50px;">
+                <h2 class="title" style="font-family: 'Lalezar-Regular';color: #a04db9;">گیم</h2>
+            </div>
+            <div style="display: flex;margin-right: 100px;margin-top: 20px;">
+                <div>
+                    <button mat-button style="font-family: 'B KoodakBold';font-size: x-large;color: #52006b;">برنامه
+                        زمانی</button>
+                </div>
+                <div>
+                    <button mat-button style="font-family: 'B KoodakBold';font-size: x-large;color: #52006b;">کارگاه
+                        ها</button>
+                </div>
+                <div>
+                    <button mat-button style="font-family: 'B KoodakBold';font-size: x-large;color: #52006b;">تاک
+                        ها</button>
+                </div>
+                <div>
+                    <button mat-button
+                        style="font-family: 'B KoodakBold';font-size: x-large;color: #52006b;">درباره</button>
+                </div>
+            </div>
+        </div>
+        <div style="display: flex;margin-left: 50px;margin-top: 20px;">
+            <div>
+                <button mat-button (click)="openDialogSignIn()"
+                    style="font-family: 'B KoodakBold';font-size: x-large;color: #52006b;">ورود</button>
+            </div>
+            <div>
+                <button mat-flat-button (click)="openDialogSignUp()"
+                    style="font-family: 'B KoodakBold';font-size: x-large;color: #52006b;background-color:#6af9c5;border-radius: 50px;">ثبت
+                    نام</button>
+            </div>
+        </div>
+    </div>
+    <div style="direction: rtl;display: flex;margin-top: 5%;justify-content: center;">
+        <div style="background-image: url('assets/images/back image.png');background-repeat: no-repeat;background-size: cover;width: 30%;margin-right: 10%;margin-left: 5%;padding-right: 7%;">
+            <h1 style="font-size: xxx-large;font-family: 'Lalezar-Regular';color: #07f49e;">گیم</h1>
+            <p style="font-size: x-large;font-family: 'Lalezar-Regular';color: #77009b;">نهمین رویداد بزرگ بازی سازی در خاورمیانه</p>
+            <p style="font-family: 'B KoodakBold';font-size: x-large;color: #a04db9;">این رویداد در مادر دانشگاه های صنعتی کشور برگذار می شود و خیلی نایس است</p>
+        </div>
+        <div style="padding: 200px;background-color: #ff9b21;border-radius: 100%;margin-left: 10%;"></div>
+    </div>
+    <div style="direction: rtl;display: flex;">
+        <div>
+            <p style="direction: rtl;font-family: 'Lalezar-Regular';font-size: xxx-large;" >7:23:59:2</p>
+        </div>
+    </div>
+</header>

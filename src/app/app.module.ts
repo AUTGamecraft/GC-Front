@@ -19,6 +19,7 @@ import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import {FaNumPipe} from 'ngx-persian';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +28,7 @@ import { FooterComponent } from './footer/footer.component';
     HomeComponent,
     HeaderComponent,
     FooterComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -43,7 +45,8 @@ import { FooterComponent } from './footer/footer.component';
     HttpModule,
     MatIconModule,
     MatDialogModule,
-    MatCardModule
+    MatCardModule,
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
