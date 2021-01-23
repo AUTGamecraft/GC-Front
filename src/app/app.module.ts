@@ -20,6 +20,8 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import {MatExpansionModule} from '@angular/material/expansion';
+
+import {FaNumPipe} from 'ngx-persian';
 @NgModule({
   declarations: [
     AppComponent,
