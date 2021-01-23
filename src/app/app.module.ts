@@ -19,7 +19,7 @@ import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import {FaNumPipe} from 'ngx-persian';
+import {MatExpansionModule} from '@angular/material/expansion';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +46,7 @@ import {FaNumPipe} from 'ngx-persian';
     MatIconModule,
     MatDialogModule,
     MatCardModule,
-   
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
