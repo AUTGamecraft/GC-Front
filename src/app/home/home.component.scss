@@ -1,5 +1,14 @@
-.workshop{
+.talks{
+    background-color: #fafafa;
+}
+.active{
+    max-height: 2000px;
+    overflow: visible;
+    transition: max-height 0.5s ease-in;
+   
+}
+.deactive{
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.2s ease-out;
+    transition: max-height 0.5s ease-out;
 }

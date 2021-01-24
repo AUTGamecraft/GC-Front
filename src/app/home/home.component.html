@@ -119,12 +119,12 @@
                     <button mat-stroked-button
                         style="font-family: 'B KoodakBold';color: #00b583;font-size: large;border: 2px solid #07f49e !important;border-radius: 20px;height: 10%;margin-top: 15px;">ثبت
                         نام</button>
-                    <button mat-button class="collapse" (click)="expand()"
+                    <button mat-button class="collapse" (click)="workshops =(workshops == 'active' ? 'deactive' : 'active') "
                         style="direction: ltr;font-family: 'B KoodakBold';color: #a04db9;font-size: large;margin-top: 15px;height: 10%;margin-bottom: 15px;cursor: pointer;">توضیحات
                         <mat-icon style="color: #a04db9;">keyboard_arrow_down</mat-icon>
                     </button>
                 </div>
-                <div class="workshop" style="background-color: #fafafa;">
+                <div [class]="workshops" >
                     <div>
                         <p
                             style="font-family: 'B KoodakBold';font-size: x-large;direction: rtl;color: #52006b;margin-right: 30px;margin-left: 30px;">
@@ -205,15 +205,16 @@
                     <button mat-stroked-button
                         style="font-family: 'B KoodakBold';color: #00b583;font-size: large;border: 2px solid #07f49e !important;border-radius: 20px;height: 10%;margin-top: 15px;">ثبت
                         نام</button>
-                    <button mat-button class="collapse" (click)="expand()"
+                    <button mat-button class="collapse" (click)="talks = (talks == 'active' ? 'deactive' : 'active') "
                         style="direction: ltr;font-family: 'B KoodakBold';color: #a04db9;font-size: large;margin-top: 15px;height: 10%;margin-bottom: 15px;cursor: pointer;">توضیحات
                         <mat-icon style="color: #a04db9;">keyboard_arrow_down</mat-icon>
                     </button>
                 </div>
-                <div class="workshop" style="background-color: #fafafa;">
+                <div [class]="talks" >
+                    <div style="background-color: #fafafa;">
                     <div>
                         <p
-                            style="font-family: 'B KoodakBold';font-size: x-large;direction: rtl;color: #52006b;margin-right: 30px;margin-left: 30px;">
+                            style="font-family: 'B KoodakBold';font-size: x-large;direction: rtl;color: #52006b;margin-right: 30px;margin-left: 30px;margin-top: 0;">
                             تاریخ بِیهَقی یا تاریخ مسعودی نام کتابی نوشتهٔ ابوالفضل محمد بن حسین بیهقی است که موضوع اصلی
                             آن
                             تاریخ پادشاهی مسعود غزنوی و دودمان غزنوی است. این کتاب علاوه بر تاریخ غزنویان، قسمت‌هایی
@@ -243,6 +244,7 @@
                             <h4 style="font-family: 'B KoodakBold';color: #a04db9;margin-top: 0;">منتقد درجه یک</h4>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         </div>

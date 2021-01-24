@@ -1,3 +1,4 @@
+import { Expansion } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,27 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   clickButton: boolean = false
+  talks = 'deactive'
+  workshops = 'deactive'
+  
   constructor() { 
   }
 
   ngOnInit(): void {
     
-  }
-  expand(){
-    var coll = document.getElementsByClassName("collapse");
-    var i;
-    
-    for (i = 0; i < coll.length; i++) {
-      coll[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var content = this.parentNode.nextElementSibling;
-        if (content.style.maxHeight){
-          content.style.maxHeight = null;
-        } else {
-          content.style.maxHeight = content.scrollHeight + "px";
-        }
-      });
-    }
   }
 
 }
