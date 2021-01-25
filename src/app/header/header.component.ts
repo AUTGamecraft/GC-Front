@@ -10,7 +10,7 @@ import{ Router} from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public dialog: MatDialog,public router : Router) { 
+  constructor(public dialog: MatDialog,private router : Router) { 
     
   }
 
@@ -18,6 +18,13 @@ export class HeaderComponent implements OnInit {
   }
   openDialogSignUp(){
     const dialogRef = this.dialog.open(SignUpPageComponent);
+  }
+  login($myParam: string = ''): void{
+    const navigationDetails: string[] = ['login'];
+    if($myParam.length) {
+      navigationDetails.push($myParam);
+    }
+    this.router.navigate(navigationDetails);
   }
 
 
