@@ -10,7 +10,8 @@ export class HomeComponent implements OnInit {
   clickButton: boolean = false
   talks = 'deactive'
   workshops = 'deactive'
-  
+  iconW = 'keyboard_arrow_down'
+  iconT = 'keyboard_arrow_down'
   constructor() { 
   }
 

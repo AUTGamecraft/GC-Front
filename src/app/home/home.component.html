@@ -1,5 +1,5 @@
 <div style="background-color: #fafafa;">
-    <div style="background-color: #52006b;padding-bottom: 20px;">
+    <div style="background-color: #52006b;padding-bottom: 20px;padding-bottom: 100px;">
         <app-header></app-header>
         <div style="direction: rtl;display: flex;margin-top: 5%;justify-content: center;">
             <div style="width: 30%;margin-right: 10%;margin-left: 5%;position: relative;">
@@ -41,7 +41,7 @@
         </div>
     </div>
     <div
-        style="background-image: url(assets/svg/wave-purple.svg);background-repeat: no-repeat;background-size: contain;width:100%;height: 170px;margin-top: -10px;">
+        style="background-image: url(assets/svg/wave-purple.svg);background-repeat: no-repeat;background-size: 100% 100%;width:100%;height: 210px;margin-top: -90px;">
     </div>
     <div style="direction: rtl;text-align: center;background-color: #fafafa;">
         <div style="text-align: center;margin-top: 10%;">
@@ -90,14 +90,14 @@
         </div>
     </div>
     <div
-        style="background-image: url(assets/svg/wave-green.svg);background-repeat: no-repeat;background-size: contain;transform: scaleY(-1);width: 100%;height: 170px;position: relative;z-index: 1;">
+        style="background-image: url(assets/svg/wave-green.svg);background-repeat: no-repeat;background-size: 100% 100%;transform: scaleY(-1);width: 100%;height: 210px;position: relative;z-index: 1;">
         <h1
             style="font-size: xxx-large;font-family: 'Lalezar-Regular';color: #52006b;text-align: center;margin-top: 0;transform: scaleY(-1);">
             کارگاه ها</h1>
 
     </div>
-    <div style="width: 100%;height: 20px;background-color: #4ae5b0;z-index: -1;margin-top: -5px;"></div>
-    <div style="background-color: #4ae5b0;margin-bottom: 0;padding-bottom: 20px;">
+    <div style="width: 100%;height: 20px;background-color: #4ae5b0;z-index: -1;margin-top: -5px;padding-top: 100px;margin-top: -90px;"></div>
+    <div style="background-color: #4ae5b0;margin-bottom: 0;padding-bottom: 120px;">
         <div
             style="direction: rtl;display: flex;justify-content: space-between;border: 1px;background-color: white;margin-right: 5%;margin-left: 5%;border-radius: 15px;margin-bottom: 15px;height: fit-content;">
             <div
@@ -121,9 +121,9 @@
                         style="font-family: 'B KoodakBold';color: #00b583;font-size: large;border: 2px solid #07f49e !important;border-radius: 20px;height: 10%;margin-top: 15px;">ثبت
                         نام</button>
                     <button mat-button class="collapse"
-                        (click)="workshops =(workshops == 'active' ? 'deactive' : 'active') "
+                        (click)="workshops =(workshops == 'active' ? 'deactive' : 'active');iconW = (iconW == 'keyboard_arrow_down' ? 'keyboard_arrow_up' : 'keyboard_arrow_down') "
                         style="direction: ltr;font-family: 'B KoodakBold';color: #a04db9;font-size: large;margin-top: 15px;height: 10%;margin-bottom: 15px;cursor: pointer;">توضیحات
-                        <mat-icon style="color: #a04db9;">keyboard_arrow_down</mat-icon>
+                        <mat-icon style="color: #a04db9;">{{iconW}}</mat-icon>
                     </button>
                 </div>
                 <div [class]="workshops">
@@ -170,9 +170,9 @@
 
     </div>
     <div
-        style="background-image: url('assets/svg/wave-green.svg');background-size: contain;width: 100%;height: 170px;background-repeat: no-repeat;margin-top: -10px;position:absolute;">
+        style="background-image: url('assets/svg/wave-green.svg');background-size: 100% 100%;width: 100%;height: 210px;background-repeat: no-repeat;margin-top: -100px;position:absolute;">
     </div>
-    <div style="background-color: #6af9c5;padding-top: 100px;z-index: 0;margin-top: 30px;">
+    <div style="background-color: #6af9c5;padding-top: 100px;z-index: 0;">
         <h1
             style="font-family: 'Lalezar-Regular';font-size: xxx-large;color: #52006b;text-align: center;margin-bottom: 0;">
             تاک ها</h1>
@@ -200,9 +200,9 @@
                     <button mat-stroked-button
                         style="font-family: 'B KoodakBold';color: #00b583;font-size: large;border: 2px solid #07f49e !important;border-radius: 20px;height: 10%;margin-top: 15px;">ثبت
                         نام</button>
-                    <button mat-button class="collapse" (click)="talks = (talks == 'active' ? 'deactive' : 'active') "
+                    <button mat-button class="collapse" (click)="talks = (talks == 'active' ? 'deactive' : 'active') ;iconT = (iconT == 'keyboard_arrow_down' ? 'keyboard_arrow_up' : 'keyboard_arrow_down') "
                         style="direction: ltr;font-family: 'B KoodakBold';color: #a04db9;font-size: large;margin-top: 15px;height: 10%;margin-bottom: 15px;cursor: pointer;">توضیحات
-                        <mat-icon style="color: #a04db9;">keyboard_arrow_down</mat-icon>
+                        <mat-icon style="color: #a04db9;">{{iconT}}</mat-icon>
                     </button>
                 </div>
                 <div [class]="talks">
@@ -249,9 +249,9 @@
     <div style="width: 100%;height: 100px;background-color: #6af9c5;z-index: -1;padding-bottom: 30px;"></div>
     <div style="margin-top: -90px;">
         <div
-            style="background-image: url(assets/svg/wave-purple.svg);background-repeat: no-repeat;background-size: contain;transform: scaleY(-1);width: 100%;height: 170px;position: relative;z-index: 1;margin-top: -60px;">
+            style="background-image: url(assets/svg/wave-purple.svg);background-repeat: no-repeat;background-size: 100% 100%;transform: scaleY(-1);width: 100%;height: 210px;position: relative;z-index: 1;margin-top: -60px;">
         </div>
-        <div style="background-color: #52006b;padding-top: 20px;margin-top: -10px;">
+        <div style="background-color: #52006b;padding-top: 100px;margin-top: -100px;">
             <div style="direction: rtl;display: flex;justify-content: space-evenly;padding-bottom: 50px;">
                 <div style="width: 50%;margin-right: 5%;margin-left: 5%;position: relative;">
                     <div style="position:absolute;right: 0;left:0;top: 0;bottom: 0;background: transparent;z-index: 1;">
