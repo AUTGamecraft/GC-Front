@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { DashboardEventComponent } from './dashboard-event/dashboard-event.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -7,6 +8,7 @@ import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
 
 const routes: Routes = [
   {path: 'signup',component:SignUpPageComponent},
+  {path: 'dashboard-event',component:DashboardEventComponent},
   {path: 'home',component:HomeComponent,
   children:[
     {path:'login',component:LoginComponent}
