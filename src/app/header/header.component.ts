@@ -19,11 +19,8 @@ export class HeaderComponent implements OnInit {
   openDialogSignUp(){
     const dialogRef = this.dialog.open(SignUpPageComponent);
   }
-  login($myParam: string = ''): void{
+  login(): void{
     const navigationDetails: string[] = ['login'];
-    if($myParam.length) {
-      navigationDetails.push($myParam);
-    }
     this.router.navigate(navigationDetails);
   }
 

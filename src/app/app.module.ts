@@ -22,7 +22,7 @@ import { FooterComponent } from './footer/footer.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 
 import {FaNumPipe} from 'ngx-persian';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardComponent } from './dashboard-event/dashboard-event.component';
 @NgModule({
   declarations: [
     AppComponent,
