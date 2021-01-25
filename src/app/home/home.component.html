@@ -1,5 +1,5 @@
 <div style="background-color: #fafafa;">
-    <div style="background-color: #52006b;">
+    <div style="background-color: #52006b;padding-bottom: 20px;">
         <app-header></app-header>
         <div style="direction: rtl;display: flex;margin-top: 5%;justify-content: center;">
             <div style="width: 30%;margin-right: 10%;margin-left: 5%;position: relative;">
@@ -41,14 +41,15 @@
         </div>
     </div>
     <div
-        style="background-image: url(assets/svg/wave-purple.svg);background-repeat: no-repeat;background-size: contain;width:100%;height: 170px;">
+        style="background-image: url(assets/svg/wave-purple.svg);background-repeat: no-repeat;background-size: contain;width:100%;height: 170px;margin-top: -10px;">
     </div>
     <div style="direction: rtl;text-align: center;background-color: #fafafa;">
         <div style="text-align: center;margin-top: 10%;">
             <h1 style="font-family: 'Lalezar-Regular';font-size: xxx-large;color: #77009b;">برنامه زمانی</h1>
         </div>
         <div style="direction: rtl;position: relative;">
-            <div style="right: 0;left:0;top: 0;bottom: 0;background: transparent;z-index: 1;background-image: url('assets/svg/bubble-white.svg');background-repeat: no-repeat;background-size: contain;">
+            <div
+                style="right: 0;left:0;top: 0;bottom: 0;background: transparent;z-index: 1;background-image: url('assets/svg/bubble-white.svg');background-repeat: no-repeat;background-size: contain;">
                 <div style="display: flex;justify-content: space-evenly;text-align: center;">
                     <div style="padding: 120px;background-color: #ff9b21;border-radius: 100%;"></div>
                     <div style="text-align: center;position: absolute;margin-top: 7%;">
@@ -96,7 +97,7 @@
 
     </div>
     <div style="width: 100%;height: 20px;background-color: #4ae5b0;z-index: -1;margin-top: -5px;"></div>
-    <div style="background-color: #4ae5b0;margin-bottom: 0;">
+    <div style="background-color: #4ae5b0;margin-bottom: 0;padding-bottom: 20px;">
         <div
             style="direction: rtl;display: flex;justify-content: space-between;border: 1px;background-color: white;margin-right: 5%;margin-left: 5%;border-radius: 15px;margin-bottom: 15px;height: fit-content;">
             <div
@@ -119,12 +120,13 @@
                     <button mat-stroked-button
                         style="font-family: 'B KoodakBold';color: #00b583;font-size: large;border: 2px solid #07f49e !important;border-radius: 20px;height: 10%;margin-top: 15px;">ثبت
                         نام</button>
-                    <button mat-button class="collapse" (click)="workshops =(workshops == 'active' ? 'deactive' : 'active') "
+                    <button mat-button class="collapse"
+                        (click)="workshops =(workshops == 'active' ? 'deactive' : 'active') "
                         style="direction: ltr;font-family: 'B KoodakBold';color: #a04db9;font-size: large;margin-top: 15px;height: 10%;margin-bottom: 15px;cursor: pointer;">توضیحات
                         <mat-icon style="color: #a04db9;">keyboard_arrow_down</mat-icon>
                     </button>
                 </div>
-                <div [class]="workshops" >
+                <div [class]="workshops">
                     <div>
                         <p
                             style="font-family: 'B KoodakBold';font-size: x-large;direction: rtl;color: #52006b;margin-right: 30px;margin-left: 30px;">
@@ -161,18 +163,7 @@
             </div>
 
         </div>
-        <div
-            style="direction: rtl;display: flex;justify-content: space-evenly;border: 1px;background-color: white;margin-right: 5%;margin-left: 5%;border-radius: 15px;margin-bottom: 10px;">
-            <div style="width: 2%;background-color: #52006b;"></div>
-            <h3>کارگاه بازی سازی</h3>
-            <h4>سه شنبه 2 بهمن 99</h4>
-            <h4>11 نفر</h4>
-            <h4>مبتدی</h4>
-            <button mat-button>ثبت نام</button>
-            <button mat-button style="direction: ltr;">توضیحات
-                <mat-icon>keyboard_arrow_down</mat-icon>
-            </button>
-        </div>
+
     </div>
     <div
         style="background-image: url('assets/svg/wave-green.svg');background-size: contain;width: 100%;height: 170px;background-repeat: no-repeat;margin-top: -10px;position:absolute;">
@@ -186,7 +177,7 @@
         <div
             style="direction: rtl;display: flex;justify-content: space-between;border: 1px;background-color: white;margin-right: 5%;margin-left: 5%;border-radius: 15px;margin-bottom: 15px;height: fit-content;">
             <div
-                style="width: 50px;background-color: #ffe0b2;border-bottom-right-radius: 15px;border-top-right-radius: 15px;">
+                style="width: 50px;background-color: #f8bbd0;border-bottom-right-radius: 15px;border-top-right-radius: 15px;">
             </div>
             <div>
                 <div style="display: flex;justify-content: space-evenly;">
@@ -210,88 +201,97 @@
                         <mat-icon style="color: #a04db9;">keyboard_arrow_down</mat-icon>
                     </button>
                 </div>
-                <div [class]="talks" >
+                <div [class]="talks">
                     <div style="background-color: #fafafa;">
-                    <div>
-                        <p
-                            style="font-family: 'B KoodakBold';font-size: x-large;direction: rtl;color: #52006b;margin-right: 30px;margin-left: 30px;margin-top: 0;">
-                            تاریخ بِیهَقی یا تاریخ مسعودی نام کتابی نوشتهٔ ابوالفضل محمد بن حسین بیهقی است که موضوع اصلی
-                            آن
-                            تاریخ پادشاهی مسعود غزنوی و دودمان غزنوی است. این کتاب علاوه بر تاریخ غزنویان، قسمت‌هایی
-                            دربارهٔ
-                            صفاریان، سامانیان و دورهٔ پیش از برآمدن و پادشاهی محمود غزنوی دارد. نسخهٔ اصلی کتاب حدود ۳۰
-                            جلد
-                            بوده</p>
-                    </div>
-                    <div style="text-align: center;">
-                        <h1 style="font-family: 'Lalezar-Regular';color: #52006b;">ارائه کنندگان</h1>
-                    </div>
-                    <div style="display: flex;margin-bottom: 20px;justify-content: center;">
-                        <div
-                            style="direction: rtl;text-align: center;background-color: white;border-radius: 25px;box-shadow:0 4px 8px 0 rgba(0,0,0,0.2);margin: 10px;">
-                            <div style="padding: 100px;background-color: #ff9b21;border-radius: 50%;margin: 20px;">
-                            </div>
-                            <h2 style="font-family: 'Lalezar-Regular';color: #52006b;margin-bottom: 0;">مسعود فراستی
-                            </h2>
-                            <h4 style="font-family: 'B KoodakBold';color: #a04db9;margin-top: 0;">منتقد درجه یک</h4>
+                        <div>
+                            <p
+                                style="font-family: 'B KoodakBold';font-size: x-large;direction: rtl;color: #52006b;margin-right: 30px;margin-left: 30px;margin-top: 0;">
+                                تاریخ بِیهَقی یا تاریخ مسعودی نام کتابی نوشتهٔ ابوالفضل محمد بن حسین بیهقی است که موضوع
+                                اصلی
+                                آن
+                                تاریخ پادشاهی مسعود غزنوی و دودمان غزنوی است. این کتاب علاوه بر تاریخ غزنویان، قسمت‌هایی
+                                دربارهٔ
+                                صفاریان، سامانیان و دورهٔ پیش از برآمدن و پادشاهی محمود غزنوی دارد. نسخهٔ اصلی کتاب حدود
+                                ۳۰
+                                جلد
+                                بوده</p>
                         </div>
-                        <div
-                            style="direction: rtl;text-align: center;background-color: white;border-radius: 25px;box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);margin: 10px;">
-                            <div style="padding: 100px;background-color: #ff9b21;border-radius: 50%;margin: 20px;">
+                        <div style="text-align: center;">
+                            <h1 style="font-family: 'Lalezar-Regular';color: #52006b;">ارائه کنندگان</h1>
+                        </div>
+                        <div style="display: flex;margin-bottom: 20px;justify-content: center;">
+                            <div
+                                style="direction: rtl;text-align: center;background-color: white;border-radius: 25px;box-shadow:0 4px 8px 0 rgba(0,0,0,0.2);margin: 10px;">
+                                <div style="padding: 100px;background-color: #ff9b21;border-radius: 50%;margin: 20px;">
+                                </div>
+                                <h2 style="font-family: 'Lalezar-Regular';color: #52006b;margin-bottom: 0;">مسعود فراستی
+                                </h2>
+                                <h4 style="font-family: 'B KoodakBold';color: #a04db9;margin-top: 0;">منتقد درجه یک</h4>
                             </div>
-                            <h2 style="font-family: 'Lalezar-Regular';color: #52006b;margin-bottom: 0;">مسعود فراستی
-                            </h2>
-                            <h4 style="font-family: 'B KoodakBold';color: #a04db9;margin-top: 0;">منتقد درجه یک</h4>
+                            <div
+                                style="direction: rtl;text-align: center;background-color: white;border-radius: 25px;box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);margin: 10px;">
+                                <div style="padding: 100px;background-color: #ff9b21;border-radius: 50%;margin: 20px;">
+                                </div>
+                                <h2 style="font-family: 'Lalezar-Regular';color: #52006b;margin-bottom: 0;">مسعود فراستی
+                                </h2>
+                                <h4 style="font-family: 'B KoodakBold';color: #a04db9;margin-top: 0;">منتقد درجه یک</h4>
+                            </div>
                         </div>
                     </div>
-                </div>
                 </div>
             </div>
         </div>
     </div>
-    <div style="width: 100%;height: 100px;background-color: #6af9c5;z-index: -1;"></div>
-    <div
-        style="background-image: url(assets/svg/wave-purple.svg);background-repeat: no-repeat;background-size: contain;transform: scaleY(-1);width: 100%;height: 170px;position: relative;z-index: 1;margin-top: -60px;">
-    </div>
-    <div style="background-color: #52006b;">
-        <div style="direction: rtl;display: flex;justify-content: space-evenly;padding-bottom: 50px;">
-            <div style="width: 50%;margin-right: 5%;margin-left: 5%;position: relative;">
-                <div style="position:absolute;right: 0;left:0;top: 0;bottom: 0;background: transparent;z-index: 1;">
-                    <h1
-                        style="font-family: 'Lalezar-Regular';font-size: xxx-large;color: white;margin-bottom: 0;margin-top: 0;">
-                        تایتل</h1>
-                    <h3
-                        style="font-family: 'Lalezar-Regular';color: white;font-size: xx-large;margin-top: 0;margin-bottom: 0;">
-                        ساب تایتل</h3>
-                    <p style="font-family: 'B KoodakBold';color: white;font-size: x-large;margin-top: 0;">تاریخ بِیهَقی
-                        یا
-                        تاریخ مسعودی نام کتابی نوشتهٔ ابوالفضل محمد بن حسین بیهقی است که موضوع اصلی آن تاریخ پادشاهی
-                        مسعود
-                        غزنوی و دودمان غزنوی است. این کتاب علاوه بر تاریخ غزنویان، قسمت‌هایی دربارهٔ صفاریان، سامانیان و
-                        دورهٔ پیش از برآمدن و پادشاهی محمود غزنوی دارد. نسخهٔ اصلی کتاب حدود ۳۰ جلد بوده</p>
-                </div>
-                <div
-                    style="position: absolute;background-image: url('assets/svg/bubble-purple.svg');background-repeat: no-repeat;background-size:contain;right: 0;left: 0;top: 0;bottom: 0;transform: scaleX(-1);z-index: 0;">
-                </div>
-            </div>
-            <div style="background-color: white;padding: 100px;width: 100px;height: 100px;border-radius: 30px;"></div>
+    <div style="width: 100%;height: 100px;background-color: #6af9c5;z-index: -1;padding-bottom: 30px;"></div>
+    <div style="margin-top: -90px;">
+        <div
+            style="background-image: url(assets/svg/wave-purple.svg);background-repeat: no-repeat;background-size: contain;transform: scaleY(-1);width: 100%;height: 170px;position: relative;z-index: 1;margin-top: -60px;">
         </div>
-        <div>
-            <h1 style="font-family: 'Lalezar-Regular';font-size: xxx-large;color: white;text-align: center;">حامیان</h1>
-        </div>
-        <div style="text-align: center;display: flex;justify-content: center;">
-            <div>
-                <div style="padding: 60px;background-color: #ff9b21;border-radius: 50%;margin: 20px;"></div>
-                <p style="font-family: 'B KoodakBold';color: white;font-size: x-large;">حامی</p>
+        <div style="background-color: #52006b;padding-top: 20px;margin-top: -10px;">
+            <div style="direction: rtl;display: flex;justify-content: space-evenly;padding-bottom: 50px;">
+                <div style="width: 50%;margin-right: 5%;margin-left: 5%;position: relative;">
+                    <div style="position:absolute;right: 0;left:0;top: 0;bottom: 0;background: transparent;z-index: 1;">
+                        <h1
+                            style="font-family: 'Lalezar-Regular';font-size: xxx-large;color: white;margin-bottom: 0;margin-top: 0;">
+                            تایتل</h1>
+                        <h3
+                            style="font-family: 'Lalezar-Regular';color: white;font-size: xx-large;margin-top: 0;margin-bottom: 0;">
+                            ساب تایتل</h3>
+                        <p style="font-family: 'B KoodakBold';color: white;font-size: x-large;margin-top: 0;">تاریخ
+                            بِیهَقی
+                            یا
+                            تاریخ مسعودی نام کتابی نوشتهٔ ابوالفضل محمد بن حسین بیهقی است که موضوع اصلی آن تاریخ پادشاهی
+                            مسعود
+                            غزنوی و دودمان غزنوی است. این کتاب علاوه بر تاریخ غزنویان، قسمت‌هایی دربارهٔ صفاریان،
+                            سامانیان و
+                            دورهٔ پیش از برآمدن و پادشاهی محمود غزنوی دارد. نسخهٔ اصلی کتاب حدود ۳۰ جلد بوده</p>
+                    </div>
+                    <div
+                        style="position: absolute;background-image: url('assets/svg/bubble-purple.svg');background-repeat: no-repeat;background-size:contain;right: 0;left: 0;top: 0;bottom: 0;transform: scaleX(-1);z-index: 0;">
+                    </div>
+                </div>
+                <div style="background-color: white;padding: 100px;width: 100px;height: 100px;border-radius: 30px;">
+                </div>
             </div>
             <div>
-                <div style="padding: 60px;background-color: #ff9b21;border-radius: 50%;margin: 20px;"></div>
-                <p style="font-family: 'B KoodakBold';color: white;font-size: x-large;">حامی</p>
+                <h1 style="font-family: 'Lalezar-Regular';font-size: xxx-large;color: white;text-align: center;">حامیان
+                </h1>
             </div>
-            <div>
-                <div style="padding: 60px;background-color: #ff9b21;border-radius: 50%;margin: 20px;"></div>
-                <p style="font-family: 'B KoodakBold';color: white;font-size: x-large;">حامی</p>
+            <div style="text-align: center;display: flex;justify-content: center;">
+                <div>
+                    <div style="padding: 60px;background-color: #ff9b21;border-radius: 50%;margin: 20px;"></div>
+                    <p style="font-family: 'B KoodakBold';color: white;font-size: x-large;">حامی</p>
+                </div>
+                <div>
+                    <div style="padding: 60px;background-color: #ff9b21;border-radius: 50%;margin: 20px;"></div>
+                    <p style="font-family: 'B KoodakBold';color: white;font-size: x-large;">حامی</p>
+                </div>
+                <div>
+                    <div style="padding: 60px;background-color: #ff9b21;border-radius: 50%;margin: 20px;"></div>
+                    <p style="font-family: 'B KoodakBold';color: white;font-size: x-large;">حامی</p>
+                </div>
             </div>
         </div>
     </div>
 </div>
+<router-outlet></router-outlet>
