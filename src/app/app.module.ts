@@ -22,7 +22,8 @@ import { FooterComponent } from './footer/footer.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 
 import {FaNumPipe} from 'ngx-persian';
-import { DashboardComponent } from './dashboard-event/dashboard-event.component';
+import { DashboardEventComponent } from './dashboard-event/dashboard-event.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +32,8 @@ import { DashboardComponent } from './dashboard-event/dashboard-event.component'
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    DashboardComponent
+    DashboardEventComponent,
+
     
   ],
   imports: [
