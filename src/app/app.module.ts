@@ -20,7 +20,7 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import {MatExpansionModule} from '@angular/material/expansion';
-
+import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
 import {FaNumPipe} from 'ngx-persian';
 import { DashboardEventComponent } from './dashboard-event/dashboard-event.component';
 import { DashboardMediaComponent } from './dashboard-media/dashboard-media.component';
@@ -54,7 +54,8 @@ import { DashboardMediaComponent } from './dashboard-media/dashboard-media.compo
     MatIconModule,
     MatDialogModule,
     MatCardModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatSnackBarModule
   ],
   providers: [
   ],

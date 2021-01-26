@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 // import { User, Car, Service } from './models/Models'
-// import { Texts } from './models/Texts';
+import { Texts } from './models/Texts';
 import { Http, HttpModule, Headers, RequestOptions, Response } from '@angular/http';
 // import { MatDialog } from '@angular/material/dialog';
 // import { AppDialogComponentDialog } from './app-dialog/app-dialog.component';
-
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 
 
@@ -20,7 +20,8 @@ export class PublicService {
   public PhoneNumber: String = "";
   public Password: String = "";
   public Name: String ="";
-
+  Texts: Texts = new Texts();
+  private snackbar: MatSnackBar;
   Mockup() {
 
 
@@ -88,13 +89,18 @@ export class PublicService {
       'Content-Type': 'application/json', 'Authorization': 'token ' + this.Authorization
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.post(this.ApiUrl + '/users/sign_up/', body, options)
+    let ret: Promise<any> = this.http.post(this.ApiUrl + '/users/sign_up', body, options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
     ret.then(r => {
-      this.User = r.data.User;
       this.APICalls.SignUp = false;
+      if(r.error != ""){
+        this.snackbar.open(r.error,'Undo',{duration:2000});
+      }
+      else{
+        this.User = r.data.User;
+      }
     }).catch(e => {
       this.APICalls.SignUp = false;
     });
@@ -119,8 +125,13 @@ export class PublicService {
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
     ret.then(r => {
-      this.User = r.data.User;
       this.APICalls.Login = false;
+      if(r.error != ""){
+        this.snackbar.open(r.error,'Undo',{duration:2000});
+      }
+      else{
+        this.User = r.data.User;
+      }
     }).catch(e => {
       this.APICalls.Login = false;
     });

@@ -17,6 +17,10 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
   Login(){
-    this.publicservice.Login();
+    this.publicservice.Login().then(r=>{
+      if(r.error == "" || r.error == undefined){
+        this.router.navigate(['home'])
+      }
+    })
   }
 }

@@ -37,8 +37,12 @@ export class SignUpPageComponent implements OnInit {
   ngOnInit(): void {
   }
   signUp(){
-    this.publicservice.SignUp().then(value => "success");
-    const navigationDetails2: string[] = ['home'];
-    this.router.navigate(navigationDetails2);
+    this.publicservice.SignUp().then(r=>{
+      if(r.error == "" || r.error == undefined)
+      {
+        this.router.navigate(['home']);
+      }
+    });
+
   }
 }
