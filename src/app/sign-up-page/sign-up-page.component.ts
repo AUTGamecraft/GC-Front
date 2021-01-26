@@ -2,13 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { LoginComponent } from '../login/login.component';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-sign-up-page',
   templateUrl: './sign-up-page.component.html',
   styleUrls: ['./sign-up-page.component.scss']
 })
 
+
 export class SignUpPageComponent implements OnInit {
+  
   emailFormControl1 = new FormControl('', [
     Validators.required,
     Validators.email,
@@ -24,11 +27,12 @@ export class SignUpPageComponent implements OnInit {
   emailFormControl4 = new FormControl('', [
     Validators.required,
   ]);
-  
-  constructor(public dialog:MatDialog) { }
-  openDialogSignIn(){
-    const dialogRef = this.dialog.open(LoginComponent);
+  constructor( private router: Router) { }
+  login(): void {
+    const navigationDetails: string[] = ['login'];
+    this.router.navigate(navigationDetails);
   }
+  
   ngOnInit(): void {
   }
 

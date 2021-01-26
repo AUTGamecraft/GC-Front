@@ -2,20 +2,20 @@
     style="  display: flex; justify-content: space-evenly; direction: rtl; background-color: #52006b; height: 100%; background-image: url('assets/svg/pattern.svg'); ">
 
 
-    <div style="direction: rtl; text-align: center; margin-top: 25% ;">
+    <div style="direction: rtl; text-align: center; margin-top: 20% ;">
 
-        <h2 style="font-size: x-large;font-family: 'Lalezar-Regular';color: #07f49e;">ثبت نام</h2>
+        <h4 style="font-size:35px;font-family: 'Estedad-Black';color: #07f49e;margin-bottom: 0;">ثبت نام</h4>
         <h1 style="font-size:70px;font-family: 'Estedad-Black';color: #07f49e;margin-bottom: 0;">گیمـ</h1>
 
     </div>
 
 
 
-<div  style="background-color: white ; height: 50% ; margin-top: 20%; width : 30% ; text-align: center; border-radius: 20px;">
+<div  style="background-color: white ; height: 48% ; margin-top: 20%; width : 20% ; text-align: center; border-radius: 20px;">
     <div>
         <form class="example-form">
             <mat-form-field class="example-full-width" style="text-align: right;">
-                <mat-label>نام</mat-label>
+             <mat-label>نام و نام خانوادگی</mat-label>
                 <input matInput [formControl]="emailFormControl4" style="text-align: right;">
                 <mat-error *ngIf=" !emailFormControl4.hasError('required')">
                   
@@ -71,10 +71,10 @@
     </div>
    
     <div>
-        <button mat-raised-button color="primary">ثبت نام</button>
+        <button mat-raised-button  style="font-size:15px;font-family: 'Estedad-Black'; color: #52006b; background-color: #6af9c5;" >ثبت نام</button>
     </div>
     <div>
-        <button mat-button [mat-dialog-close]="true" (click)="openDialogSignIn()">قبلا ثبت نام کرده ام</button>
+        <button (click)="login()" mat-button [mat-dialog-close]="true" style="color: #00b583; font-family:'Estedad-Black' ;" >ورود</button>
     </div>
 </div>
 </div>
