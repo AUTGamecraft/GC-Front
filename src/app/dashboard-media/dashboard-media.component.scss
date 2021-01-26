@@ -1,0 +1,28 @@
+.dash-event{
+    padding: 20px;
+    background-color: #52006b;
+    direction: rtl;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+.buttons{
+    color: #52006b;
+    font-family: 'Estedad-SemiBold';
+    width: 100%;
+    font-size: large;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    text-align: right;
+    
+}
+.active{
+    max-height: 2000px;
+    overflow: visible;
+    transition: max-height 0.5s ease-in;
+   
+}
+.deactive{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+}
