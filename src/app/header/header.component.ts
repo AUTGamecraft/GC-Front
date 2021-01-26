@@ -24,7 +24,7 @@ export class HeaderComponent implements OnInit {
     const navigationDetails: string[] = ['login'];
     this.router.navigate(navigationDetails);
   }
-SignUp(){}
+
 
 
 }
