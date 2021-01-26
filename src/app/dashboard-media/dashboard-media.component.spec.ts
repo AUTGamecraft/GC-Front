@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MediaComponent } from './media.component';
+import { DashboardMediaComponent } from './dashboard-media.component';
 
-describe('MediaComponent', () => {
-  let component: MediaComponent;
-  let fixture: ComponentFixture<MediaComponent>;
+describe('DashboardMediaComponent', () => {
+  let component: DashboardMediaComponent;
+  let fixture: ComponentFixture<DashboardMediaComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MediaComponent ]
+      declarations: [ DashboardMediaComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MediaComponent);
+    fixture = TestBed.createComponent(DashboardMediaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
