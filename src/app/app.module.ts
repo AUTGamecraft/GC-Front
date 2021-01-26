@@ -23,6 +23,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 
 import {FaNumPipe} from 'ngx-persian';
 import { DashboardEventComponent } from './dashboard-event/dashboard-event.component';
+import { MediaComponent } from './media/media.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { DashboardEventComponent } from './dashboard-event/dashboard-event.compo
     HeaderComponent,
     FooterComponent,
     DashboardEventComponent,
+    MediaComponent,
 
     
   ],
