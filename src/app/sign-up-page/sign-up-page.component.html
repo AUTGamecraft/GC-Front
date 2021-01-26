@@ -2,8 +2,30 @@
     style="  display: flex; justify-content: space-evenly; direction: rtl; background-color: #52006b; height: 100%; background-image: url('assets/svg/pattern.svg'); ">
 
 
+    <div style="direction: rtl; text-align: center; margin-top: 25% ;">
+
+        <h2 style="font-size: x-large;font-family: 'Lalezar-Regular';color: #07f49e;">ثبت نام</h2>
+        <h1 style="font-size: xxx-large;font-family: 'Lalezar-Regular';color: #07f49e;">گیم</h1>
+
+    </div>
+
+
 
 <div  style="background-color: white ; height: 50% ; margin-top: 20%; width : 30% ; text-align: center; border-radius: 20px;">
+    <div>
+        <form class="example-form">
+            <mat-form-field class="example-full-width" style="text-align: right;">
+                <mat-label>نام</mat-label>
+                <input matInput [formControl]="emailFormControl4" style="text-align: right;">
+                <mat-error *ngIf=" !emailFormControl4.hasError('required')">
+                  
+                </mat-error>
+                <mat-error *ngIf="emailFormControl4.hasError('required')">
+                    وارد کردن نام <strong>اجباری</strong> است
+                </mat-error>
+            </mat-form-field>
+        </form>
+    </div>
     <div>
         <form class="example-form">
             <mat-form-field class="example-full-width" style="text-align: right;">
@@ -47,20 +69,7 @@
             </mat-form-field>
         </form>
     </div>
-    <div>
-        <form class="example-form">
-            <mat-form-field class="example-full-width" style="text-align: right;">
-                <mat-label>رمز عبور</mat-label>
-                <input matInput [formControl]="emailFormControl4" style="text-align: right;">
-                <mat-error *ngIf=" !emailFormControl4.hasError('required')">
-                    لطفا یک رمز عبور صحیح وارد کنید
-                </mat-error>
-                <mat-error *ngIf="emailFormControl4.hasError('required')">
-                    وارد کردن رمز عبور <strong>اجباری</strong> است
-                </mat-error>
-            </mat-form-field>
-        </form>
-    </div>
+   
     <div>
         <button mat-raised-button color="primary">ثبت نام</button>
     </div>
