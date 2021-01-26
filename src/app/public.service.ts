@@ -15,10 +15,11 @@ export class PublicService {
   public APICalls: any = {};
   public Authorization: String = "";
   public User: any = {};
-  public ApiUrl: String = "";
+  public ApiUrl: String = "http://127.0.0.1:8000";
   public Email: String = "";
   public PhoneNumber: String = "";
   public Password: String = "";
+  public Name: String ="";
 
   Mockup() {
 
@@ -77,22 +78,22 @@ export class PublicService {
     this.APICalls.SignUp = true;
     let body = JSON.stringify({
       "action": "",
-      "par1": this.PhoneNumber,
-      "par2": this.Password,
-      "par3": this.Email,
-      "par4": "",
-      "par5": ""
+      "password": this.Password,
+      "phone_number": this.PhoneNumber,
+      "email": this.Email,
+      "first_name": this.Name,
+      "user_name": this.Email
     });
     let headers = new Headers({
       'Content-Type': 'application/json', 'Authorization': 'token ' + this.Authorization
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.post(this.ApiUrl + '/user/sign-up', body, options)
+    let ret: Promise<any> = this.http.post(this.ApiUrl + '/users/sign_up/', body, options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
     ret.then(r => {
-      // this.User = r.data.User;
+      this.User = r.data.User;
       this.APICalls.SignUp = false;
     }).catch(e => {
       this.APICalls.SignUp = false;
@@ -103,8 +104,8 @@ export class PublicService {
     this.APICalls.SignUp = true;
     let body = JSON.stringify({
       "action": "",
-      "par1": this.Email,
-      "par2": this.Password,
+      "email": this.Email,
+      "password": this.Password,
       "par3": "",
       "par4": "",
       "par5": ""
@@ -113,12 +114,12 @@ export class PublicService {
       'Content-Type': 'application/json', 'Authorization': 'token ' + this.Authorization
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.post(this.ApiUrl + '/user/login', body, options)
+    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/token/', body, options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
     ret.then(r => {
-      // this.User = r.data.User;
+      this.User = r.data.User;
       this.APICalls.Login = false;
     }).catch(e => {
       this.APICalls.Login = false;

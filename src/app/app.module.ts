@@ -54,7 +54,8 @@ import { DashboardEventComponent } from './dashboard-event/dashboard-event.compo
     MatCardModule,
     MatExpansionModule
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
