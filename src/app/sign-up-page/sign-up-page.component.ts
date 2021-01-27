@@ -3,6 +3,7 @@ import { FormControl, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { LoginComponent } from '../login/login.component';
 import { Router } from '@angular/router';
+import { PublicService } from '../public.service';
 @Component({
   selector: 'app-sign-up-page',
   templateUrl: './sign-up-page.component.html',
@@ -27,7 +28,7 @@ export class SignUpPageComponent implements OnInit {
   emailFormControl4 = new FormControl('', [
     Validators.required,
   ]);
-  constructor( private router: Router) { }
+  constructor( private router: Router,public publicservice : PublicService) { }
   login(): void {
     const navigationDetails: string[] = ['login'];
     this.router.navigate(navigationDetails);
@@ -35,5 +36,13 @@ export class SignUpPageComponent implements OnInit {
   
   ngOnInit(): void {
   }
+  signUp(){
+    this.publicservice.SignUp().then(r=>{
+      if(r.error == "" || r.error == undefined)
+      {
+        this.router.navigate(['home']);
+      }
+    });
 
+  }
 }

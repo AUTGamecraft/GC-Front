@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { PublicService } from '../public.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor( private router: Router) { }
+  constructor( private router: Router,public publicservice: PublicService) { }
   
   signup(): void {
     const navigationDetails: string[] = ['signup'];
@@ -16,5 +16,11 @@ export class LoginComponent implements OnInit {
   }
   ngOnInit(): void {
   }
-
+  Login(){
+    this.publicservice.Login().then(r=>{
+      if(r.error == "" || r.error == undefined){
+        this.router.navigate(['home'])
+      }
+    })
+  }
 }

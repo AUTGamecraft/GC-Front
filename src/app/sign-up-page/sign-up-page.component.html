@@ -2,7 +2,7 @@
     style="  display: flex; justify-content: space-evenly; direction: rtl; background-color: #52006b; height: 100%; background-image: url('assets/svg/pattern.svg'); ">
 
 
-    <div style="direction: rtl; text-align: center; margin-top: 20% ;">
+    <div style="direction: rtl; text-align: center; margin-top: 15% ;">
 
         <h4 style="font-size:35px;font-family: 'Estedad-Black';color: #07f49e;margin-bottom: 0;">ثبت نام</h4>
         <h1 style="font-size:70px;font-family: 'Estedad-Black';color: #07f49e;margin-bottom: 0;">گیمـ</h1>
@@ -11,12 +11,13 @@
 
 
 
-<div  style="background-color: white ; height: 48% ; margin-top: 20%; width : 20% ; text-align: center; border-radius: 20px;">
+<div  style="background-color: white ; height: 48% ; margin-top: 15%;  text-align: center; border-radius: 20px;padding: 20px 40px 20px 40px;">
+    <div style="padding: 10px;">
     <div>
         <form class="example-form">
             <mat-form-field class="example-full-width" style="text-align: right;">
              <mat-label>نام و نام خانوادگی</mat-label>
-                <input matInput [formControl]="emailFormControl4" style="text-align: right;">
+                <input matInput [formControl]="emailFormControl4" style="text-align: right;" [(ngModel)] = "publicservice.Name">
                 <mat-error *ngIf=" !emailFormControl4.hasError('required')">
                   
                 </mat-error>
@@ -31,7 +32,7 @@
             <mat-form-field class="example-full-width" style="text-align: right;">
                 <mat-label>ایمیل</mat-label>
                 <input matInput [formControl]="emailFormControl1" placeholder="Ex. pat@example.com"
-                    style="text-align: right;">
+                    style="text-align: right;" [(ngModel)]="publicservice.Email">
                 <mat-error *ngIf="emailFormControl1.hasError('email') && !emailFormControl1.hasError('required')">
                     لطفا یک ایمیل صحیح وارد کنید
                 </mat-error>
@@ -45,7 +46,7 @@
         <form class="example-form">
             <mat-form-field class="example-full-width" style="text-align: right;">
                 <mat-label>شماره همراه</mat-label>
-                <input matInput [formControl]="emailFormControl2" placeholder="09*********" style="text-align: right;">
+                <input matInput [formControl]="emailFormControl2" placeholder="09*********" style="text-align: right;" [(ngModel)]="publicservice.PhoneNumber">
                 <mat-error *ngIf="emailFormControl2.hasError('email') && !emailFormControl2.hasError('required')">
                     لطفا یک شماره همراه صحیح وارد کنید
                 </mat-error>
@@ -59,7 +60,7 @@
         <form class="example-form">
             <mat-form-field class="example-full-width" style="text-align: right;">
                 <mat-label>رمز عبور</mat-label>
-                <input matInput [formControl]="emailFormControl3" style="text-align: right;">
+                <input matInput [formControl]="emailFormControl3" style="text-align: right;" [(ngModel)]="publicservice.Password" type="password">
                 <mat-error *ngIf=" !emailFormControl3.hasError('required')">
                     لطفا یک رمز عبور صحیح وارد کنید
                 </mat-error>
@@ -69,9 +70,9 @@
             </mat-form-field>
         </form>
     </div>
-   
+</div>
     <div>
-        <button mat-raised-button  style="font-size:15px;font-family: 'Estedad-Black'; color: #52006b; background-color: #6af9c5;" >ثبت نام</button>
+        <button mat-raised-button (click)="signUp()"  style="font-size:15px;font-family: 'Estedad-Black'; color: #52006b; background-color: #6af9c5;"  >ثبت نام</button>
     </div>
     <div>
         <button (click)="login()" mat-button [mat-dialog-close]="true" style="color: #00b583; font-family:'Estedad-Black' ;" >ورود</button>
