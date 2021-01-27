@@ -38,9 +38,9 @@ export class SignUpPageComponent implements OnInit {
   }
   signUp(){
     this.publicservice.SignUp().then(r=>{
-      if(r.error == "" || r.error == undefined)
+      if(r.error == "" || r.error == undefined || r.error == null)
       {
-        this.router.navigate(['home']);
+        this.router.navigate(['login']);
       }
     });
 

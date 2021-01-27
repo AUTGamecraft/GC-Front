@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   }
   Login(){
     this.publicservice.Login().then(r=>{
-      if(r.error == "" || r.error == undefined){
+      if(r.error == "" || r.error == undefined || r.data.error == null){
         this.router.navigate(['home'])
       }
     })
