@@ -89,7 +89,7 @@ export class PublicService {
       'Content-Type': 'application/json', 'Authorization': 'token ' + this.Authorization
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.post(this.ApiUrl + '/users/sign_up', body, options)
+    let ret: Promise<any> = this.http.post(this.ApiUrl + '/users/sign_up/', body, options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
@@ -127,7 +127,7 @@ export class PublicService {
     ret.then(r => {
       this.APICalls.Login = false;
       if(r.error != ""){
-        this.snackbar.open(r.error,'Undo',{duration:2000});
+        this.snackbar.open(r.message,'Undo',{duration:2000});
       }
       else{
         this.User = r.data.User;
