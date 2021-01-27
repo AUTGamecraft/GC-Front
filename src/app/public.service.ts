@@ -13,7 +13,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 })
 export class PublicService {
   public APICalls: any = {};
-  public Authorization: String = "";
+  public Authorization: string = "";
   public User: any = {};
   public ApiUrl: String = "http://127.0.0.1:8000";
   public Email: String = "";
@@ -22,6 +22,8 @@ export class PublicService {
   public Name: String ="";
   Texts: Texts = new Texts();
   private snackbar: MatSnackBar;
+  public Token: String ="";
+  public logedIn: boolean = false;
   Mockup() {
 
 
@@ -33,6 +35,9 @@ export class PublicService {
 
   constructor(private http: Http) {
     this.Authorization = localStorage.getItem("Authorization");
+    if(this.Authorization != null){
+      this.logedIn=true;
+    }
     // this.dialog..PublicService=this;
     // this.Mockup();
     this.Texts.Init();
@@ -45,17 +50,18 @@ export class PublicService {
     }
 
     let body = res.json();
-    if (body.message) {
-      that.DisplaySuccessDialog(body.message);
 
-    }
+    // if (body.message) {
+    //   that.DisplaySuccessDialog(body.message);
 
-    if (body.alerts) {
-      that.DisplayErrorDialog(body.alerts);
-      Promise.reject(body.alerts);
-    } else {
+    // }
+
+    // if (body.alerts) {
+    //   that.DisplayErrorDialog(body.alerts);
+    //   Promise.reject(body.alerts);
+    // } else {
       return body || {};
-    }
+    // }
 
   }
   private extractData2(res: Response) {
@@ -67,6 +73,7 @@ export class PublicService {
   }
   private handleError(error: any) {
     // In a real world app, we might send the error to remote logging infrastructure
+ 
     let errMsg = JSON.parse(error._body).ExceptionMessage;//error.message || 'Server error';
     console.error(errMsg); // log to console instead
     return Promise.reject(errMsg);
@@ -77,7 +84,6 @@ export class PublicService {
   SignUp(): Promise<any> {
     this.APICalls.SignUp = true;
     let body = JSON.stringify({
-      "action": "",
       "password": this.Password,
       "phone_number": this.PhoneNumber,
       "email": this.Email,
@@ -85,21 +91,20 @@ export class PublicService {
       "user_name": this.Email
     });
     let headers = new Headers({
-      'Content-Type': 'application/json', 'Authorization': 'token ' + this.Authorization
+      'Content-Type': 'application/json'
     });
     let options = new RequestOptions({ headers: headers });
     let ret: Promise<any> = this.http.post(this.ApiUrl + '/users/sign_up/', body, options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
+      
     ret.then(r => {
       this.APICalls.SignUp = false;
-      debugger;
       if(r.error != ""){
         this.snackbar.open(r.error,'Undo',{duration:2000});
       }
       else{
-        this.User = r.data.User;
       }
     }).catch(e => {
       this.APICalls.SignUp = false;
@@ -107,17 +112,14 @@ export class PublicService {
     return ret;
   }
   Login(): Promise<any> {
-    this.APICalls.SignUp = true;
+    this.APICalls.Login = true;
     let body = JSON.stringify({
-      "action": "",
       "email": this.Email,
       "password": this.Password,
-      "par3": "",
-      "par4": "",
-      "par5": ""
     });
     let headers = new Headers({
-      'Content-Type': 'application/json', 'Authorization': 'token ' + this.Authorization
+      'Content-Type': 'application/json',
+      'Authorization':'Bearer '+this.Authorization
     });
     let options = new RequestOptions({ headers: headers });
     let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/token/', body, options)
@@ -126,18 +128,45 @@ export class PublicService {
       .catch(this.handleError);
     ret.then(r => {
       this.APICalls.Login = false;
-      if(r.error != ""){
+      if(r.error != null){
         this.snackbar.open(r.message,'Undo',{duration:2000});
       }
       else{
-        this.User = r.data.User;
+        this.Authorization = r.access;
+        localStorage.setItem("Authorization", this.Authorization);
+        this.logedIn = true;
       }
     }).catch(e => {
       this.APICalls.Login = false;
     });
     return ret;
   }
-
+  GetUser(): Promise<any> {
+    this.APICalls.GetUser = true;
+    let body = JSON.stringify({
+      "action": "GetUser",
+      "par1": "",
+      "par2": "",
+      "par3": "",
+      "par4": "",
+      "par5": ""
+    });
+    let headers = new Headers({
+      'Content-Type': 'application/json', 'Authorization': 'token ' + this.Authorization
+    });
+    let options = new RequestOptions({ headers: headers });
+    let ret: Promise<any> = this.http.post(this.ApiUrl + '/user/get', body, options)
+      .toPromise()
+      .then((r) => this.extractData(r, this))
+      .catch(this.handleError);
+    ret.then(r => {
+      this.User = r.data.User;
+      this.APICalls.GetUser = false;
+    }).catch(e => {
+      this.APICalls.GetUser = false;
+    });
+    return ret;
+  }
 
 
 

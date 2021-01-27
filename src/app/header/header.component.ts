@@ -10,23 +10,29 @@ import { PublicService } from '../public.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor( private router: Router,public publicservice:PublicService) {
-
+  displayModeLogOut = 'none';
+  displayModeLogIn = 'block';
+  constructor(private router: Router, public publicservice: PublicService) {
   }
 
   ngOnInit(): void {
+
+
   }
   Signup() {
     const navigationDetails2: string[] = ['signup'];
-        this.router.navigate(navigationDetails2);
+    this.router.navigate(navigationDetails2);
   }
   login(): void {
     const navigationDetails: string[] = ['login'];
     this.router.navigate(navigationDetails);
   }
-
-
-
+  logOut() {
+    this.publicservice.logedIn = false;
+    localStorage.removeItem("Authorization");
+  }
+  Dashboard(){
+    this.router.navigate(['dashboard-event']);  
+  }
 }
 

@@ -3,17 +3,21 @@
         <div style="direction: rtl;margin: 10px 10px 10px 10px;justify-content: space-between;display: flex;">
             <div style="display: flex;">
                 <div style="margin-right: 50px;">
-                    <h2 class="title" style="font-family: 'Estedad-Black';color: #a04db9;">{{publicservice.Texts.Texts["header1"]}}</h2>
+                    <h2 class="title" style="font-family: 'Estedad-Black';color: #a04db9;">
+                        {{publicservice.Texts.Texts["header1"]}}</h2>
                 </div>
                 <div style="display: flex;margin-right: 100px;margin-top: 20px;">
                     <div style="margin: 0 5% 0 0;">
-                        <button mat-button style="font-family: 'Estedad-Bold';font-size: large;color: white;">{{publicservice.Texts.Texts["header2"]}}</button>
+                        <button mat-button
+                            style="font-family: 'Estedad-Bold';font-size: large;color: white;">{{publicservice.Texts.Texts["header2"]}}</button>
                     </div>
                     <div style="margin: 0 5% 0 0;">
-                        <button mat-button style="font-family: 'Estedad-Bold';font-size: large;color: white;">{{publicservice.Texts.Texts["header3"]}}</button>
+                        <button mat-button
+                            style="font-family: 'Estedad-Bold';font-size: large;color: white;">{{publicservice.Texts.Texts["header3"]}}</button>
                     </div>
                     <div style="margin: 0 5% 0 0;">
-                        <button mat-button style="font-family: 'Estedad-Bold';font-size: large;color: white;">{{publicservice.Texts.Texts["header4"]}}</button>
+                        <button mat-button
+                            style="font-family: 'Estedad-Bold';font-size: large;color: white;">{{publicservice.Texts.Texts["header4"]}}</button>
                     </div>
                     <div style="margin: 0 5% 0 0;">
                         <button mat-button
@@ -22,13 +26,30 @@
                 </div>
             </div>
             <div style="display: flex;margin-left: 50px;margin-top: 20px;">
-                <div style="margin: 0 0 0 5%;">
-                    <button mat-button (click)="login()"
-                        style="font-family: 'Estedad-Bold';font-size: large;color: white;padding: 9px 16px 9px 16px;">{{publicservice.Texts.Texts["header6"]}}</button>
+                <div style="display: flex;" *ngIf="!publicservice.logedIn">
+                    <div style="margin: 0 0 0 5%;">
+                        <button mat-button (click)="login()"
+                            style="font-family: 'Estedad-Bold';font-size: large;color: white;padding: 9px 16px 9px 16px;">{{publicservice.Texts.Texts["header6"]}}</button>
+                    </div>
+                    <div>
+                        <button mat-flat-button (click)="Signup()" class="login"
+                            style="font-family: 'Estedad-Bold';font-size: large;color: #52006b;background-color:#6af9c5;border-radius: 50px;padding: 9px 16px 9px 16px;">{{publicservice.Texts.Texts["header7"]}}</button>
+                    </div>
                 </div>
-                <div>
-                    <button mat-flat-button (click)="Signup()"
-                        style="font-family: 'Estedad-Bold';font-size: large;color: #52006b;background-color:#6af9c5;border-radius: 50px;padding: 9px 16px 9px 16px;">{{publicservice.Texts.Texts["header7"]}}</button>
+                <div style="display: flex;" *ngIf="publicservice.logedIn">
+                    <div style="margin: 0 0 0 5%;" class="logout">
+                        <button mat-button (click)="logOut()"
+                            style="font-family: 'Estedad-Bold';font-size: large;color: white;padding: 9px 16px 9px 16px;">{{publicservice.Texts.Texts["header8"]}}</button>
+                    </div>
+                    <div style="margin: 0 0 0 5%;" class="profile">
+                        <button mat-button
+                            style="font-family: 'Estedad-Bold';font-size: large;color: white;padding: 9px 16px 9px 16px;">{{publicservice.Texts.Texts["header10"]}}</button>
+                    </div>
+
+                    <div>
+                        <button mat-flat-button class="dashboard" (click)="Dashboard()"
+                            style="font-family: 'Estedad-Bold';font-size: large;color: #52006b;background-color:#6af9c5;border-radius: 50px;padding: 9px 16px 9px 16px;">{{publicservice.Texts.Texts["header9"]}}</button>
+                    </div>
                 </div>
             </div>
         </div>

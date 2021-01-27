@@ -8,7 +8,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  clickButton: boolean = false
   talks = 'deactive'
   workshops = 'deactive'
   iconW = 'keyboard_arrow_down'

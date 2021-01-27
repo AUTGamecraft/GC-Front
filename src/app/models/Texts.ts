@@ -12,6 +12,9 @@ export class Texts{
         this.FaTexts["header5"] = "درباره"
         this.FaTexts["header6"] = "ورود"
         this.FaTexts["header7"] = "ثبت نام"
+        this.FaTexts["header8"] = "خروج"
+        this.FaTexts["header9"] = "داشبورد"
+        this.FaTexts["header10"] = "ابولفضل"
 
         this.FaTexts["home1"] = "گیمـ"
         this.FaTexts["home2"] = "نهمین رویداد بزرگ بازی سازی درخاورمیانه"
