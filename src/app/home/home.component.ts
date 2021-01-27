@@ -1,6 +1,7 @@
 import { Expansion } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-
+import { PublicService } from '../public.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -12,7 +13,7 @@ export class HomeComponent implements OnInit {
   workshops = 'deactive'
   iconW = 'keyboard_arrow_down'
   iconT = 'keyboard_arrow_down'
-  constructor() { 
+  constructor(public publicservice:PublicService) { 
   }
 
   ngOnInit(): void {
