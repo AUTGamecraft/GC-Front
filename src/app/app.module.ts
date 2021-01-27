@@ -35,6 +35,8 @@ import { DashboardMediaComponent } from './dashboard-media/dashboard-media.compo
     FooterComponent,
     DashboardEventComponent,
     DashboardMediaComponent,
+   
+    
 
     
   ],

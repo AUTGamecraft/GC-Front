@@ -18,4 +18,9 @@ events(): void{
   const navigationDetails: string[] = ['dashboard-event'];
   this.router.navigate(navigationDetails);
 }
+media(): void{
+  const navigationDetails2: string[] = ['dashboard-media'];
+  this.router.navigate(navigationDetails2);
+}
+
 }
