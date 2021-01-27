@@ -16,12 +16,12 @@
     <div>
         <form class="example-form">
             <mat-form-field class="example-full-width" style="text-align: right;">
-             <mat-label>نام و نام خانوادگی</mat-label>
-                <input matInput [formControl]="emailFormControl4" style="text-align: right;" [(ngModel)] = "publicservice.Name">
+             <mat-label style="font-family: 'Estedad-SemiBold';">نام و نام خانوادگی</mat-label>
+                <input matInput [formControl]="emailFormControl4" id="inputName" style="text-align: right;" [(ngModel)] = "publicservice.Name">
                 <mat-error *ngIf=" !emailFormControl4.hasError('required')">
                   
                 </mat-error>
-                <mat-error *ngIf="emailFormControl4.hasError('required')">
+                <mat-error *ngIf="emailFormControl4.hasError('required')" style="font-family: 'Estedad-Regular';">
                     وارد کردن نام <strong>اجباری</strong> است
                 </mat-error>
             </mat-form-field>
@@ -30,13 +30,13 @@
     <div>
         <form class="example-form">
             <mat-form-field class="example-full-width" style="text-align: right;">
-                <mat-label>ایمیل</mat-label>
-                <input matInput [formControl]="emailFormControl1" placeholder="Ex. pat@example.com"
+                <mat-label style="font-family: 'Estedad-SemiBold';">ایمیل</mat-label>
+                <input matInput [formControl]="emailFormControl1" id="inputEmail" placeholder="Ex. pat@example.com"
                     style="text-align: right;" [(ngModel)]="publicservice.Email">
-                <mat-error *ngIf="emailFormControl1.hasError('email') && !emailFormControl1.hasError('required')">
+                <mat-error *ngIf="emailFormControl1.hasError('email') && !emailFormControl1.hasError('required')" style="font-family: 'Estedad-Regular';">
                     لطفا یک ایمیل صحیح وارد کنید
                 </mat-error>
-                <mat-error *ngIf="emailFormControl1.hasError('required')">
+                <mat-error *ngIf="emailFormControl1.hasError('required')"  style="font-family: 'Estedad-Regular';">
                     وارد کردن ایمیل <strong>اجباری</strong> است
                 </mat-error>
             </mat-form-field>
@@ -45,12 +45,12 @@
     <div>
         <form class="example-form">
             <mat-form-field class="example-full-width" style="text-align: right;">
-                <mat-label>شماره همراه</mat-label>
-                <input matInput [formControl]="emailFormControl2" placeholder="09*********" style="text-align: right;" [(ngModel)]="publicservice.PhoneNumber">
-                <mat-error *ngIf="emailFormControl2.hasError('email') && !emailFormControl2.hasError('required')">
+                <mat-label style="font-family: 'Estedad-SemiBold';">شماره همراه</mat-label>
+                <input matInput [formControl]="emailFormControl2" id="inputPhone" placeholder="09*********" style="text-align: right;" [(ngModel)]="publicservice.PhoneNumber" >
+                <mat-error *ngIf="emailFormControl2.hasError('email') && !emailFormControl2.hasError('required')" style="font-family: 'Estedad-Regular';">
                     لطفا یک شماره همراه صحیح وارد کنید
                 </mat-error>
-                <mat-error *ngIf="emailFormControl2.hasError('required')">
+                <mat-error *ngIf="emailFormControl2.hasError('required')" style="font-family: 'Estedad-Regular';">
                     وارد کردن شماره همراه <strong>اجباری</strong> است
                 </mat-error>
             </mat-form-field>
@@ -59,12 +59,15 @@
     <div>
         <form class="example-form">
             <mat-form-field class="example-full-width" style="text-align: right;">
-                <mat-label>رمز عبور</mat-label>
-                <input matInput [formControl]="emailFormControl3" style="text-align: right;" [(ngModel)]="publicservice.Password" type="password">
-                <mat-error *ngIf=" !emailFormControl3.hasError('required')">
+                <mat-label style="font-family: 'Estedad-SemiBold';">رمز عبور</mat-label>
+                <input matInput [formControl]="emailFormControl3" id="inputPassword" style="text-align: right;" [(ngModel)]="publicservice.Password" [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-error *ngIf=" !emailFormControl3.hasError('required')" style="font-family: 'Estedad-Regular';">
                     لطفا یک رمز عبور صحیح وارد کنید
                 </mat-error>
-                <mat-error *ngIf="emailFormControl3.hasError('required')">
+                <mat-error *ngIf="emailFormControl3.hasError('required')" style="font-family: 'Estedad-Regular';">
                     وارد کردن رمز عبور <strong>اجباری</strong> است
                 </mat-error>
             </mat-form-field>
@@ -72,7 +75,7 @@
     </div>
 </div>
     <div>
-        <button mat-raised-button (click)="signUp()"  style="font-size:15px;font-family: 'Estedad-Black'; color: #52006b; background-color: #6af9c5;"  >ثبت نام</button>
+        <button mat-raised-button (click)="signUp()" id="signUpButton"  style="font-size:15px;font-family: 'Estedad-Black'; color: #52006b; background-color: #6af9c5;"  >ثبت نام</button>
     </div>
     <div>
         <button (click)="login()" mat-button [mat-dialog-close]="true" style="color: #00b583; font-family:'Estedad-Black' ;" >ورود</button>

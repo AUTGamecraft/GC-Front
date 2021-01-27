@@ -13,20 +13,23 @@
 
         <form >
             <mat-form-field style="width: 70%; text-align: right;">
-              <mat-label >موبایل</mat-label>
-              <input matInput [(ngModel)]="publicservice.Email" [ngModelOptions]="{standalone: true}">
+              <mat-label style="font-family: 'Estedad-SemiBold';" >ایمیل</mat-label>
+              <input matInput [(ngModel)]="publicservice.Email" id="inputEmail" [ngModelOptions]="{standalone: true}">
             </mat-form-field>
     
-            <mat-form-field style="width: 70%; text-align: right;" >
-                <mat-label >رمز عبور</mat-label>
-                <input matInput [(ngModel)]="publicservice.Password" [ngModelOptions]="{standalone: true}">
+            <mat-form-field style="width: 70%; text-align: right;margin-top: 2%;" >
+                <mat-label style="font-family: 'Estedad-SemiBold';" >رمز عبور</mat-label>
+                <input matInput [(ngModel)]="publicservice.Password" id="inputPassword" [ngModelOptions]="{standalone: true}" [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
               </mat-form-field>
          
           </form>
           <div style="direction: rtl; text-align: center;  ;">
      
             <div>
-                <button mat-raised-button (click)="Login()"   style="font-size:15px;font-family: 'Estedad-Black'; color: #52006b; background-color: #6af9c5; margin-top: 10%;" >ورود</button>
+                <button mat-raised-button (click)="Login()" id="loginButton"   style="font-size:15px;font-family: 'Estedad-Black'; color: #52006b; background-color: #6af9c5; margin-top: 10%;" >ورود</button>
             </div>
             <div>
                 <button mat-button (click)="signup()" [mat-dialog-close]="true" style="color: #00b583; font-family:'Estedad-Black'; ">ثبت نام</button>

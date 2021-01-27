@@ -7,7 +7,7 @@ import { PublicService } from '../public.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+hide = true;
   constructor( private router: Router,public publicservice: PublicService) { }
   
   signup(): void {
@@ -15,6 +15,20 @@ export class LoginComponent implements OnInit {
     this.router.navigate(navigationDetails);
   }
   ngOnInit(): void {
+    var inputEmail = document.getElementById("inputEmail");
+    inputEmail.addEventListener("keyup",function(event){
+      if(event.keyCode == 13){
+        event.preventDefault();
+        document.getElementById("loginButton").click();
+      }
+    })
+    var inputPassword = document.getElementById("inputPassword");
+    inputPassword.addEventListener("keyup",function(event){
+      if(event.keyCode == 13){
+        event.preventDefault();
+        document.getElementById("loginButton").click();
+      }
+    })
   }
   Login(){
     this.publicservice.Login().then(r=>{

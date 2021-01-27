@@ -12,7 +12,7 @@ import { PublicService } from '../public.service';
 
 
 export class SignUpPageComponent implements OnInit {
-  
+  hide = true;
   emailFormControl1 = new FormControl('', [
     Validators.required,
     Validators.email,
@@ -28,14 +28,44 @@ export class SignUpPageComponent implements OnInit {
   emailFormControl4 = new FormControl('', [
     Validators.required,
   ]);
-  constructor( private router: Router,public publicservice : PublicService) { }
+  constructor( private router: Router,public publicservice : PublicService) {
+   }
   login(): void {
     const navigationDetails: string[] = ['login'];
     this.router.navigate(navigationDetails);
   }
   
   ngOnInit(): void {
+    var inputName = document.getElementById("inputName");
+    var inputEmail = document.getElementById("inputEmail");
+    var inputPhone = document.getElementById("inputPhone");
+    var inputPassword = document.getElementById("inputPassword");
+    inputEmail.addEventListener("keyup",function(event){
+      if(event.keyCode == 13){
+        event.preventDefault();
+        document.getElementById("signUpButton").click();
+      }
+    })
+    inputName.addEventListener("keyup",function(event){
+      if(event.keyCode == 13){
+        event.preventDefault();
+        document.getElementById("signUpButton").click();
+      }
+    })
+    inputPhone.addEventListener("keyup",function(event){
+      if(event.keyCode == 13){
+        event.preventDefault();
+        document.getElementById("signUpButton").click();
+      }
+    })
+    inputPassword.addEventListener("keyup",function(event){
+      if(event.keyCode == 13){
+        event.preventDefault();
+        document.getElementById("signUpButton").click();
+      }
+    })
   }
+
   signUp(){
     this.publicservice.SignUp().then(r=>{
       if(r.error == "" || r.error == undefined || r.error == null)

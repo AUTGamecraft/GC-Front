@@ -35,7 +35,7 @@ export class PublicService {
     this.Authorization = localStorage.getItem("Authorization");
     // this.dialog..PublicService=this;
     // this.Mockup();
-    // this.Texts.Init();
+    this.Texts.Init();
   }
 
 
@@ -66,7 +66,6 @@ export class PublicService {
     return body || {};
   }
   private handleError(error: any) {
-
     // In a real world app, we might send the error to remote logging infrastructure
     let errMsg = JSON.parse(error._body).ExceptionMessage;//error.message || 'Server error';
     console.error(errMsg); // log to console instead
@@ -95,6 +94,7 @@ export class PublicService {
       .catch(this.handleError);
     ret.then(r => {
       this.APICalls.SignUp = false;
+      debugger;
       if(r.error != ""){
         this.snackbar.open(r.error,'Undo',{duration:2000});
       }

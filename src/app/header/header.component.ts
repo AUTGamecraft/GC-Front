@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { LoginComponent } from '../login/login.component';
 import { SignUpPageComponent } from '../sign-up-page/sign-up-page.component';
 import { Router } from '@angular/router';
+import { PublicService } from '../public.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor( private router: Router) {
+  constructor( private router: Router,public publicservice:PublicService) {
 
   }
 
