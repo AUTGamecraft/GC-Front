@@ -8,16 +8,12 @@ import { LoginComponent } from './login/login.component';
 import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
 
 const routes: Routes = [
-  {path: 'dashboard-media',component:DashboardMediaComponent},
-  {path: 'signup',component:SignUpPageComponent},
-  {path: 'dashboard-event',component:DashboardEventComponent},
-  {path: 'home',component:HomeComponent,
-
-  children:[
-    {path:'login',component:LoginComponent}
-  ]
-},
-  {path: 'login',component:LoginComponent},
+  { path: '', component: HomeComponent },
+  { path: 'dashboard-media', component: DashboardMediaComponent },
+  { path: 'signup', component: SignUpPageComponent },
+  { path: 'dashboard-event', component: DashboardEventComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
 ];
 
 

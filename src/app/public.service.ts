@@ -101,10 +101,8 @@ export class PublicService {
       
     ret.then(r => {
       this.APICalls.SignUp = false;
-      if(r.error != ""){
+      if(r.error != null){
         this.snackbar.open(r.error,'Undo',{duration:2000});
-      }
-      else{
       }
     }).catch(e => {
       this.APICalls.SignUp = false;
@@ -141,32 +139,7 @@ export class PublicService {
     });
     return ret;
   }
-  GetUser(): Promise<any> {
-    this.APICalls.GetUser = true;
-    let body = JSON.stringify({
-      "action": "GetUser",
-      "par1": "",
-      "par2": "",
-      "par3": "",
-      "par4": "",
-      "par5": ""
-    });
-    let headers = new Headers({
-      'Content-Type': 'application/json', 'Authorization': 'token ' + this.Authorization
-    });
-    let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.post(this.ApiUrl + '/user/get', body, options)
-      .toPromise()
-      .then((r) => this.extractData(r, this))
-      .catch(this.handleError);
-    ret.then(r => {
-      this.User = r.data.User;
-      this.APICalls.GetUser = false;
-    }).catch(e => {
-      this.APICalls.GetUser = false;
-    });
-    return ret;
-  }
+
 
 
 

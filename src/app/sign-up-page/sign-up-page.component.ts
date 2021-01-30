@@ -4,6 +4,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { LoginComponent } from '../login/login.component';
 import { Router } from '@angular/router';
 import { PublicService } from '../public.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
+
 @Component({
   selector: 'app-sign-up-page',
   templateUrl: './sign-up-page.component.html',
@@ -19,60 +21,64 @@ export class SignUpPageComponent implements OnInit {
   ]);
   emailFormControl2 = new FormControl('', [
     Validators.required,
-    Validators.pattern("09(0[1-2]|1[0-9]|3[0-9]|2[0-1])-?[0-9]{3}-?[0-9]{4}"),
+    Validators.pattern("^09[0-9]{9}"),
   ]);
   emailFormControl3 = new FormControl('', [
     Validators.required,
-    Validators.minLength(3)
+    Validators.minLength(8)
   ]);
   emailFormControl4 = new FormControl('', [
     Validators.required,
   ]);
-  constructor( private router: Router,public publicservice : PublicService) {
-   }
+  constructor(private router: Router, public publicservice: PublicService,private snackbar:MatSnackBar,private dialog : MatDialog) {
+  }
   login(): void {
     const navigationDetails: string[] = ['login'];
     this.router.navigate(navigationDetails);
   }
-  
+
   ngOnInit(): void {
     var inputName = document.getElementById("inputName");
     var inputEmail = document.getElementById("inputEmail");
     var inputPhone = document.getElementById("inputPhone");
     var inputPassword = document.getElementById("inputPassword");
-    inputEmail.addEventListener("keyup",function(event){
-      if(event.keyCode == 13){
+    inputEmail.addEventListener("keyup", function (event) {
+      if (event.keyCode == 13) {
         event.preventDefault();
         document.getElementById("signUpButton").click();
       }
     })
-    inputName.addEventListener("keyup",function(event){
-      if(event.keyCode == 13){
+    inputName.addEventListener("keyup", function (event) {
+      if (event.keyCode == 13) {
         event.preventDefault();
         document.getElementById("signUpButton").click();
       }
     })
-    inputPhone.addEventListener("keyup",function(event){
-      if(event.keyCode == 13){
+    inputPhone.addEventListener("keyup", function (event) {
+      if (event.keyCode == 13) {
         event.preventDefault();
         document.getElementById("signUpButton").click();
       }
     })
-    inputPassword.addEventListener("keyup",function(event){
-      if(event.keyCode == 13){
+    inputPassword.addEventListener("keyup", function (event) {
+      if (event.keyCode == 13) {
         event.preventDefault();
         document.getElementById("signUpButton").click();
       }
     })
   }
 
-  signUp(){
-    this.publicservice.SignUp().then(r=>{
-      if(r.error == "" || r.error == undefined || r.error == null)
-      {
-        this.router.navigate(['login']);
-      }
-    });
+  signUp() {
+    if (this.emailFormControl1.status == "VALID" && this.emailFormControl2.status == "VALID" && this.emailFormControl3.status == "VALID" && this.emailFormControl4.status == "VALID") {
+      this.publicservice.SignUp().then(r => {
+        if (r.error == null) {
+          this.router.navigate(['login']);
+        }
+      });
+    }
+    else{
+      this.snackbar.open("مشکلی وجود دارد!",'',{duration:2000,panelClass:["snackbar"]});
+    }
 
   }
 }

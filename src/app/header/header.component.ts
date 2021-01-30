@@ -10,8 +10,6 @@ import { PublicService } from '../public.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  displayModeLogOut = 'none';
-  displayModeLogIn = 'block';
   constructor(private router: Router, public publicservice: PublicService) {
   }
 
