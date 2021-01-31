@@ -13,10 +13,10 @@
                                 <button mat-button class="normal-button">{{publicservice.Texts.Texts["header2"]}}</button>
                             </div>
                             <div class="right-button">
-                                <button mat-button (click)="Workshop()" class="normal-button">{{publicservice.Texts.Texts["header3"]}}</button>
+                                <button mat-button (click)="Workshop(workshop)" class="normal-button">{{publicservice.Texts.Texts["header3"]}}</button>
                             </div>
                             <div class="right-button">
-                                <button mat-button class="normal-button">{{publicservice.Texts.Texts["header4"]}}</button>
+                                <button mat-button (click)="Talk(talk)" class="normal-button">{{publicservice.Texts.Texts["header4"]}}</button>
                             </div>
                             <div class="right-button">
                                 <button mat-button class="normal-button">{{publicservice.Texts.Texts["header5"]}}</button>
@@ -154,18 +154,18 @@
             </div>
         </div>
     </div>
-    <div class="green-wave-above-wrokshops">
+    <div class="green-wave-above-wrokshops" #workshop>
         <h1 class="collapse-header">
             {{publicservice.Texts.Texts["home15"]}}</h1>
 
     </div>
-    <div class="green-rectangle-under-workshops">
+    <div class="green-rectangle-under-workshops" >
     </div>
     <div class="workshops-background">
         <div class="workshops-whole-collapse">
             <div class="orange-collapse">
             </div>
-            <div>
+            <div >
                 <div class="components-collapse">
                     <h3 class="collapse-title">
                         {{publicservice.Texts.Texts["home16"]}}</h3>
@@ -216,7 +216,7 @@
     </div>
     <div class="green-wave-under-workshops">
     </div>
-    <div class="talks-title-div">
+    <div class="talks-title-div" #talk>
         <h1 class="talks-title">
             {{publicservice.Texts.Texts["home26"]}}</h1>
     </div>
