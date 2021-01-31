@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import{ Router} from '@angular/router';
+import { PublicService } from '../public.service';
 @Component({
   selector: 'app-dashboard-event',
   templateUrl: './dashboard-event.component.html',
@@ -10,7 +11,7 @@ export class DashboardEventComponent implements OnInit {
   workshops = 'deactive'
   iconW = 'keyboard_arrow_down'
   iconT = 'keyboard_arrow_down'
-  constructor(private router:Router) { }
+  constructor(private router:Router,public publicservice:PublicService) { }
 
   ngOnInit(): void {
   }

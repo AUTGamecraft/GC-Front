@@ -4,34 +4,34 @@
         <div>
             <img class="user-image" src="assets/images/masoud.jpg">
         </div>
-        <p class="user-name">ابوالفضل بیهقی</p>
-        <button mat-button style="background-color: #eceff1;" class="buttons" (click)="events()">رویداد ها</button>
-        <button mat-button (click)="media()" style="background-color: #fafafa;" class="buttons">محتوا ها</button>
-        <button mat-button style="background-color: #fafafa;" class="buttons">وضعیت تیم</button>
-        <button mat-stroked-button class="outlined-button">افزودن
-            محتوا</button>
+        <p class="user-name">{{publicservice.Texts.Texts["dash-event1"]}}</p>
+        <button mat-button style="background-color: #eceff1;" class="buttons"
+            (click)="events()">{{publicservice.Texts.Texts["dash-event2"]}}</button>
+        <button mat-button (click)="media()" style="background-color: #fafafa;"
+            class="buttons">{{publicservice.Texts.Texts["dash-event3"]}}</button>
+        <button mat-button style="background-color: #fafafa;"
+            class="buttons">{{publicservice.Texts.Texts["dash-event4"]}}</button>
+        <button mat-stroked-button class="outlined-button">{{publicservice.Texts.Texts["dash-event5"]}}</button>
     </div>
     <div class="left-part">
-        <h1 class="events-title">رویداد ها</h1>
-        <h3 class="workshops-title">
-            کارگاه ها</h3>
+        <h1 class="events-title">{{publicservice.Texts.Texts["dash-event6"]}}</h1>
+        <h3 class="workshops-title">{{publicservice.Texts.Texts["dash-event7"]}}</h3>
         <div class="collapse">
             <div class="orange-collapse">
             </div>
             <div>
                 <div class="components">
                     <h3 class="component-title">
-                        کارگاه بازی سازی</h3>
+                        {{publicservice.Texts.Texts["dash-event8"]}}</h3>
                     <h4 class="component-subject">
-                        سه شنبه 2 بهمن 99</h4>
+                        {{publicservice.Texts.Texts["dash-event9"]}}</h4>
                     <h4 class="component-subject">
-                        11 نفر</h4>
+                        {{publicservice.Texts.Texts["dash-event10"]}}</h4>
                     <h4 class="component-subject">
-                        مبتدی</h4>
-                    <button mat-stroked-button class="register-button">ثبت
-                        نام</button>
+                        {{publicservice.Texts.Texts["dash-event11"]}}</h4>
+                    <button mat-stroked-button class="register-button">{{publicservice.Texts.Texts["dash-event12"]}}</button>
                     <button mat-button class="discription"
-                        (click)="workshops =(workshops == 'active' ? 'deactive' : 'active');iconW = (iconW == 'keyboard_arrow_down' ? 'keyboard_arrow_up' : 'keyboard_arrow_down') ">توضیحات
+                        (click)="workshops =(workshops == 'active' ? 'deactive' : 'active');iconW = (iconW == 'keyboard_arrow_down' ? 'keyboard_arrow_up' : 'keyboard_arrow_down') ">{{publicservice.Texts.Texts["dash-event13"]}}
                         <mat-icon class="icon" [inline]="true">{{iconW}}</mat-icon>
                     </button>
                 </div>
@@ -39,21 +39,10 @@
                     <div class="workshops-inside">
                         <div>
                             <p class="workshops-discription">
-                                تاریخ بِیهَقی یا تاریخ مسعودی نام کتابی نوشتهٔ ابوالفضل محمد بن حسین بیهقی است که
-                                موضوع
-                                اصلی
-                                آن
-                                تاریخ پادشاهی مسعود غزنوی و دودمان غزنوی است. این کتاب علاوه بر تاریخ غزنویان،
-                                قسمت‌هایی
-                                دربارهٔ
-                                صفاریان، سامانیان و دورهٔ پیش از برآمدن و پادشاهی محمود غزنوی دارد. نسخهٔ اصلی کتاب
-                                حدود
-                                ۳۰
-                                جلد
-                                بوده</p>
+                                {{publicservice.Texts.Texts["dash-event14"]}}</p>
                         </div>
                         <div class="presenters-title-div">
-                            <h1 class="presenters-title">ارائه کنندگان</h1>
+                            <h1 class="presenters-title">{{publicservice.Texts.Texts["dash-event15"]}}</h1>
                         </div>
                         <div class="presenter-card">
                             <div class="presenter-card-inside">
@@ -61,10 +50,9 @@
                                     <img class="presenter-image" src="assets/images/masoud.jpg">
                                 </div>
                                 <h2 class="presenter-name">
-                                    مسعود فراستی
+                                    {{publicservice.Texts.Texts["dash-event16"]}}
                                 </h2>
-                                <h4 class="presenter-about">منتقد درجه
-                                    یک</h4>
+                                <h4 class="presenter-about">{{publicservice.Texts.Texts["dash-event17"]}}</h4>
                             </div>
                         </div>
                     </div>
@@ -74,7 +62,7 @@
         </div>
         <div>
             <h3 class="talks-title">
-                تاک ها</h3>
+                {{publicservice.Texts.Texts["dash-event18"]}}</h3>
         </div>
         <div class="collapse">
             <div class="pink-collapse">
@@ -82,39 +70,26 @@
             <div>
                 <div class="components">
                     <h3 class="component-title">
-                        گفتگوی کشور ها</h3>
+                        {{publicservice.Texts.Texts["dash-event19"]}}</h3>
                     <h4 class="component-subject">
-                        سه شنبه 2 بهمن 99</h4>
+                        {{publicservice.Texts.Texts["dash-event20"]}}</h4>
                     <h4 class="component-subject">
-                        11 نفر</h4>
+                        {{publicservice.Texts.Texts["dash-event21"]}}</h4>
                     <h4 class="component-subject">
-                        مبتدی</h4>
-                    <button mat-stroked-button class="register-button">ثبت
-                        نام</button>
+                        {{publicservice.Texts.Texts["dash-event22"]}}</h4>
+                    <button mat-stroked-button class="register-button">{{publicservice.Texts.Texts["dash-event23"]}}</button>
                     <button mat-button class="discription"
-                        (click)="talks = (talks == 'active' ? 'deactive' : 'active') ;iconT = (iconT == 'keyboard_arrow_down' ? 'keyboard_arrow_up' : 'keyboard_arrow_down') ">توضیحات
+                        (click)="talks = (talks == 'active' ? 'deactive' : 'active') ;iconT = (iconT == 'keyboard_arrow_down' ? 'keyboard_arrow_up' : 'keyboard_arrow_down') ">{{publicservice.Texts.Texts["dash-event24"]}}
                         <mat-icon class="icon" [inline]="true">{{iconT}}</mat-icon>
                     </button>
                 </div>
                 <div [class]="talks">
                     <div class="workshops-inside">
                         <div>
-                            <p class="workshops-discription">
-                                تاریخ بِیهَقی یا تاریخ مسعودی نام کتابی نوشتهٔ ابوالفضل محمد بن حسین بیهقی است که
-                                موضوع
-                                اصلی
-                                آن
-                                تاریخ پادشاهی مسعود غزنوی و دودمان غزنوی است. این کتاب علاوه بر تاریخ غزنویان،
-                                قسمت‌هایی
-                                دربارهٔ
-                                صفاریان، سامانیان و دورهٔ پیش از برآمدن و پادشاهی محمود غزنوی دارد. نسخهٔ اصلی کتاب
-                                حدود
-                                ۳۰
-                                جلد
-                                بوده</p>
+                            <p class="workshops-discription">{{publicservice.Texts.Texts["dash-event25"]}}</p>
                         </div>
                         <div class="presenters-title-div">
-                            <h1 class="presenters-title">ارائه کنندگان</h1>
+                            <h1 class="presenters-title">{{publicservice.Texts.Texts["dash-event26"]}}</h1>
                         </div>
                         <div class="presenter-card">
                             <div class="presenter-card-inside">
@@ -122,10 +97,9 @@
                                     <img class="presenter-image" src="assets/images/masoud.jpg">
                                 </div>
                                 <h2 class="presenter-name">
-                                    مسعود فراستی
+                                    {{publicservice.Texts.Texts["dash-event27"]}}  
                                 </h2>
-                                <h4 class="presenter-about">منتقد درجه
-                                    یک</h4>
+                                <h4 class="presenter-about">{{publicservice.Texts.Texts["dash-event28"]}} </h4>
                             </div>
                         </div>
                     </div>
