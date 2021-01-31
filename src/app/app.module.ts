@@ -17,8 +17,6 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatCardModule} from '@angular/material/card';
 import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
 import { HomeComponent } from './home/home.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
 import {FaNumPipe} from 'ngx-persian';
@@ -31,8 +29,6 @@ import { DashboardMediaComponent } from './dashboard-media/dashboard-media.compo
     LoginComponent,
     SignUpPageComponent,
     HomeComponent,
-    HeaderComponent,
-    FooterComponent,
     DashboardEventComponent,
     DashboardMediaComponent,
    

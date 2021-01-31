@@ -12,11 +12,28 @@ export class HomeComponent implements OnInit {
   workshops = 'deactive'
   iconW = 'keyboard_arrow_down'
   iconT = 'keyboard_arrow_down'
-  constructor(public publicservice:PublicService) { 
+  constructor(public publicservice:PublicService,public router:Router) { 
   }
 
   ngOnInit(): void {
     
   }
+  Signup() {
+    const navigationDetails2: string[] = ['signup'];
+    this.router.navigate(navigationDetails2);
+  }
+  login(): void {
+    const navigationDetails: string[] = ['login'];
+    this.router.navigate(navigationDetails);
+  }
+  logOut() {
+    this.publicservice.logedIn = false;
+    localStorage.removeItem("Authorization");
+  }
+  Dashboard(){
+    this.router.navigate(['dashboard-event']);  
+  }
+  Workshop(){
 
+  }
 }
