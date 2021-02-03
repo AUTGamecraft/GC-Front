@@ -11,11 +11,11 @@
 
 
 
-<div  style="background-color: white ; height: 48% ; margin-top: 15%;  text-align: center; border-radius: 20px;padding: 20px 40px 20px 40px;">
+<div  style="background-color: white ; height: 48% ; margin-top: 15%;  text-align: center; border-radius: 20px;padding: 20px 40px 20px 40px;width: 20%;">
     <div style="padding: 10px;">
     <div>
         <form class="example-form">
-            <mat-form-field class="example-full-width" style="text-align: right;">
+            <mat-form-field class="example-full-width" style="text-align: right;width: 100%;">
              <mat-label style="font-family: 'Estedad-SemiBold';">نام و نام خانوادگی</mat-label>
                 <input matInput [formControl]="emailFormControl4" id="inputName" style="text-align: right;font-family: 'Estedad-Regular';" [(ngModel)] = "publicservice.Name">
                 <mat-error *ngIf=" !emailFormControl4.hasError('required')">
@@ -29,7 +29,7 @@
     </div>
     <div>
         <form class="example-form">
-            <mat-form-field class="example-full-width" style="text-align: right;">
+            <mat-form-field class="example-full-width" style="text-align: right;width: 100%;">
                 <mat-label style="font-family: 'Estedad-SemiBold';">ایمیل</mat-label>
                 <input matInput [formControl]="emailFormControl1" id="inputEmail" placeholder="Ex. pat@example.com"
                     style="text-align: right;font-family: 'Estedad-Regular';" [(ngModel)]="publicservice.Email">
@@ -44,7 +44,7 @@
     </div>
     <div>
         <form class="example-form">
-            <mat-form-field class="example-full-width" style="text-align: right;">
+            <mat-form-field class="example-full-width" style="text-align: right;width: 100%;">
                 <mat-label style="font-family: 'Estedad-SemiBold';">شماره همراه</mat-label>
                 <input matInput [formControl]="emailFormControl2" id="inputPhone" placeholder="*********09" style="text-align: right;font-family: 'Estedad';" [(ngModel)]="publicservice.PhoneNumber" type="text" pattern="[0-9]*" >
                 <mat-error *ngIf="emailFormControl2.hasError('pattern') && !emailFormControl2.hasError('required')" style="font-family: 'Estedad-Regular';">
@@ -58,18 +58,19 @@
     </div>
     <div>
         <form class="example-form">
-            <mat-form-field class="example-full-width" style="text-align: right;padding-bottom: 10px;">
+            <mat-form-field class="example-full-width" style="text-align: right;padding-bottom: 10px;width: 100%;">
                 <mat-label style="font-family: 'Estedad-SemiBold';">رمز عبور</mat-label>
                 <input matInput [formControl]="emailFormControl3" id="inputPassword" style="text-align: right;font-family: 'Estedad-Regular';" [(ngModel)]="publicservice.Password" [type]="hide ? 'password' : 'text'">
-                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                </button>
                 <mat-error *ngIf="emailFormControl3.hasError('minLength') && !emailFormControl3.hasError('required')" style="font-family: 'Estedad-Regular';">
                     حداقل تعداد کاراکتر های رمز 8 عدد می باشد
                 </mat-error>
                 <mat-error *ngIf="emailFormControl3.hasError('required')" style="font-family: 'Estedad-Regular';">
                     وارد کردن رمز عبور <strong>اجباری</strong> است
                 </mat-error>
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+
             </mat-form-field>
         </form>
     </div>

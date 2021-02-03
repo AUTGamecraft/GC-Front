@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 // import { User, Car, Service } from './models/Models'
 import { Texts } from './models/Texts';
 import { Http, HttpModule, Headers, RequestOptions, Response } from '@angular/http';
-// import { MatDialog } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 // import { AppDialogComponentDialog } from './app-dialog/app-dialog.component';
 import {MatSnackBar} from '@angular/material/snack-bar';
-
+import {ErrorDialogComponent} from '../app/error-dialog/error-dialog.component'
 
 
 @Injectable({
@@ -24,6 +24,7 @@ export class PublicService {
   private snackbar: MatSnackBar;
   public Token: String ="";
   public logedIn: boolean = false;
+  
   Mockup() {
 
 
@@ -33,7 +34,7 @@ export class PublicService {
 
 
 
-  constructor(private http: Http) {
+  constructor(private http: Http,public dialog: MatDialog) {
     this.Authorization = localStorage.getItem("Authorization");
     if(this.Authorization != null){
       this.logedIn=true;
@@ -48,6 +49,7 @@ export class PublicService {
     if (res.status < 200 || res.status >= 300) {
       throw new Error('Bad response status: ' + res.status);
     }
+    
 
     let body = res.json();
 
@@ -73,8 +75,8 @@ export class PublicService {
   }
   private handleError(error: any) {
     // In a real world app, we might send the error to remote logging infrastructure
- 
-    let errMsg = JSON.parse(error._body).ExceptionMessage;//error.message || 'Server error';
+  
+    let errMsg = JSON.parse(error._body).error;//error.message || 'Server error';
     console.error(errMsg); // log to console instead
     return Promise.reject(errMsg);
   }
@@ -97,7 +99,7 @@ export class PublicService {
     let ret: Promise<any> = this.http.post(this.ApiUrl + '/users/sign_up/', body, options)
       .toPromise()
       .then((r) => this.extractData(r, this))
-      .catch(this.handleError);
+      .catch(this.handleError).catch(this.DisplayErrorDialog);
       
     ret.then(r => {
       this.APICalls.SignUp = false;
@@ -126,13 +128,13 @@ export class PublicService {
       .catch(this.handleError);
     ret.then(r => {
       this.APICalls.Login = false;
-      if(r.error != null){
-        this.snackbar.open(r.message,'Undo',{duration:2000});
-      }
-      else{
+      if(r.error == null || r.error == undefined){
         this.Authorization = r.access;
         localStorage.setItem("Authorization", this.Authorization);
         this.logedIn = true;
+      }
+      else{
+        
       }
     }).catch(e => {
       this.APICalls.Login = false;
@@ -149,11 +151,11 @@ export class PublicService {
 
 
 
-  // DisplayErrorDialog(Error: string) {
-  //   let dialogRef = this.dialog.open(AppDialogComponentDialog, {
-  //     data: { Type: 'Error', Error: Error }
-  //   });
-  // }
+  DisplayErrorDialog(Error: any) {
+    let dialogRef = this.dialog.open(ErrorDialogComponent, {
+      data: { Type: Error}
+    });
+  }
 
   // DisplaySuccessDialog(Message: string) {
   //   let dialogRef = this.dialog.open(AppDialogComponentDialog, {

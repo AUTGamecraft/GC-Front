@@ -22,6 +22,7 @@ import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
 import {FaNumPipe} from 'ngx-persian';
 import { DashboardEventComponent } from './dashboard-event/dashboard-event.component';
 import { DashboardMediaComponent } from './dashboard-media/dashboard-media.component';
+import { ErrorDialogComponent } from './error-dialog/error-dialog.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { DashboardMediaComponent } from './dashboard-media/dashboard-media.compo
     HomeComponent,
     DashboardEventComponent,
     DashboardMediaComponent,
+    ErrorDialogComponent,
    
     
 
