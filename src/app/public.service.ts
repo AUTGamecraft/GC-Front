@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 // import { User, Car, Service } from './models/Models'
 import { Texts } from './models/Texts';
 import { Http, HttpModule, Headers, RequestOptions, Response } from '@angular/http';
-import { MatDialog } from '@angular/material/dialog';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 // import { AppDialogComponentDialog } from './app-dialog/app-dialog.component';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {ErrorDialogComponent} from '../app/error-dialog/error-dialog.component'
@@ -15,16 +15,15 @@ export class PublicService {
   public APICalls: any = {};
   public Authorization: string = "";
   public User: any = {};
+  // public ApiUrl: String = "http://gaming.ce.aut.ac.ir:50077";
   public ApiUrl: String = "http://127.0.0.1:8000";
   public Email: String = "";
   public PhoneNumber: String = "";
   public Password: String = "";
   public Name: String ="";
   Texts: Texts = new Texts();
-  private snackbar: MatSnackBar;
   public Token: String ="";
   public logedIn: boolean = false;
-  
   Mockup() {
 
 
@@ -58,12 +57,12 @@ export class PublicService {
 
     // }
 
-    // if (body.alerts) {
-    //   that.DisplayErrorDialog(body.alerts);
-    //   Promise.reject(body.alerts);
-    // } else {
+    if (body.error) {
+      that.DisplayErrorDialog(body.message);
+      Promise.reject(body.error);
+    } else {
       return body || {};
-    // }
+    }
 
   }
   private extractData2(res: Response) {
@@ -74,9 +73,10 @@ export class PublicService {
     return body || {};
   }
   private handleError(error: any) {
-    // In a real world app, we might send the error to remote logging infrastructure
   
-    let errMsg = JSON.parse(error._body).error;//error.message || 'Server error';
+    // In a real world app, we might send the error to remote logging infrastructure
+    let errMsg = JSON.parse(error._body);//error.message || 'Server error';
+
     console.error(errMsg); // log to console instead
     return Promise.reject(errMsg);
   }
@@ -84,6 +84,7 @@ export class PublicService {
 
 
   SignUp(): Promise<any> {
+    var that = this;
     this.APICalls.SignUp = true;
     let body = JSON.stringify({
       "password": this.Password,
@@ -99,19 +100,20 @@ export class PublicService {
     let ret: Promise<any> = this.http.post(this.ApiUrl + '/users/sign_up/', body, options)
       .toPromise()
       .then((r) => this.extractData(r, this))
-      .catch(this.handleError).catch(this.DisplayErrorDialog);
+      .catch(this.handleError);
       
     ret.then(r => {
       this.APICalls.SignUp = false;
-      if(r.error != null){
-        this.snackbar.open(r.error,'Undo',{duration:2000});
-      }
     }).catch(e => {
       this.APICalls.SignUp = false;
+      that.dialog.open(ErrorDialogComponent,{data:{
+        type: e.message 
+      }});
     });
     return ret;
   }
   Login(): Promise<any> {
+    var that = this;
     this.APICalls.Login = true;
     let body = JSON.stringify({
       "email": this.Email,
@@ -138,6 +140,32 @@ export class PublicService {
       }
     }).catch(e => {
       this.APICalls.Login = false;
+      that.dialog.open(ErrorDialogComponent,{data:{
+        type: e.message 
+      }});
+    });
+    return ret;
+  }
+  
+  getTalks(): Promise<any> {
+    var that = this;
+    this.APICalls.SignUp = true;
+    let headers = new Headers({
+      'Content-Type': 'application/json'
+    });
+    let options = new RequestOptions({ headers: headers });
+    let ret: Promise<any> = this.http.get(this.ApiUrl + '/talk/', options)
+      .toPromise()
+      .then((r) => this.extractData(r, this))
+      .catch(this.handleError);
+      
+    ret.then(r => {
+      this.APICalls.SignUp = false;
+    }).catch(e => {
+      this.APICalls.SignUp = false;
+      that.dialog.open(ErrorDialogComponent,{data:{
+        type: e.message 
+      }});
     });
     return ret;
   }
@@ -151,11 +179,11 @@ export class PublicService {
 
 
 
-  DisplayErrorDialog(Error: any) {
-    let dialogRef = this.dialog.open(ErrorDialogComponent, {
-      data: { Type: Error}
-    });
-  }
+  // DisplayErrorDialog(Error: any,that : any) {
+  //   let dialogRef = that.dialog.open(ErrorDialogComponent, {
+  //     data: { Type: Error}
+  //   });
+  // }
 
   // DisplaySuccessDialog(Message: string) {
   //   let dialogRef = this.dialog.open(AppDialogComponentDialog, {

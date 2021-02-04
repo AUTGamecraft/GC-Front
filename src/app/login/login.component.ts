@@ -44,12 +44,8 @@ export class LoginComponent implements OnInit {
   Login() {
     if (this.emailFormControl.status == "VALID" && this.passwordFormControl.status == "VALID") {
       this.publicservice.Login().then(r => {
-        console.log(r)
         if (r.error == null) {
           this.router.navigate(['home'])
-        }
-        else{
-          this.dialog.open(ErrorDialogComponent,{ data: { type: r.message } })
         }
       })
     }

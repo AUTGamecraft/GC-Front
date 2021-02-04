@@ -2,6 +2,7 @@ import { Expansion } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { PublicService } from '../public.service';
 import { Router } from '@angular/router';
+import * as moment from 'jalali-moment';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -12,7 +13,16 @@ export class HomeComponent implements OnInit {
   workshops = 'deactive'
   iconW = 'keyboard_arrow_down'
   iconT = 'keyboard_arrow_down'
+  talksArray : any = {};
   constructor(public publicservice:PublicService,public router:Router) { 
+    publicservice.getTalks().then((r) =>{
+      console.log(r);
+      this.talksArray = r.data;
+    })
+  
+    let todayJalali = moment().locale('fa').format('YYYY/M/D');
+    console.log(todayJalali);
+
   }
 
   ngOnInit(): void {

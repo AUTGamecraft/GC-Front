@@ -60,5 +60,7 @@ import { ErrorDialogComponent } from './error-dialog/error-dialog.component';
   providers: [
   ],
   bootstrap: [AppComponent]
+  ,
+  entryComponents:[ErrorDialogComponent],
 })
 export class AppModule { }
