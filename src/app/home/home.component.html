@@ -10,20 +10,24 @@
                         </div>
                         <div class="right-header">
                             <div class="right-button">
-                                <button mat-button class="normal-button">{{publicservice.Texts.Texts["header2"]}}</button>
+                                <button mat-button
+                                    class="normal-button">{{publicservice.Texts.Texts["header2"]}}</button>
                             </div>
                             <div class="right-button">
-                                <button mat-button (click)="Workshop(workshop)" class="normal-button">{{publicservice.Texts.Texts["header3"]}}</button>
+                                <button mat-button (click)="Workshop(workshop)"
+                                    class="normal-button">{{publicservice.Texts.Texts["header3"]}}</button>
                             </div>
                             <div class="right-button">
-                                <button mat-button (click)="Talk(talk)" class="normal-button">{{publicservice.Texts.Texts["header4"]}}</button>
+                                <button mat-button (click)="Talk(talk)"
+                                    class="normal-button">{{publicservice.Texts.Texts["header4"]}}</button>
                             </div>
                             <div class="right-button">
-                                <button mat-button class="normal-button">{{publicservice.Texts.Texts["header5"]}}</button>
+                                <button mat-button
+                                    class="normal-button">{{publicservice.Texts.Texts["header5"]}}</button>
                             </div>
                         </div>
                     </div>
-                    <div class="left-header" >
+                    <div class="left-header">
                         <div class="before-login" *ngIf="!publicservice.logedIn">
                             <div class="left-button">
                                 <button mat-button (click)="login()"
@@ -40,9 +44,10 @@
                                     class="normal-button">{{publicservice.Texts.Texts["header8"]}}</button>
                             </div>
                             <div class="left-button">
-                                <button mat-button class="normal-button">{{publicservice.Texts.Texts["header10"]}}</button>
+                                <button mat-button
+                                    class="normal-button">{{publicservice.Texts.Texts["header10"]}}</button>
                             </div>
-        
+
                             <div>
                                 <button mat-flat-button class="green-button"
                                     (click)="Dashboard()">{{publicservice.Texts.Texts["header9"]}}</button>
@@ -159,20 +164,20 @@
             {{publicservice.Texts.Texts["home15"]}}</h1>
 
     </div>
-    <div class="green-rectangle-under-workshops" >
+    <div class="green-rectangle-under-workshops">
     </div>
     <div class="workshops-background">
-        <div class="workshops-whole-collapse">
+        <div *ngFor="let workshop of workshopsArray;let i = index" class="workshops-whole-collapse">
             <div class="orange-collapse">
             </div>
-            <div>
+            <div style="width: 100%;">
                 <div class="components-collapse">
                     <h3 class="collapse-title">
-                        {{publicservice.Texts.Texts["home16"]}}</h3>
+                        {{workshop.title}}</h3>
                     <h4 class="collapse-subject">
-                        {{publicservice.Texts.Texts["home17"]}}</h4>
+                        {{workshopsDate[i]}}</h4>
                     <h4 class="collapse-subject">
-                        {{publicservice.Texts.Texts["home18"]}}</h4>
+                        {{workshop.capacity}} {{publicservice.Texts.Texts["home18"]}}</h4>
                     <h4 class="collapse-subject">
                         {{publicservice.Texts.Texts["home19"]}}</h4>
                     <div class="register-button-div">
@@ -180,15 +185,15 @@
                             class="register-button">{{publicservice.Texts.Texts["home20"]}}</button>
                     </div>
                     <button mat-button class="collapse"
-                        (click)="workshops =(workshops == 'active' ? 'deactive' : 'active');iconW = (iconW == 'keyboard_arrow_down' ? 'keyboard_arrow_up' : 'keyboard_arrow_down') ">{{publicservice.Texts.Texts["home21"]}}
-                        <mat-icon class="collapse-icon" [inline]="true">{{iconW}}</mat-icon>
+                        (click)="workshopsActive[i] =(workshopsActive[i] == 'active' ? 'deactive' : 'active');iconW[i] = (iconW[i] == 'keyboard_arrow_down' ? 'keyboard_arrow_up' : 'keyboard_arrow_down') ">{{publicservice.Texts.Texts["home21"]}}
+                        <mat-icon class="collapse-icon" [inline]="true">{{iconW[i]}}</mat-icon>
                     </button>
                 </div>
-                <div [class]="workshops">
+                <div [class]="workshopsActive[i]">
                     <div class="collapse-background">
                         <div>
                             <p class="collapse-about">
-                                {{publicservice.Texts.Texts["home22"]}}</p>
+                                {{workshop.content}}</p>
                         </div>
                         <div class="collapse-presenters-title-div">
                             <h1 class="collapse-persenters-title">
@@ -201,10 +206,10 @@
                                     <img class="collapse-presenters-image" src="assets/images/masoud.jpg">
                                 </div>
                                 <h2 class="collapse-presenters-name">
-                                    {{publicservice.Texts.Texts["home24"]}}
+                                    {{workshop.presenter.first_name}} {{workshop.presenter.last_name}}
                                 </h2>
                                 <h4 class="collapse-presenters-discription">
-                                    {{publicservice.Texts.Texts["home25"]}}</h4>
+                                    {{workshop.presenter.descriptions}}</h4>
                             </div>
                         </div>
                     </div>
@@ -221,15 +226,15 @@
             {{publicservice.Texts.Texts["home26"]}}</h1>
     </div>
     <div class="talks-background">
-        <div *ngFor="let talk of talksArray" class="workshops-whole-collapse">
+        <div *ngFor="let talk of talksArray; let i = index" class="workshops-whole-collapse">
             <div class="pink-collapse">
             </div>
-            <div  style="width: 100%;">
+            <div style="width: 100%;">
                 <div class="components-collapse">
                     <h3 class="collapse-title">
                         {{talk.title}}</h3>
                     <h4 class="collapse-subject">
-                        {{talk.date}}</h4>
+                        {{talksDate[i]}}</h4>
                     <h4 class="collapse-subject">
                         {{talk.capacity}} {{publicservice.Texts.Texts["home29"]}}</h4>
                     <h4 class="collapse-subject">
@@ -239,11 +244,11 @@
                             class="register-button">{{publicservice.Texts.Texts["home31"]}}</button>
                     </div>
                     <button mat-button class="collapse"
-                        (click)="talks = (talks == 'active' ? 'deactive' : 'active') ;iconT = (iconT == 'keyboard_arrow_down' ? 'keyboard_arrow_up' : 'keyboard_arrow_down') ">{{publicservice.Texts.Texts["home32"]}}
-                        <mat-icon class="collapse-icon" [inline]="true">{{iconT}}</mat-icon>
+                        (click)="talksActive[i] = (talksActive[i] == 'active' ? 'deactive' : 'active') ;iconT[i] = (iconT[i] == 'keyboard_arrow_down' ? 'keyboard_arrow_up' : 'keyboard_arrow_down') ">{{publicservice.Texts.Texts["home32"]}}
+                        <mat-icon class="collapse-icon" [inline]="true">{{iconT[i]}}</mat-icon>
                     </button>
                 </div>
-                <div [class]="talks">
+                <div [class]="talksActive[i]">
                     <div class="collapse-background">
                         <div>
                             <p class="collapse-about">

@@ -169,6 +169,28 @@ export class PublicService {
     });
     return ret;
   }
+  getWorkshops(): Promise<any> {
+    var that = this;
+    this.APICalls.SignUp = true;
+    let headers = new Headers({
+      'Content-Type': 'application/json'
+    });
+    let options = new RequestOptions({ headers: headers });
+    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/workshop/', options)
+      .toPromise()
+      .then((r) => this.extractData(r, this))
+      .catch(this.handleError);
+      
+    ret.then(r => {
+      this.APICalls.SignUp = false;
+    }).catch(e => {
+      this.APICalls.SignUp = false;
+      that.dialog.open(ErrorDialogComponent,{data:{
+        type: e.message 
+      }});
+    });
+    return ret;
+  }
 
 
 

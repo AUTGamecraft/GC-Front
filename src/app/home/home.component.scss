@@ -47,7 +47,7 @@
     padding: 20px 16px 19px;
 }
 .collapse-title {
-    width: fit-content;
+    width:300px;
     font-family: "Estedad-Bold";
     font-size: 24px;
     color: #52006b;
@@ -98,7 +98,7 @@
     box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.08);
 }
 .orange-collapse {
-    width: 50px;
+    width: 30px;
     background-color: #ffe0b2;
     border-bottom-right-radius: 28px;
     border-top-right-radius: 28px;
@@ -169,6 +169,7 @@
     margin: 10px;
 }
 .collapse-background {
+    border-bottom-left-radius: 24px;
     background-color: #fafafa;
 }
 .collapse-presenters-image {
@@ -216,7 +217,7 @@
     padding-bottom: 20px;
 }
 .pink-collapse {
-    width: 50px;
+    width: 30px;
     background-color: #f8bbd0;
     border-bottom-right-radius: 28px;
     border-top-right-radius: 28px;

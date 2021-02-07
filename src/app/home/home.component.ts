@@ -9,20 +9,36 @@ import * as moment from 'jalali-moment';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  talks = 'deactive'
-  workshops = 'deactive'
-  iconW = 'keyboard_arrow_down'
-  iconT = 'keyboard_arrow_down'
+  workshopsArray : any = {};
+  workshopsActive : any = {};
+  iconW : any = {};
+  workshopsDate : any = {};
   talksArray : any = {};
   talksActive : any = {};
+  iconT : any = {};
+  talksDate : any = {};
+  m : string = '' ;
   constructor(public publicservice:PublicService,public router:Router) { 
     publicservice.getTalks().then((r) =>{
-      console.log(r);
       this.talksArray = r.data;
+      for (let index = 0; index < this.talksArray.length;index++) {
+        this.talksActive[index] = 'deactive'
+        this.iconT[index] = 'keyboard_arrow_down'
+        this.m =moment(this.talksArray[index].date.split('T',2)[0],'YYYY-MM-DD').locale('fa').format('YYYY-MM-DD');
+        this.talksDate[index] =moment(this.talksArray[index].date.split('T',2)[0],'YYYY-MM-DD').locale('fa').format('dddd') + " " + moment(this.talksArray[index].date.split('T',2)[0],'YYYY-MM-DD').locale('fa').format('DD') + " " + moment(this.talksArray[index].date.split('T',2)[0],'YYYY-MM-DD').locale('fa').format('MMMM') + " " + moment(this.talksArray[index].date.split('T',2)[0],'YYYY-MM-DD').locale('fa').format('YY');
+      }
     })
-    for (let index = 0; index < this.talksArray.lengt;index++) {
-      this.talksActive[index] = 'deactive';
-    }
+    publicservice.getWorkshops().then((r) =>{
+      this.workshopsArray = r.data;
+      console.log(r)
+      for (let index = 0; index < this.workshopsArray.length;index++) {
+        this.workshopsActive[index] = 'deactive'
+        this.iconW[index] = 'keyboard_arrow_down'
+        this.m =moment(this.workshopsArray[index].date.split('T',2)[0],'YYYY-MM-DD').locale('fa').format('YYYY-MM-DD');
+        this.workshopsDate[index] =moment(this.workshopsArray[index].date.split('T',2)[0],'YYYY-MM-DD').locale('fa').format('dddd') + " " + moment(this.workshopsArray[index].date.split('T',2)[0],'YYYY-MM-DD').locale('fa').format('DD') + " " + moment(this.workshopsArray[index].date.split('T',2)[0],'YYYY-MM-DD').locale('fa').format('MMMM') + " " + moment(this.workshopsArray[index].date.split('T',2)[0],'YYYY-MM-DD').locale('fa').format('YY');
+      }
+    })
+
       
 
   }
