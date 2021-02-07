@@ -14,14 +14,16 @@ export class HomeComponent implements OnInit {
   iconW = 'keyboard_arrow_down'
   iconT = 'keyboard_arrow_down'
   talksArray : any = {};
+  talksActive : any = {};
   constructor(public publicservice:PublicService,public router:Router) { 
     publicservice.getTalks().then((r) =>{
       console.log(r);
       this.talksArray = r.data;
     })
-  
-    let todayJalali = moment().locale('fa').format('YYYY/M/D');
-    console.log(todayJalali);
+    for (let index = 0; index < this.talksArray.lengt;index++) {
+      this.talksActive[index] = 'deactive';
+    }
+      
 
   }
 

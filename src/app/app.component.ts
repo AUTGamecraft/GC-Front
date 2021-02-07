@@ -8,6 +8,6 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'gdFront';
   constructor(private router:Router){
-    this.router.navigate(['home'])
+    // this.router.navigate(['home'])
   }
 }
