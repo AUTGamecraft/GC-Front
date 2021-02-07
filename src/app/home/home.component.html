@@ -221,10 +221,10 @@
             {{publicservice.Texts.Texts["home26"]}}</h1>
     </div>
     <div class="talks-background">
-        <div class="workshops-whole-collapse">
+        <div *ngFor="let talk of talksArray" class="workshops-whole-collapse">
             <div class="pink-collapse">
             </div>
-            <div *ngFor="let talk of talksArray" style="width: 100%;">
+            <div  style="width: 100%;">
                 <div class="components-collapse">
                     <h3 class="collapse-title">
                         {{talk.title}}</h3>
