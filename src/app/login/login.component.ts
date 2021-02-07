@@ -50,7 +50,8 @@ export class LoginComponent implements OnInit {
       })
     }
     else {
-      this.dialog.open(ErrorDialogComponent, { data: { type: 'notFilled' } });
+      this.publicservice.Texts.Texts["error3"] = 'فیلد ها را پر کنید'
+      this.publicservice.Texts.Texts["error2"] = 'active'
     }
   }
 }

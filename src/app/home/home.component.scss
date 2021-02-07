@@ -420,13 +420,7 @@
 .event-about-right-div {
     text-align: center;
 }
-.event-about-right-time {
-    font-size: 70px;
-    font-family: "Estedad";
-    color: #ede1f1;
-    margin-bottom: 0;
-    font-weight: bolder;
-}
+
 .event-about-right-text {
     font-size: xx-large;
     font-family: "Estedad-SemiBold";
@@ -547,7 +541,7 @@
     font-family: 'Estedad-Bold';
     font-size: large;
     color: white;
-    padding: 9px 16px 9px 16px;
+    padding: 9px 9px 9px 9px;
     border-radius: 24px;
     background-color: rgba(255, 255, 255, 0);
 }
@@ -557,7 +551,7 @@
 }
 .right-header{
     display: flex;
-    margin-right: 100px;
+    margin-right: 50px;
     margin-top: 20px;
 }
 .right-button{
@@ -586,4 +580,78 @@
     margin: 0 10px 10px 10px;
     justify-content: space-between;
     display: flex;
+}
+.numbers{
+    font-size: 70px;
+    font-family: "Estedad";
+    color: #ede1f1;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+.dots{
+    font-size: 70px;
+    font-family: "Estedad-Regular";
+    color: #ede1f1;
+    margin: 60px 10px 10px 10px;
+    font-weight: bold;
+}
+.header-line{
+    width: 0;
+    height: 48px;
+    margin: 15px 40px 5px 0;
+    border: solid 1.5px #a04db9 !important;
+    background-color: #a04db9;
+    border-radius: 20px;
+}
+.left-header-line{
+    width: 0;
+    height: 48px;
+    margin-left: 15px;
+    border: solid 1.5px #a04db9 !important;
+    background-color: #a04db9;
+    border-radius: 20px;
+}
+.prizes-title{
+    text-align: center;
+    font-family: 'Estedad-Black';
+    font-size: x-large;
+    color: #77009b;
+}
+.prizes{
+    background-image: url('/assets/svg/bubble-light-purple.svg');
+    background-repeat: no-repeat;
+    transform: scaleX(-1);
+    background-size: contain;
+    padding-bottom: 10%;
+}
+.inner-prizes{
+    transform: scaleX(-1);
+}
+.prize-cards{
+    margin: 40px 30px 10px 30px;
+    text-align: center;
+    justify-content: space-evenly;
+}
+.prize-card-image{
+    width: 252.5px;
+    height: 252.5px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.prize-card-title{
+    text-align: center;
+    color: #77009b;
+    font-family: 'Estedad-Regular';
+    font-size: 36px;
+    margin: 0;
+}
+.prize-card-discription{
+    color: #a04db9;
+    font-family: 'Estedad-Regular';
+    font-size: 28px;
+    margin: 0;
+    margin-top: 5px;
+}
+.prize-cards-whole-div{
+    justify-content: center;
 }

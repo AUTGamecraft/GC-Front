@@ -1,0 +1,19 @@
+.error-div{
+    background-color: #ef5350;
+}
+.error-icon{
+    color: white;
+}
+.error-message{
+    color: white;
+}
+.active {
+    max-height: 2000px;
+    overflow: visible;
+    transition: max-height 0.5s ease-in;
+}
+.deactive {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+}

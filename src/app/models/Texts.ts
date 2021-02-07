@@ -15,6 +15,8 @@ export class Texts{
         this.FaTexts["header8"] = "خروج"
         this.FaTexts["header9"] = "داشبورد"
         this.FaTexts["header10"] = "ابولفضل"
+        this.FaTexts["header11"] = "شرایط مسابقه"
+        this.FaTexts["header12"] = "افراد"
 
         this.FaTexts["home1"] = "گیمـ"
         this.FaTexts["home2"] = "نهمین رویداد بزرگ بازی سازی درخاورمیانه"
@@ -58,6 +60,10 @@ export class Texts{
         this.FaTexts["home40"] = "حامیان"
         this.FaTexts["home41"] = "حامی"
         this.FaTexts["home42"] = "designed & developed ba eshgh"
+        this.FaTexts["home43"] = "جوایز مسابقه"
+        this.FaTexts["home44"] = "شرایط مسابقه"
+        this.FaTexts["home45"] = "تیم اول"
+        this.FaTexts["home46"] = "کارت صد آفرین"
 
         this.FaTexts["dash-event1"] = "ابوالفضل بیهقی"
         this.FaTexts["dash-event2"] = "رویداد ها"
@@ -87,6 +93,10 @@ export class Texts{
         this.FaTexts["dash-event26"] = "ارائه کنندگان"
         this.FaTexts["dash-event27"] = "مسعود فراستی"
         this.FaTexts["dash-event28"] = "منتقد درجه یک"
+
+        this.FaTexts["error1"] = "error-outline"
+        this.FaTexts["error2"] = "deactive"
+        this.FaTexts["error3"] = ""
 
         this.Texts=this.FaTexts;
 

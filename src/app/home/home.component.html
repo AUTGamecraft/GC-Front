@@ -8,10 +8,16 @@
                             <h2 class="title">
                                 {{publicservice.Texts.Texts["header1"]}}</h2>
                         </div>
+                        <div class="header-line">
+                        </div>
                         <div class="right-header">
                             <div class="right-button">
+                                <button mat-button class="normal-button"
+                                    (click)="Schedule(schedule)">{{publicservice.Texts.Texts["header2"]}}</button>
+                            </div>
+                            <div class="right-button">
                                 <button mat-button
-                                    class="normal-button">{{publicservice.Texts.Texts["header2"]}}</button>
+                                    class="normal-button">{{publicservice.Texts.Texts["header11"]}}</button>
                             </div>
                             <div class="right-button">
                                 <button mat-button (click)="Workshop(workshop)"
@@ -25,9 +31,14 @@
                                 <button mat-button
                                     class="normal-button">{{publicservice.Texts.Texts["header5"]}}</button>
                             </div>
+                            <div class="right-button">
+                                <button mat-button
+                                    class="normal-button">{{publicservice.Texts.Texts["header12"]}}</button>
+                            </div>
                         </div>
                     </div>
                     <div class="left-header">
+                        <div class="left-header-line"></div>
                         <div class="before-login" *ngIf="!publicservice.logedIn">
                             <div class="left-button">
                                 <button mat-button (click)="login()"
@@ -76,9 +87,13 @@
         </div>
         <div class="event-about-div">
             <div class="event-about-right-div">
-                <div style="width: 300px;">
-                    <p class="event-about-right-time">
-                        {{timer()}}
+                <div style="display: flex;text-align: center;width: 270px;justify-content: center;">
+                    <p class="numbers">{{getSecond()}}</p>
+                    <p class="dots"> : </p>
+                    <p class="numbers">{{getMinute()}}</p>
+                    <p class="dots"> : </p>
+                    <p class="numbers">
+                        {{getHour()}}
                     </p>
                 </div>
                 <p class="event-about-right-text">
@@ -101,7 +116,7 @@
     </div>
     <div class="purple-wave-under-intro">
     </div>
-    <div class="event-schedule-div">
+    <div class="event-schedule-div" #schedule>
         <div class="event-schedule-title-div">
             <h1 class="event-schedule-title">
                 {{publicservice.Texts.Texts["home8"]}}</h1>
@@ -161,10 +176,81 @@
             </div>
         </div>
     </div>
+    <div class="prizes">
+        <div class="inner-prizes">
+            <div class="prizes-title">
+                <h1>{{publicservice.Texts.Texts["home43"]}}</h1>
+            </div>
+            <div style="text-align: center;">
+                <button mat-flat-button class="green-button">{{publicservice.Texts.Texts["home44"]}}</button>
+            </div>
+            <div class="prize-cards-whole-div">
+                <div style="display: flex;justify-content: center;">
+                <div class="prize-cards">
+                    <div class="prize-card-image-div">
+                        <img class="prize-card-image" src="assets/images/sadAfarin.jpg">
+                    </div>
+                    <div class="prize-card-title-div">
+                        <h2 class="prize-card-title">{{publicservice.Texts.Texts["home45"]}}</h2>
+                    </div>
+                    <div class="prize-card-discription-div">
+                        <h3 class="prize-card-discription">{{publicservice.Texts.Texts["home46"]}}</h3>
+                    </div>
+                </div>
+                <div class="prize-cards">
+                    <div class="prize-card-image-div">
+                        <img class="prize-card-image" src="assets/images/sadAfarin.jpg">
+                    </div>
+                    <div class="prize-card-title-div">
+                        <h2 class="prize-card-title">{{publicservice.Texts.Texts["home45"]}}</h2>
+                    </div>
+                    <div class="prize-card-discription-div">
+                        <h3 class="prize-card-discription">{{publicservice.Texts.Texts["home46"]}}</h3>
+                    </div>
+                </div>
+                </div>
+                <div style="display: flex;justify-content: center;">
+                <div class="prize-cards">
+                    <div class="prize-card-image-div">
+                        <img class="prize-card-image" src="assets/images/sadAfarin.jpg">
+                    </div>
+                    <div class="prize-card-title-div">
+                        <h2 class="prize-card-title">{{publicservice.Texts.Texts["home45"]}}</h2>
+                    </div>
+                    <div class="prize-card-discription-div">
+                        <h3 class="prize-card-discription">{{publicservice.Texts.Texts["home46"]}}</h3>
+                    </div>
+                </div>
+                <div class="prize-cards">
+                    <div class="prize-card-image-div">
+                        <img class="prize-card-image" src="assets/images/sadAfarin.jpg">
+                    </div>
+                    <div class="prize-card-title-div">
+                        <h2 class="prize-card-title">{{publicservice.Texts.Texts["home45"]}}</h2>
+                    </div>
+                    <div class="prize-card-discription-div">
+                        <h3 class="prize-card-discription">{{publicservice.Texts.Texts["home46"]}}</h3>
+                    </div>
+                </div>
+                <div class="prize-cards">
+                    <div class="prize-card-image-div">
+                        <img class="prize-card-image" src="assets/images/sadAfarin.jpg">
+                    </div>
+                    <div class="prize-card-title-div">
+                        <h2 class="prize-card-title">{{publicservice.Texts.Texts["home45"]}}</h2>
+                    </div>
+                    <div class="prize-card-discription-div">
+                        <h3 class="prize-card-discription">{{publicservice.Texts.Texts["home46"]}}</h3>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div style="margin-top: -1%;">
     <div class="green-wave-above-wrokshops" #workshop>
         <h1 class="collapse-header">
             {{publicservice.Texts.Texts["home15"]}}</h1>
-
     </div>
     <div class="green-rectangle-under-workshops">
     </div>
@@ -220,6 +306,7 @@
 
         </div>
 
+    </div>
     </div>
     <div class="green-wave-under-workshops">
     </div>

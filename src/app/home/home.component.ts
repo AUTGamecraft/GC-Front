@@ -44,7 +44,6 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.timer();
   }
   Signup() {
     const navigationDetails2: string[] = ['signup'];
@@ -67,10 +66,31 @@ export class HomeComponent implements OnInit {
   Talk(el: HTMLElement) {
     el.scrollIntoView({ behavior: "smooth" });
   }
-  timer(){
+  Schedule(el: HTMLElement) {
+    el.scrollIntoView({ behavior: "smooth" });
+  }
+  getMinute(){
     if(this.time <= 0){
-      return "00 : 00 : 0";
+      return "00";
     }
-    return  this.time%60+" : "+parseInt((this.time/60)%60+"")+" : "+parseInt(this.time/3600+"");
+    if((this.time/60)%60 < 10){
+      return "0"+parseInt((this.time/60)%60+"");
+    }
+    return  parseInt((this.time/60)%60+"");
+  }
+  getSecond(){
+    if(this.time <= 0){
+      return "00";
+    }
+    if(this.time%60 <10){
+      return "0"+this.time%60;
+    }
+    return  this.time%60 ;
+  }
+  getHour(){
+    if(this.time <= 0){
+      return "0";
+    }
+    return parseInt(this.time/3600+"");
   }
 }
