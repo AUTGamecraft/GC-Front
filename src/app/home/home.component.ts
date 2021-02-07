@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   iconT: any = {};
   talksDate: any = {};
   m: string = '';
-  time = 1000;
+  time = 10000;
   
   constructor(public publicservice: PublicService, public router: Router) {
     publicservice.getTalks().then((r) => {
@@ -68,6 +68,9 @@ export class HomeComponent implements OnInit {
     el.scrollIntoView({ behavior: "smooth" });
   }
   timer(){
-    return  this.time%60+" : "+parseInt(this.time/60+"")+" : "+parseInt(this.time/3600+"");
+    if(this.time <= 0){
+      return "00 : 00 : 0";
+    }
+    return  this.time%60+" : "+parseInt((this.time/60)%60+"")+" : "+parseInt(this.time/3600+"");
   }
 }
