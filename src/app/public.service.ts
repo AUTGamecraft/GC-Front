@@ -15,8 +15,8 @@ export class PublicService {
   public APICalls: any = {};
   public Authorization: string = "";
   public User: any = {};
-  // public ApiUrl: String = "http://gaming.ce.aut.ac.ir:50077";
-  public ApiUrl: String = "http://127.0.0.1:8000";
+  public ApiUrl: String = "http://gaming.ce.aut.ac.ir";
+  // public ApiUrl: String = "http://127.0.0.1:8000";
   public Email: String = "";
   public PhoneNumber: String = "";
   public Password: String = "";
@@ -97,7 +97,7 @@ export class PublicService {
       'Content-Type': 'application/json'
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.post(this.ApiUrl + '/users/sign_up/', body, options)
+    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/users/sign_up/', body, options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
@@ -154,7 +154,7 @@ export class PublicService {
       'Content-Type': 'application/json'
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.get(this.ApiUrl + '/talk/', options)
+    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/talk/', options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
