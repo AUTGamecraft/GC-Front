@@ -1,0 +1,131 @@
+.whole-header {
+    direction: rtl;
+    margin: 0 10px 10px 10px;
+    justify-content: space-between;
+    display: flex;
+}
+.big-right-header {
+    display: flex;
+}
+.title-div {
+    margin-right: 50px;
+}
+.title {
+    font-family: "Estedad-Black";
+    color: #a04db9;
+}
+.header-line {
+    width: 0;
+    height: 48px;
+    margin: 20px 40px 5px 0;
+    border: solid 1.5px #a04db9 !important;
+    background-color: #a04db9;
+    border-radius: 20px;
+}
+.right-header {
+    display: flex;
+    margin-right: 50px;
+    margin-top: 20px;
+}
+.right-button {
+    margin: 0 5% 0 0;
+}
+.normal-button {
+    font-family: "Estedad-Bold";
+    font-size: large;
+    color: white;
+    padding: 9px 9px 9px 9px;
+    border-radius: 24px;
+    background-color: rgba(255, 255, 255, 0);
+}
+.left-header {
+    display: flex;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+.left-header-line {
+    width: 0;
+    height: 48px;
+    margin-left: 15px;
+    border: solid 1.5px #a04db9 !important;
+    background-color: #a04db9;
+    border-radius: 20px;
+}
+.before-login {
+    display: flex;
+}
+.left-button {
+    margin: 0 0 0 5%;
+}
+.green-button {
+    font-family: "Estedad-Bold";
+    color: #52006b;
+    background-color: #6af9c5;
+    border-radius: 24px;
+    padding: 11px 16px;
+    font-size: large;
+}
+.after-login {
+    display: flex;
+}
+.people{
+    background-color: #52006b;
+    padding-bottom: 20px;
+    padding-bottom: 100px;
+    height: 100%;
+}
+.introduction-div{
+    background-image: url('/assets/svg/pattern.svg');
+    padding: 20px 40px 60px 40px;
+    height: 100%;
+}
+.white-part{
+    background-color: #fafafa;
+    border-radius: 16px;
+    height: fit-content;
+    padding: 0.5px;
+}
+.people-title{
+    font-family: 'Estedad-Black';
+    color: #52006b;
+    text-align: center;
+    font-size: 36px;
+}
+.people-subtitle{
+    font-family: 'Estedad-Bold';
+    color: #00b583;
+    text-align: center;
+    font-size: 28px;
+}
+.collapse-presenters-card-div {
+    display: flex;
+    padding-bottom: 20px;
+    justify-content: center;
+}
+.collapse-presenters-card {
+    direction: rtl;
+    text-align: center;
+    background-color: white;
+    border-radius: 24px;
+    border: solid 2px #f5f5f5;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 10px;
+}
+.collapse-presenters-image {
+    height: 140px;
+    width: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    padding: 20px;
+}
+.collapse-presenters-name {
+    font-family: "Estedad-Black";
+    color: #52006b;
+    margin-bottom: 0;
+    font-size: medium;
+}
+.collapse-presenters-discription {
+    font-family: "Estedad-Regular";
+    color: #a04db9;
+    margin-top: 0;
+}

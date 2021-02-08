@@ -4,6 +4,7 @@ import { DashboardEventComponent } from './dashboard-event/dashboard-event.compo
 import { DashboardMediaComponent } from './dashboard-media/dashboard-media.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { PeopleComponent } from './people/people.component';
 import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'dashboard-event', component: DashboardEventComponent },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'people', component: PeopleComponent },
 ];
 
 

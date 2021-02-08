@@ -32,7 +32,7 @@
                                     class="normal-button">{{publicservice.Texts.Texts["header5"]}}</button>
                             </div>
                             <div class="right-button">
-                                <button mat-button
+                                <button mat-button (click)="People()"
                                     class="normal-button">{{publicservice.Texts.Texts["header12"]}}</button>
                             </div>
                         </div>
@@ -244,8 +244,8 @@
         </div>
     </div>
     <div style="margin-top: -1%;">
-    <div class="green-wave-above-wrokshops" #workshop>
-        <h1 class="collapse-header">
+    <div class="green-wave-above-wrokshops" #workshop >
+        <h1 class="collapse-header" id="workshop">
             {{publicservice.Texts.Texts["home15"]}}</h1>
     </div>
     <div class="green-rectangle-under-workshops">

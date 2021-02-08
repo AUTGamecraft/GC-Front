@@ -119,4 +119,7 @@ export class HomeComponent implements OnInit {
     }
     return parseInt(this.time/3600+"");
   }
+  People(){
+    this.router.navigate(['people']);
+  }
 }
