@@ -167,6 +167,8 @@ export class Texts{
         this.FaTexts["people14"] = "افراد"
         this.FaTexts["people15"] = "افراد"
 
+        this.FaTexts["logo1"] = "گیمـ"
+        this.FaTexts["logo2"] = "کرفت"
 
         this.Texts=this.FaTexts;
 

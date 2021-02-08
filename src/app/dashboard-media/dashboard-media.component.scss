@@ -129,3 +129,23 @@
     height: 44px;
     margin: 8px 99px 8px 102px;
 }
+//start of logo
+.logo{
+    justify-content: center;
+    display: flex;
+    direction: rtl;
+    margin-bottom: 30px;
+}
+.logo-image{
+    width: 150px;
+    z-index: 1;
+}
+.logo-text{
+    font-family: 'Estedad-Black';
+    color: #77009b;
+    font-size: xx-large;
+    margin-bottom: 0;
+    padding-bottom: 30px;
+    z-index: 0;
+}
+//end of logo
