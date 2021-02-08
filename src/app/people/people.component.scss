@@ -68,31 +68,31 @@
 .after-login {
     display: flex;
 }
-.people{
+.people {
     background-color: #52006b;
-    padding-bottom: 20px;
     padding-bottom: 100px;
-    height: 100%;
+    height: fit-content;
 }
-.introduction-div{
-    background-image: url('/assets/svg/pattern.svg');
-    padding: 20px 40px 60px 40px;
-    height: 100%;
+.introduction-div {
+    background-image: url("/assets/svg/pattern.svg");
+    padding: 60px 40px 60px 40px;
+    height: fit-content;
 }
-.white-part{
+.white-part {
     background-color: #fafafa;
     border-radius: 16px;
     height: fit-content;
     padding: 0.5px;
+    margin-bottom: 15%;
 }
-.people-title{
-    font-family: 'Estedad-Black';
+.people-title {
+    font-family: "Estedad-Black";
     color: #52006b;
     text-align: center;
     font-size: 36px;
 }
-.people-subtitle{
-    font-family: 'Estedad-Bold';
+.people-subtitle {
+    font-family: "Estedad-Bold";
     color: #00b583;
     text-align: center;
     font-size: 28px;
@@ -128,4 +128,124 @@
     font-family: "Estedad-Regular";
     color: #a04db9;
     margin-top: 0;
+}
+#people-button {
+    border-radius: 24px;
+    border: solid 2px #07f49e !important;
+}
+.footer-whole-div {
+    margin-top: -15%;
+}
+.purple-wave-above-footer {
+    background-image: url("/assets/svg/wave-purple.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    transform: scaleY(-1);
+    width: 100%;
+    height: 210px;
+    position: relative;
+    z-index: 1;
+    margin-top: -60px;
+}
+.footer-div {
+    background-color: #52006b;
+    padding-top: 100px;
+    margin-top: -100px;
+}
+.discription-footer-div {
+    direction: rtl;
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 50px;
+}
+.discription-right-footer-div {
+    width: 50%;
+    margin-right: 10%;
+    position: relative;
+    direction: rtl;
+}
+.discription-right-footer-about-div {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: transparent;
+    z-index: 1;
+}
+.discription-right-footer-about-title {
+    font-family: "Estedad-Black";
+    font-size: xxx-large;
+    color: white;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.discription-right-footer-about-subtitle {
+    font-family: "Estedad-Bold";
+    color: white;
+    font-size: xx-large;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.discription-right-footer-about-discription {
+    font-family: "Estedad-Regular";
+    color: white;
+    font-size: large;
+    margin-top: 0;
+}
+.discription-right-footer-bubble {
+    position: absolute;
+    background-image: url("/assets/svg/bubble-purple.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transform: scaleX(-1);
+    z-index: 0;
+}
+.footer-image-div {
+    margin-left: 10%;
+}
+.footer-image {
+    height: 320px;
+    width: 360px;
+    object-fit: cover;
+    border-radius: 36px;
+}
+.supporters-title {
+    font-family: "Estedad-Black";
+    font-size: xxx-large;
+    color: white;
+    text-align: center;
+}
+.supporters-card-div {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.supportes-card-image-div {
+    margin: 20px;
+}
+.supporters-card-image {
+    height: 140px;
+    width: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.supportes-card-name {
+    font-family: "Estedad-Bold";
+    color: white;
+    font-size: large;
+}
+.developers-div {
+    background-color: #77009b;
+    text-align: center;
+    padding: 10px;
+}
+.developers {
+    color: white;
+    margin: 0;
+    font-family: "Estedad-SemiBold";
 }

@@ -40,9 +40,9 @@ export class PeopleComponent implements OnInit {
     this.router.navigate(['home'],{fragment:'workshop'});
   }
   Talk() {
-    // el.scrollIntoView({ behavior: "smooth" });
+    this.router.navigate(['home'],{fragment:'talk'});
   }
   Schedule() {
-    // el.scrollIntoView({ behavior: "smooth" });
+    this.router.navigate(['home'],{fragment:'schedule'});
   }
 }
