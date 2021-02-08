@@ -23,5 +23,9 @@ media(): void{
   const navigationDetails2: string[] = ['dashboard-media'];
   this.router.navigate(navigationDetails2);
 }
-
+logOut() {
+  this.publicservice.logedIn = false;
+  localStorage.removeItem("Authorization");
+  this.router.navigate(['home']);
+}
 }

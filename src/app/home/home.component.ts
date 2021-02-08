@@ -19,7 +19,8 @@ export class HomeComponent implements OnInit {
   talksDate: any = {};
   m: string = '';
   time = 10000;
-  
+  talksLevel: any = {};
+  workshopsLevel: any = {};
   constructor(public publicservice: PublicService, public router: Router) {
     publicservice.getTalks().then((r) => {
       this.talksArray = r.data;
@@ -28,6 +29,20 @@ export class HomeComponent implements OnInit {
         this.iconT[index] = 'keyboard_arrow_down'
         this.m = moment(this.talksArray[index].date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('YYYY-MM-DD');
         this.talksDate[index] = moment(this.talksArray[index].date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('dddd') + " " + moment(this.talksArray[index].date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('DD') + " " + moment(this.talksArray[index].date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('MMMM') + " " + moment(this.talksArray[index].date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('YY');
+        switch (this.talksArray[index].level) {
+          case 'BEGINNER':
+            this.talksLevel[index] = 'مبتدی';
+            break;
+          case 'EXPERT':
+            this.talksLevel[index] = 'پیشرفته';
+            break;
+          case 'INTERMEDIATE':
+            this.talksLevel[index] = 'متوسط';
+            break;
+          default:
+            this.talksLevel[index] = 'unknown';
+            break;
+        }
       }
     })
     publicservice.getWorkshops().then((r) => {
@@ -38,6 +53,20 @@ export class HomeComponent implements OnInit {
         this.iconW[index] = 'keyboard_arrow_down'
         this.m = moment(this.workshopsArray[index].date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('YYYY-MM-DD');
         this.workshopsDate[index] = moment(this.workshopsArray[index].date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('dddd') + " " + moment(this.workshopsArray[index].date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('DD') + " " + moment(this.workshopsArray[index].date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('MMMM') + " " + moment(this.workshopsArray[index].date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('YY');
+        switch (this.workshopsArray[index].level) {
+          case 'BEGINNER':
+            this.workshopsLevel[index] = 'مبتدی';
+            break;
+          case 'EXPERT':
+            this.workshopsLevel[index] = 'پیشرفته';
+            break;
+          case 'INTERMEDIATE':
+            this.workshopsLevel[index] = 'متوسط';
+            break;
+          default:
+            this.workshopsLevel[index] = 'unknown';
+            break;
+        }
       }
     })
     setInterval(()=>this.time = this.time-1,1000);
@@ -53,10 +82,7 @@ export class HomeComponent implements OnInit {
     const navigationDetails: string[] = ['login'];
     this.router.navigate(navigationDetails);
   }
-  logOut() {
-    this.publicservice.logedIn = false;
-    localStorage.removeItem("Authorization");
-  }
+
   Dashboard() {
     this.router.navigate(['dashboard-event']);
   }

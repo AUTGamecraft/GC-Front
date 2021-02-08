@@ -1,28 +1,131 @@
-.dash-event{
+.dash-media {
     padding: 20px;
     background-color: #52006b;
     direction: rtl;
     padding-right: 5%;
     padding-left: 5%;
+    background-image: url("/assets/svg/pattern.svg");
 }
-.buttons{
+.buttons {
     color: #52006b;
-    font-family: 'Estedad-SemiBold';
+    font-family: "Estedad-SemiBold";
     width: 100%;
     font-size: large;
     padding-top: 5%;
     padding-bottom: 5%;
+    padding-right: 10%;
     text-align: right;
-    
 }
-.active{
+.active {
     max-height: 2000px;
     overflow: visible;
     transition: max-height 0.5s ease-in;
-   
 }
-.deactive{
+.deactive {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease-out;
+}
+.dash-media-inner-div {
+    display: flex;
+    padding-bottom: 100px;
+}
+.right-part {
+    background-color: #fafafa;
+    text-align: center;
+    border-radius: 20px;
+    height: fit-content;
+    width: 25%;
+}
+.user-image {
+    border-radius: 50%;
+    margin: 50px;
+    margin-bottom: 0;
+    margin-top: 30px;
+    height: 160px;
+    width: 160px;
+    object-fit: cover;
+}
+.user-name {
+    font-family: "Estedad-Bold";
+    color: #52006b;
+    font-size: large;
+    margin-bottom: 0;
+}
+.outlined-button {
+    font-family: "Estedad-Bold";
+    color: #00b583;
+    font-size: large;
+    border: 3px solid #07f49e !important;
+    border-radius: 15px;
+    height: 10%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.outlined-button:hover {
+    background-color: #6af9c5;
+    color: #52006b;
+    border-color: #6af9c5 !important;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.08);
+}
+.left-part {
+    background-color: #fafafa;
+    text-align: center;
+    border-radius: 20px;
+    width: 75%;
+    margin-right: 20px;
+    padding-bottom: 2%;
+}
+.events-title {
+    font-family: "Estedad-Black";
+    font-size: xx-large;
+    color: #52006b;
+}
+.workshops-div {
+    text-align: left;
+}
+.workshops-title {
+    font-family: "Estedad-Bold";
+    font-size: x-large;
+    color: #77009b;
+    text-align: right;
+    margin-right: 42px;
+}
+.mat-card {
+    font-family: "Estedad-Bold";
+    color: #52006b;
+}
+.download-button {
+    font-family: "Estedad-Bold";
+    color: #00b583;
+    font-size: large;
+    border: 2px solid #07f49e !important;
+    border-radius: 15px;
+    margin-right: 10px;
+}
+.download-button:hover {
+    background-color: #6af9c5;
+    color: #52006b;
+    border-color: #6af9c5 !important;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.08);
+}
+.talks-div {
+    text-align: left;
+}
+.talks-title {
+    font-family: "Estedad-Bold";
+    font-size: x-large;
+    color: #77009b;
+    text-align: right;
+    margin-right: 42px;
+}
+.normal-button {
+    font-family: "Estedad-Bold";
+    font-size: large;
+    color: #b00020;
+    border-radius: 16px;
+    background-color: rgba(255, 255, 255, 0);
+    width: 84px;
+    height: 44px;
+    margin: 8px 99px 8px 102px;
 }

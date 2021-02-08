@@ -13,6 +13,7 @@
     font-family: "Estedad-SemiBold";
     width: 100%;
     font-size: large;
+    padding-right: 10%;
     padding-top: 5%;
     padding-bottom: 5%;
     text-align: right;
@@ -47,6 +48,7 @@
     font-family: "Estedad-Bold";
     color: #52006b;
     font-size: large;
+    margin-bottom: 0;
 }
 .outlined-button {
     font-family: "Estedad-Bold";
@@ -214,4 +216,14 @@
     background-color: #f8bbd0;
     border-bottom-right-radius: 15px;
     border-top-right-radius: 15px;
+}
+.normal-button {
+    font-family: "Estedad-Bold";
+    font-size: large;
+    color: #b00020;
+    border-radius: 16px;
+    background-color: rgba(255, 255, 255, 0);
+    width: 84px;
+    height: 44px;
+    margin: 8px 99px 8px 102px;
 }

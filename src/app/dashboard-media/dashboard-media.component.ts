@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import{ Router} from '@angular/router';
+import { PublicService } from '../public.service';
 @Component({
   selector: 'app-dashboard-media',
   templateUrl: './dashboard-media.component.html',
@@ -7,7 +8,7 @@ import{ Router} from '@angular/router';
 })
 export class DashboardMediaComponent implements OnInit {
 
-  constructor(private router : Router) { }
+  constructor(private router : Router,public publicservice: PublicService) { }
 
   ngOnInit(): void {
   }
@@ -18,5 +19,10 @@ export class DashboardMediaComponent implements OnInit {
   media(): void{
     const navigationDetails2: string[] = ['dashboard-media'];
     this.router.navigate(navigationDetails2);
+  }
+  logOut() {
+    this.publicservice.logedIn = false;
+    localStorage.removeItem("Authorization");
+    this.router.navigate(['home']);
   }
 }

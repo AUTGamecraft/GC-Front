@@ -51,10 +51,6 @@
                         </div>
                         <div class="after-login" *ngIf="publicservice.logedIn">
                             <div class="left-button">
-                                <button mat-button (click)="logOut()"
-                                    class="normal-button">{{publicservice.Texts.Texts["header8"]}}</button>
-                            </div>
-                            <div class="left-button">
                                 <button mat-button
                                     class="normal-button">{{publicservice.Texts.Texts["header10"]}}</button>
                             </div>
@@ -267,7 +263,7 @@
                     <h4 class="collapse-subject">
                         {{workshop.capacity}} {{publicservice.Texts.Texts["home18"]}}</h4>
                     <h4 class="collapse-subject">
-                        {{publicservice.Texts.Texts["home19"]}}</h4>
+                        {{workshopsLevel[i]}}</h4>
                     <div class="register-button-div">
                         <button mat-stroked-button
                             class="register-button">{{publicservice.Texts.Texts["home20"]}}</button>
@@ -327,7 +323,7 @@
                     <h4 class="collapse-subject">
                         {{talk.capacity}} {{publicservice.Texts.Texts["home29"]}}</h4>
                     <h4 class="collapse-subject">
-                        {{publicservice.Texts.Texts["home30"]}}</h4>
+                        {{talksLevel[i]}}</h4>
                     <div class="register-button-div">
                         <button mat-stroked-button
                             class="register-button">{{publicservice.Texts.Texts["home31"]}}</button>
@@ -379,6 +375,9 @@
                             {{publicservice.Texts.Texts["home38"]}}</h3>
                         <p class="discription-right-footer-about-discription">
                             {{publicservice.Texts.Texts["home39"]}}</p>
+                            <div style="text-align: center;">
+                                <button mat-flat-button class="green-button">{{publicservice.Texts.Texts["home47"]}}</button>
+                            </div>
                     </div>
                     <div class="discription-right-footer-bubble">
                     </div>
