@@ -14,7 +14,7 @@ export class PeopleComponent implements OnInit {
         const tree = router.parseUrl(router.url);
         if (tree.fragment) {
           const element = document.querySelector("#" + tree.fragment);
-          if (element) { element.scrollIntoView({behavior:'smooth'}); }
+          if (element) { element.scrollIntoView(); }
         }
       }
     });
