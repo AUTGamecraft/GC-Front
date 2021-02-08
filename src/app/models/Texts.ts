@@ -110,6 +110,24 @@ export class Texts{
         this.FaTexts["login10"] = "وارد کردن رمز عبور"
         this.FaTexts["login11"] = "ورود"
         this.FaTexts["login12"] = "ثبت نام"
+        
+        this.FaTexts["signup1"] = "ثبت نام"
+        this.FaTexts["signup2"] = "گیمـ"
+        this.FaTexts["signup3"] = "نام و نام خانوادگی"
+        this.FaTexts["signup4"] = "است"
+        this.FaTexts["signup5"] = "اجباری"
+        this.FaTexts["signup6"] = "وارد کردن نام"
+        this.FaTexts["signup7"] = "ایمیل"
+        this.FaTexts["signup8"] = "لطفا یک ایمیل صحیح وارد کنید"
+        this.FaTexts["signup9"] = "وارد کردن ایمیل"
+        this.FaTexts["signup10"] = "شماره همراه"
+        this.FaTexts["signup11"] = "لطفا یک شماره همراه صحیح وارد کنید"
+        this.FaTexts["signup12"] = "وارد کردن شماره همراه"
+        this.FaTexts["signup13"] = "رمز عبور"
+        this.FaTexts["signup14"] = "حداقل تعداد کاراکتر های رمز 8 عدد می باشد"
+        this.FaTexts["signup15"] = "وارد کردن رمز عبور"
+        this.FaTexts["signup16"] = "ثبت نام"
+        this.FaTexts["signup17"] = "ورود"
 
         this.Texts=this.FaTexts;
 

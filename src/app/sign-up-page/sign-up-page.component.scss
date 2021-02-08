@@ -5,10 +5,84 @@ input::-webkit-inner-spin-button {
     margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
 
-input[type=number] {
-    -moz-appearance:textfield; /* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield; /* Firefox */
 }
-::ng-deep .snackbar{
+::ng-deep .snackbar {
     direction: rtl;
     color: white;
+}
+.green-button {
+    font-family: "Estedad-Bold";
+    color: #52006b;
+    background-color: #6af9c5;
+    border-radius: 24px;
+    padding: 11px 16px;
+    font-size: large;
+    width: 102px;
+    height: 57px;
+}
+.normal-button {
+    font-family: "Estedad-Bold";
+    font-size: large;
+    color: #00b583;
+    padding: 9px 9px 9px 9px;
+    border-radius: 24px;
+    background-color: rgba(255, 255, 255, 0);
+    width: 94px;
+    height: 57px;
+}
+.signup {
+    display: flex;
+    justify-content: space-evenly;
+    direction: rtl;
+    background-color: #52006b;
+    height: 100%;
+    background-image: url("/assets/svg/pattern.svg");
+}
+.signup-title-div {
+    direction: rtl;
+    text-align: center;
+    margin-top: 15%;
+}
+.signup-title1 {
+    font-size: 35px;
+    font-family: "Estedad-Black";
+    color: #07f49e;
+    margin-bottom: 0;
+}
+.signup-title2 {
+    font-size: 70px;
+    font-family: "Estedad-Black";
+    color: #07f49e;
+    margin-bottom: 0;
+}
+.left-div {
+    background-color: white;
+    height: fit-content;
+    margin-top: 10%;
+    text-align: center;
+    border-radius: 20px;
+    padding: 20px 40px 20px 40px;
+    width: 20%;
+}
+.form-fields-div {
+    padding: 10px;
+}
+.form-field {
+    text-align: right;
+    width: 100%;
+}
+.label {
+    font-family: "Estedad-SemiBold";
+}
+.input {
+    text-align: right;
+    font-family: "Estedad-Regular";
+}
+.error{
+    font-family: 'Estedad-Regular';
+}
+.form-field-div{
+    margin-top: 5%;
 }

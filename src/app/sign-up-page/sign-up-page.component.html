@@ -1,85 +1,109 @@
-<div
-    style="  display: flex; justify-content: space-evenly; direction: rtl; background-color: #52006b; height: 100%; background-image: url('assets/svg/pattern.svg'); ">
+<div class="signup">
 
 
-    <div style="direction: rtl; text-align: center; margin-top: 15% ;">
+    <div class="signup-title-div">
 
-        <h4 style="font-size:35px;font-family: 'Estedad-Black';color: #07f49e;margin-bottom: 0;">ثبت نام</h4>
-        <h1 style="font-size:70px;font-family: 'Estedad-Black';color: #07f49e;margin-bottom: 0;">گیمـ</h1>
+        <h4 class="signup-title1">
+            {{publicservice.Texts.Texts["signup1"]}}</h4>
+        <h1 class="signup-title2">
+            {{publicservice.Texts.Texts["signup2"]}}</h1>
 
     </div>
 
 
 
-<div  style="background-color: white ; height: 48% ; margin-top: 15%;  text-align: center; border-radius: 20px;padding: 20px 40px 20px 40px;width: 20%;">
-    <div style="padding: 10px;">
-    <div>
-        <form class="example-form">
-            <mat-form-field class="example-full-width" style="text-align: right;width: 100%;">
-             <mat-label style="font-family: 'Estedad-SemiBold';">نام و نام خانوادگی</mat-label>
-                <input matInput [formControl]="emailFormControl4" id="inputName" style="text-align: right;font-family: 'Estedad-Regular';" [(ngModel)] = "publicservice.Name">
-                <mat-error *ngIf=" !emailFormControl4.hasError('required')">
-                  
-                </mat-error>
-                <mat-error *ngIf="emailFormControl4.hasError('required')" style="font-family: 'Estedad-Regular';">
-                    وارد کردن نام <strong>اجباری</strong> است
-                </mat-error>
-            </mat-form-field>
-        </form>
-    </div>
-    <div>
-        <form class="example-form">
-            <mat-form-field class="example-full-width" style="text-align: right;width: 100%;">
-                <mat-label style="font-family: 'Estedad-SemiBold';">ایمیل</mat-label>
-                <input matInput [formControl]="emailFormControl1" id="inputEmail" placeholder="Ex. pat@example.com"
-                    style="text-align: right;font-family: 'Estedad-Regular';" [(ngModel)]="publicservice.Email">
-                <mat-error *ngIf="emailFormControl1.hasError('email') && !emailFormControl1.hasError('required')" style="font-family: 'Estedad-Regular';">
-                    لطفا یک ایمیل صحیح وارد کنید
-                </mat-error>
-                <mat-error *ngIf="emailFormControl1.hasError('required')"  style="font-family: 'Estedad-Regular';">
-                    وارد کردن ایمیل <strong>اجباری</strong> است
-                </mat-error>
-            </mat-form-field>
-        </form>
-    </div>
-    <div>
-        <form class="example-form">
-            <mat-form-field class="example-full-width" style="text-align: right;width: 100%;">
-                <mat-label style="font-family: 'Estedad-SemiBold';">شماره همراه</mat-label>
-                <input matInput [formControl]="emailFormControl2" id="inputPhone" placeholder="*********09" style="text-align: right;font-family: 'Estedad';" [(ngModel)]="publicservice.PhoneNumber" type="text" pattern="[0-9]*" >
-                <mat-error *ngIf="emailFormControl2.hasError('pattern') && !emailFormControl2.hasError('required')" style="font-family: 'Estedad-Regular';">
-                    لطفا یک شماره همراه صحیح وارد کنید
-                </mat-error>
-                <mat-error *ngIf="emailFormControl2.hasError('required')" style="font-family: 'Estedad-Regular';">
-                    وارد کردن شماره همراه <strong>اجباری</strong> است
-                </mat-error>
-            </mat-form-field>
-        </form>
-    </div>
-    <div>
-        <form class="example-form">
-            <mat-form-field class="example-full-width" style="text-align: right;padding-bottom: 10px;width: 100%;">
-                <mat-label style="font-family: 'Estedad-SemiBold';">رمز عبور</mat-label>
-                <input matInput [formControl]="emailFormControl3" id="inputPassword" style="text-align: right;font-family: 'Estedad-Regular';" [(ngModel)]="publicservice.Password" [type]="hide ? 'password' : 'text'">
-                <mat-error *ngIf="emailFormControl3.hasError('minLength') && !emailFormControl3.hasError('required')" style="font-family: 'Estedad-Regular';">
-                    حداقل تعداد کاراکتر های رمز 8 عدد می باشد
-                </mat-error>
-                <mat-error *ngIf="emailFormControl3.hasError('required')" style="font-family: 'Estedad-Regular';">
-                    وارد کردن رمز عبور <strong>اجباری</strong> است
-                </mat-error>
-                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                </button>
+    <div class="left-div">
+        <div class="form-fields-div">
+            <div class="form-field-div">
+                <form>
+                    <mat-form-field class="form-field">
+                        <mat-label class="label">{{publicservice.Texts.Texts["signup3"]}}
+                        </mat-label>
+                        <input matInput [formControl]="emailFormControl4" id="inputName" class="input"
+                            [(ngModel)]="publicservice.Name">
+                        <mat-error *ngIf="emailFormControl4.hasError('required')" class="error">
+                            {{publicservice.Texts.Texts["signup6"]}}
+                            <strong>{{publicservice.Texts.Texts["signup5"]}}</strong>
+                            {{publicservice.Texts.Texts["signup4"]}}
+                        </mat-error>
+                    </mat-form-field>
+                </form>
+            </div>
+            <div class="form-field-div">
+                <form>
+                    <mat-form-field class="form-field">
+                        <mat-label class="label">{{publicservice.Texts.Texts["signup7"]}}
+                        </mat-label>
+                        <input matInput [formControl]="emailFormControl1" id="inputEmail"
+                            placeholder="Ex. pat@example.com" class="input" [(ngModel)]="publicservice.Email">
+                        <mat-error
+                            *ngIf="emailFormControl1.hasError('email') && !emailFormControl1.hasError('required')"
+                            class="error">
+                            {{publicservice.Texts.Texts["signup8"]}}
+                        </mat-error>
+                        <mat-error *ngIf="emailFormControl1.hasError('required')" class="error">
+                            {{publicservice.Texts.Texts["signup9"]}}
+                            <strong>{{publicservice.Texts.Texts["signup5"]}}</strong>
+                            {{publicservice.Texts.Texts["signup4"]}}
+                        </mat-error>
+                    </mat-form-field>
+                </form>
+            </div>
+            <div class="form-field-div">
+                <form>
+                    <mat-form-field class="form-field">
+                        <mat-label class="label">{{publicservice.Texts.Texts["signup10"]}}
+                        </mat-label>
+                        <input matInput [formControl]="emailFormControl2" id="inputPhone" placeholder="*********09"
+                            class="input" [(ngModel)]="publicservice.PhoneNumber" type="text" pattern="[0-9]*">
+                        <mat-error
+                            *ngIf="emailFormControl2.hasError('pattern') && !emailFormControl2.hasError('required')"
+                            class="error">
+                            {{publicservice.Texts.Texts["signup11"]}}
+                        </mat-error>
+                        <mat-error *ngIf="emailFormControl2.hasError('required')" class="error">
+                            {{publicservice.Texts.Texts["signup12"]}}
+                            <strong>{{publicservice.Texts.Texts["signup5"]}}</strong>
+                            {{publicservice.Texts.Texts["signup4"]}}
+                        </mat-error>
+                    </mat-form-field>
+                </form>
+            </div>
+            <div class="form-field-div">
+                <form>
+                    <mat-form-field class="form-field">
+                        <mat-label class="label">{{publicservice.Texts.Texts["signup13"]}}
+                        </mat-label>
+                        <input matInput [formControl]="emailFormControl3" id="inputPassword"
+                            class="input"
+                            [(ngModel)]="publicservice.Password" [type]="hide ? 'password' : 'text'">
+                        <mat-error
+                            *ngIf="emailFormControl3.hasError('minlength') && !emailFormControl3.hasError('required')"
+                            class="error">
+                            {{publicservice.Texts.Texts["signup14"]}}
+                        </mat-error>
+                        <mat-error *ngIf="emailFormControl3.hasError('required')"
+                            class="error">
+                            {{publicservice.Texts.Texts["signup15"]}}
+                            <strong>{{publicservice.Texts.Texts["signup5"]}}</strong>
+                            {{publicservice.Texts.Texts["signup4"]}}
+                        </mat-error>
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                            [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
 
-            </mat-form-field>
-        </form>
+                    </mat-form-field>
+                </form>
+            </div>
+        </div>
+        <div>
+            <button mat-flat-button (click)="signUp()"
+                class="green-button">{{publicservice.Texts.Texts["signup16"]}}</button>
+        </div>
+        <div class="left-button">
+            <button mat-button (click)="login()"
+                class="normal-button">{{publicservice.Texts.Texts["signup17"]}}</button>
+        </div>
     </div>
-</div>
-    <div>
-        <button mat-raised-button (click)="signUp()" id="signUpButton"  style="font-size:15px;font-family: 'Estedad-Black'; color: #52006b; background-color: #6af9c5;"  >ثبت نام</button>
-    </div>
-    <div>
-        <button (click)="login()" mat-button [mat-dialog-close]="true" style="color: #00b583; font-family:'Estedad-Black' ;" >ورود</button>
-    </div>
-</div>
 </div>
