@@ -98,6 +98,19 @@ export class Texts{
         this.FaTexts["error2"] = "deactive"
         this.FaTexts["error3"] = ""
 
+        this.FaTexts["login1"] = "ورود"
+        this.FaTexts["login2"] = "گیمـ"
+        this.FaTexts["login3"] = "ایمیل"
+        this.FaTexts["login4"] = "لطفا یک ایمیل صحیح وارد کنید"
+        this.FaTexts["login5"] = "است"
+        this.FaTexts["login6"] = "اجباری"
+        this.FaTexts["login7"] = "وارد کردن ایمیل"
+        this.FaTexts["login8"] = "رمز عبور"
+        this.FaTexts["login9"] = "حداقل تعداد کاراکتر های رمز 8 عدد می باشد"
+        this.FaTexts["login10"] = "وارد کردن رمز عبور"
+        this.FaTexts["login11"] = "ورود"
+        this.FaTexts["login12"] = "ثبت نام"
+
         this.Texts=this.FaTexts;
 
     }

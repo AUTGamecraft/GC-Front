@@ -47,7 +47,7 @@
     padding: 20px 16px 19px;
 }
 .collapse-title {
-    width:300px;
+    width: 300px;
     font-family: "Estedad-Bold";
     font-size: 24px;
     color: #52006b;
@@ -529,81 +529,83 @@
     color: #a04db9;
     margin-top: 0;
 }
-.green-button{
-    font-family: 'Estedad-Bold';
+.green-button {
+    font-family: "Estedad-Bold";
     color: #52006b;
-    background-color:#6af9c5;
+    background-color: #6af9c5;
     border-radius: 24px;
     padding: 11px 16px;
     font-size: large;
 }
-.normal-button{
-    font-family: 'Estedad-Bold';
+.normal-button {
+    font-family: "Estedad-Bold";
     font-size: large;
     color: white;
     padding: 9px 9px 9px 9px;
     border-radius: 24px;
     background-color: rgba(255, 255, 255, 0);
 }
-.title{
-    font-family: 'Estedad-Black';
+.title {
+    font-family: "Estedad-Black";
     color: #a04db9;
 }
-.right-header{
+.right-header {
     display: flex;
     margin-right: 50px;
     margin-top: 20px;
 }
-.right-button{
+.right-button {
     margin: 0 5% 0 0;
 }
-.left-button{
+.left-button {
     margin: 0 0 0 5%;
 }
-.before-login{
+.before-login {
     display: flex;
 }
-.after-login{
+.after-login {
     display: flex;
 }
-.left-header{
-    display: flex;margin-left: 50px;margin-top: 20px;
+.left-header {
+    display: flex;
+    margin-left: 50px;
+    margin-top: 20px;
 }
-.title-div{
+.title-div {
     margin-right: 50px;
 }
-.big-right-header{
+.big-right-header {
     display: flex;
 }
-.whole-header{
+.whole-header {
     direction: rtl;
     margin: 0 10px 10px 10px;
     justify-content: space-between;
     display: flex;
 }
-.numbers{
+.numbers {
     font-size: 70px;
     font-family: "Estedad";
     color: #ede1f1;
     margin-bottom: 0;
     font-weight: bold;
 }
-.dots{
+.dots {
     font-size: 70px;
     font-family: "Estedad-Regular";
     color: #ede1f1;
     margin: 60px 10px 10px 10px;
     font-weight: bold;
 }
-.header-line{
+.header-line {
     width: 0;
     height: 48px;
-    margin: 15px 40px 5px 0;
+    margin: 20px 40px 5px 0;
     border: solid 1.5px #a04db9 !important;
     background-color: #a04db9;
     border-radius: 20px;
 }
-.left-header-line{
+.left-header-line {
     width: 0;
     height: 48px;
     margin-left: 15px;
@@ -611,47 +613,53 @@
     background-color: #a04db9;
     border-radius: 20px;
 }
-.prizes-title{
+.prizes-title {
     text-align: center;
-    font-family: 'Estedad-Black';
+    font-family: "Estedad-Black";
     font-size: x-large;
     color: #77009b;
 }
-.prizes{
-    background-image: url('/assets/svg/bubble-light-purple.svg');
+.prizes {
+    background-image: url("/assets/svg/bubble-light-purple.svg");
     background-repeat: no-repeat;
     transform: scaleX(-1);
     background-size: contain;
     padding-bottom: 10%;
 }
-.inner-prizes{
+.inner-prizes {
     transform: scaleX(-1);
 }
-.prize-cards{
+.prize-cards {
     margin: 40px 30px 10px 30px;
     text-align: center;
     justify-content: space-evenly;
 }
-.prize-card-image{
+.prize-card-image {
     width: 252.5px;
     height: 252.5px;
     object-fit: cover;
     border-radius: 50%;
 }
-.prize-card-title{
+.prize-card-title {
     text-align: center;
     color: #77009b;
-    font-family: 'Estedad-Regular';
+    font-family: "Estedad-Regular";
     font-size: 36px;
     margin: 0;
 }
-.prize-card-discription{
+.prize-card-discription {
     color: #a04db9;
-    font-family: 'Estedad-Regular';
+    font-family: "Estedad-Regular";
     font-size: 28px;
     margin: 0;
     margin-top: 5px;
 }
-.prize-cards-whole-div{
+.prize-cards-whole-div {
+    justify-content: center;
+}
+.timer-div {
+    display: flex;
+    text-align: center;
+    width: 270px;
     justify-content: center;
 }
