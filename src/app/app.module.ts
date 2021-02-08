@@ -23,6 +23,7 @@ import {FaNumPipe} from 'ngx-persian';
 import { DashboardEventComponent } from './dashboard-event/dashboard-event.component';
 import { DashboardMediaComponent } from './dashboard-media/dashboard-media.component';
 import { ErrorDialogComponent } from './error-dialog/error-dialog.component';
+import { PeopleComponent } from './people/people.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ErrorDialogComponent } from './error-dialog/error-dialog.component';
     DashboardEventComponent,
     DashboardMediaComponent,
     ErrorDialogComponent,
+    PeopleComponent,
    
     
 
