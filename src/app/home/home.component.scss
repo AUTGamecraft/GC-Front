@@ -62,7 +62,6 @@
     margin-top: 25px;
     margin-bottom: 15px;
     font-weight: bold;
-
 }
 .collapse {
     direction: ltr;
@@ -130,7 +129,7 @@
     transform: scaleY(-1);
 }
 .green-wave-above-wrokshops {
-    background-image: url(/assets/svg/wave-green.svg);
+    background-image: url("/assets/svg/wave-green.svg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     transform: scaleY(-1);
@@ -666,18 +665,18 @@
     justify-content: center;
 }
 //start of logo
-.logo{
+.logo {
     padding-top: 20px;
     justify-content: center;
     display: flex;
     direction: rtl;
 }
-.logo-image{
+.logo-image {
     width: 100.8px;
     z-index: 1;
 }
-.logo-text{
-    font-family: 'Estedad-Black';
+.logo-text {
+    font-family: "Estedad-Black";
     color: #a04db9;
     font-size: 24px;
     z-index: 0;
