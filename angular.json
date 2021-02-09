@@ -24,7 +24,8 @@
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
-              "src/assets/svg/light-3d-bulb.svg"
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
@@ -52,7 +53,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "4mb",
-                  "maximumError": "5mb"
+                  "maximumError": "8mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -88,7 +89,8 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": [
-              "src/assets/svg/light-3d-bulb.svg"
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
@@ -123,7 +125,6 @@
           }
         }
       }
-    }
-  },
+    }},
   "defaultProject": "gdFront"
 }
