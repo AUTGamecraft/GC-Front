@@ -1,76 +1,76 @@
 <div class="login-whole">
-    <!-- <div [class]="isActive">
-        <app-error-dialog ></app-error-dialog>
-    </div> -->
-<div class="login">
+    <div class="login">
 
-    <div class="login-title-div">
+        <div class="login-title-div">
 
-        <h2 class="login-title1">
-            {{publicservice.Texts.Texts["login1"]}}</h2>
+            <h2 class="login-title1">
+                {{publicservice.Texts.Texts["login1"]}}</h2>
 
-        <h1 class="login-title2">
-            {{publicservice.Texts.Texts["login2"]}}</h1>
-
-    </div>
-    <div class="form-fields-div">
-        <div class="form-field-div">
-            <form>
-                <mat-form-field class="form-field">
-                    <mat-label class="label">{{publicservice.Texts.Texts["login3"]}}
-                    </mat-label>
-                    <input matInput [formControl]="emailFormControl" id="inputEmail" placeholder="Ex. pat@example.com"
-                        class="input" [(ngModel)]="publicservice.Email">
-                    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')"
-                        class="error">
-                        {{publicservice.Texts.Texts["login4"]}}
-                    </mat-error>
-                    <mat-error *ngIf="emailFormControl.hasError('required')" class="error">
-                        {{publicservice.Texts.Texts["login7"]}} <strong>{{publicservice.Texts.Texts["login6"]}}</strong>
-                        {{publicservice.Texts.Texts["login5"]}}
-                    </mat-error>
-                </mat-form-field>
-            </form>
-        </div>
-        <div class="form-field-div">
-            <form>
-                <mat-form-field class="form-field">
-                    <mat-label class="label">{{publicservice.Texts.Texts["login8"]}}
-                    </mat-label>
-                    <input matInput [formControl]="passwordFormControl" id="inputPassword" class="input"
-                        [(ngModel)]="publicservice.Password" [type]="hide ? 'password' : 'text'">
-                    <mat-error
-                        *ngIf="passwordFormControl.hasError('minlength') && !passwordFormControl.hasError('required')"
-                        class="error">
-                        {{publicservice.Texts.Texts["login9"]}}
-                    </mat-error>
-                    <mat-error *ngIf="passwordFormControl.hasError('required')" class="error">
-                        {{publicservice.Texts.Texts["login10"]}}
-                        <strong>{{publicservice.Texts.Texts["login6"]}}</strong> {{publicservice.Texts.Texts["login5"]}}
-                    </mat-error>
-                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                        [attr.aria-pressed]="hide">
-                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                    </button>
-
-                </mat-form-field>
-            </form>
-        </div>
-        <div class="buttons">
-
-            <div>
-                <button mat-flat-button (click)="Login()"
-                    class="green-button">{{publicservice.Texts.Texts["login11"]}}</button>
-            </div>
-            <div class="left-button">
-                <button mat-button (click)="signup()"
-                    class="normal-button">{{publicservice.Texts.Texts["login12"]}}</button>
+            <div class="logo">
+                <img class="logo-image" src="assets/svg/3d-dark.svg">
             </div>
 
         </div>
+        <div class="form-fields-div">
+            <div class="form-field-div">
+                <form>
+                    <mat-form-field class="form-field">
+                        <mat-label class="label">{{publicservice.Texts.Texts["login3"]}}
+                        </mat-label>
+                        <input matInput [formControl]="emailFormControl" id="inputEmail"
+                            placeholder="Ex. pat@example.com" class="input" [(ngModel)]="publicservice.Email">
+                        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')"
+                            class="error">
+                            {{publicservice.Texts.Texts["login4"]}}
+                        </mat-error>
+                        <mat-error *ngIf="emailFormControl.hasError('required')" class="error">
+                            {{publicservice.Texts.Texts["login7"]}}
+                            <strong>{{publicservice.Texts.Texts["login6"]}}</strong>
+                            {{publicservice.Texts.Texts["login5"]}}
+                        </mat-error>
+                    </mat-form-field>
+                </form>
+            </div>
+            <div class="form-field-div">
+                <form>
+                    <mat-form-field class="form-field">
+                        <mat-label class="label">{{publicservice.Texts.Texts["login8"]}}
+                        </mat-label>
+                        <input matInput [formControl]="passwordFormControl" id="inputPassword" class="input"
+                            [(ngModel)]="publicservice.Password" [type]="hide ? 'password' : 'text'">
+                        <mat-error
+                            *ngIf="passwordFormControl.hasError('minlength') && !passwordFormControl.hasError('required')"
+                            class="error">
+                            {{publicservice.Texts.Texts["login9"]}}
+                        </mat-error>
+                        <mat-error *ngIf="passwordFormControl.hasError('required')" class="error">
+                            {{publicservice.Texts.Texts["login10"]}}
+                            <strong>{{publicservice.Texts.Texts["login6"]}}</strong>
+                            {{publicservice.Texts.Texts["login5"]}}
+                        </mat-error>
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                            [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
 
+                    </mat-form-field>
+                </form>
+            </div>
+            <div class="buttons">
+
+                <div>
+                    <button mat-flat-button (click)="Login()"
+                        class="green-button">{{publicservice.Texts.Texts["login11"]}}</button>
+                </div>
+                <div class="left-button">
+                    <button mat-button (click)="signup()"
+                        class="normal-button">{{publicservice.Texts.Texts["login12"]}}</button>
+                </div>
+
+            </div>
+
+
+        </div>
 
     </div>
-
-</div>
 </div>

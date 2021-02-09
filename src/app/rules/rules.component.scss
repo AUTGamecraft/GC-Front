@@ -83,8 +83,10 @@
     border-radius: 16px;
     height: fit-content;
     padding: 0.5px;
+    padding-right: 95px;
+    padding-left: 95px;
     margin-bottom: 15%;
-    padding-bottom: 70px;
+    padding-bottom:74px ;
 }
 .people-title {
     font-family: "Estedad-Black";
@@ -130,7 +132,7 @@
     color: #a04db9;
     margin-top: 0;
 }
-#people-button {
+#rules-button {
     border-radius: 24px;
     border: solid 2px #07f49e !important;
 }
@@ -268,3 +270,32 @@
     z-index: 0;
 }
 //end of logo
+.rules-title{
+    text-align: center;
+    font-family: 'Estedad-Black';
+    color: #52006b;
+    font-size: 36px;
+}
+.rules-subtitle1{
+    text-align: right;
+    font-family: 'Estedad-Black';
+    color: #00b583;
+    font-size:40px;
+    margin-bottom: 0;
+}
+.text{
+    direction: rtl;
+    text-align: right;
+    font-family: 'Estedad-Medium';
+    font-size: 20px;
+    color: #52006b;
+    font-weight: 500;
+    margin-top: 0;
+}
+.rules-subtitle2{
+    text-align: right;
+    font-family: 'Estedad-Black';
+    color: #77009b;
+    font-size: 28px;
+    margin-bottom: 0;
+}

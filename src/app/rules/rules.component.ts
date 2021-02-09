@@ -2,23 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { PublicService } from '../public.service';
 import { Router, NavigationEnd } from '@angular/router';
 @Component({
-  selector: 'app-people',
-  templateUrl: './people.component.html',
-  styleUrls: ['./people.component.scss']
+  selector: 'app-rules',
+  templateUrl: './rules.component.html',
+  styleUrls: ['./rules.component.scss']
 })
-export class PeopleComponent implements OnInit {
+export class RulesComponent implements OnInit {
 
-  constructor(public publicservice: PublicService, public router: Router) {
-    router.events.subscribe(s => {
-      if (s instanceof NavigationEnd) {
-        const tree = router.parseUrl(router.url);
-        if (tree.fragment) {
-          const element = document.querySelector("#" + tree.fragment);
-          if (element) { element.scrollIntoView(); }
-        }
-      }
-    });
-   }
+  constructor(public publicservice: PublicService, public router: Router) { }
 
   ngOnInit(): void {
   }

@@ -24,6 +24,7 @@ import { DashboardEventComponent } from './dashboard-event/dashboard-event.compo
 import { DashboardMediaComponent } from './dashboard-media/dashboard-media.component';
 import { ErrorDialogComponent } from './error-dialog/error-dialog.component';
 import { PeopleComponent } from './people/people.component';
+import { RulesComponent } from './rules/rules.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { PeopleComponent } from './people/people.component';
     DashboardMediaComponent,
     ErrorDialogComponent,
     PeopleComponent,
+    RulesComponent,
    
     
 

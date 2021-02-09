@@ -122,4 +122,7 @@ export class HomeComponent implements OnInit {
   People(){
     this.router.navigate(['people']);
   }
+  Rules(){
+    this.router.navigate(['rules']);
+  }
 }

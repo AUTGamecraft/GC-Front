@@ -665,3 +665,21 @@
     width: 270px;
     justify-content: center;
 }
+//start of logo
+.logo{
+    padding-top: 20px;
+    justify-content: center;
+    display: flex;
+    direction: rtl;
+}
+.logo-image{
+    width: 100.8px;
+    z-index: 1;
+}
+.logo-text{
+    font-family: 'Estedad-Black';
+    color: #a04db9;
+    font-size: 24px;
+    z-index: 0;
+}
+//end of logo

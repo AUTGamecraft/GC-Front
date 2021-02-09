@@ -44,11 +44,13 @@ input[type="number"] {
 .signup-title-div {
     direction: rtl;
     text-align: center;
-    margin-top: 15%;
+    margin-top: 14%;
+    margin-left: 20px;
 }
 .signup-title1 {
+    margin-left: 20px;
     font-size: 35px;
-    font-family: "Estedad-Black";
+    font-family: "Estedad-Bold";
     color: #07f49e;
     margin-bottom: 0;
 }
@@ -87,3 +89,22 @@ input[type="number"] {
 .form-field-div{
     margin-top: 5%;
 }
+//start of logo
+.logo{
+    padding-top: 18px;
+    justify-content: center;
+    display: flex;
+    direction: rtl;
+  }
+  .logo-image{
+    margin-left: 20px;
+    z-index: 1;
+    width: 198.1px;
+  }
+  .logo-text{
+    font-family: 'Estedad-Black';
+    color: #a04db9;
+    font-size: 24px;
+    z-index: 0;
+  }
+  //end of logo
