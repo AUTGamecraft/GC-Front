@@ -5,6 +5,7 @@ import { LoginComponent } from '../login/login.component';
 import { Router } from '@angular/router';
 import { PublicService } from '../public.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { ErrorDialogComponent } from '../error-dialog/error-dialog.component';
 
 @Component({
   selector: 'app-sign-up-page',
@@ -77,7 +78,7 @@ export class SignUpPageComponent implements OnInit {
       });
     }
     else{
-      this.snackbar.open("مشکلی وجود دارد!",'',{duration:2000,panelClass:["snackbar"]});
+      this.snackbar.openFromComponent(ErrorDialogComponent,{duration:1000,data:'فیلد ها را پر کنید',panelClass:['snackbar'],verticalPosition:'top',direction:'rtl'});
     }
 
   }

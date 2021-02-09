@@ -9,9 +9,10 @@ input[type="number"] {
     -moz-appearance: textfield; /* Firefox */
 }
 ::ng-deep .snackbar {
-    direction: rtl;
-    color: white;
-}
+    background-color: transparent;
+    box-shadow: none;
+    height: 0;
+  }
 .green-button {
     font-family: "Estedad-Bold";
     color: #52006b;

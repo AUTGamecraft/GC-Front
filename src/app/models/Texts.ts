@@ -100,9 +100,7 @@ export class Texts{
         this.FaTexts["dash-event32"] = "movie"
         this.FaTexts["dash-event33"] = "تیم های رقیب"
 
-        this.FaTexts["error1"] = "error-outline"
-        this.FaTexts["error2"] = "deactive"
-        this.FaTexts["error3"] = ""
+        this.FaTexts["error1"] = "error"
 
         this.FaTexts["login1"] = "ورود"
         this.FaTexts["login2"] = "گیمـ"

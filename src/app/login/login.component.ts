@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { PublicService } from '../public.service';
 import { FormControl, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { ErrorDialogComponent } from '../error-dialog/error-dialog.component';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import { error } from '@angular/compiler/src/util';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
   hide = true;
@@ -19,7 +21,7 @@ export class LoginComponent implements OnInit {
     Validators.required,
     Validators.minLength(8)
   ]);
-  constructor(private router: Router, public publicservice: PublicService, private dialog: MatDialog) { }
+  constructor(private router: Router, public publicservice: PublicService,public snackbar: MatSnackBar) { }
 
   signup(): void {
     const navigationDetails: string[] = ['signup'];
@@ -50,8 +52,7 @@ export class LoginComponent implements OnInit {
       })
     }
     else {
-      this.publicservice.Texts.Texts["error3"] = 'فیلد ها را پر کنید'
-      this.publicservice.Texts.Texts["error2"] = 'active'
+      this.snackbar.openFromComponent(ErrorDialogComponent,{duration:1000,data:'فیلد ها را پر کنید',panelClass:['snackbar'],verticalPosition:'top',direction:'rtl'});
     }
   }
 }

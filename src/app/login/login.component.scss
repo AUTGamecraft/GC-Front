@@ -1,8 +1,7 @@
-.-login {
-  width: 1280px;
-  height: 800px;
-  padding: 211px 288.5px 211px 260px;
-  background-color: var(--primary-dark);
+::ng-deep .snackbar {
+  background-color: transparent;
+  box-shadow: none;
+  height: 0;
 }
 .Rectangle-35 {
   width: 380px;
@@ -36,10 +35,6 @@
 .login {
   display: flex;
   justify-content: space-evenly;
-  direction: rtl;
-  background-color: #52006b;
-  height: 100%;
-  background-image: url("/assets/svg/pattern.svg");
 }
 .login-title-div {
   direction: rtl;
@@ -87,4 +82,10 @@
   direction: rtl;
   text-align: center;
   margin-top: 5%;
+}
+.login-whole{
+  background-color: #52006b;
+  background-image: url("/assets/svg/pattern.svg");
+  direction: rtl;
+  height: 100%;
 }

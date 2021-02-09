@@ -1,19 +1,19 @@
 .error-div{
+    direction: rtl;
+    display: flex;
+    text-align: right;
     background-color: #ef5350;
+    border-radius: 15px;
+    padding-right: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 .error-icon{
     color: white;
+    position: absolute;
+    margin-top: 17px;
 }
 .error-message{
+    margin-right: 30px;
+    font-family: 'Estedad-Regular';
     color: white;
-}
-.active {
-    max-height: 2000px;
-    overflow: visible;
-    transition: max-height 0.5s ease-in;
-}
-.deactive {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-out;
 }

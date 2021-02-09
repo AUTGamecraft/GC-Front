@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 // import { User, Car, Service } from './models/Models'
 import { Texts } from './models/Texts';
 import { Http, HttpModule, Headers, RequestOptions, Response } from '@angular/http';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 // import { AppDialogComponentDialog } from './app-dialog/app-dialog.component';
-import {MatSnackBar} from '@angular/material/snack-bar';
-import {ErrorDialogComponent} from '../app/error-dialog/error-dialog.component'
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ErrorDialogComponent } from '../app/error-dialog/error-dialog.component'
 
 
 @Injectable({
@@ -20,9 +20,9 @@ export class PublicService {
   public Email: String = "";
   public PhoneNumber: String = "";
   public Password: String = "";
-  public Name: String ="";
+  public Name: String = "";
   Texts: Texts = new Texts();
-  public Token: String ="";
+  public Token: String = "";
   public logedIn: boolean = false;
   Mockup() {
 
@@ -33,10 +33,10 @@ export class PublicService {
 
 
 
-  constructor(private http: Http,public dialog: MatDialog) {
+  constructor(private http: Http, public dialog: MatDialog, public snackbar: MatSnackBar) {
     this.Authorization = localStorage.getItem("Authorization");
-    if(this.Authorization != null){
-      this.logedIn=true;
+    if (this.Authorization != null) {
+      this.logedIn = true;
     }
     // this.dialog..PublicService=this;
     // this.Mockup();
@@ -48,7 +48,7 @@ export class PublicService {
     if (res.status < 200 || res.status >= 300) {
       throw new Error('Bad response status: ' + res.status);
     }
-    
+
 
     let body = res.json();
 
@@ -73,7 +73,7 @@ export class PublicService {
     return body || {};
   }
   private handleError(error: any) {
-  
+
     // In a real world app, we might send the error to remote logging infrastructure
     let errMsg = JSON.parse(error._body);//error.message || 'Server error';
 
@@ -101,14 +101,12 @@ export class PublicService {
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
-      
+
     ret.then(r => {
       this.APICalls.SignUp = false;
     }).catch(e => {
       this.APICalls.SignUp = false;
-      that.dialog.open(ErrorDialogComponent,{data:{
-        type: e.message 
-      }});
+      that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 1000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
     });
     return ret;
   }
@@ -121,7 +119,7 @@ export class PublicService {
     });
     let headers = new Headers({
       'Content-Type': 'application/json',
-      'Authorization':'Bearer '+this.Authorization
+      'Authorization': 'Bearer ' + this.Authorization
     });
     let options = new RequestOptions({ headers: headers });
     let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/token/', body, options)
@@ -130,23 +128,22 @@ export class PublicService {
       .catch(this.handleError);
     ret.then(r => {
       this.APICalls.Login = false;
-      if(r.error == null || r.error == undefined){
+      if (r.error == null || r.error == undefined) {
         this.Authorization = r.access;
         localStorage.setItem("Authorization", this.Authorization);
         this.logedIn = true;
       }
-      else{
-        
+      else {
+
       }
     }).catch(e => {
       this.APICalls.Login = false;
-      that.dialog.open(ErrorDialogComponent,{data:{
-        type: e.message 
-      }});
+      that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 1000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+
     });
     return ret;
   }
-  
+
   getTalks(): Promise<any> {
     var that = this;
     this.APICalls.SignUp = true;
@@ -158,14 +155,13 @@ export class PublicService {
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
-      
+
     ret.then(r => {
       this.APICalls.SignUp = false;
     }).catch(e => {
       this.APICalls.SignUp = false;
-      that.dialog.open(ErrorDialogComponent,{data:{
-        type: e.message 
-      }});
+      that.snackbar.openFromComponent(ErrorDialogComponent,{duration:1000,data:e.message,panelClass:['snackbar'],verticalPosition:'top',direction:'rtl'});
+
     });
     return ret;
   }
@@ -180,14 +176,13 @@ export class PublicService {
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
-      
+
     ret.then(r => {
       this.APICalls.SignUp = false;
     }).catch(e => {
       this.APICalls.SignUp = false;
-      that.dialog.open(ErrorDialogComponent,{data:{
-        type: e.message 
-      }});
+      that.snackbar.openFromComponent(ErrorDialogComponent,{duration:1000,data:e.message,panelClass:['snackbar'],verticalPosition:'top',direction:'rtl'});
+
     });
     return ret;
   }

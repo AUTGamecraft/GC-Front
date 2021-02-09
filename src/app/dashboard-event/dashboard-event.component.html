@@ -1,126 +1,175 @@
-<div class="dash-event">
-
-    <div class="right-part">
-        <div>
-            <img class="user-image" src="assets/images/masoud.jpg">
-        </div>
-        <p class="user-name">{{publicservice.Texts.Texts["dash-event1"]}}</p>
-        <div>
-            <button mat-button (click)="logOut()"
-                class="normal-button">{{publicservice.Texts.Texts["header8"]}}</button>
-        </div>
-        <button mat-button style="background-color: #eceff1;" class="buttons" (click)="events()">
-            <mat-icon>{{publicservice.Texts.Texts["dash-event29"]}}</mat-icon>
-            {{publicservice.Texts.Texts["dash-event2"]}}
-        </button>
-        <button mat-button (click)="media()" style="background-color: #fafafa;" class="buttons">
-            <mat-icon>{{publicservice.Texts.Texts["dash-event30"]}}</mat-icon>
-            {{publicservice.Texts.Texts["dash-event3"]}}
-        </button>
-        <button mat-button style="background-color: #fafafa;" class="buttons">
-            <mat-icon>{{publicservice.Texts.Texts["dash-event31"]}}</mat-icon>
-            {{publicservice.Texts.Texts["dash-event4"]}}
-        </button>
-        <button mat-button style="background-color: #fafafa;" class="buttons">
-            <mat-icon>{{publicservice.Texts.Texts["dash-event32"]}}</mat-icon>
-            {{publicservice.Texts.Texts["dash-event33"]}}
-        </button>
-        <button mat-stroked-button class="outlined-button">{{publicservice.Texts.Texts["dash-event5"]}}</button>
+<div class="dash-event-whole">
+    <div class="logo">
+        <p class="logo-text" style="margin-left: -15px;">{{publicservice.Texts.Texts["logo1"]}}</p>
+        <img class="logo-image" src="assets/svg/3d-dark.svg">
+        <p class="logo-text" style="margin-right: -15px;">{{publicservice.Texts.Texts["logo2"]}}</p>
     </div>
-    <div class="left-part">
-        <h1 class="events-title">{{publicservice.Texts.Texts["dash-event6"]}}</h1>
-        <h3 class="workshops-title">{{publicservice.Texts.Texts["dash-event7"]}}</h3>
-        <div class="collapse">
-            <div class="orange-collapse">
+    <div class="dash-event">
+        <div class="right-part">
+            <div>
+                <img class="user-image" src="assets/images/masoud.jpg">
+            </div>
+            <p class="user-name">{{publicservice.Texts.Texts["dash-event1"]}}</p>
+            <div>
+                <button mat-button (click)="logOut()"
+                    class="normal-button">{{publicservice.Texts.Texts["header8"]}}</button>
+            </div>
+            <button mat-button style="background-color: #eceff1;" class="buttons" (click)="events()">
+                <mat-icon>{{publicservice.Texts.Texts["dash-event29"]}}</mat-icon>
+                {{publicservice.Texts.Texts["dash-event2"]}}
+            </button>
+            <button mat-button (click)="media()" style="background-color: #fafafa;" class="buttons">
+                <mat-icon>{{publicservice.Texts.Texts["dash-event30"]}}</mat-icon>
+                {{publicservice.Texts.Texts["dash-event3"]}}
+            </button>
+            <button mat-button style="background-color: #fafafa;" class="buttons">
+                <mat-icon>{{publicservice.Texts.Texts["dash-event31"]}}</mat-icon>
+                {{publicservice.Texts.Texts["dash-event4"]}}
+            </button>
+            <button mat-button style="background-color: #fafafa;" class="buttons">
+                <mat-icon>{{publicservice.Texts.Texts["dash-event32"]}}</mat-icon>
+                {{publicservice.Texts.Texts["dash-event33"]}}
+            </button>
+            <button mat-stroked-button class="outlined-button">{{publicservice.Texts.Texts["dash-event5"]}}</button>
+        </div>
+        <div class="left-part">
+            <h1 class="events-title">{{publicservice.Texts.Texts["dash-event6"]}}</h1>
+            <h3 class="workshops-title">{{publicservice.Texts.Texts["dash-event7"]}}</h3>
+            <div class="collapse">
+                <div class="orange-collapse">
+                </div>
+                <div>
+                    <div class="components">
+                        <h3 class="component-title">
+                            {{publicservice.Texts.Texts["dash-event8"]}}</h3>
+                        <h4 class="component-subject">
+                            {{publicservice.Texts.Texts["dash-event9"]}}</h4>
+                        <h4 class="component-subject">
+                            {{publicservice.Texts.Texts["dash-event10"]}}</h4>
+                        <h4 class="component-subject">
+                            {{publicservice.Texts.Texts["dash-event11"]}}</h4>
+                        <button mat-stroked-button
+                            class="register-button">{{publicservice.Texts.Texts["dash-event12"]}}</button>
+                        <button mat-button class="discription"
+                            (click)="workshops =(workshops == 'active' ? 'deactive' : 'active');iconW = (iconW == 'keyboard_arrow_down' ? 'keyboard_arrow_up' : 'keyboard_arrow_down') ">{{publicservice.Texts.Texts["dash-event13"]}}
+                            <mat-icon class="icon" [inline]="true">{{iconW}}</mat-icon>
+                        </button>
+                    </div>
+                    <div [class]="workshops">
+                        <div class="workshops-inside">
+                            <div>
+                                <p class="workshops-discription">
+                                    {{publicservice.Texts.Texts["dash-event14"]}}</p>
+                            </div>
+                            <div class="presenters-title-div">
+                                <h1 class="presenters-title">{{publicservice.Texts.Texts["dash-event15"]}}</h1>
+                            </div>
+                            <div class="presenter-card">
+                                <div class="presenter-card-inside">
+                                    <div>
+                                        <img class="presenter-image" src="assets/images/masoud.jpg">
+                                    </div>
+                                    <h2 class="presenter-name">
+                                        {{publicservice.Texts.Texts["dash-event16"]}}
+                                    </h2>
+                                    <h4 class="presenter-about">{{publicservice.Texts.Texts["dash-event17"]}}</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <div>
-                <div class="components">
-                    <h3 class="component-title">
-                        {{publicservice.Texts.Texts["dash-event8"]}}</h3>
-                    <h4 class="component-subject">
-                        {{publicservice.Texts.Texts["dash-event9"]}}</h4>
-                    <h4 class="component-subject">
-                        {{publicservice.Texts.Texts["dash-event10"]}}</h4>
-                    <h4 class="component-subject">
-                        {{publicservice.Texts.Texts["dash-event11"]}}</h4>
-                    <button mat-stroked-button
-                        class="register-button">{{publicservice.Texts.Texts["dash-event12"]}}</button>
-                    <button mat-button class="discription"
-                        (click)="workshops =(workshops == 'active' ? 'deactive' : 'active');iconW = (iconW == 'keyboard_arrow_down' ? 'keyboard_arrow_up' : 'keyboard_arrow_down') ">{{publicservice.Texts.Texts["dash-event13"]}}
-                        <mat-icon class="icon" [inline]="true">{{iconW}}</mat-icon>
-                    </button>
+                <h3 class="talks-title">
+                    {{publicservice.Texts.Texts["dash-event18"]}}</h3>
+            </div>
+            <div class="collapse">
+                <div class="pink-collapse">
                 </div>
-                <div [class]="workshops">
-                    <div class="workshops-inside">
-                        <div>
-                            <p class="workshops-discription">
-                                {{publicservice.Texts.Texts["dash-event14"]}}</p>
-                        </div>
-                        <div class="presenters-title-div">
-                            <h1 class="presenters-title">{{publicservice.Texts.Texts["dash-event15"]}}</h1>
-                        </div>
-                        <div class="presenter-card">
-                            <div class="presenter-card-inside">
-                                <div>
-                                    <img class="presenter-image" src="assets/images/masoud.jpg">
+                <div>
+                    <div class="components">
+                        <h3 class="component-title">
+                            {{publicservice.Texts.Texts["dash-event19"]}}</h3>
+                        <h4 class="component-subject">
+                            {{publicservice.Texts.Texts["dash-event20"]}}</h4>
+                        <h4 class="component-subject">
+                            {{publicservice.Texts.Texts["dash-event21"]}}</h4>
+                        <h4 class="component-subject">
+                            {{publicservice.Texts.Texts["dash-event22"]}}</h4>
+                        <button mat-stroked-button
+                            class="register-button">{{publicservice.Texts.Texts["dash-event23"]}}</button>
+                        <button mat-button class="discription"
+                            (click)="talks = (talks == 'active' ? 'deactive' : 'active') ;iconT = (iconT == 'keyboard_arrow_down' ? 'keyboard_arrow_up' : 'keyboard_arrow_down') ">{{publicservice.Texts.Texts["dash-event24"]}}
+                            <mat-icon class="icon" [inline]="true">{{iconT}}</mat-icon>
+                        </button>
+                    </div>
+                    <div [class]="talks">
+                        <div class="workshops-inside">
+                            <div>
+                                <p class="workshops-discription">{{publicservice.Texts.Texts["dash-event25"]}}</p>
+                            </div>
+                            <div class="presenters-title-div">
+                                <h1 class="presenters-title">{{publicservice.Texts.Texts["dash-event26"]}}</h1>
+                            </div>
+                            <div class="presenter-card">
+                                <div class="presenter-card-inside">
+                                    <div>
+                                        <img class="presenter-image" src="assets/images/masoud.jpg">
+                                    </div>
+                                    <h2 class="presenter-name">
+                                        {{publicservice.Texts.Texts["dash-event27"]}}
+                                    </h2>
+                                    <h4 class="presenter-about">{{publicservice.Texts.Texts["dash-event28"]}} </h4>
                                 </div>
-                                <h2 class="presenter-name">
-                                    {{publicservice.Texts.Texts["dash-event16"]}}
-                                </h2>
-                                <h4 class="presenter-about">{{publicservice.Texts.Texts["dash-event17"]}}</h4>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
+        </div>
+    </div>
+</div>
+<div class="footer-whole-div">
+    <div class="purple-wave-above-footer">
+    </div>
+    <div class="footer-div">
+        <div class="discription-footer-div">
+            <div class="discription-right-footer-div">
+                <div class="discription-right-footer-about-div">
+                    <h1 class="discription-right-footer-about-title">
+                        {{publicservice.Texts.Texts["home37"]}}</h1>
+                    <h3 class="discription-right-footer-about-subtitle">
+                        {{publicservice.Texts.Texts["home38"]}}</h3>
+                    <p class="discription-right-footer-about-discription">
+                        {{publicservice.Texts.Texts["home39"]}}</p>
+                        <div style="text-align: center;">
+                            <button mat-flat-button class="green-button">{{publicservice.Texts.Texts["home47"]}}</button>
+                        </div>
+                </div>
+                <div class="discription-right-footer-bubble">
+                </div>
+            </div>
+            <div class="footer-image-div">
+                <img class="footer-image" src="assets/images/masoud.jpg">
+            </div>
         </div>
         <div>
-            <h3 class="talks-title">
-                {{publicservice.Texts.Texts["dash-event18"]}}</h3>
+            <h1 class="supporters-title">
+                {{publicservice.Texts.Texts["home40"]}}
+            </h1>
         </div>
-        <div class="collapse">
-            <div class="pink-collapse">
-            </div>
+        <div class="supporters-card-div">
             <div>
-                <div class="components">
-                    <h3 class="component-title">
-                        {{publicservice.Texts.Texts["dash-event19"]}}</h3>
-                    <h4 class="component-subject">
-                        {{publicservice.Texts.Texts["dash-event20"]}}</h4>
-                    <h4 class="component-subject">
-                        {{publicservice.Texts.Texts["dash-event21"]}}</h4>
-                    <h4 class="component-subject">
-                        {{publicservice.Texts.Texts["dash-event22"]}}</h4>
-                    <button mat-stroked-button
-                        class="register-button">{{publicservice.Texts.Texts["dash-event23"]}}</button>
-                    <button mat-button class="discription"
-                        (click)="talks = (talks == 'active' ? 'deactive' : 'active') ;iconT = (iconT == 'keyboard_arrow_down' ? 'keyboard_arrow_up' : 'keyboard_arrow_down') ">{{publicservice.Texts.Texts["dash-event24"]}}
-                        <mat-icon class="icon" [inline]="true">{{iconT}}</mat-icon>
-                    </button>
+                <div class="supportes-card-image-div">
+                    <img class="supporters-card-image" src="assets/images/masoud.jpg">
                 </div>
-                <div [class]="talks">
-                    <div class="workshops-inside">
-                        <div>
-                            <p class="workshops-discription">{{publicservice.Texts.Texts["dash-event25"]}}</p>
-                        </div>
-                        <div class="presenters-title-div">
-                            <h1 class="presenters-title">{{publicservice.Texts.Texts["dash-event26"]}}</h1>
-                        </div>
-                        <div class="presenter-card">
-                            <div class="presenter-card-inside">
-                                <div>
-                                    <img class="presenter-image" src="assets/images/masoud.jpg">
-                                </div>
-                                <h2 class="presenter-name">
-                                    {{publicservice.Texts.Texts["dash-event27"]}}
-                                </h2>
-                                <h4 class="presenter-about">{{publicservice.Texts.Texts["dash-event28"]}} </h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <p class="supportes-card-name">
+                    {{publicservice.Texts.Texts["home41"]}}</p>
             </div>
         </div>
     </div>
+</div>
+<div class="developers-div">
+    <p class="developers">{{publicservice.Texts.Texts["home42"]}}</p>
 </div>
