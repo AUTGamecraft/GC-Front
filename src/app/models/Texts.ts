@@ -65,6 +65,8 @@ export class Texts{
         this.FaTexts["home45"] = "تیم اول"
         this.FaTexts["home46"] = "کارت صد آفرین"
         this.FaTexts["home47"] = "دست اندر کاران"
+        this.FaTexts["home48"] = "شرایط مسابقه"
+
 
         this.FaTexts["dash-event1"] = "ابوالفضل بیهقی"
         this.FaTexts["dash-event2"] = "رویداد ها"

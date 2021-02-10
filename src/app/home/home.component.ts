@@ -9,11 +9,11 @@ import * as moment from 'jalali-moment';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  workshopsArray: any = {};
+  workshopsArray: any = [];
   workshopsActive: any = {};
   iconW: any = {};
   workshopsDate: any = {};
-  talksArray: any = {};
+  talksArray: any = [];
   talksActive: any = {};
   iconT: any = {};
   talksDate: any = {};
@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit {
   constructor(public publicservice: PublicService, public router: Router) {
     publicservice.getTalks().then((r) => {
       this.talksArray = r.data;
+      console.log(this.talksArray)
       for (let index = 0; index < this.talksArray.length; index++) {
         this.talksActive[index] = 'deactive'
         this.iconT[index] = 'keyboard_arrow_down'
@@ -47,7 +48,6 @@ export class HomeComponent implements OnInit {
     })
     publicservice.getWorkshops().then((r) => {
       this.workshopsArray = r.data;
-      console.log(r)
       for (let index = 0; index < this.workshopsArray.length; index++) {
         this.workshopsActive[index] = 'deactive'
         this.iconW[index] = 'keyboard_arrow_down'
@@ -125,4 +125,5 @@ export class HomeComponent implements OnInit {
   Rules(){
     this.router.navigate(['rules']);
   }
+  
 }
