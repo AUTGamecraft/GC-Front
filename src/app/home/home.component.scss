@@ -320,9 +320,7 @@
     text-align: center;
     display: flex;
     justify-content: center;
-}
-.supportes-card-image-div {
-    margin: 20px;
+    padding: 20px;
 }
 .supporters-card-image {
     height: 140px;
@@ -350,19 +348,18 @@
 }
 .intro {
     background-color: #52006b;
-    padding-bottom: 20px;
     padding-bottom: 100px;
 }
 .subintro-div {
     direction: rtl;
     display: flex;
-    margin-top: 5%;
-    justify-content: center;
+    padding-top: 5%;
+    padding-right: 10%;
+    padding-left: 10%;
+    justify-content: space-evenly;
 }
 .intro-discription-div {
-    width: 30%;
-    margin-right: 10%;
-    margin-left: 5%;
+    flex: 0 0 40%;
     position: relative;
 }
 .intro-discription-about-div {
@@ -403,9 +400,6 @@
     transform: scaleX(-1);
     z-index: 0;
 }
-.intro-image-div {
-    margin-left: 10%;
-}
 .intro-image {
     height: 360px;
     width: 360px;
@@ -416,7 +410,7 @@
     direction: rtl;
     display: flex;
     justify-content: space-evenly;
-    margin-top: 5%;
+    padding-top: 5%;
 }
 .event-about-right-div {
     text-align: center;
@@ -586,7 +580,7 @@
 }
 .numbers {
     font-size: 70px;
-    font-family: "Estedad";
+    font-family: 'Estedad-Medium';
     color: #ede1f1;
     margin-bottom: 0;
     font-weight: bold;
@@ -661,7 +655,7 @@
 .timer-div {
     display: flex;
     text-align: center;
-    width: 270px;
+    width: 250px;
     justify-content: center;
 }
 //start of logo
@@ -682,3 +676,26 @@
     z-index: 0;
 }
 //end of logo
+@media only screen and (max-width:600px){
+    .whole-header{
+        display: none;
+    }
+    .subintro-div{
+        flex-direction: column;
+        display: block;
+        text-align: center;
+    }
+    .intro-image{
+        display: none;
+    }
+    .intro-discription-bubble{
+        
+    }
+    .event-about-div{
+        flex-direction: column;
+        padding-top: 50%;
+    }
+    .timer-div{
+        justify-content: center;
+    }
+}
