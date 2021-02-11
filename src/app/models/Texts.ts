@@ -90,7 +90,7 @@ export class Texts{
         this.FaTexts["dash-event20"] = "سه شنبه 2 بهمن 99"
         this.FaTexts["dash-event21"] = "11 نفر"
         this.FaTexts["dash-event22"] = "مبتدی"
-        this.FaTexts["dash-event23"] = "ثبت نام"
+        this.FaTexts["dash-event23"] = "ورود"
         this.FaTexts["dash-event24"] = "توضیحات"
         this.FaTexts["dash-event25"] = "تاریخ بِیهَقی یا تاریخ مسعودی نام کتابی نوشتهٔ ابوالفضل محمد بن حسین بیهقی است که موضوع اصلی آن تاریخ پادشاهی مسعود غزنوی و دودمان غزنوی است. این کتاب علاوه بر تاریخ غزنویان، قسمت‌هایی دربارهٔ صفاریان، سامانیان و دورهٔ پیش از برآمدن و پادشاهی محمود غزنوی دارد. نسخهٔ اصلی کتاب حدود ۳۰ جلد بوده"
         this.FaTexts["dash-event26"] = "ارائه کنندگان"

@@ -272,6 +272,9 @@
     font-size: large;
 }
 //end of footer
+#outlined-button-phone{
+    display: none;
+}
 @media only screen and (max-width:600px){
     .dash-media-inner-div{
         flex-direction: column;
@@ -290,7 +293,7 @@
         padding: 16px;
         padding-top: 0;
         margin: auto;
-        margin-bottom: 10%;
+        margin-bottom: 5%;
     }
     .user-image{
         width: 48px;
