@@ -1,7 +1,7 @@
 import { Expansion } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { PublicService } from '../public.service';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import * as moment from 'jalali-moment';
 @Component({
   selector: 'app-home',
@@ -68,6 +68,15 @@ export class HomeComponent implements OnInit {
             break;
         }
       }
+      router.events.subscribe(s => {
+        if (s instanceof NavigationEnd) {
+          const tree = router.parseUrl(router.url);
+          if (tree.fragment) {
+            const element = document.querySelector("#" + tree.fragment);
+            if (element) { element.scrollIntoView(); }
+          }
+        }
+      });
     })
     setInterval(()=>this.time = this.time-1,1000);
   }
@@ -123,7 +132,7 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['people']);
   }
   Rules(){
-    this.router.navigate(['rules']);
+    this.router.navigate(['rules'],{fragment:'rules'});
   }
   
 }

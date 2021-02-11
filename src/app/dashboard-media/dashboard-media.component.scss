@@ -272,3 +272,80 @@
     font-size: large;
 }
 //end of footer
+@media only screen and (max-width:600px){
+    .dash-media-inner-div{
+        flex-direction: column;
+        padding: 24px;
+    }
+    .dash-media{
+        padding: 0;
+        padding-top: 20px;
+        text-align: center;
+        justify-content: center;
+    }
+    .right-part{
+        width: fit-content;
+        padding: 16px;
+        padding-top: 0;
+        margin: auto;
+        margin-bottom: 10%;
+    }
+    .user-image{
+        width: 48px;
+        height: 48px;
+        margin-top: 8px;
+        margin-right: 0;
+        margin-left: 16px;
+    }
+    .name-image-phone{
+        display: flex;
+    }
+    .user-name{
+        font-size: 16px;
+        margin: auto 0;
+    }
+    #outlined-button-phone{
+        display: initial;
+        font-size: 16px;
+        width: 121px;
+        height: 44px;
+    }
+    .normal-button{
+        font-size: 16px;
+        // width: 36px;
+        // height: 28px;
+        margin: auto;
+    }
+    .right-part-header{
+        display: flex;
+        justify-content: space-between;
+    }
+    .header-buttons{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .outlined-button{
+        display: none;
+    }
+    .buttons{
+        font-size: 16px;
+        border-radius: 12px;
+        width: 240px;
+    }
+    .left-part{
+        width: 100%;
+        margin-right: 0;
+        margin: auto;
+        text-align: center;
+        padding: 34px;
+        padding-top: 0;
+    }
+    .mat-card{
+        width: 400px;
+    }
+    .workshops-title{
+        margin-right: 0;
+        text-align: center;
+        margin-top: 0;
+    }
+}

@@ -79,7 +79,7 @@ export class Texts{
         this.FaTexts["dash-event9"] = "سه شنبه 2 بهمن 99"
         this.FaTexts["dash-event10"] = "11 نفر"
         this.FaTexts["dash-event11"] = "مبتدی"
-        this.FaTexts["dash-event12"] = "ثبت نام"
+        this.FaTexts["dash-event12"] = "ورود"
         this.FaTexts["dash-event13"] = "توضیحات"
         this.FaTexts["dash-event14"] = "تاریخ بِیهَقی یا تاریخ مسعودی نام کتابی نوشتهٔ ابوالفضل محمد بن حسین بیهقی است که موضوع اصلی آن تاریخ پادشاهی مسعود غزنوی و دودمان غزنوی است. این کتاب علاوه بر تاریخ غزنویان، قسمت‌هایی دربارهٔ صفاریان، سامانیان و دورهٔ پیش از برآمدن و پادشاهی محمود غزنوی دارد. نسخهٔ اصلی کتاب حدود ۳۰ جلد بوده"
         this.FaTexts["dash-event15"] = "ارائه کنندگان"
@@ -152,7 +152,7 @@ export class Texts{
         this.FaTexts["dash-media15"] = "تیم های رقیب"
 
         this.FaTexts["people1"] = "افراد"
-        this.FaTexts["people2"] = "تیم رنگ کاری"
+        this.FaTexts["people2"] = "تیم فنی"
         this.FaTexts["people3"] = "امیررضا بهمنش"
         this.FaTexts["people4"] = "ستون فرانت"
         this.FaTexts["people5"] = "آرین متقی"
@@ -163,7 +163,7 @@ export class Texts{
         this.FaTexts["people10"] = "ستون غایب"
         this.FaTexts["people11"] = "دریا زارع"
         this.FaTexts["people12"] = "؟؟"
-        this.FaTexts["people13"] = "افراد"
+        this.FaTexts["people13"] = "تیم علمی"
         this.FaTexts["people14"] = "افراد"
         this.FaTexts["people15"] = "افراد"
 

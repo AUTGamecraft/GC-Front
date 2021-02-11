@@ -1,4 +1,3 @@
-
 <div class="dash-media">
     <div class="logo">
         <p class="logo-text" style="margin-left: -15px;">{{publicservice.Texts.Texts["logo1"]}}</p>
@@ -7,31 +6,43 @@
     </div>
     <div class="dash-media-inner-div" style="margin-top: 20px;">
         <div class="right-part">
-            <div>
-                <img class="user-image" src="assets/images/masoud.jpg">
-            </div>
-            <p class="user-name">
-                {{publicservice.Texts.Texts["dash-media1"]}}</p>
-                <div>
+            <div class="right-part-header">
+                <div class="name-image-phone">
+                    <div>
+                        <img class="user-image" src="assets/images/masoud.jpg">
+                    </div>
+                    <p class="user-name">
+                        {{publicservice.Texts.Texts["dash-media1"]}}</p>
+                </div>
+                <div style="display: flex;">
+                    <button mat-stroked-button class="outlined-button"
+                        id="outlined-button-phone">{{publicservice.Texts.Texts["dash-event5"]}}</button>
                     <button mat-button (click)="logOut()"
                         class="normal-button">{{publicservice.Texts.Texts["header8"]}}</button>
                 </div>
-                <button mat-button style="background-color: #fafafa;" class="buttons" (click)="events()">
-                    <mat-icon>{{publicservice.Texts.Texts["dash-media11"]}}</mat-icon>
-                    {{publicservice.Texts.Texts["dash-media2"]}}
-                </button>
-                <button mat-button (click)="media()" style="background-color: #eceff1;" class="buttons">
-                    <mat-icon>{{publicservice.Texts.Texts["dash-media12"]}}</mat-icon>
-                    {{publicservice.Texts.Texts["dash-media3"]}}
-                </button>
-                <button mat-button style="background-color: #fafafa;" class="buttons">
-                    <mat-icon>{{publicservice.Texts.Texts["dash-media13"]}}</mat-icon>
-                    {{publicservice.Texts.Texts["dash-media4"]}}
-                </button>
-                <button mat-button style="background-color: #fafafa;" class="buttons">
-                    <mat-icon>{{publicservice.Texts.Texts["dash-media14"]}}</mat-icon>
-                    {{publicservice.Texts.Texts["dash-media15"]}}
-                </button>
+            </div>
+            <div class="header-buttons">
+                <div>
+            <button mat-button style="background-color: #fafafa;" class="buttons" (click)="events()">
+                <mat-icon>{{publicservice.Texts.Texts["dash-media11"]}}</mat-icon>
+                {{publicservice.Texts.Texts["dash-media2"]}}
+            </button>
+            <button mat-button (click)="media()" style="background-color: #eceff1;" class="buttons">
+                <mat-icon>{{publicservice.Texts.Texts["dash-media12"]}}</mat-icon>
+                {{publicservice.Texts.Texts["dash-media3"]}}
+            </button>
+                </div>
+                <div>
+            <button mat-button style="background-color: #fafafa;" class="buttons">
+                <mat-icon>{{publicservice.Texts.Texts["dash-media13"]}}</mat-icon>
+                {{publicservice.Texts.Texts["dash-media4"]}}
+            </button>
+            <button mat-button style="background-color: #fafafa;" class="buttons">
+                <mat-icon>{{publicservice.Texts.Texts["dash-media14"]}}</mat-icon>
+                {{publicservice.Texts.Texts["dash-media15"]}}
+            </button>
+                </div>
+            </div>
             <button mat-stroked-button class="outlined-button">{{publicservice.Texts.Texts["dash-media5"]}}</button>
         </div>
         <div class="left-part">
@@ -73,9 +84,9 @@
                         {{publicservice.Texts.Texts["home38"]}}</h3>
                     <p class="discription-right-footer-about-discription">
                         {{publicservice.Texts.Texts["home39"]}}</p>
-                        <div style="text-align: center;">
-                            <button mat-flat-button class="green-button">{{publicservice.Texts.Texts["home47"]}}</button>
-                        </div>
+                    <div style="text-align: center;">
+                        <button mat-flat-button class="green-button">{{publicservice.Texts.Texts["home47"]}}</button>
+                    </div>
                 </div>
                 <div class="discription-right-footer-bubble">
                 </div>

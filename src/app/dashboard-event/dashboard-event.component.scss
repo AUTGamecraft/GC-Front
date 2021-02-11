@@ -371,3 +371,177 @@
     font-size: large;
 }
 //end of footer
+#outlined-button-phone{
+    display: none;
+}
+.collapse-phone{
+    display: none;
+}
+@media only screen and (max-width: 600px){
+    .dash-event{
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+    .right-part{
+        width: fit-content;
+        padding: 16px;
+        padding-top: 0;
+        margin: auto;
+        margin-bottom: 10%;
+    }
+    .user-image{
+        width: 48px;
+        height: 48px;
+        margin-top: 8px;
+        margin-right: 0;
+        margin-left: 16px;
+    }
+    .name-image-phone{
+        display: flex;
+    }
+    .user-name{
+        font-size: 16px;
+        margin: auto;
+    }
+    #outlined-button-phone{
+        display: initial;
+        font-size: 16px;
+        width: 121px;
+        height: 44px;
+    }
+    .normal-button{
+        font-size: 16px;
+        // width: 36px;
+        // height: 28px;
+        margin: auto;
+    }
+    .right-part-header{
+        display: flex;
+        justify-content: space-between;
+    }
+    .header-buttons{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .outlined-button{
+        display: none;
+    }
+    .buttons{
+        font-size: 16px;
+        border-radius: 12px;
+        width: 240px;
+    }
+    .left-part{
+        width: fit-content;
+        margin-right: 0;
+        margin: auto;
+        text-align: center;
+        padding: 24px;
+        padding-top: 0;
+    }
+    .events-title{
+        font-size: 36px;
+        margin-bottom: 0;
+    }
+    .workshops-title{
+        margin-right: 0;
+        margin-top: 0;
+        text-align: center;
+        font-size: 24px;
+    }
+    .collapse{
+        display: none;
+    }
+    .collapse-phone{
+        display: initial;
+        display: flex;
+        border: 1px;
+        background-color: white;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        height: fit-content;
+        border-radius: 12px;
+    }
+    .components{
+        display: initial;
+    }
+    .orange-collapse{
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 12px;
+        width: 24px;
+    }
+    .component-title{
+        font-size: 16px;
+        width: 100%;
+        margin: 10px 0;
+        margin-right: 10px;
+    }
+    .register-button{
+        border-radius: 12px;
+        margin: auto 0;
+        font-size: 16px;
+
+    }
+    .component-subject{
+        font-size: 16px;
+    }
+    .discription{
+        text-align: center;
+        width: 100%;
+        font-size: 12px;
+    }
+    .workshops-discription{
+        font-size: 14px;
+    }
+    .presenters-title{
+        font-size: 20px;
+    }
+    .workshops-inside{
+        border-bottom-right-radius: 12px;
+    }
+    .talks-title{
+        margin-right: 0;
+        text-align: center;
+    }
+    .pink-collapse{
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 12px;
+        width: 24px;
+    }
+    .footer-whole-div{
+        margin-top: -20%;
+    }
+    .discription-footer-div {
+        flex-direction: column;
+        justify-content: initial;
+        justify-content: center;
+    }
+    .footer-image {
+        width: 360px;
+        height: 320px;
+    }
+    .discription-right-footer-div {
+        padding: 38%;
+        margin: 0 auto;
+        margin-bottom: 70%;
+        padding-right: 36px;
+        padding-left: 36px;
+    }
+    .footer-image-div {
+        text-align: center;
+        margin-left: 0;
+        margin-top: 200px;
+    }
+    .discription-right-footer-about-div {
+        float: none;
+    }
+    .discription-right-footer-about-title {
+        font-size: 40px;
+    }
+    .discription-right-footer-about-subtitle {
+        font-size: 28px;
+    }
+    .discription-right-footer-about-discription{
+        font-size: 20px;
+    }
+}

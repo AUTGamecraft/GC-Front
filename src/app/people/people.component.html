@@ -26,12 +26,11 @@
                                 class="normal-button">{{publicservice.Texts.Texts["header4"]}}</button>
                         </div>
                         <div class="right-button">
-                            <button mat-button
-                                class="normal-button">{{publicservice.Texts.Texts["header5"]}}</button>
+                            <button mat-button class="normal-button">{{publicservice.Texts.Texts["header5"]}}</button>
                         </div>
                         <div class="right-button">
-                            <button mat-button (click)="People()"
-                                class="normal-button" id="people-button">{{publicservice.Texts.Texts["header12"]}}</button>
+                            <button mat-button (click)="People()" class="normal-button"
+                                id="people-button">{{publicservice.Texts.Texts["header12"]}}</button>
                         </div>
                     </div>
                 </div>
@@ -49,8 +48,7 @@
                     </div>
                     <div class="after-login" *ngIf="publicservice.logedIn">
                         <div class="left-button">
-                            <button mat-button
-                                class="normal-button">{{publicservice.Texts.Texts["header10"]}}</button>
+                            <button mat-button class="normal-button">{{publicservice.Texts.Texts["header10"]}}</button>
                         </div>
 
                         <div>
@@ -67,11 +65,12 @@
             <h1 class="people-title">{{publicservice.Texts.Texts["people1"]}}</h1>
             <h1 class="people-subtitle">{{publicservice.Texts.Texts["people2"]}}</h1>
             <div style="direction: rtl;">
-                <div  class="collapse-presenters-card-div">
+                <div class="collapse-presenters-card-div">
                     <!-- <div style="display: flex;"> -->
                     <div class="collapse-presenters-card">
                         <div>
-                            <img class="collapse-presenters-image" src="assets/images/masoud.jpg">
+                            <video class="collapse-presenters-image" loop muted autoplay
+                                src="assets/videos/amirbsh.mp4"></video>
                         </div>
                         <h2 class="collapse-presenters-name">
                             {{publicservice.Texts.Texts["people3"]}}
@@ -81,7 +80,7 @@
                     </div>
                     <div class="collapse-presenters-card">
                         <div>
-                            <img class="collapse-presenters-image" src="assets/images/masoud.jpg">
+                            <img class="collapse-presenters-image" src="assets/images/arian.jpg">
                         </div>
                         <h2 class="collapse-presenters-name">
                             {{publicservice.Texts.Texts["people5"]}}
@@ -93,7 +92,7 @@
                     <!-- <div style="display: flex;"> -->
                     <div class="collapse-presenters-card">
                         <div>
-                            <video class="collapse-presenters-image" muted   src="assets/images/hoseyn.mp4"></video>
+                            <video class="collapse-presenters-image" muted autoplay src="assets/videos/hoseyn.mp4"></video>
                         </div>
                         <h2 class="collapse-presenters-name">
                             {{publicservice.Texts.Texts["people7"]}}
@@ -103,7 +102,8 @@
                     </div>
                     <div class="collapse-presenters-card">
                         <div>
-                            <video class="collapse-presenters-image" loop muted autoplay src="assets/images/akhoundi.mp4"></video>
+                            <video class="collapse-presenters-image" loop muted autoplay
+                                src="assets/videos/akhoundi.mp4"></video>
                         </div>
                         <h2 class="collapse-presenters-name">
                             {{publicservice.Texts.Texts["people9"]}}
@@ -112,6 +112,11 @@
                             {{publicservice.Texts.Texts["people10"]}}</h4>
                     </div>
                     <!-- </div> -->
+                </div>
+            </div>
+            <h1 class="people-subtitle">{{publicservice.Texts.Texts["people13"]}}</h1>
+            <div style="direction: rtl;">
+                <div class="collapse-presenters-card-div">
                     <div class="collapse-presenters-card">
                         <div>
                             <img class="collapse-presenters-image" src="assets/images/daryazare.jpg">
@@ -126,7 +131,7 @@
             </div>
         </div>
     </div>
-       <div class="footer-whole-div">
+    <div class="footer-whole-div">
         <div class="purple-wave-above-footer">
         </div>
         <div class="footer-div">
@@ -139,9 +144,10 @@
                             {{publicservice.Texts.Texts["home38"]}}</h3>
                         <p class="discription-right-footer-about-discription">
                             {{publicservice.Texts.Texts["home39"]}}</p>
-                            <div style="text-align: center;">
-                                <button mat-flat-button class="green-button">{{publicservice.Texts.Texts["home47"]}}</button>
-                            </div>
+                        <div style="text-align: center;">
+                            <button mat-flat-button
+                                class="green-button">{{publicservice.Texts.Texts["home47"]}}</button>
+                        </div>
                     </div>
                     <div class="discription-right-footer-bubble">
                     </div>

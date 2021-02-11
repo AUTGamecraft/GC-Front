@@ -695,6 +695,12 @@
 .workshops-whole-collapse-phone {
     display: none;
 }
+.light-purple-wave {
+    display: none;
+}
+.light-putple-rectangle {
+    display: none;
+}
 @media only screen and (max-width: 600px) {
     .whole-header {
         display: none;
@@ -814,7 +820,7 @@
         font-size: large;
     }
     .light-purple-wave {
-        // display: initial;
+        display: initial;
         background-image: url("/assets/svg/wave-purple-light.svg");
         background-repeat: no-repeat;
         background-size: 100% 100%;
@@ -827,9 +833,6 @@
     }
     .prize-cards-inner-div {
         flex-direction: column;
-    }
-    .whole-workshop {
-        // margin-top: -30%;
     }
     .collapse-header {
         font-size: 44px;
@@ -947,13 +950,20 @@
     .discription-right-footer-about-subtitle {
         font-size: 28px;
     }
-    .discription-right-footer-about-discription{
+    .discription-right-footer-about-discription {
         font-size: 20px;
     }
-    .collapse-background{
+    .collapse-background {
         border-bottom-right-radius: 12px;
     }
-    .footer-whole-div{
+    .footer-whole-div {
         margin-top: -40%;
+    }
+    .light-putple-rectangle {
+        background-color: #ede1f1;
+        height: 50px;
+        width: 100%;
+        margin-top: -90px;
+        padding: 20px;
     }
 }
