@@ -823,6 +823,7 @@
         height: 210px;
         position: relative;
         z-index: 1;
+        margin-bottom: -10%;
     }
     .prize-cards-inner-div {
         flex-direction: column;
@@ -834,6 +835,7 @@
         font-size: 44px;
     }
     .collapse-title {
+        width: 100%;
         font-size: 16px;
     }
     .whole-workshop {
@@ -929,6 +931,7 @@
     }
     .discription-right-footer-div {
         padding: 38%;
+        margin-bottom: 80%;
     }
     .footer-image-div {
         text-align: center;
@@ -946,5 +949,11 @@
     }
     .discription-right-footer-about-discription{
         font-size: 20px;
+    }
+    .collapse-background{
+        border-bottom-right-radius: 12px;
+    }
+    .footer-whole-div{
+        margin-top: -40%;
     }
 }
