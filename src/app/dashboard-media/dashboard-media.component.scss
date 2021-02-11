@@ -276,12 +276,14 @@
     .dash-media-inner-div{
         flex-direction: column;
         padding: 24px;
+
     }
     .dash-media{
         padding: 0;
         padding-top: 20px;
         text-align: center;
         justify-content: center;
+        padding-bottom: 20%;
     }
     .right-part{
         width: fit-content;
@@ -348,5 +350,41 @@
         margin-right: 0;
         text-align: center;
         margin-top: 0;
+    }
+    .footer-whole-div{
+        margin-top: -20%;
+    }
+    .discription-footer-div {
+        flex-direction: column;
+        justify-content: initial;
+        justify-content: center;
+    }
+    .footer-image {
+        width: 360px;
+        height: 320px;
+    }
+    .discription-right-footer-div {
+        padding: 38%;
+        margin: 0 auto;
+        margin-bottom: 70%;
+        padding-right: 36px;
+        padding-left: 36px;
+    }
+    .footer-image-div {
+        text-align: center;
+        margin-left: 0;
+        margin-top: 200px;
+    }
+    .discription-right-footer-about-div {
+        float: none;
+    }
+    .discription-right-footer-about-title {
+        font-size: 40px;
+    }
+    .discription-right-footer-about-subtitle {
+        font-size: 28px;
+    }
+    .discription-right-footer-about-discription{
+        font-size: 20px;
     }
 }

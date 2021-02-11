@@ -824,6 +824,7 @@
     }
     .light-purple-wave {
         display: initial;
+        display: block;
         background-image: url("/assets/svg/wave-purple-light.svg");
         background-repeat: no-repeat;
         background-size: 100% 100%;
@@ -919,6 +920,7 @@
     }
     .talks-background-phone {
         display: initial;
+        display: list-item  ;
         background-color: #6af9c5;
         padding-top: 20px;
         padding-bottom: 20px;
