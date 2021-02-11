@@ -701,6 +701,9 @@
 .light-putple-rectangle {
     display: none;
 }
+.talks-background-phone{
+    display: none;
+}
 @media only screen and (max-width: 600px) {
     .whole-header {
         display: none;
@@ -915,6 +918,7 @@
         display: none;
     }
     .talks-background-phone {
+        display: initial;
         background-color: #6af9c5;
         padding-top: 20px;
         padding-bottom: 20px;
