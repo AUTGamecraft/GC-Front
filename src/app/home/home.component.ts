@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit {
   workshopsLevel: any = {};
   constructor(public publicservice: PublicService, public router: Router) {
     publicservice.getTalks().then((r) => {
+      console.log(r);
       this.talksArray = r.data;
       console.log(this.talksArray)
       for (let index = 0; index < this.talksArray.length; index++) {
@@ -47,6 +48,7 @@ export class HomeComponent implements OnInit {
       }
     })
     publicservice.getWorkshops().then((r) => {
+      console.log(r);
       this.workshopsArray = r.data;
       for (let index = 0; index < this.workshopsArray.length; index++) {
         this.workshopsActive[index] = 'deactive'
