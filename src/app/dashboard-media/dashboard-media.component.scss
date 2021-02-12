@@ -59,9 +59,11 @@
     font-size: large;
     border: 3px solid #07f49e !important;
     border-radius: 15px;
+    margin-top: 12px;
+    margin-bottom: 16px;
     // height: 10%;
-    margin: auto 0;
-    padding: 0;
+    // margin: auto 0;
+    // padding: 0;
 }
 .outlined-button:hover {
     background-color: #6af9c5;
@@ -75,7 +77,11 @@
     border-radius: 20px;
     width: 75%;
     margin-right: 20px;
+    padding: 0 10px;
     padding-bottom: 2%;
+}
+.mat-card{
+    border-radius: 16px;
 }
 .events-title {
     font-family: "Estedad-Black";
@@ -150,6 +156,7 @@
 }
 //end of logo
 //start of footer
+
 .purple-wave-above-footer {
     background-image: url("/assets/svg/wave-purple.svg");
     background-repeat: no-repeat;
@@ -275,7 +282,7 @@
 #outlined-button-phone{
     display: none;
 }
-@media only screen and (max-width:450px){
+@media only screen and (max-width:992px){
     .dash-media-inner-div{
         flex-direction: column;
         padding: 24px;
@@ -331,6 +338,8 @@
     .outlined-button{
         display: none;
         font-size: 16px;
+        margin: auto 0;
+        padding: 0;
     }
     .buttons{
         font-size: 16px;
@@ -356,9 +365,12 @@
     //     // margin: auto;
     //     // text-align: left;
     // }
-    .mat-card.mat-card.mat-focus-indicator{
-        // width: 100%;
-        // margin-left: 10%;
+    // .mat-card.mat-card.mat-focus-indicator{
+    //     // width: 100%;
+    //     // margin-left: 10%;
+    // }
+    .mat-card{
+        border-radius: 12px;
     }
     .workshops-title{
         margin-right: 0;

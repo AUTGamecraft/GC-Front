@@ -353,7 +353,7 @@
 .subintro-div {
     direction: rtl;
     display: flex;
-    padding-top: 5%;
+    padding-top: 10%;
     padding-right: 10%;
     padding-left: 10%;
     justify-content: space-evenly;
@@ -589,7 +589,7 @@
     font-size: 70px;
     font-family: "Estedad-Regular";
     color: #ede1f1;
-    margin: 60px 10px 10px 10px;
+    margin: 60px 10px 0 10px;
     font-weight: bold;
 }
 .header-line {
@@ -704,7 +704,10 @@
 .talks-background-phone{
     display: none;
 }
-@media only screen and (max-width: 450px) {
+.whole-header-phone{
+    display: none;
+}
+@media only screen and (max-width: 992px) {
     .whole-header {
         display: none;
     }
@@ -971,5 +974,15 @@
         width: 100%;
         margin-top: -90px;
         padding: 20px;
+    }
+    .whole-header-phone{
+        display: initial;
+        display: flex;
+        direction: rtl;
+        justify-content: space-between;
+        padding: 20px;
+    }
+    .logo{
+        padding: 0;
     }
 }

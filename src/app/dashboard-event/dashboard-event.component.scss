@@ -59,8 +59,9 @@
     border: 3px solid #07f49e !important;
     border-radius: 15px;
     // height: 10%;
-    margin: auto;
-    padding: 0;
+    margin-top: 12px;
+    margin-bottom: 16px;
+    // padding: 0;
 }
 .outlined-button:hover {
     background-color: #6af9c5;
@@ -377,7 +378,7 @@
 .collapse-phone {
     display: none;
 }
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 992px) {
     .dash-event {
         flex-direction: column;
         text-align: center;
@@ -428,7 +429,8 @@
     .outlined-button {
         display: none;
         font-size: 16px;
-        padding: auto;
+        margin: auto;
+        padding: 0;
     }
     .buttons {
         font-size: 16px;
@@ -490,6 +492,7 @@
         text-align: center;
         width: 100%;
         font-size: 12px;
+        margin-bottom: 0;
     }
     .workshops-discription {
         font-size: 14px;

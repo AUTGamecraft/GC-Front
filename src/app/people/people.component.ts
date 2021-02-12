@@ -48,4 +48,7 @@ export class PeopleComponent implements OnInit {
   Rules(){
     this.router.navigate(['rules']);
   }
+  Home(){
+    this.router.navigate(['home']);
+  }
 }

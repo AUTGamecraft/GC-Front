@@ -48,4 +48,7 @@ export class RulesComponent implements OnInit {
   Rules(){
     this.router.navigate(['rules']);
   }
+  Home(){
+    this.router.navigate(['home']);
+  }
 }

@@ -1,7 +1,7 @@
+<div style="width:100%">
 <div class="home">
-    <div class="intro">
-        <header>
-            <div>
+        <div class="intro">
+            <header style="position: fixed;width: 100%;background-color: #52006b;z-index: 100;">
                 <div class="whole-header">
                     <div class="big-right-header">
                         <div class="title-div">
@@ -63,56 +63,63 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </header>
-        <div class="subintro-div">
-            <div class="intro-discription-div">
-                <div class="intro-discription-about-div">
-                    <h1 class="intro-discription-about-title">
-                        {{publicservice.Texts.Texts["home1"]}}</h1>
-                    <p class="intro-discription-about-subtitle">
-                        {{publicservice.Texts.Texts["home2"]}}</p>
-                    <p class="intro-discription-about-discription">
-                        {{publicservice.Texts.Texts["home3"]}}</p>
+                <div class="whole-header-phone">
+                    <button mat-button>
+                        <mat-icon style="color: white;font-size: 32px;" [inline]="true">menu</mat-icon>
+                    </button>
+                    <div class="logo" routerLink="home">
+                        <img class="logo-image" src="assets/svg/dark-3d.svg">
+                    </div>
                 </div>
-                <div class="intro-discription-bubble">
+            </header>
+            <div class="subintro-div">
+                <div class="intro-discription-div">
+                    <div class="intro-discription-about-div">
+                        <h1 class="intro-discription-about-title">
+                            {{publicservice.Texts.Texts["home1"]}}</h1>
+                        <p class="intro-discription-about-subtitle">
+                            {{publicservice.Texts.Texts["home2"]}}</p>
+                        <p class="intro-discription-about-discription">
+                            {{publicservice.Texts.Texts["home3"]}}</p>
+                    </div>
+                    <div class="intro-discription-bubble">
+                    </div>
+                </div>
+                <div class="intro-image-div">
+                    <img class="intro-image" src="assets/svg/dark-3d-bulb.svg">
                 </div>
             </div>
-            <div class="intro-image-div">
-                <img class="intro-image" src="assets/svg/dark-3d-bulb.svg">
+            <div class="event-about-div">
+                <div class="event-about-right-div">
+                    <div class="timer-div">
+                        <p class="numbers">{{getSecond()}}</p>
+                        <p class="dots"> : </p>
+                        <p class="numbers">{{getMinute()}}</p>
+                        <p class="dots"> : </p>
+                        <p class="numbers">
+                            {{getHour()}}
+                        </p>
+                    </div>
+                    <p class="event-about-right-text">
+                        {{publicservice.Texts.Texts["home5"]}}
+                    </p>
+                </div>
+                <div class="event-about-left-div">
+                    <div>
+                        <p class="event-about-left-number">
+                            {{publicservice.Texts.Texts["home6"]}}
+                        </p>
+                    </div>
+                    <div>
+                        <p class="event-about-left-text">
+                            {{publicservice.Texts.Texts["home7"]}}
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="event-about-div">
-            <div class="event-about-right-div">
-                <div class="timer-div">
-                    <p class="numbers">{{getSecond()}}</p>
-                    <p class="dots"> : </p>
-                    <p class="numbers">{{getMinute()}}</p>
-                    <p class="dots"> : </p>
-                    <p class="numbers">
-                        {{getHour()}}
-                    </p>
-                </div>
-                <p class="event-about-right-text">
-                    {{publicservice.Texts.Texts["home5"]}}
-                </p>
-            </div>
-            <div class="event-about-left-div">
-                <div>
-                    <p class="event-about-left-number">
-                        {{publicservice.Texts.Texts["home6"]}}
-                    </p>
-                </div>
-                <div>
-                    <p class="event-about-left-text">
-                        {{publicservice.Texts.Texts["home7"]}}
-                    </p>
-                </div>
-            </div>
+        <div class="purple-wave-under-intro">
         </div>
-    </div>
-    <div class="purple-wave-under-intro">
-    </div>
     <div class="event-schedule-div" #schedule id="schedule">
         <div class="event-schedule-title-div">
             <h1 class="event-schedule-title">
@@ -226,45 +233,45 @@
         </div>
     </div>
     <div>
-    <div class="light-purple-wave">
-    </div>
-    <!-- <div class="light-putple-rectangle"></div> -->
-    <div class="prizes">
-        <div class="inner-prizes">
-            <div class="prizes-title" >
-                <h1>{{publicservice.Texts.Texts["home43"]}}</h1>
-            </div>
-            <div style="text-align: center;">
-                <button mat-flat-button class="green-button">{{publicservice.Texts.Texts["home44"]}}</button>
-            </div>
-            <div class="prize-cards-whole-div">
-                <div class="prize-cards-inner-div">
-                    <div class="prize-cards">
-                        <div class="prize-card-image-div">
-                            <img class="prize-card-image" src="assets/images/sadAfarin.jpg">
+        <div class="light-purple-wave">
+        </div>
+        <!-- <div class="light-putple-rectangle"></div> -->
+        <div class="prizes">
+            <div class="inner-prizes">
+                <div class="prizes-title">
+                    <h1>{{publicservice.Texts.Texts["home43"]}}</h1>
+                </div>
+                <div style="text-align: center;">
+                    <button mat-flat-button class="green-button">{{publicservice.Texts.Texts["home44"]}}</button>
+                </div>
+                <div class="prize-cards-whole-div">
+                    <div class="prize-cards-inner-div">
+                        <div class="prize-cards">
+                            <div class="prize-card-image-div">
+                                <img class="prize-card-image" src="assets/images/sadAfarin.jpg">
+                            </div>
+                            <div class="prize-card-title-div">
+                                <h2 class="prize-card-title">{{publicservice.Texts.Texts["home45"]}}</h2>
+                            </div>
+                            <div class="prize-card-discription-div">
+                                <h3 class="prize-card-discription">{{publicservice.Texts.Texts["home46"]}}</h3>
+                            </div>
                         </div>
-                        <div class="prize-card-title-div">
-                            <h2 class="prize-card-title">{{publicservice.Texts.Texts["home45"]}}</h2>
-                        </div>
-                        <div class="prize-card-discription-div">
-                            <h3 class="prize-card-discription">{{publicservice.Texts.Texts["home46"]}}</h3>
-                        </div>
-                    </div>
-                    <div class="prize-cards">
-                        <div class="prize-card-image-div">
-                            <img class="prize-card-image" src="assets/images/sadAfarin.jpg">
-                        </div>
-                        <div class="prize-card-title-div">
-                            <h2 class="prize-card-title">{{publicservice.Texts.Texts["home45"]}}</h2>
-                        </div>
-                        <div class="prize-card-discription-div">
-                            <h3 class="prize-card-discription">{{publicservice.Texts.Texts["home46"]}}</h3>
+                        <div class="prize-cards">
+                            <div class="prize-card-image-div">
+                                <img class="prize-card-image" src="assets/images/sadAfarin.jpg">
+                            </div>
+                            <div class="prize-card-title-div">
+                                <h2 class="prize-card-title">{{publicservice.Texts.Texts["home45"]}}</h2>
+                            </div>
+                            <div class="prize-card-discription-div">
+                                <h3 class="prize-card-discription">{{publicservice.Texts.Texts["home46"]}}</h3>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
     <div class="whole-workshop">
         <div class="green-wave-above-wrokshops" #workshop id="workshop">
@@ -325,7 +332,7 @@
             </div>
         </div>
     </div>
-    <div class="whole-workshop-phone"  #workshop id="workshop">
+    <div class="whole-workshop-phone" #workshop id="workshop">
         <div class="green-wave-above-wrokshops" style="margin-top: -30%;" #workshop id="workshop">
             <h1 class="collapse-header" style="background-color: #4ae5b0;padding: 5% 0 0 0;">
                 {{publicservice.Texts.Texts["home15"]}}</h1>
@@ -455,17 +462,18 @@
             <div style="width: 100%;">
                 <div class="components-collapse">
                     <div style="display: flex;">
-                    <div class="pink-collapse">
-                    </div>
-                    <h3 class="collapse-title">
-                        {{talk.title}}</h3>
+                        <div class="pink-collapse">
+                        </div>
+                        <h3 class="collapse-title">
+                            {{talk.title}}</h3>
                     </div>
                     <div class="register-button-div">
                         <button mat-stroked-button
                             class="register-button">{{publicservice.Texts.Texts["home31"]}}</button>
                     </div>
                 </div>
-                <div style="background-color: #fafafa;border-bottom-left-radius: 12px;border-bottom-right-radius: 12px;">
+                <div
+                    style="background-color: #fafafa;border-bottom-left-radius: 12px;border-bottom-right-radius: 12px;">
                     <div style="display: flex;justify-content: space-between;padding-right: 20px;padding-left: 20px;">
                         <h4 class="collapse-subject">
                             {{talksDate[i]}}</h4>
@@ -554,4 +562,5 @@
     <div class="developers-div">
         <p class="developers">{{publicservice.Texts.Texts["home42"]}}</p>
     </div>
+</div>
 </div>

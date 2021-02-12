@@ -134,5 +134,7 @@ export class HomeComponent implements OnInit {
   Rules(){
     this.router.navigate(['rules'],{fragment:'rules'});
   }
-  
+  Home(){
+    this.router.navigate(['home']);
+  }
 }
