@@ -131,12 +131,12 @@ export class HomeComponent implements OnInit {
     return parseInt(this.time/3600+"");
   }
   People(){
-    this.router.navigate(['people']);
+    this.router.navigate(['people'],{fragment:'people'});
   }
   Rules(){
     this.router.navigate(['rules'],{fragment:'rules'});
   }
   Home(){
-    this.router.navigate(['home']);
+    this.router.navigate(['home'],{fragment:'home'});
   }
 }

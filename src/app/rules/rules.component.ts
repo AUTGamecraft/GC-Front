@@ -23,7 +23,7 @@ export class RulesComponent implements OnInit {
   ngOnInit(): void {
   }
   People(){
-    this.router.navigate(['people']);
+    this.router.navigate(['people'],{fragment:'people'});
   }
   Signup() {
     const navigationDetails2: string[] = ['signup'];
@@ -46,9 +46,9 @@ export class RulesComponent implements OnInit {
     this.router.navigate(['home'],{fragment:'schedule'});
   }
   Rules(){
-    this.router.navigate(['rules']);
+    this.router.navigate(['rules'],{fragment:'rules'});
   }
   Home(){
-    this.router.navigate(['home']);
+    this.router.navigate(['home'],{fragment:'home'});
   }
 }

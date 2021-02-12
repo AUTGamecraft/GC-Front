@@ -1,7 +1,8 @@
 <div style="width:100%">
-<div class="home">
+    <div class="home" id="home">
         <div class="intro">
-            <header style="position: fixed;width: 100%;background-color: #52006b;z-index: 100;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
+            <header
+                style="position: fixed;width: 100%;background-color: #52006b;z-index: 100;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
                 <div class="whole-header">
                     <div class="big-right-header">
                         <div class="title-div">
@@ -118,200 +119,336 @@
                 </div>
             </div>
         </div>
-        <div class="purple-wave-under-intro">
+        <div>
+            <img class="purple-wave-under-intro" src="assets/svg/wave-purple.svg">
         </div>
-    <div class="event-schedule-div" #schedule id="schedule">
-        <div class="event-schedule-title-div">
-            <h1 class="event-schedule-title">
-                {{publicservice.Texts.Texts["home8"]}}</h1>
-        </div>
-        <div style="text-align: center;">
-            <button mat-flat-button (click)="Rules()"
-                class="green-button">{{publicservice.Texts.Texts["home48"]}}</button>
-        </div>
-        <div class="event-schedule-whole">
-            <div class="event-schedule-schematic">
-                <div class="event-schedule">
-                    <div class="schedule-right-div">
-                        <div class="image">
-                            <img class="schedule-image" src="assets/images/masoud.jpg">
-                        </div>
-                        <div class="text" style="margin-top: 110%;margin-right: 30%;">
-                            <h1 class="text-title">
-                                {{publicservice.Texts.Texts["home11"]}}
-                            </h1>
-                            <h1 class="text-subtitle1">
-                                {{publicservice.Texts.Texts["home12"]}}
-                            </h1>
-                        </div>
-                        <div class="image" style="margin-top: 100%;">
-                            <img class="schedule-image" src="assets/images/masoud.jpg">
-                        </div>
-                    </div>
-                    <div class="schedule-middle-div">
-                        <div class="Ellipse">
-                        </div>
-                        <div class="Line">
-                        </div>
-                        <div class="Ellipse">
-                        </div>
-                        <div class="Line">
-                        </div>
-                        <div class="Ellipse">
-                        </div>
-                    </div>
-                    <div class="schedule-left-div">
-                        <div class="text" style="margin-left: 20%;">
-                            <h1 class="text-title">
-                                {{publicservice.Texts.Texts["home9"]}}</h1>
-                            <h1 class="text-subtitle2">
-                                {{publicservice.Texts.Texts["home10"]}}
-                            </h1>
-                        </div>
-                        <div class="image" style="margin-top: 130%;">
-                            <img class="schedule-image" src="assets/images/masoud.jpg">
-                        </div>
-                        <div class="text" style="margin-top: 100%;margin-left: 25%;">
-                            <h1 class="text-title">
-                                {{publicservice.Texts.Texts["home13"]}}
-                            </h1>
-                            <h1 class="text-subtitle3">
-                                {{publicservice.Texts.Texts["home14"]}}
-                            </h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="event-schedule-phone">
-                    <div class="schedule-middle-div">
-                        <div class="Ellipse">
-                        </div>
-                        <div class="Line">
-                        </div>
-                        <div class="Ellipse">
-                        </div>
-                        <div class="Line">
-                        </div>
-                        <div class="Ellipse">
-                        </div>
-                    </div>
-                    <div class="middle-div-phone">
-                        <div class="text">
-                            <h1 class="text-title">
-                                {{publicservice.Texts.Texts["home9"]}}</h1>
-                            <h1 class="text-subtitle">
-                                {{publicservice.Texts.Texts["home10"]}}
-                            </h1>
-                        </div>
-                        <div class="image">
-                            <img class="schedule-image" src="assets/images/masoud.jpg">
-                        </div>
-                        <div class="text">
-                            <h1 class="text-title">
-                                {{publicservice.Texts.Texts["home13"]}}
-                            </h1>
-                            <h1 class="text-subtitle">
-                                {{publicservice.Texts.Texts["home14"]}}
-                            </h1>
-                        </div>
-                        <div class="image">
-                            <img class="schedule-image" src="assets/images/masoud.jpg">
-                        </div>
-                        <div class="text">
-                            <h1 class="text-title">
-                                {{publicservice.Texts.Texts["home11"]}}
-                            </h1>
-                            <h1 class="text-subtitle">
-                                {{publicservice.Texts.Texts["home12"]}}
-                            </h1>
-                        </div>
-                        <div class="image">
-                            <img class="schedule-image" src="assets/images/masoud.jpg">
-                        </div>
-                    </div>
-                </div>
+        <div class="event-schedule-div" #schedule id="schedule">
+            <div class="event-schedule-title-div">
+                <h1 class="event-schedule-title">
+                    {{publicservice.Texts.Texts["home8"]}}</h1>
             </div>
-        </div>
-    </div>
-    <div>
-        <div class="light-purple-wave">
-        </div>
-        <div class="light-putple-rectangle"></div>
-        <div class="prizes">
-            <div class="inner-prizes">
-                <div class="prizes-title">
-                    <h1>{{publicservice.Texts.Texts["home43"]}}</h1>
-                </div>
-                <div style="text-align: center;">
-                    <button mat-flat-button class="green-button" (click)="Rules()">{{publicservice.Texts.Texts["home44"]}}</button>
-                </div>
-                <div class="prize-cards-whole-div">
-                    <div class="prize-cards-inner-div">
-                        <div class="prize-cards">
-                            <div class="prize-card-image-div">
-                                <img class="prize-card-image" src="assets/images/sadAfarin.jpg">
+            <div style="text-align: center;">
+                <button mat-flat-button (click)="Rules()"
+                    class="green-button">{{publicservice.Texts.Texts["home48"]}}</button>
+            </div>
+            <div class="event-schedule-whole">
+                <div class="event-schedule-schematic">
+                    <div class="event-schedule">
+                        <div class="schedule-right-div">
+                            <div class="image">
+                                <img class="schedule-image" src="assets/images/masoud.jpg">
                             </div>
-                            <div class="prize-card-title-div">
-                                <h2 class="prize-card-title">{{publicservice.Texts.Texts["home45"]}}</h2>
+                            <div class="text" style="margin-top: 110%;margin-right: 30%;">
+                                <h1 class="text-title">
+                                    {{publicservice.Texts.Texts["home11"]}}
+                                </h1>
+                                <h1 class="text-subtitle1">
+                                    {{publicservice.Texts.Texts["home12"]}}
+                                </h1>
                             </div>
-                            <div class="prize-card-discription-div">
-                                <h3 class="prize-card-discription">{{publicservice.Texts.Texts["home46"]}}</h3>
+                            <div class="image" style="margin-top: 100%;">
+                                <img class="schedule-image" src="assets/images/masoud.jpg">
                             </div>
                         </div>
-                        <div class="prize-cards">
-                            <div class="prize-card-image-div">
-                                <img class="prize-card-image" src="assets/images/sadAfarin.jpg">
+                        <div class="schedule-middle-div">
+                            <div class="Ellipse">
                             </div>
-                            <div class="prize-card-title-div">
-                                <h2 class="prize-card-title">{{publicservice.Texts.Texts["home45"]}}</h2>
+                            <div class="Line">
                             </div>
-                            <div class="prize-card-discription-div">
-                                <h3 class="prize-card-discription">{{publicservice.Texts.Texts["home46"]}}</h3>
+                            <div class="Ellipse">
+                            </div>
+                            <div class="Line">
+                            </div>
+                            <div class="Ellipse">
+                            </div>
+                        </div>
+                        <div class="schedule-left-div">
+                            <div class="text" style="margin-left: 20%;">
+                                <h1 class="text-title">
+                                    {{publicservice.Texts.Texts["home9"]}}</h1>
+                                <h1 class="text-subtitle2">
+                                    {{publicservice.Texts.Texts["home10"]}}
+                                </h1>
+                            </div>
+                            <div class="image" style="margin-top: 130%;">
+                                <img class="schedule-image" src="assets/images/masoud.jpg">
+                            </div>
+                            <div class="text" style="margin-top: 100%;margin-left: 25%;">
+                                <h1 class="text-title">
+                                    {{publicservice.Texts.Texts["home13"]}}
+                                </h1>
+                                <h1 class="text-subtitle3">
+                                    {{publicservice.Texts.Texts["home14"]}}
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="event-schedule-phone">
+                        <div class="schedule-middle-div">
+                            <div class="Ellipse">
+                            </div>
+                            <div class="Line">
+                            </div>
+                            <div class="Ellipse">
+                            </div>
+                            <div class="Line">
+                            </div>
+                            <div class="Ellipse">
+                            </div>
+                        </div>
+                        <div class="middle-div-phone">
+                            <div class="text">
+                                <h1 class="text-title">
+                                    {{publicservice.Texts.Texts["home9"]}}</h1>
+                                <h1 class="text-subtitle">
+                                    {{publicservice.Texts.Texts["home10"]}}
+                                </h1>
+                            </div>
+                            <div class="image">
+                                <img class="schedule-image" src="assets/images/masoud.jpg">
+                            </div>
+                            <div class="text">
+                                <h1 class="text-title">
+                                    {{publicservice.Texts.Texts["home13"]}}
+                                </h1>
+                                <h1 class="text-subtitle">
+                                    {{publicservice.Texts.Texts["home14"]}}
+                                </h1>
+                            </div>
+                            <div class="image">
+                                <img class="schedule-image" src="assets/images/masoud.jpg">
+                            </div>
+                            <div class="text">
+                                <h1 class="text-title">
+                                    {{publicservice.Texts.Texts["home11"]}}
+                                </h1>
+                                <h1 class="text-subtitle">
+                                    {{publicservice.Texts.Texts["home12"]}}
+                                </h1>
+                            </div>
+                            <div class="image">
+                                <img class="schedule-image" src="assets/images/masoud.jpg">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="whole-workshop">
-        <div class="green-wave-above-wrokshops" #workshop id="workshop">
-            <h1 class="collapse-header">
-                {{publicservice.Texts.Texts["home15"]}}</h1>
+        <div>
+
+            <!-- <div class="light-putple-rectangle"></div> -->
+            <div class="prizes">
+                <div>
+                    <img class="light-purple-wave" src="assets/svg/wave-purple-light.svg">
+                </div>
+                <div class="inner-prizes">
+                    <div class="prizes-title">
+                        <h1 style="margin-top: 0;">{{publicservice.Texts.Texts["home43"]}}</h1>
+                    </div>
+                    <div style="text-align: center;">
+                        <button mat-flat-button class="green-button"
+                            (click)="Rules()">{{publicservice.Texts.Texts["home44"]}}</button>
+                    </div>
+                    <div class="prize-cards-whole-div">
+                        <div class="prize-cards-inner-div">
+                            <div class="prize-cards">
+                                <div class="prize-card-image-div">
+                                    <img class="prize-card-image" src="assets/images/sadAfarin.jpg">
+                                </div>
+                                <div class="prize-card-title-div">
+                                    <h2 class="prize-card-title">{{publicservice.Texts.Texts["home45"]}}</h2>
+                                </div>
+                                <div class="prize-card-discription-div">
+                                    <h3 class="prize-card-discription">{{publicservice.Texts.Texts["home46"]}}</h3>
+                                </div>
+                            </div>
+                            <div class="prize-cards">
+                                <div class="prize-card-image-div">
+                                    <img class="prize-card-image" src="assets/images/sadAfarin.jpg">
+                                </div>
+                                <div class="prize-card-title-div">
+                                    <h2 class="prize-card-title">{{publicservice.Texts.Texts["home45"]}}</h2>
+                                </div>
+                                <div class="prize-card-discription-div">
+                                    <h3 class="prize-card-discription">{{publicservice.Texts.Texts["home46"]}}</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="green-rectangle-under-workshops">
+        <div class="whole-workshop" #workshop id="workshop">
+
+            <!-- <div class="green-rectangle-under-workshops">
+        </div> -->
+
+            <div class="workshops-background">
+                <div style="margin-bottom: -1%;">
+                    <img class="green-wave-above-wrokshops" src="assets/svg/wave-green.svg">
+                </div>
+                <div style="background-color: #4ae5b0;padding-bottom: 30px;">
+                    <h1 class="collapse-header">
+                        {{publicservice.Texts.Texts["home15"]}}</h1>
+                    <div *ngFor="let workshop of workshopsArray;let i = index" class="workshops-whole-collapse">
+                        <div class="orange-collapse">
+                        </div>
+                        <div style="width: 100%;">
+                            <div class="components-collapse">
+                                <h3 class="collapse-title">
+                                    {{workshop.title}}</h3>
+                                <h4 class="collapse-subject">
+                                    {{workshopsDate[i]}}</h4>
+                                <h4 class="collapse-subject">
+                                    {{workshop.capacity}} {{publicservice.Texts.Texts["home18"]}}</h4>
+                                <h4 class="collapse-subject">
+                                    {{workshopsLevel[i]}}</h4>
+                                <div class="register-button-div">
+                                    <button mat-stroked-button
+                                        class="register-button">{{publicservice.Texts.Texts["home20"]}}</button>
+                                </div>
+                                <button mat-button class="collapse"
+                                    (click)="workshopsActive[i] =(workshopsActive[i] == 'active' ? 'deactive' : 'active');iconW[i] = (iconW[i] == 'keyboard_arrow_down' ? 'keyboard_arrow_up' : 'keyboard_arrow_down') ">{{publicservice.Texts.Texts["home21"]}}
+                                    <mat-icon class="collapse-icon" [inline]="true">{{iconW[i]}}</mat-icon>
+                                </button>
+                            </div>
+                            <div [class]="workshopsActive[i]">
+                                <div class="collapse-background">
+                                    <div>
+                                        <p class="collapse-about">
+                                            {{workshop.content}}</p>
+                                    </div>
+                                    <div class="collapse-presenters-title-div">
+                                        <h1 class="collapse-persenters-title">
+                                            {{publicservice.Texts.Texts["home23"]}}
+                                        </h1>
+                                    </div>
+                                    <div class="collapse-presenters-card-div">
+                                        <div class="collapse-presenters-card">
+                                            <div>
+                                                <img class="collapse-presenters-image" src="assets/images/masoud.jpg">
+                                            </div>
+                                            <h2 class="collapse-presenters-name">
+                                                {{workshop.presenter.first_name}} {{workshop.presenter.last_name}}
+                                            </h2>
+                                            <h4 class="collapse-presenters-discription">
+                                                {{workshop.presenter.descriptions}}</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="workshops-background">
-            <div *ngFor="let workshop of workshopsArray;let i = index" class="workshops-whole-collapse">
-                <div class="orange-collapse">
+        <div class="whole-workshop-phone" #workshop id="workshop">
+            <div class="green-wave-above-wrokshops" style="margin-top: -30%;" #workshop id="workshop">
+                <h1 class="collapse-header" style="background-color: #4ae5b0;padding: 5% 0 0 0;">
+                    {{publicservice.Texts.Texts["home15"]}}</h1>
+            </div>
+            <div class="workshops-background" style="padding-top: 10px;margin-top: -1%;">
+                <div *ngFor="let workshop of workshopsArray;let i = index" class="workshops-whole-collapse">
+                    <div style="width: 100%;">
+                        <div class="components-collapse">
+                            <div style="display: flex;">
+                                <div class="orange-collapse">
+                                </div>
+                                <h3 class="collapse-title">
+                                    {{workshop.title}}</h3>
+                            </div>
+                            <div class="register-button-div">
+                                <button mat-stroked-button
+                                    class="register-button">{{publicservice.Texts.Texts["home20"]}}</button>
+                            </div>
+                        </div>
+                        <div
+                            style="background-color: #fafafa;border-bottom-left-radius: 12px;border-bottom-right-radius: 12px;">
+                            <div class="collapse-discription-div">
+                                <h4 class="collapse-subject">
+                                    {{workshopsDate[i]}}</h4>
+                                <div class="collapse-discription-inner-div">
+                                    <h4 class="collapse-subject" style="padding-left: 30px;">
+                                        {{workshop.capacity}} {{publicservice.Texts.Texts["home18"]}}</h4>
+                                    <h4 class="collapse-subject">
+                                        {{workshopsLevel[i]}}</h4>
+                                </div>
+                            </div>
+                            <div class="collapse-button">
+                                <button mat-button class="collapse"
+                                    (click)="workshopsActive[i] =(workshopsActive[i] == 'active' ? 'deactive' : 'active');iconW[i] = (iconW[i] == 'keyboard_arrow_down' ? 'keyboard_arrow_up' : 'keyboard_arrow_down') ">{{publicservice.Texts.Texts["home21"]}}
+                                    <mat-icon class="collapse-icon" [inline]="true">{{iconW[i]}}</mat-icon>
+                                </button>
+                            </div>
+                        </div>
+                        <div [class]="workshopsActive[i]">
+                            <div class="collapse-background">
+                                <div>
+                                    <p class="collapse-about">
+                                        {{workshop.content}}</p>
+                                </div>
+                                <div class="collapse-presenters-title-div">
+                                    <h1 class="collapse-persenters-title">
+                                        {{publicservice.Texts.Texts["home23"]}}
+                                    </h1>
+                                </div>
+                                <div class="collapse-presenters-card-div">
+                                    <div class="collapse-presenters-card">
+                                        <div>
+                                            <img class="collapse-presenters-image" src="assets/images/masoud.jpg">
+                                        </div>
+                                        <h2 class="collapse-presenters-name">
+                                            {{workshop.presenter.first_name}} {{workshop.presenter.last_name}}
+                                        </h2>
+                                        <h4 class="collapse-presenters-discription">
+                                            {{workshop.presenter.descriptions}}</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <img class="green-wave-under-workshops" src="assets/svg/wave-green.svg">
+        </div>
+        <div class="talks-title-div" #talk id="talk">
+            <h1 class="talks-title">
+                {{publicservice.Texts.Texts["home26"]}}</h1>
+        </div>
+        <div class="talks-background">
+            <div *ngFor="let talk of talksArray; let i = index" class="workshops-whole-collapse">
+                <div class="pink-collapse">
                 </div>
                 <div style="width: 100%;">
                     <div class="components-collapse">
                         <h3 class="collapse-title">
-                            {{workshop.title}}</h3>
+                            {{talk.title}}</h3>
                         <h4 class="collapse-subject">
-                            {{workshopsDate[i]}}</h4>
+                            {{talksDate[i]}}</h4>
                         <h4 class="collapse-subject">
-                            {{workshop.capacity}} {{publicservice.Texts.Texts["home18"]}}</h4>
+                            {{talk.capacity}} {{publicservice.Texts.Texts["home29"]}}</h4>
                         <h4 class="collapse-subject">
-                            {{workshopsLevel[i]}}</h4>
+                            {{talksLevel[i]}}</h4>
                         <div class="register-button-div">
                             <button mat-stroked-button
-                                class="register-button">{{publicservice.Texts.Texts["home20"]}}</button>
+                                class="register-button">{{publicservice.Texts.Texts["home31"]}}</button>
                         </div>
                         <button mat-button class="collapse"
-                            (click)="workshopsActive[i] =(workshopsActive[i] == 'active' ? 'deactive' : 'active');iconW[i] = (iconW[i] == 'keyboard_arrow_down' ? 'keyboard_arrow_up' : 'keyboard_arrow_down') ">{{publicservice.Texts.Texts["home21"]}}
-                            <mat-icon class="collapse-icon" [inline]="true">{{iconW[i]}}</mat-icon>
+                            (click)="talksActive[i] = (talksActive[i] == 'active' ? 'deactive' : 'active') ;iconT[i] = (iconT[i] == 'keyboard_arrow_down' ? 'keyboard_arrow_up' : 'keyboard_arrow_down') ">{{publicservice.Texts.Texts["home32"]}}
+                            <mat-icon class="collapse-icon" [inline]="true">{{iconT[i]}}</mat-icon>
                         </button>
                     </div>
-                    <div [class]="workshopsActive[i]">
+                    <div [class]="talksActive[i]">
                         <div class="collapse-background">
                             <div>
                                 <p class="collapse-about">
-                                    {{workshop.content}}</p>
+                                    {{talk.content}}</p>
                             </div>
                             <div class="collapse-presenters-title-div">
                                 <h1 class="collapse-persenters-title">
-                                    {{publicservice.Texts.Texts["home23"]}}
+                                    {{publicservice.Texts.Texts["home34"]}}
                                 </h1>
                             </div>
                             <div class="collapse-presenters-card-div">
@@ -320,10 +457,10 @@
                                         <img class="collapse-presenters-image" src="assets/images/masoud.jpg">
                                     </div>
                                     <h2 class="collapse-presenters-name">
-                                        {{workshop.presenter.first_name}} {{workshop.presenter.last_name}}
+                                        {{talk.presenter.first_name}} {{talk.presenter.last_name}}
                                     </h2>
                                     <h4 class="collapse-presenters-discription">
-                                        {{workshop.presenter.descriptions}}</h4>
+                                        {{talk.presenter.descriptions}}</h4>
                                 </div>
                             </div>
                         </div>
@@ -331,55 +468,48 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="whole-workshop-phone" #workshop id="workshop">
-        <div class="green-wave-above-wrokshops" style="margin-top: -30%;" #workshop id="workshop">
-            <h1 class="collapse-header" style="background-color: #4ae5b0;padding: 5% 0 0 0;">
-                {{publicservice.Texts.Texts["home15"]}}</h1>
-        </div>
-        <div class="workshops-background" style="padding-top: 10px;margin-top: -1%;">
-            <div *ngFor="let workshop of workshopsArray;let i = index" class="workshops-whole-collapse">
+        <div class="talks-background-phone">
+            <div *ngFor="let talk of talksArray; let i = index" class="workshops-whole-collapse">
                 <div style="width: 100%;">
                     <div class="components-collapse">
                         <div style="display: flex;">
-                            <div class="orange-collapse">
+                            <div class="pink-collapse">
                             </div>
                             <h3 class="collapse-title">
-                                {{workshop.title}}</h3>
+                                {{talk.title}}</h3>
                         </div>
                         <div class="register-button-div">
                             <button mat-stroked-button
-                                class="register-button">{{publicservice.Texts.Texts["home20"]}}</button>
+                                class="register-button">{{publicservice.Texts.Texts["home31"]}}</button>
                         </div>
                     </div>
                     <div
                         style="background-color: #fafafa;border-bottom-left-radius: 12px;border-bottom-right-radius: 12px;">
-                        <div class="collapse-discription-div">
+                        <div
+                            style="display: flex;justify-content: space-between;padding-right: 20px;padding-left: 20px;">
                             <h4 class="collapse-subject">
-                                {{workshopsDate[i]}}</h4>
-                            <div class="collapse-discription-inner-div">
+                                {{talksDate[i]}}</h4>
+                            <div style="display: flex;">
                                 <h4 class="collapse-subject" style="padding-left: 30px;">
-                                    {{workshop.capacity}} {{publicservice.Texts.Texts["home18"]}}</h4>
+                                    {{talk.capacity}} {{publicservice.Texts.Texts["home29"]}}</h4>
                                 <h4 class="collapse-subject">
-                                    {{workshopsLevel[i]}}</h4>
+                                    {{talksLevel[i]}}</h4>
                             </div>
                         </div>
-                        <div class="collapse-button">
-                            <button mat-button class="collapse"
-                                (click)="workshopsActive[i] =(workshopsActive[i] == 'active' ? 'deactive' : 'active');iconW[i] = (iconW[i] == 'keyboard_arrow_down' ? 'keyboard_arrow_up' : 'keyboard_arrow_down') ">{{publicservice.Texts.Texts["home21"]}}
-                                <mat-icon class="collapse-icon" [inline]="true">{{iconW[i]}}</mat-icon>
-                            </button>
-                        </div>
+                        <button mat-button class="collapse"
+                            (click)="talksActive[i] = (talksActive[i] == 'active' ? 'deactive' : 'active') ;iconT[i] = (iconT[i] == 'keyboard_arrow_down' ? 'keyboard_arrow_up' : 'keyboard_arrow_down') ">{{publicservice.Texts.Texts["home32"]}}
+                            <mat-icon class="collapse-icon" [inline]="true">{{iconT[i]}}</mat-icon>
+                        </button>
                     </div>
-                    <div [class]="workshopsActive[i]">
+                    <div [class]="talksActive[i]">
                         <div class="collapse-background">
                             <div>
                                 <p class="collapse-about">
-                                    {{workshop.content}}</p>
+                                    {{talk.content}}</p>
                             </div>
                             <div class="collapse-presenters-title-div">
                                 <h1 class="collapse-persenters-title">
-                                    {{publicservice.Texts.Texts["home23"]}}
+                                    {{publicservice.Texts.Texts["home34"]}}
                                 </h1>
                             </div>
                             <div class="collapse-presenters-card-div">
@@ -388,10 +518,10 @@
                                         <img class="collapse-presenters-image" src="assets/images/masoud.jpg">
                                     </div>
                                     <h2 class="collapse-presenters-name">
-                                        {{workshop.presenter.first_name}} {{workshop.presenter.last_name}}
+                                        {{talk.presenter.first_name}} {{talk.presenter.last_name}}
                                     </h2>
                                     <h4 class="collapse-presenters-discription">
-                                        {{workshop.presenter.descriptions}}</h4>
+                                        {{talk.presenter.descriptions}}</h4>
                                 </div>
                             </div>
                         </div>
@@ -399,168 +529,51 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="green-wave-under-workshops">
-    </div>
-    <div class="talks-title-div" #talk id="talk">
-        <h1 class="talks-title">
-            {{publicservice.Texts.Texts["home26"]}}</h1>
-    </div>
-    <div class="talks-background">
-        <div *ngFor="let talk of talksArray; let i = index" class="workshops-whole-collapse">
-            <div class="pink-collapse">
+        <div class="rectangle-under-talks-div"></div>
+        <div class="footer-whole-div">
+            <div >
+                <img class="purple-wave-above-footer" src="assets/svg/wave-purple.svg">
             </div>
-            <div style="width: 100%;">
-                <div class="components-collapse">
-                    <h3 class="collapse-title">
-                        {{talk.title}}</h3>
-                    <h4 class="collapse-subject">
-                        {{talksDate[i]}}</h4>
-                    <h4 class="collapse-subject">
-                        {{talk.capacity}} {{publicservice.Texts.Texts["home29"]}}</h4>
-                    <h4 class="collapse-subject">
-                        {{talksLevel[i]}}</h4>
-                    <div class="register-button-div">
-                        <button mat-stroked-button
-                            class="register-button">{{publicservice.Texts.Texts["home31"]}}</button>
-                    </div>
-                    <button mat-button class="collapse"
-                        (click)="talksActive[i] = (talksActive[i] == 'active' ? 'deactive' : 'active') ;iconT[i] = (iconT[i] == 'keyboard_arrow_down' ? 'keyboard_arrow_up' : 'keyboard_arrow_down') ">{{publicservice.Texts.Texts["home32"]}}
-                        <mat-icon class="collapse-icon" [inline]="true">{{iconT[i]}}</mat-icon>
-                    </button>
-                </div>
-                <div [class]="talksActive[i]">
-                    <div class="collapse-background">
-                        <div>
-                            <p class="collapse-about">
-                                {{talk.content}}</p>
-                        </div>
-                        <div class="collapse-presenters-title-div">
-                            <h1 class="collapse-persenters-title">
-                                {{publicservice.Texts.Texts["home34"]}}
-                            </h1>
-                        </div>
-                        <div class="collapse-presenters-card-div">
-                            <div class="collapse-presenters-card">
-                                <div>
-                                    <img class="collapse-presenters-image" src="assets/images/masoud.jpg">
-                                </div>
-                                <h2 class="collapse-presenters-name">
-                                    {{talk.presenter.first_name}} {{talk.presenter.last_name}}
-                                </h2>
-                                <h4 class="collapse-presenters-discription">
-                                    {{talk.presenter.descriptions}}</h4>
+            <div class="footer-div">
+                <div class="discription-footer-div">
+                    <div class="discription-right-footer-div">
+                        <div class="discription-right-footer-about-div">
+                            <h1 class="discription-right-footer-about-title">
+                                {{publicservice.Texts.Texts["home37"]}}</h1>
+                            <h3 class="discription-right-footer-about-subtitle">
+                                {{publicservice.Texts.Texts["home38"]}}</h3>
+                            <p class="discription-right-footer-about-discription">
+                                {{publicservice.Texts.Texts["home39"]}}</p>
+                            <div style="text-align: center;">
+                                <button mat-flat-button
+                                    class="green-button">{{publicservice.Texts.Texts["home47"]}}</button>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="talks-background-phone">
-        <div *ngFor="let talk of talksArray; let i = index" class="workshops-whole-collapse">
-            <div style="width: 100%;">
-                <div class="components-collapse">
-                    <div style="display: flex;">
-                        <div class="pink-collapse">
-                        </div>
-                        <h3 class="collapse-title">
-                            {{talk.title}}</h3>
-                    </div>
-                    <div class="register-button-div">
-                        <button mat-stroked-button
-                            class="register-button">{{publicservice.Texts.Texts["home31"]}}</button>
-                    </div>
-                </div>
-                <div
-                    style="background-color: #fafafa;border-bottom-left-radius: 12px;border-bottom-right-radius: 12px;">
-                    <div style="display: flex;justify-content: space-between;padding-right: 20px;padding-left: 20px;">
-                        <h4 class="collapse-subject">
-                            {{talksDate[i]}}</h4>
-                        <div style="display: flex;">
-                            <h4 class="collapse-subject" style="padding-left: 30px;">
-                                {{talk.capacity}} {{publicservice.Texts.Texts["home29"]}}</h4>
-                            <h4 class="collapse-subject">
-                                {{talksLevel[i]}}</h4>
+                        <div class="discription-right-footer-bubble">
                         </div>
                     </div>
-                    <button mat-button class="collapse"
-                        (click)="talksActive[i] = (talksActive[i] == 'active' ? 'deactive' : 'active') ;iconT[i] = (iconT[i] == 'keyboard_arrow_down' ? 'keyboard_arrow_up' : 'keyboard_arrow_down') ">{{publicservice.Texts.Texts["home32"]}}
-                        <mat-icon class="collapse-icon" [inline]="true">{{iconT[i]}}</mat-icon>
-                    </button>
-                </div>
-                <div [class]="talksActive[i]">
-                    <div class="collapse-background">
-                        <div>
-                            <p class="collapse-about">
-                                {{talk.content}}</p>
-                        </div>
-                        <div class="collapse-presenters-title-div">
-                            <h1 class="collapse-persenters-title">
-                                {{publicservice.Texts.Texts["home34"]}}
-                            </h1>
-                        </div>
-                        <div class="collapse-presenters-card-div">
-                            <div class="collapse-presenters-card">
-                                <div>
-                                    <img class="collapse-presenters-image" src="assets/images/masoud.jpg">
-                                </div>
-                                <h2 class="collapse-presenters-name">
-                                    {{talk.presenter.first_name}} {{talk.presenter.last_name}}
-                                </h2>
-                                <h4 class="collapse-presenters-discription">
-                                    {{talk.presenter.descriptions}}</h4>
-                            </div>
-                        </div>
+                    <div class="footer-image-div">
+                        <img class="footer-image" src="assets/images/masoud.jpg">
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="rectangle-under-talks-div"></div>
-    <div class="footer-whole-div">
-        <div class="purple-wave-above-footer">
-        </div>
-        <div class="footer-div">
-            <div class="discription-footer-div">
-                <div class="discription-right-footer-div">
-                    <div class="discription-right-footer-about-div">
-                        <h1 class="discription-right-footer-about-title">
-                            {{publicservice.Texts.Texts["home37"]}}</h1>
-                        <h3 class="discription-right-footer-about-subtitle">
-                            {{publicservice.Texts.Texts["home38"]}}</h3>
-                        <p class="discription-right-footer-about-discription">
-                            {{publicservice.Texts.Texts["home39"]}}</p>
-                        <div style="text-align: center;">
-                            <button mat-flat-button
-                                class="green-button">{{publicservice.Texts.Texts["home47"]}}</button>
-                        </div>
-                    </div>
-                    <div class="discription-right-footer-bubble">
-                    </div>
-                </div>
-                <div class="footer-image-div">
-                    <img class="footer-image" src="assets/images/masoud.jpg">
-                </div>
-            </div>
-            <div>
-                <h1 class="supporters-title">
-                    {{publicservice.Texts.Texts["home40"]}}
-                </h1>
-            </div>
-            <div class="supporters-card-div">
                 <div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/masoud.jpg">
+                    <h1 class="supporters-title">
+                        {{publicservice.Texts.Texts["home40"]}}
+                    </h1>
+                </div>
+                <div class="supporters-card-div">
+                    <div>
+                        <div class="supportes-card-image-div">
+                            <img class="supporters-card-image" src="assets/images/masoud.jpg">
+                        </div>
+                        <p class="supportes-card-name">
+                            {{publicservice.Texts.Texts["home41"]}}</p>
                     </div>
-                    <p class="supportes-card-name">
-                        {{publicservice.Texts.Texts["home41"]}}</p>
                 </div>
             </div>
         </div>
+        <div class="developers-div">
+            <p class="developers">{{publicservice.Texts.Texts["home42"]}}</p>
+        </div>
     </div>
-    <div class="developers-div">
-        <p class="developers">{{publicservice.Texts.Texts["home42"]}}</p>
-    </div>
-</div>
 </div>

@@ -46,9 +46,9 @@ export class PeopleComponent implements OnInit {
     this.router.navigate(['home'],{fragment:'schedule'});
   }
   Rules(){
-    this.router.navigate(['rules']);
+    this.router.navigate(['rules'],{fragment:'rules'});
   }
   Home(){
-    this.router.navigate(['home']);
+    this.router.navigate(['home'],{fragment:'home'});
   }
 }
