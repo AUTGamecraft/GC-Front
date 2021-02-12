@@ -85,7 +85,6 @@
     // padding-bottom: 120px;
 }
 .workshops-whole-collapse {
-    
     direction: rtl;
     display: flex;
     justify-content: space-between;
@@ -204,7 +203,7 @@
 }
 .talks-title-div {
     background-color: #6af9c5;
-    padding-top: 100px;
+    padding-top: 50px;
     margin-top: -20px;
     // z-index: 0;
 }
@@ -218,7 +217,7 @@
 .talks-background {
     background-color: #6af9c5;
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 60px;
 }
 .pink-collapse {
     width: 30px;
@@ -226,15 +225,15 @@
     border-bottom-right-radius: 28px;
     border-top-right-radius: 28px;
 }
-.rectangle-under-talks-div {
-    width: 100%;
-    height: 100px;
-    background-color: #6af9c5;
-    z-index: -1;
-    padding-bottom: 30px;
-}
+// .rectangle-under-talks-div {
+//     width: 100%;
+//     height: 100px;
+//     background-color: #6af9c5;
+//     z-index: -1;
+//     padding-bottom: 30px;
+// }
 .footer-whole-div {
-    margin-top: -90px;
+    margin-top: -70px;
 }
 .purple-wave-above-footer {
     // background-image: url("/assets/svg/wave-purple.svg");
@@ -250,7 +249,7 @@
 .footer-div {
     background-color: #52006b;
     padding-top: 100px;
-    margin-top: -100px;
+    margin-top: -10px;
 }
 .discription-footer-div {
     direction: rtl;
@@ -449,6 +448,7 @@
     // background-repeat: no-repeat;
     // background-size: 100% 100%;
     width: 100%;
+    margin-top: -10px;
     // height: 210px;
     // margin-top: -90px;
 }
@@ -484,12 +484,13 @@
 }
 .event-schedule {
     display: flex;
-    margin: auto;
+    justify-content: space-evenly;
+    padding: 10px 10%;
 }
-.schedule-right-div {
-    margin-right: 25%;
-    margin-top: 5%;
-}
+// .schedule-right-div {
+//     // margin-right: 25%;
+//     // margin-top: 5%;
+// }
 .schedule-image {
     height: 252.5px;
     width: 252.5px;
@@ -509,14 +510,14 @@
     margin-top: 0;
 }
 .schedule-middle-div {
-    margin: auto;
-    margin-left: 5%;
-    margin-top: 10%;
-}
-.schedule-left-div {
-    margin-left: 25%;
+    //     // margin: auto;
+    //     // margin-left: 5%;
     margin-top: 5%;
 }
+// .schedule-left-div {
+//     // margin-left: 25%;
+//     // margin-top: 5%;
+// }
 .text-subtitle2 {
     font-family: "Estedad";
     font-size: xx-large;
@@ -708,10 +709,10 @@
 .light-putple-rectangle {
     display: none;
 }
-.talks-background-phone{
+.talks-background-phone {
     display: none;
 }
-.whole-header-phone{
+.whole-header-phone {
     display: none;
 }
 @media only screen and (max-width: 992px) {
@@ -823,13 +824,15 @@
         margin-top: 0;
     }
     .prizes {
+        // background-color: #ede1f1;
         background-image: none;
         padding-top: 5%;
         // margin-top: -20%;
-        padding-bottom: 20%;
+        // padding-bottom: 20%;
     }
-    .inner-prizes{
+    .inner-prizes {
         background-color: #ede1f1;
+        padding-bottom: 30px;
     }
     .prizes-title {
         margin-top: 0;
@@ -910,6 +913,7 @@
         height: 80px;
     }
     .green-wave-above-wrokshops {
+        margin-top: -30px;
         margin-bottom: 0;
     }
     .whole-workshop-phone {
@@ -933,7 +937,7 @@
     }
     .talks-background-phone {
         display: initial;
-        display: list-item  ;
+        display: list-item;
         background-color: #6af9c5;
         padding-top: 20px;
         padding-bottom: 20px;
@@ -976,28 +980,28 @@
         border-bottom-right-radius: 12px;
     }
     .footer-whole-div {
-        margin-top: -30%;
+        margin-top: -40px;
     }
-    .whole-header-phone{
+    .whole-header-phone {
         display: initial;
         display: flex;
         direction: rtl;
         justify-content: space-between;
-        padding: 10px;
+        padding: 15px;
     }
-    .logo{
+    .logo {
         padding: 0;
     }
 }
-@media only screen and (max-width:518px){
-    .prizes-title{
+@media only screen and (max-width: 518px) {
+    .prizes-title {
         background-color: #ede1f1;
     }
     // .prizes{
     //     // margin-top: -30%;
     // }
 }
-@media only screen and (max-width:345px){
+@media only screen and (max-width: 345px) {
     // .prizes{
     //     // margin-top: -40%;
     // }

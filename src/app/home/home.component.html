@@ -237,7 +237,7 @@
         <div>
 
             <!-- <div class="light-putple-rectangle"></div> -->
-            <div class="prizes">
+            <div class="prizes" style="padding-bottom: 0;">
                 <div>
                     <img class="light-purple-wave" src="assets/svg/wave-purple-light.svg">
                 </div>
@@ -343,11 +343,13 @@
             </div>
         </div>
         <div class="whole-workshop-phone" #workshop id="workshop">
-            <div class="green-wave-above-wrokshops" style="margin-top: -30%;" #workshop id="workshop">
-                <h1 class="collapse-header" style="background-color: #4ae5b0;padding: 5% 0 0 0;">
-                    {{publicservice.Texts.Texts["home15"]}}</h1>
-            </div>
             <div class="workshops-background" style="padding-top: 10px;margin-top: -1%;">
+                <div>
+                    <img class="green-wave-above-wrokshops" src="assets/svg/wave-green.svg">
+                </div>
+                <h1 class="collapse-header" style="background-color: #4ae5b0;padding: 5% 0 0 0;margin-top: -10px;margin-bottom: 0;">
+                    {{publicservice.Texts.Texts["home15"]}}</h1>
+                    <div style="background-color: #4ae5b0;padding: 20px 0;">
                 <div *ngFor="let workshop of workshopsArray;let i = index" class="workshops-whole-collapse">
                     <div style="width: 100%;">
                         <div class="components-collapse">
@@ -408,6 +410,7 @@
                         </div>
                     </div>
                 </div>
+                    </div>
             </div>
         </div>
         <div>
@@ -468,7 +471,7 @@
                 </div>
             </div>
         </div>
-        <div class="talks-background-phone">
+        <div class="talks-background-phone" style="padding-bottom: 50px;">
             <div *ngFor="let talk of talksArray; let i = index" class="workshops-whole-collapse">
                 <div style="width: 100%;">
                     <div class="components-collapse">
