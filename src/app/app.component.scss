@@ -54,3 +54,8 @@
     font-family:Estedad-Regularw;
     src: url('/assets/fonts/Estedad-Regular.woff2');
 }
+::ng-deep .snackbar {
+    background-color: transparent;
+    box-shadow: none;
+    height: 0;
+  }

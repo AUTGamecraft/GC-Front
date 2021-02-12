@@ -741,6 +741,7 @@
     .subintro-div {
         padding: 30px;
         padding-bottom: 0;
+        padding-top: 20%;
     }
     .numbers {
         margin-top: 0;
@@ -836,7 +837,7 @@
         height: 210px;
         position: relative;
         z-index: 1;
-        margin-bottom: -10%;
+        margin-bottom: 6%;
     }
     .prize-cards-inner-div {
         flex-direction: column;
@@ -968,13 +969,6 @@
     .footer-whole-div {
         margin-top: -40%;
     }
-    .light-putple-rectangle {
-        background-color: #ede1f1;
-        height: 50px;
-        width: 100%;
-        margin-top: -90px;
-        padding: 20px;
-    }
     .whole-header-phone{
         display: initial;
         display: flex;
@@ -984,5 +978,18 @@
     }
     .logo{
         padding: 0;
+    }
+}
+@media only screen and (max-width:518px){
+    .prizes-title{
+        background-color: #ede1f1;
+    }
+    .prizes{
+        margin-top: -30%;
+    }
+}
+@media only screen and (max-width:345px){
+    .prizes{
+        margin-top: -40%;
     }
 }
