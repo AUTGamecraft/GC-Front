@@ -8,7 +8,11 @@ import { PublicService } from '../public.service';
 })
 export class DashboardMediaComponent implements OnInit {
 
-  constructor(private router : Router,public publicservice: PublicService) { }
+  constructor(private router : Router,public publicservice: PublicService) { 
+    if(!publicservice.logedIn){
+      this.router.navigate(['login']);
+    }
+  }
 
   ngOnInit(): void {
   }

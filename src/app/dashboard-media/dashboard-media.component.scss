@@ -59,9 +59,9 @@
     font-size: large;
     border: 3px solid #07f49e !important;
     border-radius: 15px;
-    height: 10%;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    // height: 10%;
+    margin: auto 0;
+    padding: 0;
 }
 .outlined-button:hover {
     background-color: #6af9c5;
@@ -275,11 +275,10 @@
 #outlined-button-phone{
     display: none;
 }
-@media only screen and (max-width:600px){
+@media only screen and (max-width:450px){
     .dash-media-inner-div{
         flex-direction: column;
         padding: 24px;
-
     }
     .dash-media{
         padding: 0;
@@ -300,7 +299,7 @@
         height: 48px;
         margin-top: 8px;
         margin-right: 0;
-        margin-left: 16px;
+        margin-left: 0;
     }
     .name-image-phone{
         display: flex;
@@ -331,31 +330,61 @@
     }
     .outlined-button{
         display: none;
+        font-size: 16px;
     }
     .buttons{
         font-size: 16px;
         border-radius: 12px;
-        width: 240px;
+        width: 100%;
+    }
+    .download-button{
+        font-size:16px ;
     }
     .left-part{
         width: max-content;
         margin-right: 0;
         margin: auto;
         text-align: center;
-        padding: 34px;
+        padding: 5%;
+        // padding: 5px;
+        width: 80%;
         padding-top: 0;
     }
-    .mat-card{
-        width: 400px;
-        margin-left: 0 !important;
+    // .mat-card{
+    //     // width: 100%;
+    //     // margin-left: 0 !important;
+    //     // margin: auto;
+    //     // text-align: left;
+    // }
+    .mat-card.mat-card.mat-focus-indicator{
+        // width: 100%;
+        // margin-left: 10%;
     }
     .workshops-title{
         margin-right: 0;
         text-align: center;
         margin-top: 0;
     }
+    // .talks-div{
+    //     // text-align: center;
+    //     // width: 100%;
+    //     // padding: 0 20px;
+    // }
+    // .workshops-div{
+    //     // text-align: center;
+    // }
+    .right-header-button{
+        width: 100%;
+    }
+    .left-header-button{
+        width: 100%;
+    }
     .footer-whole-div{
-        margin-top: -20%;
+        margin-top: -30%;
+    }
+    .talks-title{
+        text-align: center;
+        margin-right: 0;
     }
     .discription-footer-div {
         flex-direction: column;

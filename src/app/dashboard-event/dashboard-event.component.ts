@@ -11,7 +11,11 @@ export class DashboardEventComponent implements OnInit {
   workshops = 'deactive'
   iconW = 'keyboard_arrow_down'
   iconT = 'keyboard_arrow_down'
-  constructor(private router:Router,public publicservice:PublicService) { }
+  constructor(private router:Router,public publicservice:PublicService) { 
+    if(!publicservice.logedIn){
+      this.router.navigate(['login']);
+    }
+  }
 
   ngOnInit(): void {
   }
