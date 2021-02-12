@@ -35,6 +35,11 @@
 .login {
   display: flex;
   justify-content: space-evenly;
+  background-color: #52006b;
+  background-image: url("/assets/svg/pattern.svg");
+  direction: rtl;
+  height: 100%;
+  padding-bottom: 30px;
 }
 .login-title-div {
   direction: rtl;
@@ -84,12 +89,7 @@
   text-align: center;
   margin-top: 5%;
 }
-.login-whole{
-  background-color: #52006b;
-  background-image: url("/assets/svg/pattern.svg");
-  direction: rtl;
-  height: 100%;
-}
+
 //start of logo
 .logo{
   padding-top: 20px;
