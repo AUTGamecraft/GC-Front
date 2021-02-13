@@ -10,17 +10,18 @@ import * as moment from 'jalali-moment';
 })
 export class HomeComponent implements OnInit {
   workshopsArray: any = [];
-  workshopsActive: any = {};
-  iconW: any = {};
-  workshopsDate: any = {};
+  workshopsActive: any = [];
+  iconW: any = [];
+  workshopsDate: any = [];
   talksArray: any = [];
-  talksActive: any = {};
-  iconT: any = {};
-  talksDate: any = {};
+  talksActive: any = [];
+  iconT: any = [];
+  talksDate: any = [];
   m: string = '';
   time = 10000;
-  talksLevel: any = {};
-  workshopsLevel: any = {};
+  talksLevel: any = [];
+  workshopsLevel: any = [];
+  noShadow = 'noshadow';
   constructor(public publicservice: PublicService, public router: Router) {
     publicservice.getTalks().then((r) => {
       // console.log(r);
@@ -70,7 +71,7 @@ export class HomeComponent implements OnInit {
             break;
         }
       }
-      router.events.subscribe(s => {  
+      router.events.subscribe(s => {
         if (s instanceof NavigationEnd) {
           const tree = router.parseUrl(router.url);
           if (tree.fragment) {
@@ -80,7 +81,15 @@ export class HomeComponent implements OnInit {
         }
       });
     })
-    setInterval(()=>this.time = this.time-1,1000);
+    setInterval(() => this.time = this.time - 1, 1000);
+    document.addEventListener('scroll',(event)=>{
+      if(window.screenY>0){
+        this.noShadow = 'shadow';
+      }
+      else{
+        this.noShadow = 'noshadow'
+      }
+    })
   }
 
   ngOnInit(): void {
@@ -103,40 +112,43 @@ export class HomeComponent implements OnInit {
   Talk(el: HTMLElement) {
     el.scrollIntoView({ behavior: "smooth" });
   }
-  Schedule(el: HTMLElement ) {
+  Schedule(el: HTMLElement) {
     el.scrollIntoView({ behavior: "smooth" });
   }
-  getMinute(){
-    if(this.time <= 0){
+  getMinute() {
+    if (this.time <= 0) {
       return "00";
     }
-    if((this.time/60)%60 < 10){
-      return "0"+parseInt((this.time/60)%60+"");
+    if ((this.time / 60) % 60 < 10) {
+      return "0" + parseInt((this.time / 60) % 60 + "");
     }
-    return  parseInt((this.time/60)%60+"");
+    return parseInt((this.time / 60) % 60 + "");
   }
-  getSecond(){
-    if(this.time <= 0){
+  getSecond() {
+    if (this.time <= 0) {
       return "00";
     }
-    if(this.time%60 <10){
-      return "0"+this.time%60;
+    if (this.time % 60 < 10) {
+      return "0" + this.time % 60;
     }
-    return  this.time%60 ;
+    return this.time % 60;
   }
-  getHour(){
-    if(this.time <= 0){
+  getHour() {
+    if (this.time <= 0) {
       return "0";
     }
-    return parseInt(this.time/3600+"");
+    return parseInt(this.time / 3600 + "");
   }
-  People(){
-    this.router.navigate(['people'],{fragment:'people'});
+  People() {
+    this.router.navigate(['people'], { fragment: 'people' });
   }
-  Rules(){
-    this.router.navigate(['rules'],{fragment:'rules'});
+  Rules() {
+    this.router.navigate(['rules'], { fragment: 'rules' });
   }
-  Home(){
-    this.router.navigate(['home'],{fragment:'home'});
+  Home() {
+    this.router.navigate(['home'], { fragment: 'home' });
+  }
+  getNavClass(){
+    return window.scrollY>0?'no-shadow':'';
   }
 }

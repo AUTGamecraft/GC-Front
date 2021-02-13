@@ -51,4 +51,7 @@ export class PeopleComponent implements OnInit {
   Home(){
     this.router.navigate(['home'],{fragment:'home'});
   }
+  getNavClass(){
+    return window.scrollY>0?'no-shadow':'';
+  }
 }
