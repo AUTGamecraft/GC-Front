@@ -26,7 +26,7 @@
                             class="normal-button">{{publicservice.Texts.Texts["header4"]}}</button>
                     </div>
                     <div class="right-button">
-                        <button mat-button class="normal-button">{{publicservice.Texts.Texts["header5"]}}</button>
+                        <button mat-button (click)="Footer(footer)" class="normal-button">{{publicservice.Texts.Texts["header5"]}}</button>
                     </div>
                     <div class="right-button">
                         <button mat-button (click)="People()" class="normal-button"
@@ -221,7 +221,7 @@
             </div>
         </div>
     </div>
-    <div class="footer-whole-div">
+    <div class="footer-whole-div" #footer>
         <div>
             <img class="purple-wave-above-footer" src="assets/svg/wave-purple.svg">
         </div>

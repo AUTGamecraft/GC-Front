@@ -54,4 +54,7 @@ export class RulesComponent implements OnInit {
   getNavClass(){
     return window.scrollY>0?'no-shadow':'';
   }
+  Footer(el: HTMLElement) {
+    el.scrollIntoView({ behavior: "smooth" });
+  }
 }
