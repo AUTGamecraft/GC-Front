@@ -114,3 +114,31 @@
   background-image: url("/assets/svg/pattern.svg");
   height: 100%;
 }
+@media only screen and (max-width: 518px) {
+  .login{
+    flex-direction: column;
+    margin: 0 auto;
+
+  
+  
+  }
+  .form-fields-div{
+    flex-direction: column;
+    margin: 0 auto;
+    width: 60%;
+
+  }
+  .input {
+    text-align: right;
+    font-family: "Estedad-Regular";
+    width: 80%;
+    margin: 0 auto;
+  }
+  .form-field-div{
+    width: 80%;
+    margin: 0 auto;
+  }
+
+
+
+  }
