@@ -125,7 +125,16 @@
   .form-fields-div{
     flex-direction: column;
     margin: 0 auto;
+    width: 60%;
 
+  }
+  .input {
+    text-align: right;
+    font-family: "Estedad-Regular";
+    width: 80%;
+  }
+  .form-field-div{
+    width: 80%;
   }
 
 
