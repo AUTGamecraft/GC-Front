@@ -114,3 +114,14 @@
   background-image: url("/assets/svg/pattern.svg");
   height: 100%;
 }
+@media only screen and (max-width: 518px) {
+  .login{
+    flex-direction: column;
+    margin: 0 auto;
+  
+  
+  }
+
+
+
+  }
