@@ -1,62 +1,69 @@
 <div class="people" id="people">
-    <header style="position: fixed;width: 100%;background-color: #52006b;z-index: 100;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
-        <div>
-            <div class="whole-header">
-                <div class="big-right-header">
-                    <div class="title-div">
-                        <div class="logo" (click)="Home()">
-                            <img class="logo-image" src="assets/svg/dark-3d.svg">
-                        </div>
-                    </div>
-                    <div class="right-header">
-                        <div class="right-button">
-                            <button mat-button class="normal-button"
-                                (click)="Schedule()">{{publicservice.Texts.Texts["header2"]}}</button>
-                        </div>
-                        <div class="right-button">
-                            <button mat-button (click)="Rules()" id="rules-button"
-                                class="normal-button">{{publicservice.Texts.Texts["header11"]}}</button>
-                        </div>
-                        <div class="right-button">
-                            <button mat-button (click)="Workshop()"
-                                class="normal-button">{{publicservice.Texts.Texts["header3"]}}</button>
-                        </div>
-                        <div class="right-button">
-                            <button mat-button (click)="Talk()"
-                                class="normal-button">{{publicservice.Texts.Texts["header4"]}}</button>
-                        </div>
-                        <div class="right-button">
-                            <button mat-button class="normal-button">{{publicservice.Texts.Texts["header5"]}}</button>
-                        </div>
-                        <div class="right-button">
-                            <button mat-button (click)="People()" class="normal-button"
-                                id="people-button">{{publicservice.Texts.Texts["header12"]}}</button>
-                        </div>
+    <header
+        style="position: fixed;width: 100%;background-color: #52006b;z-index: 100;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
+        <div class="whole-header">
+            <div class="big-right-header">
+                <div class="title-div">
+                    <div class="logo" (click)="Home()">
+                        <img class="logo-image" src="assets/svg/dark-3d.svg">
                     </div>
                 </div>
-                <div class="left-header">
-                    <div class="left-header-line"></div>
-                    <div class="before-login" *ngIf="!publicservice.logedIn">
-                        <div class="left-button">
-                            <button mat-button (click)="login()"
-                                class="normal-button">{{publicservice.Texts.Texts["header6"]}}</button>
-                        </div>
-                        <div>
-                            <button mat-flat-button (click)="Signup()"
-                                class="green-button">{{publicservice.Texts.Texts["header7"]}}</button>
-                        </div>
+                <div class="right-header">
+                    <div class="right-button">
+                        <button mat-button class="normal-button"
+                            (click)="Schedule()">{{publicservice.Texts.Texts["header2"]}}</button>
                     </div>
-                    <div class="after-login" *ngIf="publicservice.logedIn">
-                        <div class="left-button">
-                            <button mat-button class="normal-button">{{publicservice.Texts.Texts["header10"]}}</button>
-                        </div>
+                    <div class="right-button">
+                        <button mat-button (click)="Rules()" id="rules-button"
+                            class="normal-button">{{publicservice.Texts.Texts["header11"]}}</button>
+                    </div>
+                    <div class="right-button">
+                        <button mat-button (click)="Workshop()"
+                            class="normal-button">{{publicservice.Texts.Texts["header3"]}}</button>
+                    </div>
+                    <div class="right-button">
+                        <button mat-button (click)="Talk()"
+                            class="normal-button">{{publicservice.Texts.Texts["header4"]}}</button>
+                    </div>
+                    <div class="right-button">
+                        <button mat-button class="normal-button">{{publicservice.Texts.Texts["header5"]}}</button>
+                    </div>
+                    <div class="right-button">
+                        <button mat-button (click)="People()" class="normal-button"
+                            id="people-button">{{publicservice.Texts.Texts["header12"]}}</button>
+                    </div>
+                </div>
+            </div>
+            <div class="left-header">
+                <div class="left-header-line"></div>
+                <div class="before-login" *ngIf="!publicservice.logedIn">
+                    <div class="left-button">
+                        <button mat-button (click)="login()"
+                            class="normal-button">{{publicservice.Texts.Texts["header6"]}}</button>
+                    </div>
+                    <div>
+                        <button mat-flat-button (click)="Signup()"
+                            class="green-button">{{publicservice.Texts.Texts["header7"]}}</button>
+                    </div>
+                </div>
+                <div class="after-login" *ngIf="publicservice.logedIn">
+                    <div class="left-button">
+                        <button mat-button class="normal-button">{{publicservice.Texts.Texts["header10"]}}</button>
+                    </div>
 
-                        <div>
-                            <button mat-flat-button class="green-button"
-                                (click)="Dashboard()">{{publicservice.Texts.Texts["header9"]}}</button>
-                        </div>
+                    <div>
+                        <button mat-flat-button class="green-button"
+                            (click)="Dashboard()">{{publicservice.Texts.Texts["header9"]}}</button>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="whole-header-phone">
+            <button mat-button>
+                <mat-icon style="color: white;font-size: 32px;" [inline]="true">menu</mat-icon>
+            </button>
+            <div class="logo" routerLink="home">
+                <img class="logo-image" src="assets/svg/dark-3d.svg">
             </div>
         </div>
     </header>
@@ -69,8 +76,7 @@
                     <!-- <div style="display: flex;"> -->
                     <div class="collapse-presenters-card">
                         <div>
-                            <img class="collapse-presenters-image"
-                                src="assets/images/amirbsh4.jpg">
+                            <img class="collapse-presenters-image" src="assets/images/amirbsh4.jpg">
                         </div>
                         <h2 class="collapse-presenters-name">
                             {{publicservice.Texts.Texts["people3"]}}
@@ -92,7 +98,8 @@
                     <!-- <div style="display: flex;"> -->
                     <div class="collapse-presenters-card">
                         <div>
-                            <video class="collapse-presenters-image" muted loop autoplay src="assets/videos/hoseyn.mp4"></video>
+                            <video class="collapse-presenters-image" muted loop autoplay
+                                src="assets/videos/hoseyn.mp4"></video>
                         </div>
                         <h2 class="collapse-presenters-name">
                             {{publicservice.Texts.Texts["people7"]}}
@@ -215,7 +222,7 @@
         </div>
     </div>
     <div class="footer-whole-div">
-        <div >
+        <div>
             <img class="purple-wave-above-footer" src="assets/svg/wave-purple.svg">
         </div>
         <div class="footer-div">
