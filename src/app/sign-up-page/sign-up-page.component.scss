@@ -110,3 +110,24 @@ input[type="number"] {
     z-index: 0;
   }
   //end of logo
+  @media only screen and (max-width: 518px) {
+ .signup{
+    flex-direction: column;
+    margin: 0 auto;
+ }
+ .form-fields-div{
+    margin: 0 auto;
+ }
+ .left-div{
+    width: 60%;
+    margin: 0 auto;
+ }
+ .signup-title-div{
+    margin: 0 auto;
+    padding-bottom: 20px;
+
+ }
+ 
+  
+    
+    }  
