@@ -1,11 +1,10 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { PublicService } from '../public.service';
 import { FormControl, Validators } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
 import { ErrorDialogComponent } from '../error-dialog/error-dialog.component';
 import {MatSnackBar} from '@angular/material/snack-bar';
-import { error } from '@angular/compiler/src/util';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -57,6 +56,7 @@ export class LoginComponent implements OnInit {
     if (this.emailFormControl.status == "VALID" && this.passwordFormControl.status == "VALID") {
       this.publicservice.Login().then(r => {
         if (r.error == null) {
+          console.log(r);
           this.router.navigate(['home'])
         }
       })

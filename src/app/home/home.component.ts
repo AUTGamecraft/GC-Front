@@ -23,9 +23,9 @@ export class HomeComponent implements OnInit {
   workshopsLevel: any = {};
   constructor(public publicservice: PublicService, public router: Router) {
     publicservice.getTalks().then((r) => {
-      console.log(r);
+      // console.log(r);
       this.talksArray = r.data;
-      console.log(this.talksArray)
+      // console.log(this.talksArray)
       for (let index = 0; index < this.talksArray.length; index++) {
         this.talksActive[index] = 'deactive'
         this.iconT[index] = 'keyboard_arrow_down'
@@ -48,7 +48,7 @@ export class HomeComponent implements OnInit {
       }
     })
     publicservice.getWorkshops().then((r) => {
-      console.log(r);
+      // console.log(r);
       this.workshopsArray = r.data;
       for (let index = 0; index < this.workshopsArray.length; index++) {
         this.workshopsActive[index] = 'deactive'
@@ -70,7 +70,7 @@ export class HomeComponent implements OnInit {
             break;
         }
       }
-      router.events.subscribe(s => {
+      router.events.subscribe(s => {  
         if (s instanceof NavigationEnd) {
           const tree = router.parseUrl(router.url);
           if (tree.fragment) {
@@ -103,7 +103,7 @@ export class HomeComponent implements OnInit {
   Talk(el: HTMLElement) {
     el.scrollIntoView({ behavior: "smooth" });
   }
-  Schedule(el: HTMLElement) {
+  Schedule(el: HTMLElement ) {
     el.scrollIntoView({ behavior: "smooth" });
   }
   getMinute(){
