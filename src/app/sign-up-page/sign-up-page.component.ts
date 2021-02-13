@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { LoginComponent } from '../login/login.component';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { PublicService } from '../public.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { ErrorDialogComponent } from '../error-dialog/error-dialog.component';
@@ -32,6 +32,15 @@ export class SignUpPageComponent implements OnInit {
     Validators.required,
   ]);
   constructor(private router: Router, public publicservice: PublicService,private snackbar:MatSnackBar,private dialog : MatDialog) {
+    router.events.subscribe(s => {
+      if (s instanceof NavigationEnd) {
+        const tree = router.parseUrl(router.url);
+        if (tree.fragment) {
+          const element = document.querySelector("#" + tree.fragment);
+          if (element) { element.scrollIntoView(); }
+        }
+      }
+    });
   }
   login(): void {
     const navigationDetails: string[] = ['login'];
@@ -81,5 +90,8 @@ export class SignUpPageComponent implements OnInit {
       this.snackbar.openFromComponent(ErrorDialogComponent,{duration:1000,data:'فیلد ها را پر کنید',panelClass:['snackbar'],verticalPosition:'top',direction:'rtl'});
     }
 
+  }
+  Home(){
+    this.router.navigate(['home'],{fragment:'home'});
   }
 }

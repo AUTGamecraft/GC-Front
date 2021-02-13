@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { PublicService } from '../public.service';
 import { FormControl, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
@@ -21,7 +21,17 @@ export class LoginComponent implements OnInit {
     Validators.required,
     Validators.minLength(8)
   ]);
-  constructor(private router: Router, public publicservice: PublicService,public snackbar: MatSnackBar) { }
+  constructor(private router: Router, public publicservice: PublicService,public snackbar: MatSnackBar) { 
+    router.events.subscribe(s => {
+      if (s instanceof NavigationEnd) {
+        const tree = router.parseUrl(router.url);
+        if (tree.fragment) {
+          const element = document.querySelector("#" + tree.fragment);
+          if (element) { element.scrollIntoView(); }
+        }
+      }
+    });
+  }
 
   signup(): void {
     const navigationDetails: string[] = ['signup'];
@@ -54,5 +64,8 @@ export class LoginComponent implements OnInit {
     else {
       this.snackbar.openFromComponent(ErrorDialogComponent,{duration:1000,data:'فیلد ها را پر کنید',panelClass:['snackbar'],verticalPosition:'top',direction:'rtl'});
     }
+  }
+  Home(){
+    this.router.navigate(['home'],{fragment:'home'});
   }
 }
