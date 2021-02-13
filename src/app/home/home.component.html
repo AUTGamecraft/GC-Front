@@ -2,7 +2,7 @@
     <div class="home" id="home">
         <div class="intro">
             <header
-                style="position: fixed;width: 100%;background-color: #52006b;z-index: 100;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
+                style="position: fixed;width: 100%;background-color: #52006b;z-index: 100;padding   : 0 10px 10px 10px;">
                 <div class="whole-header">
                     <div class="big-right-header">
                         <div class="title-div">
@@ -30,7 +30,7 @@
                                     class="normal-button">{{publicservice.Texts.Texts["header4"]}}</button>
                             </div>
                             <div class="right-button">
-                                <button mat-button
+                                <button mat-button (click)="Talk(footer)"
                                     class="normal-button">{{publicservice.Texts.Texts["header5"]}}</button>
                             </div>
                             <div class="right-button">
@@ -533,7 +533,7 @@
             </div>
         </div>
         <div class="rectangle-under-talks-div"></div>
-        <div class="footer-whole-div">
+        <div class="footer-whole-div" #footer id="footer">
             <div >
                 <img class="purple-wave-above-footer" src="assets/svg/wave-purple.svg">
             </div>

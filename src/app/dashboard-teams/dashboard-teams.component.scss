@@ -1,0 +1,232 @@
+.dash-teams {
+    padding: 20px;
+    background-color: #52006b;
+    direction: rtl;
+    padding-right: 5%;
+    padding-left: 5%;
+    background-image: url("/assets/svg/pattern.svg");
+    padding-top: 30px;
+}
+//start of logo
+.logo {
+    justify-content: center;
+    display: flex;
+    direction: rtl;
+    margin-bottom: 10px;
+    margin-top: -10px;
+}
+.logo-image {
+    width: 100.8px;
+    z-index: 1;
+    cursor: pointer;
+}
+.logo-text {
+    font-family: "Estedad-Black";
+    color: #a04db9;
+    font-size: 24px;
+    z-index: 0;
+}
+//end of logo
+.dash-teams-inner-div {
+    display: flex;
+    padding-bottom: 100px;
+    margin-top: 20px;
+}
+.right-part {
+    background-color: #fafafa;
+    text-align: center;
+    border-radius: 20px;
+    height: fit-content;
+    width: 25%;
+}
+.user-image {
+    border-radius: 50%;
+    margin: 50px;
+    margin-bottom: 0;
+    margin-top: 30px;
+    height: 160px;
+    width: 160px;
+    object-fit: cover;
+}
+.user-name {
+    font-family: "Estedad-Bold";
+    color: #52006b;
+    font-size: large;
+    margin-bottom: 0;
+}
+.outlined-button {
+    font-family: "Estedad-Bold";
+    color: #00b583;
+    font-size: large;
+    border: 3px solid #07f49e !important;
+    border-radius: 15px;
+    margin-top: 12px;
+    margin-bottom: 16px;
+    // height: 10%;
+    // margin: auto 0;
+    // padding: 0;
+}
+.outlined-button:hover {
+    background-color: #6af9c5;
+    color: #52006b;
+    border-color: #6af9c5 !important;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.08);
+}
+#outlined-button-phone{
+    display: none;
+}
+.normal-button {
+    font-family: "Estedad-Bold";
+    font-size: large;
+    color: #b00020;
+    border-radius: 16px;
+    background-color: rgba(255, 255, 255, 0);
+    width: 84px;
+    height: 44px;
+    margin: 8px 99px 8px 102px;
+}
+.buttons {
+    color: #52006b;
+    font-family: "Estedad-SemiBold";
+    width: 100%;
+    font-size: large;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-right: 10%;
+    text-align: right;
+}
+.left-part {
+    background-color: #fafafa;
+    text-align: center;
+    border-radius: 20px;
+    width: 75%;
+    margin-right: 20px;
+    padding: 0 72px;
+    padding-bottom: 2%;
+}
+.events-title {
+    font-family: "Estedad-Black";
+    font-size: 36px;
+    color: #52006b;
+    // margin-bottom: 0;
+}
+.people{
+    color: #77009b;
+    font-size: 24px;
+    font-family: 'Estedad-Regular';
+    height: fit-content;
+    margin: auto 0;
+}
+.people-discription{
+    color: #77009b;
+    font-family: 'Estedad-Medium';
+    font-size: 12px;
+    font-weight: 500;
+    padding-right: 10px;
+    height: fit-content;
+    margin: auto 0;
+}
+.form-field-div {
+    margin-top: 5%;
+  }
+  .form-field {
+    text-align: right;
+    width: 100%;
+  }
+  .label {
+    font-family: "Estedad-SemiBold";
+  }
+  .input {
+    text-align: right;
+    font-family: "Estedad-Regular";
+  }
+  .error {
+    font-family: "Estedad-Regular";
+  }
+  .option{
+      display: flex;
+      direction: rtl;
+      justify-content: space-between;
+  }
+  .option-image{
+      margin: auto 0;
+      border-radius: 50%;
+      object-fit: cover;
+      width: 28px;
+      height: 28px;
+      padding: 0 10px;
+  }
+  .name{
+      font-family: 'Estedad-Black';
+      font-size: 12px;
+      color: #52006b;
+      margin: auto 0;
+  }
+  .email{
+      font-size: 12px;
+      font-family: 'Estedad-Medium';
+      color: #a04db9;
+      margin: auto 0;
+  }
+@media only screen and (max-width: 992px) {
+    .right-part-header {
+        display: flex;
+        justify-content: space-between;
+    }
+    .name-image-phone{
+        display: flex;
+    }
+    .user-name{
+        font-size: 16px;
+        margin: auto 0;
+    }
+    .dash-teams-inner-div{
+        flex-direction: column;
+        padding: 24px;
+    }
+    .right-part{
+        width: fit-content;
+        padding: 16px;
+        padding-top: 0;
+        margin: auto;
+        margin-bottom: 5%;
+    }
+    #outlined-button-phone{
+        display: initial;
+        font-size: 16px;
+        width: 121px;
+        height: 44px;
+    }
+    .outlined-button{
+        display: none;
+        font-size: 16px;
+        margin: auto 0;
+        padding: 0;
+    }
+    .normal-button{
+        font-size: 16px;
+        // width: 36px;
+        // height: 28px;
+        margin: auto;
+    }
+    .header-buttons{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .right-header-button{
+        width: 100%;
+    }
+    .left-header-button{
+        width: 100%;
+    }
+    .left-part{
+        width: max-content;
+        margin-right: 0;
+        margin: auto;
+        text-align: center;
+        padding: 5%;
+        // padding: 5px;
+        width: 80%;
+        padding-top: 0;
+    }
+}

@@ -1,1 +1,89 @@
-<div class="teams"></div>
+<div class="dash-teams">
+    <div class="logo" (click)='Home()'>
+        <p class="logo-text" style="margin-left: -5px;">{{publicservice.Texts.Texts["logo1"]}}</p>
+        <img class="logo-image" src="assets/svg/dark-3d.svg">
+        <p class="logo-text" style="margin-right: -5px;">{{publicservice.Texts.Texts["logo2"]}}</p>
+    </div>
+    <div class="dash-teams-inner-div">
+        <div class="right-part">
+            <div class="right-part-header">
+                <div class="name-image-phone">
+                    <div>
+                        <img class="user-image" src="assets/images/masoud.jpg">
+                    </div>
+                    <p class="user-name">
+                        {{publicservice.Texts.Texts["dash-media1"]}}</p>
+                </div>
+                <div style="display: flex;justify-content: center;">
+                    <button mat-stroked-button class="outlined-button"
+                        id="outlined-button-phone">{{publicservice.Texts.Texts["dash-event5"]}}</button>
+                    <button mat-button (click)="logOut()"
+                        class="normal-button">{{publicservice.Texts.Texts["header8"]}}</button>
+                </div>
+            </div>
+            <div class="header-buttons">
+                <div class="right-header-button">
+                    <button mat-button style="background-color: #fafafa;" class="buttons" (click)="events()">
+                        <mat-icon>{{publicservice.Texts.Texts["dash-media11"]}}</mat-icon>
+                        {{publicservice.Texts.Texts["dash-media2"]}}
+                    </button>
+                    <button mat-button (click)="media()" style="background-color: #fafafa;" class="buttons">
+                        <mat-icon>{{publicservice.Texts.Texts["dash-media12"]}}</mat-icon>
+                        {{publicservice.Texts.Texts["dash-media3"]}}
+                    </button>
+                </div>
+                <div class="left-header-button">
+                    <button mat-button (click)="Teams()" style="background-color: #eceff1;" class="buttons">
+                        <mat-icon>{{publicservice.Texts.Texts["dash-media13"]}}</mat-icon>
+                        {{publicservice.Texts.Texts["dash-media4"]}}
+                    </button>
+                    <button mat-button style="background-color: #fafafa;" class="buttons">
+                        <mat-icon>{{publicservice.Texts.Texts["dash-media14"]}}</mat-icon>
+                        {{publicservice.Texts.Texts["dash-media15"]}}
+                    </button>
+                </div>
+            </div>
+            <button mat-stroked-button class="outlined-button">{{publicservice.Texts.Texts["dash-media5"]}}</button>
+        </div>
+        <div class="left-part">
+            <h1 class="events-title">
+                {{publicservice.Texts.Texts["dash-teams1"]}}</h1>
+            <div style="display: flex;padding-bottom: 20px;">
+                <h2 class="people">{{publicservice.Texts.Texts["dash-teams2"]}}</h2>
+                <p class="people-discription">{{publicservice.Texts.Texts["dash-teams3"]}}</p>
+            </div>
+            <div class="form-field-div">
+                <form>
+                    <mat-form-field class="form-field">
+                        <mat-label class="label">{{publicservice.Texts.Texts["dash-teams4"]}}
+                        </mat-label>
+                        <input matInput [formControl]="nameFormControl" class="input" [(ngModel)]="publicservice.Email">
+                        <mat-error *ngIf="nameFormControl.hasError('required')" class="error">
+                            {{publicservice.Texts.Texts["dash-teams5"]}}
+                            <strong>{{publicservice.Texts.Texts["login6"]}}</strong>
+                            {{publicservice.Texts.Texts["login5"]}}
+                        </mat-error>
+                    </mat-form-field>
+                </form>
+                <form>
+                    <mat-form-field class="form-field">
+                        <mat-label class="label">{{publicservice.Texts.Texts["dash-teams6"]}}</mat-label>
+                        <input type="email" placeholder="Pick one" matInput [formControl]="myControl"
+                            [matAutocomplete]="auto">
+                        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                                <div class="option" [inline]="true">
+                                    <div style="display: flex;">
+                                        <img class="option-image" src="assets/images/masoud.jpg">
+                                        <p class="name">مسعود فراستی</p>
+                                    </div>
+                                    <p class="email">farasati@gmail.com</p>
+                                </div>
+                            </mat-option>
+                        </mat-autocomplete>
+                    </mat-form-field>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
