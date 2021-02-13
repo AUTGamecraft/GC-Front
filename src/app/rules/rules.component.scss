@@ -300,12 +300,16 @@
     font-size: 28px;
     margin-bottom: 0;
 }
-@media only screen and (max-width: 992px){
+.whole-header-phone{
+    display: none;
+}
+@media only screen and (max-width: 1113px){
     .whole-header{
         display: none;
     }
     .introduction-div{
         padding: 24px;
+        padding-top: 20%;
     }
     .white-part{
         padding: 20px 36px 20px 36px;
@@ -358,4 +362,20 @@
     .discription-right-footer-about-discription{
         font-size: 20px;
     }
+    .whole-header-phone {
+        display: initial;
+        display: flex;
+        direction: rtl;
+        justify-content: space-between;
+        padding: 15px;
+    }
+    .logo {
+        padding: 0;
+    }
+}
+@media only screen and (max-width: 500px){
+    .introduction-div{
+        padding-top: 30%;
+    }
+
 }

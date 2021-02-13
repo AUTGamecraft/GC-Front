@@ -275,12 +275,16 @@
     z-index: 0;
 }
 //end of logo
+.whole-header-phone{
+    display: none;
+}
 @media only screen and (max-width:1113px){
     .whole-header{
         display: none;
     }
     .introduction-div{
         padding: 24px;
+        padding-top: 20%;
     }
     .footer-whole-div{
         margin-top: -20%;
@@ -317,5 +321,20 @@
     }
     .discription-right-footer-about-discription{
         font-size: 20px;
+    }
+    .whole-header-phone {
+        display: initial;
+        display: flex;
+        direction: rtl;
+        justify-content: space-between;
+        padding: 15px;
+    }
+    .logo {
+        padding: 0;
+    }
+}
+@media only screen and (max-width: 500px){
+    .introduction-div{
+        padding-top: 30%;
     }
 }
