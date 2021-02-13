@@ -100,7 +100,11 @@
     font-size: 28px;
 }
 .collapse-presenters-card-div {
-    display: flex;
+    display:grid;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    padding-right: 70px;
+    padding-left: 70px;
     padding-bottom: 20px;
     justify-content: center;
 }
@@ -144,6 +148,7 @@
     // background-size: 100% 100%;
     transform: scaleY(-1);
     width: 100%;
+    margin-top: 10%;
     // height: 210px;
     // position: relative;
     // z-index: 1;
@@ -152,7 +157,7 @@
 .footer-div {
     background-color: #52006b;
     padding-top: 100px;
-    margin-top: -100px;
+    margin-top: -10px;
 }
 .discription-footer-div {
     direction: rtl;
@@ -269,17 +274,9 @@
     z-index: 0;
 }
 //end of logo
-@media only screen and (max-width:992px){
+@media only screen and (max-width:1113px){
     .whole-header{
         display: none;
-    }
-    .collapse-presenters-card-div{
-        display:grid;
-        align-items: center;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        padding-right: 70px;
-        padding-left: 70px;
-        // column-count: 2;
     }
     .introduction-div{
         padding: 24px;

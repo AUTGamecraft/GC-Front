@@ -35,8 +35,6 @@
 .login {
   display: flex;
   justify-content: space-evenly;
-  background-color: #52006b;
-  background-image: url("/assets/svg/pattern.svg");
   direction: rtl;
   height: 100%;
   padding-bottom: 30px;
@@ -108,3 +106,10 @@
   z-index: 0;
 }
 //end of logo
+.login-whole{
+  display: block;
+  overflow: auto;
+  background-color: #52006b;
+  background-image: url("/assets/svg/pattern.svg");
+  height: 100%;
+}
