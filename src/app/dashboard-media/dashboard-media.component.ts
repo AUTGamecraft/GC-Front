@@ -29,4 +29,10 @@ export class DashboardMediaComponent implements OnInit {
     localStorage.removeItem("Authorization");
     this.router.navigate(['home']);
   }
+  Home(){
+    this.router.navigate(['home'],{fragment:'home'});
+  }
+  Teams(){
+    this.router.navigate(['dashboard-teams']);
+  }
 }

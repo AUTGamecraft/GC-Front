@@ -174,7 +174,7 @@ export class Texts{
         this.FaTexts["people21"] = "برنامه ریزی مسابقه"
         this.FaTexts["people22"] = "زهرا سالاریان"
         this.FaTexts["people23"] = "برنامه ریزی مسابقه"
-        this.FaTexts["people24"] = "امیر کاشی"
+        this.FaTexts["people24"] = "امیرحسین کاشانی"
         this.FaTexts["people25"] = "هماهنگی و تیم فنی کارگاه"
         this.FaTexts["people26"] = "اردوان روزخوش"
         this.FaTexts["people27"] = "هماهنگی و تیم فنی کارگاه"

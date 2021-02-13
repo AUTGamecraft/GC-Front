@@ -1,8 +1,8 @@
 <div class="dash-event-whole">
-    <div class="logo">
-        <p class="logo-text" style="margin-left: -15px;">{{publicservice.Texts.Texts["logo1"]}}</p>
+    <div class="logo" (click)='Home()'>
+        <p class="logo-text" style="margin-left: -5px;">{{publicservice.Texts.Texts["logo1"]}}</p>
         <img class="logo-image" src="assets/svg/dark-3d.svg">
-        <p class="logo-text" style="margin-right: -15px;">{{publicservice.Texts.Texts["logo2"]}}</p>
+        <p class="logo-text" style="margin-right: -5px;">{{publicservice.Texts.Texts["logo2"]}}</p>
     </div>
     <div class="dash-event">
         <div class="right-part">
@@ -32,7 +32,7 @@
                     </button>
                 </div>
                 <div class="left-header-button">
-                    <button mat-button style="background-color: #fafafa;" class="buttons">
+                    <button mat-button (click)="Teams()" style="background-color: #fafafa;" class="buttons">
                         <mat-icon>{{publicservice.Texts.Texts["dash-event31"]}}</mat-icon>
                         {{publicservice.Texts.Texts["dash-event4"]}}
                     </button>
