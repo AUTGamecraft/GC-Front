@@ -190,6 +190,18 @@ export class Texts{
         this.FaTexts["rules4"] = "ساب تایتل"
         this.FaTexts["rules5"] = "تاریخ بِیهَقی یا تاریخ مسعودی نام کتابی نوشتهٔ ابوالفضل محمد بن حسین بیهقی است که موضوع اصلی آن تاریخ پادشاهی مسعود غزنوی و دودمان غزنوی است. این کتاب علاوه بر تاریخ غزنویان، قسمت‌هایی دربارهٔ صفاریان، سامانیان و دورهٔ پیش از برآمدن و پادشاهی محمود غزنوی دارد. نسخهٔ اصلی کتاب حدود ۳۰ جلد بوده"
 
+        this.FaTexts["dash-teams1"] = "وضعیت تیم"
+        this.FaTexts["dash-teams2"] = "افراد تیم"
+        this.FaTexts["dash-teams3"] = "برای تشکیل تیم، پس از جستجو و انتخاب افراد ، مبلغ ۱۰۰۰۰۰۰ تومان از طریق درگاه بانکی پرداخت کنید."
+        this.FaTexts["dash-teams4"] = "نام تیم"
+        this.FaTexts["dash-teams5"] = "وارد کردن نام"
+        this.FaTexts["dash-teams6"] = "ایمیل"
+        this.FaTexts["dash-teams7"] = "وضعیت تیم"
+        this.FaTexts["dash-teams8"] = "وضعیت تیم"
+        this.FaTexts["dash-teams9"] = "وضعیت تیم"
+        this.FaTexts["dash-teams10"] = "وضعیت تیم"
+        this.FaTexts["dash-teams11"] = "وضعیت تیم"
+        this.FaTexts["dash-teams12"] = "وضعیت تیم"
 
         this.Texts=this.FaTexts;
 

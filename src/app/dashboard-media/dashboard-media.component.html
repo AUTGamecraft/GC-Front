@@ -23,7 +23,7 @@
             </div>
             <div class="header-buttons">
                 <div class="right-header-button">
-                    <button mat-button (click)="Teams()" style="background-color: #fafafa;" class="buttons" (click)="events()">
+                    <button mat-button style="background-color: #fafafa;" class="buttons" (click)="events()">
                         <mat-icon>{{publicservice.Texts.Texts["dash-media11"]}}</mat-icon>
                         {{publicservice.Texts.Texts["dash-media2"]}}
                     </button>
@@ -33,7 +33,7 @@
                     </button>
                 </div>
                 <div class="left-header-button">
-                    <button mat-button style="background-color: #fafafa;" class="buttons">
+                    <button mat-button (click)="Teams()" style="background-color: #fafafa;" class="buttons">
                         <mat-icon>{{publicservice.Texts.Texts["dash-media13"]}}</mat-icon>
                         {{publicservice.Texts.Texts["dash-media4"]}}
                     </button>

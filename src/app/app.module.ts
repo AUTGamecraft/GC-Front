@@ -27,7 +27,7 @@ import { PeopleComponent } from './people/people.component';
 import { RulesComponent } from './rules/rules.component';
 import { InvalidPageComponent } from './invalid-page/invalid-page.component';
 import { DashboardTeamsComponent } from './dashboard-teams/dashboard-teams.component';
-
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +63,8 @@ import { DashboardTeamsComponent } from './dashboard-teams/dashboard-teams.compo
     MatDialogModule,
     MatCardModule,
     MatExpansionModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatAutocompleteModule
   ],
   providers: [
   ],
