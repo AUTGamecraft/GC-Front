@@ -1,11 +1,13 @@
 .dash-media {
     padding: 20px;
-    background-color: #52006b;
     direction: rtl;
     padding-right: 5%;
     padding-left: 5%;
-    background-image: url("/assets/svg/pattern.svg");
     padding-top: 30px;
+}
+.whole{
+    background-color: #52006b;
+    background-image: url("/assets/svg/pattern.svg");
 }
 .buttons {
     color: #52006b;
