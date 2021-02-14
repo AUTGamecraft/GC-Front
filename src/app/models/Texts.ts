@@ -218,9 +218,9 @@ export class Texts{
         this.FaTexts["dash-teams10"] = "وضعیت تیم"
         this.FaTexts["dash-teams11"] = "وضعیت تیم"
 
-        this.FaTexts["not-found1"] = "404"
-        this.FaTexts["dash-teams12"] = "وضعیت تیم"
-        this.FaTexts["dash-teams12"] = "وضعیت تیم"
+        this.FaTexts["not-found1"] = "۴۰۴"
+        this.FaTexts["not-found2"] = "!یافت می نشود"
+        this.FaTexts["not-found3"] = "صفحه اصلی"
         this.FaTexts["dash-teams12"] = "وضعیت تیم"
         this.FaTexts["dash-teams12"] = "وضعیت تیم"
         this.FaTexts["dash-teams12"] = "وضعیت تیم"

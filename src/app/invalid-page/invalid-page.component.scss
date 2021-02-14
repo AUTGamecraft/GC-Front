@@ -10,10 +10,30 @@
 .text404{
     z-index: 1;
     margin:auto;
+    font-family: 'Estedad-Black';
+    color: #07f49e;
+    font-size: 36px;
+    margin-top: -60px;
 }
 .logo{
     display: block;
     width: 100%;
     text-align: center;
     margin: auto;
+}
+.textnotfound{
+    z-index: 1;
+    margin:auto;
+    font-family: 'Estedad-Black';
+    color: #07f49e;
+    font-size: 36px;
+    padding-top: 23.5px;
+}
+.green-button {
+    font-family: "Estedad-Bold";
+    color: #52006b;
+    background-color: #6af9c5;
+    border-radius: 24px;
+    padding: 11px 16px;
+    font-size: 20px;
 }
