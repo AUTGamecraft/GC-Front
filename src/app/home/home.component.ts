@@ -102,7 +102,7 @@ export class HomeComponent implements OnInit {
   }
 
   Dashboard() {
-    this.router.navigate(['dashboard-event']);
+    this.router.navigate(['dashboard-event'],{fragment:'dash'});
   }
   Workshop(el: HTMLElement) {
     el.scrollIntoView({ behavior: "smooth" });

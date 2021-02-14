@@ -34,7 +34,7 @@ export class PeopleComponent implements OnInit {
     this.router.navigate(navigationDetails);
   }
   Dashboard() {
-    this.router.navigate(['dashboard-event']);
+    this.router.navigate(['dashboard-event'],{fragment:'dash'});
   }
   Workshop() {
     this.router.navigate(['home'],{fragment:'workshop'});
