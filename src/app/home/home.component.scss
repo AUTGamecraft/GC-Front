@@ -28,9 +28,12 @@
     margin-right: 44%;
 }
 .image {
+    width: 252.5px;
+    height: 252.5px;
     margin: 30px 0 30px 0;
 }
 .text {
+    width: 100%;
     margin: 50px 0 50px 0;
 }
 .register-button {
@@ -492,10 +495,10 @@
 //     // margin-top: 5%;
 // }
 .schedule-image {
-    height: 252.5px;
-    width: 252.5px;
+    // height: 252.5px;
+    // width: 252.5px;
     object-fit: cover;
-    border-radius: 50%;
+    // border-radius: 50%;
 }
 .text-title {
     font-family: "Estedad-Regular";
@@ -637,22 +640,28 @@
     transform: scaleX(-1);
 }
 .prize-cards {
-    margin: 40px 30px 10px 30px;
     text-align: center;
-    justify-content: space-evenly;
+    align-content: center;
+    width: fit-content;
+    // justify-content: center;
+    // justify-items: center ;
 }
 .prize-card-image {
+    height: fit-content;
+    object-fit: cover;
+    // border-radius: 50%;
+}
+.prize-card-image-div{
     width: 252.5px;
     height: 252.5px;
-    object-fit: cover;
-    border-radius: 50%;
 }
 .prize-card-title {
     text-align: center;
     color: #77009b;
     font-family: "Estedad-Regular";
     font-size: 36px;
-    margin: 0;
+    // margin: 0;
+    margin-bottom: 0;
 }
 .prize-card-discription {
     color: #a04db9;
@@ -696,7 +705,7 @@
 // }
 .prize-cards-inner-div {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 // .whole-workshop {
 //     // margin-top: -1%;

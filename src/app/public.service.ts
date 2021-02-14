@@ -207,6 +207,27 @@ export class PublicService {
     });
     return ret;
   }
+  getPresenter(id:string): Promise<any> {
+    var that = this;
+    this.APICalls.SignUp = true;
+    let headers = new Headers({
+      'Content-Type': 'application/json'
+    });
+    let options = new RequestOptions({ headers: headers });
+    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/presenter/'+id+'/', options)
+      .toPromise()
+      .then((r) => this.extractData(r, this))
+      .catch(this.handleError);
+
+    ret.then(r => {
+      this.APICalls.SignUp = false;
+    }).catch(e => {
+      this.APICalls.SignUp = false;
+      that.snackbar.openFromComponent(ErrorDialogComponent,{duration:1000,data:e.message,panelClass:['snackbar'],verticalPosition:'top',direction:'rtl'});
+
+    });
+    return ret;
+  }
 
 
 

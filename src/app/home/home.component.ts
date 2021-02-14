@@ -21,10 +21,20 @@ export class HomeComponent implements OnInit {
   time = 10000;
   talksLevel: any = [];
   workshopsLevel: any = [];
+  talkPresenters: any = [{
+    name:'',
+    discription:''
+  }];
+  talksPresenters: any = [];
+  workshopPresenters: any = [{
+    name:'',
+    discription:''
+  }];
+  workshopsPresenters: any = [];
   noShadow = 'noshadow';
   constructor(public publicservice: PublicService, public router: Router) {
     publicservice.getTalks().then((r) => {
-      // console.log(r);
+      console.log(r);
       this.talksArray = r.data;
       // console.log(this.talksArray)
       for (let index = 0; index < this.talksArray.length; index++) {
@@ -46,10 +56,19 @@ export class HomeComponent implements OnInit {
             this.talksLevel[index] = 'unknown';
             break;
         }
+        for (let j = 0; j < this.talksArray[index].presenters.length; j++) {
+          this.publicservice.getPresenter(this.talksArray[index].presenters[j]).then(r=>{
+            // console.log(r);
+            this.talkPresenters[j].name = r.data.first_name + ' ' + r.data.last_name;
+            this.talkPresenters[j].discription = r.data.descriptions;
+          })
+        }
+        this.talksPresenters[index] = this.talkPresenters;
+        console.log(this.talksPresenters);
       }
     })
     publicservice.getWorkshops().then((r) => {
-      // console.log(r);
+      console.log(r);
       this.workshopsArray = r.data;
       for (let index = 0; index < this.workshopsArray.length; index++) {
         this.workshopsActive[index] = 'deactive'
@@ -70,6 +89,15 @@ export class HomeComponent implements OnInit {
             this.workshopsLevel[index] = 'unknown';
             break;
         }
+        for (let j = 0; j < this.workshopsArray[index].presenters.length; j++) {
+          this.publicservice.getPresenter(this.workshopsArray[index].presenters[j]).then(r=>{
+            console.log(r);
+            this.workshopPresenters[j].name = r.data.first_name + ' ' + r.data.last_name;
+            this.workshopPresenters[j].discription = r.data.descriptions;
+          })
+        }
+        this.workshopsPresenters[index] = this.workshopPresenters;
+        console.log(this.workshopsPresenters);
       }
       router.events.subscribe(s => {
         if (s instanceof NavigationEnd) {

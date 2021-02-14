@@ -28,7 +28,7 @@ export class Texts{
         this.FaTexts["home8"] = "برنامه زمانی"
         this.FaTexts["home9"] = "ثبت نام"
         this.FaTexts["home10"] = "1 بهمن 99"
-        this.FaTexts["home11"] = "مسابقه"
+        this.FaTexts["home11"] = "تعریف مسابقه"
         this.FaTexts["home12"] = "11 بهمن 99"
         this.FaTexts["home13"] = "داوری"
         this.FaTexts["home14"] = "21 بهمن 99"
@@ -66,6 +66,14 @@ export class Texts{
         this.FaTexts["home46"] = "کارت صد آفرین"
         this.FaTexts["home47"] = "دست اندر کاران"
         this.FaTexts["home48"] = "شرایط مسابقه"
+        this.FaTexts["home49"] = "پایان ثبت نام"
+        this.FaTexts["home50"] = "11 بهمن 99"
+        this.FaTexts["home51"] = "شروع کارگاه ها"
+        this.FaTexts["home52"] = "21 بهمن 99"
+        this.FaTexts["home53"] = "پایان کارگاه ها"
+        this.FaTexts["home54"] = "11 بهمن 99"
+        this.FaTexts["home48"] = "شرایط مسابقه"
+
 
 
         this.FaTexts["dash-event1"] = "ابوالفضل بیهقی"
