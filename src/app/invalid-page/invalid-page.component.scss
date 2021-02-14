@@ -2,6 +2,7 @@
     height: 100%;
     background-image: url('/assets/svg/pattern.svg');
     background-color: #52006b;
+    position: relative;
 }
 .logo-image{
     height: fit-content;
@@ -19,7 +20,11 @@
     display: block;
     width: 100%;
     text-align: center;
-    margin: auto;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 .textnotfound{
     z-index: 1;

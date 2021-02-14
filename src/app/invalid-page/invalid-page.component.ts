@@ -12,5 +12,7 @@ export class InvalidPageComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  Home() {
+    this.router.navigate(['home'], { fragment: 'home' });
+  }
 }

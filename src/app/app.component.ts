@@ -9,7 +9,7 @@ import {Title} from "@angular/platform-browser";
 export class AppComponent {
   title = 'gdFront';
   constructor(private router:Router,private titleService:Title){
-    this.titleService.setTitle("GameCraft");
+    // this.titleService.setTitle("GameCraft");
     // this.router.navigate(['home'])
   }
 }
