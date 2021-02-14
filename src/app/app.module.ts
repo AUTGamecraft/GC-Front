@@ -42,11 +42,7 @@ import { EmailConfirmComponent } from './email-confirm/email-confirm.component';
     RulesComponent,
     InvalidPageComponent,
     DashboardTeamsComponent,
-    EmailConfirmComponent,
-   
-    
-
-    
+    EmailConfirmComponent,  
   ],
   imports: [
     BrowserModule,

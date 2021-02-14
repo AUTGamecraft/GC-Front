@@ -149,4 +149,7 @@ export class HomeComponent implements OnInit {
   getNavClass(){
     return window.scrollY>0?'no-shadow':'';
   }
+  email(){
+    this.router.navigate(['email-confirm']);
+  }
 }

@@ -1,7 +1,6 @@
 <div id="people"></div>
 <div class="people">
-    <header
-        style="position: fixed;width: 100%;background-color: #52006b;z-index: 100;">
+    <header style="position: fixed;width: 100%;background-color: #52006b;z-index: 100;">
         <div class="whole-header" [class]="getNavClass()">
             <div class="big-right-header">
                 <div class="title-div">
@@ -27,7 +26,8 @@
                             class="normal-button">{{publicservice.Texts.Texts["header4"]}}</button>
                     </div>
                     <div class="right-button">
-                        <button mat-button (click)="Footer(footer)" class="normal-button">{{publicservice.Texts.Texts["header5"]}}</button>
+                        <button mat-button (click)="Footer(footer)"
+                            class="normal-button">{{publicservice.Texts.Texts["header5"]}}</button>
                     </div>
                     <div class="right-button">
                         <button mat-button (click)="People()" class="normal-button"
@@ -71,6 +71,19 @@
     <div class="introduction-div">
         <div class="white-part">
             <h1 class="people-title">{{publicservice.Texts.Texts["people1"]}}</h1>
+            <h1 class="people-subtitle">{{publicservice.Texts.Texts['people42']}}</h1>
+            <div class="collapse-presenters-card-div">
+                <div class="collapse-presenters-card">
+                    <div>
+                        <img class="collapse-presenters-image" src="assets/images/fatemehvalipour.jpg">
+                    </div>
+                    <h2 class="collapse-presenters-name">
+                        {{publicservice.Texts.Texts['people37']}}
+                    </h2>
+                    <h4 class="collapse-presenters-discription">
+                        {{publicservice.Texts.Texts['people38']}}</h4>
+                </div>
+            </div>
             <h1 class="people-subtitle">{{publicservice.Texts.Texts["people2"]}}</h1>
             <div style="direction: rtl;">
                 <div class="collapse-presenters-card-div">
@@ -249,6 +262,39 @@
                         </h2>
                         <h4 class="collapse-presenters-discription">
                             {{publicservice.Texts.Texts["people31"]}}</h4>
+                    </div>
+                </div>
+                <h1 class="people-subtitle">{{publicservice.Texts.Texts['people41']}}</h1>
+                <div class="collapse-presenters-card-div">
+                    <div class="collapse-presenters-card">
+                        <div>
+                            <img class="collapse-presenters-image" src="assets/images/mehranghafarian.jpg">
+                        </div>
+                        <h2 class="collapse-presenters-name">
+                            {{publicservice.Texts.Texts["people39"]}}
+                        </h2>
+                        <h4 class="collapse-presenters-discription">
+                            {{publicservice.Texts.Texts["people40"]}}</h4>
+                    </div>
+                    <div class="collapse-presenters-card">
+                        <div>
+                            <img class="collapse-presenters-image" src="assets/images/rozhinsattarpour.jpg">
+                        </div>
+                        <h2 class="collapse-presenters-name">
+                            {{publicservice.Texts.Texts["people43"]}}
+                        </h2>
+                        <h4 class="collapse-presenters-discription">
+                            {{publicservice.Texts.Texts["people39"]}}</h4>
+                    </div>
+                    <div class="collapse-presenters-card">
+                        <div>
+                            <img class="collapse-presenters-image" src="assets/images/mahmood.jpg">
+                        </div>
+                        <h2 class="collapse-presenters-name">
+                            {{publicservice.Texts.Texts["people44"]}}
+                        </h2>
+                        <h4 class="collapse-presenters-discription">
+                            {{publicservice.Texts.Texts["people39"]}}</h4>
                     </div>
                 </div>
             </div>

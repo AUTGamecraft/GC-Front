@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { DashboardEventComponent } from './dashboard-event/dashboard-event.component';
 import { DashboardMediaComponent } from './dashboard-media/dashboard-media.component';
 import { DashboardTeamsComponent } from './dashboard-teams/dashboard-teams.component';
+import { EmailConfirmComponent } from './email-confirm/email-confirm.component';
 import { HomeComponent } from './home/home.component';
 import { InvalidPageComponent } from './invalid-page/invalid-page.component';
 import { LoginComponent } from './login/login.component';
@@ -19,8 +20,10 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'people', component: PeopleComponent },
   { path: 'rules', component: RulesComponent },
+  { path: 'email-confirm', component: EmailConfirmComponent },
   { path: 'dashboard-teams', component: DashboardTeamsComponent },
   { path: '**', component: InvalidPageComponent },
+
 ];
 
 

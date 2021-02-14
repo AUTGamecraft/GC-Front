@@ -7,9 +7,8 @@ import {Title} from "@angular/platform-browser";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'gdFront';
+
   constructor(private router:Router,private titleService:Title){
-    // this.titleService.setTitle("GameCraft");
-    // this.router.navigate(['home'])
+
   }
 }
