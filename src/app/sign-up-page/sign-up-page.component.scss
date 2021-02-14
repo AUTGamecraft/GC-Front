@@ -1,3 +1,15 @@
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: #52006b !important;
+   }
+   ::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: #52006b !important;
+  } 
+  ::ng-deep.mat-form-field-ripple {
+    /*change color of underline when focused*/
+    background-color: #52006b !important;;
+   }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     /* display: none; <- Crashes Chrome on hover */
