@@ -381,15 +381,15 @@
                                         </h1>
                                     </div>
                                     <div class="collapse-presenters-card-div">
-                                        <div class="collapse-presenters-card" *ngFor="let presenter of workshopsPresenters[index];let j = index">
+                                        <div class="collapse-presenters-card" *ngFor="let presenter of workshop.presenters">
                                             <div>
                                                 <img class="collapse-presenters-image" src="assets/images/masoud.jpg">
                                             </div>
                                             <h2 class="collapse-presenters-name">
-                                                {{presenter[j].name}}
+                                                {{presenter.first_name}} {{presenter.last_name}}
                                             </h2>
                                             <h4 class="collapse-presenters-discription">
-                                                {{presenter[j].discription}}</h4>
+                                                {{presenter.descriptions}}</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -453,15 +453,15 @@
                                         </h1>
                                     </div>
                                     <div class="collapse-presenters-card-div">
-                                        <div class="collapse-presenters-card" *ngFor="let presenter of workshopsPresenters[index];let j = index">
+                                        <div class="collapse-presenters-card" *ngFor="let presenter of workshop.presenters">
                                             <div>
                                                 <img class="collapse-presenters-image" src="assets/images/masoud.jpg">
                                             </div>
                                             <h2 class="collapse-presenters-name">
-                                                {{presenter[j].name}}
+                                                {{presenter.first_name}} {{presenter.last_name}}
                                             </h2>
                                             <h4 class="collapse-presenters-discription">
-                                                {{presenter[j].discription}}</h4>
+                                                {{presenter.descriptions}}</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -513,15 +513,15 @@
                                 </h1>
                             </div>
                             <div class="collapse-presenters-card-div">
-                                <div class="collapse-presenters-card" *ngFor="let presenter of talksPresenters[index];let j=index">
+                                <div class="collapse-presenters-card" *ngFor="let presenter of talk.presenters">
                                     <div>
                                         <img class="collapse-presenters-image" src="assets/images/masoud.jpg">
                                     </div>
                                     <h2 class="collapse-presenters-name">
-                                        {{presenter[j].name}}
+                                        {{presenter.first_name}} {{presenter.last_name}}
                                     </h2>
                                     <h4 class="collapse-presenters-discription">
-                                        {{presenter[j].discription}}</h4>
+                                        {{presenter.descriptions}}</h4>
                                 </div>
                             </div>
                         </div>
@@ -574,15 +574,15 @@
                                 </h1>
                             </div>
                             <div class="collapse-presenters-card-div">
-                                <div class="collapse-presenters-card" *ngFor="let presenter of talksPresenters[index];let j = index">
+                                <div class="collapse-presenters-card" *ngFor="let presenter of talk.presenters">
                                     <div>
                                         <img class="collapse-presenters-image" src="assets/images/masoud.jpg">
                                     </div>
                                     <h2 class="collapse-presenters-name">
-                                        {{presenter[j].name}
+                                        {{presenter.first_name}} {{presenter.last_name}}
                                     </h2>
                                     <h4 class="collapse-presenters-discription">
-                                        {{presenter[j].direction}}</h4>
+                                        {{presenter.descriptions}}</h4>
                                 </div>
                             </div>
                         </div>
