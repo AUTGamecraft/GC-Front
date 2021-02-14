@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
+import { PublicService } from '../public.service';
 @Component({
   selector: 'app-invalid-page',
   templateUrl: './invalid-page.component.html',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InvalidPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, public publicservice: PublicService) { }
 
   ngOnInit(): void {
   }

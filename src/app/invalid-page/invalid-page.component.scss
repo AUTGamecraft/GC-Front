@@ -1,4 +1,19 @@
 .whole-404{
     height: 100%;
-    
+    background-image: url('/assets/svg/pattern.svg');
+    background-color: #52006b;
+}
+.logo-image{
+    height: fit-content;
+    margin: auto;
+}
+.text404{
+    z-index: 1;
+    margin:auto;
+}
+.logo{
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: auto;
 }

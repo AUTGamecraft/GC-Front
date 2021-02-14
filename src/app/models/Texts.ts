@@ -63,7 +63,7 @@ export class Texts{
         this.FaTexts["home43"] = "جوایز مسابقه"
         this.FaTexts["home44"] = "شرایط مسابقه"
         this.FaTexts["home45"] = "تیم اول"
-        this.FaTexts["home46"] = "کارت صد آفرین"
+        this.FaTexts["home46"] = "میلیون تومان"
         this.FaTexts["home47"] = "دست اندر کاران"
         this.FaTexts["home48"] = "شرایط مسابقه"
         this.FaTexts["home49"] = "پایان ثبت نام"
@@ -72,7 +72,8 @@ export class Texts{
         this.FaTexts["home52"] = "21 بهمن 99"
         this.FaTexts["home53"] = "پایان کارگاه ها"
         this.FaTexts["home54"] = "11 بهمن 99"
-        this.FaTexts["home48"] = "شرایط مسابقه"
+        this.FaTexts["home55"] = "تیم دوم"
+        this.FaTexts["home56"] = "تیم سوم"
 
 
 
@@ -216,6 +217,12 @@ export class Texts{
         this.FaTexts["dash-teams9"] = "وضعیت تیم"
         this.FaTexts["dash-teams10"] = "وضعیت تیم"
         this.FaTexts["dash-teams11"] = "وضعیت تیم"
+
+        this.FaTexts["not-found1"] = "404"
+        this.FaTexts["dash-teams12"] = "وضعیت تیم"
+        this.FaTexts["dash-teams12"] = "وضعیت تیم"
+        this.FaTexts["dash-teams12"] = "وضعیت تیم"
+        this.FaTexts["dash-teams12"] = "وضعیت تیم"
         this.FaTexts["dash-teams12"] = "وضعیت تیم"
 
         this.Texts=this.FaTexts;
