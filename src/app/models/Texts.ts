@@ -85,7 +85,7 @@ export class Texts{
         this.FaTexts["dash-event7"] = "کارگاه ها"
         this.FaTexts["dash-event8"] = "کارگاه بازی سازی"
         this.FaTexts["dash-event9"] = "سه شنبه 2 بهمن 99"
-        this.FaTexts["dash-event10"] = "11 نفر"
+        this.FaTexts["dash-event10"] = "دیسکورد"
         this.FaTexts["dash-event11"] = "مبتدی"
         this.FaTexts["dash-event12"] = "ورود"
         this.FaTexts["dash-event13"] = "توضیحات"

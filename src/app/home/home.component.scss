@@ -495,9 +495,9 @@
 //     // margin-top: 5%;
 // }
 .schedule-image {
-    // height: 252.5px;
-    // width: 252.5px;
-    object-fit: cover;
+    height: 252.5px;
+    width: 252.5px;
+    object-fit: contain;
     // border-radius: 50%;
 }
 .text-title {
@@ -642,14 +642,20 @@
 .prize-cards {
     text-align: center;
     align-content: center;
+    justify-content: center;
     width: fit-content;
+    display: block;
+    // width: 50%;
     // justify-content: center;
     // justify-items: center ;
 }
 .prize-card-image {
-    height: fit-content;
-    object-fit: cover;
+    // height: fit-content;
+    margin: auto;
+    object-fit: contain;
     // border-radius: 50%;
+    width: 252.5px;
+    height: 252.5px;
 }
 .prize-card-image-div{
     width: 252.5px;
@@ -660,15 +666,16 @@
     color: #77009b;
     font-family: "Estedad-Regular";
     font-size: 36px;
+    margin: auto;
     // margin: 0;
-    margin-bottom: 0;
+    // margin-bottom: 0;
 }
 .prize-card-discription {
     color: #a04db9;
     font-family: "Estedad-Regular";
     font-size: 28px;
-    margin: 0;
-    margin-top: 5px;
+    margin: auto;
+    // margin-top: 5px;
 }
 .prize-cards-whole-div {
     justify-content: center;
