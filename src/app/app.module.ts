@@ -31,6 +31,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { EmailConfirmComponent } from './email-confirm/email-confirm.component';
 import { ConfirmConfirmComponent } from './confirm-confirm/confirm-confirm.component';
 import { CartComponent } from './cart/cart.component';
+import {MatBadgeModule} from '@angular/material/badge';
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,7 +67,8 @@ import { CartComponent } from './cart/cart.component';
     MatCardModule,
     MatExpansionModule,
     MatSnackBarModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatBadgeModule
   ],
   providers: [
   ],
