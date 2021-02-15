@@ -815,8 +815,14 @@
         display: initial;
         display: flex;
         background-color: #fafafa;
+        // justify-content: center;
+        padding-left: 10%;
+    }
+    .middle-div-phone{
         justify-content: center;
-        padding-left: 15%;
+        text-align: center;
+        margin: 0 auto;
+        // width: 100%;
     }
     .event-schedule-schematic {
         background-image: none;
@@ -841,7 +847,8 @@
         height: 180px;
     }
     .image {
-        margin-top: 0;
+        // margin-top: 0;
+        margin:0 auto;
     }
     .prizes {
         // background-color: #ede1f1;

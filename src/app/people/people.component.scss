@@ -283,7 +283,7 @@
 .whole-header-phone{
     display: none;
 }
-@media only screen and (max-width:1113px){
+@media only screen and (max-width:1130px){
     .whole-header{
         display: none;
     }
@@ -291,9 +291,9 @@
         padding: 24px;
         padding-top: 20%;
     }
-    .footer-whole-div{
-        margin-top: -20%;
-    }
+    // .footer-whole-div{
+    //     // margin-top: -20%;
+    // }
     .discription-footer-div {
         flex-direction: column;
         justify-content: initial;
