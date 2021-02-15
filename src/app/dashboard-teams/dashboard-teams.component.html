@@ -10,7 +10,8 @@
                 <div class="right-part-header">
                     <div class="name-image-phone">
                         <div>
-                            <img class="user-image" src="assets/images/masoud.jpg">
+                            <input type="file" id="imgUpload" style="display:none" (change)="handleFileInput($event.target.files)"> 
+                            <img class="user-image" id="image" style="cursor: pointer;" (click)="Upload()">
                         </div>
                         <p class="user-name">
                             {{publicservice.Texts.Texts["dash-media1"]}}</p>
@@ -111,7 +112,7 @@
                         </div>
                     </div>
                     <div class="footer-image-div">
-                        <img class="footer-image" src="assets/images/masoud.jpg">
+                        <img class="footer-image" >
                     </div>
                 </div>
                 <div>

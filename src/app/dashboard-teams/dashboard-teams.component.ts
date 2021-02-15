@@ -54,4 +54,15 @@ export class DashboardTeamsComponent implements OnInit {
 
     return this.options.filter(option => option.toLowerCase().indexOf(filterValue) === 0);
   }
+  Upload() {
+    document.getElementById('imgUpload').click();
+  }
+  handleFileInput(imageInput: any) {
+    const file = imageInput.item(0);
+    const reader = new FileReader();
+    reader.readAsDataURL(file); 
+    // console.log(file); 
+    this.publicservice.fileName = file.name;
+    this.publicservice.UpdateImage();
+  }
 }
