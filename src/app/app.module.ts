@@ -29,6 +29,7 @@ import { InvalidPageComponent } from './invalid-page/invalid-page.component';
 import { DashboardTeamsComponent } from './dashboard-teams/dashboard-teams.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { EmailConfirmComponent } from './email-confirm/email-confirm.component';
+import { ConfirmConfirmComponent } from './confirm-confirm/confirm-confirm.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +43,8 @@ import { EmailConfirmComponent } from './email-confirm/email-confirm.component';
     RulesComponent,
     InvalidPageComponent,
     DashboardTeamsComponent,
-    EmailConfirmComponent,  
+    EmailConfirmComponent,
+    ConfirmConfirmComponent,  
   ],
   imports: [
     BrowserModule,
