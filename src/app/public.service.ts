@@ -103,7 +103,7 @@ export class PublicService {
     console.log(r);
   }).catch(e => {
     this.APICalls.SignUp = false;
-    that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 1000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+    that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
   });
   return ret;
   }
@@ -131,7 +131,7 @@ export class PublicService {
       this.APICalls.SignUp = false;
     }).catch(e => {
       this.APICalls.SignUp = false;
-      that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 1000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
     });
     return ret;
   }
@@ -163,7 +163,7 @@ export class PublicService {
       }
     }).catch(e => {
       this.APICalls.Login = false;
-      that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 1000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
 
     });
     return ret;
@@ -185,7 +185,7 @@ export class PublicService {
       this.APICalls.getTalks = false;
     }).catch(e => {
       this.APICalls.getTalks = false;
-      that.snackbar.openFromComponent(ErrorDialogComponent,{duration:1000,data:e.message,panelClass:['snackbar'],verticalPosition:'top',direction:'rtl'});
+      that.snackbar.openFromComponent(ErrorDialogComponent,{duration:2000,data:e.message,panelClass:['snackbar'],verticalPosition:'top',direction:'rtl'});
 
     });
     return ret;
@@ -206,7 +206,7 @@ export class PublicService {
       this.APICalls.getWorkshops = false;
     }).catch(e => {
       this.APICalls.getWorkshops = false;
-      that.snackbar.openFromComponent(ErrorDialogComponent,{duration:1000,data:e.message,panelClass:['snackbar'],verticalPosition:'top',direction:'rtl'});
+      that.snackbar.openFromComponent(ErrorDialogComponent,{duration:2000,data:e.message,panelClass:['snackbar'],verticalPosition:'top',direction:'rtl'});
 
     });
     return ret;
@@ -228,7 +228,7 @@ export class PublicService {
       this.APICalls.getUsers = false;
     }).catch(e => {
       this.APICalls.getUsers = false;
-      that.snackbar.openFromComponent(ErrorDialogComponent,{duration:1000,data:e.message,panelClass:['snackbar'],verticalPosition:'top',direction:'rtl'});
+      that.snackbar.openFromComponent(ErrorDialogComponent,{duration:2000,data:e.message,panelClass:['snackbar'],verticalPosition:'top',direction:'rtl'});
 
     });
     return ret;
@@ -251,7 +251,7 @@ export class PublicService {
       console.log(r);
     }).catch(e => {
       this.APICalls.getUsers = false;
-      that.snackbar.openFromComponent(ErrorDialogComponent,{duration:1000,data:e.message,panelClass:['snackbar'],verticalPosition:'top',direction:'rtl'});
+      that.snackbar.openFromComponent(ErrorDialogComponent,{duration:2000,data:e.message,panelClass:['snackbar'],verticalPosition:'top',direction:'rtl'});
 
     });
     return ret;
