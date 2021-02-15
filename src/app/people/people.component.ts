@@ -62,4 +62,5 @@ export class PeopleComponent implements OnInit {
   Footer(el: HTMLElement) {
     el.scrollIntoView({ behavior: "smooth" });
   }
+  
 }

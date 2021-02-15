@@ -8,12 +8,26 @@ import { PublicService } from '../public.service';
 })
 export class CartComponent implements OnInit {
   userName: string = "";
-  constructor(private router: Router, public publicservice: PublicService) { }
+  constructor(private router: Router, public publicservice: PublicService) { 
+    if (!publicservice.logedIn) {
+      this.router.navigate(['login']);
+    }
+    else{
+      publicservice.getUser().then((r)=>{
+        this.userName = r.data.first_name;
+        const image = document.getElementById('image') as HTMLImageElement;
+        image.src = r.data.profile;
+      });
+    }
+  }
 
   ngOnInit(): void {
   }
   Home() {
     this.router.navigate(['home'], { fragment: 'home' });
+  }
+  People() {
+    this.router.navigate(['people'], { fragment: 'people' });
   }
   Upload() {
     document.getElementById('imgUpload').click();
@@ -44,5 +58,8 @@ export class CartComponent implements OnInit {
   }
   Cart() {
     this.router.navigate(['cart']);
+  }
+  Delete(){
+    return 'delete';
   }
 }

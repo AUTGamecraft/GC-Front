@@ -27,13 +27,22 @@ export class DashboardTeamsComponent implements OnInit {
       });
     }
   }
-
+  ngAfterViewInit():void{
+    if(this.router.url.split('#')[1] == 'dash'){
+      setTimeout((()=>this.Schedule(document.getElementById('dash'))),200)
+    }
+  }
   ngOnInit(): void {
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''),
       map(value => this._filter(value))
     );
-
+  }
+  Schedule(el: HTMLElement) {
+    el.scrollIntoView({ behavior: "smooth" });
+  }
+  People() {
+    this.router.navigate(['people'], { fragment: 'people' });
   }
   events(): void{
     const navigationDetails: string[] = ['dashboard-event'];

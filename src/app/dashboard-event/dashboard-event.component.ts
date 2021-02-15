@@ -27,6 +27,8 @@ export class DashboardEventComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+  ngAfterViewInit():void{
     if(this.router.url.split('#')[1] == 'dash'){
       setTimeout((()=>this.Schedule(document.getElementById('dash'))),200)
     }
@@ -34,9 +36,7 @@ export class DashboardEventComponent implements OnInit {
   Schedule(el: HTMLElement) {
     el.scrollIntoView({ behavior: "smooth" });
   }
-  ngAfterViewInit():void{
 
-  }
   events(): void {
     const navigationDetails: string[] = ['dashboard-event'];
     this.router.navigate(navigationDetails);
@@ -61,6 +61,9 @@ export class DashboardEventComponent implements OnInit {
   }
   Upload() {
     document.getElementById('imgUpload').click();
+  }
+  People() {
+    this.router.navigate(['people'], { fragment: 'people' });
   }
   handleFileInput(imageInput: any) {
     const file = imageInput.item(0);

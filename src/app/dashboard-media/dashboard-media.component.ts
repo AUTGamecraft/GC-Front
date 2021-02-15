@@ -18,8 +18,18 @@ export class DashboardMediaComponent implements OnInit {
       });
     }
   }
-
+  ngAfterViewInit():void{
+    if(this.router.url.split('#')[1] == 'dash'){
+      setTimeout((()=>this.Schedule(document.getElementById('dash'))),200)
+    }
+  }
   ngOnInit(): void {
+  }
+  People() {
+    this.router.navigate(['people'], { fragment: 'people' });
+  }
+  Schedule(el: HTMLElement) {
+    el.scrollIntoView({ behavior: "smooth" });
   }
   events(): void{
     const navigationDetails: string[] = ['dashboard-event'];

@@ -1,4 +1,4 @@
-<div class="whole">
+<div class="whole" #dash>
     <div class="dash-teams" id="dash">
         <div class="logo" (click)='Home()'>
             <p class="logo-text" style="margin-left: -5px;">{{publicservice.Texts.Texts["logo1"]}}</p>
@@ -104,7 +104,7 @@
                             <p class="discription-right-footer-about-discription">
                                 {{publicservice.Texts.Texts["home39"]}}</p>
                             <div style="text-align: center;">
-                                <button mat-flat-button
+                                <button mat-flat-button (click)="People()"
                                     class="green-button">{{publicservice.Texts.Texts["home47"]}}</button>
                             </div>
                         </div>

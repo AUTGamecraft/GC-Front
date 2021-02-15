@@ -13,6 +13,6 @@ export class ConfirmConfirmComponent implements OnInit {
   ngOnInit(): void {
   }
   Dashboard() {
-    this.router.navigate(['dashboard-event'], { fragment: 'dash' });
+    this.router.navigate(['login'], { fragment: 'dash' });
   }
 }

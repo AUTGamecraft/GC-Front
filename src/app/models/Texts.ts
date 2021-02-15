@@ -115,6 +115,14 @@ export class Texts{
 
         this.FaTexts["error1"] = "error"
 
+        this.FaTexts["cart1"] = "سبد خرید"
+        this.FaTexts["cart2"] = "کارگاه بازی سازی"
+        this.FaTexts["cart3"] = "سه شنبه 2 بهمن 99"
+        this.FaTexts["cart4"] = "2000 تومان"
+        this.FaTexts["cart5"] = "حذف"
+        this.FaTexts["cart6"] = "10000 تومان"
+        this.FaTexts["cart7"] = "پرداخت"
+
         this.FaTexts["login1"] = "ورود"
         this.FaTexts["login2"] = "گیمـ"
         this.FaTexts["login3"] = "ایمیل"
