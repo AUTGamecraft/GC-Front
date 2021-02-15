@@ -95,6 +95,7 @@ input[type="number"] {
 .input {
     text-align: right;
     font-family: "Estedad-Regular";
+    color: #52006b;
 }
 .error{
     font-family: 'Estedad-Regular';
@@ -122,6 +123,10 @@ input[type="number"] {
     z-index: 0;
   }
   //end of logo
+  #inputPhone{
+      font-family: 'Vazir-Medium';
+
+  }
   @media only screen and (max-width: 518px) {
  .signup{
     flex-direction: column;

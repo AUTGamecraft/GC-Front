@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
+import { PublicService } from '../public.service';
 @Component({
   selector: 'app-confirm-confirm',
   templateUrl: './confirm-confirm.component.html',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfirmConfirmComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, public publicservice: PublicService) { }
 
   ngOnInit(): void {
   }
-
+  Dashboard() {
+    this.router.navigate(['dashboard-event'], { fragment: 'dash' });
+  }
 }

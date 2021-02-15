@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ConfirmConfirmComponent } from './confirm-confirm/confirm-confirm.component';
 import { DashboardEventComponent } from './dashboard-event/dashboard-event.component';
 import { DashboardMediaComponent } from './dashboard-media/dashboard-media.component';
 import { DashboardTeamsComponent } from './dashboard-teams/dashboard-teams.component';
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'rules', component: RulesComponent },
   { path: 'email-confirm', component: EmailConfirmComponent },
   { path: 'dashboard-teams', component: DashboardTeamsComponent },
+  { path: 'confirm-confirm', component: ConfirmConfirmComponent },
   { path: '**', component: InvalidPageComponent },
 
 ];

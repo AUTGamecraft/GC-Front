@@ -416,6 +416,9 @@
                             </div>
                             <div [class]="workshopsActive[i]">
                                 <div class="collapse-background">
+                                    <h3 class="collapse-cost">
+                                        {{publicservice.Texts.Texts['home57']}}{{workshop.cost}}{{publicservice.Texts.Texts['home58']}}
+                                    </h3>
                                     <div>
                                         <p class="collapse-about">
                                             {{workshop.content}}</p>
@@ -488,6 +491,9 @@
                             </div>
                             <div [class]="workshopsActive[i]">
                                 <div class="collapse-background">
+                                    <h3 class="collapse-cost">
+                                        {{publicservice.Texts.Texts['home57']}}{{workshop.cost}}{{publicservice.Texts.Texts['home58']}}
+                                    </h3>
                                     <div>
                                         <p class="collapse-about">
                                             {{workshop.content}}</p>
@@ -548,6 +554,9 @@
                     </div>
                     <div [class]="talksActive[i]">
                         <div class="collapse-background">
+                            <h3 class="collapse-cost">
+                                {{publicservice.Texts.Texts['home57']}}{{talk.cost}}{{publicservice.Texts.Texts['home58']}}
+                            </h3>
                             <div>
                                 <p class="collapse-about">
                                     {{talk.content}}</p>
@@ -609,6 +618,9 @@
                     </div>
                     <div [class]="talksActive[i]">
                         <div class="collapse-background">
+                            <h3 class="collapse-cost">
+                                {{publicservice.Texts.Texts['home57']}}{{talk.cost}}{{publicservice.Texts.Texts['home58']}}
+                            </h3>
                             <div>
                                 <p class="collapse-about">
                                     {{talk.content}}</p>
@@ -651,7 +663,7 @@
                             <p class="discription-right-footer-about-discription">
                                 {{publicservice.Texts.Texts["home39"]}}</p>
                             <div style="text-align: center;">
-                                <button mat-flat-button (click)="email()"
+                                <button mat-flat-button 
                                     class="green-button">{{publicservice.Texts.Texts["home47"]}}</button>
                             </div>
                         </div>
