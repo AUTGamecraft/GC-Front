@@ -54,6 +54,30 @@
     font-family:Estedad-Regularw;
     src: url('/assets/fonts/Estedad-Regular.woff2');
 }
+@font-face{
+    font-family: Vazir-Black;
+    src: url('/assets/fonts/Vazir-Black-FD.tff');
+}
+@font-face{
+    font-family: Vazir-Bold;
+    src: url('/assets/fonts/Vazir-Bold-FD.tff');
+}
+@font-face{
+    font-family: Vazir-Light;
+    src: url('/assets/fonts/Vazir-Light-FD.tff');
+}
+@font-face{
+    font-family: Vazir-Medium;
+    src: url('/assets/fonts/Vazir-Medium-FD.tff');
+}
+@font-face{
+    font-family: Vazir-Regular;
+    src: url('/assets/fonts/Vazir-Regular-FD.tff');
+}
+@font-face{
+    font-family: Vazir-Thin;
+    src: url('/assets/fonts/Vazir-Thin-FD.tff');
+}
 ::ng-deep .snackbar {
     background-color: transparent;
     box-shadow: none;

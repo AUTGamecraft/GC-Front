@@ -34,7 +34,7 @@
 }
 .text {
     width: 100%;
-    margin: 50px 0 50px 0;
+    margin: 30px 0 30px 0;
 }
 .register-button {
     font-family: "Estedad-Bold";
@@ -736,6 +736,15 @@
     display: none;
 }
 @media only screen and (max-width: 1113px) {
+    .prize-cards-whole-div{
+        text-align: center;
+        width: 100%;
+        justify-content: center;
+    }
+    .prize-cards{
+        margin: 0 auto;
+        padding: 20px 0;
+    }
     .whole-header {
         display: none;
     }
@@ -799,9 +808,25 @@
         width: 152px;
         height: 57px;
     }
+    .event-schedule-phone {
+        display: initial;
+        display: flex;
+        background-color: #fafafa;
+        justify-content: center;
+        padding-left: 10%;
+    }
     .schedule-middle-div {
         margin: 0;
         padding-top: 60px;
+        // padding-right: 10%;
+        z-index: 0;
+    }
+    .middle-div-phone{
+        justify-content: center;
+        text-align: center;
+        // margin: 0 auto;
+        // width: 100%;
+        z-index: 1;
     }
     .Ellipse {
         width: 16px;
@@ -810,19 +835,6 @@
     }
     .event-schedule {
         display: none;
-    }
-    .event-schedule-phone {
-        display: initial;
-        display: flex;
-        background-color: #fafafa;
-        // justify-content: center;
-        padding-left: 10%;
-    }
-    .middle-div-phone{
-        justify-content: center;
-        text-align: center;
-        margin: 0 auto;
-        // width: 100%;
     }
     .event-schedule-schematic {
         background-image: none;
@@ -880,6 +892,8 @@
     }
     .prize-cards-inner-div {
         flex-direction: column;
+        justify-content: center;
+        text-align: center;
     }
     .collapse-header {
         font-size: 44px;
@@ -942,6 +956,7 @@
     .green-wave-above-wrokshops {
         margin-top: -30px;
         margin-bottom: 0;
+        background-color: #ede1f1;
     }
     .whole-workshop-phone {
         display: initial;
@@ -1023,6 +1038,9 @@
 @media only screen and (max-width: 518px) {
     .prizes-title {
         background-color: #ede1f1;
+    }
+    .event-schedule-phone{
+        padding-left: 20%;
     }
     // .prizes{
     //     // margin-top: -30%;

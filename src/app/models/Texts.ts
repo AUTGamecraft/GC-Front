@@ -204,6 +204,7 @@ export class Texts{
         this.FaTexts["people42"] = "سردسته خلافکارا"
         this.FaTexts["people43"] = "روژین ستارپور"
         this.FaTexts["people44"] = "محمود صانعیان"
+        this.FaTexts["people45"] = "عماد فردوسی"
 
         this.FaTexts["logo1"] = "گیمـ"
         this.FaTexts["logo2"] = "کرفت"
