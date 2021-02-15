@@ -98,10 +98,22 @@ export class HomeComponent implements OnInit {
 
   }
   ngAfterViewInit():void{
-    console.log(this.router.url);
-    console.log(this.router.url.split('#')[1]);
+    // console.log(this.router.url);
+    // console.log(this.router.url.split('#')[1]);
     if(this.router.url.split('#')[1] == 'schedule'){
-      setTimeout((()=>this.Schedule(document.getElementById('schedule'))),100)
+      setTimeout((()=>this.Schedule(document.getElementById('schedule'))),200)
+    }
+    else if(this.router.url.split('#')[1] == 'talk'){
+      setTimeout((()=>this.Schedule(document.getElementById('talk'))),100)
+    }
+    else if(this.router.url.split('#')[1] == 'workshop'){
+      setTimeout((()=>this.Schedule(document.getElementById('workshop'))),100)
+    }
+    else if(this.router.url.split('#')[1] == 'footer'){
+      setTimeout((()=>this.Schedule(document.getElementById('footer'))),100)
+    }
+    else if(this.router.url.split('#')[1] == 'home'){
+      setTimeout((()=>this.Schedule(document.getElementById('home'))),100)
     }
   }
   Signup() {

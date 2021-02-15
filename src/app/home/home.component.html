@@ -1,12 +1,12 @@
 <div style="width:100%">
-    <div class="home" id="home">
+    <div class="home" id="home" #home>
         <div class="intro">
             <header style="position: fixed;width: 100%;background-color: #52006b;z-index: 100;">
                 <div class="whole-header" [class]="getNavClass()">
                     <div class="big-right-header">
                         <div class="title-div">
                             <div class="logo">
-                                <img class="logo-image" src="assets/svg/dark-3d.svg">
+                                <img (click)="Schedule(home)" class="logo-image" src="assets/svg/dark-3d.svg">
                             </div>
                         </div>
                         <!-- <div class="header-line">  
@@ -119,9 +119,9 @@
             </div>
         </div>
         <div>
-            <img #schedule class="purple-wave-under-intro" src="assets/svg/wave-purple.svg">
+            <img id="schedule" #schedule class="purple-wave-under-intro" src="assets/svg/wave-purple.svg">
         </div>
-        <div class="event-schedule-div" id="schedule">
+        <div class="event-schedule-div" >
             <div class="event-schedule-title-div">
                 <h1 class="event-schedule-title">
                     {{publicservice.Texts.Texts["home8"]}}</h1>
@@ -527,9 +527,9 @@
             </div>
         </div>
         <div>
-            <img class="green-wave-under-workshops" src="assets/svg/wave-green.svg">
+            <img #talk id="talk" class="green-wave-under-workshops" src="assets/svg/wave-green.svg">
         </div>
-        <div class="talks-title-div" #talk id="talk">
+        <div class="talks-title-div"  >
             <h1 class="talks-title">
                 {{publicservice.Texts.Texts["home26"]}}</h1>
         </div>

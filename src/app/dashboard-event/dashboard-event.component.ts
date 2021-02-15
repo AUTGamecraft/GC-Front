@@ -7,11 +7,11 @@ import { PublicService } from '../public.service';
   styleUrls: ['./dashboard-event.component.scss']
 })
 export class DashboardEventComponent implements OnInit {
-  talks = 'deactive'
+  talks = 'deactive';
   fileToUpload: File = null;
-  workshops = 'deactive'
-  iconW = 'keyboard_arrow_down'
-  iconT = 'keyboard_arrow_down'
+  workshops = 'deactive';
+  iconW = 'keyboard_arrow_down';
+  iconT = 'keyboard_arrow_down';
   constructor(private router: Router, public publicservice: PublicService) {
     if (!publicservice.logedIn) {
       this.router.navigate(['login']);
@@ -19,6 +19,15 @@ export class DashboardEventComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if(this.router.url.split('#')[1] == 'dash'){
+      setTimeout((()=>this.Schedule(document.getElementById('dash'))),200)
+    }
+  }
+  Schedule(el: HTMLElement) {
+    el.scrollIntoView({ behavior: "smooth" });
+  }
+  ngAfterViewInit():void{
+
   }
   events(): void {
     const navigationDetails: string[] = ['dashboard-event'];
@@ -46,7 +55,7 @@ export class DashboardEventComponent implements OnInit {
     const file = imageInput.item(0);
     const reader = new FileReader();
     reader.readAsDataURL(file); 
-    console.log(file); 
+    // console.log(file); 
     this.publicservice.fileName = file.name;
     this.publicservice.UpdateImage();
   }

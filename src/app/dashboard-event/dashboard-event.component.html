@@ -1,4 +1,4 @@
-<div class="dash-event-whole" id="dash">
+<div class="dash-event-whole" id="dash" #dash>
     <div class="logo" (click)='Home()'>
         <p class="logo-text" style="margin-left: -5px;">{{publicservice.Texts.Texts["logo1"]}}</p>
         <img class="logo-image" src="assets/svg/dark-3d.svg">
@@ -254,9 +254,7 @@
         </div>
     </div>
     <div class="footer-whole-div">
-        <div>
             <img class="purple-wave-above-footer" src="assets/svg/wave-purple.svg">
-        </div>
         <div class="footer-div">
             <div class="discription-footer-div">
                 <div class="discription-right-footer-div">
@@ -285,12 +283,11 @@
                 </h1>
             </div>
             <div class="supporters-card-div">
-                <div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/quiz of kings.png">
-                    </div>
-                    <!-- <p class="supportes-card-name">
-                        {{publicservice.Texts.Texts["home41"]}}</p> -->
+                <div class="supportes-card-image-div">
+                    <img class="supporters-card-image" src="assets/images/quiz of kings.png">
+                </div>
+                <div class="supportes-card-image-div">
+                    <img class="supporters-card-image" src="assets/images/avngames.png">
                 </div>
             </div>
         </div>
