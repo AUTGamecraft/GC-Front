@@ -267,6 +267,7 @@
     font-size: xxx-large;
     color: white;
     text-align: center;
+    margin-bottom: 0;
 }
 .supporters-card-div {
     text-align: center;
@@ -280,7 +281,7 @@
     height: 140px;
     width: 140px;
     border-radius: 50%;
-    object-fit: cover;
+    object-fit: contain;
 }
 .supportes-card-name {
     font-family: "Estedad-Bold";

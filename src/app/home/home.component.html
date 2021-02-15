@@ -52,7 +52,7 @@
                         </div>
                         <div class="after-login" *ngIf="publicservice.logedIn">
                             <div class="left-button">
-                                <button mat-button
+                                <button mat-button [disabled]="true"
                                     class="normal-button">{{publicservice.Texts.Texts["header10"]}}</button>
                             </div>
 
@@ -121,7 +121,7 @@
         <div>
             <img #schedule class="purple-wave-under-intro" src="assets/svg/wave-purple.svg">
         </div>
-        <div class="event-schedule-div"  id="schedule">
+        <div class="event-schedule-div" id="schedule">
             <div class="event-schedule-title-div">
                 <h1 class="event-schedule-title">
                     {{publicservice.Texts.Texts["home8"]}}</h1>
@@ -351,8 +351,8 @@
                                     <img class="prize-card-image" src="assets/svg/prize-1.svg">
                                 </div>
                                 <!-- <div style="padding-top: 20%;"> -->
-                                    <h2 class="prize-card-title">{{publicservice.Texts.Texts["home45"]}}</h2>
-                                    <h3 class="prize-card-discription">{{publicservice.Texts.Texts["home46"]}}</h3>
+                                <h2 class="prize-card-title">{{publicservice.Texts.Texts["home45"]}}</h2>
+                                <h3 class="prize-card-discription">{{publicservice.Texts.Texts["home46"]}}</h3>
                                 <!-- </div> -->
                             </div>
                             <div class="prize-cards">
@@ -360,8 +360,10 @@
                                     <img class="prize-card-image" src="assets/svg/prize-2.svg">
                                 </div>
                                 <!-- <div style="padding-top: 20%;width: 100%;"> -->
-                                    <h2 class="prize-card-title" style="width: 100%;">{{publicservice.Texts.Texts["home55"]}}</h2>
-                                    <h3 class="prize-card-discription"  style="width: 100%;">{{publicservice.Texts.Texts["home46"]}}</h3>
+                                <h2 class="prize-card-title" style="width: 100%;">
+                                    {{publicservice.Texts.Texts["home55"]}}</h2>
+                                <h3 class="prize-card-discription" style="width: 100%;">
+                                    {{publicservice.Texts.Texts["home46"]}}</h3>
                                 <!-- </div> -->
                             </div>
                         </div>
@@ -371,7 +373,7 @@
                                     <img class="prize-card-image" src="assets/svg/prize-3.svg">
                                 </div>
                                 <!-- <div style="padding-top: 20%;"> -->
-                                <h2 class="prize-card-title" >{{publicservice.Texts.Texts["home56"]}}</h2>
+                                <h2 class="prize-card-title">{{publicservice.Texts.Texts["home56"]}}</h2>
                                 <h3 class="prize-card-discription">{{publicservice.Texts.Texts["home46"]}}</h3>
                                 <!-- </div> -->
                             </div>
@@ -429,7 +431,8 @@
                                         </h1>
                                     </div>
                                     <div class="collapse-presenters-card-div">
-                                        <div class="collapse-presenters-card" *ngFor="let presenter of workshop.presenters">
+                                        <div class="collapse-presenters-card"
+                                            *ngFor="let presenter of workshop.presenters">
                                             <div>
                                                 <img class="collapse-presenters-image" src="assets/images/masoud.jpg">
                                             </div>
@@ -504,7 +507,8 @@
                                         </h1>
                                     </div>
                                     <div class="collapse-presenters-card-div">
-                                        <div class="collapse-presenters-card" *ngFor="let presenter of workshop.presenters">
+                                        <div class="collapse-presenters-card"
+                                            *ngFor="let presenter of workshop.presenters">
                                             <div>
                                                 <img class="collapse-presenters-image" src="assets/images/masoud.jpg">
                                             </div>
@@ -663,7 +667,7 @@
                             <p class="discription-right-footer-about-discription">
                                 {{publicservice.Texts.Texts["home39"]}}</p>
                             <div style="text-align: center;">
-                                <button mat-flat-button 
+                                <button mat-flat-button
                                     class="green-button">{{publicservice.Texts.Texts["home47"]}}</button>
                             </div>
                         </div>
@@ -680,12 +684,11 @@
                     </h1>
                 </div>
                 <div class="supporters-card-div">
-                    <div>
-                        <div class="supportes-card-image-div">
-                            <img class="supporters-card-image" src="assets/images/masoud.jpg">
-                        </div>
-                        <p class="supportes-card-name">
-                            {{publicservice.Texts.Texts["home41"]}}</p>
+                    <div class="supportes-card-image-div">
+                        <img class="supporters-card-image" src="assets/images/quiz of kings.png">
+                    </div>
+                    <div class="supportes-card-image-div">
+                        <img class="supporters-card-image" src="assets/images/avngames.png">
                     </div>
                 </div>
             </div>

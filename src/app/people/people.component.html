@@ -49,7 +49,7 @@
                 </div>
                 <div class="after-login" *ngIf="publicservice.logedIn">
                     <div class="left-button">
-                        <button mat-button class="normal-button">{{publicservice.Texts.Texts["header10"]}}</button>
+                        <button mat-button [disabled]="true" class="normal-button">{{publicservice.Texts.Texts["header10"]}}</button>
                     </div>
 
                     <div>
@@ -342,13 +342,14 @@
                 </h1>
             </div>
             <div class="supporters-card-div">
-                <div>
                     <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/masoud.jpg">
+                        <img class="supporters-card-image" src="assets/images/quiz of kings.png">
                     </div>
-                    <p class="supportes-card-name">
-                        {{publicservice.Texts.Texts["home41"]}}</p>
-                </div>
+                    <div class="supportes-card-image-div">
+                        <img class="supporters-card-image" src="assets/images/avngames.png">
+                    </div>
+                    <!-- <p class="supportes-card-name">
+                        {{publicservice.Texts.Texts["home41"]}}</p> -->
             </div>
         </div>
     </div>

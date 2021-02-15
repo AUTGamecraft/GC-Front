@@ -9,15 +9,15 @@ import { Router, NavigationEnd } from '@angular/router';
 export class RulesComponent implements OnInit {
 
   constructor(public publicservice: PublicService, public router: Router) { 
-    router.events.subscribe(s => {
-      if (s instanceof NavigationEnd) {
-        const tree = router.parseUrl(router.url);
-        if (tree.fragment) {
-          const element = document.querySelector("#" + tree.fragment);
-          if (element) { element.scrollIntoView(); }
-        }
-      }
-    });
+    // router.events.subscribe(s => {
+    //   if (s instanceof NavigationEnd) {
+    //     const tree = router.parseUrl(router.url);
+    //     if (tree.fragment) {
+    //       const element = document.querySelector("#" + tree.fragment);
+    //       if (element) { element.scrollIntoView(); }
+    //     }
+    //   }
+    // });
   }
 
   ngOnInit(): void {

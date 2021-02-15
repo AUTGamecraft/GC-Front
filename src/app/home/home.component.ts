@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { PublicService } from '../public.service';
 import { NavigationEnd, Router } from '@angular/router';
 import * as moment from 'jalali-moment';
+import { timeout } from 'rxjs/operators';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -75,15 +76,15 @@ export class HomeComponent implements OnInit {
             break;
         }
       }
-      router.events.subscribe(s => {
-        if (s instanceof NavigationEnd) {
-          const tree = router.parseUrl(router.url);
-          if (tree.fragment) {
-            const element = document.querySelector("#" + tree.fragment);
-            if (element) { element.scrollIntoView(); }
-          }
-        }
-      });
+      // router.events.subscribe(s => {
+      //   if (s instanceof NavigationEnd) {
+      //     const tree = router.parseUrl(router.url);
+      //     if (tree.fragment) {
+      //       const element = document.querySelector("#" + tree.fragment);
+      //       if (element) { element.scrollIntoView(); }
+      //     }
+      //   }
+      // });
     })
     setInterval(() => this.time = this.time - 1, 1000);
     // console.log(this.talksPresenters);
@@ -91,6 +92,17 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+  }
+  ngonviewinit():void{
+
+  }
+  ngAfterViewInit():void{
+    console.log(this.router.url);
+    console.log(this.router.url.split('#')[1]);
+    if(this.router.url.split('#')[1] == 'schedule'){
+      setTimeout((()=>this.Schedule(document.getElementById('schedule'))),100)
+    }
   }
   Signup() {
     const navigationDetails2: string[] = ['signup'];

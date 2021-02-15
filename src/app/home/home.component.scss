@@ -320,6 +320,7 @@
     font-size: xxx-large;
     color: white;
     text-align: center;
+    margin-bottom: 0;
 }
 .supporters-card-div {
     text-align: center;
@@ -328,10 +329,10 @@
     padding: 20px;
 }
 .supporters-card-image {
-    height: 140px;
-    width: 140px;
+    height: 250px;
+    width: 250px;
     border-radius: 50%;
-    object-fit: cover;
+    object-fit: contain;
 }
 .supportes-card-name {
     font-family: "Estedad-Bold";
@@ -546,8 +547,12 @@
     font-size: large;
     color: white;
     padding: 9px 9px 9px 9px;
+    // margin: auto 0;
     border-radius: 24px;
     background-color: rgba(255, 255, 255, 0);
+}
+.mat-focus-indicator.normal-button.mat-button.mat-button-base.mat-button-disabled{
+    color: white;
 }
 .title {
     font-family: "Estedad-Black";
