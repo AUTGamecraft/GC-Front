@@ -288,6 +288,9 @@
     display: none;
 }
 @media only screen and (max-width:992px){
+    .supporters-card-div{
+        flex-direction: column;
+    }
     .dash-media-inner-div{
         flex-direction: column;
         padding: 24px;
