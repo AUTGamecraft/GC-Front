@@ -232,6 +232,29 @@ export class PublicService {
     });
     return ret;
   }
+  getUser(): Promise<any> {
+    var that = this;
+    this.APICalls.getUsers = true;
+    let headers = new Headers({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + this.Authorization
+    });
+    let options = new RequestOptions({ headers: headers });
+    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/users/profile/', options)
+      .toPromise()
+      .then((r) => this.extractData(r, this))
+      .catch(this.handleError);
+
+    ret.then(r => {
+      this.APICalls.getUsers = false;
+      console.log(r);
+    }).catch(e => {
+      this.APICalls.getUsers = false;
+      that.snackbar.openFromComponent(ErrorDialogComponent,{duration:1000,data:e.message,panelClass:['snackbar'],verticalPosition:'top',direction:'rtl'});
+
+    });
+    return ret;
+  }
 
 
 

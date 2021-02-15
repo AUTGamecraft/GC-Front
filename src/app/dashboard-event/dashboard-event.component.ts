@@ -12,9 +12,17 @@ export class DashboardEventComponent implements OnInit {
   workshops = 'deactive';
   iconW = 'keyboard_arrow_down';
   iconT = 'keyboard_arrow_down';
+  userName: string = "";
   constructor(private router: Router, public publicservice: PublicService) {
     if (!publicservice.logedIn) {
       this.router.navigate(['login']);
+    }
+    else{
+      publicservice.getUser().then((r)=>{
+        this.userName = r.data.first_name;
+        const image = document.getElementById('image') as HTMLImageElement;
+        image.src = r.data.profile;
+      });
     }
   }
 

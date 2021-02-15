@@ -12,7 +12,7 @@
                         <input type="file" id="imgUpload" style="display:none" (change)="handleFileInput($event.target.files)"> 
                         <img class="user-image" id="image" style="cursor: pointer;" (click)="Upload()">
                     </div>
-                    <p class="user-name">{{publicservice.Texts.Texts["dash-event1"]}}</p>
+                    <p class="user-name">{{userName}}</p>
                 </div>
                 <div style="display: flex;justify-content: center;">
                     <button mat-stroked-button class="outlined-button"

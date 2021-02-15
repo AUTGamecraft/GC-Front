@@ -16,10 +16,15 @@ export class DashboardTeamsComponent implements OnInit {
   myControl = new FormControl();
   options: string[] = ['One', 'Two', 'Three'];
   filteredOptions: Observable<string[]>;
-
+  userName: string = "";
   constructor(private router : Router,public publicservice: PublicService) { 
     if(!publicservice.logedIn){
       this.router.navigate(['login']);
+    }
+    else{
+      publicservice.getUser().then((r)=>{
+        this.userName = r.data.first_name;
+      });
     }
   }
 

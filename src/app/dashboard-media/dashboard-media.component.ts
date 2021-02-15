@@ -7,10 +7,15 @@ import { PublicService } from '../public.service';
   styleUrls: ['./dashboard-media.component.scss']
 })
 export class DashboardMediaComponent implements OnInit {
-
+  userName: string = "";
   constructor(private router : Router,public publicservice: PublicService) { 
     if(!publicservice.logedIn){
       this.router.navigate(['login']);
+    }
+    else{
+      publicservice.getUser().then((r)=>{
+        this.userName = r.data.first_name;
+      });
     }
   }
 

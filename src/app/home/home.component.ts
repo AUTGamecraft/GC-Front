@@ -22,11 +22,12 @@ export class HomeComponent implements OnInit {
   time = 10000;
   talksLevel: any = [];
   workshopsLevel: any = [];
-  talkPresenters : any = [];
+  talkPresenters: any = [];
   talksPresenters: any = [];
-  workshopPresenters : any = [];
+  workshopPresenters: any = [];
   workshopsPresenters: any = [];
   noShadow = 'noshadow';
+  userName: string = "";
   constructor(public publicservice: PublicService, public router: Router) {
     publicservice.getTalks().then((r) => {
       console.log(r);
@@ -87,6 +88,11 @@ export class HomeComponent implements OnInit {
       // });
     })
     setInterval(() => this.time = this.time - 1, 1000);
+    if(publicservice.logedIn){
+      publicservice.getUser().then((r)=>{
+        this.userName = r.data.first_name;
+      })
+    }
     // console.log(this.talksPresenters);
     // console.log(this.workshopsPresenters);
   }
@@ -94,26 +100,26 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  ngonviewinit():void{
+  ngonviewinit(): void {
 
   }
-  ngAfterViewInit():void{
+  ngAfterViewInit(): void {
     // console.log(this.router.url);
     // console.log(this.router.url.split('#')[1]);
-    if(this.router.url.split('#')[1] == 'schedule'){
-      setTimeout((()=>this.Schedule(document.getElementById('schedule'))),200)
+    if (this.router.url.split('#')[1] == 'schedule') {
+      setTimeout((() => this.Schedule(document.getElementById('schedule'))), 200)
     }
-    else if(this.router.url.split('#')[1] == 'talk'){
-      setTimeout((()=>this.Schedule(document.getElementById('talk'))),100)
+    else if (this.router.url.split('#')[1] == 'talk') {
+      setTimeout((() => this.Schedule(document.getElementById('talk'))), 100)
     }
-    else if(this.router.url.split('#')[1] == 'workshop'){
-      setTimeout((()=>this.Schedule(document.getElementById('workshop'))),100)
+    else if (this.router.url.split('#')[1] == 'workshop') {
+      setTimeout((() => this.Schedule(document.getElementById('workshop'))), 100)
     }
-    else if(this.router.url.split('#')[1] == 'footer'){
-      setTimeout((()=>this.Schedule(document.getElementById('footer'))),100)
+    else if (this.router.url.split('#')[1] == 'footer') {
+      setTimeout((() => this.Schedule(document.getElementById('footer'))), 100)
     }
-    else if(this.router.url.split('#')[1] == 'home'){
-      setTimeout((()=>this.Schedule(document.getElementById('home'))),100)
+    else if (this.router.url.split('#')[1] == 'home') {
+      setTimeout((() => this.Schedule(document.getElementById('home'))), 100)
     }
   }
   Signup() {
@@ -126,7 +132,7 @@ export class HomeComponent implements OnInit {
   }
 
   Dashboard() {
-    this.router.navigate(['dashboard-event'],{fragment:'dash'});
+    this.router.navigate(['dashboard-event'], { fragment: 'dash' });
   }
   Workshop(el: HTMLElement) {
     el.scrollIntoView({ behavior: "smooth" });
@@ -170,8 +176,8 @@ export class HomeComponent implements OnInit {
   Home() {
     this.router.navigate(['home'], { fragment: 'home' });
   }
-  getNavClass(){
-    return window.scrollY>0?'no-shadow':'';
+  getNavClass() {
+    return window.scrollY > 0 ? 'no-shadow' : '';
   }
 
 }
