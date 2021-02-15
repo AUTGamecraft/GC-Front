@@ -22,6 +22,11 @@ export class RulesComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  ngAfterViewInit():void{
+    if (this.router.url.split('#')[1] == 'rules') {
+      setTimeout((() => this.Footer(document.getElementById('rules'))), 200)
+    }
+  }
   People(){
     this.router.navigate(['people'],{fragment:'people'});
   }

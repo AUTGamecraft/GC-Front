@@ -22,6 +22,11 @@ export class PeopleComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  ngAfterViewInit():void{
+    if (this.router.url.split('#')[1] == 'people') {
+      setTimeout((() => this.Footer(document.getElementById('people'))), 200)
+    }
+  }
   People(){
     this.router.navigate(['people']);
   }

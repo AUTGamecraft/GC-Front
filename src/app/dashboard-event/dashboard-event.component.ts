@@ -56,6 +56,9 @@ export class DashboardEventComponent implements OnInit {
   Teams() {
     this.router.navigate(['dashboard-teams']);
   }
+  Cart() {
+    this.router.navigate(['cart']);
+  }
   Upload() {
     document.getElementById('imgUpload').click();
   }

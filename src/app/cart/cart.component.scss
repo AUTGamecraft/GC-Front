@@ -1,0 +1,160 @@
+//start of logo
+.logo {
+    padding-top: 20px;
+    justify-content: center;
+    display: flex;
+    direction: rtl;
+
+}
+.logo-image {
+    width: 100.8px;
+    z-index: 1;
+    cursor: pointer;
+}
+.logo-text {
+    font-family: "Estedad-Black";
+    color: #a04db9;
+    font-size: 24px;
+    z-index: 0;
+}
+//end of logo
+.right-part {
+    background-color: #fafafa;
+    text-align: center;
+    border-radius: 20px;
+    height: fit-content;
+    width: 25%;
+}
+.user-image {
+    border-radius: 50%;
+    margin: 50px;
+    margin-bottom: 0;
+    margin-top: 30px;
+    height: 160px;
+    width: 160px;
+    object-fit: cover;
+}
+.user-name {
+    font-family: "Estedad-Bold";
+    color: #52006b;
+    font-size: large;
+    margin-bottom: 0;
+}
+.outlined-button {
+    font-family: "Estedad-Bold";
+    color: #00b583;
+    font-size: large;
+    border: 3px solid #07f49e !important;
+    border-radius: 15px;
+    // height: 10%;
+    margin-top: 12px;
+    margin-bottom: 16px;
+    // padding: 0;
+}
+.outlined-button:hover {
+    background-color: #6af9c5;
+    color: #52006b;
+    border-color: #6af9c5 !important;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.08);
+}
+#outlined-button-phone {
+    display: none;
+}
+.normal-button {
+    font-family: "Estedad-Bold";
+    font-size: large;
+    color: #b00020;
+    border-radius: 16px;
+    background-color: rgba(255, 255, 255, 0);
+    width: 84px;
+    height: 44px;
+    margin: 8px 99px 8px 102px;
+}
+.buttons {
+    color: #52006b;
+    font-family: "Estedad-SemiBold";
+    width: 100%;
+    font-size: large;
+    padding-right: 10%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    text-align: right;
+}
+.whole{
+    background-color: #52006b;
+    background-image: url("/assets/svg/pattern.svg");
+}
+.cart{
+    padding: 20px;
+    direction: rtl;
+    padding-right: 5%;
+    padding-left: 5%;
+    padding-top: 30px;
+}
+@media only screen and (max-width: 992px) {
+    .right-part {
+        width: 100%;
+        padding: 16px;
+        padding-top: 0;
+        margin: auto;
+        margin-bottom: 10%;
+    }
+    .right-part-header {
+        display: flex;
+        justify-content: space-between;
+    }
+    .name-image-phone {
+        display: flex;
+    }
+    .user-image {
+        width: 48px;
+        height: 48px;
+        margin-top: 8px;
+        margin-right: 0;
+        margin-left: auto;
+    }
+    .user-name {
+        font-size: 16px;
+        margin: auto;
+    }
+    #outlined-button-phone {
+        display: initial;
+        font-size: 16px;
+        width: 121px;
+        height: 44px;
+    }
+    .outlined-button {
+        display: none;
+        font-size: 16px;
+        margin: auto;
+        padding: 0;
+    }
+    .normal-button {
+        font-size: 16px;
+        // width: 36px;
+        // height: 28px;
+        margin: auto;
+        text-align: center;
+    }
+    .header-buttons {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .right-header-button {
+        width: 100%;
+    }
+    .buttons {
+        font-size: 16px;
+        border-radius: 12px;
+    }
+    .left-header-button {
+        width: 100%;
+    }
+    .cart{
+        padding: 0;
+        padding-top: 20px;
+        text-align: center;
+        justify-content: center;
+        padding-bottom: 20%;
+    }
+}
