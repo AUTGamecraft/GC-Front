@@ -215,10 +215,11 @@ export class PublicService {
     var that = this;
     this.APICalls.getUsers = true;
     let headers = new Headers({
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + this.Authorization
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/workshop/', options)
+    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/users/profile/', options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);

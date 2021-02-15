@@ -25,6 +25,9 @@ export class DashboardTeamsComponent implements OnInit {
       publicservice.getUser().then((r)=>{
         this.userName = r.data.first_name;
       });
+      publicservice.getUsers().then((r)=>{
+        console.log(r);
+      });
     }
   }
   ngAfterViewInit():void{

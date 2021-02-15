@@ -551,7 +551,7 @@
     border-radius: 24px;
     background-color: rgba(255, 255, 255, 0);
 }
-.mat-focus-indicator.normal-button.mat-button.mat-button-base.mat-button-disabled{
+.mat-focus-indicator.normal-button.mat-button.mat-button-base.mat-button-disabled {
     color: white;
 }
 .title {
@@ -575,6 +575,12 @@
 .after-login {
     display: flex;
 }
+.header {
+    position: fixed;
+    width: 100%;
+    background-color: #52006b;
+    z-index: 100;
+}
 .left-header {
     display: flex;
     margin-left: 50px;
@@ -593,7 +599,7 @@
     display: flex;
     box-shadow: none !important;
 }
-.no-shadow{
+.no-shadow {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) !important;
 }
 .numbers {
@@ -661,7 +667,7 @@
     width: 252.5px;
     height: 252.5px;
 }
-.prize-card-image-div{
+.prize-card-image-div {
     width: 252.5px;
     height: 252.5px;
 }
@@ -740,22 +746,28 @@
 .whole-header-phone {
     display: none;
 }
-.collapse-cost{
+.collapse-cost {
     margin-top: 0;
     color: #00b583;
-    font-family: 'Vazir-Black';
+    font-family: "Vazir-Black";
     font-size: 20px;
 }
 @media only screen and (max-width: 1113px) {
-    .collapse-cost{
+    .supporters-card-div {
+        flex-direction: column;
+    }
+    .header{
+        width: 100%;
+    }
+    .collapse-cost {
         font-size: 14px;
     }
-    .prize-cards-whole-div{
+    .prize-cards-whole-div {
         text-align: center;
         width: 100%;
         justify-content: center;
     }
-    .prize-cards{
+    .prize-cards {
         margin: 0 auto;
         padding: 20px 0;
     }
@@ -835,7 +847,7 @@
         // padding-right: 10%;
         z-index: 0;
     }
-    .middle-div-phone{
+    .middle-div-phone {
         justify-content: center;
         text-align: center;
         // margin: 0 auto;
@@ -874,7 +886,7 @@
     }
     .image {
         // margin-top: 0;
-        margin:0 auto;
+        margin: 0 auto;
     }
     .prizes {
         // background-color: #ede1f1;
@@ -1043,7 +1055,7 @@
         display: flex;
         direction: rtl;
         justify-content: space-between;
-        padding: 15px;
+        padding: 10px 15px;
     }
     .logo {
         padding: 0;
@@ -1053,7 +1065,7 @@
     .prizes-title {
         background-color: #ede1f1;
     }
-    .event-schedule-phone{
+    .event-schedule-phone {
         padding-left: 20%;
     }
     // .prizes{

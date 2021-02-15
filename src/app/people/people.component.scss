@@ -289,6 +289,9 @@
     display: none;
 }
 @media only screen and (max-width:1130px){
+    .supporters-card-div{
+        flex-direction: column;
+    }
     .whole-header{
         display: none;
     }

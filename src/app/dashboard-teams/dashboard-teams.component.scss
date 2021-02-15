@@ -308,6 +308,9 @@
 }
 //end of footer
 @media only screen and (max-width: 992px) {
+    .supporters-card-div{
+        flex-direction: column;
+    }
     .right-part-header {
         display: flex;
         justify-content: space-between;
