@@ -127,7 +127,15 @@ input[type="number"] {
       font-family: 'Vazir-Medium';
 
   }
-  @media only screen and (max-width: 518px) {
+  .logo-text{
+      display: none;
+      font-family: "Estedad-Black";
+      color: #a04db9;
+      font-size: 24px;
+      z-index: 0;
+
+  }
+  @media only screen and (max-width: 992px) {
  .signup{
     flex-direction: column;
     margin: 0 auto;
@@ -143,6 +151,9 @@ input[type="number"] {
     margin: 0 auto;
     padding-bottom: 20px;
 
+ }
+ .logo-text{
+     display: initial;
  }
  
   

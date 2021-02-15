@@ -15,6 +15,13 @@
   box-shadow: none;
   height: 0;
 }
+.logo-text{
+  display: none;
+  font-family: "Estedad-Black";
+  color: #a04db9;
+  font-size: 24px;
+  z-index: 0;
+}
 .Rectangle-35 {
   width: 380px;
   height: 378px;
@@ -127,7 +134,8 @@
   background-image: url("/assets/svg/pattern.svg");
   height: 100%;
 }
-@media only screen and (max-width: 518px) {
+
+@media only screen and (max-width: 992px) {
   .login{
     flex-direction: column;
     margin: 0 auto;
@@ -151,6 +159,10 @@
     width: 80%;
     margin: 0 auto;
   }
+  .logo-text{
+    display: initial;
+  }
+  
 
 
 
