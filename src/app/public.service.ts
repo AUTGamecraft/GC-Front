@@ -256,7 +256,26 @@ export class PublicService {
     });
     return ret;
   }
+  ActivateUser(token:string): Promise<any> {
+    var that = this;
+    this.APICalls.ActivateUser = true;
+    let headers = new Headers({
+      'Content-Type': 'application/json'
+    });
+    let options = new RequestOptions({ headers: headers });
+    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/activation/'+token, options)
+      .toPromise()
+      .then((r) => this.extractData(r, this))
+      .catch(this.handleError);
 
+    ret.then(r => {
+      this.APICalls.ActivateUser = false;
+    }).catch(e => {
+      this.APICalls.ActivateUser = false;
+      that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+    });
+    return ret;
+  }
 
 
 

@@ -122,6 +122,7 @@ export class Texts{
         this.FaTexts["cart5"] = "حذف"
         this.FaTexts["cart6"] = "10000 تومان"
         this.FaTexts["cart7"] = "پرداخت"
+        this.FaTexts["cart8"] = "سبد خرید"
 
         this.FaTexts["login1"] = "ورود"
         this.FaTexts["login2"] = "گیمـ"
