@@ -32,6 +32,9 @@ import { EmailConfirmComponent } from './email-confirm/email-confirm.component';
 import { ConfirmConfirmComponent } from './confirm-confirm/confirm-confirm.component';
 import { CartComponent } from './cart/cart.component';
 import {MatBadgeModule} from '@angular/material/badge';
+import {MatSidenavModule} from '@angular/material/sidenav';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,7 +71,8 @@ import {MatBadgeModule} from '@angular/material/badge';
     MatExpansionModule,
     MatSnackBarModule,
     MatAutocompleteModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatSidenavModule
   ],
   providers: [
   ],

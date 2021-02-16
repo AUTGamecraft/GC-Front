@@ -1,7 +1,7 @@
 <div style="width:100%;overflow: hidden;">
-    <div class="home"  id="home" #home>
+    <div class="home" id="home" #home>
         <div class="intro">
-        
+
             <div class="header">
                 <div class="whole-header" [class]="getNavClass()">
                     <div class="big-right-header">
@@ -53,8 +53,7 @@
                         </div>
                         <div class="after-login" *ngIf="publicservice.logedIn">
                             <div class="left-button">
-                                <button mat-button [disabled]="true"
-                                    class="normal-button">{{userName}}</button>
+                                <button mat-button [disabled]="true" class="normal-button">{{userName}}</button>
                             </div>
 
                             <div>
@@ -65,14 +64,25 @@
                     </div>
                 </div>
                 <div class="whole-header-phone">
-                    <button mat-button>
+                    <button mat-button (click)="snav.toggle()">
                         <mat-icon style="color: white;font-size: 32px;" [inline]="true">menu</mat-icon>
                     </button>
                     <div class="logo" routerLink="home">
                         <img class="logo-image" src="assets/svg/dark-3d.svg">
                     </div>
+                   <mat-sidenav-container class="example-sidenav-container">
+                    <mat-sidenav #snav >
+                        <mat-nav-list>
+                          
+                        </mat-nav-list>
+                    </mat-sidenav>
+
+                    <mat-sidenav-content>
+                   
+                    </mat-sidenav-content>
+                    </mat-sidenav-container>
                 </div>
-            
+
             </div>
             <div class="subintro-div">
                 <div class="intro-discription-div">
@@ -123,7 +133,7 @@
         <div>
             <img id="schedule" #schedule class="purple-wave-under-intro" src="assets/svg/wave-purple.svg">
         </div>
-        <div class="event-schedule-div" >
+        <div class="event-schedule-div">
             <div class="event-schedule-title-div">
                 <h1 class="event-schedule-title">
                     {{publicservice.Texts.Texts["home8"]}}</h1>
@@ -531,7 +541,7 @@
         <div>
             <img #talk id="talk" class="green-wave-under-workshops" src="assets/svg/wave-green.svg">
         </div>
-        <div class="talks-title-div"  >
+        <div class="talks-title-div">
             <h1 class="talks-title">
                 {{publicservice.Texts.Texts["home26"]}}</h1>
         </div>

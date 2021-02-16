@@ -4,6 +4,8 @@ import { PublicService } from '../public.service';
 import { NavigationEnd, Router } from '@angular/router';
 import * as moment from 'jalali-moment';
 import { timeout } from 'rxjs/operators';
+import {MatSidenavModule} from '@angular/material/sidenav';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -179,5 +181,6 @@ export class HomeComponent implements OnInit {
   getNavClass() {
     return window.scrollY > 0 ? 'no-shadow' : '';
   }
+
 
 }
