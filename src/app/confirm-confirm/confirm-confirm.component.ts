@@ -8,11 +8,13 @@ import { PublicService } from '../public.service';
 })
 export class ConfirmConfirmComponent implements OnInit {
 
-  constructor(private router: Router, public publicservice: PublicService) { }
+  constructor(private router: Router, public publicservice: PublicService) {
+    console.log(this.router.url.split('/'));
+   }
 
   ngOnInit(): void {
   }
   Dashboard() {
-    this.router.navigate(['login'], { fragment: 'dash' });
+    this.router.navigate(['login'], { fragment: 'login' });
   }
 }
