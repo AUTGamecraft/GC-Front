@@ -31,6 +31,7 @@ export class SignUpPageComponent implements OnInit {
   emailFormControl4 = new FormControl('', [
     Validators.required,
   ]);
+  scrHeight: any;
   constructor(private router: Router, public publicservice: PublicService,private snackbar:MatSnackBar,private dialog : MatDialog) {
     router.events.subscribe(s => {
       if (s instanceof NavigationEnd) {
@@ -79,6 +80,8 @@ export class SignUpPageComponent implements OnInit {
   }
 
   signUp() {
+    scrHeight:window.innerHeight;
+    scrWidth:window.innerWidth;
     if (this.emailFormControl1.status == "VALID" && this.emailFormControl2.status == "VALID" && this.emailFormControl3.status == "VALID" && this.emailFormControl4.status == "VALID") {
       this.publicservice.SignUp().then(r => {
         if (r.error == null) {
@@ -87,7 +90,12 @@ export class SignUpPageComponent implements OnInit {
       });
     }
     else{
-      this.snackbar.openFromComponent(ErrorDialogComponent,{duration:1000,data:'فیلد ها را پر کنید',panelClass:['snackbar'],verticalPosition:'top',direction:'rtl'});
+      if (  window.innerWidth<992){
+        this.snackbar.openFromComponent(ErrorDialogComponent,{duration:2000,data:'فیلد ها را پر کنید',panelClass:['snackbar'],verticalPosition:'bottom',direction:'rtl'});
+      }
+      else{
+      this.snackbar.openFromComponent(ErrorDialogComponent,{duration:2000,data:'فیلد ها را پر کنید',panelClass:['snackbar'],verticalPosition:'top',direction:'rtl'});
+      }
     }
 
   }
