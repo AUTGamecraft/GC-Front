@@ -22,6 +22,7 @@ export class DashboardEventComponent implements OnInit {
         this.userName = r.data.first_name;
         const image = document.getElementById('image') as HTMLImageElement;
         image.src = r.data.profile;
+        publicservice.isStaff = r.data.
         console.log(image.src);
       });
     }
@@ -72,6 +73,7 @@ export class DashboardEventComponent implements OnInit {
     reader.readAsDataURL(file); 
     // console.log(file); 
     this.publicservice.fileName = file.name;
+    this.publicservice.file = file;
     this.publicservice.UpdateImage();
   }
 }

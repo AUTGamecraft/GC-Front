@@ -5,7 +5,8 @@ import { NavigationEnd, Router } from '@angular/router';
 import * as moment from 'jalali-moment';
 import { timeout } from 'rxjs/operators';
 import {MatSidenavModule} from '@angular/material/sidenav';
-
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ErrorDialogComponent } from '../error-dialog/error-dialog.component'
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -30,7 +31,8 @@ export class HomeComponent implements OnInit {
   workshopsPresenters: any = [];
   noShadow = 'noshadow';
   userName: string = "";
-  constructor(public publicservice: PublicService, public router: Router) {
+  constructor(public publicservice: PublicService, public router: Router,public snackbar:MatSnackBar) {
+    this.time = parseInt(''+(new Date("2021-03-06T12:00:00Z").getTime()- new Date().getTime())/1000); 
     publicservice.getTalks().then((r) => {
       console.log(r);
       this.talksArray = r.data;
@@ -79,15 +81,7 @@ export class HomeComponent implements OnInit {
             break;
         }
       }
-      // router.events.subscribe(s => {
-      //   if (s instanceof NavigationEnd) {
-      //     const tree = router.parseUrl(router.url);
-      //     if (tree.fragment) {
-      //       const element = document.querySelector("#" + tree.fragment);
-      //       if (element) { element.scrollIntoView(); }
-      //     }
-      //   }
-      // });
+
     })
     setInterval(() => this.time = this.time - 1, 1000);
     if(publicservice.logedIn){
@@ -95,8 +89,7 @@ export class HomeComponent implements OnInit {
         this.userName = r.data.first_name;
       })
     }
-    // console.log(this.talksPresenters);
-    // console.log(this.workshopsPresenters);
+
   }
 
   ngOnInit(): void {
@@ -173,7 +166,8 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['people'], { fragment: 'people' });
   }
   Rules() {
-    this.router.navigate(['rules'], { fragment: 'rules' });
+    this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+    // this.router.navigate(['rules'], { fragment: 'rules' });
   }
   Home() {
     this.router.navigate(['home'], { fragment: 'home' });

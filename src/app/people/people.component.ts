@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PublicService } from '../public.service';
 import { Router, NavigationEnd } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ErrorDialogComponent } from '../error-dialog/error-dialog.component'
 @Component({
   selector: 'app-people',
   templateUrl: './people.component.html',
@@ -8,7 +10,7 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class PeopleComponent implements OnInit {
 
-  constructor(public publicservice: PublicService, public router: Router) {
+  constructor(public publicservice: PublicService, public router: Router,public snackbar:MatSnackBar) {
     // router.events.subscribe(s => {
     //   if (s instanceof NavigationEnd) {
     //     const tree = router.parseUrl(router.url);
@@ -51,7 +53,8 @@ export class PeopleComponent implements OnInit {
     this.router.navigate(['home'],{fragment:'schedule'});
   }
   Rules(){
-    this.router.navigate(['rules'],{fragment:'rules'});
+    this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+    // this.router.navigate(['rules'],{fragment:'rules'});
   }
   Home(){
     this.router.navigate(['home'],{fragment:'home'});

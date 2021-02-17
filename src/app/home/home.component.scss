@@ -170,7 +170,7 @@
     margin: 10px;
 }
 .collapse-background {
-    padding: 0 50px;
+    padding: 20px 50px;
     border-bottom-left-radius: 24px;
     background-color: #fafafa;
 }
@@ -325,7 +325,7 @@
 .supporters-card-div {
     text-align: center;
     display: flex;
-    justify-content: center;
+    justify-content:space-evenly;
     padding: 20px;
 }
 .supporters-card-image {
@@ -748,11 +748,20 @@
 }
 .collapse-cost {
     margin-top: 0;
+    width: fit-content;
     color: #00b583;
     font-family: "Vazir-Black";
     font-size: 20px;
     text-align: left;
+    border: solid 2px #00b583 !important;
+    float: left;
+    padding: 10px;
+    border-radius: 16px;
 }
+// .collapse-cost-div{
+//     width: 100%;
+//     justify-content: left;
+// }
 @media only screen and (max-width: 1113px) {
     .supporters-card-div {
         flex-direction: column;
@@ -1060,6 +1069,15 @@
     }
     .logo {
         padding: 0;
+    }
+    .collapse-presenters-card-div{
+        flex-direction: column;
+    }
+    .collapse-cost{
+        margin: auto;
+        text-align: center;
+        justify-content: center;
+        float: initial;
     }
 }
 @media only screen and (max-width: 518px) {
