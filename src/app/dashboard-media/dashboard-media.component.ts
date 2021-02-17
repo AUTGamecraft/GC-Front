@@ -60,5 +60,8 @@ export class DashboardMediaComponent implements OnInit {
     // console.log(file); 
     this.publicservice.fileName = file.name;
     this.publicservice.UpdateImage();
+  }  
+  Cart() {
+    this.router.navigate(['cart']);
   }
 }

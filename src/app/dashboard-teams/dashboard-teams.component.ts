@@ -87,4 +87,7 @@ export class DashboardTeamsComponent implements OnInit {
   Add(option:string){
     console.log(option);
   }
+  Cart() {
+    this.router.navigate(['cart']);
+  }
 }
