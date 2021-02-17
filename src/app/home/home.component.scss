@@ -1134,5 +1134,12 @@
       margin-left: 70%;
       margin-right: 30%;
       direction: rtl;
+      border: solid 2px var(--primary-light);
       
+  }
+  .side-divider{
+      width: 100%;
+      height: 0;
+      margin: 20px 0 0;
+      border: solid 2px var(--primary-light);
   }
