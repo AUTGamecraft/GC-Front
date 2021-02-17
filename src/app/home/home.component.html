@@ -70,20 +70,53 @@
                     <div class="logo" routerLink="home">
                         <img class="logo-image" src="assets/svg/dark-3d.svg">
                     </div>
-                   <mat-sidenav-container class="example-sidenav-container">
+                
+                </div>
+                <mat-sidenav-container class="example-sidenav-container">
                     <mat-sidenav #snav >
-                        <mat-nav-list>
-                          
-                        </mat-nav-list>
+                      
                     </mat-sidenav>
+    
+                    <mat-sidenav-content class="side-route" >
+                        <div class="side-button">
+                            <button mat-button (click)="login()"
+                                class="normal-button">{{publicservice.Texts.Texts["header6"]}}</button>
+                          <button mat-flat-button (click)="Signup()"
+                                class="normal-button">{{publicservice.Texts.Texts["header7"]}}</button>
+                        </div>
+                        
+                        <div class="side-button">
+                            <button mat-button class="normal-button"
+                                (click)="Schedule(schedule)">{{publicservice.Texts.Texts["header2"]}}</button>
+                        </div>
+                        <div class="side-button">
+                            <button mat-button (click)="Rules()"
+                                class="normal-button">{{publicservice.Texts.Texts["header11"]}}</button>
+                        </div>
+                        <div class="side-button">
+                            <button mat-button (click)="Workshop(workshop)"
+                                class="normal-button">{{publicservice.Texts.Texts["header3"]}}</button>
+                        </div>
+                        <div class="side-button">
+                            <button mat-button (click)="Talk(talk)"
+                                class="normal-button">{{publicservice.Texts.Texts["header4"]}}</button>
+                        </div>
+                        <div class="side-button">
+                            <button mat-button (click)="Talk(footer)"
+                                class="normal-button">{{publicservice.Texts.Texts["header5"]}}</button>
+                        </div>
+                        <div class="side-button">
+                            <button mat-button (click)="People()"
+                                class="normal-button">{{publicservice.Texts.Texts["header12"]}}</button>
+                        </div>   
+                     
+                  
 
-                    <mat-sidenav-content>
-                   
                     </mat-sidenav-content>
                     </mat-sidenav-container>
-                </div>
 
             </div>
+         
             <div class="subintro-div">
                 <div class="intro-discription-div">
                     <div class="intro-discription-about-div">
