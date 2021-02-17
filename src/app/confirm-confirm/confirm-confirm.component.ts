@@ -16,7 +16,7 @@ export class ConfirmConfirmComponent implements OnInit {
     this.route.queryParamMap.subscribe(params => {
       this.hash= params['activation'];
       });
-      console.log(this.hash);
+      console.log(this.route.queryParamMap);
   }
   Dashboard() {
     this.publicservice.ActivateUser(this.hash).then((r)=>{
