@@ -125,6 +125,11 @@ export class HomeComponent implements OnInit {
     const navigationDetails: string[] = ['login'];
     this.router.navigate(navigationDetails);
   }
+  display = false;
+  onPress() {
+   
+    this.display = !this.display;
+  }
 
   Dashboard() {
     this.router.navigate(['dashboard-event'], { fragment: 'dash' });

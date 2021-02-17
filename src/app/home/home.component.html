@@ -64,7 +64,7 @@
                     </div>
                 </div>
                 <div class="whole-header-phone">
-                    <button mat-button (click)="snav.toggle()">
+                    <button mat-button (click)=" onPress()">
                         <mat-icon style="color: white;font-size: 32px;" [inline]="true">menu</mat-icon>
                     </button>
                     <div class="logo" routerLink="home">
@@ -72,6 +72,7 @@
                     </div>
                 
                 </div>
+                <div *ngIf="display"> 
                 <mat-sidenav-container class="example-sidenav-container">
                     <mat-sidenav #snav >
                       
@@ -121,6 +122,7 @@
 
                     </mat-sidenav-content>
                     </mat-sidenav-container>
+                </div>
 
             </div>
          
