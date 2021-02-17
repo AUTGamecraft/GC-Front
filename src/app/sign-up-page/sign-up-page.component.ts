@@ -33,15 +33,7 @@ export class SignUpPageComponent implements OnInit {
   ]);
   scrHeight: any;
   constructor(private router: Router, public publicservice: PublicService,private snackbar:MatSnackBar,private dialog : MatDialog) {
-    router.events.subscribe(s => {
-      if (s instanceof NavigationEnd) {
-        const tree = router.parseUrl(router.url);
-        if (tree.fragment) {
-          const element = document.querySelector("#" + tree.fragment);
-          if (element) { element.scrollIntoView(); }
-        }
-      }
-    });
+
   }
   login(): void {
     const navigationDetails: string[] = ['login'];

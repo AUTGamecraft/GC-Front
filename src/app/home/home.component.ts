@@ -79,15 +79,7 @@ export class HomeComponent implements OnInit {
             break;
         }
       }
-      // router.events.subscribe(s => {
-      //   if (s instanceof NavigationEnd) {
-      //     const tree = router.parseUrl(router.url);
-      //     if (tree.fragment) {
-      //       const element = document.querySelector("#" + tree.fragment);
-      //       if (element) { element.scrollIntoView(); }
-      //     }
-      //   }
-      // });
+
     })
     setInterval(() => this.time = this.time - 1, 1000);
     if(publicservice.logedIn){
@@ -95,8 +87,7 @@ export class HomeComponent implements OnInit {
         this.userName = r.data.first_name;
       })
     }
-    // console.log(this.talksPresenters);
-    // console.log(this.workshopsPresenters);
+
   }
 
   ngOnInit(): void {
