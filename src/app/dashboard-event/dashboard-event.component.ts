@@ -22,6 +22,7 @@ export class DashboardEventComponent implements OnInit {
         this.userName = r.data.first_name;
         const image = document.getElementById('image') as HTMLImageElement;
         image.src = r.data.profile;
+        publicservice.isStaff = r.data.
         console.log(image.src);
       });
     }

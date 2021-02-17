@@ -26,6 +26,7 @@ export class PublicService {
   public logedIn: boolean = false;
   public fileName:string = "";
   public file: File;
+  public isStaff:boolean;
   Mockup() {
 
 

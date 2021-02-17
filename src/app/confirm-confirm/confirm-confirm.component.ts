@@ -15,7 +15,7 @@ export class ConfirmConfirmComponent implements OnInit {
   ngOnInit(): void {
   }
   Dashboard() {
-    this.publicservice.ActivateUser(this.router.url.split('/').pop()).then((r)=>{
+    this.publicservice.ActivateUser('981fbc441cc86f95cdbc858c9e71730e').then((r)=>{
       console.log(r);
       this.router.navigate(['login'], { fragment: 'login' });
     })
