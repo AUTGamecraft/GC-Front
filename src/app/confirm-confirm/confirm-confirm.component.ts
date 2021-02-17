@@ -13,10 +13,10 @@ export class ConfirmConfirmComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.route.queryParamMap.subscribe(params => {
+    this.route.queryParams.subscribe(params => {
       this.hash= params['activation'];
       });
-      console.log(this.route.queryParamMap);
+      console.log(this.route.queryParams);
   }
   Dashboard() {
     this.publicservice.ActivateUser(this.hash).then((r)=>{
