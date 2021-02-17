@@ -25,6 +25,7 @@ export class PublicService {
   public Token: String = "";
   public logedIn: boolean = false;
   public fileName:string = "";
+  public file: File;
   Mockup() {
 
 

@@ -72,6 +72,7 @@ export class DashboardEventComponent implements OnInit {
     reader.readAsDataURL(file); 
     // console.log(file); 
     this.publicservice.fileName = file.name;
+    this.publicservice.file = file;
     this.publicservice.UpdateImage();
   }
 }

@@ -1,7 +1,7 @@
 <div style="width:100%;overflow: hidden;">
-    <div class="home"  id="home" #home>
+    <div class="home" id="home" #home>
         <div class="intro">
-        
+
             <div class="header">
                 <div class="whole-header" [class]="getNavClass()">
                     <div class="big-right-header">
@@ -53,8 +53,7 @@
                         </div>
                         <div class="after-login" *ngIf="publicservice.logedIn">
                             <div class="left-button">
-                                <button mat-button [disabled]="true"
-                                    class="normal-button">{{userName}}</button>
+                                <button mat-button [disabled]="true" class="normal-button">{{userName}}</button>
                             </div>
 
                             <div>
@@ -72,7 +71,7 @@
                         <img class="logo-image" src="assets/svg/dark-3d.svg">
                     </div>
                 </div>
-            
+
             </div>
             <div class="subintro-div">
                 <div class="intro-discription-div">
@@ -123,7 +122,7 @@
         <div>
             <img id="schedule" #schedule class="purple-wave-under-intro" src="assets/svg/wave-purple.svg">
         </div>
-        <div class="event-schedule-div" >
+        <div class="event-schedule-div">
             <div class="event-schedule-title-div">
                 <h1 class="event-schedule-title">
                     {{publicservice.Texts.Texts["home8"]}}</h1>
@@ -424,9 +423,11 @@
                                         <p class="collapse-about">
                                             {{workshop.content}}</p>
                                     </div>
-                                    <h3 class="collapse-cost">
-                                        {{publicservice.Texts.Texts['home57']}}{{workshop.cost}}{{publicservice.Texts.Texts['home58']}}
-                                    </h3>
+                                    <div class="collapse-cost-div">
+                                        <h3 class="collapse-cost">
+                                            {{publicservice.Texts.Texts['home57']}}{{workshop.cost}}{{publicservice.Texts.Texts['home58']}}
+                                        </h3>
+                                    </div>
                                     <div class="collapse-presenters-title-div">
                                         <h1 class="collapse-persenters-title">
                                             {{publicservice.Texts.Texts["home23"]}}
@@ -496,13 +497,13 @@
                             </div>
                             <div [class]="workshopsActive[i]">
                                 <div class="collapse-background">
-                                    <h3 class="collapse-cost">
-                                        {{publicservice.Texts.Texts['home57']}}{{workshop.cost}}{{publicservice.Texts.Texts['home58']}}
-                                    </h3>
                                     <div>
                                         <p class="collapse-about">
                                             {{workshop.content}}</p>
                                     </div>
+                                    <h3 class="collapse-cost">
+                                        {{publicservice.Texts.Texts['home57']}}{{workshop.cost}}{{publicservice.Texts.Texts['home58']}}
+                                    </h3>
                                     <div class="collapse-presenters-title-div">
                                         <h1 class="collapse-persenters-title">
                                             {{publicservice.Texts.Texts["home23"]}}
@@ -531,7 +532,7 @@
         <div>
             <img #talk id="talk" class="green-wave-under-workshops" src="assets/svg/wave-green.svg">
         </div>
-        <div class="talks-title-div"  >
+        <div class="talks-title-div">
             <h1 class="talks-title">
                 {{publicservice.Texts.Texts["home26"]}}</h1>
         </div>
@@ -560,13 +561,13 @@
                     </div>
                     <div [class]="talksActive[i]">
                         <div class="collapse-background">
-                            <h3 class="collapse-cost">
-                                {{publicservice.Texts.Texts['home57']}}{{talk.cost}}{{publicservice.Texts.Texts['home58']}}
-                            </h3>
                             <div>
                                 <p class="collapse-about">
                                     {{talk.content}}</p>
                             </div>
+                            <h3 class="collapse-cost">
+                                {{publicservice.Texts.Texts['home59']}}
+                            </h3>
                             <div class="collapse-presenters-title-div">
                                 <h1 class="collapse-persenters-title">
                                     {{publicservice.Texts.Texts["home34"]}}
@@ -624,13 +625,13 @@
                     </div>
                     <div [class]="talksActive[i]">
                         <div class="collapse-background">
-                            <h3 class="collapse-cost">
-                                {{publicservice.Texts.Texts['home57']}}{{talk.cost}}{{publicservice.Texts.Texts['home58']}}
-                            </h3>
                             <div>
                                 <p class="collapse-about">
                                     {{talk.content}}</p>
                             </div>
+                            <h3 class="collapse-cost">
+                                {{publicservice.Texts.Texts['home59']}}
+                            </h3>
                             <div class="collapse-presenters-title-div">
                                 <h1 class="collapse-persenters-title">
                                     {{publicservice.Texts.Texts["home34"]}}

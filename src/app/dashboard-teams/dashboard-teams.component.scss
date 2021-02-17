@@ -10,7 +10,7 @@
     /*change color of underline when focused*/
     background-color: #52006b !important;
 }
-.whole{
+.whole {
     background-color: #52006b;
     background-image: url("/assets/svg/pattern.svg");
 }
@@ -141,7 +141,9 @@
     margin: auto 0;
 }
 .form-field-div {
-    margin-top: 5%;
+    // margin-top: 5%;
+    padding-left: 28px;
+    width: 50%;
 }
 .form-field {
     text-align: right;
@@ -272,7 +274,7 @@
 .supporters-card-div {
     text-align: center;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 .supportes-card-image-div {
     margin: 20px;
@@ -307,8 +309,24 @@
     font-size: large;
 }
 //end of footer
+.team-create-whole-div {
+    // width: fit-content;
+    display: flex;
+    // justify-content: space-between;
+}
+.no-one-text {
+    // text-align: ri;
+    width: 100%;
+    color: #a04db9;
+    font-family: "Estedad-Regular";
+    font-size: 12px;
+    background-color: white;
+    border-radius: 12px;
+    border: solid 1px #f5f5f5;
+    padding: 10px 60px;
+}
 @media only screen and (max-width: 992px) {
-    .supporters-card-div{
+    .supporters-card-div {
         flex-direction: column;
     }
     .right-part-header {
@@ -371,7 +389,7 @@
         width: 80%;
         padding-top: 0;
     }
-    .footer-whole-div{
+    .footer-whole-div {
         margin-top: -30%;
     }
     .discription-footer-div {
@@ -404,7 +422,7 @@
     .discription-right-footer-about-subtitle {
         font-size: 28px;
     }
-    .discription-right-footer-about-discription{
+    .discription-right-footer-about-discription {
         font-size: 20px;
     }
 }

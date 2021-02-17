@@ -68,7 +68,9 @@ export class DashboardTeamsComponent implements OnInit {
   }
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
-
+    if(this.options.filter(option => option.toLowerCase().indexOf(filterValue) === 0).length == 0){
+      return ['fuck you'];
+    }
     return this.options.filter(option => option.toLowerCase().indexOf(filterValue) === 0);
   }
   Upload() {
@@ -81,5 +83,8 @@ export class DashboardTeamsComponent implements OnInit {
     // console.log(file); 
     this.publicservice.fileName = file.name;
     this.publicservice.UpdateImage();
+  }
+  Add(option:string){
+    console.log(option);
   }
 }

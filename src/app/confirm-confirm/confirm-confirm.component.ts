@@ -9,7 +9,7 @@ import { PublicService } from '../public.service';
 export class ConfirmConfirmComponent implements OnInit {
 
   constructor(private router: Router, public publicservice: PublicService) {
-    publicservice.ActivateUser('fuck').then((r)=>{
+    publicservice.ActivateUser(router.url.split('/').pop()).then((r)=>{
       console.log(r);
     })
    }
