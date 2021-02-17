@@ -64,12 +64,23 @@
                     </div>
                 </div>
                 <div class="whole-header-phone">
-                    <button mat-button>
+                    <button mat-button (click)="snav.toggle()">
                         <mat-icon style="color: white;font-size: 32px;" [inline]="true">menu</mat-icon>
                     </button>
                     <div class="logo" routerLink="home">
                         <img class="logo-image" src="assets/svg/dark-3d.svg">
                     </div>
+                   <mat-sidenav-container class="example-sidenav-container">
+                    <mat-sidenav #snav >
+                        <mat-nav-list>
+                          
+                        </mat-nav-list>
+                    </mat-sidenav>
+
+                    <mat-sidenav-content>
+                   
+                    </mat-sidenav-content>
+                    </mat-sidenav-container>
                 </div>
 
             </div>
