@@ -32,6 +32,7 @@ export class HomeComponent implements OnInit {
   noShadow = 'noshadow';
   userName: string = "";
   constructor(public publicservice: PublicService, public router: Router,public snackbar:MatSnackBar) {
+    this.time = parseInt(''+(new Date("2021-03-06T12:00:00Z").getTime()- new Date().getTime())/1000); 
     publicservice.getTalks().then((r) => {
       console.log(r);
       this.talksArray = r.data;
