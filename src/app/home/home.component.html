@@ -64,8 +64,8 @@
                     </div>
                 </div>
                 <div class="whole-header-phone">
-                    <button mat-button (click)=" onPress()">
-                        <mat-icon style="color: white;font-size: 32px;" [inline]="true">menu</mat-icon>
+                    <button mat-button (click)=" onPress();icon =(icon == 'menu' ? 'close' : 'menu')">
+                        <mat-icon style="color: white;font-size: 32px;" [inline]="true">{{icon}}</mat-icon>
                     </button>
                     <div class="logo" routerLink="home">
                         <img class="logo-image" src="assets/svg/dark-3d.svg">

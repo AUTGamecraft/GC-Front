@@ -128,9 +128,18 @@ export class HomeComponent implements OnInit {
     this.router.navigate(navigationDetails);
   }
   display = false;
+  icon = "menu"
   onPress() {
    
     this.display = !this.display;
+    // if (this.icon=="menu"){
+    //   this.icon="close"
+    // }
+    // else {
+    // this.icon=="menu"
+    // }
+    
+   // return this.icon 
   }
 
   Dashboard() {
