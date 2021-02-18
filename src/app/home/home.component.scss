@@ -1138,7 +1138,7 @@
   }
   .side-divider{
       width: 99%;
-      height: 1px;
+      height: 0.5px;
       //margin: 20px 0 0;
       border: solid 1px ;
       border-color:#a04db9 ;
@@ -1169,11 +1169,14 @@
 }
 .normal-button-1 {
     font-family: "Estedad-Bold";
+    color: #52006b;
+    background-color: #6af9c5;
+    border-radius: 20px;
+    
+    padding: 8px 8px 4px 4px;
     font-size: large;
-    color: white;
-    padding: 9px 9px 9px 9px;
-    // margin-inline: 80px;
-    border-radius: 24px;
     margin-right: 30%;
-    background-color: rgba(255, 255, 255, 0);
+    
+ 
+
 }
