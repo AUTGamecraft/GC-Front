@@ -34,7 +34,7 @@ import { CartComponent } from './cart/cart.component';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { SuccessDialogComponent } from './success-dialog/success-dialog.component';
-
+import { HttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -74,7 +74,8 @@ import { SuccessDialogComponent } from './success-dialog/success-dialog.componen
     MatSnackBarModule,
     MatAutocompleteModule,
     MatBadgeModule,
-    MatSidenavModule
+    MatSidenavModule,
+    HttpClient
   ],
   providers: [
   ],

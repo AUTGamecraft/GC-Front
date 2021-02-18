@@ -7,6 +7,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ErrorDialogComponent } from '../app/error-dialog/error-dialog.component'
 import { formatCurrency, HashLocationStrategy } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 
 
 @Injectable({
@@ -40,7 +41,7 @@ export class PublicService {
 
 
 
-  constructor(private http: Http, public dialog: MatDialog, public snackbar: MatSnackBar) {
+  constructor(private http: Http, public dialog: MatDialog, public snackbar: MatSnackBar,private http2:HttpClient) {
     this.Authorization = localStorage.getItem("Authorization");
     if (this.Authorization != null) {
       this.logedIn = true;
