@@ -41,30 +41,33 @@ export class SignUpPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+  }
+  ngAfterViewInit():void{
     var inputName = document.getElementById("inputName");
     var inputEmail = document.getElementById("inputEmail");
     var inputPhone = document.getElementById("inputPhone");
     var inputPassword = document.getElementById("inputPassword");
     inputEmail.addEventListener("keyup", function (event) {
-      if (event.keyCode == 13) {
+      if (event.key == 'Enter') {
         event.preventDefault();
         document.getElementById("signUpButton").click();
       }
     })
     inputName.addEventListener("keyup", function (event) {
-      if (event.keyCode == 13) {
+      if (event.key == 'Enter') {
         event.preventDefault();
         document.getElementById("signUpButton").click();
       }
     })
     inputPhone.addEventListener("keyup", function (event) {
-      if (event.keyCode == 13) {
+      if (event.key == 'Enter') {
         event.preventDefault();
         document.getElementById("signUpButton").click();
       }
     })
     inputPassword.addEventListener("keyup", function (event) {
-      if (event.keyCode == 13) {
+      if (event.key == 'Enter') {
         event.preventDefault();
         document.getElementById("signUpButton").click();
       }

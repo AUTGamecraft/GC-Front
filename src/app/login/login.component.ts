@@ -29,16 +29,20 @@ export class LoginComponent implements OnInit {
     this.router.navigate(navigationDetails);
   }
   ngOnInit(): void {
+
+
+  }
+  ngAfterViewInit():void{
     var inputEmail = document.getElementById("inputEmail");
     inputEmail.addEventListener("keyup", function (event) {
-      if (event.keyCode == 13) {
+      if (event.key == 'Enter') {
         event.preventDefault();
         document.getElementById("loginButton").click();
       }
     })
     var inputPassword = document.getElementById("inputPassword");
     inputPassword.addEventListener("keyup", function (event) {
-      if (event.keyCode == 13) {
+      if (event.key == 'Enter') {
         event.preventDefault();
         document.getElementById("loginButton").click();
       }

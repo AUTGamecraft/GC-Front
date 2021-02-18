@@ -52,8 +52,7 @@
                             <strong>{{publicservice.Texts.Texts["login6"]}}</strong>
                             {{publicservice.Texts.Texts["login5"]}}
                         </mat-error>
-                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                            [attr.aria-pressed]="hide">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'">
                             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                         </button>
 
@@ -63,7 +62,7 @@
             <div class="buttons">
 
                 <div>
-                    <button mat-flat-button (click)="Login()"
+                    <button mat-flat-button id="loginButton" (click)="Login()"
                         class="green-button">{{publicservice.Texts.Texts["login11"]}}</button>
                 </div>
                 <div class="left-button">
