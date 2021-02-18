@@ -19,11 +19,11 @@
         </div>
         <!-- <a href="https://www.google.com">fuck</a> -->
         <div style="text-align: center;">
-            <div *ngIf="!isError">
+            <div *ngIf="!publicservice.hasError">
                 <button mat-flat-button (click)="Dashboard()"
                     style="font-family: 'Estedad-Bold';color: #52006b;background-color: #6af9c5;border-radius: 24px;padding: 11px 16px;font-size: large;">ورود</button>
             </div>
-            <div *ngIf="isError">
+            <div *ngIf="publicservice.hasError">
                 <button mat-flat-button (click)="Home()"
                     style="font-family: 'Estedad-Bold';color: #52006b;background-color: #6af9c5;border-radius: 24px;padding: 11px 16px;font-size: large;">صفحه اصلی</button>
             </div>
