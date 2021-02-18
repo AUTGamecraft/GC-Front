@@ -6,7 +6,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 // import { AppDialogComponentDialog } from './app-dialog/app-dialog.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ErrorDialogComponent } from '../app/error-dialog/error-dialog.component'
-import { HashLocationStrategy } from '@angular/common';
+import { formatCurrency, HashLocationStrategy } from '@angular/common';
 
 
 @Injectable({
@@ -90,17 +90,15 @@ export class PublicService {
   UpdateImage(): Promise<any> {
     var that = this;
     this.APICalls.UpdateImage = true;
-    let body = JSON.stringify({
-      "profile": this.fileName
-    });
     let headers = new Headers({
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + this.Authorization
+      'Authorization': 'Bearer ' + this.Authorization,
     });
     let options = new RequestOptions({ headers: headers });
-    const uploadData = new FormData();
-    uploadData.append('profile', this.file, this.fileName);
-    let ret: Promise<any> = this.http.put(this.ApiUrl + '/api/users/profile/update/',uploadData, options)
+    var uploadData = new FormData();
+    uploadData.append("profile", this.file,this.fileName);
+    console.log(uploadData);
+    let ret: Promise<any> = this.http.put(this.ApiUrl + '/api/users/profile/update/',uploadData,options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
@@ -226,17 +224,15 @@ export class PublicService {
       'Authorization': 'Bearer ' + this.Authorization
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/users/profile/', options)
+    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/member/registered_list/', options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
-
     ret.then(r => {
       this.APICalls.getUsers = false;
     }).catch(e => {
       this.APICalls.getUsers = false;
       that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-
     });
     return ret;
   }

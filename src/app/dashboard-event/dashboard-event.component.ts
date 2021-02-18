@@ -10,7 +10,7 @@ import { ErrorDialogComponent } from '../error-dialog/error-dialog.component';
 })
 export class DashboardEventComponent implements OnInit {
   talks = 'deactive';
-  fileToUpload: File = null;
+  file: File = null;
   workshops = 'deactive';
   iconW = 'keyboard_arrow_down';
   iconT = 'keyboard_arrow_down';
@@ -72,12 +72,9 @@ export class DashboardEventComponent implements OnInit {
     this.router.navigate(['people'], { fragment: 'people' });
   }
   handleFileInput(imageInput: any) {
-    const file = imageInput.item(0);
-    const reader = new FileReader();
-    reader.readAsDataURL(file); 
-    // console.log(file); 
-    this.publicservice.fileName = file.name;
-    this.publicservice.file = file;
+    this.file = imageInput.item(0);
+    this.publicservice.fileName = this.file.name;
+    this.publicservice.file = this.file;
     this.publicservice.UpdateImage();
   }
   Enter(){

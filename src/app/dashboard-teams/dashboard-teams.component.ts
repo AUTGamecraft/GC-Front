@@ -87,7 +87,7 @@ export class DashboardTeamsComponent implements OnInit {
     this.publicservice.UpdateImage();
   }
   Add(option:string){
-    console.log(option);
+    // console.log(option);
   }
   Cart() {
     this.router.navigate(['cart']);

@@ -420,7 +420,7 @@
                                 <h4 class="collapse-subject">
                                     {{workshopsLevel[i]}}</h4>
                                 <div class="register-button-div">
-                                    <button mat-stroked-button
+                                    <button mat-stroked-button (click)="registerWorkshop(i)"
                                         class="register-button">{{publicservice.Texts.Texts["home20"]}}</button>
                                 </div>
                                 <button mat-button class="collapse"
