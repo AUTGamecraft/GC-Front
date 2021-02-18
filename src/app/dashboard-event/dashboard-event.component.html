@@ -60,9 +60,9 @@
                             {{publicservice.Texts.Texts["dash-event9"]}}</h4>
                         <h4 class="component-subject">
                             {{publicservice.Texts.Texts["dash-event11"]}}</h4>
-                        <button mat-stroked-button
+                        <button mat-stroked-button 
                             class="register-button">{{publicservice.Texts.Texts["dash-event10"]}}</button>
-                        <button mat-stroked-button
+                        <button mat-stroked-button (click)="Enter()"
                             class="register-button">{{publicservice.Texts.Texts["dash-event12"]}}</button>
                         <button mat-button class="discription"
                             (click)="workshops =(workshops == 'active' ? 'deactive' : 'active');iconW = (iconW == 'keyboard_arrow_down' ? 'keyboard_arrow_up' : 'keyboard_arrow_down') ">{{publicservice.Texts.Texts["dash-event13"]}}
@@ -167,7 +167,7 @@
                             {{publicservice.Texts.Texts["dash-event21"]}}</h4>
                         <h4 class="component-subject">
                             {{publicservice.Texts.Texts["dash-event22"]}}</h4>
-                        <button mat-stroked-button
+                        <button mat-stroked-button (click)="Enter()"
                             class="register-button">{{publicservice.Texts.Texts["dash-event23"]}}</button>
                         <button mat-button class="discription"
                             (click)="talks = (talks == 'active' ? 'deactive' : 'active') ;iconT = (iconT == 'keyboard_arrow_down' ? 'keyboard_arrow_up' : 'keyboard_arrow_down') ">{{publicservice.Texts.Texts["dash-event24"]}}

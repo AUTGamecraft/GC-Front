@@ -79,4 +79,7 @@ export class DashboardEventComponent implements OnInit {
     this.publicservice.file = file;
     this.publicservice.UpdateImage();
   }
+  Enter(){
+    this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+  }
 }
