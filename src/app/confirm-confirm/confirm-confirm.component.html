@@ -7,13 +7,26 @@
     </div>
     <div
         style="background-color: #fafafa;text-align: center;padding: 20px 70px;width: fit-content;margin: auto;border-radius: 16px;margin-top: 56px;">
-        <p style="color: #52006b;font-family: 'Estedad-SemiBold';margin-bottom: 0;">!سلام دیبز</p>
-        <p style="color: #52006b;font-family: 'Estedad-SemiBold';margin-bottom: 0;">ایمیل شما با موفقیت تایید شد</p>
-        <p style="color: #52006b;font-family: 'Estedad-Black';">برای ورود دکمه ی زیر را فشار دهید</p>
+        <div *ngIf="!isError">
+            <p style="color: #52006b;font-family: 'Estedad-SemiBold';margin-bottom: 0;">!سلام دیبز</p>
+            <p style="color: #52006b;font-family: 'Estedad-SemiBold';margin-bottom: 0;">ایمیل شما با موفقیت تایید شد</p>
+            <p style="color: #52006b;font-family: 'Estedad-Black';">برای ورود دکمه ی زیر را فشار دهید</p>
+        </div>
+        <div *ngIf="isError">
+            <p style="color: #52006b;font-family: 'Estedad-SemiBold';margin-bottom: 0;">!سلام دیبز</p>
+            <p style="color: #52006b;font-family: 'Estedad-SemiBold';margin-bottom: 0;">متاسفانه خطایی رخ داده!</p>
+            <p style="color: #52006b;font-family: 'Estedad-Black';">برای ورود به صفحه اصلی دکمه ی زیر را فشار دهید</p>
+        </div>
         <!-- <a href="https://www.google.com">fuck</a> -->
         <div style="text-align: center;">
-            <button mat-flat-button (click)="Dashboard()"
-                style="font-family: 'Estedad-Bold';color: #52006b;background-color: #6af9c5;border-radius: 24px;padding: 11px 16px;font-size: large;">ورود</button>
+            <div *ngIf="!isError">
+                <button mat-flat-button (click)="Dashboard()"
+                    style="font-family: 'Estedad-Bold';color: #52006b;background-color: #6af9c5;border-radius: 24px;padding: 11px 16px;font-size: large;">داشبورد</button>
+            </div>
+            <div *ngIf="isError">
+                <button mat-flat-button (click)="Home()"
+                    style="font-family: 'Estedad-Bold';color: #52006b;background-color: #6af9c5;border-radius: 24px;padding: 11px 16px;font-size: large;">صفحه اصلی</button>
+            </div>
         </div>
     </div>
 </div>
