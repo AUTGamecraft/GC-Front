@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PublicService } from '../public.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ErrorDialogComponent } from '../error-dialog/error-dialog.component';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -8,7 +10,7 @@ import { PublicService } from '../public.service';
 })
 export class CartComponent implements OnInit {
   userName: string = "";
-  constructor(private router: Router, public publicservice: PublicService) { 
+  constructor(private router: Router, public publicservice: PublicService,public snackbar:MatSnackBar) { 
     if (!publicservice.logedIn) {
       this.router.navigate(['login']);
     }
@@ -54,7 +56,8 @@ export class CartComponent implements OnInit {
     this.router.navigate(navigationDetails2);
   }
   Teams() {
-    this.router.navigate(['dashboard-teams']);
+    this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+    // this.router.navigate(['dashboard-teams']);
   }
   Cart() {
     this.router.navigate(['cart']);

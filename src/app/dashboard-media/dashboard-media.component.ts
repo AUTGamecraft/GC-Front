@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import{ Router} from '@angular/router';
 import { PublicService } from '../public.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ErrorDialogComponent } from '../error-dialog/error-dialog.component'
 @Component({
   selector: 'app-dashboard-media',
   templateUrl: './dashboard-media.component.html',
@@ -8,7 +10,7 @@ import { PublicService } from '../public.service';
 })
 export class DashboardMediaComponent implements OnInit {
   userName: string = "";
-  constructor(private router : Router,public publicservice: PublicService) { 
+  constructor(private router : Router,public publicservice: PublicService,public snackbar:MatSnackBar) { 
     if(!publicservice.logedIn){
       this.router.navigate(['login']);
     }
@@ -48,7 +50,8 @@ export class DashboardMediaComponent implements OnInit {
     this.router.navigate(['home'],{fragment:'home'});
   }
   Teams(){
-    this.router.navigate(['dashboard-teams']);
+    this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+    // this.router.navigate(['dashboard-teams']);
   }
   Upload() {
     document.getElementById('imgUpload').click();

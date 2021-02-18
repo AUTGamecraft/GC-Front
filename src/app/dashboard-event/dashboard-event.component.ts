@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PublicService } from '../public.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ErrorDialogComponent } from '../error-dialog/error-dialog.component';
 @Component({
   selector: 'app-dashboard-event',
   templateUrl: './dashboard-event.component.html',
@@ -13,7 +15,7 @@ export class DashboardEventComponent implements OnInit {
   iconW = 'keyboard_arrow_down';
   iconT = 'keyboard_arrow_down';
   userName: string = "";
-  constructor(private router: Router, public publicservice: PublicService) {
+  constructor(private router: Router, public publicservice: PublicService,public snackbar:MatSnackBar) {
     if (!publicservice.logedIn) {
       this.router.navigate(['login']);
     }
@@ -56,7 +58,8 @@ export class DashboardEventComponent implements OnInit {
     this.router.navigate(['home'], { fragment: 'home' });
   }
   Teams() {
-    this.router.navigate(['dashboard-teams']);
+    this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+    // this.router.navigate(['dashboard-teams']);
   }
   Cart() {
     this.router.navigate(['cart']);

@@ -83,6 +83,8 @@
     box-shadow: none;
     height: 0;
 }
-::ng-deep #mat-badge-content-0{
+
+::ng-deep .mat-badge-content.mat-badge-active{
     background-color: #b00020 !important;
+    font-family: 'Vazir-Black';
 }
