@@ -7,12 +7,12 @@
     </div>
     <div
         style="background-color: #fafafa;text-align: center;padding: 20px 70px;width: fit-content;margin: auto;border-radius: 16px;margin-top: 56px;">
-        <div *ngIf="!isError">
+        <div *ngIf="!publicservice.hasError">
             <p style="color: #52006b;font-family: 'Estedad-SemiBold';margin-bottom: 0;">!سلام دیبز</p>
             <p style="color: #52006b;font-family: 'Estedad-SemiBold';margin-bottom: 0;">ایمیل شما با موفقیت تایید شد</p>
             <p style="color: #52006b;font-family: 'Estedad-Black';">برای ورود دکمه ی زیر را فشار دهید</p>
         </div>
-        <div *ngIf="isError">
+        <div *ngIf="publicservice.hasError">
             <p style="color: #52006b;font-family: 'Estedad-SemiBold';margin-bottom: 0;">!سلام دیبز</p>
             <p style="color: #52006b;font-family: 'Estedad-SemiBold';margin-bottom: 0;">متاسفانه خطایی رخ داده!</p>
             <p style="color: #52006b;font-family: 'Estedad-Black';">برای ورود به صفحه اصلی دکمه ی زیر را فشار دهید</p>
