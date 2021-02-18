@@ -8,7 +8,7 @@ import { PublicService } from '../public.service';
 })
 export class ConfirmConfirmComponent implements OnInit {
   hash: string = '';
-  isError:boolean;
+  isError: boolean;
   constructor(private router: Router, public publicservice: PublicService, private route: ActivatedRoute) {
 
   }
@@ -17,20 +17,13 @@ export class ConfirmConfirmComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.hash = params['activation'];
     });
-    this.publicservice.ActivateUser(this.hash).then((r) => {
-      if(r.error!=null){
-        this.isError = true;
-      }
-      else{
-        this.isError = false;
-      }
-    })
-    console.log(this.route.queryParams);
+    this.publicservice.ActivateUser(this.hash);
+    this.isError = this.publicservice.hasError;
   }
   Dashboard() {
     this.router.navigate(['login'], { fragment: 'login' });
   }
-  Home(){
-    this.router.navigate(['home'],{fragment:'home'});
+  Home() {
+    this.router.navigate(['home'], { fragment: 'home' });
   }
 }

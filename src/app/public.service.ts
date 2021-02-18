@@ -6,6 +6,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 // import { AppDialogComponentDialog } from './app-dialog/app-dialog.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ErrorDialogComponent } from '../app/error-dialog/error-dialog.component'
+import { HashLocationStrategy } from '@angular/common';
 
 
 @Injectable({
@@ -28,6 +29,7 @@ export class PublicService {
   public file: File;
   public isStaff:boolean;
   public userName:string = "";
+  public hasError:boolean;
   Mockup() {
 
 
@@ -106,6 +108,7 @@ export class PublicService {
     console.log(r);
   }).catch(e => {
     this.APICalls.SignUp = false;
+    this.hasError = true;
     that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
   });
   return ret;
