@@ -9,6 +9,7 @@ import { PublicService } from '../public.service';
 export class ConfirmConfirmComponent implements OnInit {
   hash: string = '';
   isError: boolean;
+  userName:string = '';
   constructor(private router: Router, public publicservice: PublicService, private route: ActivatedRoute) {
 
   }
@@ -17,7 +18,9 @@ export class ConfirmConfirmComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.hash = params['activation'];
     });
-    this.publicservice.ActivateUser(this.hash);
+    this.publicservice.ActivateUser(this.hash).then((r)=>{
+      this.userName = r.data.first_name;
+    })
     this.isError = this.publicservice.hasError;
   }
   Dashboard() {
