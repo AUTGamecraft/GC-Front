@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { DashboardEventComponent } from './dashboard-event.component';
 
@@ -6,7 +6,7 @@ describe('DashboardEventComponent', () => {
   let component: DashboardEventComponent;
   let fixture: ComponentFixture<DashboardEventComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ DashboardEventComponent ]
     })
