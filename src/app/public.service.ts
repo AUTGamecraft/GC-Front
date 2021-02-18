@@ -7,6 +7,8 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ErrorDialogComponent } from '../app/error-dialog/error-dialog.component'
 import { formatCurrency, HashLocationStrategy } from '@angular/common';
+import { Observable } from 'rxjs';
+import { HttpClient, HttpEvent, HttpParams, HttpRequest } from '@angular/common/http';
 
 
 @Injectable({
@@ -40,7 +42,7 @@ export class PublicService {
 
 
 
-  constructor(private http: Http, public dialog: MatDialog, public snackbar: MatSnackBar) {
+  constructor(private http: Http, public dialog: MatDialog, public snackbar: MatSnackBar,private http2 : HttpClient) {
     this.Authorization = localStorage.getItem("Authorization");
     if (this.Authorization != null) {
       this.logedIn = true;
@@ -88,7 +90,7 @@ export class PublicService {
     return Promise.reject(errMsg);
   }
 
-  UpdateImage(): Promise<any> {
+  UpdateImage():void {
     var that = this;
     this.APICalls.UpdateImage = true;
     let headers = new Headers({
@@ -100,19 +102,13 @@ export class PublicService {
     let options = new RequestOptions({ headers: headers });
     var uploadData = new FormData();
     uploadData.append("profile", this.file,this.fileName);
-    let ret: Promise<any> = this.http.put(this.ApiUrl + '/api/users/profile/update/',uploadData,options)
-      .toPromise()
-      .then((r) => this.extractData(r, this))
-      .catch(this.handleError);
-
-    ret.then(r => {
-      this.APICalls.SignUp = false;
-      console.log(r);
-    }).catch(e => {
-      this.APICalls.SignUp = false;
-      that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-    });
-    return ret;
+    const req = new HttpRequest('PUT', this.ApiUrl + '/api/users/profile/update/', uploadData,{headers:<any>{
+      'Content-Type': 'multipart/form-data',
+      'Authorization': 'Bearer ' + this.Authorization,
+      "Accept": "application/json, text/plain, */*",
+      "Accept-Language": "en-US,en;q=0.9,fa;q=0.8",
+    }});
+    this.http2.request(req);
   }
 
   SignUp(): Promise<any> {

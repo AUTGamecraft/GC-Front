@@ -1,25 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule , ReactiveFormsModule} from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatButtonModule} from '@angular/material/button';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatButtonModule } from '@angular/material/button';
 import { LoginComponent } from './login/login.component';
-import {MatListModule} from '@angular/material/list';
-import {MatSelectModule} from '@angular/material/select';
+import { MatListModule } from '@angular/material/list';
+import { MatSelectModule } from '@angular/material/select';
 import { Http, HttpModule, Headers, RequestOptions, Response, ConnectionBackend } from '@angular/http';
-import {MatIconModule} from '@angular/material/icon';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatCardModule} from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
 import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
 import { HomeComponent } from './home/home.component';
-import {MatExpansionModule} from '@angular/material/expansion';
-import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
-import {FaNumPipe} from 'ngx-persian';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { FaNumPipe } from 'ngx-persian';
 import { DashboardEventComponent } from './dashboard-event/dashboard-event.component';
 import { DashboardMediaComponent } from './dashboard-media/dashboard-media.component';
 import { ErrorDialogComponent } from './error-dialog/error-dialog.component';
@@ -27,13 +27,14 @@ import { PeopleComponent } from './people/people.component';
 import { RulesComponent } from './rules/rules.component';
 import { InvalidPageComponent } from './invalid-page/invalid-page.component';
 import { DashboardTeamsComponent } from './dashboard-teams/dashboard-teams.component';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { EmailConfirmComponent } from './email-confirm/email-confirm.component';
 import { ConfirmConfirmComponent } from './confirm-confirm/confirm-confirm.component';
 import { CartComponent } from './cart/cart.component';
-import {MatBadgeModule} from '@angular/material/badge';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { SuccessDialogComponent } from './success-dialog/success-dialog.component';
+import { HttpClient, HttpEvent, HttpParams, HttpRequest } from '@angular/common/http';
 
 
 @NgModule({
@@ -52,7 +53,7 @@ import { SuccessDialogComponent } from './success-dialog/success-dialog.componen
     EmailConfirmComponent,
     ConfirmConfirmComponent,
     CartComponent,
-    SuccessDialogComponent,  
+    SuccessDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -74,12 +75,12 @@ import { SuccessDialogComponent } from './success-dialog/success-dialog.componen
     MatSnackBarModule,
     MatAutocompleteModule,
     MatBadgeModule,
-    MatSidenavModule
+    HttpClient
   ],
   providers: [
   ],
   bootstrap: [AppComponent]
   ,
-  entryComponents:[ErrorDialogComponent],
+  entryComponents: [ErrorDialogComponent],
 })
 export class AppModule { }
