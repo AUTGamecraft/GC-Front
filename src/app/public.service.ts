@@ -30,6 +30,7 @@ export class PublicService {
   public isStaff: boolean;
   public userName: string = "";
   public hasError: boolean;
+  public talkPk;
   Mockup() {
 
 
@@ -93,11 +94,16 @@ export class PublicService {
     let headers = new Headers({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + this.Authorization,
+      "Accept": "application/json, text/plain, */*",
+      "Accept-Language": "en-US,en;q=0.9,fa;q=0.8",
+      'Mime-Type': "multipart/form-data",
+      'Process-Data':false,
     });
     let options = new RequestOptions({ headers: headers });
     var uploadData = new FormData();
     uploadData.append("profile", this.file,this.fileName);
-    console.log(uploadData);
+    console.log(this.fileName);
+    console.log(this.file);
     let ret: Promise<any> = this.http.put(this.ApiUrl + '/api/users/profile/update/',uploadData,options)
       .toPromise()
       .then((r) => this.extractData(r, this))
@@ -280,8 +286,73 @@ export class PublicService {
     });
     return ret;
   }
+  EnrollTalk(): Promise<any> {
+    var that = this;
+    this.APICalls.EnrollTalk = true;
+    let body = JSON.stringify({
+    });
+    let headers = new Headers({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + this.Authorization
+    });
+    let options = new RequestOptions({ headers: headers });
+    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/talk/'+this.talkPk+'/enroll/', body, options)
+      .toPromise()
+      .then((r) => this.extractData(r, this))
+      .catch(this.handleError);
 
+    ret.then(r => {
+      this.APICalls.EnrollTalk = false;
+    }).catch(e => {
+      this.APICalls.EnrollTalk = false;
+      that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+    });
+    return ret;
+  }
 
+  EnrollWorkshop(): Promise<any> {
+    var that = this;
+    this.APICalls.EnrollWorkshop = true;
+    let body = JSON.stringify({
+    });
+    let headers = new Headers({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + this.Authorization
+    });
+    let options = new RequestOptions({ headers: headers });
+    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/users/sign_up/', body, options)
+      .toPromise()
+      .then((r) => this.extractData(r, this))
+      .catch(this.handleError);
+
+    ret.then(r => {
+      this.APICalls.EnrollWorkshop = false;
+    }).catch(e => {
+      this.APICalls.EnrollWorkshop = false;
+      that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+    });
+    return ret;
+  }
+  getUserCart(): Promise<any> {
+    var that = this;
+    this.APICalls.getUserTalks = true;
+    let headers = new Headers({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + this.Authorization
+    });
+    let options = new RequestOptions({ headers: headers });
+    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/service/services/', options)
+      .toPromise()
+      .then((r) => this.extractData(r, this))
+      .catch(this.handleError);
+    ret.then(r => {
+      this.APICalls.getUserTalks = false;
+    }).catch(e => {
+      this.APICalls.getUserTalks = false;
+      that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+    });
+    return ret;
+  }
 
 
 

@@ -26,8 +26,11 @@ export class DashboardEventComponent implements OnInit {
         const image = document.getElementById('image') as HTMLImageElement;
         image.src = r.data.profile;
         this.isStaff = r.data.is_staff;
-        console.log(image.src);
+        // console.log(image.src);
       });
+      publicservice.getUserCart().then((r)=>{
+        console.log(r);
+      })
     }
   }
 

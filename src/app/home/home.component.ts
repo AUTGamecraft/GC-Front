@@ -4,9 +4,11 @@ import { PublicService } from '../public.service';
 import { NavigationEnd, Router } from '@angular/router';
 import * as moment from 'jalali-moment';
 import { timeout } from 'rxjs/operators';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ErrorDialogComponent } from '../error-dialog/error-dialog.component'
+import { SuccessDialogComponent } from '../success-dialog/success-dialog.component';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -31,8 +33,8 @@ export class HomeComponent implements OnInit {
   workshopsPresenters: any = [];
   noShadow = 'noshadow';
   userName: string = "";
-  constructor(public publicservice: PublicService, public router: Router,public snackbar:MatSnackBar) {
-    this.time = parseInt(''+(new Date("2021-03-06T12:00:00Z").getTime()- new Date().getTime())/1000); 
+  constructor(public publicservice: PublicService, public router: Router, public snackbar: MatSnackBar) {
+    this.time = parseInt('' + (new Date("2021-03-06T12:00:00Z").getTime() - new Date().getTime()) / 1000);
     publicservice.getTalks().then((r) => {
       console.log(r);
       this.talksArray = r.data;
@@ -84,8 +86,8 @@ export class HomeComponent implements OnInit {
 
     })
     setInterval(() => this.time = this.time - 1, 1000);
-    if(publicservice.logedIn){
-      publicservice.getUser().then((r)=>{
+    if (publicservice.logedIn) {
+      publicservice.getUser().then((r) => {
         this.userName = r.data.first_name;
       })
     }
@@ -175,8 +177,41 @@ export class HomeComponent implements OnInit {
   getNavClass() {
     return window.scrollY > 0 ? 'no-shadow' : '';
   }
-  registerWorkshop(i){
-    this.workshopsArray[i]
+  registerWorkshop(i) {
+    if (!this.publicservice.logedIn) {
+      if (window.innerWidth > 992) {
+        this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'اول وارد شوید!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      }
+      else {
+        this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'اول وارد شوید!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+      }
+      return;
+    }
+    else {
+
+    }
+  }
+  registerTalk(i) {
+    if (!this.publicservice.logedIn) {
+      if (window.innerWidth > 992) {
+        this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'اول وارد شوید!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      }
+      else {
+        this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'اول وارد شوید!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+      }
+      return;
+    }
+    else {
+      this.publicservice.talkPk = this.talksArray[i].pk;
+      this.publicservice.EnrollTalk().then(() => {
+        if (window.innerWidth > 992) {
+          this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'ثبت نام با موفقیت انجام شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+        }
+        else {
+          this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'ثبت نام با موفقیت انجام شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+        }
+      })
+    }
   }
 
 }
