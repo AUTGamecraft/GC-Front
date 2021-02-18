@@ -63,7 +63,7 @@ export class Texts{
         this.FaTexts["home43"] = "جوایز مسابقه"
         this.FaTexts["home44"] = "شرایط مسابقه"
         this.FaTexts["home45"] = "تیم اول"
-        this.FaTexts["home46"] = "1 میلیون تومان"
+        this.FaTexts["home46"] = "3 میلیون تومان"
         this.FaTexts["home47"] = "دست اندر کاران"
         this.FaTexts["home48"] = "شرایط مسابقه"
         this.FaTexts["home49"] = "پایان ثبت نام"
@@ -78,7 +78,7 @@ export class Texts{
         this.FaTexts["home58"] = " تومان"
         this.FaTexts["home59"] = "رایگان"
         this.FaTexts["home60"] = "2 میلیون تومان"
-        this.FaTexts["home61"] = "3 میلیون تومان"
+        this.FaTexts["home61"] = "1 میلیون تومان"
 
 
 
