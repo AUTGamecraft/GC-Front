@@ -92,18 +92,14 @@ export class PublicService {
     var that = this;
     this.APICalls.UpdateImage = true;
     let headers = new Headers({
-      'Content-Type': 'application/json',
+      'Content-Type': 'multipart/form-data',
       'Authorization': 'Bearer ' + this.Authorization,
       "Accept": "application/json, text/plain, */*",
       "Accept-Language": "en-US,en;q=0.9,fa;q=0.8",
-      'Mime-Type': "multipart/form-data",
-      'Process-Data':false,
     });
     let options = new RequestOptions({ headers: headers });
     var uploadData = new FormData();
     uploadData.append("profile", this.file,this.fileName);
-    console.log(this.fileName);
-    console.log(this.file);
     let ret: Promise<any> = this.http.put(this.ApiUrl + '/api/users/profile/update/',uploadData,options)
       .toPromise()
       .then((r) => this.extractData(r, this))
