@@ -1,6 +1,8 @@
 import { Component, OnInit, Query } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PublicService } from '../public.service';
+import { SuccessDialogComponent } from '../success-dialog/success-dialog.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-confirm-confirm',
   templateUrl: './confirm-confirm.component.html',
@@ -10,7 +12,7 @@ export class ConfirmConfirmComponent implements OnInit {
   hash: string = '';
   isError: boolean;
   userName:string = '';
-  constructor(private router: Router, public publicservice: PublicService, private route: ActivatedRoute) {
+  constructor(private router: Router, public publicservice: PublicService, private route: ActivatedRoute,public snackbar:MatSnackBar) {
 
   }
 
@@ -19,6 +21,12 @@ export class ConfirmConfirmComponent implements OnInit {
       this.hash = params['activation'];
     });
     this.publicservice.ActivateUser(this.hash).then((r)=>{
+      if(window.innerWidth>992){
+      this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 3000, data: 'اکانت شما با موفقیت فعال شد', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      }
+      else{
+        this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 3000, data: 'اکانت شما با موفقیت فعال شد', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+      }
       this.userName = r.data.first_name;
     })
     this.isError = this.publicservice.hasError;

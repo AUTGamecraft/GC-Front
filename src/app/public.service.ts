@@ -98,7 +98,9 @@ export class PublicService {
       'Authorization': 'Bearer ' + this.Authorization
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.put(this.ApiUrl + '/api/users/profile/update/', body, options)
+    const uploadData = new FormData();
+    uploadData.append('profile', this.file, this.fileName);
+    let ret: Promise<any> = this.http.put(this.ApiUrl + '/api/users/profile/update/',uploadData, options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);

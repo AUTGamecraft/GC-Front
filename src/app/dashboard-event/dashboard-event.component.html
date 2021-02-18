@@ -1,7 +1,7 @@
 <div class="dash-event-whole" id="dash" #dash>
-    <div class="logo" (click)='Home()'>
+    <div class="logo" >
         <p class="logo-text" style="margin-left: -5px;">{{publicservice.Texts.Texts["logo1"]}}</p>
-        <img class="logo-image" src="assets/svg/dark-3d.svg">
+        <img class="logo-image" (click)='Home()' src="assets/svg/dark-3d.svg">
         <p class="logo-text" style="margin-right: -5px;">{{publicservice.Texts.Texts["logo2"]}}</p>
     </div>
     <div class="dash-event">

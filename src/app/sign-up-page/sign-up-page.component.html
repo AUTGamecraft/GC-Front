@@ -85,8 +85,7 @@
                             <strong>{{publicservice.Texts.Texts["signup5"]}}</strong>
                             {{publicservice.Texts.Texts["signup4"]}}
                         </mat-error>
-                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                            [attr.aria-pressed]="hide">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" type="button">
                             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                         </button>
 

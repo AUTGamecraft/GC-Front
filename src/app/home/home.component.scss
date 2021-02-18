@@ -368,7 +368,7 @@
     justify-content: space-evenly;
 }
 .intro-discription-div {
-    flex: 0 0 40%;
+    flex: 0 0 50%;
     position: relative;
 }
 .intro-discription-about-div {
@@ -390,10 +390,11 @@
     font-size: x-large;
     font-family: "Estedad-Black";
     color: #ede1f1;
+    margin-bottom: 12px;
 }
 .intro-discription-about-discription {
     font-family: "Estedad-Medium";
-    font-size: x-large;
+    font-size: 20px;
     color: #ede1f1;
     margin-top: 0;
 }
