@@ -1,6 +1,6 @@
 .whole-header {
     direction: rtl;
-    padding: 0 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
     justify-content: space-between;
     display: flex;
     box-shadow: none !important;
@@ -29,7 +29,7 @@
 .right-header {
     display: flex;
     margin-right: 50px;
-    margin-top: 20px;
+    // margin-top: 20px;
 }
 .right-button {
     margin: 0 5% 0 0;
@@ -45,7 +45,7 @@
 .left-header {
     display: flex;
     margin-left: 50px;
-    margin-top: 20px;
+    // margin-top: 20px;
 }
 .left-header-line {
     width: 0;
@@ -270,7 +270,7 @@
 }
 //start of logo
 .logo {
-    padding-top: 20px;
+    // padding-top: 20px;
     justify-content: center;
     display: flex;
     direction: rtl;
