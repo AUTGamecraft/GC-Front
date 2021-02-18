@@ -70,16 +70,16 @@
                     <div class="logo" routerLink="home">
                         <img class="logo-image" src="assets/svg/dark-3d.svg">
                     </div>
-                   <mat-sidenav-container class="example-sidenav-container">
-                    <mat-sidenav #snav >
-                        <mat-nav-list>
-                          
-                        </mat-nav-list>
-                    </mat-sidenav>
+                    <mat-sidenav-container class="example-sidenav-container">
+                        <mat-sidenav #snav>
+                            <mat-nav-list>
 
-                    <mat-sidenav-content>
-                   
-                    </mat-sidenav-content>
+                            </mat-nav-list>
+                        </mat-sidenav>
+
+                        <mat-sidenav-content>
+
+                        </mat-sidenav-content>
                     </mat-sidenav-container>
                 </div>
 
@@ -679,7 +679,10 @@
                             <h3 class="discription-right-footer-about-subtitle">
                                 {{publicservice.Texts.Texts["home38"]}}</h3>
                             <p class="discription-right-footer-about-discription">
-                                {{publicservice.Texts.Texts["home39"]}}</p>
+                                {{publicservice.Texts.Texts["home39"]}}
+                                <br>
+                                {{publicservice.Texts.Texts["home62"]}}
+                            </p>
                             <div style="text-align: center;">
                                 <button mat-flat-button (click)="People()"
                                     class="green-button">{{publicservice.Texts.Texts["home47"]}}</button>
@@ -692,20 +695,20 @@
                         <img class="footer-image" src="assets/images/masoud.jpg">
                     </div>
                 </div>
-                <div>
+                <div class="supporters-div">
                     <h1 class="supporters-title">
                         {{publicservice.Texts.Texts["home40"]}}
                     </h1>
-                </div>
-                <div class="supporters-card-div">
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/quiz of kings.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/avngames.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/tod.png">
+                    <div class="supporters-card-div">
+                        <div class="supportes-card-image-div">
+                            <img class="supporters-card-image" src="assets/images/quiz of kings.png">
+                        </div>
+                        <div class="supportes-card-image-div">
+                            <img class="supporters-card-image" src="assets/images/avngames.png">
+                        </div>
+                        <div class="supportes-card-image-div">
+                            <img class="supporters-card-image" src="assets/images/tod.png">
+                        </div>
                     </div>
                 </div>
             </div>

@@ -8,8 +8,9 @@
         <div class="right-part">
             <div class="right-part-header">
                 <div class="name-image-phone">
-                    <div  >
-                        <input type="file" id="imgUpload" style="display:none" (change)="handleFileInput($event.target.files)"> 
+                    <div>
+                        <input type="file" id="imgUpload" style="display:none"
+                            (change)="handleFileInput($event.target.files)">
                         <img class="user-image" id="image" style="cursor: pointer;" (click)="Upload()">
                     </div>
                     <p class="user-name">{{userName}}</p>
@@ -44,7 +45,8 @@
                 </div>
             </div>
             <!-- <button mat-stroked-button class="outlined-button">{{publicservice.Texts.Texts["dash-event5"]}}</button> -->
-            <button mat-stroked-button matBadge="2" matBadgePosition="before" (click)="Cart()" class="outlined-button">{{publicservice.Texts.Texts['cart8']}}</button>
+            <button mat-stroked-button matBadge="2" matBadgePosition="before" (click)="Cart()"
+                class="outlined-button">{{publicservice.Texts.Texts['cart8']}}</button>
         </div>
         <div class="left-part">
             <h1 class="events-title">{{publicservice.Texts.Texts["dash-event6"]}}</h1>
@@ -60,7 +62,7 @@
                             {{publicservice.Texts.Texts["dash-event9"]}}</h4>
                         <h4 class="component-subject">
                             {{publicservice.Texts.Texts["dash-event11"]}}</h4>
-                        <button mat-stroked-button 
+                        <button mat-stroked-button
                             class="register-button">{{publicservice.Texts.Texts["dash-event10"]}}</button>
                         <button mat-stroked-button (click)="Enter()"
                             class="register-button">{{publicservice.Texts.Texts["dash-event12"]}}</button>
@@ -240,7 +242,7 @@
                             <div class="presenter-card">
                                 <div class="presenter-card-inside">
                                     <div>
-                                        <img class="presenter-image" >
+                                        <img class="presenter-image">
                                     </div>
                                     <h2 class="presenter-name">
                                         {{publicservice.Texts.Texts["dash-event27"]}}
@@ -255,7 +257,7 @@
         </div>
     </div>
     <div class="footer-whole-div">
-            <img class="purple-wave-above-footer" src="assets/svg/wave-purple.svg">
+        <img class="purple-wave-above-footer" src="assets/svg/wave-purple.svg">
         <div class="footer-div">
             <div class="discription-footer-div">
                 <div class="discription-right-footer-div">
@@ -265,7 +267,10 @@
                         <h3 class="discription-right-footer-about-subtitle">
                             {{publicservice.Texts.Texts["home38"]}}</h3>
                         <p class="discription-right-footer-about-discription">
-                            {{publicservice.Texts.Texts["home39"]}}</p>
+                            {{publicservice.Texts.Texts["home39"]}}
+                            <br>
+                            {{publicservice.Texts.Texts["home62"]}}
+                        </p>
                         <div style="text-align: center;">
                             <button mat-flat-button (click)="People()"
                                 class="green-button">{{publicservice.Texts.Texts["home47"]}}</button>
@@ -278,22 +283,25 @@
                     <img class="footer-image" src="assets/images/masoud.jpg">
                 </div>
             </div>
-            <div>
+            <div class="supporters-div">
                 <h1 class="supporters-title">
                     {{publicservice.Texts.Texts["home40"]}}
                 </h1>
+                <div class="supporters-card-div">
+                    <div class="supportes-card-image-div">
+                        <img class="supporters-card-image" src="assets/images/quiz of kings.png">
+                    </div>
+                    <div class="supportes-card-image-div">
+                        <img class="supporters-card-image" src="assets/images/avngames.png">
+                    </div>
+                    <div class="supportes-card-image-div">
+                        <img class="supporters-card-image" src="assets/images/tod.png">
+                    </div>
+                    <!-- <p class="supportes-card-name">
+                        {{publicservice.Texts.Texts["home41"]}}</p> -->
+                </div>
             </div>
-            <div class="supporters-card-div">
-                <div class="supportes-card-image-div">
-                    <img class="supporters-card-image" src="assets/images/quiz of kings.png">
-                </div>
-                <div class="supportes-card-image-div">
-                    <img class="supporters-card-image" src="assets/images/avngames.png">
-                </div>
-                <div class="supportes-card-image-div">
-                    <img class="supporters-card-image" src="assets/images/tod.png">
-                </div>
-            </div>
+
         </div>
     </div>
     <div class="developers-div">

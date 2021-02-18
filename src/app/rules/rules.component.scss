@@ -5,6 +5,9 @@
     display: flex;
     box-shadow: none !important;
 }
+.supporters-div{
+    padding-top: 10%;
+}
 .no-shadow{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) !important;
 }
@@ -157,8 +160,8 @@
 }
 .footer-div {
     background-color: #52006b;
-    padding-top: 100px;
-    margin-top: -100px;
+    padding-top: 10px;
+    margin-top: -10px;
 }
 .discription-footer-div {
     direction: rtl;

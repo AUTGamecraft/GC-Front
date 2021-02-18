@@ -47,19 +47,20 @@
                     </div>
                 </div>
                 <!-- <button mat-stroked-button class="outlined-button">{{publicservice.Texts.Texts["dash-media5"]}}</button> -->
-                <button mat-stroked-button matBadge="2" matBadgePosition="before" (click)="Cart()" class="outlined-button">{{publicservice.Texts.Texts['cart8']}}</button>
+                <button mat-stroked-button matBadge="2" matBadgePosition="before" (click)="Cart()"
+                    class="outlined-button">{{publicservice.Texts.Texts['cart8']}}</button>
             </div>
-            <div class="left-part" >
+            <div class="left-part">
                 <h1 class="events-title">
                     {{publicservice.Texts.Texts["dash-teams1"]}}</h1>
                 <div style="display: flex;padding-bottom: 20px;">
                     <h2 class="people">{{publicservice.Texts.Texts["dash-teams2"]}}</h2>
                     <p class="people-discription">{{publicservice.Texts.Texts["dash-teams3"]}}</p>
                 </div>
-                <div class="team-create-whole-div" >
+                <div class="team-create-whole-div">
                     <div class="form-field-div">
-                        <form >
-                            <mat-form-field class="form-field" >
+                        <form>
+                            <mat-form-field class="form-field">
                                 <mat-label class="label">{{publicservice.Texts.Texts["dash-teams4"]}}
                                 </mat-label>
                                 <input matInput [formControl]="nameFormControl" class="input"
@@ -77,7 +78,8 @@
                                 <input type="email" placeholder="Pick one" matInput [formControl]="myControl"
                                     [matAutocomplete]="auto" id="inputEmail">
                                 <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-                                    <mat-option *ngFor="let option of filteredOptions | async" [value]="option" (click)="Add(option)" id="matOption">
+                                    <mat-option *ngFor="let option of filteredOptions | async" [value]="option"
+                                        (click)="Add(option)" id="matOption">
                                         <div class="option" [inline]="true">
                                             <div style="display: flex;">
                                                 <img class="option-image">
@@ -111,7 +113,10 @@
                         <h3 class="discription-right-footer-about-subtitle">
                             {{publicservice.Texts.Texts["home38"]}}</h3>
                         <p class="discription-right-footer-about-discription">
-                            {{publicservice.Texts.Texts["home39"]}}</p>
+                            {{publicservice.Texts.Texts["home39"]}}
+                            <br>
+                            {{publicservice.Texts.Texts["home62"]}}
+                        </p>
                         <div style="text-align: center;">
                             <button mat-flat-button (click)="People()"
                                 class="green-button">{{publicservice.Texts.Texts["home47"]}}</button>
@@ -124,22 +129,25 @@
                     <img class="footer-image">
                 </div>
             </div>
-            <div>
+            <div class="supporters-div">
                 <h1 class="supporters-title">
                     {{publicservice.Texts.Texts["home40"]}}
                 </h1>
+                <div class="supporters-card-div">
+                    <div class="supportes-card-image-div">
+                        <img class="supporters-card-image" src="assets/images/quiz of kings.png">
+                    </div>
+                    <div class="supportes-card-image-div">
+                        <img class="supporters-card-image" src="assets/images/avngames.png">
+                    </div>
+                    <div class="supportes-card-image-div">
+                        <img class="supporters-card-image" src="assets/images/tod.png">
+                    </div>
+                    <!-- <p class="supportes-card-name">
+                        {{publicservice.Texts.Texts["home41"]}}</p> -->
+                </div>
             </div>
-            <div class="supporters-card-div">
-                <div class="supportes-card-image-div">
-                    <img class="supporters-card-image" src="assets/images/quiz of kings.png">
-                </div>
-                <div class="supportes-card-image-div">
-                    <img class="supporters-card-image" src="assets/images/avngames.png">
-                </div>
-                <div class="supportes-card-image-div">
-                    <img class="supporters-card-image" src="assets/images/tod.png">
-                </div>
-            </div>
+
         </div>
     </div>
     <div class="developers-div">
