@@ -19,7 +19,6 @@ import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
 import { HomeComponent } from './home/home.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
-import {FaNumPipe} from 'ngx-persian';
 import { DashboardEventComponent } from './dashboard-event/dashboard-event.component';
 import { DashboardMediaComponent } from './dashboard-media/dashboard-media.component';
 import { ErrorDialogComponent } from './error-dialog/error-dialog.component';
@@ -34,7 +33,7 @@ import { CartComponent } from './cart/cart.component';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { SuccessDialogComponent } from './success-dialog/success-dialog.component';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -75,7 +74,7 @@ import { HttpClient } from '@angular/common/http';
     MatAutocompleteModule,
     MatBadgeModule,
     MatSidenavModule,
-    HttpClient
+    HttpClientModule
   ],
   providers: [
   ],
