@@ -25,11 +25,11 @@ export class PublicService {
   Texts: Texts = new Texts();
   public Token: String = "";
   public logedIn: boolean = false;
-  public fileName:string = "";
+  public fileName: string = "";
   public file: File;
-  public isStaff:boolean;
-  public userName:string = "";
-  public hasError:boolean;
+  public isStaff: boolean;
+  public userName: string = "";
+  public hasError: boolean;
   Mockup() {
 
 
@@ -87,7 +87,7 @@ export class PublicService {
     return Promise.reject(errMsg);
   }
 
-  UpdateImage(): Promise<any>{
+  UpdateImage(): Promise<any> {
     var that = this;
     this.APICalls.UpdateImage = true;
     let body = JSON.stringify({
@@ -99,19 +99,18 @@ export class PublicService {
     });
     let options = new RequestOptions({ headers: headers });
     let ret: Promise<any> = this.http.put(this.ApiUrl + '/api/users/profile/update/', body, options)
-    .toPromise()
-    .then((r) => this.extractData(r, this))
-    .catch(this.handleError);
+      .toPromise()
+      .then((r) => this.extractData(r, this))
+      .catch(this.handleError);
 
-  ret.then(r => {
-    this.APICalls.SignUp = false;
-    console.log(r);
-  }).catch(e => {
-    this.APICalls.SignUp = false;
-    this.hasError = true;
-    that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-  });
-  return ret;
+    ret.then(r => {
+      this.APICalls.SignUp = false;
+      console.log(r);
+    }).catch(e => {
+      this.APICalls.SignUp = false;
+      that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+    });
+    return ret;
   }
 
   SignUp(): Promise<any> {
@@ -191,7 +190,7 @@ export class PublicService {
       this.APICalls.getTalks = false;
     }).catch(e => {
       this.APICalls.getTalks = false;
-      that.snackbar.openFromComponent(ErrorDialogComponent,{duration:2000,data:e.message,panelClass:['snackbar'],verticalPosition:'top',direction:'rtl'});
+      that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
 
     });
     return ret;
@@ -212,7 +211,7 @@ export class PublicService {
       this.APICalls.getWorkshops = false;
     }).catch(e => {
       this.APICalls.getWorkshops = false;
-      that.snackbar.openFromComponent(ErrorDialogComponent,{duration:2000,data:e.message,panelClass:['snackbar'],verticalPosition:'top',direction:'rtl'});
+      that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
 
     });
     return ret;
@@ -234,7 +233,7 @@ export class PublicService {
       this.APICalls.getUsers = false;
     }).catch(e => {
       this.APICalls.getUsers = false;
-      that.snackbar.openFromComponent(ErrorDialogComponent,{duration:2000,data:e.message,panelClass:['snackbar'],verticalPosition:'top',direction:'rtl'});
+      that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
 
     });
     return ret;
@@ -257,19 +256,19 @@ export class PublicService {
       console.log(r);
     }).catch(e => {
       this.APICalls.getUsers = false;
-      that.snackbar.openFromComponent(ErrorDialogComponent,{duration:2000,data:e.message,panelClass:['snackbar'],verticalPosition:'top',direction:'rtl'});
+      that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
 
     });
     return ret;
   }
-  ActivateUser(token:string): Promise<any> {
+  ActivateUser(token: string): Promise<any> {
     var that = this;
     this.APICalls.ActivateUser = true;
     let headers = new Headers({
       'Content-Type': 'application/json'
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/activation/'+token, options)
+    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/activation/' + token, options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
@@ -278,6 +277,7 @@ export class PublicService {
       this.APICalls.ActivateUser = false;
     }).catch(e => {
       this.APICalls.ActivateUser = false;
+      this.hasError = true;
       that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
     });
     return ret;
