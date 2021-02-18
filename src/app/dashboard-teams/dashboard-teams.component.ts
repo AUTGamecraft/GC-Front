@@ -10,6 +10,7 @@ import {map, startWith} from 'rxjs/operators';
   styleUrls: ['./dashboard-teams.component.scss']
 })
 export class DashboardTeamsComponent implements OnInit {
+  isStaff:boolean;
   nameFormControl = new FormControl('', [
     Validators.required,
   ]);
@@ -24,6 +25,7 @@ export class DashboardTeamsComponent implements OnInit {
     else{
       publicservice.getUser().then((r)=>{
         this.userName = r.data.first_name;
+        this.isStaff = r.data.is_staff;
       });
       publicservice.getUsers().then((r)=>{
         console.log(r);
@@ -85,6 +87,9 @@ export class DashboardTeamsComponent implements OnInit {
     this.publicservice.UpdateImage();
   }
   Add(option:string){
-    console.log(option);
+    // console.log(option);
+  }
+  Cart() {
+    this.router.navigate(['cart']);
   }
 }

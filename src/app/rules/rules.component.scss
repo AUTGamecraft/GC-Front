@@ -1,9 +1,12 @@
 .whole-header {
     direction: rtl;
-    padding: 0 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
     justify-content: space-between;
     display: flex;
     box-shadow: none !important;
+}
+.supporters-div{
+    padding-top: 10%;
 }
 .no-shadow{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) !important;
@@ -29,7 +32,7 @@
 .right-header {
     display: flex;
     margin-right: 50px;
-    margin-top: 20px;
+    // margin-top: 20px;
 }
 .right-button {
     margin: 0 5% 0 0;
@@ -45,7 +48,7 @@
 .left-header {
     display: flex;
     margin-left: 50px;
-    margin-top: 20px;
+    // margin-top: 20px;
 }
 .left-header-line {
     width: 0;
@@ -157,8 +160,8 @@
 }
 .footer-div {
     background-color: #52006b;
-    padding-top: 100px;
-    margin-top: -100px;
+    padding-top: 10px;
+    margin-top: -10px;
 }
 .discription-footer-div {
     direction: rtl;
@@ -263,7 +266,7 @@
 }
 //start of logo
 .logo{
-    padding-top: 20px;
+    // padding-top: 20px;
     justify-content: center;
     display: flex;
     direction: rtl;

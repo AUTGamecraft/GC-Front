@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PublicService } from '../public.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ErrorDialogComponent } from '../error-dialog/error-dialog.component';
 @Component({
   selector: 'app-dashboard-event',
   templateUrl: './dashboard-event.component.html',
@@ -8,12 +10,13 @@ import { PublicService } from '../public.service';
 })
 export class DashboardEventComponent implements OnInit {
   talks = 'deactive';
-  fileToUpload: File = null;
+  file: File = null;
   workshops = 'deactive';
   iconW = 'keyboard_arrow_down';
   iconT = 'keyboard_arrow_down';
   userName: string = "";
-  constructor(private router: Router, public publicservice: PublicService) {
+  isStaff: boolean;
+  constructor(private router: Router, public publicservice: PublicService,public snackbar:MatSnackBar) {
     if (!publicservice.logedIn) {
       this.router.navigate(['login']);
     }
@@ -22,7 +25,7 @@ export class DashboardEventComponent implements OnInit {
         this.userName = r.data.first_name;
         const image = document.getElementById('image') as HTMLImageElement;
         image.src = r.data.profile;
-        publicservice.isStaff = r.data.
+        this.isStaff = r.data.is_staff;
         console.log(image.src);
       });
     }
@@ -56,7 +59,8 @@ export class DashboardEventComponent implements OnInit {
     this.router.navigate(['home'], { fragment: 'home' });
   }
   Teams() {
-    this.router.navigate(['dashboard-teams']);
+    this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+    // this.router.navigate(['dashboard-teams']);
   }
   Cart() {
     this.router.navigate(['cart']);
@@ -68,12 +72,12 @@ export class DashboardEventComponent implements OnInit {
     this.router.navigate(['people'], { fragment: 'people' });
   }
   handleFileInput(imageInput: any) {
-    const file = imageInput.item(0);
-    const reader = new FileReader();
-    reader.readAsDataURL(file); 
-    // console.log(file); 
-    this.publicservice.fileName = file.name;
-    this.publicservice.file = file;
+    this.file = imageInput.item(0);
+    this.publicservice.fileName = this.file.name;
+    this.publicservice.file = this.file;
     this.publicservice.UpdateImage();
+  }
+  Enter(){
+    this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
   }
 }

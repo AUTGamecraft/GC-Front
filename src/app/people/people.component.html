@@ -49,7 +49,7 @@
                 </div>
                 <div class="after-login" *ngIf="publicservice.logedIn">
                     <div class="left-button">
-                        <button mat-button [disabled]="true" class="normal-button">{{publicservice.Texts.Texts["header10"]}}</button>
+                        <button mat-button [disabled]="true" class="normal-button">{{userName}}</button>
                     </div>
 
                     <div>
@@ -71,19 +71,6 @@
     <div class="introduction-div">
         <div class="white-part">
             <h1 class="people-title">{{publicservice.Texts.Texts["people1"]}}</h1>
-            <h1 class="people-subtitle">{{publicservice.Texts.Texts['people42']}}</h1>
-            <div class="collapse-presenters-card-div">
-                <div class="collapse-presenters-card">
-                    <div>
-                        <img class="collapse-presenters-image" src="assets/images/fatemehvalipour.jpg">
-                    </div>
-                    <h2 class="collapse-presenters-name">
-                        {{publicservice.Texts.Texts['people37']}}
-                    </h2>
-                    <h4 class="collapse-presenters-discription">
-                        {{publicservice.Texts.Texts['people38']}}</h4>
-                </div>
-            </div>
             <h1 class="people-subtitle">{{publicservice.Texts.Texts["people2"]}}</h1>
             <div style="direction: rtl;">
                 <div class="collapse-presenters-card-div">
@@ -198,8 +185,6 @@
                         <h4 class="collapse-presenters-discription">
                             {{publicservice.Texts.Texts["people21"]}}</h4>
                     </div>
-                </div>
-                <div class="collapse-presenters-card-div">
                     <div class="collapse-presenters-card">
                         <div>
                             <img class="collapse-presenters-image" src="assets/images/zahrasalarian.jpg">
@@ -231,11 +216,12 @@
                             {{publicservice.Texts.Texts["people27"]}}</h4>
                     </div>
                 </div>
+
                 <h1 class="people-subtitle">{{publicservice.Texts.Texts["people32"]}}</h1>
                 <div class="collapse-presenters-card-div">
                     <div class="collapse-presenters-card">
                         <div>
-                            <img class="collapse-presenters-image" src="assets/images/bullshit.png">
+                            <img class="collapse-presenters-image" src="assets/images/ebi.jpg">
                         </div>
                         <h2 class="collapse-presenters-name">
                             {{publicservice.Texts.Texts["people33"]}}
@@ -262,6 +248,16 @@
                         </h2>
                         <h4 class="collapse-presenters-discription">
                             {{publicservice.Texts.Texts["people31"]}}</h4>
+                    </div>
+                    <div class="collapse-presenters-card">
+                        <div>
+                            <img class="collapse-presenters-image" src="assets/images/fatemehvalipourpasha.JPEG">
+                        </div>
+                        <h2 class="collapse-presenters-name">
+                            {{publicservice.Texts.Texts['people37']}}
+                        </h2>
+                        <h4 class="collapse-presenters-discription">
+                            {{publicservice.Texts.Texts['people38']}}</h4>
                     </div>
                 </div>
                 <h1 class="people-subtitle">{{publicservice.Texts.Texts['people41']}}</h1>
@@ -306,7 +302,38 @@
                         <h4 class="collapse-presenters-discription">
                             {{publicservice.Texts.Texts["people40"]}}</h4>
                     </div>
+                    <div class="collapse-presenters-card">
+                        <div>
+                            <img class="collapse-presenters-image" src="assets/images/shivashahrokhi.jpg">
+                        </div>
+                        <h2 class="collapse-presenters-name">
+                            {{publicservice.Texts.Texts["people46"]}}
+                        </h2>
+                        <h4 class="collapse-presenters-discription">
+                            {{publicservice.Texts.Texts["people40"]}}</h4>
+                    </div>
+                    <div class="collapse-presenters-card">
+                        <div>
+                            <img class="collapse-presenters-image" src="assets/images/zahraghandi.jpg">
+                        </div>
+                        <h2 class="collapse-presenters-name">
+                            {{publicservice.Texts.Texts["people47"]}}
+                        </h2>
+                        <h4 class="collapse-presenters-discription">
+                            {{publicservice.Texts.Texts["people40"]}}</h4>
+                    </div>
+                    <div class="collapse-presenters-card">
+                        <div>
+                            <img class="collapse-presenters-image" src="assets/images/amini.jpeg">
+                        </div>
+                        <h2 class="collapse-presenters-name">
+                            {{publicservice.Texts.Texts["people48"]}}
+                        </h2>
+                        <h4 class="collapse-presenters-discription">
+                            {{publicservice.Texts.Texts["people40"]}}</h4>
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>
@@ -323,7 +350,10 @@
                         <h3 class="discription-right-footer-about-subtitle">
                             {{publicservice.Texts.Texts["home38"]}}</h3>
                         <p class="discription-right-footer-about-discription">
-                            {{publicservice.Texts.Texts["home39"]}}</p>
+                            {{publicservice.Texts.Texts["home39"]}}
+                            <br>
+                            {{publicservice.Texts.Texts["home62"]}}
+                        </p>
                         <div style="text-align: center;">
                             <button mat-flat-button (click)="People()"
                                 class="green-button">{{publicservice.Texts.Texts["home47"]}}</button>
@@ -336,24 +366,25 @@
                     <img class="footer-image" src="assets/images/masoud.jpg">
                 </div>
             </div>
-            <div>
+            <div class="supporters-div">
                 <h1 class="supporters-title">
                     {{publicservice.Texts.Texts["home40"]}}
                 </h1>
-            </div>
             <div class="supporters-card-div">
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/quiz of kings.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/avngames.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/tod.png">
-                    </div>
-                    <!-- <p class="supportes-card-name">
+                <div class="supportes-card-image-div">
+                    <img class="supporters-card-image" src="assets/images/quiz of kings.png">
+                </div>
+                <div class="supportes-card-image-div">
+                    <img class="supporters-card-image" src="assets/images/avngames.png">
+                </div>
+                <div class="supportes-card-image-div">
+                    <img class="supporters-card-image" src="assets/images/tod.png">
+                </div>
+                <!-- <p class="supportes-card-name">
                         {{publicservice.Texts.Texts["home41"]}}</p> -->
             </div>
+        </div>
+
         </div>
     </div>
 </div>

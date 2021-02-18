@@ -1,3 +1,7 @@
+::ng-deep #mat-badge-content-1{
+    font-family: 'Vazir-Black';
+    background-color: #b00020 !important;
+}
 //start of logo
 .logo {
     justify-content: center;
@@ -209,8 +213,11 @@
 }
 .footer-div {
     background-color: #52006b;
-    padding-top: 100px;
-    margin-top: -100px;
+    padding-top: 10px;
+    margin-top: -10px;
+}
+.supporters-div{
+    padding-top: 10%;
 }
 .discription-footer-div {
     direction: rtl;

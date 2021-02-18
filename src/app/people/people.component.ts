@@ -9,7 +9,7 @@ import { ErrorDialogComponent } from '../error-dialog/error-dialog.component'
   styleUrls: ['./people.component.scss']
 })
 export class PeopleComponent implements OnInit {
-
+  userName:string = '';
   constructor(public publicservice: PublicService, public router: Router,public snackbar:MatSnackBar) {
     // router.events.subscribe(s => {
     //   if (s instanceof NavigationEnd) {
@@ -20,6 +20,11 @@ export class PeopleComponent implements OnInit {
     //     }
     //   }
     // });
+    if(publicservice.logedIn){
+      publicservice.getUser().then((r)=>{
+        this.userName = r.data.first_name;
+      })
+    }
    }
 
   ngOnInit(): void {

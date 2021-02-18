@@ -1,72 +1,72 @@
 <div class="people" id="rules">
     <header style="position: fixed;width: 100%;background-color: #52006b;z-index: 100;">
-            <div class="whole-header" [class]="getNavClass()">
-                <div class="big-right-header">
-                    <div class="title-div">
-                        <div class="logo" (click)="Home()">
-                            <img class="logo-image" src="assets/svg/dark-3d.svg">
-                        </div>
-                    </div>
-                    <div class="right-header">
-                        <div class="right-button">
-                            <button mat-button class="normal-button"
-                                (click)="Schedule()">{{publicservice.Texts.Texts["header2"]}}</button>
-                        </div>
-                        <div class="right-button">
-                            <button mat-button (click)="Rules()" id="rules-button"
-                                class="normal-button">{{publicservice.Texts.Texts["header11"]}}</button>
-                        </div>
-                        <div class="right-button">
-                            <button mat-button (click)="Workshop()"
-                                class="normal-button">{{publicservice.Texts.Texts["header3"]}}</button>
-                        </div>
-                        <div class="right-button">
-                            <button mat-button (click)="Talk()"
-                                class="normal-button">{{publicservice.Texts.Texts["header4"]}}</button>
-                        </div>
-                        <div class="right-button">
-                            <button mat-button (click)="Footer(footer)"
-                                class="normal-button">{{publicservice.Texts.Texts["header5"]}}</button>
-                        </div>
-                        <div class="right-button">
-                            <button mat-button (click)="People()"
-                                class="normal-button" id="people-button">{{publicservice.Texts.Texts["header12"]}}</button>
-                        </div>
+        <div class="whole-header" [class]="getNavClass()">
+            <div class="big-right-header">
+                <div class="title-div">
+                    <div class="logo" (click)="Home()">
+                        <img class="logo-image" src="assets/svg/dark-3d.svg">
                     </div>
                 </div>
-                <div class="left-header">
-                    <div class="left-header-line"></div>
-                    <div class="before-login" *ngIf="!publicservice.logedIn">
-                        <div class="left-button">
-                            <button mat-button (click)="login()"
-                                class="normal-button">{{publicservice.Texts.Texts["header6"]}}</button>
-                        </div>
-                        <div>
-                            <button mat-flat-button (click)="Signup()"
-                                class="green-button">{{publicservice.Texts.Texts["header7"]}}</button>
-                        </div>
+                <div class="right-header">
+                    <div class="right-button">
+                        <button mat-button class="normal-button"
+                            (click)="Schedule()">{{publicservice.Texts.Texts["header2"]}}</button>
                     </div>
-                    <div class="after-login" *ngIf="publicservice.logedIn">
-                        <div class="left-button">
-                            <button mat-button [disabled]="true"
-                                class="normal-button">{{publicservice.Texts.Texts["header10"]}}</button>
-                        </div>
+                    <div class="right-button">
+                        <button mat-button (click)="Rules()" id="rules-button"
+                            class="normal-button">{{publicservice.Texts.Texts["header11"]}}</button>
+                    </div>
+                    <div class="right-button">
+                        <button mat-button (click)="Workshop()"
+                            class="normal-button">{{publicservice.Texts.Texts["header3"]}}</button>
+                    </div>
+                    <div class="right-button">
+                        <button mat-button (click)="Talk()"
+                            class="normal-button">{{publicservice.Texts.Texts["header4"]}}</button>
+                    </div>
+                    <div class="right-button">
+                        <button mat-button (click)="Footer(footer)"
+                            class="normal-button">{{publicservice.Texts.Texts["header5"]}}</button>
+                    </div>
+                    <div class="right-button">
+                        <button mat-button (click)="People()" class="normal-button"
+                            id="people-button">{{publicservice.Texts.Texts["header12"]}}</button>
+                    </div>
+                </div>
+            </div>
+            <div class="left-header">
+                <div class="left-header-line"></div>
+                <div class="before-login" *ngIf="!publicservice.logedIn">
+                    <div class="left-button">
+                        <button mat-button (click)="login()"
+                            class="normal-button">{{publicservice.Texts.Texts["header6"]}}</button>
+                    </div>
+                    <div>
+                        <button mat-flat-button (click)="Signup()"
+                            class="green-button">{{publicservice.Texts.Texts["header7"]}}</button>
+                    </div>
+                </div>
+                <div class="after-login" *ngIf="publicservice.logedIn">
+                    <div class="left-button">
+                        <button mat-button [disabled]="true"
+                            class="normal-button">{{publicservice.Texts.Texts["header10"]}}</button>
+                    </div>
 
-                        <div>
-                            <button mat-flat-button class="green-button"
-                                (click)="Dashboard()">{{publicservice.Texts.Texts["header9"]}}</button>
-                        </div>
+                    <div>
+                        <button mat-flat-button class="green-button"
+                            (click)="Dashboard()">{{publicservice.Texts.Texts["header9"]}}</button>
                     </div>
                 </div>
             </div>
-            <div class="whole-header-phone">
-                <button mat-button>
-                    <mat-icon style="color: white;font-size: 32px;" [inline]="true">menu</mat-icon>
-                </button>
-                <div class="logo" routerLink="home">
-                    <img class="logo-image" src="assets/svg/dark-3d.svg">
-                </div>
+        </div>
+        <div class="whole-header-phone">
+            <button mat-button>
+                <mat-icon style="color: white;font-size: 32px;" [inline]="true">menu</mat-icon>
+            </button>
+            <div class="logo" routerLink="home">
+                <img class="logo-image" src="assets/svg/dark-3d.svg">
             </div>
+        </div>
     </header>
     <div class="introduction-div">
         <div class="white-part">
@@ -83,24 +83,27 @@
             </div>
         </div>
     </div>
-       <div class="footer-whole-div" #footer>
-        <div >
+    <div class="footer-whole-div" #footer>
+        <div>
             <img class="purple-wave-above-footer" src="assets/svg/wave-purple.svg">
         </div>
         <div class="footer-div">
             <div class="discription-footer-div">
-                <div class="discription-right-footer-div" >
+                <div class="discription-right-footer-div">
                     <div class="discription-right-footer-about-div">
                         <h1 class="discription-right-footer-about-title">
                             {{publicservice.Texts.Texts["home37"]}}</h1>
                         <h3 class="discription-right-footer-about-subtitle">
                             {{publicservice.Texts.Texts["home38"]}}</h3>
                         <p class="discription-right-footer-about-discription">
-                            {{publicservice.Texts.Texts["home39"]}}</p>
-                            <div style="text-align: center;">
-                                <button mat-flat-button (click)="People()"
-                                 class="green-button" style="margin: 0 auto;">{{publicservice.Texts.Texts["home47"]}}</button>
-                            </div>
+                            {{publicservice.Texts.Texts["home39"]}}
+                            <br>
+                            {{publicservice.Texts.Texts["home62"]}}
+                        </p>
+                        <div style="text-align: center;">
+                            <button mat-flat-button (click)="People()" class="green-button"
+                                style="margin: 0 auto;">{{publicservice.Texts.Texts["home47"]}}</button>
+                        </div>
                     </div>
                     <div class="discription-right-footer-bubble">
                     </div>
@@ -109,12 +112,11 @@
                     <img class="footer-image" src="assets/images/masoud.jpg">
                 </div>
             </div>
-            <div>
+            <div class="supporters-div">
                 <h1 class="supporters-title">
                     {{publicservice.Texts.Texts["home40"]}}
                 </h1>
-            </div>
-            <div class="supporters-card-div">
+                <div class="supporters-card-div">
                     <div class="supportes-card-image-div">
                         <img class="supporters-card-image" src="assets/images/quiz of kings.png">
                     </div>
@@ -126,7 +128,9 @@
                     </div>
                     <!-- <p class="supportes-card-name">
                         {{publicservice.Texts.Texts["home41"]}}</p> -->
+                </div>
             </div>
+
         </div>
     </div>
 </div>

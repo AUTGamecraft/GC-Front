@@ -39,17 +39,18 @@
                             <mat-icon>{{publicservice.Texts.Texts["dash-event31"]}}</mat-icon>
                             {{publicservice.Texts.Texts["dash-event4"]}}
                         </button>
-                        <button mat-button style="background-color: #fafafa;" class="buttons">
+                        <button mat-button (click)="Teams()" style="background-color: #fafafa;" class="buttons">
                             <mat-icon>{{publicservice.Texts.Texts["dash-event32"]}}</mat-icon>
                             {{publicservice.Texts.Texts["dash-event33"]}}
                         </button>
                     </div>
                 </div>
                 <!-- <button mat-stroked-button class="outlined-button">{{publicservice.Texts.Texts["dash-event5"]}}</button> -->
-                <button mat-stroked-button matBadge="2" matBadgePosition="before" (click)="Cart()" id="cart-button" class="outlined-button">{{publicservice.Texts.Texts['cart8']}}</button>
+                <button mat-stroked-button matBadge="2" matBadgePosition="before" (click)="Cart()" id="cart-button"
+                    class="outlined-button">{{publicservice.Texts.Texts['cart8']}}</button>
             </div>
             <div class="left-part">
-                <h1  class="title">{{publicservice.Texts.Texts['cart1']}}</h1>
+                <h1 class="title">{{publicservice.Texts.Texts['cart1']}}</h1>
                 <div class="item-workshop">
                     <div style="display: flex;">
                         <div class="orange"></div>
@@ -91,7 +92,10 @@
                         <h3 class="discription-right-footer-about-subtitle">
                             {{publicservice.Texts.Texts["home38"]}}</h3>
                         <p class="discription-right-footer-about-discription">
-                            {{publicservice.Texts.Texts["home39"]}}</p>
+                            {{publicservice.Texts.Texts["home39"]}}
+                            <br>
+                            {{publicservice.Texts.Texts["home62"]}}
+                        </p>
                         <div style="text-align: center;">
                             <button mat-flat-button (click)="People()"
                                 class="green-button">{{publicservice.Texts.Texts["home47"]}}</button>
@@ -104,22 +108,25 @@
                     <img class="footer-image" src="assets/images/masoud.jpg">
                 </div>
             </div>
-            <div>
+            <div class="supporters-div">
                 <h1 class="supporters-title">
                     {{publicservice.Texts.Texts["home40"]}}
                 </h1>
+                <div class="supporters-card-div">
+                    <div class="supportes-card-image-div">
+                        <img class="supporters-card-image" src="assets/images/quiz of kings.png">
+                    </div>
+                    <div class="supportes-card-image-div">
+                        <img class="supporters-card-image" src="assets/images/avngames.png">
+                    </div>
+                    <div class="supportes-card-image-div">
+                        <img class="supporters-card-image" src="assets/images/tod.png">
+                    </div>
+                    <!-- <p class="supportes-card-name">
+                        {{publicservice.Texts.Texts["home41"]}}</p> -->
+                </div>
             </div>
-            <div class="supporters-card-div">
-                <div class="supportes-card-image-div">
-                    <img class="supporters-card-image" src="assets/images/quiz of kings.png">
-                </div>
-                <div class="supportes-card-image-div">
-                    <img class="supporters-card-image" src="assets/images/avngames.png">
-                </div>
-                <div class="supportes-card-image-div">
-                    <img class="supporters-card-image" src="assets/images/tod.png">
-                </div>
-            </div>
+
         </div>
     </div>
     <div class="developers-div">

@@ -248,9 +248,12 @@
     // z-index: 1;
     // margin-top: -60px;
 }
+.supporters-div{
+    padding-top: 10%;
+}
 .footer-div {
     background-color: #52006b;
-    padding-top: 100px;
+    padding-top: 10px;
     margin-top: -10px;
 }
 .discription-footer-div {
@@ -354,7 +357,7 @@
 }
 .intro {
     background-color: #52006b;
-    padding-bottom: 100px;
+    // padding-bottom: 100px;
 }
 .subintro-div {
     direction: rtl;
@@ -365,7 +368,7 @@
     justify-content: space-evenly;
 }
 .intro-discription-div {
-    flex: 0 0 40%;
+    flex: 0 0 50%;
     position: relative;
 }
 .intro-discription-about-div {
@@ -387,10 +390,11 @@
     font-size: x-large;
     font-family: "Estedad-Black";
     color: #ede1f1;
+    margin-bottom: 12px;
 }
 .intro-discription-about-discription {
     font-family: "Estedad-Medium";
-    font-size: x-large;
+    font-size: 20px;
     color: #ede1f1;
     margin-top: 0;
 }
@@ -416,7 +420,7 @@
     direction: rtl;
     display: flex;
     justify-content: space-evenly;
-    padding-top: 5%;
+    padding-top: 10%;
 }
 .event-about-right-div {
     text-align: center;
@@ -515,7 +519,7 @@
 .schedule-middle-div {
     //     // margin: auto;
     //     // margin-left: 5%;
-    margin-top: 5%;
+    margin-top: 3%;
 }
 // .schedule-left-div {
 //     // margin-left: 25%;
@@ -561,7 +565,7 @@
 .right-header {
     display: flex;
     margin-right: 50px;
-    margin-top: 20px;
+    // margin-top: 20px;
 }
 .right-button {
     margin: 0 5% 0 0;
@@ -584,7 +588,7 @@
 .left-header {
     display: flex;
     margin-left: 50px;
-    margin-top: 20px;
+    // margin-top: 20px;
 }
 .title-div {
     margin-right: 50px;
@@ -593,8 +597,9 @@
     display: flex;
 }
 .whole-header {
+    height: fit-content;
     direction: rtl;
-    padding: 0 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
     justify-content: space-between;
     display: flex;
     box-shadow: none !important;
@@ -681,8 +686,9 @@
     // margin-bottom: 0;
 }
 .prize-card-discription {
+    direction: rtl;
     color: #a04db9;
-    font-family: "Estedad-Regular";
+    font-family: "Vazir-Regular";
     font-size: 28px;
     margin: auto;
     // margin-top: 5px;
@@ -698,7 +704,7 @@
 }
 //start of logo
 .logo {
-    padding-top: 20px;
+    // padding-top: 20px;
     justify-content: center;
     display: flex;
     direction: rtl;
@@ -723,6 +729,7 @@
 // }
 .prize-cards-inner-div {
     display: flex;
+    direction: rtl;
     justify-content: space-evenly;
 }
 // .whole-workshop {

@@ -33,6 +33,7 @@ import { ConfirmConfirmComponent } from './confirm-confirm/confirm-confirm.compo
 import { CartComponent } from './cart/cart.component';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { SuccessDialogComponent } from './success-dialog/success-dialog.component';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     DashboardTeamsComponent,
     EmailConfirmComponent,
     ConfirmConfirmComponent,
-    CartComponent,  
+    CartComponent,
+    SuccessDialogComponent,  
   ],
   imports: [
     BrowserModule,

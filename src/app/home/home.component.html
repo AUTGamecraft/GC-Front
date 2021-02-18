@@ -70,6 +70,7 @@
                     <div class="logo" routerLink="home">
                         <img class="logo-image" src="assets/svg/dark-3d.svg">
                     </div>
+<<<<<<< HEAD
                 
                 </div>
                 <div *ngIf="display"> 
@@ -121,6 +122,18 @@
                   
 
                     </mat-sidenav-content>
+=======
+                    <mat-sidenav-container class="example-sidenav-container">
+                        <mat-sidenav #snav>
+                            <mat-nav-list>
+
+                            </mat-nav-list>
+                        </mat-sidenav>
+
+                        <mat-sidenav-content>
+
+                        </mat-sidenav-content>
+>>>>>>> f929c19d69d9cce82f321bbb62bad74612ae12db
                     </mat-sidenav-container>
                 </div>
 
@@ -197,7 +210,7 @@
                             <div class="image" style="padding-top: 90%;">
                                 <img class="schedule-image" src="assets/svg/timline-3.svg">
                             </div>
-                            <div class="text" style="padding-top: 80%;">
+                            <div class="text" style="padding-top: 90%;">
                                 <h1 class="text-title">
                                     {{publicservice.Texts.Texts["home53"]}}</h1>
                                 <h1 class="text-subtitle2">
@@ -208,7 +221,7 @@
                             <div class="image" style="padding-top: 80%;">
                                 <img class="schedule-image" src="assets/svg/timline-5.svg">
                             </div>
-                            <div class="text" style="padding-top: 80%;">
+                            <div class="text" style="padding-top: 90%;">
                                 <h1 class="text-title">
                                     {{publicservice.Texts.Texts["home13"]}}</h1>
                                 <h1 class="text-subtitle2">
@@ -251,7 +264,7 @@
                             <div class="image" style="padding-top: 50%;">
                                 <img class="schedule-image" src="assets/svg/timline-2.svg">
                             </div>
-                            <div class="text" style="padding-top: 60%;margin-left: 25%;">
+                            <div class="text" style="padding-top: 70%;margin-left: 25%;">
                                 <h1 class="text-title">
                                     {{publicservice.Texts.Texts["home51"]}}
                                 </h1>
@@ -278,7 +291,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="image" style="padding-top: 40%;">
+                            <div class="image" style="padding-top: 50%;">
                                 <img class="schedule-image" src="assets/svg/timline-6.svg">
                             </div>
                         </div>
@@ -417,7 +430,7 @@
                                 <h2 class="prize-card-title" style="width: 100%;">
                                     {{publicservice.Texts.Texts["home55"]}}</h2>
                                 <h3 class="prize-card-discription" style="width: 100%;">
-                                    {{publicservice.Texts.Texts["home46"]}}</h3>
+                                    {{publicservice.Texts.Texts["home60"]}}</h3>
                                 <!-- </div> -->
                             </div>
                         </div>
@@ -428,7 +441,7 @@
                                 </div>
                                 <!-- <div style="padding-top: 20%;"> -->
                                 <h2 class="prize-card-title">{{publicservice.Texts.Texts["home56"]}}</h2>
-                                <h3 class="prize-card-discription">{{publicservice.Texts.Texts["home46"]}}</h3>
+                                <h3 class="prize-card-discription">{{publicservice.Texts.Texts["home61"]}}</h3>
                                 <!-- </div> -->
                             </div>
                         </div>
@@ -462,7 +475,7 @@
                                 <h4 class="collapse-subject">
                                     {{workshopsLevel[i]}}</h4>
                                 <div class="register-button-div">
-                                    <button mat-stroked-button
+                                    <button mat-stroked-button (click)="registerWorkshop(i)"
                                         class="register-button">{{publicservice.Texts.Texts["home20"]}}</button>
                                 </div>
                                 <button mat-button class="collapse"
@@ -721,7 +734,10 @@
                             <h3 class="discription-right-footer-about-subtitle">
                                 {{publicservice.Texts.Texts["home38"]}}</h3>
                             <p class="discription-right-footer-about-discription">
-                                {{publicservice.Texts.Texts["home39"]}}</p>
+                                {{publicservice.Texts.Texts["home39"]}}
+                                <br>
+                                {{publicservice.Texts.Texts["home62"]}}
+                            </p>
                             <div style="text-align: center;">
                                 <button mat-flat-button (click)="People()"
                                     class="green-button">{{publicservice.Texts.Texts["home47"]}}</button>
@@ -734,20 +750,20 @@
                         <img class="footer-image" src="assets/images/masoud.jpg">
                     </div>
                 </div>
-                <div>
+                <div class="supporters-div">
                     <h1 class="supporters-title">
                         {{publicservice.Texts.Texts["home40"]}}
                     </h1>
-                </div>
-                <div class="supporters-card-div">
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/quiz of kings.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/avngames.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/tod.png">
+                    <div class="supporters-card-div">
+                        <div class="supportes-card-image-div">
+                            <img class="supporters-card-image" src="assets/images/quiz of kings.png">
+                        </div>
+                        <div class="supportes-card-image-div">
+                            <img class="supporters-card-image" src="assets/images/avngames.png">
+                        </div>
+                        <div class="supportes-card-image-div">
+                            <img class="supporters-card-image" src="assets/images/tod.png">
+                        </div>
                     </div>
                 </div>
             </div>
