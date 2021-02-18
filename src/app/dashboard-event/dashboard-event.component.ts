@@ -15,6 +15,7 @@ export class DashboardEventComponent implements OnInit {
   iconW = 'keyboard_arrow_down';
   iconT = 'keyboard_arrow_down';
   userName: string = "";
+  isStaff: boolean;
   constructor(private router: Router, public publicservice: PublicService,public snackbar:MatSnackBar) {
     if (!publicservice.logedIn) {
       this.router.navigate(['login']);
@@ -24,7 +25,7 @@ export class DashboardEventComponent implements OnInit {
         this.userName = r.data.first_name;
         const image = document.getElementById('image') as HTMLImageElement;
         image.src = r.data.profile;
-        publicservice.isStaff = r.data.
+        this.isStaff = r.data.is_staff;
         console.log(image.src);
       });
     }

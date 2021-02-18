@@ -1,5 +1,5 @@
 <div class="dash-event-whole" id="dash" #dash>
-    <div class="logo" >
+    <div class="logo">
         <p class="logo-text" style="margin-left: -5px;">{{publicservice.Texts.Texts["logo1"]}}</p>
         <img class="logo-image" (click)='Home()' src="assets/svg/dark-3d.svg">
         <p class="logo-text" style="margin-right: -5px;">{{publicservice.Texts.Texts["logo2"]}}</p>
@@ -45,8 +45,10 @@
                 </div>
             </div>
             <!-- <button mat-stroked-button class="outlined-button">{{publicservice.Texts.Texts["dash-event5"]}}</button> -->
-            <button mat-stroked-button matBadge="2" matBadgePosition="before" (click)="Cart()"
-                class="outlined-button">{{publicservice.Texts.Texts['cart8']}}</button>
+            <div *ngIf="!isStaff">
+                <button mat-stroked-button matBadge="2" matBadgePosition="before" (click)="Cart()"
+                    class="outlined-button">{{publicservice.Texts.Texts['cart8']}}</button>
+            </div>
         </div>
         <div class="left-part">
             <h1 class="events-title">{{publicservice.Texts.Texts["dash-event6"]}}</h1>

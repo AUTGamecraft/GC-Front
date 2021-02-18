@@ -16,6 +16,9 @@ export class CartComponent implements OnInit {
     }
     else{
       publicservice.getUser().then((r)=>{
+        if(r.data.is_staff){
+          router.navigate(['**']);
+        }
         this.userName = r.data.first_name;
         const image = document.getElementById('image') as HTMLImageElement;
         image.src = r.data.profile;

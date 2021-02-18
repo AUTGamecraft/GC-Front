@@ -10,6 +10,7 @@ import { ErrorDialogComponent } from '../error-dialog/error-dialog.component'
 })
 export class DashboardMediaComponent implements OnInit {
   userName: string = "";
+  isStaff:boolean;
   constructor(private router : Router,public publicservice: PublicService,public snackbar:MatSnackBar) { 
     if(!publicservice.logedIn){
       this.router.navigate(['login']);
@@ -17,6 +18,7 @@ export class DashboardMediaComponent implements OnInit {
     else{
       publicservice.getUser().then((r)=>{
         this.userName = r.data.first_name;
+        this.isStaff = r.data.is_staff;
       });
     }
   }
