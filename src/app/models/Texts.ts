@@ -54,7 +54,7 @@ export class Texts{
         this.FaTexts["home34"] = "ارائه کنندگان"
         this.FaTexts["home35"] = "مسعود فراستی"
         this.FaTexts["home36"] = "منتقد درجه یک"
-        this.FaTexts["home37"] = "تایتل"
+        this.FaTexts["home37"] = "درباره ما"
         this.FaTexts["home38"] = "ساب تایتل"
         this.FaTexts["home39"] = "انجمن علمی دانشکده‌ی کامپیوتر امیرکبیر، نهادی است مستقل در جهت انجام فعالیت‌های علمی و آموزشی. هر ساله رویدادهای علمی و آموزشی متعددی توسط انجمن علمی در سطح دانشگاهی، کشوری و بین‌المللی برگزار شده و مخاطبان بسیاری را به خود جذب می‌کند. از میان این رویدادها، می‌توان به مسابقات ACM، جشنواره‌ی لینوکس، مسابقات داده کاوی DMC و سمینارهای هوش مصنوعی AAISS اشاره کرد."
         this.FaTexts["home40"] = "حامیان"
@@ -248,6 +248,7 @@ export class Texts{
         this.FaTexts["not-found1"] = "۴۰۴"
         this.FaTexts["not-found2"] = "!یافت می نشود"
         this.FaTexts["not-found3"] = "صفحه اصلی"
+
         this.FaTexts["dash-teams12"] = "وضعیت تیم"
         this.FaTexts["dash-teams12"] = "وضعیت تیم"
         this.FaTexts["dash-teams12"] = "وضعیت تیم"
