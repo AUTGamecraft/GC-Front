@@ -33,6 +33,7 @@ export class HomeComponent implements OnInit {
   workshopsPresenters: any = [];
   noShadow = 'noshadow';
   userName: string = "";
+  count = 0;
   constructor(public publicservice: PublicService, public router: Router, public snackbar: MatSnackBar) {
     this.time = parseInt('' + (new Date("2021-03-06T12:00:00Z").getTime() - new Date().getTime()) / 1000);
     publicservice.getTalks().then((r) => {
@@ -91,7 +92,10 @@ export class HomeComponent implements OnInit {
         this.userName = r.data.first_name;
       })
     }
-
+    publicservice.getUsersCount().then((r)=>{
+      console.log(r);
+      this.count = r.data.count;
+    })
   }
 
   ngOnInit(): void {
@@ -202,7 +206,15 @@ export class HomeComponent implements OnInit {
       return;
     }
     else {
-
+      this.publicservice.workshopPk = this.workshopsArray[i].pk;
+      this.publicservice.EnrollWorkshop().then(() => {
+        if (window.innerWidth > 992) {
+          this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'ثبت نام با موفقیت انجام شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+        }
+        else {
+          this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'ثبت نام با موفقیت انجام شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+        }
+      })
     }
   }
   registerTalk(i) {

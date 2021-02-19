@@ -16,6 +16,8 @@ export class DashboardEventComponent implements OnInit {
   iconT = 'keyboard_arrow_down';
   userName: string = "";
   isStaff: boolean;
+  talksArray : any = [];
+  workshopsArray: any = [];
   constructor(private router: Router, public publicservice: PublicService,public snackbar:MatSnackBar) {
     if (!publicservice.logedIn) {
       this.router.navigate(['login']);
@@ -30,6 +32,15 @@ export class DashboardEventComponent implements OnInit {
       });
       publicservice.getUserCart().then((r)=>{
         console.log(r);
+        for (let i = 0; i < r.data.length; i++) {
+          if(r.data[i].workshop == null){
+            this.talksArray.push(r.data[i]);
+          }
+          else{
+            this.workshopsArray.push(r.data[i]);
+          }
+          
+        }
       })
     }
   }

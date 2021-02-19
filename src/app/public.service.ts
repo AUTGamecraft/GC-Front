@@ -7,7 +7,8 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ErrorDialogComponent } from '../app/error-dialog/error-dialog.component'
 import { formatCurrency, HashLocationStrategy } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpRequest } from '@angular/common/http';
+import { coerceStringArray } from '@angular/cdk/coercion';
 
 
 @Injectable({
@@ -32,6 +33,7 @@ export class PublicService {
   public userName: string = "";
   public hasError: boolean;
   public talkPk;
+  public workshopPk;
   Mockup() {
 
 
@@ -89,35 +91,19 @@ export class PublicService {
     return Promise.reject(errMsg);
   }
 
-  UpdateImage(): Promise<any> {
-    var that = this;
+  UpdateImage(): void {
+    let uploadData = new FormData();
+    uploadData.append("profile", this.file);
     this.APICalls.UpdateImage = true;
-    let headers = new Headers({
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + this.Authorization,
-      "Accept": "application/json, text/plain, */*",
-      "Accept-Language": "en-US,en;q=0.9,fa;q=0.8",
-      'Mime-Type': "multipart/form-data",
-      'Process-Data':false,
-    });
-    let options = new RequestOptions({ headers: headers });
-    var uploadData = new FormData();
-    uploadData.append("profile", this.file,this.fileName);
-    console.log(this.fileName);
-    console.log(this.file);
-    let ret: Promise<any> = this.http.put(this.ApiUrl + '/api/users/profile/update/',uploadData,options)
-      .toPromise()
-      .then((r) => this.extractData(r, this))
-      .catch(this.handleError);
-
-    ret.then(r => {
-      this.APICalls.SignUp = false;
+    let h=new HttpHeaders();
+    h=h.set('Authorization','Bearer ' + this.Authorization);
+    const req = new HttpRequest("PUT", this.ApiUrl+'/api/users/profile/update/', uploadData,{headers:h});
+    this.http2.request(req).
+    toPromise().
+    then((r)=>{
       console.log(r);
-    }).catch(e => {
-      this.APICalls.SignUp = false;
-      that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-    });
-    return ret;
+    })
+   
   }
 
   SignUp(): Promise<any> {
@@ -321,7 +307,7 @@ export class PublicService {
       'Authorization': 'Bearer ' + this.Authorization
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/users/sign_up/', body, options)
+    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/workshop/'+this.workshopPk+'/enroll/', body, options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
@@ -354,7 +340,25 @@ export class PublicService {
     });
     return ret;
   }
-
+  getUsersCount(): Promise<any> {
+    var that = this;
+    this.APICalls.getUserTalks = true;
+    let headers = new Headers({
+      'Content-Type': 'application/json',
+    });
+    let options = new RequestOptions({ headers: headers });
+    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/users/count/', options)
+      .toPromise()
+      .then((r) => this.extractData(r, this))
+      .catch(this.handleError);
+    ret.then(r => {
+      this.APICalls.getUserTalks = false;
+    }).catch(e => {
+      this.APICalls.getUserTalks = false;
+      that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+    });
+    return ret;
+  }
 
 
 
