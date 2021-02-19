@@ -24,8 +24,8 @@ export class DashboardMediaComponent implements OnInit {
         image.src = r.data.profile;
       });
       publicservice.getUserCart().then((r) => {
-        for (let i = 0; i < r.length; i++) {
-          if (r[i].talk == null) {
+        for (let i = 0; i < r.data.length; i++) {
+          if (r.data[i].talk == null) {
             this.count = this.count + 1;
           }
         }

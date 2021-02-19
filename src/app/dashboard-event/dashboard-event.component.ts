@@ -34,12 +34,12 @@ export class DashboardEventComponent implements OnInit {
       });
       publicservice.getUserCart().then((r) => {
         console.log(r);
-        for (let i = 0; i < r.length; i++) {
-          if (r[i].workshop == null) {
-            this.talksArray.push(r[i]);
+        for (let i = 0; i < r.data.length; i++) {
+          if (r.data[i].workshop == null) {
+            this.talksArray.push(r.data[i]);
           }
           else {
-            this.workshopsArray.push(r[i]);
+            this.workshopsArray.push(r.data[i]);
             this.count = this.count + 1;
           }
 

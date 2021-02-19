@@ -32,14 +32,12 @@ export class CartComponent implements OnInit {
       });
       publicservice.getUserCart().then((r) => {
         console.log(r);
-        this.cartArray = r;
+        this.cartArray = r.data;
+        this.count = this.cartArray.length;
         for (let i = 0; i < this.cartArray.length; i++) {
-          if (this.cartArray[i].talk == null) {
-            this.count = this.count + 1;
-            this.cartDelete.push('noDelete');
-            this.cartArray[i].workshop.date = moment(this.cartArray[i].workshop.date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('dddd') + " " + moment(this.cartArray[i].workshop.date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('DD') + " " + moment(this.cartArray[i].workshop.date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('MMMM') + " " + moment(this.cartArray[i].workshop.date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('YY');
-            this.totalCost = this.totalCost + this.cartArray[i].workshop.cost;
-          }
+          this.cartDelete.push('noDelete');
+          this.cartArray[i].workshop.date = moment(this.cartArray[i].workshop.date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('dddd') + " " + moment(this.cartArray[i].workshop.date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('DD') + " " + moment(this.cartArray[i].workshop.date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('MMMM') + " " + moment(this.cartArray[i].workshop.date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('YY');
+          this.totalCost = this.totalCost + this.cartArray[i].workshop.cost;
         }
       });
     }
@@ -92,10 +90,10 @@ export class CartComponent implements OnInit {
   Delete(i) {
     this.publicservice.workshopPk = this.cartArray[i].pk
     this.publicservice.deleteCartItem().then((r) => {
-      if(window.innerWidth > 992){
-      this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'کارگاه با موفقیت از سبد خریدتان حذف شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      if (window.innerWidth > 992) {
+        this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'کارگاه با موفقیت از سبد خریدتان حذف شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
       }
-      else{
+      else {
         this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'کارگاه با موفقیت از سبد خریدتان حذف شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
       }
       this.cartDelete[i] = 'delete';
