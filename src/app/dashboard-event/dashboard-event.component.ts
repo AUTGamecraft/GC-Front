@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { PublicService } from '../public.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ErrorDialogComponent } from '../error-dialog/error-dialog.component';
+import * as moment from 'jalali-moment';
 @Component({
   selector: 'app-dashboard-event',
   templateUrl: './dashboard-event.component.html',
@@ -32,18 +33,52 @@ export class DashboardEventComponent implements OnInit {
         image.src = r.data.profile;
         this.isStaff = r.data.is_staff;
       });
-      publicservice.getUserCart().then((r) => {
+      publicservice.getUserDashboard().then((r) => {
         console.log(r);
         for (let i = 0; i < r.data.length; i++) {
           if (r.data[i].workshop == null) {
-            this.talksArray.push(r.data[i]);
+            r.data[i].talk.date = moment(r.data[i].talk.date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('dddd') + " " + moment(r.data[i].talk.date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('DD') + " " + moment(r.data[i].talk.date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('MMMM') + " " + moment(r.data[i].talk.date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('YY');
+            switch (r.data[i].talk.level) {
+              case 'BEGINNER':
+                r.data[i].talk.level = 'مبتدی';
+                break;
+              case 'EXPERT':
+                r.data[i].talk.level = 'پیشرفته';
+                break;
+              case 'INTERMEDIATE':
+                r.data[i].talk.level = 'متوسط';
+                break;
+              default:
+                r.data[i].talk.level = 'unknown';
+                break;
+            }
+            this.talksArray.push(r.data[i].talk);
           }
           else {
-            this.workshopsArray.push(r.data[i]);
-            this.count = this.count + 1;
+            r.data[i].workshop.date = moment(r.data[i].workshop.date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('dddd') + " " + moment(r.data[i].workshop.date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('DD') + " " + moment(r.data[i].workshop.date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('MMMM') + " " + moment(r.data[i].workshop.date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('YY');
+            switch (r.data[i].workshop.level) {
+              case 'BEGINNER':
+                r.data[i].workshop.level = 'مبتدی';
+                break;
+              case 'EXPERT':
+                r.data[i].workshop.level = 'پیشرفته';
+                break;
+              case 'INTERMEDIATE':
+                r.data[i].workshop.level = 'متوسط';
+                break;
+              default:
+                r.data[i].workshop.level = 'unknown';
+                break;
+            }
+            this.workshopsArray.push(r.data[i].workshop);
+
           }
 
         }
+        console.log(this.talksArray)
+      })
+      publicservice.getUserCart().then((r)=>{
+        this.count = r.data.length;
       })
     }
   }

@@ -12,9 +12,10 @@
                         <input type="file" id="imgUpload" style="display:none"
                             (change)="handleFileInput($event.target.files)">
                         <img class="user-image" id="image">
-                        <button mat-mini-fab style="background-color: #52006b;position: absolute;left: 25%;top: 80%;" (click)="Upload()">
+                        <button mat-mini-fab style="background-color: #52006b;position: absolute;left: 25%;top: 80%;"
+                            (click)="Upload()">
                             <mat-icon>face</mat-icon>
-                          </button>
+                        </button>
                     </div>
                     <p class="user-name">{{userName}}</p>
                 </div>
@@ -56,17 +57,17 @@
         <div class="left-part">
             <h1 class="events-title">{{publicservice.Texts.Texts["dash-event6"]}}</h1>
             <h3 class="workshops-title">{{publicservice.Texts.Texts["dash-event7"]}}</h3>
-            <div class="collapse">
+            <div class="collapse" *ngFor="let workshop of workshopsArray">
                 <div class="orange-collapse">
                 </div>
                 <div>
                     <div class="components">
                         <h3 class="component-title">
-                            {{publicservice.Texts.Texts["dash-event8"]}}</h3>
+                            {{workshop.title}}</h3>
                         <h4 class="component-subject">
-                            {{publicservice.Texts.Texts["dash-event9"]}}</h4>
+                            {{workshop.date}}</h4>
                         <h4 class="component-subject">
-                            {{publicservice.Texts.Texts["dash-event11"]}}</h4>
+                            {{workshop.level}}</h4>
                         <button mat-stroked-button
                             class="register-button">{{publicservice.Texts.Texts["dash-event10"]}}</button>
                         <button mat-stroked-button (click)="Enter()"
@@ -80,20 +81,20 @@
                         <div class="workshops-inside">
                             <div>
                                 <p class="workshops-discription">
-                                    {{publicservice.Texts.Texts["dash-event14"]}}</p>
+                                    {{workshop.content}}</p>
                             </div>
                             <div class="presenters-title-div">
                                 <h1 class="presenters-title">{{publicservice.Texts.Texts["dash-event15"]}}</h1>
                             </div>
-                            <div class="presenter-card">
+                            <div class="presenter-card" *ngFor="let presenter of workshop.presenters">
                                 <div class="presenter-card-inside">
                                     <div>
                                         <img class="presenter-image" src="assets/images/masoud.jpg">
                                     </div>
                                     <h2 class="presenter-name">
-                                        {{publicservice.Texts.Texts["dash-event16"]}}
+                                         {{presenter.first_name}} {{presenter.last_name}}
                                     </h2>
-                                    <h4 class="presenter-about">{{publicservice.Texts.Texts["dash-event17"]}}</h4>
+                                    <h4 class="presenter-about">{{presenter.descriptions}}</h4>
                                 </div>
                             </div>
                         </div>
@@ -161,19 +162,19 @@
                 <h3 class="talks-title">
                     {{publicservice.Texts.Texts["dash-event18"]}}</h3>
             </div>
-            <div class="collapse">
+            <div class="collapse" *ngFor="let talk of talksArray">
                 <div class="pink-collapse">
                 </div>
-                <div>
+                <div style="width: 100%;">
                     <div class="components">
                         <h3 class="component-title">
-                            {{publicservice.Texts.Texts["dash-event19"]}}</h3>
+                            {{talk.title}}</h3>
                         <h4 class="component-subject">
-                            {{publicservice.Texts.Texts["dash-event20"]}}</h4>
+                            {{talk.date}}</h4>
                         <h4 class="component-subject">
-                            {{publicservice.Texts.Texts["dash-event21"]}}</h4>
+                            {{talk.capacity}}</h4>
                         <h4 class="component-subject">
-                            {{publicservice.Texts.Texts["dash-event22"]}}</h4>
+                            {{talk.level}}</h4>
                         <button mat-stroked-button (click)="Enter()"
                             class="register-button">{{publicservice.Texts.Texts["dash-event23"]}}</button>
                         <button mat-button class="discription"
@@ -182,22 +183,24 @@
                         </button>
                     </div>
                     <div [class]="talks">
-                        <div class="workshops-inside">
+                        <div class="workshops-inside" style="text-align: right;">
                             <div>
-                                <p class="workshops-discription">{{publicservice.Texts.Texts["dash-event25"]}}</p>
+                                <p class="workshops-discription">{{talk.content}}</p>
                             </div>
                             <div class="presenters-title-div">
                                 <h1 class="presenters-title">{{publicservice.Texts.Texts["dash-event26"]}}</h1>
                             </div>
-                            <div class="presenter-card">
-                                <div class="presenter-card-inside">
-                                    <div>
-                                        <img class="presenter-image" src="assets/images/masoud.jpg">
+                            <div style="display: flex;justify-content: center;">
+                                <div class="presenter-card" *ngFor="let presenter of talk.presenters">
+                                    <div class="presenter-card-inside">
+                                        <div>
+                                            <img class="presenter-image" src="assets/images/masoud.jpg">
+                                        </div>
+                                        <h2 class="presenter-name">
+                                             {{presenter.first_name}} {{presenter.last_name}}
+                                        </h2>
+                                        <h4 class="presenter-about">{{presenter.descriptions}} </h4>
                                     </div>
-                                    <h2 class="presenter-name">
-                                        {{publicservice.Texts.Texts["dash-event27"]}}
-                                    </h2>
-                                    <h4 class="presenter-about">{{publicservice.Texts.Texts["dash-event28"]}} </h4>
                                 </div>
                             </div>
                         </div>
