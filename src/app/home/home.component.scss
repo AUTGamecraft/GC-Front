@@ -813,7 +813,7 @@
         
     }
     .intro-discription-div {
-        padding-bottom: 450px;
+        padding-bottom: 750px;
         margin-bottom: 20%;
     }
     .intro-discription-about-title {
@@ -858,7 +858,11 @@
         width: 90px;
         height: 57px;
         text-align: center;
-        margin-left: 5%;
+        margin-left: 50%;
+        padding-left: 50%;
+        margin-right: 0%;
+        border-radius: 20px;
+        padding: 11px 11px;
     }
     .event-schedule-phone {
         display: initial;
@@ -1060,6 +1064,7 @@
     }
     .discription-right-footer-about-div {
         padding-left: 10%;
+        margin-bottom: 1000px;
     }
     .discription-right-footer-about-title {
         font-size: 40px;
