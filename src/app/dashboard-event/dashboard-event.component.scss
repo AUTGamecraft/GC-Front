@@ -174,17 +174,36 @@
     font-family: "Estedad-Bold";
     color: #52006b;
 }
+.hide{
+    max-height: 55%;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    cursor: pointer;
+}
+.show{
+    overflow: visible;
+    max-height: 1000px;
+    transition: max-height 0.5s ease-in;
+    cursor: initial;
+}
 .presenter-card {
     display: flex;
+    flex-wrap: wrap;
+    grid-auto-rows: auto;
     justify-content: center;
 }
 .presenter-card-inside {
+    padding: 10px;
+    padding-left: 20px;
+    flex: 0 0 40%;
+    display: flex;
     direction: rtl;
     text-align: center;
     background-color: white;
     border-radius: 25px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin: 10px;
+
 }
 .presenter-image {
     height: 140px;
@@ -202,6 +221,7 @@
 .presenter-about {
     font-family: "Estedad-Regular";
     color: #a04db9;
+    font-size: 10px;
     margin-top: 0;
 }
 .talks-title {

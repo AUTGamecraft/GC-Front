@@ -22,6 +22,8 @@ export class DashboardEventComponent implements OnInit {
   email: string = "";
   hash = 0;
   count = 0;
+  isHideWorkshops : any = [];
+  isHideTalks : any = [];
   constructor(private router: Router, public publicservice: PublicService, public snackbar: MatSnackBar) {
     if (!publicservice.logedIn) {
       this.router.navigate(['login']);
@@ -52,6 +54,9 @@ export class DashboardEventComponent implements OnInit {
                 r.data[i].talk.level = 'unknown';
                 break;
             }
+            for (let j = 0; j < r.data[i].talk.presenters.length; j++) {
+              this.isHideTalks.push('hide')
+            }
             this.talksArray.push(r.data[i].talk);
           }
           else {
@@ -69,6 +74,9 @@ export class DashboardEventComponent implements OnInit {
               default:
                 r.data[i].workshop.level = 'unknown';
                 break;
+            }
+            for (let j = 0; j < r.data[i].workshop.presenters.length; j++) {
+              this.isHideWorkshops.push('hide');
             }
             this.workshopsArray.push(r.data[i].workshop);
 
