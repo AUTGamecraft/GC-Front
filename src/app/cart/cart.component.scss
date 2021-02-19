@@ -118,6 +118,7 @@
     border-radius: 20px;
     height: fit-content;
     width: 25%;
+    padding-top: 20px;
 }
 #cart-button{
     background-color: #6af9c5;
@@ -126,9 +127,7 @@
 }
 .user-image {
     border-radius: 50%;
-    margin: 50px;
-    margin-bottom: 0;
-    margin-top: 30px;
+    margin: auto auto auto 0;
     height: 160px;
     width: 160px;
     object-fit: cover;

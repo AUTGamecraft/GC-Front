@@ -8,10 +8,13 @@
         <div class="right-part">
             <div class="right-part-header">
                 <div class="name-image-phone">
-                    <div>
+                    <div style="position: relative;">
                         <input type="file" id="imgUpload" style="display:none"
                             (change)="handleFileInput($event.target.files)">
-                        <img class="user-image" id="image" style="cursor: pointer;" (click)="Upload()">
+                        <img class="user-image" id="image">
+                        <button mat-mini-fab style="background-color: #52006b;position: absolute;left: 25%;top: 80%;" (click)="Upload()">
+                            <mat-icon>face</mat-icon>
+                          </button>
                     </div>
                     <p class="user-name">{{userName}}</p>
                 </div>

@@ -16,30 +16,37 @@ export class DashboardEventComponent implements OnInit {
   iconT = 'keyboard_arrow_down';
   userName: string = "";
   isStaff: boolean;
-  talksArray : any = [];
+  talksArray: any = [];
   workshopsArray: any = [];
-  constructor(private router: Router, public publicservice: PublicService,public snackbar:MatSnackBar) {
+  email:string = "";
+  hash = 0;
+  constructor(private router: Router, public publicservice: PublicService, public snackbar: MatSnackBar) {
     if (!publicservice.logedIn) {
       this.router.navigate(['login']);
     }
-    else{
-      publicservice.getUser().then((r)=>{
+    else {
+      publicservice.getUser().then((r) => {
         this.userName = r.data.first_name;
         const image = document.getElementById('image') as HTMLImageElement;
-        image.src = r.data.profile;
+        if (r.data.profile == null) {
+          image.src = 'assets/svg/avatar-'+ (Math.floor(Math.random() * 3) + 1) + '.svg';
+        }
+        else {
+          image.src = r.data.profile;
+        }
         this.isStaff = r.data.is_staff;
         // console.log(image.src);
       });
-      publicservice.getUserCart().then((r)=>{
+      publicservice.getUserCart().then((r) => {
         console.log(r);
         for (let i = 0; i < r.data.length; i++) {
-          if(r.data[i].workshop == null){
+          if (r.data[i].workshop == null) {
             this.talksArray.push(r.data[i]);
           }
-          else{
+          else {
             this.workshopsArray.push(r.data[i]);
           }
-          
+
         }
       })
     }
@@ -47,9 +54,9 @@ export class DashboardEventComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  ngAfterViewInit():void{
-    if(this.router.url.split('#')[1] == 'dash'){
-      setTimeout((()=>this.Schedule(document.getElementById('dash'))),200)
+  ngAfterViewInit(): void {
+    if (this.router.url.split('#')[1] == 'dash') {
+      setTimeout((() => this.Schedule(document.getElementById('dash'))), 200)
     }
   }
   Schedule(el: HTMLElement) {
@@ -91,7 +98,7 @@ export class DashboardEventComponent implements OnInit {
     this.publicservice.file = this.file;
     this.publicservice.UpdateImage();
   }
-  Enter(){
+  Enter() {
     this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
   }
 }
