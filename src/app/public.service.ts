@@ -9,7 +9,7 @@ import { ErrorDialogComponent } from '../app/error-dialog/error-dialog.component
 import { formatCurrency, HashLocationStrategy } from '@angular/common';
 import { HttpClient, HttpHeaders, HttpRequest } from '@angular/common/http';
 import { coerceStringArray } from '@angular/cdk/coercion';
-
+import { SuccessDialogComponent } from '../app/success-dialog/success-dialog.component';
 
 @Injectable({
   providedIn: 'root'
@@ -101,7 +101,14 @@ export class PublicService {
     this.http2.request(req).
     toPromise().
     then((r)=>{
-    });
+      if(window.innerWidth > 992){
+        this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'عکس با موفقیت آپلود شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+        }
+        else{
+          this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'عکس با موفقیت آپلود شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+        }
+    })
+    .catch(this.handleError);
    
   }
 
