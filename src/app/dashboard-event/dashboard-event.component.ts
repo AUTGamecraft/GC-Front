@@ -18,8 +18,9 @@ export class DashboardEventComponent implements OnInit {
   isStaff: boolean;
   talksArray: any = [];
   workshopsArray: any = [];
-  email:string = "";
+  email: string = "";
   hash = 0;
+  count = 0;
   constructor(private router: Router, public publicservice: PublicService, public snackbar: MatSnackBar) {
     if (!publicservice.logedIn) {
       this.router.navigate(['login']);
@@ -28,23 +29,18 @@ export class DashboardEventComponent implements OnInit {
       publicservice.getUser().then((r) => {
         this.userName = r.data.first_name;
         const image = document.getElementById('image') as HTMLImageElement;
-        if (r.data.profile == null) {
-          image.src = 'assets/svg/avatar-'+ (Math.floor(Math.random() * 3) + 1) + '.svg';
-        }
-        else {
-          image.src = r.data.profile;
-        }
+        image.src = r.data.profile;
         this.isStaff = r.data.is_staff;
-        // console.log(image.src);
       });
       publicservice.getUserCart().then((r) => {
         console.log(r);
-        for (let i = 0; i < r.data.length; i++) {
-          if (r.data[i].workshop == null) {
-            this.talksArray.push(r.data[i]);
+        for (let i = 0; i < r.length; i++) {
+          if (r[i].workshop == null) {
+            this.talksArray.push(r[i]);
           }
           else {
-            this.workshopsArray.push(r.data[i]);
+            this.workshopsArray.push(r[i]);
+            this.count = this.count + 1;
           }
 
         }
@@ -84,7 +80,7 @@ export class DashboardEventComponent implements OnInit {
     // this.router.navigate(['dashboard-teams']);
   }
   Cart() {
-    this.router.navigate(['cart']);
+    this.router.navigate(['cart'],{fragment:'dash'});
   }
   Upload() {
     document.getElementById('imgUpload').click();

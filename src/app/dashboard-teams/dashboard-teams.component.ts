@@ -26,6 +26,8 @@ export class DashboardTeamsComponent implements OnInit {
       publicservice.getUser().then((r)=>{
         this.userName = r.data.first_name;
         this.isStaff = r.data.is_staff;
+        const image = document.getElementById('image') as HTMLImageElement;
+        image.src = r.data.profile;
       });
       publicservice.getUsers().then((r)=>{
         console.log(r);
@@ -90,6 +92,6 @@ export class DashboardTeamsComponent implements OnInit {
     // console.log(option);
   }
   Cart() {
-    this.router.navigate(['cart']);
+    this.router.navigate(['cart'],{fragment:'dash'});
   }
 }

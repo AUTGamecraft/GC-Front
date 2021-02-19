@@ -46,7 +46,7 @@
                 </div>
                 <!-- <button mat-stroked-button class="outlined-button">{{publicservice.Texts.Texts["dash-media5"]}}</button> -->
                 <div *ngIf="!isStaff">
-                    <button mat-stroked-button matBadge="2" matBadgePosition="before" (click)="Cart()"
+                    <button mat-stroked-button matBadge="{{count}}" matBadgePosition="before" (click)="Cart()"
                         class="outlined-button">{{publicservice.Texts.Texts['cart8']}}</button>
                 </div>
             </div>
@@ -56,19 +56,19 @@
                 <div class="workshops-div">
                     <h3 class="workshops-title">
                         {{publicservice.Texts.Texts["dash-media7"]}} </h3>
-                    <mat-card class="mat-card">
+                    <!-- <mat-card class="mat-card">
                         <div style="display: flex;direction: ltr;justify-content: space-between;">
                             <p style="margin: auto 0;">{{publicservice.Texts.Texts["dash-media8"]}}</p>
                             <button mat-stroked-button
                                 class="download-button">{{publicservice.Texts.Texts["dash-media9"]}}
                             </button>
                         </div>
-                    </mat-card>
+                    </mat-card> -->
                 </div>
                 <div class="talks-div">
                     <h3 class="talks-title">
                         {{publicservice.Texts.Texts["dash-media10"]}}</h3>
-
+<!-- 
                     <mat-card class="mat-card">
                         <div style="display: flex;direction: ltr;justify-content: space-between;">
                             <p style="margin: auto 0;">{{publicservice.Texts.Texts["dash-media8"]}}</p>
@@ -76,7 +76,7 @@
                                 class="download-button">{{publicservice.Texts.Texts["dash-media9"]}}
                             </button>
                         </div>
-                    </mat-card>
+                    </mat-card> -->
                 </div>
             </div>
 

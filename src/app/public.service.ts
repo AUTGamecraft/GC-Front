@@ -101,8 +101,7 @@ export class PublicService {
     this.http2.request(req).
     toPromise().
     then((r)=>{
-      console.log(r);
-    })
+    });
    
   }
 
@@ -244,7 +243,6 @@ export class PublicService {
 
     ret.then(r => {
       this.APICalls.getUsers = false;
-      console.log(r);
     }).catch(e => {
       this.APICalls.getUsers = false;
       that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
@@ -329,6 +327,26 @@ export class PublicService {
     });
     let options = new RequestOptions({ headers: headers });
     let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/service/services/', options)
+      .toPromise()
+      .then((r) => this.extractData(r, this))
+      .catch(this.handleError);
+    ret.then(r => {
+      this.APICalls.getUserTalks = false;
+    }).catch(e => {
+      this.APICalls.getUserTalks = false;
+      that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+    });
+    return ret;
+  }
+  deleteCartItem(): Promise<any> {
+    var that = this;
+    this.APICalls.getUserTalks = true;
+    let headers = new Headers({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + this.Authorization
+    });
+    let options = new RequestOptions({ headers: headers });
+    let ret: Promise<any> = this.http.delete(this.ApiUrl + '/api/service/' + this.workshopPk + '/', options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);

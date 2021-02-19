@@ -3,6 +3,9 @@ import { Router } from '@angular/router';
 import { PublicService } from '../public.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ErrorDialogComponent } from '../error-dialog/error-dialog.component';
+import * as moment from 'jalali-moment';
+import { SuccessDialogComponent } from '../success-dialog/success-dialog.component';
+
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -10,18 +13,34 @@ import { ErrorDialogComponent } from '../error-dialog/error-dialog.component';
 })
 export class CartComponent implements OnInit {
   userName: string = "";
-  constructor(private router: Router, public publicservice: PublicService,public snackbar:MatSnackBar) { 
+  cartArray: any = [];
+  cartDelete: any = [];
+  totalCost = 0;
+  count = 0;
+  constructor(private router: Router, public publicservice: PublicService, public snackbar: MatSnackBar) {
     if (!publicservice.logedIn) {
       this.router.navigate(['login']);
     }
-    else{
-      publicservice.getUser().then((r)=>{
-        if(r.data.is_staff){
+    else {
+      publicservice.getUser().then((r) => {
+        if (r.data.is_staff) {
           router.navigate(['**']);
         }
         this.userName = r.data.first_name;
         const image = document.getElementById('image') as HTMLImageElement;
         image.src = r.data.profile;
+      });
+      publicservice.getUserCart().then((r) => {
+        console.log(r);
+        this.cartArray = r;
+        for (let i = 0; i < this.cartArray.length; i++) {
+          if (this.cartArray[i].talk == null) {
+            this.count = this.count + 1;
+            this.cartDelete.push('noDelete');
+            this.cartArray[i].workshop.date = moment(this.cartArray[i].workshop.date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('dddd') + " " + moment(this.cartArray[i].workshop.date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('DD') + " " + moment(this.cartArray[i].workshop.date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('MMMM') + " " + moment(this.cartArray[i].workshop.date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('YY');
+            this.totalCost = this.totalCost + this.cartArray[i].workshop.cost;
+          }
+        }
       });
     }
   }
@@ -40,7 +59,7 @@ export class CartComponent implements OnInit {
   handleFileInput(imageInput: any) {
     const file = imageInput.item(0);
     const reader = new FileReader();
-    reader.readAsDataURL(file); 
+    reader.readAsDataURL(file);
     // console.log(file); 
     this.publicservice.fileName = file.name;
     this.publicservice.UpdateImage();
@@ -59,13 +78,29 @@ export class CartComponent implements OnInit {
     this.router.navigate(navigationDetails2);
   }
   Teams() {
-    this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+    if (window.innerWidth > 992) {
+      this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+    }
+    else {
+      this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+    }
     // this.router.navigate(['dashboard-teams']);
   }
   Cart() {
     this.router.navigate(['cart']);
   }
-  Delete(){
-    return 'delete';
+  Delete(i) {
+    this.publicservice.workshopPk = this.cartArray[i].pk
+    this.publicservice.deleteCartItem().then((r) => {
+      if(window.innerWidth > 992){
+      this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'کارگاه با موفقیت از سبد خریدتان حذف شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      }
+      else{
+        this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'کارگاه با موفقیت از سبد خریدتان حذف شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+      }
+      this.cartDelete[i] = 'delete';
+      this.totalCost = this.totalCost - this.cartArray[i].workshop.cost;
+      this.count = this.count - 1;
+    })
   }
 }

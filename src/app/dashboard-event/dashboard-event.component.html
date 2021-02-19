@@ -49,7 +49,7 @@
             </div>
             <!-- <button mat-stroked-button class="outlined-button">{{publicservice.Texts.Texts["dash-event5"]}}</button> -->
             <div *ngIf="!isStaff">
-                <button mat-stroked-button matBadge="2" matBadgePosition="before" (click)="Cart()"
+                <button mat-stroked-button matBadge="{{count}}" matBadgePosition="before" (click)="Cart()"
                     class="outlined-button">{{publicservice.Texts.Texts['cart8']}}</button>
             </div>
         </div>
