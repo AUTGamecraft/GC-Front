@@ -111,7 +111,7 @@ export class HomeComponent implements OnInit {
       setTimeout((() => this.Schedule(document.getElementById('schedule'))), 200)
     }
     else if (this.router.url.split('#')[1] == 'talk') {
-      setTimeout((() => this.Schedule(document.getElementById('talk'))), 100)
+      setTimeout((() => this.Schedule(document.getElementById('talk'))), 200)
     }
     else if (this.router.url.split('#')[1] == 'workshop') {
       setTimeout((() => this.Schedule(document.getElementById('workshop'))), 100)

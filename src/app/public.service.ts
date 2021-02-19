@@ -118,7 +118,7 @@ export class PublicService {
     let body = JSON.stringify({
       "password": this.Password,
       "phone_number": this.PhoneNumber,
-      "email": this.Email,
+      "email": this.Email.toLowerCase(),
       "first_name": this.Name,
       "user_name": this.Email
     });
@@ -143,7 +143,7 @@ export class PublicService {
     var that = this;
     this.APICalls.Login = true;
     let body = JSON.stringify({
-      "email": this.Email,
+      "email": this.Email.toLowerCase(),
       "password": this.Password,
     });
     let headers = new Headers({
