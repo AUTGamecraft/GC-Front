@@ -15,8 +15,8 @@
                         <p class="user-name">{{userName}}</p>
                     </div>
                     <div style="display: flex;justify-content: center;">
-                        <button mat-stroked-button class="outlined-button"
-                            id="outlined-button-phone">{{publicservice.Texts.Texts["dash-event5"]}}</button>
+                        <button mat-stroked-button matBadge="{{count}}"  matBadgePosition="before" (click)="Cart()" id="cart-button-phone"
+                        class="outlined-button" >{{publicservice.Texts.Texts['cart8']}}</button>
                         <button mat-button (click)="logOut()"
                             class="normal-button">{{publicservice.Texts.Texts["header8"]}}</button>
                     </div>
@@ -62,6 +62,20 @@
                                 mat-stroked-button>{{publicservice.Texts.Texts['cart5']}}</button>
                         </div>
                     </div>
+                    <div class="item-workshop-phone" *ngIf="cart.talk == null" [class]="cartDelete[i]">
+                        <div class="orange"></div>
+                        <div style="width: 100%;">
+                            <p class="item-title" style="text-align: right;">{{cart.workshop.title}}</p>
+                            <div style="display: flex;justify-content: space-between;padding: 0 10px;">
+                                <p class="item-date">{{cart.workshop.date}}</p>
+                                <div style="display: flex;">
+                                    <p class="item-cost">{{cart.workshop.cost}}</p>
+                                    <button class="delete-button" (click)="Delete(i)"
+                                        mat-stroked-button>{{publicservice.Texts.Texts['cart5']}}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- <div class="item-workshop" [class]="Delete()">
                     <div style="display: flex;">
@@ -98,6 +112,9 @@
                         <div style="text-align: center;">
                             <button mat-flat-button (click)="People()"
                                 class="green-button">{{publicservice.Texts.Texts["home47"]}}</button>
+                        </div>
+                        <div class="footer-image-div-phone">
+                            <img class="footer-image" src="assets/images/folan.png">
                         </div>
                     </div>
                     <div class="discription-right-footer-bubble">
