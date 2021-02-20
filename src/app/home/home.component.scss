@@ -826,7 +826,7 @@
     justify-content: left;
     text-align: left;
 }
-@media only screen and (max-width: 1113px) {
+@media only screen and (max-width: 1000px) {
     .supporters-card-div {
         flex-direction: column;
     }
@@ -922,12 +922,14 @@
         background-color: #fafafa;
         justify-content: center;
         padding-left: 10%;
+
     }
     .schedule-middle-div {
         margin: 0;
         padding-top: 60px;
         // padding-right: 10%;
         z-index: 0;
+       // display: flex;
     }
     .middle-div-phone {
         justify-content: center;
@@ -935,6 +937,7 @@
         // margin: 0 auto;
         // width: 100%;
         z-index: 1;
+       // display: flex;
     }
     .Ellipse {
         width: 16px;
@@ -1098,26 +1101,35 @@
     }
     .discription-footer-div {
         flex-direction: column;
-        justify-content: initial;
+        //justify-content: initial;
         justify-content: center;
+        display: flex;
     }
     .footer-image {
-        width: 360px;
-        height: 320px;
+       // width: 360px;
+        //height: 320px;
+        //display: block;
+        margin-left: auto;
+       margin-right: auto;
+       display: flex;
+       justify-content: center;
+       align-items: center;
     }
     .discription-right-footer-div {
         padding: 38%;
         margin-bottom: 80%;
+        justify-content: center;
     }
     .footer-image-div {
         text-align: center;
         margin-left: 0;
-        margin-top: 5%;
+        margin-top: 300px;
     }
     .discription-right-footer-about-div {
         padding-left: 10%;
         margin-bottom: 1000px;
         font-size: 15px;
+       // display: inline;
     }
     .discription-right-footer-about-title {
         font-size: 40px;
