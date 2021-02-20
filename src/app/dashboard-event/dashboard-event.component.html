@@ -60,7 +60,7 @@
             <div class="collapse" *ngFor="let workshop of workshopsArray">
                 <div class="orange-collapse">
                 </div>
-                <div>
+                <div style="width: 100%;">
                     <div class="components">
                         <h3 class="component-title">
                             {{workshop.title}}</h3>
@@ -88,7 +88,7 @@
                             </div>
                             <div style="display: flex;justify-content: center;flex-wrap: wrap;grid-auto-rows: auto;">
                                 <div class="presenter-card" >
-                                    <div class="presenter-card-inside" *ngFor="let presenter of talk.presenters;let i = index" [class]="isHideTalks[i]" (click)="isHideTalks[i] = (isHideTalks[i] == 'hide'? 'show' : 'hide')">
+                                    <div class="presenter-card-inside" *ngFor="let presenter of workshop.presenters;let i = index" [class]="isHideWorkshops[i]" (click)="isHideWorkshops[i] = (isHideWorkshops[i] == 'hide'? 'show' : 'hide')">
                                         <div>
                                             <img class="presenter-image" src="assets/images/masoud.jpg">
                                         </div>
