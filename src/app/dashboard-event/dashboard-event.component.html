@@ -110,7 +110,7 @@
                 </div>
 
             </div>
-            <div class="collapse-phone">
+            <div class="collapse-phone" *ngFor="let workshop of workshopsArray">
                 <div>
                     <div class="components">
                         <div style="display: flex;justify-content: space-between;padding-left: 16px;">
@@ -151,15 +151,23 @@
                             <div class="presenters-title-div">
                                 <h1 class="presenters-title">{{publicservice.Texts.Texts["dash-event15"]}}</h1>
                             </div>
-                            <div class="presenter-card">
-                                <div class="presenter-card-inside">
-                                    <div>
-                                        <img class="presenter-image" src="assets/images/masoud.jpg">
+                            <div style="display: flex;justify-content: center;flex-wrap: wrap;grid-auto-rows: auto;">
+                                <div class="presenter-card" >
+                                    <div class="presenter-card-inside" *ngFor="let presenter of workshop.presenters;let i = index" [class]="isHideWorkshops[i]" (click)="isHideWorkshops[i] = (isHideWorkshops[i] == 'hide'? 'show' : 'hide')">
+                                        <div>
+                                            <img class="presenter-image" src="assets/images/masoud.jpg">
+                                        </div>
+                                        <div  style="text-align: right;height: 30%;" >
+                                            <h2 class="presenter-name">
+                                                {{presenter.first_name}} {{presenter.last_name}}
+                                            </h2>
+                                            <div style="display: flex;">
+                                                  <mat-icon class="icon" style="font-size: 25px;cursor: pointer;">email</mat-icon>
+                                                  <mat-icon class="icon" style="font-size: 25px;cursor: pointer;margin-right: 10px;">link</mat-icon>
+                                              </div>
+                                            <h4 class="presenter-about">{{presenter.descriptions}} </h4>
+                                        </div>
                                     </div>
-                                    <h2 class="presenter-name">
-                                        {{publicservice.Texts.Texts["dash-event16"]}}
-                                    </h2>
-                                    <h4 class="presenter-about">{{publicservice.Texts.Texts["dash-event17"]}}</h4>
                                 </div>
                             </div>
                         </div>
@@ -221,7 +229,7 @@
                     </div>
                 </div>
             </div>
-            <div class="collapse-phone">
+            <div class="collapse-phone" *ngFor="let talk of talksArray">
                 <div>
                     <div class="components">
                         <div style="display: flex;justify-content: space-between;padding-left: 16px;">
@@ -261,15 +269,23 @@
                             <div class="presenters-title-div">
                                 <h1 class="presenters-title">{{publicservice.Texts.Texts["dash-event26"]}}</h1>
                             </div>
-                            <div class="presenter-card">
-                                <div class="presenter-card-inside">
-                                    <div>
-                                        <img class="presenter-image">
+                            <div style="display: flex;justify-content: center;flex-wrap: wrap;grid-auto-rows: auto;">
+                                <div class="presenter-card" >
+                                    <div class="presenter-card-inside" *ngFor="let presenter of talk.presenters;let i = index" [class]="isHideTalks[i]" (click)="isHideTalks[i] = (isHideTalks[i] == 'hide'? 'show' : 'hide')">
+                                        <div>
+                                            <img class="presenter-image" src="assets/images/masoud.jpg">
+                                        </div>
+                                        <div  style="text-align: right;height: 30%;" >
+                                            <h2 class="presenter-name">
+                                                {{presenter.first_name}} {{presenter.last_name}}
+                                            </h2>
+                                            <div style="display: flex;">
+                                                  <mat-icon class="icon" style="font-size: 25px;cursor: pointer;">email</mat-icon>
+                                                  <mat-icon class="icon" style="font-size: 25px;cursor: pointer;margin-right: 10px;">link</mat-icon>
+                                              </div>
+                                            <h4 class="presenter-about">{{presenter.descriptions}} </h4>
+                                        </div>
                                     </div>
-                                    <h2 class="presenter-name">
-                                        {{publicservice.Texts.Texts["dash-event27"]}}
-                                    </h2>
-                                    <h4 class="presenter-about">{{publicservice.Texts.Texts["dash-event28"]}} </h4>
                                 </div>
                             </div>
                         </div>

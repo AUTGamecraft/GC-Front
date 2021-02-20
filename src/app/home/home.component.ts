@@ -34,10 +34,12 @@ export class HomeComponent implements OnInit {
   noShadow = 'noshadow';
   userName: string = "";
   count = 0;
+  isHideWorkshops: any = [];
+  isHideTalks: any = [];
   constructor(public publicservice: PublicService, public router: Router, public snackbar: MatSnackBar) {
     this.time = parseInt('' + (new Date("2021-03-06T12:00:00Z").getTime() - new Date().getTime()) / 1000);
     publicservice.getTalks().then((r) => {
-      console.log(r);
+      // console.log(r);
       this.talksArray = r.data;
       // console.log(this.talksArray)
       for (let index = 0; index < this.talksArray.length; index++) {
@@ -59,6 +61,10 @@ export class HomeComponent implements OnInit {
             this.talksLevel[index] = 'unknown';
             break;
         }
+        for (let i = 0; i < this.talksArray[index].presenters.length; i++) {
+          this.isHideTalks.push('hide');
+        }
+        console.log(this.isHideTalks);
       }
     })
     publicservice.getWorkshops().then((r) => {
@@ -83,6 +89,9 @@ export class HomeComponent implements OnInit {
             this.workshopsLevel[index] = 'unknown';
             break;
         }
+        for (let i = 0; i < this.workshopsArray[index].presenters.length; i++) {
+          this.isHideWorkshops.push('hide');
+        }
       }
 
     })
@@ -92,7 +101,7 @@ export class HomeComponent implements OnInit {
         this.userName = r.data.first_name;
       })
     }
-    publicservice.getUsersCount().then((r)=>{
+    publicservice.getUsersCount().then((r) => {
       console.log(r);
       this.count = r.data.count;
     })
@@ -134,7 +143,7 @@ export class HomeComponent implements OnInit {
   display = false;
   icon = "menu"
   onPress() {
-   
+
     this.display = !this.display;
     // if (this.icon=="menu"){
     //   this.icon="close"
@@ -142,8 +151,8 @@ export class HomeComponent implements OnInit {
     // else {
     // this.icon=="menu"
     // }
-    
-   // return this.icon 
+
+    // return this.icon 
   }
 
   Dashboard() {

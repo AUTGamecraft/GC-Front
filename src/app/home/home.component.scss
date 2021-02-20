@@ -8,7 +8,56 @@
     overflow: hidden;
     transition: max-height 0.5s ease-out;
 }
+.presenter-card {
+    display: flex;
+    flex-wrap: wrap;
+    grid-auto-rows: auto;
+    justify-content: center;
+}
+.presenter-card-inside {
+    padding: 10px;
+    padding-left: 20px;
+    flex: 0 0 30%;
+    display: flex;
+    direction: rtl;
+    text-align: center;
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 10px;
 
+}
+.presenter-image {
+    height: 140px;
+    width: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    padding: 20px;
+}
+.presenter-name {
+    font-family: "Estedad-Black";
+    color: #52006b;
+    margin-bottom: 0;
+    font-size: medium;
+}
+.presenter-about {
+    font-family: "Estedad-Regular";
+    color: #a04db9;
+    font-size: 10px;
+    margin-top: 0;
+}
+.hide{
+    max-height: 160px;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    cursor: pointer;
+}
+.show{
+    overflow: visible;
+    max-height: 1000px;
+    transition: max-height 0.5s ease-in;
+    cursor: initial;
+}
 .Ellipse {
     width: 50px;
     height: 50px;
@@ -759,21 +808,24 @@
     display: none;
 }
 .collapse-cost {
-    margin-top: 0;
+    margin: 0;
+    margin-left: 0;
     width: fit-content;
     color: #00b583;
     font-family: "Vazir-Black";
     font-size: 20px;
     text-align: left;
     border: solid 2px #00b583 !important;
-    float: left;
+    // float: left;
     padding: 10px;
     border-radius: 16px;
 }
-// .collapse-cost-div{
-//     width: 100%;
-//     justify-content: left;
-// }
+.collapse-cost-div{
+    width: 100%;
+    direction: ltr;
+    justify-content: left;
+    text-align: left;
+}
 @media only screen and (max-width: 1113px) {
     .supporters-card-div {
         flex-direction: column;

@@ -70,62 +70,62 @@
                     <div class="logo" routerLink="home">
                         <img class="logo-image" src="assets/svg/dark-3d.svg">
                     </div>
-                
+
                 </div>
-                <div *ngIf="display"> 
-                <mat-sidenav-container class="example-sidenav-container">
-                    <!-- <mat-sidenav #snav >
+                <div *ngIf="display">
+                    <mat-sidenav-container class="example-sidenav-container">
+                        <!-- <mat-sidenav #snav >
                       
                     </mat-sidenav> -->
-    
-                    <mat-sidenav-content class="side-route" >
-                        <mat-divider class="side-divider" ></mat-divider>
-                        <div class="side-button-1">
-                            <button mat-button (click)="login()"
-                                class="normal-button">{{publicservice.Texts.Texts["header6"]}}</button>
-                          <button mat-flat-button (click)="Signup()"
-                                class="normal-button-1">{{publicservice.Texts.Texts["header7"]}}</button>
-                        </div>
-                        <mat-divider class="side-divider"></mat-divider>
-                        
-                        <div class="side-button">
-                            <button mat-button class="normal-button"
-                                (click)="Schedule(schedule)">{{publicservice.Texts.Texts["header2"]}}</button>
-                        </div>
-                        <mat-divider class="side-divider"></mat-divider>
-                        <div class="side-button">
-                            <button mat-button (click)="Rules()" 
-                                class="normal-button">{{publicservice.Texts.Texts["header11"]}}</button>
-                        </div>
-                        <mat-divider class="side-divider" ></mat-divider>
-                        <div class="side-button">
-                            <button mat-button (click)="Workshop(workshop)"
-                                class="normal-button">{{publicservice.Texts.Texts["header3"]}}</button>
-                        </div>
-                        <mat-divider class="side-divider"></mat-divider>
-                        <div class="side-button">
-                            <button mat-button (click)="Talk(talk)"
-                                class="normal-button">{{publicservice.Texts.Texts["header4"]}}</button>
-                        </div>
-                        <mat-divider class="side-divider"></mat-divider>
-                        <div class="side-button">
-                            <button mat-button (click)="Talk(footer)"
-                                class="normal-button">{{publicservice.Texts.Texts["header5"]}}</button>
-                        </div>
-                        <mat-divider class="side-divider"></mat-divider>
-                        <div class="side-button">
-                            <button mat-button (click)="People()"
-                                class="normal-button">{{publicservice.Texts.Texts["header12"]}}</button>
-                        </div>   
-                        <mat-divider class="side-divider"></mat-divider>
-                     
-                  
 
-                    </mat-sidenav-content>
+                        <mat-sidenav-content class="side-route">
+                            <mat-divider class="side-divider"></mat-divider>
+                            <div class="side-button-1">
+                                <button mat-button (click)="login()"
+                                    class="normal-button">{{publicservice.Texts.Texts["header6"]}}</button>
+                                <button mat-flat-button (click)="Signup()"
+                                    class="normal-button-1">{{publicservice.Texts.Texts["header7"]}}</button>
+                            </div>
+                            <mat-divider class="side-divider"></mat-divider>
+
+                            <div class="side-button">
+                                <button mat-button class="normal-button"
+                                    (click)="Schedule(schedule)">{{publicservice.Texts.Texts["header2"]}}</button>
+                            </div>
+                            <mat-divider class="side-divider"></mat-divider>
+                            <div class="side-button">
+                                <button mat-button (click)="Rules()"
+                                    class="normal-button">{{publicservice.Texts.Texts["header11"]}}</button>
+                            </div>
+                            <mat-divider class="side-divider"></mat-divider>
+                            <div class="side-button">
+                                <button mat-button (click)="Workshop(workshop)"
+                                    class="normal-button">{{publicservice.Texts.Texts["header3"]}}</button>
+                            </div>
+                            <mat-divider class="side-divider"></mat-divider>
+                            <div class="side-button">
+                                <button mat-button (click)="Talk(talk)"
+                                    class="normal-button">{{publicservice.Texts.Texts["header4"]}}</button>
+                            </div>
+                            <mat-divider class="side-divider"></mat-divider>
+                            <div class="side-button">
+                                <button mat-button (click)="Talk(footer)"
+                                    class="normal-button">{{publicservice.Texts.Texts["header5"]}}</button>
+                            </div>
+                            <mat-divider class="side-divider"></mat-divider>
+                            <div class="side-button">
+                                <button mat-button (click)="People()"
+                                    class="normal-button">{{publicservice.Texts.Texts["header12"]}}</button>
+                            </div>
+                            <mat-divider class="side-divider"></mat-divider>
+
+
+
+                        </mat-sidenav-content>
                     </mat-sidenav-container>
                 </div>
 
-            
+
             </div>
             <div class="subintro-div">
                 <div class="intro-discription-div">
@@ -487,17 +487,30 @@
                                             {{publicservice.Texts.Texts["home23"]}}
                                         </h1>
                                     </div>
-                                    <div class="collapse-presenters-card-div">
-                                        <div class="collapse-presenters-card"
-                                            *ngFor="let presenter of workshop.presenters">
-                                            <div>
-                                                <img class="collapse-presenters-image" src="assets/images/masoud.jpg">
+                                    <div
+                                        style="display: flex;justify-content: center;flex-wrap: wrap;grid-auto-rows: auto;">
+                                        <div class="presenter-card">
+                                            <div class="presenter-card-inside"
+                                                *ngFor="let presenter of workshop.presenters;let j = index"
+                                                [class]="isHideWorkshops[j]"
+                                                (click)="isHideWorkshops[j] = (isHideWorkshops[j] == 'hide'? 'show' : 'hide')">
+                                                <div>
+                                                    <img class="presenter-image" src="assets/images/masoud.jpg">
+                                                </div>
+                                                <div style="text-align: right;height: 30%;">
+                                                    <h2 class="presenter-name">
+                                                        {{presenter.first_name}} {{presenter.last_name}}
+                                                    </h2>
+                                                    <div style="display: flex;">
+                                                        <mat-icon class="icon" style="font-size: 25px;cursor: pointer;">
+                                                            email</mat-icon>
+                                                        <mat-icon class="icon"
+                                                            style="font-size: 25px;cursor: pointer;margin-right: 10px;">
+                                                            link</mat-icon>
+                                                    </div>
+                                                    <h4 class="presenter-about">{{presenter.descriptions}} </h4>
+                                                </div>
                                             </div>
-                                            <h2 class="collapse-presenters-name">
-                                                {{presenter.first_name}} {{presenter.last_name}}
-                                            </h2>
-                                            <h4 class="collapse-presenters-discription">
-                                                {{presenter.descriptions}}</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -514,9 +527,8 @@
                 </div>
 
                 <div style="background-color: #4ae5b0;padding: 30px 0;">
-                    <h1 class="collapse-header"
-                    style="background-color: #4ae5b0;">
-                    {{publicservice.Texts.Texts["home15"]}}</h1>
+                    <h1 class="collapse-header" style="background-color: #4ae5b0;">
+                        {{publicservice.Texts.Texts["home15"]}}</h1>
                     <div *ngFor="let workshop of workshopsArray;let i = index" class="workshops-whole-collapse">
                         <div style="width: 100%;">
                             <div class="components-collapse">
@@ -564,17 +576,30 @@
                                             {{publicservice.Texts.Texts["home23"]}}
                                         </h1>
                                     </div>
-                                    <div class="collapse-presenters-card-div">
-                                        <div class="collapse-presenters-card"
-                                            *ngFor="let presenter of workshop.presenters">
-                                            <div>
-                                                <img class="collapse-presenters-image" src="assets/images/masoud.jpg">
+                                    <div
+                                        style="display: flex;justify-content: center;flex-wrap: wrap;grid-auto-rows: auto;">
+                                        <div class="presenter-card">
+                                            <div class="presenter-card-inside"
+                                                *ngFor="let presenter of workshop.presenters;let j = index"
+                                                [class]="isHideWorkshops[j]"
+                                                (click)="isHideWorkshops[j] = (isHideWorkshops[j] == 'hide'? 'show' : 'hide')">
+                                                <div>
+                                                    <img class="presenter-image" src="assets/images/masoud.jpg">
+                                                </div>
+                                                <div style="text-align: right;height: 30%;">
+                                                    <h2 class="presenter-name">
+                                                        {{presenter.first_name}} {{presenter.last_name}}
+                                                    </h2>
+                                                    <div style="display: flex;">
+                                                        <mat-icon class="icon" style="font-size: 25px;cursor: pointer;">
+                                                            email</mat-icon>
+                                                        <mat-icon class="icon"
+                                                            style="font-size: 25px;cursor: pointer;margin-right: 10px;">
+                                                            link</mat-icon>
+                                                    </div>
+                                                    <h4 class="presenter-about">{{presenter.descriptions}} </h4>
+                                                </div>
                                             </div>
-                                            <h2 class="collapse-presenters-name">
-                                                {{presenter.first_name}} {{presenter.last_name}}
-                                            </h2>
-                                            <h4 class="collapse-presenters-discription">
-                                                {{presenter.descriptions}}</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -620,24 +645,38 @@
                                 <p class="collapse-about">
                                     {{talk.content}}</p>
                             </div>
-                            <h3 class="collapse-cost">
-                                {{publicservice.Texts.Texts['home59']}}
-                            </h3>
+                            <div class="collapse-cost-div">
+                                <h3 class="collapse-cost">
+                                    {{publicservice.Texts.Texts['home59']}}
+                                </h3>
+                            </div>
                             <div class="collapse-presenters-title-div">
                                 <h1 class="collapse-persenters-title">
                                     {{publicservice.Texts.Texts["home34"]}}
                                 </h1>
                             </div>
-                            <div class="collapse-presenters-card-div">
-                                <div class="collapse-presenters-card" *ngFor="let presenter of talk.presenters">
-                                    <div>
-                                        <img class="collapse-presenters-image" src="assets/images/masoud.jpg">
+                            <div style="display: flex;justify-content: center;flex-wrap: wrap;grid-auto-rows: auto;">
+                                <div class="presenter-card">
+                                    <div class="presenter-card-inside"
+                                        *ngFor="let presenter of talk.presenters;let j = index" [class]="isHideTalks[j]"
+                                        (click)="isHideTalks[j] = (isHideTalks[j] == 'hide'? 'show' : 'hide')">
+                                        <div>
+                                            <img class="presenter-image" src="assets/images/masoud.jpg">
+                                        </div>
+                                        <div style="text-align: right;height: 30%;">
+                                            <h2 class="presenter-name">
+                                                {{presenter.first_name}} {{presenter.last_name}}
+                                            </h2>
+                                            <div style="display: flex;">
+                                                <mat-icon class="icon" style="font-size: 25px;cursor: pointer;">email
+                                                </mat-icon>
+                                                <mat-icon class="icon"
+                                                    style="font-size: 25px;cursor: pointer;margin-right: 10px;">link
+                                                </mat-icon>
+                                            </div>
+                                            <h4 class="presenter-about">{{presenter.descriptions}} </h4>
+                                        </div>
                                     </div>
-                                    <h2 class="collapse-presenters-name">
-                                        {{presenter.first_name}} {{presenter.last_name}}
-                                    </h2>
-                                    <h4 class="collapse-presenters-discription">
-                                        {{presenter.descriptions}}</h4>
                                 </div>
                             </div>
                         </div>
@@ -692,16 +731,28 @@
                                     {{publicservice.Texts.Texts["home34"]}}
                                 </h1>
                             </div>
-                            <div class="collapse-presenters-card-div">
-                                <div class="collapse-presenters-card" *ngFor="let presenter of talk.presenters">
-                                    <div>
-                                        <img class="collapse-presenters-image" src="assets/images/masoud.jpg">
+                            <div style="display: flex;justify-content: center;flex-wrap: wrap;grid-auto-rows: auto;">
+                                <div class="presenter-card">
+                                    <div class="presenter-card-inside"
+                                        *ngFor="let presenter of talk.presenters;let j = index" [class]="isHideTalks[j]"
+                                        (click)="isHideTalks[j] = (isHideTalks[j] == 'hide'? 'show' : 'hide')">
+                                        <div>
+                                            <img class="presenter-image" src="assets/images/masoud.jpg">
+                                        </div>
+                                        <div style="text-align: right;height: 30%;">
+                                            <h2 class="presenter-name">
+                                                {{presenter.first_name}} {{presenter.last_name}}
+                                            </h2>
+                                            <div style="display: flex;">
+                                                <mat-icon class="icon" style="font-size: 25px;cursor: pointer;">email
+                                                </mat-icon>
+                                                <mat-icon class="icon"
+                                                    style="font-size: 25px;cursor: pointer;margin-right: 10px;">link
+                                                </mat-icon>
+                                            </div>
+                                            <h4 class="presenter-about">{{presenter.descriptions}} </h4>
+                                        </div>
                                     </div>
-                                    <h2 class="collapse-presenters-name">
-                                        {{presenter.first_name}} {{presenter.last_name}}
-                                    </h2>
-                                    <h4 class="collapse-presenters-discription">
-                                        {{presenter.descriptions}}</h4>
                                 </div>
                             </div>
                         </div>
