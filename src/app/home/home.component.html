@@ -81,10 +81,22 @@
                         <mat-sidenav-content class="side-route">
                             <mat-divider class="side-divider"></mat-divider>
                             <div class="side-button-1">
+                                <div *ngIf="!publicservice.logedIn">
                                 <button mat-button (click)="login()"
                                     class="normal-button">{{publicservice.Texts.Texts["header6"]}}</button>
                                 <button mat-flat-button (click)="Signup()"
                                     class="normal-button-1">{{publicservice.Texts.Texts["header7"]}}</button>
+                                </div>
+                                <div  *ngIf="publicservice.logedIn">
+                                    <div class="left-button">
+                                        <button mat-button [disabled]="true" class="normal-button">{{userName}}</button>
+                                   
+                                        <button mat-flat-button class="normal-button-1"
+                                            (click)="Dashboard()">{{publicservice.Texts.Texts["header9"]}}</button>
+                                    </div>
+
+
+                                </div>
                             </div>
                             <mat-divider class="side-divider"></mat-divider>
 
