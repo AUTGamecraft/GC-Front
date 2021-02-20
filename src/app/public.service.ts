@@ -405,9 +405,26 @@ export class PublicService {
     return ret;
   }
 
-
-
-
+  getPaymentLink(): Promise<any> {
+    var that = this;
+    this.APICalls.getUserTalks = true;
+    let headers = new Headers({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + this.Authorization
+    });
+    let options = new RequestOptions({ headers: headers });
+    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/service/payment/', options)
+      .toPromise()
+      .then((r) => this.extractData(r, this))
+      .catch(this.handleError);
+    ret.then(r => {
+      this.APICalls.getUserTalks = false;
+    }).catch(e => {
+      this.APICalls.getUserTalks = false;
+      that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+    });
+    return ret;
+  }
 
   // DisplayErrorDialog(Error: any,that : any) {
   //   let dialogRef = that.dialog.open(ErrorDialogComponent, {

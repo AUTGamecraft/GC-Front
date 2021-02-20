@@ -1,8 +1,8 @@
 <div class="whole" #dash>
     <div class="cart">
-        <div class="logo" (click)='Home()'>
+        <div class="logo" >
             <p class="logo-text" style="margin-left: -5px;">{{publicservice.Texts.Texts["logo1"]}}</p>
-            <img class="logo-image" src="assets/svg/dark-3d.svg">
+            <img class="logo-image" (click)='Home()' src="assets/svg/dark-3d.svg">
             <p class="logo-text" style="margin-right: -5px;">{{publicservice.Texts.Texts["logo2"]}}</p>
         </div>
         <div class="dash-event">
@@ -91,7 +91,7 @@
                 </div> -->
                 <div class="below-items">
                     <p class="cost">{{totalCost}}{{publicservice.Texts.Texts['cart6']}}</p>
-                    <button mat-flat-button class="green-button">{{publicservice.Texts.Texts['cart7']}}</button>
+                    <button mat-flat-button (click)="Pay()" class="green-button">{{publicservice.Texts.Texts['cart7']}}</button>
                 </div>
             </div>
         </div>

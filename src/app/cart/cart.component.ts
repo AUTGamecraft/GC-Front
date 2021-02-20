@@ -101,4 +101,9 @@ export class CartComponent implements OnInit {
       this.count = this.count - 1;
     })
   }
+  Pay(){
+    this.publicservice.getPaymentLink().then((r)=>{
+      
+    })
+  }
 }

@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit {
   constructor(public publicservice: PublicService, public router: Router, public snackbar: MatSnackBar) {
     this.time = parseInt('' + (new Date("2021-03-06T12:00:00Z").getTime() - new Date().getTime()) / 1000);
     publicservice.getTalks().then((r) => {
-      // console.log(r);
+      console.log(r);
       this.talksArray = r.data;
       // console.log(this.talksArray)
       for (let index = 0; index < this.talksArray.length; index++) {
@@ -64,7 +64,7 @@ export class HomeComponent implements OnInit {
         for (let i = 0; i < this.talksArray[index].presenters.length; i++) {
           this.isHideTalks.push('hide');
         }
-        console.log(this.isHideTalks);
+        // console.log(this.isHideTalks);
       }
     })
     publicservice.getWorkshops().then((r) => {
@@ -102,7 +102,7 @@ export class HomeComponent implements OnInit {
       })
     }
     publicservice.getUsersCount().then((r) => {
-      console.log(r);
+      // console.log(r);
       this.count = r.data.count;
     })
   }
