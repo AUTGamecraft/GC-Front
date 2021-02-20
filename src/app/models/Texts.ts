@@ -223,6 +223,8 @@ export class Texts{
         this.FaTexts["people46"] = "شیوا شاهرخی"
         this.FaTexts["people47"] = "زهرا قندی"
         this.FaTexts["people48"] = "محمدرضا امینی"
+        this.FaTexts["people49"] = "پارسا انعامی"
+        this.FaTexts["people50"] = "تولید محتوا و برندینگ"
 
         this.FaTexts["logo1"] = "گیمـ"
         this.FaTexts["logo2"] = "کرفت"
