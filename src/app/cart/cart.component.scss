@@ -350,8 +350,10 @@
         margin: 0;
     }
     .footer-image-div-phone{
+        padding-top: 30px;
         display: initial;
         width: 100%;
+        box-sizing: border-box;
         margin: auto;
         text-align: center;
     }
@@ -481,9 +483,8 @@
         justify-content: center;
     }
     .footer-image {
-        margin: auto;
-        width: 360px;
-        height: 320px;
+        max-width: 100%;
+        height: auto;
     }
     .discription-right-footer-div {
         padding: 500px;
