@@ -1,6 +1,6 @@
 <div id="people" #people></div>
 <div class="people">
-    <header style="position: fixed;width: 100%;background-color: #52006b;z-index: 100;">
+    <!-- <header style="position: fixed;width: 100%;background-color: #52006b;z-index: 100;"> -->
         <div class="whole-header" [class]="getNavClass()">
             <div class="big-right-header">
                 <div class="title-div">
@@ -60,14 +60,67 @@
             </div>
         </div>
         <div class="whole-header-phone">
-            <button mat-button>
-                <mat-icon style="color: white;font-size: 32px;" [inline]="true">menu</mat-icon>
+            <button mat-button (click)=" onPress();icon =(icon == 'menu' ? 'close' : 'menu')">
+                <mat-icon style="color: white;font-size: 32px;" [inline]="true">{{icon}}</mat-icon>
             </button>
             <div class="logo" routerLink="home">
                 <img class="logo-image" src="assets/svg/dark-3d.svg">
             </div>
         </div>
-    </header>
+   <!-- </header> -->
+    <div *ngIf="display">
+        <mat-sidenav-container class="example-sidenav-container">
+            <!-- <mat-sidenav #snav >
+          
+        </mat-sidenav> -->
+
+            <mat-sidenav-content class="side-route">
+                <mat-divider class="side-divider"></mat-divider>
+                <div class="side-button-1">
+                    <button mat-button (click)="login()"
+                        class="normal-button">{{publicservice.Texts.Texts["header6"]}}</button>
+                    <button mat-flat-button (click)="Signup()"
+                        class="normal-button-1">{{publicservice.Texts.Texts["header7"]}}</button>
+                </div>
+                <mat-divider class="side-divider"></mat-divider>
+
+                <div class="side-button">
+                    <button mat-button class="normal-button"
+                        (click)="Schedule(schedule)">{{publicservice.Texts.Texts["header2"]}}</button>
+                </div>
+                <mat-divider class="side-divider"></mat-divider>
+                <div class="side-button">
+                    <button mat-button (click)="Rules()"
+                        class="normal-button">{{publicservice.Texts.Texts["header11"]}}</button>
+                </div>
+                <mat-divider class="side-divider"></mat-divider>
+                <div class="side-button">
+                    <button mat-button (click)="Workshop(workshop)"
+                        class="normal-button">{{publicservice.Texts.Texts["header3"]}}</button>
+                </div>
+                <mat-divider class="side-divider"></mat-divider>
+                <div class="side-button">
+                    <button mat-button (click)="Talk(talk)"
+                        class="normal-button">{{publicservice.Texts.Texts["header4"]}}</button>
+                </div>
+                <mat-divider class="side-divider"></mat-divider>
+                <div class="side-button">
+                    <button mat-button (click)="Talk(footer)"
+                        class="normal-button">{{publicservice.Texts.Texts["header5"]}}</button>
+                </div>
+                <mat-divider class="side-divider"></mat-divider>
+                <div class="side-button">
+                    <button mat-button (click)="People()"
+                        class="normal-button">{{publicservice.Texts.Texts["header12"]}}</button>
+                </div>
+                <mat-divider class="side-divider"></mat-divider>
+
+
+
+            </mat-sidenav-content>
+        </mat-sidenav-container>
+    </div>
+
     <div class="introduction-div">
         <div class="white-part">
             <h1 class="people-title">{{publicservice.Texts.Texts["people1"]}}</h1>
