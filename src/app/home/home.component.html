@@ -476,6 +476,7 @@
                                     <div>
                                         <p class="collapse-about">
                                             {{workshop.content}}</p>
+                                        <h3 class="collapse-hour">ساعت : {{workshopsHour[i]}}</h3>
                                     </div>
                                     <div class="collapse-cost-div">
                                         <h3 class="collapse-cost">
@@ -491,11 +492,9 @@
                                         style="display: flex;justify-content: center;flex-wrap: wrap;grid-auto-rows: auto;">
                                         <div class="presenter-card">
                                             <div class="presenter-card-inside"
-                                                *ngFor="let presenter of workshop.presenters;let j = index"
-                                                [class]="isHideWorkshops[j]"
-                                                (click)="isHideWorkshops[j] = (isHideWorkshops[j] == 'hide'? 'show' : 'hide')">
+                                                *ngFor="let presenter of workshop.presenters;">
                                                 <div>
-                                                    <img class="presenter-image" src="assets/images/masoud.jpg">
+                                                    <img class="presenter-image" src="{{presenter.profile}}">
                                                 </div>
                                                 <div style="text-align: right;height: 30%;">
                                                     <h2 class="presenter-name">
@@ -503,9 +502,9 @@
                                                     </h2>
                                                     <div style="display: flex;">
                                                         <a href="{{presenter.linked_in}}">
-                                                        <mat-icon class="icon"
-                                                            style="font-size: 25px;cursor: pointer;margin-right: 10px;">
-                                                            link</mat-icon>
+                                                            <mat-icon class="icon"
+                                                                style="font-size: 25px;margin-right: 10px;">
+                                                                link</mat-icon>
                                                         </a>
                                                     </div>
                                                     <h4 class="presenter-about">{{presenter.descriptions}} </h4>
@@ -584,7 +583,7 @@
                                                 [class]="isHideWorkshops[j]"
                                                 (click)="isHideWorkshops[j] = (isHideWorkshops[j] == 'hide'? 'show' : 'hide')">
                                                 <div>
-                                                    <img class="presenter-image" src="assets/images/masoud.jpg">
+                                                    <img class="presenter-image" src="{{presenter.profile}}">
                                                 </div>
                                                 <div style="text-align: right;height: 30%;">
                                                     <h2 class="presenter-name">
@@ -592,9 +591,9 @@
                                                     </h2>
                                                     <div style="display: flex;">
                                                         <a href="{{presenter.linked_in}}">
-                                                        <mat-icon class="icon"
-                                                            style="font-size: 25px;cursor: pointer;margin-right: 10px;">
-                                                            link</mat-icon>
+                                                            <mat-icon class="icon"
+                                                                style="font-size: 25px;cursor: pointer;margin-right: 10px;">
+                                                                link</mat-icon>
                                                         </a>
                                                     </div>
                                                     <h4 class="presenter-about">{{presenter.descriptions}} </h4>
@@ -644,6 +643,7 @@
                             <div>
                                 <p class="collapse-about">
                                     {{talk.content}}</p>
+                                <h3 class="collapse-hour">ساعت : {{talksHour[i]}}</h3>
                             </div>
                             <div class="collapse-cost-div">
                                 <h3 class="collapse-cost">
@@ -657,11 +657,9 @@
                             </div>
                             <div style="display: flex;justify-content: center;flex-wrap: wrap;grid-auto-rows: auto;">
                                 <div class="presenter-card">
-                                    <div class="presenter-card-inside"
-                                        *ngFor="let presenter of talk.presenters;let j = index" [class]="isHideTalks[j]"
-                                        (click)="isHideTalks[j] = (isHideTalks[j] == 'hide'? 'show' : 'hide')">
+                                    <div class="presenter-card-inside" *ngFor="let presenter of talk.presenters;">
                                         <div>
-                                            <img class="presenter-image" src="assets/images/masoud.jpg">
+                                            <img class="presenter-image" src="{{presenter.profile}}">
                                         </div>
                                         <div style="text-align: right;height: 30%;">
                                             <h2 class="presenter-name">
@@ -669,9 +667,9 @@
                                             </h2>
                                             <div style="display: flex;">
                                                 <a href="{{presenter.linked_in}}">
-                                                <mat-icon class="icon"
-                                                    style="font-size: 25px;cursor: pointer;margin-right: 10px;">link
-                                                </mat-icon>
+                                                    <mat-icon class="icon" style="font-size: 25px;margin-right: 10px;">
+                                                        link
+                                                    </mat-icon>
                                                 </a>
                                             </div>
                                             <h4 class="presenter-about">{{presenter.descriptions}} </h4>
@@ -737,7 +735,7 @@
                                         *ngFor="let presenter of talk.presenters;let j = index" [class]="isHideTalks[j]"
                                         (click)="isHideTalks[j] = (isHideTalks[j] == 'hide'? 'show' : 'hide')">
                                         <div>
-                                            <img class="presenter-image" src="assets/images/masoud.jpg">
+                                            <img class="presenter-image" src="{{presenter.profile}}">
                                         </div>
                                         <div style="text-align: right;height: 30%;">
                                             <h2 class="presenter-name">
@@ -745,9 +743,9 @@
                                             </h2>
                                             <div style="display: flex;">
                                                 <a href="{{presenter.linked_in}}">
-                                                <mat-icon class="icon"
-                                                    style="font-size: 25px;cursor: pointer;margin-right: 10px;">link
-                                                </mat-icon>
+                                                    <mat-icon class="icon"
+                                                        style="font-size: 25px;cursor: pointer;margin-right: 10px;">link
+                                                    </mat-icon>
                                                 </a>
                                             </div>
                                             <h4 class="presenter-about">{{presenter.descriptions}} </h4>

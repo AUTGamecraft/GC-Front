@@ -102,8 +102,19 @@ export class CartComponent implements OnInit {
     })
   }
   Pay(){
+    console.log(this.totalCost);
+    if(this.totalCost == 0){
+      if (window.innerWidth > 992) {
+        this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'سبد خرید شما خالی است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      }
+      else {
+        this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'سبد خرید شما خالی است!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+      }
+      return;
+    }
     this.publicservice.getPaymentLink().then((r)=>{
-      
+      location.href = r.data.link;
+      this.router.navigate(['dashboard-event']);
     })
   }
 }

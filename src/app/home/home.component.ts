@@ -36,6 +36,8 @@ export class HomeComponent implements OnInit {
   count = 0;
   isHideWorkshops: any = [];
   isHideTalks: any = [];
+  workshopsHour:any = [];
+  talksHour:any = [];
   constructor(public publicservice: PublicService, public router: Router, public snackbar: MatSnackBar) {
     this.time = parseInt('' + (new Date("2021-03-06T12:00:00Z").getTime() - new Date().getTime()) / 1000);
     publicservice.getTalks().then((r) => {
@@ -65,16 +67,17 @@ export class HomeComponent implements OnInit {
           this.isHideTalks.push('hide');
         }
         // console.log(this.isHideTalks);
+        this.talksHour[index] = this.talksArray[index].date.split('T',2)[1].split('+',2)[0];
       }
     })
     publicservice.getWorkshops().then((r) => {
-      // console.log(r);
+      console.log(r);
       this.workshopsArray = r.data;
       for (let index = 0; index < this.workshopsArray.length; index++) {
         this.workshopsActive[index] = 'deactive'
         this.iconW[index] = 'keyboard_arrow_down'
         this.m = moment(this.workshopsArray[index].date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('YYYY-MM-DD');
-        this.workshopsDate[index] = moment(this.workshopsArray[index].date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('dddd') + " " + moment(this.workshopsArray[index].date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('DD') + " " + moment(this.workshopsArray[index].date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('MMMM') + " " + moment(this.workshopsArray[index].date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('YY');
+        this.workshopsDate[index] ="شروع از " + moment(this.workshopsArray[index].date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('dddd') + " " + moment(this.workshopsArray[index].date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('DD') + " " + moment(this.workshopsArray[index].date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('MMMM') + " " + moment(this.workshopsArray[index].date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('YY');
         switch (this.workshopsArray[index].level) {
           case 'BEGINNER':
             this.workshopsLevel[index] = 'مبتدی';
@@ -92,6 +95,7 @@ export class HomeComponent implements OnInit {
         for (let i = 0; i < this.workshopsArray[index].presenters.length; i++) {
           this.isHideWorkshops.push('hide');
         }
+        this.workshopsHour[index] = this.workshopsArray[index].date.split('T',2)[1].split('+',2)[0];
       }
 
     })

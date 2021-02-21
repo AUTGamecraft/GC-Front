@@ -115,10 +115,12 @@
 }
 .component-title {
     font-family: "Estedad-Bold";
+    width: 200px;
     font-size: 16px;
     color: #52006b;
     margin: auto 0;
     margin-right: 2%;
+    text-align: right;
 }
 .component-subject {
     font-family: "Vazir-Light";
@@ -195,7 +197,7 @@
 .presenter-card-inside {
     padding: 10px;
     padding-left: 20px;
-    flex: 0 0 40%;
+    flex: 100%;
     display: flex;
     direction: rtl;
     text-align: center;
@@ -221,7 +223,7 @@
 .presenter-about {
     font-family: "Estedad-Regular";
     color: #a04db9;
-    font-size: 10px;
+    font-size: 16px;
     margin-top: 0;
 }
 .talks-title {

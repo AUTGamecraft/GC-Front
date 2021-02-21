@@ -88,9 +88,9 @@
                             </div>
                             <div style="display: flex;justify-content: center;flex-wrap: wrap;grid-auto-rows: auto;">
                                 <div class="presenter-card" >
-                                    <div class="presenter-card-inside" *ngFor="let presenter of workshop.presenters;let i = index" [class]="isHideWorkshops[i]" (click)="isHideWorkshops[i] = (isHideWorkshops[i] == 'hide'? 'show' : 'hide')">
+                                    <div class="presenter-card-inside" *ngFor="let presenter of workshop.presenters;">
                                         <div>
-                                            <img class="presenter-image" src="assets/images/masoud.jpg">
+                                            <img class="presenter-image" src="{{presenter.profile}}">
                                         </div>
                                         <div  style="text-align: right;height: 30%;" >
                                             <h2 class="presenter-name">
@@ -156,7 +156,7 @@
                                 <div class="presenter-card" >
                                     <div class="presenter-card-inside" *ngFor="let presenter of workshop.presenters;let i = index" [class]="isHideWorkshops[i]" (click)="isHideWorkshops[i] = (isHideWorkshops[i] == 'hide'? 'show' : 'hide')">
                                         <div>
-                                            <img class="presenter-image" src="assets/images/masoud.jpg">
+                                            <img class="presenter-image" src="{{presenter.profile}}">
                                         </div>
                                         <div  style="text-align: right;height: 30%;" >
                                             <h2 class="presenter-name">
@@ -210,9 +210,9 @@
                             </div>
                             <div style="display: flex;justify-content: center;flex-wrap: wrap;grid-auto-rows: auto;">
                                 <div class="presenter-card" >
-                                    <div class="presenter-card-inside" *ngFor="let presenter of talk.presenters;let i = index" [class]="isHideTalks[i]" (click)="isHideTalks[i] = (isHideTalks[i] == 'hide'? 'show' : 'hide')">
+                                    <div class="presenter-card-inside" *ngFor="let presenter of talk.presenters;">
                                         <div>
-                                            <img class="presenter-image" src="assets/images/masoud.jpg">
+                                            <img class="presenter-image" src="{{presenter.profile}}">
                                         </div>
                                         <div  style="text-align: right;height: 30%;" >
                                             <h2 class="presenter-name">
@@ -276,7 +276,7 @@
                                 <div class="presenter-card" >
                                     <div class="presenter-card-inside" *ngFor="let presenter of talk.presenters;let i = index" [class]="isHideTalks[i]" (click)="isHideTalks[i] = (isHideTalks[i] == 'hide'? 'show' : 'hide')">
                                         <div>
-                                            <img class="presenter-image" src="assets/images/masoud.jpg">
+                                            <img class="presenter-image" src="{{presenter.profile}}">
                                         </div>
                                         <div  style="text-align: right;height: 30%;" >
                                             <h2 class="presenter-name">

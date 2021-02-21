@@ -16,8 +16,8 @@
 }
 .presenter-card-inside {
     padding: 10px;
-    padding-left: 20px;
-    flex: 0 0 30%;
+    // padding-left: 20px;
+    width: 100%;
     display: flex;
     direction: rtl;
     text-align: center;
@@ -43,7 +43,7 @@
 .presenter-about {
     font-family: "Estedad-Regular";
     color: #a04db9;
-    font-size: 10px;
+    font-size: 16px;
     margin-top: 0;
 }
 .hide{
@@ -97,6 +97,7 @@
 }
 .register-button-div {
     width: fit-content;
+    margin: auto;
     padding: 20px 16px 19px;
 }
 .collapse-title {
@@ -108,12 +109,18 @@
     margin-bottom: 0;
     margin-right: 2%;
 }
+.collapse-hour{
+    font-family: "Vazir-Regular";
+    color: #52006b;
+
+}
 .collapse-subject {
     font-family: "Vazir-Regular";
     color: #52006b;
     font-size: 24px;
-    margin-top: 25px;
-    margin-bottom: 15px;
+    // margin-top: 25px;
+    // margin-bottom: 15px;
+    margin: auto;
     font-weight: bold;
 }
 .collapse {
@@ -827,6 +834,9 @@
     text-align: left;
 }
 @media only screen and (max-width: 1113px) {
+    .presenter-about{
+        font-size: 12px;
+    }
     .supporters-card-div {
         flex-direction: column;
     }

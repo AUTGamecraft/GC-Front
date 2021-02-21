@@ -387,7 +387,7 @@ export class PublicService {
   }
   getUsersCount(): Promise<any> {
     var that = this;
-    this.APICalls.getUserTalks = true;
+    this.APICalls.getUserTalks = true;    
     let headers = new Headers({
       'Content-Type': 'application/json',
     });
@@ -408,12 +408,14 @@ export class PublicService {
   getPaymentLink(): Promise<any> {
     var that = this;
     this.APICalls.getUserTalks = true;
+    let body = JSON.stringify({
+    });
     let headers = new Headers({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + this.Authorization
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/service/payment/', options)
+    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/service/payment/',body, options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
