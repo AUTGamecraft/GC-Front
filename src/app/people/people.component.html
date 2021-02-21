@@ -1,7 +1,8 @@
 <div id="people" #people></div>
 <div class="people">
     <!-- <header style="position: fixed;width: 100%;background-color: #52006b;z-index: 100;"> -->
-        <div class="whole-header" [class]="getNavClass()">
+    <div class="header">
+        <div class="whole-header"  [class]="getNavClass()">
             <div class="big-right-header">
                 <div class="title-div">
                     <div class="logo" (click)="Home()">
@@ -67,70 +68,71 @@
                 <img class="logo-image" src="assets/svg/dark-3d.svg">
             </div>
         </div>
-   <!-- </header> -->
-    <div *ngIf="display">
-        <mat-sidenav-container class="example-sidenav-container">
-            <!-- <mat-sidenav #snav >
+        <!-- </header> -->
+        <div *ngIf="display">
+            <mat-sidenav-container class="example-sidenav-container">
+                <!-- <mat-sidenav #snav >
           
         </mat-sidenav> -->
 
-            <mat-sidenav-content class="side-route">
-                <mat-divider class="side-divider"></mat-divider>
-                <div class="side-button-1">
-                    <div *ngIf="!publicservice.logedIn">
-                    <button mat-button (click)="login()"
-                        class="normal-button">{{publicservice.Texts.Texts["header6"]}}</button>
-                    <button mat-flat-button (click)="Signup()"
-                        class="normal-button-1">{{publicservice.Texts.Texts["header7"]}}</button>
-                    </div>
-                    <div  *ngIf="publicservice.logedIn">
-                        <div class="left-button">
-                            <button mat-button [disabled]="true" class="normal-button">{{userName}}</button>
-                       
-                            <button mat-flat-button class="normal-button-1"
-                                (click)="Dashboard()">{{publicservice.Texts.Texts["header9"]}}</button>
+                <mat-sidenav-content class="side-route">
+                    <mat-divider class="side-divider"></mat-divider>
+                    <div class="side-button-1">
+                        <div *ngIf="!publicservice.logedIn">
+                            <button mat-button (click)="login()"
+                                class="normal-button">{{publicservice.Texts.Texts["header6"]}}</button>
+                            <button mat-flat-button (click)="Signup()"
+                                class="normal-button-1">{{publicservice.Texts.Texts["header7"]}}</button>
                         </div>
+                        <div *ngIf="publicservice.logedIn">
+                            <div class="left-button">
+                                <button mat-button [disabled]="true" class="normal-button">{{userName}}</button>
+
+                                <button mat-flat-button class="normal-button-1"
+                                    (click)="Dashboard()">{{publicservice.Texts.Texts["header9"]}}</button>
+                            </div>
 
 
+                        </div>
                     </div>
-                </div>
-                <mat-divider class="side-divider"></mat-divider>
+                    <mat-divider class="side-divider"></mat-divider>
 
-                <div class="side-button">
-                    <button mat-button class="normal-button"
-                        (click)="Schedule(schedule)">{{publicservice.Texts.Texts["header2"]}}</button>
-                </div>
-                <mat-divider class="side-divider"></mat-divider>
-                <div class="side-button">
-                    <button mat-button (click)="Rules()"
-                        class="normal-button">{{publicservice.Texts.Texts["header11"]}}</button>
-                </div>
-                <mat-divider class="side-divider"></mat-divider>
-                <div class="side-button">
-                    <button mat-button (click)="Workshop(workshop)"
-                        class="normal-button">{{publicservice.Texts.Texts["header3"]}}</button>
-                </div>
-                <mat-divider class="side-divider"></mat-divider>
-                <div class="side-button">
-                    <button mat-button (click)="Talk(talk)"
-                        class="normal-button">{{publicservice.Texts.Texts["header4"]}}</button>
-                </div>
-                <mat-divider class="side-divider"></mat-divider>
-                <div class="side-button">
-                    <button mat-button (click)="Talk(footer)"
-                        class="normal-button">{{publicservice.Texts.Texts["header5"]}}</button>
-                </div>
-                <mat-divider class="side-divider"></mat-divider>
-                <div class="side-button">
-                    <button mat-button (click)="People()"
-                        class="normal-button">{{publicservice.Texts.Texts["header12"]}}</button>
-                </div>
-                <mat-divider class="side-divider"></mat-divider>
-
+                    <div class="side-button">
+                        <button mat-button class="normal-button"
+                            (click)="Schedule(schedule)">{{publicservice.Texts.Texts["header2"]}}</button>
+                    </div>
+                    <mat-divider class="side-divider"></mat-divider>
+                    <div class="side-button">
+                        <button mat-button (click)="Rules()"
+                            class="normal-button">{{publicservice.Texts.Texts["header11"]}}</button>
+                    </div>
+                    <mat-divider class="side-divider"></mat-divider>
+                    <div class="side-button">
+                        <button mat-button (click)="Workshop(workshop)"
+                            class="normal-button">{{publicservice.Texts.Texts["header3"]}}</button>
+                    </div>
+                    <mat-divider class="side-divider"></mat-divider>
+                    <div class="side-button">
+                        <button mat-button (click)="Talk(talk)"
+                            class="normal-button">{{publicservice.Texts.Texts["header4"]}}</button>
+                    </div>
+                    <mat-divider class="side-divider"></mat-divider>
+                    <div class="side-button">
+                        <button mat-button (click)="Talk(footer)"
+                            class="normal-button">{{publicservice.Texts.Texts["header5"]}}</button>
+                    </div>
+                    <mat-divider class="side-divider"></mat-divider>
+                    <div class="side-button">
+                        <button mat-button (click)="People()"
+                            class="normal-button">{{publicservice.Texts.Texts["header12"]}}</button>
+                    </div>
+                    <mat-divider class="side-divider"></mat-divider>
 
 
-            </mat-sidenav-content>
-        </mat-sidenav-container>
+
+                </mat-sidenav-content>
+            </mat-sidenav-container>
+        </div>
     </div>
 
     <div class="introduction-div">
@@ -323,7 +325,7 @@
                     </div>
                 </div>
 
- 
+
                 <h1 class="people-subtitle">{{publicservice.Texts.Texts['people41']}}</h1>
                 <div class="collapse-presenters-card-div">
                     <div class="collapse-presenters-card">
@@ -442,21 +444,21 @@
                 <h1 class="supporters-title">
                     {{publicservice.Texts.Texts["home40"]}}
                 </h1>
-            <div class="supporters-card-div">
+                <div class="supporters-card-div">
 
-                <div class="supportes-card-image-div">
-                    <img class="supporters-card-image" src="assets/images/avngames.png">
-                </div>
-                <div class="supportes-card-image-div">
-                    <img class="supporters-card-image" src="assets/images/quiz of kings.png">
-                </div>
-                <div class="supportes-card-image-div">
-                    <img class="supporters-card-image" src="assets/images/tod.png">
-                </div>
-                <!-- <p class="supportes-card-name">
+                    <div class="supportes-card-image-div">
+                        <img class="supporters-card-image" src="assets/images/avngames.png">
+                    </div>
+                    <div class="supportes-card-image-div">
+                        <img class="supporters-card-image" src="assets/images/quiz of kings.png">
+                    </div>
+                    <div class="supportes-card-image-div">
+                        <img class="supporters-card-image" src="assets/images/tod.png">
+                    </div>
+                    <!-- <p class="supportes-card-name">
                         {{publicservice.Texts.Texts["home41"]}}</p> -->
+                </div>
             </div>
-        </div>
 
         </div>
     </div>

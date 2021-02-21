@@ -5,6 +5,12 @@
     display: flex;
     box-shadow: none !important;
 }
+.header {
+    position: fixed;
+    width: 100%;
+    background-color: #52006b;
+    z-index: 100;
+}
 .no-shadow {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) !important;
 }
