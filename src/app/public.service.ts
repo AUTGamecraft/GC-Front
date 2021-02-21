@@ -10,7 +10,7 @@ import { formatCurrency, HashLocationStrategy } from '@angular/common';
 import { HttpClient, HttpHeaders, HttpRequest } from '@angular/common/http';
 import { coerceStringArray } from '@angular/cdk/coercion';
 import { SuccessDialogComponent } from '../app/success-dialog/success-dialog.component';
-
+import { NavigationEnd, Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
@@ -43,7 +43,7 @@ export class PublicService {
 
 
 
-  constructor(private http: Http, public dialog: MatDialog, public snackbar: MatSnackBar,private http2:HttpClient) {
+  constructor(private http: Http, public dialog: MatDialog, public snackbar: MatSnackBar,private http2:HttpClient,public router:Router) {
     this.Authorization = localStorage.getItem("Authorization");
     if (this.Authorization != null) {
       this.logedIn = true;
@@ -136,6 +136,10 @@ export class PublicService {
     }).catch(e => {
       this.APICalls.SignUp = false;
       that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      if(e.status == 401){
+        localStorage.removeItem("Authorization");
+        this.router.navigate(['login']);
+      }
     });
     return ret;
   }
@@ -168,7 +172,10 @@ export class PublicService {
     }).catch(e => {
       this.APICalls.Login = false;
       that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-
+      if(e.status == 401){
+        localStorage.removeItem("Authorization");
+        this.router.navigate(['signup']);
+      }
     });
     return ret;
   }
@@ -232,6 +239,10 @@ export class PublicService {
     }).catch(e => {
       this.APICalls.getUsers = false;
       that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      if(e.status == 401){
+        localStorage.removeItem("Authorization");
+        this.router.navigate(['login']);
+      }
     });
     return ret;
   }
@@ -253,7 +264,10 @@ export class PublicService {
     }).catch(e => {
       this.APICalls.getUsers = false;
       that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-
+      if(e.status == 401){
+        localStorage.removeItem("Authorization");
+        this.router.navigate(['login']);
+      }
     });
     return ret;
   }
@@ -275,6 +289,10 @@ export class PublicService {
       this.APICalls.ActivateUser = false;
       this.hasError = true;
       that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      if(e.status == 401){
+        localStorage.removeItem("Authorization");
+        this.router.navigate(['login']);
+      }
     });
     return ret;
   }
@@ -298,6 +316,10 @@ export class PublicService {
     }).catch(e => {
       this.APICalls.EnrollTalk = false;
       that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      if(e.status == 401){
+        localStorage.removeItem("Authorization");
+        this.router.navigate(['login']);
+      }
     });
     return ret;
   }
@@ -322,6 +344,10 @@ export class PublicService {
     }).catch(e => {
       this.APICalls.EnrollWorkshop = false;
       that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      if(e.status == 401){
+        localStorage.removeItem("Authorization");
+        this.router.navigate(['login']);
+      }
     });
     return ret;
   }
@@ -342,6 +368,10 @@ export class PublicService {
     }).catch(e => {
       this.APICalls.getUserTalks = false;
       that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      if(e.status == 401){
+        localStorage.removeItem("Authorization");
+        this.router.navigate(['login']);
+      }
     });
     return ret;
   }
@@ -362,6 +392,10 @@ export class PublicService {
     }).catch(e => {
       this.APICalls.getUserTalks = false;
       that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      if(e.status == 401){
+        localStorage.removeItem("Authorization");
+        this.router.navigate(['login']);
+      }
     });
     return ret;
   }
@@ -382,6 +416,10 @@ export class PublicService {
     }).catch(e => {
       this.APICalls.getUserTalks = false;
       that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      if(e.status == 401){
+        localStorage.removeItem("Authorization");
+        this.router.navigate(['login']);
+      }
     });
     return ret;
   }
@@ -424,6 +462,10 @@ export class PublicService {
     }).catch(e => {
       this.APICalls.getUserTalks = false;
       that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      if(e.status == 401){
+        localStorage.removeItem("Authorization");
+        this.router.navigate(['login']);
+      }
     });
     return ret;
   }
