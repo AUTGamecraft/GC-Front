@@ -1,15 +1,15 @@
 ::ng-deep .mat-focused .mat-form-field-label {
     /*change color of label*/
     color: #52006b !important;
-   }
-   ::ng-deep.mat-form-field-underline {
+}
+::ng-deep.mat-form-field-underline {
     /*change color of underline*/
     background-color: #52006b !important;
-  } 
-  ::ng-deep.mat-form-field-ripple {
+}
+::ng-deep.mat-form-field-ripple {
     /*change color of underline when focused*/
-    background-color: #52006b !important;;
-   }
+    background-color: #52006b !important;
+}
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     /* display: none; <- Crashes Chrome on hover */
@@ -24,7 +24,7 @@ input[type="number"] {
     background-color: transparent;
     box-shadow: none;
     height: 0;
-  }
+}
 .green-button {
     font-family: "Estedad-Bold";
     color: #52006b;
@@ -97,65 +97,72 @@ input[type="number"] {
     font-family: "Estedad-Regular";
     color: #52006b;
 }
-.error{
-    font-family: 'Estedad-Regular';
+.error {
+    font-family: "Estedad-Regular";
 }
-.form-field-div{
+.form-field-div {
     margin-top: 5%;
 }
 //start of logo
-.logo{
+.logo {
     padding-top: 18px;
     justify-content: center;
     display: flex;
     direction: rtl;
     cursor: pointer;
-  }
-  .logo-image{
+}
+.logo-image {
     margin-left: 20px;
     z-index: 1;
     width: 198.1px;
-  }
-  .logo-text{
-    font-family: 'Estedad-Black';
+}
+.logo-text {
+    font-family: "Estedad-Black";
     color: #a04db9;
     font-size: 24px;
     z-index: 0;
-  }
-  //end of logo
-  #inputPhone{
-      font-family: 'Vazir-Medium';
-
-  }
-  .logo-text{
-      display: none;
-      font-family: "Estedad-Black";
-      color: #a04db9;
-      font-size: 24px;
-      z-index: 0;
-
-  }
-  @media only screen and (max-width: 992px) {
- .signup{
-    flex-direction: column;
-    margin: 0 auto;
- }
- .form-fields-div{
-    margin: 0 auto;
- }
- .left-div{
-    width: 60%;
-    margin: 0 auto;
- }
- .signup-title-div{
-    margin: 0 auto;
-    padding-bottom: 20px;
-
- }
- .logo-text{
-     display: initial;
- }
- 
-  
-    
-    }  
+}
+//end of logo
+#inputPhone {
+    font-family: "Vazir-Medium";
+}
+.logo-text {
+    display: none;
+    font-family: "Estedad-Black";
+    color: #a04db9;
+    font-size: 24px;
+    z-index: 0;
+}
+@media only screen and (max-width: 992px) {
+    .logo-image{
+        margin: 0;
+        width: 150px;
+    }
+    #left-logo-text{
+        margin-right: -10px;
+    }
+    .signup {
+        flex-direction: column;
+        height: 120%;
+        padding: 20px;
+        box-sizing:border-box;
+    }
+    .form-fields-div {
+        margin: 0 auto;
+    }
+    .left-div {
+        width: 60%;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+    .signup-title-div {
+        margin: 0 auto;
+        padding-bottom: 20px;
+    }
+    .signup-title1{
+        margin-left: 0;
+    }
+    .logo-text {
+        display: initial;
+    }
+}

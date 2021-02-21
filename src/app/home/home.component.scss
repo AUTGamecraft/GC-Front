@@ -292,6 +292,10 @@
 .footer-whole-div {
     margin-top: -70px;
 }
+.developers-image {
+    display: flex;
+    justify-content: center;
+}
 .purple-wave-above-footer {
     // background-image: url("/assets/svg/wave-purple.svg");
     // background-repeat: no-repeat;
@@ -834,15 +838,30 @@
     justify-content: left;
     text-align: left;
 }
-.ssc-image{
+.ssc-image {
     padding: 10px 30px;
     width: 150px;
     height: 150px;
     object-fit: contain;
 }
-@media only screen and (max-width: 1000px) {
+.footer-image-div-phone {
+    display: none;
+}
+@media only screen and (max-width: 1190px) {
     .presenter-about {
         font-size: 12px;
+    }
+    .footer-image-div-phone {
+        padding-top: 30px;
+        display: initial;
+        width: 100%;
+        box-sizing: border-box;
+        margin: auto;
+        text-align: center;
+    }
+    .footer-image {
+        max-width: 100%;
+        height: auto;
     }
     .supporters-card-div {
         flex-direction: column;
@@ -1043,7 +1062,11 @@
         justify-content: space-between;
     }
     .collapse-subject {
+        margin: 0;
         font-size: 16px;
+    }
+    .footer-image-div {
+        display: none;
     }
     .collapse-discription-inner-div {
         display: flex;
@@ -1144,6 +1167,7 @@
         padding-left: 10%;
         margin-bottom: 1000px;
         font-size: 15px;
+        text-align: center;
         // display: inline;
     }
     .discription-right-footer-about-title {
@@ -1154,6 +1178,9 @@
     }
     .discription-right-footer-about-discription {
         font-size: 20px;
+    }
+    #green-button-phone {
+        margin: 0;
     }
     .collapse-background {
         border-bottom-right-radius: 12px;
@@ -1268,4 +1295,24 @@
     padding: 8px 8px 4px 4px;
     font-size: large;
     margin-right: 30%;
+}
+@media only screen and (max-width: 588px) {
+    .supporters-div {
+        margin-top: 50%;
+    }
+}
+@media only screen and (max-width: 420px) {
+    .supporters-div {
+        margin-top: 1000px;
+    }
+}
+@media only screen and (max-width: 375px) {
+    .developers-image {
+        text-align: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .ssc-image{
+        margin: auto;
+    }
 }

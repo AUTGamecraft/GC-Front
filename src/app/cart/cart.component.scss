@@ -310,6 +310,10 @@
     border-radius: 50%;
     object-fit: contain;
 }
+.developers-image {
+    display: flex;
+    justify-content: center;
+}
 .supportes-card-name {
     font-family: "Estedad-Bold";
     color: white;
@@ -524,5 +528,15 @@
     .supporters-div{
         margin-top: 100%;
         padding-top: 50px;
+    }
+}
+@media only screen and (max-width: 375px) {
+    .developers-image {
+        text-align: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .ssc-image{
+        margin: auto;
     }
 }

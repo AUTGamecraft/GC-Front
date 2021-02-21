@@ -296,6 +296,10 @@
     border-radius: 50%;
     object-fit: contain;
 }
+.developers-image {
+    display: flex;
+    justify-content: center;
+}
 .supportes-card-name {
     font-family: "Estedad-Bold";
     color: white;
@@ -437,5 +441,15 @@
     }
     .discription-right-footer-about-discription {
         font-size: 20px;
+    }
+}
+@media only screen and (max-width: 375px) {
+    .developers-image {
+        text-align: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .ssc-image{
+        margin: auto;
     }
 }

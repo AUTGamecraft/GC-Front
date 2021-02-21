@@ -63,7 +63,7 @@
             <button mat-button (click)=" onPress();icon =(icon == 'menu' ? 'close' : 'menu')">
                 <mat-icon style="color: white;font-size: 32px;" [inline]="true">{{icon}}</mat-icon>
             </button>
-            <div class="logo" routerLink="home">
+            <div class="logo" (click)="Home(home)">
                 <img class="logo-image" src="assets/svg/dark-3d.svg">
             </div>
         </div>
@@ -462,7 +462,7 @@
     </div>
 </div>
 <div class="developers-div">
-    <div style="display: flex;justify-content: center;">
+    <div class="developers-image">
         <img class="ssc-image" src="assets/images/Asset 4.png">
         <img class="ssc-image" src="assets/images/ssc_white.png">
     </div>

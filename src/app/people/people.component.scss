@@ -271,6 +271,10 @@
     text-align: center;
     padding: 10px;
 }
+.developers-image {
+    display: flex;
+    justify-content: center;
+}
 .developers {
     padding: 30px;
     direction: rtl;
@@ -454,3 +458,13 @@
   
  
  }
+ @media only screen and (max-width: 375px) {
+    .developers-image {
+        text-align: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .ssc-image{
+        margin: auto;
+    }
+}

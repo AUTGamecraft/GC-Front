@@ -360,6 +360,10 @@
     text-align: center;
     margin-bottom: 0;
 }
+.developers-image {
+    display: flex;
+    justify-content: center;
+}
 .supporters-card-div {
     text-align: center;
     display: flex;
@@ -655,5 +659,15 @@
 @media only screen and (max-width:420px){
     .supporters-div{
         margin-top: 1000px;
+    }
+}
+@media only screen and (max-width: 375px) {
+    .developers-image {
+        text-align: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .ssc-image{
+        margin: auto;
     }
 }

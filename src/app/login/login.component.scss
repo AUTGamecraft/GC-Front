@@ -1,21 +1,21 @@
 ::ng-deep .mat-focused .mat-form-field-label {
   /*change color of label*/
   color: #52006b !important;
- }
- ::ng-deep.mat-form-field-underline {
+}
+::ng-deep.mat-form-field-underline {
   /*change color of underline*/
   background-color: #52006b !important;
-} 
+}
 ::ng-deep.mat-form-field-ripple {
   /*change color of underline when focused*/
-  background-color: #52006b !important;;
- }
+  background-color: #52006b !important;
+}
 ::ng-deep .snackbar {
   background-color: transparent;
   box-shadow: none;
   height: 0;
 }
-.logo-text{
+.logo-text {
   display: none;
   font-family: "Estedad-Black";
   color: #a04db9;
@@ -109,25 +109,25 @@
 }
 
 //start of logo
-.logo{
+.logo {
   padding-top: 20px;
   justify-content: center;
   display: flex;
   direction: rtl;
   cursor: pointer;
 }
-.logo-image{
+.logo-image {
   z-index: 1;
   width: 198.1px;
 }
-.logo-text{
-  font-family: 'Estedad-Black';
+.logo-text {
+  font-family: "Estedad-Black";
   color: #a04db9;
   font-size: 24px;
   z-index: 0;
 }
 //end of logo
-.login-whole{
+.login-whole {
   display: block;
   overflow: auto;
   background-color: #52006b;
@@ -136,18 +136,20 @@
 }
 
 @media only screen and (max-width: 992px) {
-  .login{
+  .login-title-div {
+    margin: 0;
+  }
+  .login {
     flex-direction: column;
     margin: 0 auto;
-
-  
-  
+    padding: 20px;
+    box-sizing: border-box;
   }
-  .form-fields-div{
+  .form-fields-div {
     flex-direction: column;
     margin: 0 auto;
     width: 60%;
-
+    padding: 20px;
   }
   .input {
     text-align: right;
@@ -155,15 +157,18 @@
     width: 80%;
     margin: 0 auto;
   }
-  .form-field-div{
+  .form-field-div {
     width: 80%;
     margin: 0 auto;
   }
-  .logo-text{
+  .logo-text {
     display: initial;
   }
-  
-
-
-
+  .logo-image {
+    margin: 0;
+    width: 150px;
   }
+  #left-logo-text {
+    margin-right: -10px;
+  }
+}

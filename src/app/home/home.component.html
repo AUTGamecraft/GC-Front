@@ -67,7 +67,7 @@
                     <button mat-button (click)=" onPress();icon =(icon == 'menu' ? 'close' : 'menu')">
                         <mat-icon style="color: white;font-size: 32px;" [inline]="true">{{icon}}</mat-icon>
                     </button>
-                    <div class="logo" routerLink="home">
+                    <div class="logo" (click)="Home(home)">
                         <img class="logo-image" src="assets/svg/dark-3d.svg">
                     </div>
 
@@ -409,7 +409,7 @@
                 </div>
                 <div class="inner-prizes">
                     <div class="prizes-title">
-                        <h1 style="margin-top: 0;">{{publicservice.Texts.Texts["home43"]}}</h1>
+                        <h1 style="margin-top: -10px;">{{publicservice.Texts.Texts["home43"]}}</h1>
                     </div>
                     <div class="prize-cards-whole-div">
                         <div class="prize-cards-inner-div">
@@ -538,13 +538,13 @@
                     <img class="green-wave-above-wrokshops" src="assets/svg/wave-green.svg">
                 </div>
 
-                <div style="background-color: #4ae5b0;padding: 30px 0;">
+                <div style="background-color: #4ae5b0;padding: 30px 0;margin-top: -40px;">
                     <h1 class="collapse-header" style="background-color: #4ae5b0;">
                         {{publicservice.Texts.Texts["home15"]}}</h1>
                     <div *ngFor="let workshop of workshopsArray;let i = index" class="workshops-whole-collapse">
                         <div style="width: 100%;">
                             <div class="components-collapse">
-                                <div style="display: flex;">
+                                <div style="display: flex;width: 100%;justify-content: space-between;">
                                     <div class="orange-collapse">
                                     </div>
                                     <h3 class="collapse-title">
@@ -702,7 +702,7 @@
             <div *ngFor="let talk of talksArray; let i = index" class="workshops-whole-collapse">
                 <div style="width: 100%;">
                     <div class="components-collapse">
-                        <div style="display: flex;">
+                        <div style="display: flex;width: 100%;justify-content: space-between;">
                             <div class="pink-collapse">
                             </div>
                             <h3 class="collapse-title">
@@ -716,7 +716,7 @@
                     <div
                         style="background-color: #fafafa;border-bottom-left-radius: 12px;border-bottom-right-radius: 12px;">
                         <div
-                            style="display: flex;justify-content: space-between;padding-right: 20px;padding-left: 20px;">
+                            style="display: flex;justify-content: space-between;padding-right: 20px;padding-left: 20px;width: 100%;box-sizing: border-box;">
                             <h4 class="collapse-subject">
                                 {{talksDate[i]}}</h4>
                             <div style="display: flex;">
@@ -794,7 +794,10 @@
                             </p>
                             <div style="text-align: center;">
                                 <button mat-flat-button (click)="People()"
-                                    class="green-button">{{publicservice.Texts.Texts["home47"]}}</button>
+                                    class="green-button" id="green-button-phone">{{publicservice.Texts.Texts["home47"]}}</button>
+                                    <div class="footer-image-div-phone">
+                                        <img class="footer-image" src="assets/images/folan.png">
+                                    </div>
                             </div>
                         </div>
                         <div class="discription-right-footer-bubble">
@@ -824,7 +827,7 @@
             </div>
         </div>
         <div class="developers-div">
-            <div style="display: flex;justify-content: center;">
+            <div class="developers-image">
                 <img class="ssc-image" src="assets/images/Asset 4.png">
                 <img class="ssc-image" src="assets/images/ssc_white.png">
             </div>

@@ -256,6 +256,10 @@
     justify-content: center;
     padding: 20px;
 }
+.developers-image {
+    display: flex;
+    justify-content: center;
+}
 .supportes-card-image-div {
     margin: 20px;
 }
@@ -496,5 +500,15 @@
 @media only screen and (max-width:420px){
     .supporters-div{
         margin-top: 1000px;
+    }
+}
+@media only screen and (max-width: 375px) {
+    .developers-image {
+        text-align: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .ssc-image{
+        margin: auto;
     }
 }
