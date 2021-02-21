@@ -55,7 +55,7 @@
                             <div class="orange"></div>
                             <p class="item-title">{{cart.workshop.title}}</p>
                         </div>
-                        <p class="item-date">{{cart.workshop.date}}</p>
+                        <p class="item-date">{{cart.workshop.start}}</p>
                         <div style="display: flex;">
                             <p class="item-cost">{{cart.workshop.cost}}</p>
                             <button class="delete-button" (click)="Delete(i)"
@@ -67,7 +67,7 @@
                         <div style="width: 100%;">
                             <p class="item-title" style="text-align: right;">{{cart.workshop.title}}</p>
                             <div style="display: flex;justify-content: space-between;padding: 0 10px;">
-                                <p class="item-date">{{cart.workshop.date}}</p>
+                                <p class="item-date">{{cart.workshop.start}}</p>
                                 <div style="display: flex;">
                                     <p class="item-cost">{{cart.workshop.cost}}</p>
                                     <button class="delete-button" (click)="Delete(i)"
