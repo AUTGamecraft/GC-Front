@@ -125,6 +125,7 @@ export class DashboardEventComponent implements OnInit {
         else {
           this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'خطایی در خریدتان رخ داد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
         }
+        this.events();
       }
     });
   }
