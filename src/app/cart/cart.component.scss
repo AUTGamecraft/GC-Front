@@ -298,7 +298,8 @@
 .supporters-card-div {
     text-align: center;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    padding: 20px;
 }
 .supportes-card-image-div {
     margin: 20px;
@@ -320,6 +321,8 @@
     padding: 10px;
 }
 .developers {
+    padding: 30px;
+    direction: rtl;
     color: white;
     margin: 0;
     font-family: "Estedad-SemiBold";
@@ -331,6 +334,12 @@
     border-radius: 24px;
     padding: 11px 16px;
     font-size: large;
+}
+.ssc-image{
+    padding: 10px 30px;
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
 }
 .delete{
     display: none;

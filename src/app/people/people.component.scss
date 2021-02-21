@@ -115,6 +115,12 @@
     justify-content:center;
     direction: rtl;
 }
+.ssc-image{
+    padding: 10px 30px;
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
 .collapse-presenters-card {
     flex: 0 0 30%;
     direction: rtl;
@@ -241,7 +247,7 @@
 .supporters-card-div {
     text-align: center;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 .mat-focus-indicator.normal-button.mat-button.mat-button-base.mat-button-disabled {
     color: white;
@@ -266,6 +272,8 @@
     padding: 10px;
 }
 .developers {
+    padding: 30px;
+    direction: rtl;
     color: white;
     margin: 0;
     font-family: "Estedad-SemiBold";

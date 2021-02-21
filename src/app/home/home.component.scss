@@ -385,12 +385,13 @@
 .supporters-card-div {
     text-align: center;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     padding: 20px;
 }
 .supporters-card-image {
     height: 250px;
     width: 250px;
+    margin: auto 20px;
     border-radius: 50%;
     object-fit: contain;
 }
@@ -405,6 +406,8 @@
     padding: 10px;
 }
 .developers {
+    padding: 30px;
+    direction: rtl;
     color: white;
     margin: 0;
     font-family: "Estedad-SemiBold";
@@ -831,7 +834,12 @@
     justify-content: left;
     text-align: left;
 }
-
+.ssc-image{
+    padding: 10px 30px;
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
 @media only screen and (max-width: 1000px) {
     .presenter-about {
         font-size: 12px;

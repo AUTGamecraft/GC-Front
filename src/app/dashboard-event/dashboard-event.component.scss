@@ -363,7 +363,8 @@
 .supporters-card-div {
     text-align: center;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    padding: 20px;
 }
 .supportes-card-image-div {
     margin: 20px;
@@ -385,6 +386,8 @@
     padding: 10px;
 }
 .developers {
+    padding: 30px;
+    direction: rtl;
     color: white;
     margin: 0;
     font-family: "Estedad-SemiBold";
@@ -417,6 +420,12 @@
     font-family: "Vazir-Regular";
     color: #52006b;
     margin: auto 30px;
+}
+.ssc-image{
+    padding: 10px 30px;
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
 }
 .footer-image-div-phone{
     display: none;
