@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PublicService } from '../public.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ErrorDialogComponent } from '../error-dialog/error-dialog.component';
 import * as moment from 'jalali-moment';
+import { SuccessDialogComponent } from '../success-dialog/success-dialog.component';
+
 @Component({
   selector: 'app-dashboard-event',
   templateUrl: './dashboard-event.component.html',
@@ -22,13 +24,17 @@ export class DashboardEventComponent implements OnInit {
   talksActive:any = [];
   workshopsActive:any = [];
   email: string = "";
-  hash = 0;
+  hash: string = '';
   count = 0;
   isHideWorkshops : any = [];
   isHideTalks : any = [];
   workshopsHour:any = [];
   talksHour : any = [];
-  constructor(private router: Router, public publicservice: PublicService, public snackbar: MatSnackBar) {
+  workshopsStartHour:any = [];
+  workshopsEndHour:any = [];
+  talksStartHour:any = [];
+  talksEndHour:any = [];
+  constructor(private router: Router, public publicservice: PublicService, public snackbar: MatSnackBar, private route: ActivatedRoute) {
     if (!publicservice.logedIn) {
       this.router.navigate(['login']);
     }
@@ -40,11 +46,12 @@ export class DashboardEventComponent implements OnInit {
         this.isStaff = r.data.is_staff;
       });
       publicservice.getUserDashboard().then((r) => {
-        console.log(r);
+        // console.log(r);
         for (let i = 0; i < r.data.length; i++) {
           if (r.data[i].workshop == null) {
-            this.talksHour.push(r.data[i].talk.date.split('T',2)[1].split('+',2)[0]);
-            r.data[i].talk.date = moment(r.data[i].talk.date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('dddd') + " " + moment(r.data[i].talk.date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('DD') + " " + moment(r.data[i].talk.date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('MMMM') + " " + moment(r.data[i].talk.date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('YY');
+            this.talksStartHour.push(r.data[i].talk.start.split('T',2)[1].split('+',2)[0].split('.',2)[0]);
+            this.talksEndHour.push(r.data[i].talk.end.split('T',2)[1].split('+',2)[0].split('.',2)[0]);
+            r.data[i].talk.start = moment(r.data[i].talk.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('dddd') + " " + moment(r.data[i].talk.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('DD') + " " + moment(r.data[i].talk.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('MMMM') + " " + moment(r.data[i].talk.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('YY');
             switch (r.data[i].talk.level) {
               case 'BEGINNER':
                 r.data[i].talk.level = 'مبتدی';
@@ -66,8 +73,10 @@ export class DashboardEventComponent implements OnInit {
             this.talksActive.push('deactive');
           }
           else {
-            this.workshopsHour.push(r.data[i].workshop.date.split('T',2)[1].split('+',2)[0]);
-            r.data[i].workshop.date = moment(r.data[i].workshop.date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('dddd') + " " + moment(r.data[i].workshop.date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('DD') + " " + moment(r.data[i].workshop.date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('MMMM') + " " + moment(r.data[i].workshop.date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('YY');
+            this.workshopsStartHour.push(r.data[i].workshop.start.split('T',2)[1].split('+',2)[0].split('.',2)[0]);
+            this.workshopsEndHour.push(r.data[i].workshop.end.split('T',2)[1].split('+',2)[0].split('.',2)[0]);
+            // console.log(this.workshopsEndHour);
+            r.data[i].workshop.start = moment(r.data[i].workshop.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('dddd') + " " + moment(r.data[i].workshop.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('DD') + " " + moment(r.data[i].workshop.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('MMMM') + " " + moment(r.data[i].workshop.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('YY');
             switch (r.data[i].workshop.level) {
               case 'BEGINNER':
                 r.data[i].workshop.level = 'مبتدی';
@@ -90,7 +99,7 @@ export class DashboardEventComponent implements OnInit {
           }
 
         }
-        console.log(this.talksArray)
+        // console.log(this.talksArray)
       })
       publicservice.getUserCart().then((r)=>{
         this.count = r.data.length;
@@ -99,6 +108,25 @@ export class DashboardEventComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.route.queryParams.subscribe(params => {
+      this.hash = params['status'];
+      if(this.hash == 'true'){
+        if (window.innerWidth > 992) {
+          this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'خریدتان با موفقیت انجام شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+        }
+        else {
+          this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'خریدتان با موفقیت انجام شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+        }
+      }
+      else if(this.hash == 'false'){
+        if (window.innerWidth > 992) {
+          this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'خطایی در خریدتان رخ داد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+        }
+        else {
+          this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'خطایی در خریدتان رخ داد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+        }
+      }
+    });
   }
   ngAfterViewInit(): void {
     if (this.router.url.split('#')[1] == 'dash') {
