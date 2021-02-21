@@ -37,6 +37,21 @@ export class PeopleComponent implements OnInit {
   People(){
     this.router.navigate(['people']);
   }
+  display = false;
+  icon = "menu"
+  onPress() {
+
+    this.display = !this.display;
+    // if (this.icon=="menu"){
+    //   this.icon="close"
+    // }
+    // else {
+    // this.icon=="menu"
+    // }
+
+    // return this.icon 
+  }
+
   Signup() {
     const navigationDetails2: string[] = ['signup'];
     this.router.navigate(navigationDetails2);

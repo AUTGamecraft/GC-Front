@@ -25,7 +25,6 @@
     border-radius: 25px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin: 10px;
-
 }
 .presenter-image {
     height: 140px;
@@ -46,13 +45,13 @@
     font-size: 16px;
     margin-top: 0;
 }
-.hide{
+.hide {
     max-height: 180px;
     overflow: hidden;
     transition: max-height 0.5s ease-out;
     cursor: pointer;
 }
-.show{
+.show {
     overflow: visible;
     max-height: 1000px;
     transition: max-height 0.5s ease-in;
@@ -109,10 +108,9 @@
     margin-bottom: 0;
     margin-right: 2%;
 }
-.collapse-hour{
+.collapse-hour {
     font-family: "Vazir-Regular";
     color: #52006b;
-
 }
 .collapse-subject {
     font-family: "Vazir-Regular";
@@ -305,7 +303,7 @@
     // z-index: 1;
     // margin-top: -60px;
 }
-.supporters-div{
+.supporters-div {
     padding-top: 10%;
 }
 .footer-div {
@@ -387,7 +385,7 @@
 .supporters-card-div {
     text-align: center;
     display: flex;
-    justify-content:space-evenly;
+    justify-content: space-evenly;
     padding: 20px;
 }
 .supporters-card-image {
@@ -482,7 +480,7 @@
     padding-top: 10%;
 }
 .event-about-right-div {
-   // margin-bottom: 100px;
+    // margin-bottom: 100px;
     text-align: center;
 }
 
@@ -827,20 +825,21 @@
     padding: 10px;
     border-radius: 16px;
 }
-.collapse-cost-div{
+.collapse-cost-div {
     width: 100%;
     direction: ltr;
     justify-content: left;
     text-align: left;
 }
-@media only screen and (max-width: 1113px) {
-    .presenter-about{
+
+@media only screen and (max-width: 1000px) {
+    .presenter-about {
         font-size: 12px;
     }
     .supporters-card-div {
         flex-direction: column;
     }
-    .header{
+    .header {
         width: 100%;
     }
     .collapse-cost {
@@ -872,7 +871,6 @@
     }
     .timer-div {
         margin: auto;
-        
     }
     .intro-discription-div {
         padding-bottom: 750px;
@@ -916,7 +914,7 @@
         padding-bottom: 10px;
     }
     .green-button {
-        font-size: 11px;    
+        font-size: 11px;
         width: 90px;
         height: 57px;
         text-align: center;
@@ -938,6 +936,7 @@
         padding-top: 60px;
         // padding-right: 10%;
         z-index: 0;
+        // display: flex;
     }
     .middle-div-phone {
         justify-content: center;
@@ -945,6 +944,7 @@
         // margin: 0 auto;
         // width: 100%;
         z-index: 1;
+        // display: flex;
     }
     .Ellipse {
         width: 16px;
@@ -1108,26 +1108,35 @@
     }
     .discription-footer-div {
         flex-direction: column;
-        justify-content: initial;
+        //justify-content: initial;
         justify-content: center;
+        display: flex;
     }
     .footer-image {
-        width: 360px;
-        height: 320px;
+        // width: 360px;
+        //height: 320px;
+        //display: block;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .discription-right-footer-div {
         padding: 38%;
         margin-bottom: 80%;
+        justify-content: center;
     }
     .footer-image-div {
         text-align: center;
         margin-left: 0;
-        margin-top: 5%;
+        margin-top: 300px;
     }
     .discription-right-footer-about-div {
         padding-left: 10%;
         margin-bottom: 1000px;
         font-size: 15px;
+        // display: inline;
     }
     .discription-right-footer-about-title {
         font-size: 40px;
@@ -1154,10 +1163,10 @@
     .logo {
         padding: 0;
     }
-    .collapse-presenters-card-div{
+    .collapse-presenters-card-div {
         flex-direction: column;
     }
-    .collapse-cost{
+    .collapse-cost {
         margin: auto;
         text-align: center;
         justify-content: center;
@@ -1184,83 +1193,71 @@
 //     display: initial;
 // }
 
-  
- @media only screen and (max-width : 900){
-   .example-sidenav-container {
-    /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+@media only screen and (max-width: 900) {
+    .example-sidenav-container {
+        /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
        causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
-     
-   position: fixed;
-    flex: 1;
-    width: 100%;
-    height: 30px;
-    //display: none;
-    //overflow: auto;
-    //overscroll-behavior:unset;
-    //overscroll-behavior-block:initial;
-   
-    
 
-  }
+        position: fixed;
+        flex: 1;
+        width: 100%;
+        height: 30px;
+        //display: none;
+        //overflow: auto;
+        //overscroll-behavior:unset;
+        //overscroll-behavior-block:initial;
+    }
 }
-  
-.side-route{
-      width: 100%;
-      background-color: #52006b;
-     
-    overflow:hidden;    
 
-  }
-  .side-button{
-     
-      margin-left: 70%;
-      margin-right: 30%;
-      direction: rtl;
-     // border: solid 2px var(--primary-light);
-     // border-radius: 24px;
-      
-  }
-  .side-divider{
-      width: 99%;
-      height: 0.5px;
-      //margin: 20px 0 0;
-      border: solid 1px ;
-      border-color:#a04db9 ;
-      background-color: #a04db9;
-   
-      //border-color: #a04db9 !important; 
-  }
+.side-route {
+    width: 100%;
+    background-color: #52006b;
+
+    overflow: hidden;
+}
+.side-button {
+    margin-left: 70%;
+    margin-right: 30%;
+    direction: rtl;
+    // border: solid 2px var(--primary-light);
+    // border-radius: 24px;
+}
+.side-divider {
+    width: 99%;
+    height: 0.5px;
+    //margin: 20px 0 0;
+    border: solid 1px;
+    border-color: #a04db9;
+    background-color: #a04db9;
+
+    //border-color: #a04db9 !important;
+}
 //    .mat-divider{
 //     width: 100%;
 //     height: 0;
 //     margin: 20px 0 0;
 //     border: solid 2px var(--primary-light);
- 
+
 //     border-top-color: #a04db9;
 
 //   }
 
-.side-button-1{
-     
-   // margin-left: 70%;
-  margin-right: 30%;
-    direction: rtl; 
-   // display: flex;
-   // justify-content: center;
-   // border: solid 2px var(--primary-light);
-   // border-radius: 24px;
-    
+.side-button-1 {
+    // margin-left: 70%;
+    margin-right: 30%;
+    direction: rtl;
+    // display: flex;
+    // justify-content: center;
+    // border: solid 2px var(--primary-light);
+    // border-radius: 24px;
 }
 .normal-button-1 {
     font-family: "Estedad-Bold";
     color: #52006b;
     background-color: #6af9c5;
     border-radius: 20px;
-    
+
     padding: 8px 8px 4px 4px;
     font-size: large;
     margin-right: 30%;
-    
- 
-
 }
