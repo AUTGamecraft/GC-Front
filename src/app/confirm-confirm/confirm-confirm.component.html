@@ -5,8 +5,7 @@
         <img style="width: 100.8px;z-index: 1;" src="assets/svg/dark-3d.svg">
         <p style="margin-right: -5px;font-family: 'Estedad-Black';color: #a04db9;font-size: 24px;z-index: 0;">کرفت</p>
     </div>
-    <div 
-         class="white-part">
+    <div class="white-part">
         <div *ngIf="!publicservice.hasError">
             <p style="color: #52006b;font-family: 'Estedad-SemiBold';margin-bottom: 0;">!{{userName}} سلام </p>
             <p style="color: #52006b;font-family: 'Estedad-SemiBold';margin-bottom: 0;">ایمیل شما با موفقیت تایید شد</p>
@@ -25,7 +24,8 @@
             </div>
             <div *ngIf="publicservice.hasError">
                 <button mat-flat-button (click)="Home()"
-                    style="font-family: 'Estedad-Bold';color: #52006b;background-color: #6af9c5;border-radius: 24px;padding: 11px 16px;font-size: large;">صفحه اصلی</button>
+                    style="font-family: 'Estedad-Bold';color: #52006b;background-color: #6af9c5;border-radius: 24px;padding: 11px 16px;font-size: large;">صفحه
+                    اصلی</button>
             </div>
         </div>
     </div>

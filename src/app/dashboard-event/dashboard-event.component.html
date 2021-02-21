@@ -19,8 +19,11 @@
                     <p class="user-name">{{userName}}</p>
                 </div>
                 <div style="display: flex;justify-content: center;">
-                    <button mat-stroked-button matBadge="{{count}}" matBadgePosition="before" (click)="Cart()"
-                        id="cart-button-phone" class="outlined-button">{{publicservice.Texts.Texts['cart8']}}</button>
+                    <div *ngIf="!isStaff">
+                        <button mat-stroked-button matBadge="{{count}}" matBadgePosition="before" (click)="Cart()"
+                            id="cart-button-phone"
+                            class="outlined-button">{{publicservice.Texts.Texts['cart8']}}</button>
+                    </div>
                     <!-- <button mat-stroked-button class="outlined-button"
                         id="outlined-button-phone">{{publicservice.Texts.Texts["dash-event5"]}}</button> -->
                     <button mat-button (click)="logOut()"
@@ -83,7 +86,7 @@
                             <div style="text-align: right;">
                                 <p class="workshops-discription">
                                     {{workshop.content}}</p>
-                                    <h3 class="collapse-hour">ساعت : {{workshopsHour[i]}}</h3>
+                                <h3 class="collapse-hour">ساعت : {{workshopsHour[i]}}</h3>
                             </div>
                             <div class="presenters-title-div">
                                 <h1 class="presenters-title">{{publicservice.Texts.Texts["dash-event15"]}}</h1>
@@ -336,9 +339,9 @@
                         <div style="text-align: center;">
                             <button mat-flat-button (click)="People()"
                                 class="green-button">{{publicservice.Texts.Texts["home47"]}}</button>
-                                <div class="footer-image-div-phone">
-                                    <img class="footer-image" src="assets/images/folan.png">
-                                </div>
+                            <div class="footer-image-div-phone">
+                                <img class="footer-image" src="assets/images/folan.png">
+                            </div>
                         </div>
                     </div>
                     <div class="discription-right-footer-bubble">

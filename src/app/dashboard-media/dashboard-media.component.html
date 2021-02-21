@@ -16,9 +16,11 @@
                             {{userName}}</p>
                     </div>
                     <div style="display: flex;justify-content: center;">
+                        <div *ngIf="!isStaff">
                         <button mat-stroked-button matBadge="{{count}}" matBadgePosition="before" (click)="Cart()"
                             id="cart-button-phone"
                             class="outlined-button">{{publicservice.Texts.Texts['cart8']}}</button>
+                        </div>
                         <button mat-button (click)="logOut()"
                             class="normal-button">{{publicservice.Texts.Texts["header8"]}}</button>
                     </div>
