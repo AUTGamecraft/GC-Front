@@ -36,8 +36,10 @@ export class HomeComponent implements OnInit {
   count = 0;
   isHideWorkshops: any = [];
   isHideTalks: any = [];
-  workshopsHour:any = [];
-  talksHour:any = [];
+  workshopsStartHour:any = [];
+  workshopsEndHour:any = [];
+  talksStartHour:any = [];
+  talksEndHour:any = [];
   constructor(public publicservice: PublicService, public router: Router, public snackbar: MatSnackBar) {
     this.time = parseInt('' + (new Date("2021-03-06T12:00:00Z").getTime() - new Date().getTime()) / 1000);
     publicservice.getTalks().then((r) => {
@@ -47,8 +49,8 @@ export class HomeComponent implements OnInit {
       for (let index = 0; index < this.talksArray.length; index++) {
         this.talksActive[index] = 'deactive'
         this.iconT[index] = 'keyboard_arrow_down'
-        this.m = moment(this.talksArray[index].date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('YYYY-MM-DD');
-        this.talksDate[index] = moment(this.talksArray[index].date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('dddd') + " " + moment(this.talksArray[index].date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('DD') + " " + moment(this.talksArray[index].date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('MMMM') + " " + moment(this.talksArray[index].date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('YY');
+        this.m = moment(this.talksArray[index].start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('YYYY-MM-DD');
+        this.talksDate[index] = moment(this.talksArray[index].start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('dddd') + " " + moment(this.talksArray[index].start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('DD') + " " + moment(this.talksArray[index].start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('MMMM') + " " + moment(this.talksArray[index].start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('YY');
         switch (this.talksArray[index].level) {
           case 'BEGINNER':
             this.talksLevel[index] = 'مبتدی';
@@ -67,7 +69,8 @@ export class HomeComponent implements OnInit {
           this.isHideTalks.push('hide');
         }
         // console.log(this.isHideTalks);
-        this.talksHour[index] = this.talksArray[index].date.split('T',2)[1].split('+',2)[0];
+        this.talksStartHour[index] = this.talksArray[index].start.split('T',2)[1].split('+',2)[0].split('.',2)[0];
+        this.talksEndHour[index] = this.talksArray[index].end.split('T',2)[1].split('+',2)[0].split('.',2)[0];
       }
     })
     publicservice.getWorkshops().then((r) => {
@@ -76,8 +79,8 @@ export class HomeComponent implements OnInit {
       for (let index = 0; index < this.workshopsArray.length; index++) {
         this.workshopsActive[index] = 'deactive'
         this.iconW[index] = 'keyboard_arrow_down'
-        this.m = moment(this.workshopsArray[index].date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('YYYY-MM-DD');
-        this.workshopsDate[index] ="شروع از " + moment(this.workshopsArray[index].date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('dddd') + " " + moment(this.workshopsArray[index].date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('DD') + " " + moment(this.workshopsArray[index].date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('MMMM') + " " + moment(this.workshopsArray[index].date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('YY');
+        this.m = moment(this.workshopsArray[index].start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('YYYY-MM-DD');
+        this.workshopsDate[index] ="شروع از " + moment(this.workshopsArray[index].start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('dddd') + " " + moment(this.workshopsArray[index].start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('DD') + " " + moment(this.workshopsArray[index].start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('MMMM') + " " + moment(this.workshopsArray[index].start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('YY');
         switch (this.workshopsArray[index].level) {
           case 'BEGINNER':
             this.workshopsLevel[index] = 'مبتدی';
@@ -95,7 +98,8 @@ export class HomeComponent implements OnInit {
         for (let i = 0; i < this.workshopsArray[index].presenters.length; i++) {
           this.isHideWorkshops.push('hide');
         }
-        this.workshopsHour[index] = this.workshopsArray[index].date.split('T',2)[1].split('+',2)[0];
+        this.workshopsStartHour[index] = this.workshopsArray[index].start.split('T',2)[1].split('+',2)[0].split('.',2)[0];
+        this.workshopsEndHour[index] = this.workshopsArray[index].end.split('T',2)[1].split('+',2)[0].split('.',2)[0];
       }
 
     })

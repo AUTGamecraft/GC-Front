@@ -82,15 +82,15 @@
                             <mat-divider class="side-divider"></mat-divider>
                             <div class="side-button-1">
                                 <div *ngIf="!publicservice.logedIn">
-                                <button mat-button (click)="login()"
-                                    class="normal-button">{{publicservice.Texts.Texts["header6"]}}</button>
-                                <button mat-flat-button (click)="Signup()"
-                                    class="normal-button-1">{{publicservice.Texts.Texts["header7"]}}</button>
+                                    <button mat-button (click)="login()"
+                                        class="normal-button">{{publicservice.Texts.Texts["header6"]}}</button>
+                                    <button mat-flat-button (click)="Signup()"
+                                        class="normal-button-1">{{publicservice.Texts.Texts["header7"]}}</button>
                                 </div>
-                                <div  *ngIf="publicservice.logedIn">
+                                <div *ngIf="publicservice.logedIn">
                                     <div class="left-button">
                                         <button mat-button [disabled]="true" class="normal-button">{{userName}}</button>
-                                   
+
                                         <button mat-flat-button class="normal-button-1"
                                             (click)="Dashboard()">{{publicservice.Texts.Texts["header9"]}}</button>
                                     </div>
@@ -488,7 +488,8 @@
                                     <div>
                                         <p class="collapse-about">
                                             {{workshop.content}}</p>
-                                        <h3 class="collapse-hour">ساعت : {{workshopsHour[i]}}</h3>
+                                        <h3 class="collapse-hour">ساعت : {{workshopsStartHour[i]}} الی {{workshopsEndHour[i]}}
+                                        </h3>
                                     </div>
                                     <div class="collapse-cost-div">
                                         <h3 class="collapse-cost">
@@ -578,6 +579,9 @@
                                     <div>
                                         <p class="collapse-about">
                                             {{workshop.content}}</p>
+                                        <h3 class="collapse-hour">ساعت : {{workshopsStartHour[i]}} الی
+                                            {{workshopsEndHour[i]}}
+                                        </h3>
                                     </div>
                                     <h3 class="collapse-cost">
                                         {{publicservice.Texts.Texts['home57']}}{{workshop.cost}}{{publicservice.Texts.Texts['home58']}}
@@ -655,7 +659,7 @@
                             <div>
                                 <p class="collapse-about">
                                     {{talk.content}}</p>
-                                <h3 class="collapse-hour">ساعت : {{talksHour[i]}}</h3>
+                                <h3 class="collapse-hour">ساعت : {{talksStartHour[i]}} الی {{talksEndHour[i]}}</h3>
                             </div>
                             <div class="collapse-cost-div">
                                 <h3 class="collapse-cost">
@@ -732,6 +736,7 @@
                             <div>
                                 <p class="collapse-about">
                                     {{talk.content}}</p>
+                                <h3 class="collapse-hour">ساعت : {{talksStartHour[i]}} الی {{talksEndHour[i]}}</h3>
                             </div>
                             <h3 class="collapse-cost">
                                 {{publicservice.Texts.Texts['home59']}}
@@ -760,7 +765,8 @@
                                                     </mat-icon>
                                                 </a>
                                             </div> -->
-                                            <h4 class="presenter-about">{{presenter.descriptions}} </h4>
+                                                <h4 class="presenter-about">{{presenter.descriptions}} </h4>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -809,7 +815,7 @@
                         <div class="supportes-card-image-div">
                             <img class="supporters-card-image" src="assets/images/quiz of kings.png">
                         </div>
-                        
+
                         <div class="supportes-card-image-div">
                             <img class="supporters-card-image" src="assets/images/tod.png">
                         </div>
