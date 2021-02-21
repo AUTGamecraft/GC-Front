@@ -176,13 +176,13 @@
     font-family: "Estedad-Bold";
     color: #52006b;
 }
-.hide{
+.hide {
     max-height: 180px;
     overflow: hidden;
     transition: max-height 0.5s ease-out;
     cursor: pointer;
 }
-.show{
+.show {
     overflow: visible;
     max-height: 1000px;
     transition: max-height 0.5s ease-in;
@@ -205,7 +205,6 @@
     border-radius: 25px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin: 10px;
-
 }
 .presenter-image {
     height: 140px;
@@ -255,7 +254,6 @@
     justify-content: center;
     display: flex;
     direction: rtl;
-
 }
 .logo-image {
     width: 100.8px;
@@ -288,7 +286,7 @@
     padding-top: 10px;
     margin-top: -10px;
 }
-.supporters-div{
+.supporters-div {
     padding-top: 10%;
 }
 .discription-footer-div {
@@ -406,22 +404,71 @@
 .collapse-phone {
     display: none;
 }
-
+.mini-fab-button {
+    background-color: #52006b;
+    position: absolute;
+    left: 25%;
+    top: 80%;
+}
+#cart-button-phone{
+    display: none;
+}
+.collapse-hour {
+    font-family: "Vazir-Regular";
+    color: #52006b;
+    margin: auto 30px;
+}
+.footer-image-div-phone{
+    display: none;
+}
 @media only screen and (max-width: 992px) {
-    .supporters-card-div{
+    .supporters-card-image{
+        width: 200px;
+        height: 200px;
+    }
+    .footer-image-div-phone{
+        padding-top: 30px;
+        display: initial;
+        width: 100%;
+        box-sizing: border-box;
+        margin: auto;
+        text-align: center;
+    }
+    .footer-image {
+        max-width: 100%;
+        height: auto;
+    }
+    .presenter-about{
+        font-size: 12px;
+    }
+    #cart-button-phone{
+        display: initial;
+        padding: auto 20px;
+        width: 111px;
+        height: 44px;
+    }
+    .mini-fab-button{
+        top: -30%;
+        left: 80%;
+        bottom: 80%;
+        background-color: #a04db9;
+    }
+    .supporters-card-div {
         flex-direction: column;
     }
     .dash-event {
         flex-direction: column;
         text-align: center;
         justify-content: center;
+        margin-bottom: 20%;
     }
     .right-part {
+        box-sizing: border-box;
         width: 100%;
         padding: 16px;
         padding-top: 0;
         margin: auto;
-        margin-bottom: 10%;
+        margin-bottom: 5%;
     }
     .user-image {
         width: 48px;
@@ -469,7 +516,8 @@
         border-radius: 12px;
     }
     .left-part {
-        width: fit-content;
+        width: 100%;
+        box-sizing: border-box;
         margin-right: 0;
         margin: auto;
         text-align: center;
@@ -497,6 +545,7 @@
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         height: fit-content;
         border-radius: 12px;
+        margin: 10px 0;
     }
     .components {
         display: initial;
@@ -515,7 +564,7 @@
     .register-button {
         border-radius: 12px;
         margin: auto 0;
-        font-size: 16px;
+        font-size: 12px;
     }
     .component-subject {
         font-size: 16px;
@@ -570,11 +619,13 @@
         padding-left: 36px;
     }
     .footer-image-div {
+        display: none;
         text-align: center;
         margin-left: 0;
         margin-top: 200px;
     }
     .discription-right-footer-about-div {
+        text-align: center;
         float: none;
     }
     .discription-right-footer-about-title {
@@ -585,5 +636,15 @@
     }
     .discription-right-footer-about-discription {
         font-size: 20px;
+    }
+}
+@media only screen and (max-width:588px){
+    .supporters-div{
+        margin-top: 100%;
+    }
+}
+@media only screen and (max-width:420px){
+    .supporters-div{
+        margin-top: 1000px;
     }
 }

@@ -19,11 +19,15 @@ export class DashboardEventComponent implements OnInit {
   isStaff: boolean;
   talksArray: any = [];
   workshopsArray: any = [];
+  talksActive:any = [];
+  workshopsActive:any = [];
   email: string = "";
   hash = 0;
   count = 0;
   isHideWorkshops : any = [];
   isHideTalks : any = [];
+  workshopsHour:any = [];
+  talksHour : any = [];
   constructor(private router: Router, public publicservice: PublicService, public snackbar: MatSnackBar) {
     if (!publicservice.logedIn) {
       this.router.navigate(['login']);
@@ -39,6 +43,7 @@ export class DashboardEventComponent implements OnInit {
         console.log(r);
         for (let i = 0; i < r.data.length; i++) {
           if (r.data[i].workshop == null) {
+            this.talksHour.push(r.data[i].talk.date.split('T',2)[1].split('+',2)[0]);
             r.data[i].talk.date = moment(r.data[i].talk.date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('dddd') + " " + moment(r.data[i].talk.date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('DD') + " " + moment(r.data[i].talk.date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('MMMM') + " " + moment(r.data[i].talk.date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('YY');
             switch (r.data[i].talk.level) {
               case 'BEGINNER':
@@ -58,8 +63,10 @@ export class DashboardEventComponent implements OnInit {
               this.isHideTalks.push('hide')
             }
             this.talksArray.push(r.data[i].talk);
+            this.talksActive.push('deactive');
           }
           else {
+            this.workshopsHour.push(r.data[i].workshop.date.split('T',2)[1].split('+',2)[0]);
             r.data[i].workshop.date = moment(r.data[i].workshop.date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('dddd') + " " + moment(r.data[i].workshop.date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('DD') + " " + moment(r.data[i].workshop.date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('MMMM') + " " + moment(r.data[i].workshop.date.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('YY');
             switch (r.data[i].workshop.level) {
               case 'BEGINNER':
@@ -79,7 +86,7 @@ export class DashboardEventComponent implements OnInit {
               this.isHideWorkshops.push('hide');
             }
             this.workshopsArray.push(r.data[i].workshop);
-
+            this.workshopsActive.push('deactive');
           }
 
         }

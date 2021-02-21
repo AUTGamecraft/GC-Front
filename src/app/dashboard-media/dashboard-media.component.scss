@@ -291,7 +291,38 @@
 #outlined-button-phone{
     display: none;
 }
+#cart-button-phone{
+    display: none;
+}
+.footer-image-div-phone{
+    display: none;
+}
 @media only screen and (max-width:992px){
+    .supporters-card-image{
+        width: 200px;
+        height: 200px;
+    }
+    .footer-image-div{
+        display: none;
+    }
+    .footer-image-div-phone{
+        padding-top: 30px;
+        display: initial;
+        width: 100%;
+        box-sizing: border-box;
+        margin: auto;
+        text-align: center;
+    }
+    .footer-image {
+        max-width: 100%;
+        height: auto;
+    }
+    #cart-button-phone{
+        display: initial;
+        padding: auto 20px;
+        width: 111px;
+        height: 44px;
+    }
     .supporters-card-div{
         flex-direction: column;
     }
@@ -307,7 +338,9 @@
         padding-bottom: 20%;
     }
     .right-part{
-        width: fit-content;
+        box-sizing: border-box;
+
+        width: 100%;
         padding: 16px;
         padding-top: 0;
         margin: auto;
@@ -362,13 +395,14 @@
         font-size:16px ;
     }
     .left-part{
-        width: max-content;
+        width: 100%;
+        box-sizing: border-box;
         margin-right: 0;
         margin: auto;
         text-align: center;
         padding: 5%;
         // padding: 5px;
-        width: 80%;
+        // width: 80%;
         padding-top: 0;
     }
     // .mat-card{
@@ -420,6 +454,7 @@
         height: 320px;
     }
     .discription-right-footer-div {
+        text-align: center;
         padding: 38%;
         margin: 0 auto;
         margin-bottom: 70%;
@@ -442,5 +477,15 @@
     }
     .discription-right-footer-about-discription{
         font-size: 20px;
+    }
+}
+@media only screen and (max-width:588px){
+    .supporters-div{
+        margin-top: 100%;
+    }
+}
+@media only screen and (max-width:420px){
+    .supporters-div{
+        margin-top: 1000px;
     }
 }
