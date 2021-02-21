@@ -1,0 +1,14 @@
+.white-part {
+    background-color: #fafafa;
+    text-align: center;
+    padding: 20px 70px;
+    width: fit-content;
+    margin: auto;
+    border-radius: 16px;
+    margin-top: 56px;
+}
+@media only screen and (max-width: 478px) {
+    .white-part {
+        padding: 20px;
+    }
+}
