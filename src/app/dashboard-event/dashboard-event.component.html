@@ -69,7 +69,7 @@
                         <h3 class="component-title">
                             {{workshop.title}}</h3>
                         <h4 class="component-subject">
-                            {{workshop.date}}</h4>
+                            {{workshop.start}}</h4>
                         <h4 class="component-subject">
                             {{workshop.level}}</h4>
                         <button mat-stroked-button
@@ -141,10 +141,10 @@
                             <div
                                 style="display: flex;justify-content: space-between;padding-right:16px ;padding-left: 16px;">
                                 <h4 class="component-subject">
-                                    {{workshop.date}}</h4>
+                                    {{workshop.start}}</h4>
                                 <div style="display: flex;">
                                     <h4 class="component-subject" style="margin-left: 20px;">
-                                        {{workshop.capacity}}</h4>
+                                        {{workshop.remain_capacity}}</h4>
                                     <h4 class="component-subject">
                                         {{workshop.level}}</h4>
                                 </div>
@@ -207,9 +207,9 @@
                         <h3 class="component-title">
                             {{talk.title}}</h3>
                         <h4 class="component-subject">
-                            {{talk.date}}</h4>
+                            {{talk.start}}</h4>
                         <h4 class="component-subject">
-                            {{talk.capacity}}</h4>
+                            {{talk.remain_capacity}}</h4>
                         <h4 class="component-subject">
                             {{talk.level}}</h4>
                         <button mat-stroked-button (click)="Enter()"
@@ -272,10 +272,10 @@
                             <div
                                 style="display: flex;justify-content: space-between;padding-right:16px ;padding-left: 16px;">
                                 <h4 class="component-subject">
-                                    {{talk.date}}</h4>
+                                    {{talk.start}}</h4>
                                 <div style="display: flex;">
                                     <h4 class="component-subject" style="margin-left: 20px;">
-                                        {{talk.capacity}}</h4>
+                                        {{talk.remain_capacity}}</h4>
                                     <h4 class="component-subject">
                                         {{talk.level}}</h4>
                                 </div>
