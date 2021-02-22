@@ -179,7 +179,7 @@ export class Texts{
         this.FaTexts["people2"] = "تیم فنی"
         this.FaTexts["people3"] = "امیررضا بهمنش"
         this.FaTexts["people4"] = "Frontend Developer"
-        this.FaTexts["people5"] = "آرین متقی"
+        this.FaTexts["people5"] = "محمد متقی"
         this.FaTexts["people6"] = "Frontend Developer"
         this.FaTexts["people7"] = "حسین لوک زاده"
         this.FaTexts["people8"] = "Backend Developer"
