@@ -76,7 +76,7 @@ export class DashboardEventComponent implements OnInit {
             this.workshopsStartHour.push(r.data[i].workshop.start.split('T',2)[1].split('+',2)[0].split('.',2)[0]);
             this.workshopsEndHour.push(r.data[i].workshop.end.split('T',2)[1].split('+',2)[0].split('.',2)[0]);
             // console.log(this.workshopsEndHour);
-            r.data[i].workshop.start = moment(r.data[i].workshop.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('dddd') + " " + moment(r.data[i].workshop.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('DD') + " " + moment(r.data[i].workshop.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('MMMM') + " " + moment(r.data[i].workshop.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('YY');
+            r.data[i].workshop.start = "شروع از " + moment(r.data[i].workshop.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('dddd') + " " + moment(r.data[i].workshop.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('DD') + " " + moment(r.data[i].workshop.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('MMMM') + " " + moment(r.data[i].workshop.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('YY');
             switch (r.data[i].workshop.level) {
               case 'BEGINNER':
                 r.data[i].workshop.level = 'مبتدی';
