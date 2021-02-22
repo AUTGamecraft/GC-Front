@@ -43,7 +43,7 @@ export class HomeComponent implements OnInit {
   constructor(public publicservice: PublicService, public router: Router, public snackbar: MatSnackBar) {
     this.time = parseInt('' + (new Date("2021-03-06T12:00:00Z").getTime() - new Date().getTime()) / 1000);
     publicservice.getTalks().then((r) => {
-      console.log(r);
+      // console.log(r);
       this.talksArray = r.data;
       // console.log(this.talksArray)
       for (let index = 0; index < this.talksArray.length; index++) {
@@ -69,8 +69,8 @@ export class HomeComponent implements OnInit {
           this.isHideTalks.push('hide');
         }
         // console.log(this.isHideTalks);
-        this.talksStartHour[index] = this.talksArray[index].start.split('T',2)[1].split('+',2)[0].split('.',2)[0];
-        this.talksEndHour[index] = this.talksArray[index].end.split('T',2)[1].split('+',2)[0].split('.',2)[0];
+        this.talksStartHour[index] = this.talksArray[index].start.split('T',2)[1].split('+',2)[0].split('.',2)[0].split(':',3)[0]+":"+this.talksArray[index].start.split('T',2)[1].split('+',2)[0].split('.',2)[0].split(':',3)[1];
+        this.talksEndHour[index] = this.talksArray[index].end.split('T',2)[1].split('+',2)[0].split('.',2)[0].split(':',3)[0]+":"+this.talksArray[index].end.split('T',2)[1].split('+',2)[0].split('.',2)[0].split(':',3)[1];
       }
     })
     publicservice.getWorkshops().then((r) => {
@@ -98,8 +98,8 @@ export class HomeComponent implements OnInit {
         for (let i = 0; i < this.workshopsArray[index].presenters.length; i++) {
           this.isHideWorkshops.push('hide');
         }
-        this.workshopsStartHour[index] = this.workshopsArray[index].start.split('T',2)[1].split('+',2)[0].split('.',2)[0];
-        this.workshopsEndHour[index] = this.workshopsArray[index].end.split('T',2)[1].split('+',2)[0].split('.',2)[0];
+        this.workshopsStartHour[index] = this.workshopsArray[index].start.split('T',2)[1].split('+',2)[0].split('.',2)[0].split(':',3)[0] + ":" + this.workshopsArray[index].start.split('T',2)[1].split('+',2)[0].split('.',2)[0].split(':',3)[1];
+        this.workshopsEndHour[index] = this.workshopsArray[index].end.split('T',2)[1].split('+',2)[0].split('.',2)[0].split(':',3)[0] + ":" + this.workshopsArray[index].end.split('T',2)[1].split('+',2)[0].split('.',2)[0].split(':',3)[1];
       }
 
     })

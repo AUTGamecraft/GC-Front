@@ -49,8 +49,8 @@ export class DashboardEventComponent implements OnInit {
         // console.log(r);
         for (let i = 0; i < r.data.length; i++) {
           if (r.data[i].workshop == null) {
-            this.talksStartHour.push(r.data[i].talk.start.split('T',2)[1].split('+',2)[0].split('.',2)[0]);
-            this.talksEndHour.push(r.data[i].talk.end.split('T',2)[1].split('+',2)[0].split('.',2)[0]);
+            this.talksStartHour.push(r.data[i].talk.start.split('T',2)[1].split('+',2)[0].split('.',2)[0].split(':',3)[0]+":"+r.data[i].talk.start.split('T',2)[1].split('+',2)[0].split('.',2)[0].split(':',3)[1]);
+            this.talksEndHour.push(r.data[i].talk.end.split('T',2)[1].split('+',2)[0].split('.',2)[0].split(':',3)[0]+":"+r.data[i].talk.end.split('T',2)[1].split('+',2)[0].split('.',2)[0].split(':',3)[1]);
             r.data[i].talk.start = moment(r.data[i].talk.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('dddd') + " " + moment(r.data[i].talk.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('DD') + " " + moment(r.data[i].talk.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('MMMM') + " " + moment(r.data[i].talk.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('YY');
             switch (r.data[i].talk.level) {
               case 'BEGINNER':
@@ -73,8 +73,8 @@ export class DashboardEventComponent implements OnInit {
             this.talksActive.push('deactive');
           }
           else {
-            this.workshopsStartHour.push(r.data[i].workshop.start.split('T',2)[1].split('+',2)[0].split('.',2)[0]);
-            this.workshopsEndHour.push(r.data[i].workshop.end.split('T',2)[1].split('+',2)[0].split('.',2)[0]);
+            this.workshopsStartHour.push(r.data[i].workshop.start.split('T',2)[1].split('+',2)[0].split('.',2)[0].split(':',3)[0]+":"+r.data[i].workshop.start.split('T',2)[1].split('+',2)[0].split('.',2)[0].split(':',3)[1]);
+            this.workshopsEndHour.push(r.data[i].workshop.end.split('T',2)[1].split('+',2)[0].split('.',2)[0].split(':',3)[0]+":"+r.data[i].workshop.end.split('T',2)[1].split('+',2)[0].split('.',2)[0].split(':',3)[1]);
             // console.log(this.workshopsEndHour);
             r.data[i].workshop.start = "شروع از " + moment(r.data[i].workshop.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('dddd') + " " + moment(r.data[i].workshop.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('DD') + " " + moment(r.data[i].workshop.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('MMMM') + " " + moment(r.data[i].workshop.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('YY');
             switch (r.data[i].workshop.level) {
