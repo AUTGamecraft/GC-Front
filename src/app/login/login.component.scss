@@ -150,6 +150,7 @@
     margin: 0 auto;
     width: 60%;
     padding: 20px;
+    box-sizing: border-box;
   }
   .input {
     text-align: right;
@@ -170,5 +171,10 @@
   }
   #left-logo-text {
     margin-right: -10px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .form-fields-div{
+    width: 100%;
   }
 }

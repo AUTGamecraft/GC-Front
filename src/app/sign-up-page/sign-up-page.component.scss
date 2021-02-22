@@ -166,3 +166,11 @@ input[type="number"] {
         display: initial;
     }
 }
+@media only screen and (max-width: 500px) {
+    .left-div{
+      width: 100%;
+    }
+    .signup{
+        padding-bottom: 50px;
+    }
+  }
