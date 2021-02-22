@@ -849,6 +849,12 @@
     display: none;
 }
 @media only screen and (max-width: 1190px) {
+    .hide{
+        max-height: 250px;
+    }
+    .presenter-card-inside{
+        flex-direction: column;
+    }
     .presenter-about {
         font-size: 12px;
     }

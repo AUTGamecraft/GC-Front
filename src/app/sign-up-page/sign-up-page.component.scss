@@ -134,18 +134,18 @@ input[type="number"] {
     z-index: 0;
 }
 @media only screen and (max-width: 992px) {
-    .logo-image{
+    .logo-image {
         margin: 0;
         width: 150px;
     }
-    #left-logo-text{
+    #left-logo-text {
         margin-right: -10px;
     }
     .signup {
         flex-direction: column;
         height: 120%;
         padding: 20px;
-        box-sizing:border-box;
+        box-sizing: border-box;
     }
     .form-fields-div {
         margin: 0 auto;
@@ -159,7 +159,7 @@ input[type="number"] {
         margin: 0 auto;
         padding-bottom: 20px;
     }
-    .signup-title1{
+    .signup-title1 {
         margin-left: 0;
     }
     .logo-text {
@@ -167,10 +167,10 @@ input[type="number"] {
     }
 }
 @media only screen and (max-width: 500px) {
-    .left-div{
-      width: 100%;
+    .left-div {
+        width: 100%;
     }
-    .signup{
+    .signup {
         padding-bottom: 50px;
     }
-  }
+}
