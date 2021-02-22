@@ -36,10 +36,10 @@ export class HomeComponent implements OnInit {
   count = 0;
   isHideWorkshops: any = [];
   isHideTalks: any = [];
-  workshopsStartHour:any = [];
-  workshopsEndHour:any = [];
-  talksStartHour:any = [];
-  talksEndHour:any = [];
+  workshopsStartHour: any = [];
+  workshopsEndHour: any = [];
+  talksStartHour: any = [];
+  talksEndHour: any = [];
   constructor(public publicservice: PublicService, public router: Router, public snackbar: MatSnackBar) {
     this.time = parseInt('' + (new Date("2021-03-06T12:00:00Z").getTime() - new Date().getTime()) / 1000);
     publicservice.getTalks().then((r) => {
@@ -69,8 +69,8 @@ export class HomeComponent implements OnInit {
           this.isHideTalks.push('hide');
         }
         // console.log(this.isHideTalks);
-        this.talksStartHour[index] = this.talksArray[index].start.split('T',2)[1].split('+',2)[0].split('.',2)[0].split(':',3)[0]+":"+this.talksArray[index].start.split('T',2)[1].split('+',2)[0].split('.',2)[0].split(':',3)[1];
-        this.talksEndHour[index] = this.talksArray[index].end.split('T',2)[1].split('+',2)[0].split('.',2)[0].split(':',3)[0]+":"+this.talksArray[index].end.split('T',2)[1].split('+',2)[0].split('.',2)[0].split(':',3)[1];
+        this.talksStartHour[index] = this.talksArray[index].start.split('T', 2)[1].split('+', 2)[0].split('.', 2)[0].split(':', 3)[0] + ":" + this.talksArray[index].start.split('T', 2)[1].split('+', 2)[0].split('.', 2)[0].split(':', 3)[1];
+        this.talksEndHour[index] = this.talksArray[index].end.split('T', 2)[1].split('+', 2)[0].split('.', 2)[0].split(':', 3)[0] + ":" + this.talksArray[index].end.split('T', 2)[1].split('+', 2)[0].split('.', 2)[0].split(':', 3)[1];
       }
     })
     publicservice.getWorkshops().then((r) => {
@@ -80,7 +80,7 @@ export class HomeComponent implements OnInit {
         this.workshopsActive[index] = 'deactive'
         this.iconW[index] = 'keyboard_arrow_down'
         this.m = moment(this.workshopsArray[index].start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('YYYY-MM-DD');
-        this.workshopsDate[index] ="شروع از " + moment(this.workshopsArray[index].start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('dddd') + " " + moment(this.workshopsArray[index].start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('DD') + " " + moment(this.workshopsArray[index].start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('MMMM') + " " + moment(this.workshopsArray[index].start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('YY');
+        this.workshopsDate[index] = "شروع از " + moment(this.workshopsArray[index].start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('dddd') + " " + moment(this.workshopsArray[index].start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('DD') + " " + moment(this.workshopsArray[index].start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('MMMM') + " " + moment(this.workshopsArray[index].start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('YY');
         switch (this.workshopsArray[index].level) {
           case 'BEGINNER':
             this.workshopsLevel[index] = 'مبتدی';
@@ -98,8 +98,8 @@ export class HomeComponent implements OnInit {
         for (let i = 0; i < this.workshopsArray[index].presenters.length; i++) {
           this.isHideWorkshops.push('hide');
         }
-        this.workshopsStartHour[index] = this.workshopsArray[index].start.split('T',2)[1].split('+',2)[0].split('.',2)[0].split(':',3)[0] + ":" + this.workshopsArray[index].start.split('T',2)[1].split('+',2)[0].split('.',2)[0].split(':',3)[1];
-        this.workshopsEndHour[index] = this.workshopsArray[index].end.split('T',2)[1].split('+',2)[0].split('.',2)[0].split(':',3)[0] + ":" + this.workshopsArray[index].end.split('T',2)[1].split('+',2)[0].split('.',2)[0].split(':',3)[1];
+        this.workshopsStartHour[index] = this.workshopsArray[index].start.split('T', 2)[1].split('+', 2)[0].split('.', 2)[0].split(':', 3)[0] + ":" + this.workshopsArray[index].start.split('T', 2)[1].split('+', 2)[0].split('.', 2)[0].split(':', 3)[1];
+        this.workshopsEndHour[index] = this.workshopsArray[index].end.split('T', 2)[1].split('+', 2)[0].split('.', 2)[0].split(':', 3)[0] + ":" + this.workshopsArray[index].end.split('T', 2)[1].split('+', 2)[0].split('.', 2)[0].split(':', 3)[1];
       }
 
     })
@@ -203,7 +203,12 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['people'], { fragment: 'people' });
   }
   Rules() {
-    this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+    if (window.innerWidth > 992) {
+      this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+    }
+    else {
+      this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+    }
     // this.router.navigate(['rules'], { fragment: 'rules' });
   }
   Home() {

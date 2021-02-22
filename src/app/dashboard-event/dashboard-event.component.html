@@ -72,7 +72,7 @@
                             {{workshop.start}}</h4>
                         <h4 class="component-subject">
                             {{workshop.level}}</h4>
-                        <button mat-stroked-button
+                        <button mat-stroked-button (click)="Enter()"
                             class="register-button">{{publicservice.Texts.Texts["dash-event10"]}}</button>
                         <button mat-stroked-button (click)="Enter()"
                             class="register-button">{{publicservice.Texts.Texts["dash-event12"]}}</button>
@@ -130,9 +130,9 @@
                                     {{workshop.title}}</h3>
                             </div>
                             <div style="display: flex;">
-                                <button mat-stroked-button style="margin-left: 5px;"
+                                <button mat-stroked-button style="margin-left: 5px;" (click)="Enter()"
                                     class="register-button">{{publicservice.Texts.Texts["dash-event10"]}}</button>
-                                <button mat-stroked-button
+                                <button mat-stroked-button (click)="Enter()"
                                     class="register-button">{{publicservice.Texts.Texts["dash-event12"]}}</button>
                             </div>
                         </div>
