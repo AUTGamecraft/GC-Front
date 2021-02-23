@@ -45,18 +45,7 @@
     font-size: 16px;
     margin-top: 0;
 }
-.hide {
-    max-height: 180px;
-    overflow: hidden;
-    transition: max-height 0.5s ease-out;
-    cursor: pointer;
-}
-.show {
-    overflow: visible;
-    max-height: 1000px;
-    transition: max-height 0.5s ease-in;
-    cursor: initial;
-}
+
 .Ellipse {
     width: 50px;
     height: 50px;

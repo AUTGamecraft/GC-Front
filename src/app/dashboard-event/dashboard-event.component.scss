@@ -436,6 +436,9 @@
     display: none;
 }
 @media only screen and (max-width: 992px) {
+    .presenter-card-inside{
+        flex-direction: column;
+    }
     .supporters-card-image{
         width: 200px;
         height: 200px;
@@ -562,7 +565,9 @@
         margin: 10px 0;
     }
     .components {
+        width: 100%;
         display: initial;
+        display: inline;
     }
     .orange-collapse {
         border-bottom-right-radius: 0;
