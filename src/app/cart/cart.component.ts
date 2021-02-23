@@ -17,6 +17,7 @@ export class CartComponent implements OnInit {
   cartDelete: any = [];
   totalCost = 0;
   count = 0;
+  isDisabled = false;
   constructor(private router: Router, public publicservice: PublicService, public snackbar: MatSnackBar) {
     if (!publicservice.logedIn) {
       this.router.navigate(['login']);
@@ -102,7 +103,7 @@ export class CartComponent implements OnInit {
     })
   }
   Pay(){
-    console.log(this.totalCost);
+    // console.log(this.totalCost);
     if(this.totalCost == 0){
       if (window.innerWidth > 992) {
         this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'سبد خرید شما خالی است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
@@ -112,9 +113,16 @@ export class CartComponent implements OnInit {
       }
       return;
     }
+    let element = <HTMLInputElement>document.getElementById('payButton');
+    element.disabled = true;
     this.publicservice.getPaymentLink().then((r)=>{
+      if (window.innerWidth > 992) {
+        this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'در حال انتقال به صفحه ی پرداخت ...', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      }
+      else {
+        this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'در حال انتقال به صفحه ی پرداخت ...', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+      }
       location.href = r.data.link;
-      this.router.navigate(['dashboard-event']);
     })
   }
 }
