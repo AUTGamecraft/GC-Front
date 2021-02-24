@@ -43,7 +43,7 @@ export class PublicService {
 
 
 
-  constructor(private http: Http, public dialog: MatDialog, public snackbar: MatSnackBar,private http2:HttpClient,public router:Router) {
+  constructor(private http: Http, public dialog: MatDialog, public snackbar: MatSnackBar, private http2: HttpClient, public router: Router) {
     this.Authorization = localStorage.getItem("Authorization");
     if (this.Authorization != null) {
       this.logedIn = true;
@@ -95,21 +95,21 @@ export class PublicService {
     let uploadData = new FormData();
     uploadData.append("profile", this.file);
     this.APICalls.UpdateImage = true;
-    let h=new HttpHeaders();
-    h=h.set('Authorization','Bearer ' + this.Authorization);
-    const req = new HttpRequest("PUT", this.ApiUrl+'/api/users/profile/update/', uploadData,{headers:h});
+    let h = new HttpHeaders();
+    h = h.set('Authorization', 'Bearer ' + this.Authorization);
+    const req = new HttpRequest("PUT", this.ApiUrl + '/api/users/profile/update/', uploadData, { headers: h });
     this.http2.request(req).
-    toPromise().
-    then((r)=>{
-      if(window.innerWidth > 992){
-        this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'عکس با موفقیت آپلود شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      toPromise().
+      then((r) => {
+        if (window.innerWidth > 992) {
+          this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'عکس با موفقیت آپلود شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
         }
-        else{
+        else {
           this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'عکس با موفقیت آپلود شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
         }
-    })
-    .catch(this.handleError);
-   
+      })
+      .catch(this.handleError);
+
   }
 
   SignUp(): Promise<any> {
@@ -135,8 +135,12 @@ export class PublicService {
       this.APICalls.SignUp = false;
     }).catch(e => {
       this.APICalls.SignUp = false;
-      that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      if(e.status == 401){
+      if (window.innerWidth > 992) {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      }
+      else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+      } if (e.status == 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
       }
@@ -171,8 +175,12 @@ export class PublicService {
       }
     }).catch(e => {
       this.APICalls.Login = false;
-      that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      if(e.status == 401){
+      if (window.innerWidth > 992) {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      }
+      else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+      } if (e.status == 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['signup']);
       }
@@ -196,8 +204,12 @@ export class PublicService {
       this.APICalls.getTalks = false;
     }).catch(e => {
       this.APICalls.getTalks = false;
-      that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-
+      if (window.innerWidth > 992) {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      }
+      else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+      }
     });
     return ret;
   }
@@ -217,8 +229,12 @@ export class PublicService {
       this.APICalls.getWorkshops = false;
     }).catch(e => {
       this.APICalls.getWorkshops = false;
-      that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-
+      if (window.innerWidth > 992) {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      }
+      else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+      }
     });
     return ret;
   }
@@ -238,8 +254,12 @@ export class PublicService {
       this.APICalls.getUsers = false;
     }).catch(e => {
       this.APICalls.getUsers = false;
-      that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      if(e.status == 401){
+      if (window.innerWidth > 992) {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      }
+      else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+      } if (e.status == 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
       }
@@ -263,8 +283,12 @@ export class PublicService {
       this.APICalls.getUsers = false;
     }).catch(e => {
       this.APICalls.getUsers = false;
-      that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      if(e.status == 401){
+      if (window.innerWidth > 992) {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      }
+      else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+      } if (e.status == 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
       }
@@ -288,8 +312,12 @@ export class PublicService {
     }).catch(e => {
       this.APICalls.ActivateUser = false;
       this.hasError = true;
-      that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      if(e.status == 401){
+      if (window.innerWidth > 992) {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      }
+      else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+      } if (e.status == 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
       }
@@ -306,7 +334,7 @@ export class PublicService {
       'Authorization': 'Bearer ' + this.Authorization
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/talk/'+this.talkPk+'/enroll/', body, options)
+    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/talk/' + this.talkPk + '/enroll/', body, options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
@@ -315,8 +343,12 @@ export class PublicService {
       this.APICalls.EnrollTalk = false;
     }).catch(e => {
       this.APICalls.EnrollTalk = false;
-      that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      if(e.status == 401){
+      if (window.innerWidth > 992) {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      }
+      else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+      } if (e.status == 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
       }
@@ -334,7 +366,7 @@ export class PublicService {
       'Authorization': 'Bearer ' + this.Authorization
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/workshop/'+this.workshopPk+'/enroll/', body, options)
+    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/workshop/' + this.workshopPk + '/enroll/', body, options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
@@ -343,8 +375,12 @@ export class PublicService {
       this.APICalls.EnrollWorkshop = false;
     }).catch(e => {
       this.APICalls.EnrollWorkshop = false;
-      that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      if(e.status == 401){
+      if (window.innerWidth > 992) {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      }
+      else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+      } if (e.status == 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
       }
@@ -367,8 +403,12 @@ export class PublicService {
       this.APICalls.getUserTalks = false;
     }).catch(e => {
       this.APICalls.getUserTalks = false;
-      that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      if(e.status == 401){
+      if (window.innerWidth > 992) {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      }
+      else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+      } if (e.status == 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
       }
@@ -391,8 +431,12 @@ export class PublicService {
       this.APICalls.getUserTalks = false;
     }).catch(e => {
       this.APICalls.getUserTalks = false;
-      that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      if(e.status == 401){
+      if (window.innerWidth > 992) {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      }
+      else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+      } if (e.status == 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
       }
@@ -415,8 +459,13 @@ export class PublicService {
       this.APICalls.getUserTalks = false;
     }).catch(e => {
       this.APICalls.getUserTalks = false;
-      that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      if(e.status == 401){
+      if (window.innerWidth > 992) {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      }
+      else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+      }
+      if (e.status == 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
       }
@@ -425,7 +474,7 @@ export class PublicService {
   }
   getUsersCount(): Promise<any> {
     var that = this;
-    this.APICalls.getUserTalks = true;    
+    this.APICalls.getUserTalks = true;
     let headers = new Headers({
       'Content-Type': 'application/json',
     });
@@ -438,7 +487,12 @@ export class PublicService {
       this.APICalls.getUserTalks = false;
     }).catch(e => {
       this.APICalls.getUserTalks = false;
-      that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      if (window.innerWidth > 992) {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      }
+      else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+      }
     });
     return ret;
   }
@@ -453,7 +507,7 @@ export class PublicService {
       'Authorization': 'Bearer ' + this.Authorization
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/service/payment/',body, options)
+    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/service/payment/', body, options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
@@ -461,8 +515,13 @@ export class PublicService {
       this.APICalls.getUserTalks = false;
     }).catch(e => {
       this.APICalls.getUserTalks = false;
-      that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      if(e.status == 401){
+      if (window.innerWidth > 992) {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      }
+      else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+      }
+      if (e.status == 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
       }

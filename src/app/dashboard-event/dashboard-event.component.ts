@@ -21,19 +21,19 @@ export class DashboardEventComponent implements OnInit {
   isStaff: boolean;
   talksArray: any = [];
   workshopsArray: any = [];
-  talksActive:any = [];
-  workshopsActive:any = [];
+  talksActive: any = [];
+  workshopsActive: any = [];
   email: string = "";
   hash: string = '';
   count = 0;
-  isHideWorkshops : any = [];
-  isHideTalks : any = [];
-  workshopsHour:any = [];
-  talksHour : any = [];
-  workshopsStartHour:any = [];
-  workshopsEndHour:any = [];
-  talksStartHour:any = [];
-  talksEndHour:any = [];
+  isHideWorkshops: any = [];
+  isHideTalks: any = [];
+  workshopsHour: any = [];
+  talksHour: any = [];
+  workshopsStartHour: any = [];
+  workshopsEndHour: any = [];
+  talksStartHour: any = [];
+  talksEndHour: any = [];
   constructor(private router: Router, public publicservice: PublicService, public snackbar: MatSnackBar, private route: ActivatedRoute) {
     if (!publicservice.logedIn) {
       this.router.navigate(['login']);
@@ -49,8 +49,8 @@ export class DashboardEventComponent implements OnInit {
         // console.log(r);
         for (let i = 0; i < r.data.length; i++) {
           if (r.data[i].workshop == null) {
-            this.talksStartHour.push(r.data[i].talk.start.split('T',2)[1].split('+',2)[0].split('.',2)[0]);
-            this.talksEndHour.push(r.data[i].talk.end.split('T',2)[1].split('+',2)[0].split('.',2)[0]);
+            this.talksStartHour.push(r.data[i].talk.start.split('T', 2)[1].split('+', 2)[0].split('.', 2)[0].split(':', 3)[0] + ":" + r.data[i].talk.start.split('T', 2)[1].split('+', 2)[0].split('.', 2)[0].split(':', 3)[1]);
+            this.talksEndHour.push(r.data[i].talk.end.split('T', 2)[1].split('+', 2)[0].split('.', 2)[0].split(':', 3)[0] + ":" + r.data[i].talk.end.split('T', 2)[1].split('+', 2)[0].split('.', 2)[0].split(':', 3)[1]);
             r.data[i].talk.start = moment(r.data[i].talk.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('dddd') + " " + moment(r.data[i].talk.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('DD') + " " + moment(r.data[i].talk.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('MMMM') + " " + moment(r.data[i].talk.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('YY');
             switch (r.data[i].talk.level) {
               case 'BEGINNER':
@@ -73,8 +73,8 @@ export class DashboardEventComponent implements OnInit {
             this.talksActive.push('deactive');
           }
           else {
-            this.workshopsStartHour.push(r.data[i].workshop.start.split('T',2)[1].split('+',2)[0].split('.',2)[0]);
-            this.workshopsEndHour.push(r.data[i].workshop.end.split('T',2)[1].split('+',2)[0].split('.',2)[0]);
+            this.workshopsStartHour.push(r.data[i].workshop.start.split('T', 2)[1].split('+', 2)[0].split('.', 2)[0].split(':', 3)[0] + ":" + r.data[i].workshop.start.split('T', 2)[1].split('+', 2)[0].split('.', 2)[0].split(':', 3)[1]);
+            this.workshopsEndHour.push(r.data[i].workshop.end.split('T', 2)[1].split('+', 2)[0].split('.', 2)[0].split(':', 3)[0] + ":" + r.data[i].workshop.end.split('T', 2)[1].split('+', 2)[0].split('.', 2)[0].split(':', 3)[1]);
             // console.log(this.workshopsEndHour);
             r.data[i].workshop.start = "شروع از " + moment(r.data[i].workshop.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('dddd') + " " + moment(r.data[i].workshop.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('DD') + " " + moment(r.data[i].workshop.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('MMMM') + " " + moment(r.data[i].workshop.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('YY');
             switch (r.data[i].workshop.level) {
@@ -101,7 +101,7 @@ export class DashboardEventComponent implements OnInit {
         }
         // console.log(this.talksArray)
       })
-      publicservice.getUserCart().then((r)=>{
+      publicservice.getUserCart().then((r) => {
         this.count = r.data.length;
       })
     }
@@ -110,7 +110,7 @@ export class DashboardEventComponent implements OnInit {
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
       this.hash = params['status'];
-      if(this.hash == 'true'){
+      if (this.hash == 'true') {
         if (window.innerWidth > 992) {
           this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'خریدتان با موفقیت انجام شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
         }
@@ -118,7 +118,7 @@ export class DashboardEventComponent implements OnInit {
           this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'خریدتان با موفقیت انجام شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
         }
       }
-      else if(this.hash == 'false'){
+      else if (this.hash == 'false') {
         if (window.innerWidth > 992) {
           this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'خطایی در خریدتان رخ داد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
         }
@@ -155,11 +155,16 @@ export class DashboardEventComponent implements OnInit {
     this.router.navigate(['home'], { fragment: 'home' });
   }
   Teams() {
-    this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+    if (window.innerWidth > 992) {
+      this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+    }
+    else {
+      this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+    }
     // this.router.navigate(['dashboard-teams']);
   }
   Cart() {
-    this.router.navigate(['cart'],{fragment:'dash'});
+    this.router.navigate(['cart'], { fragment: 'dash' });
   }
   Upload() {
     document.getElementById('imgUpload').click();
@@ -174,6 +179,11 @@ export class DashboardEventComponent implements OnInit {
     this.publicservice.UpdateImage();
   }
   Enter() {
+    if(window.innerWidth>992){
     this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+    }
+    else{
+      this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+    }
   }
 }

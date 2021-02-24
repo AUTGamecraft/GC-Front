@@ -9,8 +9,8 @@ import { ErrorDialogComponent } from '../error-dialog/error-dialog.component'
   styleUrls: ['./people.component.scss']
 })
 export class PeopleComponent implements OnInit {
-  userName:string = '';
-  constructor(public publicservice: PublicService, public router: Router,public snackbar:MatSnackBar) {
+  userName: string = '';
+  constructor(public publicservice: PublicService, public router: Router, public snackbar: MatSnackBar) {
     // router.events.subscribe(s => {
     //   if (s instanceof NavigationEnd) {
     //     const tree = router.parseUrl(router.url);
@@ -20,21 +20,21 @@ export class PeopleComponent implements OnInit {
     //     }
     //   }
     // });
-    if(publicservice.logedIn){
-      publicservice.getUser().then((r)=>{
+    if (publicservice.logedIn) {
+      publicservice.getUser().then((r) => {
         this.userName = r.data.first_name;
       })
     }
-   }
+  }
 
   ngOnInit(): void {
   }
-  ngAfterViewInit():void{
+  ngAfterViewInit(): void {
     if (this.router.url.split('#')[1] == 'people') {
       setTimeout((() => this.Footer(document.getElementById('people'))), 200)
     }
   }
-  People(){
+  People() {
     this.router.navigate(['people']);
   }
   display = false;
@@ -61,29 +61,34 @@ export class PeopleComponent implements OnInit {
     this.router.navigate(navigationDetails);
   }
   Dashboard() {
-    this.router.navigate(['dashboard-event'],{fragment:'dash'});
+    this.router.navigate(['dashboard-event'], { fragment: 'dash' });
   }
   Workshop() {
-    this.router.navigate(['home'],{fragment:'workshop'});
+    this.router.navigate(['home'], { fragment: 'workshop' });
   }
   Talk() {
-    this.router.navigate(['home'],{fragment:'talk'});
+    this.router.navigate(['home'], { fragment: 'talk' });
   }
   Schedule() {
-    this.router.navigate(['home'],{fragment:'schedule'});
+    this.router.navigate(['home'], { fragment: 'schedule' });
   }
-  Rules(){
-    this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+  Rules() {
+    if (window.innerWidth > 992) {
+      this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+    }
+    else {
+      this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+    }
     // this.router.navigate(['rules'],{fragment:'rules'});
   }
-  Home(){
-    this.router.navigate(['home'],{fragment:'home'});
+  Home() {
+    this.router.navigate(['home'], { fragment: 'home' });
   }
-  getNavClass(){
-    return window.scrollY>0?'no-shadow':'';
+  getNavClass() {
+    return window.scrollY > 0 ? 'no-shadow' : '';
   }
   Footer(el: HTMLElement) {
     el.scrollIntoView({ behavior: "smooth" });
   }
-  
+
 }

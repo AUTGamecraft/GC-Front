@@ -45,18 +45,7 @@
     font-size: 16px;
     margin-top: 0;
 }
-.hide {
-    max-height: 180px;
-    overflow: hidden;
-    transition: max-height 0.5s ease-out;
-    cursor: pointer;
-}
-.show {
-    overflow: visible;
-    max-height: 1000px;
-    transition: max-height 0.5s ease-in;
-    cursor: initial;
-}
+
 .Ellipse {
     width: 50px;
     height: 50px;
@@ -104,9 +93,9 @@
     font-family: "Estedad-Bold";
     font-size: 24px;
     color: #52006b;
-    margin-top: 25px;
-    margin-bottom: 0;
+    margin: auto;
     margin-right: 2%;
+    
 }
 .collapse-hour {
     font-family: "Vazir-Regular";
@@ -164,6 +153,7 @@
 .components-collapse {
     display: flex;
     justify-content: space-between;
+    padding-left: 16px;
 }
 .collapse-icon {
     color: #a04db9;
@@ -197,6 +187,7 @@
     // z-index: 1;
 }
 .collapse-about {
+    white-space: pre-line;
     font-family: "Vazir-Medium";
     font-size: large;
     direction: rtl;
@@ -274,7 +265,7 @@
 .talks-background {
     background-color: #6af9c5;
     padding-top: 20px;
-    padding-bottom: 60px;
+    padding-bottom: 10%;
 }
 .pink-collapse {
     width: 30px;
@@ -848,6 +839,12 @@
     display: none;
 }
 @media only screen and (max-width: 1190px) {
+    .hide{
+        max-height: 250px;
+    }
+    .presenter-card-inside{
+        flex-direction: column;
+    }
     .presenter-about {
         font-size: 12px;
     }

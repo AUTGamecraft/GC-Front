@@ -465,7 +465,7 @@
                     <div *ngFor="let workshop of workshopsArray;let i = index" class="workshops-whole-collapse">
                         <div class="orange-collapse">
                         </div>
-                        <div style="width: 100%;">
+                        <div style="width: 100%;padding: 10px 0;">
                             <div class="components-collapse">
                                 <h3 class="collapse-title">
                                     {{workshop.title}}</h3>
@@ -473,8 +473,8 @@
                                     {{workshopsDate[i]}}</h4>
                                 <h4 class="collapse-subject">
                                     {{workshop.remain_capacity}} {{publicservice.Texts.Texts["home18"]}}</h4>
-                                <h4 class="collapse-subject">
-                                    {{workshopsLevel[i]}}</h4>
+                                <!-- <h4 class="collapse-subject">
+                                    {{workshopsLevel[i]}}</h4> -->
                                 <div class="register-button-div">
                                     <button mat-stroked-button (click)="registerWorkshop(i)"
                                         class="register-button">{{publicservice.Texts.Texts["home20"]}}</button>
@@ -564,8 +564,8 @@
                                     <div class="collapse-discription-inner-div">
                                         <h4 class="collapse-subject" style="padding-left: 30px;">
                                             {{workshop.remain_capacity}} {{publicservice.Texts.Texts["home18"]}}</h4>
-                                        <h4 class="collapse-subject">
-                                            {{workshopsLevel[i]}}</h4>
+                                        <!-- <h4 class="collapse-subject">
+                                            {{workshopsLevel[i]}}</h4> -->
                                     </div>
                                 </div>
                                 <div class="collapse-button">
@@ -596,9 +596,7 @@
                                         style="display: flex;justify-content: center;flex-wrap: wrap;grid-auto-rows: auto;">
                                         <div class="presenter-card">
                                             <div class="presenter-card-inside"
-                                                *ngFor="let presenter of workshop.presenters;let j = index"
-                                                [class]="isHideWorkshops[j]"
-                                                (click)="isHideWorkshops[j] = (isHideWorkshops[j] == 'hide'? 'show' : 'hide')">
+                                                *ngFor="let presenter of workshop.presenters;let j = index">
                                                 <div>
                                                     <img class="presenter-image" src="{{presenter.profile}}">
                                                 </div>
@@ -636,7 +634,7 @@
             <div *ngFor="let talk of talksArray; let i = index" class="workshops-whole-collapse">
                 <div class="pink-collapse">
                 </div>
-                <div style="width: 100%;">
+                <div style="width: 100%;padding: 10px 0;">
                     <div class="components-collapse">
                         <h3 class="collapse-title">
                             {{talk.title}}</h3>
@@ -644,8 +642,8 @@
                             {{talksDate[i]}}</h4>
                         <h4 class="collapse-subject">
                             {{talk.remain_capacity}} {{publicservice.Texts.Texts["home29"]}}</h4>
-                        <h4 class="collapse-subject">
-                            {{talksLevel[i]}}</h4>
+                        <!-- <h4 class="collapse-subject">
+                            {{talksLevel[i]}}</h4> -->
                         <div class="register-button-div">
                             <button mat-stroked-button (click)="registerTalk(i)"
                                 class="register-button">{{publicservice.Texts.Texts["home31"]}}</button>
@@ -723,8 +721,8 @@
                             <div style="display: flex;">
                                 <h4 class="collapse-subject" style="padding-left: 30px;">
                                     {{talk.remain_capacity}} {{publicservice.Texts.Texts["home29"]}}</h4>
-                                <h4 class="collapse-subject">
-                                    {{talksLevel[i]}}</h4>
+                                <!-- <h4 class="collapse-subject">
+                                    {{talksLevel[i]}}</h4> -->
                             </div>
                         </div>
                         <button mat-button class="collapse"
@@ -750,8 +748,7 @@
                             <div style="display: flex;justify-content: center;flex-wrap: wrap;grid-auto-rows: auto;">
                                 <div class="presenter-card">
                                     <div class="presenter-card-inside"
-                                        *ngFor="let presenter of talk.presenters;let j = index" [class]="isHideTalks[j]"
-                                        (click)="isHideTalks[j] = (isHideTalks[j] == 'hide'? 'show' : 'hide')">
+                                        *ngFor="let presenter of talk.presenters;let j = index">
                                         <div>
                                             <img class="presenter-image" src="{{presenter.profile}}">
                                         </div>
