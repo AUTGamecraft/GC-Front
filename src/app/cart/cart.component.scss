@@ -543,3 +543,22 @@
         margin: auto;
     }
 }
+.discount-code{
+    //justify-self:flex-end;
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+.discount-lable{
+    font-family: "Estedad-Bold";
+    color: #52006b;
+   // padding-left: 40%;
+    box-sizing: border-box;
+}
+.discount-input{
+    box-sizing: border-box;
+    border-radius: 10px;
+    border-color:#52006b;
+}
+

@@ -93,11 +93,18 @@
                             mat-stroked-button>{{publicservice.Texts.Texts['cart5']}}</button>
                     </div>
                 </div> -->
+                <div class="discount-code">
+                    
+                        <mat-label class="discount-lable">{{publicservice.Texts.Texts['cart9']}}</mat-label>
+                        <input class="discount-input">
+                      
+                    </div>
                 <div class="below-items">
                     <p class="cost">{{totalCost}}{{publicservice.Texts.Texts['cart6']}}</p>
                     <button mat-flat-button (click)="Pay()" id="payButton"
                         class="green-button">{{publicservice.Texts.Texts['cart7']}}</button>
                 </div>
+                
             </div>
         </div>
     </div>
