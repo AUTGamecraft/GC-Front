@@ -1,6 +1,6 @@
 <div class="whole" #dash>
     <div class="cart">
-        <div class="logo" >
+        <div class="logo">
             <p class="logo-text" style="margin-left: -5px;">{{publicservice.Texts.Texts["logo1"]}}</p>
             <img class="logo-image" (click)='Home()' src="assets/svg/dark-3d.svg">
             <p class="logo-text" style="margin-right: -5px;">{{publicservice.Texts.Texts["logo2"]}}</p>
@@ -15,8 +15,9 @@
                         <p class="user-name">{{userName}}</p>
                     </div>
                     <div style="display: flex;justify-content: center;">
-                        <button mat-stroked-button matBadge="{{count}}"  matBadgePosition="before" (click)="Cart()" id="cart-button-phone"
-                        class="outlined-button" style="margin: auto 0;">{{publicservice.Texts.Texts['cart8']}}</button>
+                        <button mat-stroked-button matBadge="{{count}}" matBadgePosition="before" (click)="Cart()"
+                            id="cart-button-phone" class="outlined-button"
+                            style="margin: auto 0;">{{publicservice.Texts.Texts['cart8']}}</button>
                         <button mat-button (click)="logOut()"
                             class="normal-button">{{publicservice.Texts.Texts["header8"]}}</button>
                     </div>
@@ -44,24 +45,12 @@
                     </div>
                 </div>
                 <!-- <button mat-stroked-button class="outlined-button">{{publicservice.Texts.Texts["dash-event5"]}}</button> -->
-                <button mat-stroked-button matBadge="{{count}}" matBadgePosition="before" (click)="Cart()" id="cart-button"
-                    class="outlined-button">{{publicservice.Texts.Texts['cart8']}}</button>
+                <button mat-stroked-button matBadge="{{count}}" matBadgePosition="before" (click)="Cart()"
+                    id="cart-button" class="outlined-button">{{publicservice.Texts.Texts['cart8']}}</button>
             </div>
             <div class="left-part">
                 <h1 class="title">{{publicservice.Texts.Texts['cart1']}}</h1>
                 <div *ngFor="let cart of cartArray;let i = index">
-                    <div class="item-workshop" *ngIf="cart.talk == null" [class]="cartDelete[i]">
-                        <div style="display: flex;">
-                            <div class="orange"></div>
-                            <p class="item-title">{{cart.workshop.title}}</p>
-                        </div>
-                        <p class="item-date">{{cart.workshop.start}}</p>
-                        <div style="display: flex;">
-                            <p class="item-cost">{{cart.workshop.cost}}</p>
-                            <button class="delete-button" (click)="Delete(i)"
-                                mat-stroked-button>{{publicservice.Texts.Texts['cart5']}}</button>
-                        </div>
-                    </div>
                     <div class="item-workshop-phone" *ngIf="cart.talk == null" [class]="cartDelete[i]">
                         <div class="orange"></div>
                         <div style="width: 100%;">
@@ -77,6 +66,21 @@
                         </div>
                     </div>
                 </div>
+                <div *ngFor="let cart of cartArray;let i = index">
+                    <div class="item-workshop" *ngIf="cart.talk == null" [class]="cartDelete[i]">
+                        <div style="display: flex;">
+                            <div class="orange"></div>
+                            <p class="item-title">{{cart.workshop.title}}</p>
+                        </div>
+                        <p class="item-date">{{cart.workshop.start}}</p>
+                        <div style="display: flex;">
+                            <p class="item-cost">{{cart.workshop.cost}}</p>
+                            <button class="delete-button" (click)="Delete(i)"
+                                mat-stroked-button>{{publicservice.Texts.Texts['cart5']}}</button>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- <div class="item-workshop" [class]="Delete()">
                     <div style="display: flex;">
                         <div class="pink"></div>
@@ -91,7 +95,8 @@
                 </div> -->
                 <div class="below-items">
                     <p class="cost">{{totalCost}}{{publicservice.Texts.Texts['cart6']}}</p>
-                    <button mat-flat-button (click)="Pay()" id="payButton" class="green-button">{{publicservice.Texts.Texts['cart7']}}</button>
+                    <button mat-flat-button (click)="Pay()" id="payButton"
+                        class="green-button">{{publicservice.Texts.Texts['cart7']}}</button>
                 </div>
             </div>
         </div>
