@@ -553,7 +553,7 @@
                                 </div>
                                 <div class="register-button-div">
                                     <button mat-stroked-button
-                                        class="register-button">{{publicservice.Texts.Texts["home20"]}}</button>
+                                        class="register-button" (click)="registerWorkshop(i)">{{publicservice.Texts.Texts["home20"]}}</button>
                                 </div>
                             </div>
                             <div
@@ -708,7 +708,7 @@
                                 {{talk.title}}</h3>
                         </div>
                         <div class="register-button-div">
-                            <button mat-stroked-button
+                            <button mat-stroked-button (click)="registerTalk(i)"
                                 class="register-button">{{publicservice.Texts.Texts["home31"]}}</button>
                         </div>
                     </div>
