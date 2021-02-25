@@ -12,6 +12,7 @@ import { coerceStringArray } from '@angular/cdk/coercion';
 import { SuccessDialogComponent } from '../app/success-dialog/success-dialog.component';
 import { NavigationEnd, Router } from '@angular/router';
 import { computeDecimalDigest } from '@angular/compiler/src/i18n/digest';
+import { BoundElementProperty } from '@angular/compiler';
 @Injectable({
   providedIn: 'root'
 })
@@ -63,12 +64,20 @@ export class PublicService {
 
 
     let body = res.json();
-
+    // console.lo÷g(body);
     // if (body.message) {
     //   that.DisplaySuccessDialog(body.message);
 
     // }
-
+    // if(body.error != null){
+    //   if (window.innerWidth > 992) {
+    //     that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: body.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+    //   }
+    //   else {
+    //     that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: body.message, panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+    //   }
+    //   return Promise.reject(body);
+    // }
     if (body.error) {
       that.DisplayErrorDialog(body.message);
       Promise.reject(body.error);
@@ -85,10 +94,8 @@ export class PublicService {
     return body || {};
   }
   private handleError(error: any) {
-
-    // In a real world app, we might send the error to remote logging infrastructure
+        // In a real world app, we might send the error to remote logging infrastructure
     let errMsg = JSON.parse(error._body);//error.message || 'Server error';
-
     console.error(errMsg); // log to console instead
     return Promise.reject(errMsg);
   }
@@ -346,7 +353,7 @@ export class PublicService {
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
-
+    
     ret.then(r => {
       this.APICalls.EnrollTalk = false;
     }).catch(e => {
