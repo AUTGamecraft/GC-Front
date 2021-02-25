@@ -528,6 +528,8 @@ export class PublicService {
     var that = this;
     this.APICalls.getUserTalks = true;
     let body = JSON.stringify({
+      'coupon' : this.discount_code,
+
     });
     let headers = new Headers({
       'Content-Type': 'application/json',
