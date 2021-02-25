@@ -46,6 +46,12 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  Discount() {
+    this.publicservice.checkDiscount().then((r)=>{
+      console.log(r);
+    })
+    
+  }
   Home() {
     this.router.navigate(['home'], { fragment: 'home' });
   }
