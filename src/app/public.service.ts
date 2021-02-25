@@ -35,7 +35,7 @@ export class PublicService {
   public hasError: boolean;
   public talkPk;
   public workshopPk;
-  public discount_code;
+  public discount_code : string= "";
   Mockup() {
 
 
@@ -112,6 +112,12 @@ export class PublicService {
       })
       .catch(this.handleError);
 
+  }
+  SendDiscount(){
+    
+    let body = JSON.stringify({
+   
+    });
   }
 
   SignUp(): Promise<any> {
