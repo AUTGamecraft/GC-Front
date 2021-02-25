@@ -120,13 +120,32 @@ export class PublicService {
       .catch(this.handleError);
 
   }
-  SendDiscount(){
-    
-    let body = JSON.stringify({
-   
+  checkDiscount(): Promise<any> {
+    var that = this;
+    this.APICalls.checkDiscount = true;
+    let headers = new Headers({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + this.Authorization
     });
-  }
+    let options = new RequestOptions({ headers: headers });
+    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/coupon/'+this.discount_code+'/', options)
+      .toPromise()
+      .then((r) => this.extractData(r, this))
+      .catch(this.handleError);
 
+    ret.then(r => {
+      this.APICalls.checkDiscount = false;
+    }).catch(e => {
+      this.APICalls.checkDiscount = false;
+      if (window.innerWidth > 992) {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      }
+      else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+      }
+    });
+    return ret;
+  }
   SignUp(): Promise<any> {
     var that = this;
     this.APICalls.SignUp = true;

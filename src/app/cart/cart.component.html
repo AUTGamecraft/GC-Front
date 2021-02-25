@@ -96,10 +96,10 @@
                 <div class="discount-code">
                     
                         <mat-label class="discount-lable">{{publicservice.Texts.Texts['cart9']}}</mat-label>
-                        <input matInput class="discount-input">
+                        <input matInput class="discount-input" [(ngModel)]="publicservice.discount_code" >
                         
                         <button mat-flat-button 
-                        class="discount-button">{{publicservice.Texts.Texts['cart10']}}</button>
+                        class="discount-button" (click) ="Discount()">{{publicservice.Texts.Texts['cart10']}}</button>
 
                       
                     </div>

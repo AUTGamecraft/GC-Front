@@ -18,6 +18,8 @@ export class CartComponent implements OnInit {
   totalCost = 0;
   count = 0;
   isDisabled = false;
+  percentage=0;
+  discounted =false;
   constructor(private router: Router, public publicservice: PublicService, public snackbar: MatSnackBar) {
     if (!publicservice.logedIn) {
       this.router.navigate(['login']);
@@ -39,12 +41,37 @@ export class CartComponent implements OnInit {
           this.cartDelete.push('noDelete');
           this.cartArray[i].workshop.start = moment(this.cartArray[i].workshop.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('dddd') + " " + moment(this.cartArray[i].workshop.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('DD') + " " + moment(this.cartArray[i].workshop.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('MMMM') + " " + moment(this.cartArray[i].workshop.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('YY');
           this.totalCost = this.totalCost + this.cartArray[i].workshop.cost;
+        
         }
       });
     }
   }
 
   ngOnInit(): void {
+  }
+  Discount() {
+    if(this.discounted){
+      return;
+    }
+    if(this.totalCost == 0){
+      if (window.innerWidth > 992) {
+        this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'سبد خرید شما خالی است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      }
+      else {
+        this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'سبد خرید شما خالی است!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+      }
+      return;
+    }
+    this.publicservice.checkDiscount().then((r)=>{
+      console.log(r);
+      this.percentage = r.data.percentage;
+      this.totalCost = this.totalCost *((100-this.percentage)/100);
+      this.discounted=true;
+      
+      
+
+    })
+    
   }
   Home() {
     this.router.navigate(['home'], { fragment: 'home' });
@@ -98,7 +125,11 @@ export class CartComponent implements OnInit {
         this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'کارگاه با موفقیت از سبد خریدتان حذف شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
       }
       this.cartDelete[i] = 'delete';
-      this.totalCost = this.totalCost - this.cartArray[i].workshop.cost;
+      
+      this.totalCost = this.totalCost - (this.cartArray[i].workshop.cost)*((100-this.percentage)/100)//;
+
+      //this.totalCost = this.totalCost *((100-this.percentage)/100);
+    
       this.count = this.count - 1;
     })
   }
