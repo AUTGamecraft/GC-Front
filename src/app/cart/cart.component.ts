@@ -63,6 +63,9 @@ export class CartComponent implements OnInit {
       return;
     }
     this.publicservice.checkDiscount().then((r)=>{
+      if(this.discounted){
+        return;
+      }
       this.percentage = r.data.percentage;
       this.totalCost = this.totalCost *((100-this.percentage)/100);
       this.discounted=true;
