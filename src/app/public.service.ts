@@ -11,6 +11,7 @@ import { HttpClient, HttpHeaders, HttpRequest } from '@angular/common/http';
 import { coerceStringArray } from '@angular/cdk/coercion';
 import { SuccessDialogComponent } from '../app/success-dialog/success-dialog.component';
 import { NavigationEnd, Router } from '@angular/router';
+import { computeDecimalDigest } from '@angular/compiler/src/i18n/digest';
 @Injectable({
   providedIn: 'root'
 })
@@ -34,6 +35,7 @@ export class PublicService {
   public hasError: boolean;
   public talkPk;
   public workshopPk;
+  public discount_code;
   Mockup() {
 
 
