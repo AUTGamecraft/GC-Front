@@ -130,7 +130,7 @@ export class PublicService {
       'Authorization': 'Bearer ' + this.Authorization
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/coupon/'+this.discount_code+'/', options)
+    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/coupon/'+this.discount_code.trim()+'/', options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
@@ -542,8 +542,7 @@ export class PublicService {
     var that = this;
     this.APICalls.getUserTalks = true;
     let body = JSON.stringify({
-      'coupon' : this.discount_code,
-
+      'coupon' : this.discount_code.trim(),
     });
     let headers = new Headers({
       'Content-Type': 'application/json',
