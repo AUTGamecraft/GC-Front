@@ -63,10 +63,18 @@ export class CartComponent implements OnInit {
       return;
     }
     this.publicservice.checkDiscount().then((r)=>{
-      console.log(r);
+      if(this.discounted){
+        return;
+      }
       this.percentage = r.data.percentage;
       this.totalCost = this.totalCost *((100-this.percentage)/100);
       this.discounted=true;
+      if (window.innerWidth > 992) {
+        this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'کد تخفیف اعمال شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      }
+      else {
+        this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'کد تخفیف اعمال شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+      }
       
       
 
