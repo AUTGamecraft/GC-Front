@@ -111,20 +111,20 @@ export class DashboardEventComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.hash = params['status'];
       if (this.hash == 'true') {
-        if (window.innerWidth > 992) {
+        // if (window.innerWidth > 992) {
           this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'خریدتان با موفقیت انجام شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-        }
-        else {
-          this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'خریدتان با موفقیت انجام شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
-        }
+        // }
+        // else {
+          // this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'خریدتان با موفقیت انجام شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+        // }
       }
       else if (this.hash == 'false') {
-        if (window.innerWidth > 992) {
+        // if (window.innerWidth > 992) {
           this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'خطایی در خریدتان رخ داد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-        }
-        else {
-          this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'خطایی در خریدتان رخ داد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
-        }
+        // }
+        // else {
+          // this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'خطایی در خریدتان رخ داد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+        // }
       }
       this.events();
     });
@@ -155,12 +155,12 @@ export class DashboardEventComponent implements OnInit {
     this.router.navigate(['home'], { fragment: 'home' });
   }
   Teams() {
-    if (window.innerWidth > 992) {
+    // if (window.innerWidth > 992) {
       this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-    }
-    else {
-      this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
-    }
+    // }
+    // else {
+      // th/is.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+    // }
     // this.router.navigate(['dashboard-teams']);
   }
   Cart() {
@@ -179,11 +179,11 @@ export class DashboardEventComponent implements OnInit {
     this.publicservice.UpdateImage();
   }
   Enter() {
-    if(window.innerWidth>992){
+    // if(window.innerWidth>992){
     this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-    }
-    else{
-      this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
-    }
+    // }
+    // else{
+      // th/is.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+    // }
   }
 }

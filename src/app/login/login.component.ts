@@ -58,12 +58,12 @@ export class LoginComponent implements OnInit {
       })
     }
     else {
-      if (  window.innerWidth<992){
+      // if (  window.innerWidth<992){
         this.snackbar.openFromComponent(ErrorDialogComponent,{duration:2000,data:'فیلد ها را پر کنید',panelClass:['snackbar'],verticalPosition:'bottom',direction:'rtl'});
-      }
-      else{
-      this.snackbar.openFromComponent(ErrorDialogComponent,{duration:2000,data:'فیلد ها را پر کنید',panelClass:['snackbar'],verticalPosition:'top',direction:'rtl'});
-      }
+      // }
+      // else{
+      // this.snackbar.openFromComponent(ErrorDialogComponent,{duration:2000,data:'فیلد ها را پر کنید',panelClass:['snackbar'],verticalPosition:'top',direction:'rtl'});
+      // }
     }
   }
   Home(){

@@ -203,12 +203,12 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['people'], { fragment: 'people' });
   }
   Rules() {
-    if (window.innerWidth > 992) {
+    // if (window.innerWidth > 992) {
       this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-    }
-    else {
-      this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
-    }
+    // }
+    // else {
+      // this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+    // }
     // this.router.navigate(['rules'], { fragment: 'rules' });
   }
   Home() {
@@ -219,45 +219,45 @@ export class HomeComponent implements OnInit {
   }
   registerWorkshop(i) {
     if (!this.publicservice.logedIn) {
-      if (window.innerWidth > 992) {
+      // if (window.innerWidth > 992) {
         this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'اول وارد شوید!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      }
-      else {
-        this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'اول وارد شوید!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
-      }
+      // }
+      // else {
+        // this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'اول وارد شوید!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+      // }
       return;
     }
     else {
       this.publicservice.workshopPk = this.workshopsArray[i].pk;
       this.publicservice.EnrollWorkshop().then(() => {
-        if (window.innerWidth > 992) {
+        // if (window.innerWidth > 992) {
           this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'کارگاه مورد نظر به سبد خریدتان اضافه شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-        }
-        else {
-          this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'کارگاه مورد نظر به سبد خریدتان اضافه شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
-        }
+        // }
+        // else {
+          // this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'کارگاه مورد نظر به سبد خریدتان اضافه شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+        // }
       })
     }
   }
   registerTalk(i) {
     if (!this.publicservice.logedIn) {
-      if (window.innerWidth > 992) {
+      // if (window.innerWidth > 992) {
         this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'اول وارد شوید!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      }
-      else {
-        this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'اول وارد شوید!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
-      }
+      // }
+      // else {
+        // this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'اول وارد شوید!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+      // }
       return;
     }
     else {
       this.publicservice.talkPk = this.talksArray[i].pk;
       this.publicservice.EnrollTalk().then(() => {
-        if (window.innerWidth > 992) {
+        // if (window.innerWidth > 992) {
           this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'ثبت نام با موفقیت انجام شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-        }
-        else {
-          this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'ثبت نام با موفقیت انجام شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
-        }
+        // }
+        // else {
+          // this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'ثبت نام با موفقیت انجام شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+        // }
       })
     }
   }
