@@ -67,7 +67,9 @@ export class CartComponent implements OnInit {
         return;
       }
       this.percentage = r.data.percentage;
-      this.totalCost = this.totalCost *((100-this.percentage)/100);
+      console.log(this.percentage);
+      console.log(this.totalCost *(100-this.percentage)/100);
+      this.totalCost = this.totalCost *(100-this.percentage)/100;
       this.discounted=true;
       // if (window.innerWidth > 992) {
         this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'کد تخفیف اعمال شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
@@ -134,7 +136,7 @@ export class CartComponent implements OnInit {
       // }
       this.cartDelete[i] = 'delete';
       
-      this.totalCost = this.totalCost - (this.cartArray[i].workshop.cost)*((100-this.percentage)/100)//;
+      this.totalCost = this.totalCost - (this.cartArray[i].workshop.cost)*(100-this.percentage)/100;
 
       //this.totalCost = this.totalCost *((100-this.percentage)/100);
     
