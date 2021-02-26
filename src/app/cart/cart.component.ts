@@ -62,6 +62,9 @@ export class CartComponent implements OnInit {
       // }
       return;
     }
+    if(this.publicservice.discount_code==""){
+      return
+    }
     this.publicservice.checkDiscount().then((r)=>{
       if(this.discounted){
         return;
