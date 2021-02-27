@@ -1061,6 +1061,7 @@
     .collapse-subject {
         margin: 0;
         font-size: 16px;
+        padding: 0;
     }
     .footer-image-div {
         display: none;
@@ -1107,9 +1108,9 @@
     .whole-workshop-phone {
         display: initial;
     }
-    // .components-collapse{
-    //     justify-content: initial;
-    // }
+    .components-collapse{
+        padding: 0;
+    }
     .collapse-about {
         font-size: 14px;
     }

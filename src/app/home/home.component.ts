@@ -65,6 +65,12 @@ export class HomeComponent implements OnInit {
             this.talksLevel[index] = 'unknown';
             break;
         }
+        if(this.talksArray[index].remain_capacity==0){
+          this.talksArray[index].remain_capacity = 'تکمیل';
+        }
+        else{
+          this.talksArray[index].remain_capacity = this.talksArray[index].remain_capacity + ' نفر'
+        }
         for (let i = 0; i < this.talksArray[index].presenters.length; i++) {
           this.isHideTalks.push('hide');
         }
@@ -94,6 +100,12 @@ export class HomeComponent implements OnInit {
           default:
             this.workshopsLevel[index] = 'unknown';
             break;
+        }
+        if(this.workshopsArray[index].remain_capacity == 0){
+          this.workshopsArray[index].remain_capacity = 'تکمیل';
+        }
+        else{
+          this.workshopsArray[index].remain_capacity = this.workshopsArray[index].remain_capacity + ' نفر'
         }
         for (let i = 0; i < this.workshopsArray[index].presenters.length; i++) {
           this.isHideWorkshops.push('hide');
