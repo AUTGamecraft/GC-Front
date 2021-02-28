@@ -20,6 +20,7 @@ export class DashboardEventComponent implements OnInit {
   userName: string = "";
   isStaff: boolean;
   talksArray: any = [];
+  talksDelete : any =[];
   workshopsArray: any = [];
   talksActive: any = [];
   workshopsActive: any = [];
@@ -189,15 +190,17 @@ export class DashboardEventComponent implements OnInit {
   Delete(i) {
     this.publicservice.talkPk = this.talksArray[i].pk;
     this.publicservice.deleteTalk().then((r) => {
-      if (window.innerWidth > 992) {
+      // if (window.innerWidth > 992) {
         this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'ارائه با موفقیت از سبد خریدتان حذف شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      }
-      else {
-        this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'ارائه با موفقیت از سبد خریدتان حذف شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
-      }
-      this.talksArray[i] = 'delete';
+      // }
+      // else {
+        // this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'کارگاه با موفقیت از سبد خریدتان حذف شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+      // }
+      this.talksDelete[i] = 'delete';
       
+  
 
+      //this.totalCost = this.totalCost *((100-this.percentage)/100);
     
       this.count = this.count - 1;
     })

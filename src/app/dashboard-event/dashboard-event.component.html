@@ -253,7 +253,7 @@
                 </div>
             </div>
             <div class="collapse-phone" *ngFor="let talk of talksArray;let i = index">
-                    <div class="components">
+                    <div class="components"  *ngIf="talksDelete[i] = 'delete' "  [class]="talksDelete[i]">
                         <div style="display: flex;justify-content: space-between;padding-left: 16px;width: 100%;box-sizing: border-box;">
                             <div style="display: flex;">
                                 <div class="pink-collapse">
