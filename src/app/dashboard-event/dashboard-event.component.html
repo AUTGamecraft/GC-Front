@@ -210,6 +210,8 @@
                             {{talk.level}}</h4> -->
                         <button mat-stroked-button (click)="Enter()"
                             class="register-button">{{publicservice.Texts.Texts["dash-event23"]}}</button>
+                            <button class="delete-button" (click)="Delete(i)"
+                            mat-stroked-button>{{publicservice.Texts.Texts['cart5']}}</button>
                         <button mat-button class="discription"
                             (click)="talksActive[i] = (talksActive[i] == 'active' ? 'deactive' : 'active') ;iconT = (iconT == 'keyboard_arrow_down' ? 'keyboard_arrow_up' : 'keyboard_arrow_down') ">{{publicservice.Texts.Texts["dash-event24"]}}
                             <mat-icon class="icon" [inline]="true">{{iconT}}</mat-icon>
@@ -275,6 +277,8 @@
                                         {{talk.level}}</h4> -->
                                 </div>
                             </div>
+                            <button class="delete-button" (click)="Delete(i)"
+                            mat-stroked-button>{{publicservice.Texts.Texts['cart5']}}</button>
                             <button mat-button class="discription"
                                 (click)="talksActive[i] = (talksActive[i] == 'active' ? 'deactive' : 'active') ;iconT = (iconT == 'keyboard_arrow_down' ? 'keyboard_arrow_up' : 'keyboard_arrow_down') ">{{publicservice.Texts.Texts["dash-event24"]}}
                                 <mat-icon class="icon" [inline]="true">{{iconT}}</mat-icon>

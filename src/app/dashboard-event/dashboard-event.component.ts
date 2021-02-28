@@ -186,4 +186,20 @@ export class DashboardEventComponent implements OnInit {
       this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
     }
   }
+  Delete(i) {
+    this.publicservice.talkPk = this.talksArray[i].pk;
+    this.publicservice.deleteTalk().then((r) => {
+      if (window.innerWidth > 992) {
+        this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'ارائه با موفقیت از سبد خریدتان حذف شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      }
+      else {
+        this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'ارائه با موفقیت از سبد خریدتان حذف شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+      }
+      this.talksArray[i] = 'delete';
+      
+
+    
+      this.count = this.count - 1;
+    })
+  }
 }

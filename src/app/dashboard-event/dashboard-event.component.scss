@@ -678,3 +678,19 @@
         margin: auto;
     }
 }
+.delete-button{
+    color: #b00020;
+    border-color: #b00020;
+    width: 82px;
+    height: 44px;
+    margin: auto 0; 
+    border-radius: 16px;   
+    border: solid 2px #b00020;
+    font-family: 'Estedad-SemiBold';
+    font-size: 16px;
+}
+.delete-button:hover{
+    color: white;
+    background-color: #b00020;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.08);
+}
