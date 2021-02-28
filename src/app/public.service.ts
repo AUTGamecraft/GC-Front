@@ -529,15 +529,12 @@ export class PublicService {
       this.APICalls.getUserTalks = false;
     }).catch(e => {
       this.APICalls.getUserTalks = false;
-      if (window.innerWidth > 992) {
+     
         that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      }
-      else {
-        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
-      }
-      if (e.status == 401) {
-        localStorage.removeItem("Authorization");
-        this.router.navigate(['login']);
+      
+        if (e.status == 401) {
+          localStorage.removeItem("Authorization");
+          this.router.navigate(['login']);
       }
     });
     return ret;

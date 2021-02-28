@@ -196,9 +196,9 @@
                     {{publicservice.Texts.Texts["dash-event18"]}}</h3>
             </div>
             <div class="collapse" *ngFor="let talk of talksArray;let i = index">
-                <div class="pink-collapse">
+                <div class="pink-collapse" >
                 </div>
-                <div style="width: 100%;">
+                <div style="width: 100%;" *ngIf="talksDelete[i] != 'delete' ">
                     <div class="components">
                         <h3 class="component-title">
                             {{talk.title}}</h3>
@@ -208,8 +208,8 @@
                             {{talk.remain_capacity}}</h4>
                         <!-- <h4 class="component-subject">
                             {{talk.level}}</h4> -->
-                        <button mat-stroked-button (click)="Enter()"
-                            class="register-button">{{publicservice.Texts.Texts["dash-event23"]}}</button>
+                        <!-- <button mat-stroked-button (click)="Enter()"
+                            class="register-button">{{publicservice.Texts.Texts["dash-event23"]}}</button> -->
                             <button class="delete-button" (click)="Delete(i)"
                             mat-stroked-button>{{publicservice.Texts.Texts['cart5']}}</button>
                         <button mat-button class="discription"
@@ -253,7 +253,7 @@
                 </div>
             </div>
             <div class="collapse-phone" *ngFor="let talk of talksArray;let i = index">
-                    <div class="components"  *ngIf="talksDelete[i] = 'delete' "  [class]="talksDelete[i]">
+                    <div class="components"  *ngIf="talksDelete[i] != 'delete' ">
                         <div style="display: flex;justify-content: space-between;padding-left: 16px;width: 100%;box-sizing: border-box;">
                             <div style="display: flex;">
                                 <div class="pink-collapse">
@@ -261,8 +261,10 @@
                                 <h3 class="component-title">
                                     {{talk.title}}</h3>
                             </div>
-                            <button mat-stroked-button
-                                class="register-button">{{publicservice.Texts.Texts["dash-event12"]}}</button>
+                            <!-- <button mat-stroked-button
+                                class="register-button">{{publicservice.Texts.Texts["dash-event12"]}}</button> -->
+                                <button class="delete-button" (click)="Delete(i)"
+                                mat-stroked-button>{{publicservice.Texts.Texts['cart5']}}</button>
                         </div>
                         <div
                             style="background-color: #fafafa;border-bottom-left-radius: 12px;border-bottom-right-radius: 12px;width: 100%;">
@@ -277,8 +279,8 @@
                                         {{talk.level}}</h4> -->
                                 </div>
                             </div>
-                            <button class="delete-button" (click)="Delete(i)"
-                            mat-stroked-button>{{publicservice.Texts.Texts['cart5']}}</button>
+                            <!-- <button class="delete-button" (click)="Delete(i)"
+                            mat-stroked-button>{{publicservice.Texts.Texts['cart5']}}</button> -->
                             <button mat-button class="discription"
                                 (click)="talksActive[i] = (talksActive[i] == 'active' ? 'deactive' : 'active') ;iconT = (iconT == 'keyboard_arrow_down' ? 'keyboard_arrow_up' : 'keyboard_arrow_down') ">{{publicservice.Texts.Texts["dash-event24"]}}
                                 <mat-icon class="icon" [inline]="true">{{iconT}}</mat-icon>
