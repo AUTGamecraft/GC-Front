@@ -79,22 +79,22 @@ export class SignUpPageComponent implements OnInit {
     scrWidth: window.innerWidth;
     if (this.emailFormControl1.status == "VALID" && this.emailFormControl2.status == "VALID" && this.emailFormControl3.status == "VALID" && this.emailFormControl4.status == "VALID") {
       this.publicservice.SignUp().then(r => {
-        if (window.innerWidth > 992) {
+        // if (window.innerWidth > 992) {
           this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 3000, data: 'لینک فعالسازی به ایمیل شما ارسال شد', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-        }
-        else{
-          this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 3000, data: 'لینک فعالسازی به ایمیل شما ارسال شد', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
-        }
+        // }
+        // else{
+          // this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 3000, data: 'لینک فعالسازی به ایمیل شما ارسال شد', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+        // }
         this.router.navigate(['login']);
       });
     }
     else {
-      if (window.innerWidth < 992) {
+      // if (window.innerWidth < 992) {
         this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'فیلد ها را پر کنید', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
-      }
-      else {
-        this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'فیلد ها را پر کنید', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      }
+      // }
+      // else {
+        // this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'فیلد ها را پر کنید', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      // }
     }
 
   }

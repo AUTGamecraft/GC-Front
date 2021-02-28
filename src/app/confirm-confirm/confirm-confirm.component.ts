@@ -21,12 +21,12 @@ export class ConfirmConfirmComponent implements OnInit {
       this.hash = params['activation'];
     });
     this.publicservice.ActivateUser(this.hash).then((r)=>{
-      if(window.innerWidth>992){
+      // if(window.innerWidth>992){
       this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 3000, data: 'اکانت شما با موفقیت فعال شد', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      }
-      else{
-        this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 3000, data: 'اکانت شما با موفقیت فعال شد', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
-      }
+      // }
+      // else{
+        // this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 3000, data: 'اکانت شما با موفقیت فعال شد', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+      // }
       this.userName = r.data.first_name;
     })
     this.isError = this.publicservice.hasError;

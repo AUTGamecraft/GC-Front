@@ -54,27 +54,32 @@ export class CartComponent implements OnInit {
       return;
     }
     if(this.totalCost == 0){
-      if (window.innerWidth > 992) {
+      // if (window.innerWidth > 992) {
         this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'سبد خرید شما خالی است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      }
-      else {
-        this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'سبد خرید شما خالی است!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
-      }
+      // }
+      // else {
+        // this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'سبد خرید شما خالی است!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+      // }
       return;
+    }
+    if(this.publicservice.discount_code==""){
+      return
     }
     this.publicservice.checkDiscount().then((r)=>{
       if(this.discounted){
         return;
       }
       this.percentage = r.data.percentage;
-      this.totalCost = this.totalCost *((100-this.percentage)/100);
+      console.log(this.percentage);
+      console.log(this.totalCost *(100-this.percentage)/100);
+      this.totalCost = this.totalCost *(100-this.percentage)/100;
       this.discounted=true;
-      if (window.innerWidth > 992) {
+      // if (window.innerWidth > 992) {
         this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'کد تخفیف اعمال شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      }
-      else {
-        this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'کد تخفیف اعمال شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
-      }
+      // }/
+      // else {
+        // this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'کد تخفیف اعمال شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+      // }
       
       
 
@@ -112,12 +117,12 @@ export class CartComponent implements OnInit {
     this.router.navigate(navigationDetails2);
   }
   Teams() {
-    if (window.innerWidth > 992) {
+    // if (window.innerWidth > 992) {
       this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-    }
-    else {
-      this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
-    }
+    // }
+    // else {
+      // this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+    // }
     // this.router.navigate(['dashboard-teams']);
   }
   Cart() {
@@ -126,15 +131,15 @@ export class CartComponent implements OnInit {
   Delete(i) {
     this.publicservice.workshopPk = this.cartArray[i].pk
     this.publicservice.deleteCartItem().then((r) => {
-      if (window.innerWidth > 992) {
+      // if (window.innerWidth > 992) {
         this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'کارگاه با موفقیت از سبد خریدتان حذف شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      }
-      else {
-        this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'کارگاه با موفقیت از سبد خریدتان حذف شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
-      }
+      // }
+      // else {
+        // this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'کارگاه با موفقیت از سبد خریدتان حذف شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+      // }
       this.cartDelete[i] = 'delete';
       
-      this.totalCost = this.totalCost - (this.cartArray[i].workshop.cost)*((100-this.percentage)/100)//;
+      this.totalCost = this.totalCost - (this.cartArray[i].workshop.cost)*(100-this.percentage)/100;
 
       //this.totalCost = this.totalCost *((100-this.percentage)/100);
     
@@ -144,23 +149,23 @@ export class CartComponent implements OnInit {
   Pay(){
     // console.log(this.totalCost);
     if(this.totalCost == 0){
-      if (window.innerWidth > 992) {
+      // if (window.innerWidth > 992) {
         this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'سبد خرید شما خالی است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      }
-      else {
-        this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'سبد خرید شما خالی است!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
-      }
+      // }
+      // else {
+        // this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'سبد خرید شما خالی است!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+      // }
       return;
     }
     let element = <HTMLInputElement>document.getElementById('payButton');
     element.disabled = true;
     this.publicservice.getPaymentLink().then((r)=>{
-      if (window.innerWidth > 992) {
+      // if (window.innerWidth > 992) {
         this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'در حال انتقال به صفحه ی پرداخت ...', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      }
-      else {
-        this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'در حال انتقال به صفحه ی پرداخت ...', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
-      }
+      // }
+      // else {
+        // this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'در حال انتقال به صفحه ی پرداخت ...', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+      // }
       location.href = r.data.link;
     })
   }
