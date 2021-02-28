@@ -21,6 +21,7 @@ export class DashboardEventComponent implements OnInit {
   isStaff: boolean;
   talksArray: any = [];
   talksDelete : any =[];
+  talksPk : any = [];
   workshopsArray: any = [];
   talksActive: any = [];
   workshopsActive: any = [];
@@ -47,9 +48,10 @@ export class DashboardEventComponent implements OnInit {
         this.isStaff = r.data.is_staff;
       });
       publicservice.getUserDashboard().then((r) => {
-        // console.log(r);
+       //  console.log(r);
         for (let i = 0; i < r.data.length; i++) {
           if (r.data[i].workshop == null) {
+            this.talksPk.push(r.data[i].pk);
             this.talksStartHour.push(r.data[i].talk.start.split('T', 2)[1].split('+', 2)[0].split('.', 2)[0].split(':', 3)[0] + ":" + r.data[i].talk.start.split('T', 2)[1].split('+', 2)[0].split('.', 2)[0].split(':', 3)[1]);
             this.talksEndHour.push(r.data[i].talk.end.split('T', 2)[1].split('+', 2)[0].split('.', 2)[0].split(':', 3)[0] + ":" + r.data[i].talk.end.split('T', 2)[1].split('+', 2)[0].split('.', 2)[0].split(':', 3)[1]);
             r.data[i].talk.start = moment(r.data[i].talk.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('dddd') + " " + moment(r.data[i].talk.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('DD') + " " + moment(r.data[i].talk.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('MMMM') + " " + moment(r.data[i].talk.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('YY');
@@ -188,9 +190,9 @@ export class DashboardEventComponent implements OnInit {
     // }
   }
   Delete(i) {
-    console.log(this.talksArray[i]);
+    //console.log(this.talksArray[i]);
   
-    this.publicservice.talkPk = this.talksArray[i].pk;
+    this.publicservice.talkPk = this.talksPk[i];
     this.publicservice.deleteTalk().then((r) => {
       
        this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'ارائه با موفقیت از سبد خریدتان حذف شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
