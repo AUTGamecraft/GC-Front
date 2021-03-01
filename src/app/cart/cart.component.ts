@@ -49,6 +49,14 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  ngAfterViewInit():void{
+    if (this.router.url.split('#')[1] == 'cart') {
+      setTimeout((() => this.Schedule(document.getElementById('cart'))), 200)
+    }
+  }
+  Schedule(el: HTMLElement) {
+    el.scrollIntoView({ behavior: "smooth" });
+  }
   Discount() {
     if(this.discounted){
       return;

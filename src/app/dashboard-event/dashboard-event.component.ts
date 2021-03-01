@@ -167,7 +167,7 @@ export class DashboardEventComponent implements OnInit {
     // this.router.navigate(['dashboard-teams']);
   }
   Cart() {
-    this.router.navigate(['cart'], { fragment: 'dash' });
+    this.router.navigate(['cart'], { fragment: 'cart' });
   }
   Upload() {
     document.getElementById('imgUpload').click();

@@ -82,6 +82,6 @@ export class DashboardMediaComponent implements OnInit {
     this.publicservice.UpdateImage();
   }
   Cart() {
-    this.router.navigate(['cart'], { fragment: 'dash' });
+    this.router.navigate(['cart'], { fragment: 'cart' });
   }
 }

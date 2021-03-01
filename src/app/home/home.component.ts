@@ -65,10 +65,10 @@ export class HomeComponent implements OnInit {
             this.talksLevel[index] = 'unknown';
             break;
         }
-        if(this.talksArray[index].remain_capacity==0){
+        if (this.talksArray[index].remain_capacity == 0) {
           this.talksArray[index].remain_capacity = 'تکمیل';
         }
-        else{
+        else {
           this.talksArray[index].remain_capacity = this.talksArray[index].remain_capacity + ' نفر'
         }
         for (let i = 0; i < this.talksArray[index].presenters.length; i++) {
@@ -101,10 +101,10 @@ export class HomeComponent implements OnInit {
             this.workshopsLevel[index] = 'unknown';
             break;
         }
-        if(this.workshopsArray[index].remain_capacity == 0){
+        if (this.workshopsArray[index].remain_capacity == 0) {
           this.workshopsArray[index].remain_capacity = 'تکمیل';
         }
-        else{
+        else {
           this.workshopsArray[index].remain_capacity = this.workshopsArray[index].remain_capacity + ' نفر'
         }
         for (let i = 0; i < this.workshopsArray[index].presenters.length; i++) {
@@ -155,12 +155,12 @@ export class HomeComponent implements OnInit {
   Signup() {
     const navigationDetails2: string[] = ['signup'];
     this.router.navigate(navigationDetails2);
-    this.display=false;
+    this.display = false;
   }
   login(): void {
     const navigationDetails: string[] = ['login'];
     this.router.navigate(navigationDetails);
-    this.display=false;
+    this.display = false;
   }
   display = false;
   icon = "menu"
@@ -179,19 +179,19 @@ export class HomeComponent implements OnInit {
 
   Dashboard() {
     this.router.navigate(['dashboard-event'], { fragment: 'dash' });
-    this.display=false;
+    this.display = false;
   }
   Workshop(el: HTMLElement) {
     el.scrollIntoView({ behavior: "smooth" });
-    this.display=false;
+    this.display = false;
   }
   Talk(el: HTMLElement) {
     el.scrollIntoView({ behavior: "smooth" });
-    this.display=false;
+    this.display = false;
   }
   Schedule(el: HTMLElement) {
     el.scrollIntoView({ behavior: "smooth" });
-    this.display=false;
+    this.display = false;
   }
   getMinute() {
     if (this.time <= 0) {
@@ -219,21 +219,21 @@ export class HomeComponent implements OnInit {
   }
   People() {
     this.router.navigate(['people'], { fragment: 'people' });
-    this.display=false;
+    this.display = false;
   }
   Rules() {
     // if (window.innerWidth > 992) {
-      this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+    this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
     // }
     // else {
-      // this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+    // this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
     // }
     // this.router.navigate(['rules'], { fragment: 'rules' });
-    this.display=false;
+    this.display = false;
   }
   Home() {
     this.router.navigate(['home'], { fragment: 'home' });
-    this.display=false;
+    this.display = false;
   }
   getNavClass() {
     return window.scrollY > 0 ? 'no-shadow' : '';
@@ -241,10 +241,10 @@ export class HomeComponent implements OnInit {
   registerWorkshop(i) {
     if (!this.publicservice.logedIn) {
       // if (window.innerWidth > 992) {
-        this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'اول وارد شوید!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'اول وارد شوید!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
       // }
       // else {
-        // this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'اول وارد شوید!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+      // this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'اول وارد شوید!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
       // }
       return;
     }
@@ -252,10 +252,11 @@ export class HomeComponent implements OnInit {
       this.publicservice.workshopPk = this.workshopsArray[i].pk;
       this.publicservice.EnrollWorkshop().then(() => {
         // if (window.innerWidth > 992) {
-          this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'کارگاه مورد نظر به سبد خریدتان اضافه شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+        this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'کارگاه مورد نظر به سبد خریدتان اضافه شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+        this.router.navigate(['cart'], { fragment: 'cart' });
         // }
         // else {
-          // this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'کارگاه مورد نظر به سبد خریدتان اضافه شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+        // this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'کارگاه مورد نظر به سبد خریدتان اضافه شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
         // }
       })
     }
@@ -263,10 +264,10 @@ export class HomeComponent implements OnInit {
   registerTalk(i) {
     if (!this.publicservice.logedIn) {
       // if (window.innerWidth > 992) {
-        this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'اول وارد شوید!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'اول وارد شوید!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
       // }
       // else {
-        // this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'اول وارد شوید!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+      // this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'اول وارد شوید!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
       // }
       return;
     }
@@ -274,12 +275,13 @@ export class HomeComponent implements OnInit {
       this.publicservice.talkPk = this.talksArray[i].pk;
       this.publicservice.EnrollTalk().then(() => {
         // if (window.innerWidth > 992) {
-          this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'ثبت نام با موفقیت انجام شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+        this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'ثبت نام با موفقیت انجام شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+        this.router.navigate(['dashboard-event'], { fragment: 'dash' });
         // }
         // else {
-          // this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'ثبت نام با موفقیت انجام شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+        // this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'ثبت نام با موفقیت انجام شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
         // }
-      })
+      });
     }
   }
 
