@@ -513,6 +513,32 @@ export class PublicService {
     });
     return ret;
   }
+  deleteTalk(): Promise<any> {
+    var that = this;
+    this.APICalls.getUserTalks = true;
+    let headers = new Headers({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + this.Authorization
+    });
+    let options = new RequestOptions({ headers: headers });
+    let ret: Promise<any> = this.http.delete(this.ApiUrl + '/api/service/' + this.talkPk + '/', options)
+      .toPromise()
+      .then((r) => this.extractData(r, this))
+      .catch(this.handleError);
+    ret.then(r => {
+      this.APICalls.getUserTalks = false;
+    }).catch(e => {
+      this.APICalls.getUserTalks = false;
+     
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      
+        if (e.status == 401) {
+          localStorage.removeItem("Authorization");
+          this.router.navigate(['login']);
+      }
+    });
+    return ret;
+  }
   getUsersCount(): Promise<any> {
     var that = this;
     this.APICalls.getUserTalks = true;

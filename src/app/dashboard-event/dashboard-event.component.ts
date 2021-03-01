@@ -20,6 +20,8 @@ export class DashboardEventComponent implements OnInit {
   userName: string = "";
   isStaff: boolean;
   talksArray: any = [];
+  talksDelete : any =[];
+  talksPk : any = [];
   workshopsArray: any = [];
   talksActive: any = [];
   workshopsActive: any = [];
@@ -46,9 +48,10 @@ export class DashboardEventComponent implements OnInit {
         this.isStaff = r.data.is_staff;
       });
       publicservice.getUserDashboard().then((r) => {
-        // console.log(r);
+       //  console.log(r);
         for (let i = 0; i < r.data.length; i++) {
           if (r.data[i].workshop == null) {
+            this.talksPk.push(r.data[i].pk);
             this.talksStartHour.push(r.data[i].talk.start.split('T', 2)[1].split('+', 2)[0].split('.', 2)[0].split(':', 3)[0] + ":" + r.data[i].talk.start.split('T', 2)[1].split('+', 2)[0].split('.', 2)[0].split(':', 3)[1]);
             this.talksEndHour.push(r.data[i].talk.end.split('T', 2)[1].split('+', 2)[0].split('.', 2)[0].split(':', 3)[0] + ":" + r.data[i].talk.end.split('T', 2)[1].split('+', 2)[0].split('.', 2)[0].split(':', 3)[1]);
             r.data[i].talk.start = moment(r.data[i].talk.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('dddd') + " " + moment(r.data[i].talk.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('DD') + " " + moment(r.data[i].talk.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('MMMM') + " " + moment(r.data[i].talk.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('YY');
@@ -185,5 +188,23 @@ export class DashboardEventComponent implements OnInit {
     // else{
       // th/is.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
     // }
+  }
+  Delete(i) {
+    //console.log(this.talksArray[i]);
+  
+    this.publicservice.talkPk = this.talksPk[i];
+    this.publicservice.deleteTalk().then((r) => {
+      
+       this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'ارائه با موفقیت  حذف شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+       
+      
+      this.talksDelete[i] = 'delete';
+      
+  
+
+      //this.totalCost = this.totalCost *((100-this.percentage)/100);
+    
+      //this.count = this.count - 1;
+    })
   }
 }
