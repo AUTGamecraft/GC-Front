@@ -195,7 +195,7 @@ export class DashboardEventComponent implements OnInit {
     this.publicservice.talkPk = this.talksPk[i];
     this.publicservice.deleteTalk().then((r) => {
       
-       this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'ارائه با موفقیت از سبد خریدتان حذف شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+       this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'ارائه با موفقیت  حذف شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
        
       
       this.talksDelete[i] = 'delete';
