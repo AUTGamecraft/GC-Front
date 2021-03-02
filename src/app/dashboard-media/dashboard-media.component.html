@@ -17,9 +17,9 @@
                     </div>
                     <div style="display: flex;justify-content: center;">
                         <div *ngIf="!isStaff" style="margin: auto 0;">
-                        <button mat-stroked-button matBadge="{{count}}" matBadgePosition="before" (click)="Cart()"
-                            id="cart-button-phone"
-                            class="outlined-button">{{publicservice.Texts.Texts['cart8']}}</button>
+                            <button mat-stroked-button matBadge="{{count}}" matBadgePosition="before" (click)="Cart()"
+                                id="cart-button-phone"
+                                class="outlined-button">{{publicservice.Texts.Texts['cart8']}}</button>
                         </div>
                         <button mat-button (click)="logOut()"
                             class="normal-button">{{publicservice.Texts.Texts["header8"]}}</button>
@@ -56,38 +56,38 @@
             <div class="left-part">
                 <h1 class="events-title">
                     {{publicservice.Texts.Texts["dash-media6"]}}</h1>
+                <p style="font-family: 'Estedad-Regular';color:#52006b ;">{{publicservice.Texts.Texts["dash-media1"]}}
+                </p>
                 <div class="workshops-div">
                     <h3 class="workshops-title">
                         {{publicservice.Texts.Texts["dash-media7"]}} </h3>
-                    <!-- <mat-card class="mat-card">
-                        <div style="display: flex;direction: ltr;justify-content: space-between;">
-                            <p style="margin: auto 0;">{{publicservice.Texts.Texts["dash-media8"]}}</p>
-                            <button mat-stroked-button
+                    <div class="mat-card" *ngFor="let workshop of workshopsArray;let i=index" >
+                        <div style="display: flex;direction: rtl;justify-content: space-between;">
+                            <p style="margin: auto 0;text-align: right;">{{workshop.title}}</p>
+                            <button mat-stroked-button (click)="downloadWorkshop(i)"
                                 class="download-button">{{publicservice.Texts.Texts["dash-media9"]}}
                             </button>
                         </div>
-                    </mat-card> -->
+                    </div>
                 </div>
                 <div class="talks-div">
                     <h3 class="talks-title">
                         {{publicservice.Texts.Texts["dash-media10"]}}</h3>
-                    <!-- 
-                    <mat-card class="mat-card">
-                        <div style="display: flex;direction: ltr;justify-content: space-between;">
-                            <p style="margin: auto 0;">{{publicservice.Texts.Texts["dash-media8"]}}</p>
-                            <button mat-stroked-button
+                    <div class="mat-card" *ngFor="let talk of talksArray;let i=index" >
+                        <div style="display: flex;direction: rtl;justify-content: space-between;">
+                            <p style="margin: auto 0;text-align: right;">{{talk.title}}</p>
+                            <button mat-stroked-button (click)="downloadTalk(i)"
                                 class="download-button">{{publicservice.Texts.Texts["dash-media9"]}}
                             </button>
                         </div>
-                    </mat-card> -->
+                    </div>
                 </div>
             </div>
 
         </div>
     </div>
     <div class="footer-whole-div">
-        <div class="purple-wave-above-footer">
-        </div>
+        <img class="purple-wave-above-footer" src="assets/svg/wave-purple.svg">
         <div class="footer-div">
             <div class="discription-footer-div">
                 <div class="discription-right-footer-div">

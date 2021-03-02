@@ -12,6 +12,8 @@ export class DashboardMediaComponent implements OnInit {
   userName: string = "";
   isStaff: boolean;
   count = 0;
+  talksArray:any = [];
+  workshopsArray:any = [];
   constructor(private router: Router, public publicservice: PublicService, public snackbar: MatSnackBar) {
     if (!publicservice.logedIn) {
       this.router.navigate(['login']);
@@ -29,7 +31,19 @@ export class DashboardMediaComponent implements OnInit {
             this.count = this.count + 1;
           }
         }
-      })
+      });
+      publicservice.getUserDashboard().then((r)=>{
+        for (let i = 0; i < r.data.length; i++) {
+          console.log(r.data[i]);
+          if(r.data[i].service_type == "TALK" && r.data[i].talk.files != null){
+            this.talksArray.push(r.data[i].talk);
+          }
+          if(r.data[i].service_type == "WORKSHOP" && r.data[i].workshop.files != null){
+            this.workshopsArray.push(r.data[i].workshop);
+          }
+        }
+        console.log(this.workshopsArray);
+      });
     }
   }
   ngAfterViewInit(): void {
@@ -38,6 +52,12 @@ export class DashboardMediaComponent implements OnInit {
     }
   }
   ngOnInit(): void {
+  }
+  downloadTalk(i){
+    location.href = this.talksArray[i].files;
+  }
+  downloadWorkshop(i){
+    location.href = this.workshopsArray[i].files;
   }
   People() {
     this.router.navigate(['people'], { fragment: 'people' });
@@ -62,13 +82,7 @@ export class DashboardMediaComponent implements OnInit {
     this.router.navigate(['home'], { fragment: 'home' });
   }
   Teams() {
-    // if (window.innerWidth > 992) {
       this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-    // }
-    // else {
-      // th/is.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
-    // }
-    // this.router.navigate(['dashboard-teams']);
   }
   Upload() {
     document.getElementById('imgUpload').click();
