@@ -25,9 +25,8 @@ export class RulesComponent implements OnInit {
     this.router.navigate(['people'],{fragment:'people'});
   }
   Signup() {
-    this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'زمان ثبت نام به اتمام رسیده!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-    // const navigationDetails2: string[] = ['signup'];
-    // this.router.navigate(navigationDetails2);
+    const navigationDetails2: string[] = ['signup'];
+    this.router.navigate(navigationDetails2);
   }
   login(): void {
     const navigationDetails: string[] = ['login'];
