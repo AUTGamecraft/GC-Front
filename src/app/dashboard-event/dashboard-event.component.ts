@@ -106,7 +106,7 @@ export class DashboardEventComponent implements OnInit {
       })
       publicservice.getUserCart().then((r) => {
         this.count = r.data.length;
-      })
+      });
     }
   }
 

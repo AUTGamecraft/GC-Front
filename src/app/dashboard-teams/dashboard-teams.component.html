@@ -1,6 +1,6 @@
 <div class="whole" #dash>
     <div class="dash-teams" id="dash">
-        <div class="logo" >
+        <div class="logo">
             <p class="logo-text" style="margin-left: -5px;">{{publicservice.Texts.Texts["logo1"]}}</p>
             <img class="logo-image" (click)='Home()' src="assets/svg/dark-3d.svg">
             <p class="logo-text" style="margin-right: -5px;">{{publicservice.Texts.Texts["logo2"]}}</p>
@@ -10,7 +10,7 @@
                 <div class="right-part-header">
                     <div class="name-image-phone">
                         <div>
-                            <img class="user-image" id="image" >
+                            <img class="user-image" id="image">
                         </div>
                         <p class="user-name">
                             {{userName}}</p>
@@ -46,8 +46,8 @@
                 </div>
                 <!-- <button mat-stroked-button class="outlined-button">{{publicservice.Texts.Texts["dash-media5"]}}</button> -->
                 <div *ngIf="!isStaff">
-                <button mat-stroked-button matBadge="2" matBadgePosition="before" (click)="Cart()"
-                    class="outlined-button">{{publicservice.Texts.Texts['cart8']}}</button>
+                    <button mat-stroked-button matBadge="{{count}}" matBadgePosition="before" (click)="Cart()"
+                        class="outlined-button">{{publicservice.Texts.Texts['cart8']}}</button>
                 </div>
             </div>
             <div class="left-part">
@@ -64,7 +64,7 @@
                                 <mat-label class="label">{{publicservice.Texts.Texts["dash-teams4"]}}
                                 </mat-label>
                                 <input matInput [formControl]="nameFormControl" class="input"
-                                    [(ngModel)]="publicservice.Email">
+                                    [(ngModel)]="publicservice.Name">
                                 <mat-error *ngIf="nameFormControl.hasError('required')" class="error">
                                     {{publicservice.Texts.Texts["dash-teams5"]}}
                                     <strong>{{publicservice.Texts.Texts["login6"]}}</strong>
@@ -75,26 +75,43 @@
                         <form>
                             <mat-form-field class="form-field">
                                 <mat-label class="label">{{publicservice.Texts.Texts["dash-teams6"]}}</mat-label>
-                                <input type="email" placeholder="Pick one" matInput [formControl]="myControl"
+                                <input type="email" placeholder="Ex. pat@example.com" matInput [formControl]="myControl"
                                     [matAutocomplete]="auto" id="inputEmail">
                                 <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-                                    <mat-option *ngFor="let option of filteredOptions | async" [value]="option"
-                                        (click)="Add(option)" id="matOption">
+                                    <mat-option *ngFor="let option of filteredOptions | async;let i = index"
+                                        [value]="option" (click)="Add(option)" id="matOption">
                                         <div class="option" [inline]="true">
                                             <div style="display: flex;">
-                                                <img class="option-image">
-                                                <p class="name">{{option}}</p>
+                                                <img class="option-image" src="{{returnProfile(option)}}">
+                                                <p class="name">{{returnName(option)}}</p>
                                             </div>
-                                            <p class="email">farasati@gmail.com</p>
+                                            <p class="email">{{returnEmail(option)}}</p>
                                         </div>
                                     </mat-option>
                                 </mat-autocomplete>
                             </mat-form-field>
                         </form>
                     </div>
-                    <div style="width: 25%;">
-                        <div>
+
+                    <div style="width: 100%;box-sizing: border-box;">
+                        <div *ngIf="isEmpty">
                             <p class="no-one-text">هیچکس انتخاب نشده</p>
+                        </div>
+                        <div style="width: 100%;" *ngIf="!isEmpty">
+                            <div style="width: 100%;margin: 5px 0;display: flex;" *ngFor="let user of teamArray;let i = index">
+                                <div class="chosen-user" [inline]="true">
+                                    <div style="display: flex;">
+                                        <img class="option-image" src="{{user.profile}}">
+                                        <p class="name">{{user.first_name}}</p>
+                                    </div>
+                                    <p class="email">{{user.email}}</p>
+                                </div>
+                                <div>
+                                    <button style="padding: 10px 0;background-color: white; border: solid 1px #f5f5f5;border-bottom-left-radius: 16px;border-top-left-radius: 16px;color: #b00020;" (click)="removeUser(i)" mat-button><mat-icon>remove</mat-icon></button>
+                                </div>
+                            </div>
+                            <button mat-flat-button (click)="confirm()"
+                            class="green-button">تایید</button>
                         </div>
                     </div>
                 </div>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PublicService } from '../public.service';
 import { Router, NavigationEnd } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ErrorDialogComponent } from '../error-dialog/error-dialog.component'
 @Component({
   selector: 'app-rules',
   templateUrl: './rules.component.html',
@@ -8,7 +10,7 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class RulesComponent implements OnInit {
 
-  constructor(public publicservice: PublicService, public router: Router) { 
+  constructor(public publicservice: PublicService, public router: Router,private snackbar:MatSnackBar) { 
 
   }
 
@@ -23,8 +25,9 @@ export class RulesComponent implements OnInit {
     this.router.navigate(['people'],{fragment:'people'});
   }
   Signup() {
-    const navigationDetails2: string[] = ['signup'];
-    this.router.navigate(navigationDetails2);
+    this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'زمان ثبت نام به اتمام رسیده!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+    // const navigationDetails2: string[] = ['signup'];
+    // this.router.navigate(navigationDetails2);
   }
   login(): void {
     const navigationDetails: string[] = ['login'];

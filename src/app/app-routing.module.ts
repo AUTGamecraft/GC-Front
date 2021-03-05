@@ -16,7 +16,7 @@ import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'dashboard-media', component: DashboardMediaComponent },
-  { path: 'signup', component: SignUpPageComponent },
+  // { path: 'signup', component: SignUpPageComponent },
   { path: 'dashboard-event', component: DashboardEventComponent },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },

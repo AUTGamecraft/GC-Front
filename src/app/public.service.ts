@@ -274,7 +274,7 @@ export class PublicService {
     });
     return ret;
   }
-  getUsers(): Promise<any> {
+  getAvailableUsers(): Promise<any> {
     var that = this;
     this.APICalls.getUsers = true;
     let headers = new Headers({
@@ -282,7 +282,7 @@ export class PublicService {
       'Authorization': 'Bearer ' + this.Authorization
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/member/registered_list/', options)
+    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/users/available_list/', options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
@@ -596,7 +596,46 @@ export class PublicService {
     });
     return ret;
   }
+  createTeam(emails): Promise<any> {
+    var that = this;
+    this.APICalls.Login = true;
+    let body = JSON.stringify({
+      "name": this.Name,
+      "emails": emails,
+    });
+    let headers = new Headers({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + this.Authorization
+    });
+    let options = new RequestOptions({ headers: headers });
+    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/team/create_team/', body, options)
+      .toPromise()
+      .then((r) => this.extractData(r, this))
+      .catch(this.handleError);
+    ret.then(r => {
+      this.APICalls.Login = false;
+      if (r.error == null || r.error == undefined) {
+        this.Authorization = r.access;
+        localStorage.setItem("Authorization", this.Authorization);
+        this.logedIn = true;
+      }
+      else {
 
+      }
+    }).catch(e => {
+      this.APICalls.Login = false;
+      // if (window.innerWidth > 992) {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      // }
+      // else {
+        // that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+       if (e.status == 401) {
+        localStorage.removeItem("Authorization");
+        this.router.navigate(['signup']);
+      }
+    });
+    return ret;
+  }
   // DisplayErrorDialog(Error: any,that : any) {
   //   let dialogRef = that.dialog.open(ErrorDialogComponent, {
   //     data: { Type: Error}

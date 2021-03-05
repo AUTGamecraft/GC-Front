@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PublicService } from '../public.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ErrorDialogComponent } from '../error-dialog/error-dialog.component'
+import { ErrorDialogComponent } from '../error-dialog/error-dialog.component';
 @Component({
   selector: 'app-dashboard-media',
   templateUrl: './dashboard-media.component.html',
@@ -84,17 +84,17 @@ export class DashboardMediaComponent implements OnInit {
   Teams() {
       this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
   }
-  Upload() {
-    document.getElementById('imgUpload').click();
-  }
-  handleFileInput(imageInput: any) {
-    const file = imageInput.item(0);
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    // console.log(file); 
-    this.publicservice.fileName = file.name;
-    this.publicservice.UpdateImage();
-  }
+  // Upload() {
+  //   document.getElementById('imgUpload').click();
+  // }
+  // handleFileInput(imageInput: any) {
+  //   const file = imageInput.item(0);
+  //   const reader = new FileReader();
+  //   reader.readAsDataURL(file);
+  //   // console.log(file); 
+  //   this.publicservice.fileName = file.name;
+  //   this.publicservice.UpdateImage();
+  // }
   Cart() {
     this.router.navigate(['cart'], { fragment: 'cart' });
   }

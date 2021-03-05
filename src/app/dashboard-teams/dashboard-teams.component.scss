@@ -142,7 +142,7 @@
 .form-field-div {
     // margin-top: 5%;
     padding-left: 28px;
-    width: 50%;
+    width: 100%;
 }
 .form-field {
     text-align: right;
@@ -201,7 +201,7 @@
     padding-top: 10px;
     margin-top: -10px;
 }
-.supporters-div{
+.supporters-div {
     padding-top: 10%;
 }
 .discription-footer-div {
@@ -257,7 +257,7 @@
     transform: scaleX(-1);
     z-index: 0;
 }
-.ssc-image{
+.ssc-image {
     padding: 10px 30px;
     width: 150px;
     height: 150px;
@@ -328,11 +328,24 @@
 //end of footer
 .team-create-whole-div {
     // width: fit-content;
+    box-sizing: border-box;
     display: flex;
     // justify-content: space-between;
 }
+.chosen-user {
+    display: flex;
+    padding: 10px 12px;
+    width: 100%;
+    justify-content: space-between;
+    border: solid 1px #f5f5f5;
+    background-color: white;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    box-sizing: border-box;
+}
 .no-one-text {
     // text-align: ri;
+    box-sizing: border-box;
     width: 100%;
     color: #a04db9;
     font-family: "Estedad-Regular";
@@ -443,13 +456,14 @@
         font-size: 20px;
     }
 }
+
 @media only screen and (max-width: 375px) {
     .developers-image {
         text-align: center;
         justify-content: center;
         flex-direction: column;
     }
-    .ssc-image{
+    .ssc-image {
         margin: auto;
     }
 }
