@@ -191,20 +191,21 @@ export class DashboardEventComponent implements OnInit {
   }
   Delete(i) {
     //console.log(this.talksArray[i]);
-  
-    this.publicservice.talkPk = this.talksPk[i];
-    this.publicservice.deleteTalk().then((r) => {
+    this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'حذف ارائه امکان پذیر نیست!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+
+    // this.publicservice.talkPk = this.talksPk[i];
+    // this.publicservice.deleteTalk().then((r) => {
       
-       this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'ارائه با موفقیت  حذف شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+    //    this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'ارائه با موفقیت  حذف شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
        
       
-      this.talksDelete[i] = 'delete';
+    //   this.talksDelete[i] = 'delete';
       
   
 
       //this.totalCost = this.totalCost *((100-this.percentage)/100);
     
       //this.count = this.count - 1;
-    })
+    // })
   }
 }
