@@ -26,8 +26,6 @@ const routes: Routes = [
   { path: 'dashboard-teams', component: DashboardTeamsComponent },
   { path: 'confirm-confirm', component: ConfirmConfirmComponent },
   { path: 'cart', component: CartComponent },
-  { path: '**', component: InvalidPageComponent },
-
 ];
 
 
