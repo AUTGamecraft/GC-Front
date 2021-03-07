@@ -385,16 +385,24 @@
     border-top-left-radius: 16px;
     color: #b00020;
 }
-.footer-image-div-phone{
+.footer-image-div-phone {
     display: none;
 }
+.team {
+    width: 50%;
+    margin: 5px 0;
+    display: flex;
+}
 @media only screen and (max-width: 992px) {
-    .buttons{
+    .team{
+        width: 100%;
+    }
+    .buttons {
         font-size: 16px;
         border-radius: 12px;
         width: 100%;
     }
-    .footer-image-div-phone{
+    .footer-image-div-phone {
         padding-top: 30px;
         display: initial;
         width: 100%;
@@ -402,10 +410,10 @@
         margin: auto;
         text-align: center;
     }
-    .chosen-user{
-        padding:2px;
+    .chosen-user {
+        padding: 2px;
     }
-    .remove-user-button{
+    .remove-user-button {
         padding: 2px;
     }
     #cart-button-phone {
@@ -485,7 +493,7 @@
         padding-top: 0;
     }
 
-    .form-field-div{
+    .form-field-div {
         box-sizing: border-box;
         padding: 3%;
     }
@@ -497,13 +505,12 @@
     }
     .footer-image-div {
         display: none;
-
     }
     .footer-image {
         max-width: 100%;
         height: auto;
     }
-    .supporters-card-image{
+    .supporters-card-image {
         max-width: 100%;
         height: auto;
     }
@@ -534,13 +541,13 @@
         margin-left: auto;
     }
 }
-@media only screen and (max-width:588px){
-    .supporters-div{
+@media only screen and (max-width: 588px) {
+    .supporters-div {
         margin-top: 100%;
     }
 }
-@media only screen and (max-width:420px){
-    .supporters-div{
+@media only screen and (max-width: 420px) {
+    .supporters-div {
         margin-top: 1000px;
     }
 }
@@ -550,7 +557,7 @@
         justify-content: center;
         flex-direction: column;
     }
-    .ssc-image{
+    .ssc-image {
         margin: auto;
     }
 }
