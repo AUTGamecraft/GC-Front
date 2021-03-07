@@ -186,15 +186,8 @@
 //start of footer
 
 .purple-wave-above-footer {
-    background-image: url("/assets/svg/wave-purple.svg");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
     transform: scaleY(-1);
     width: 100%;
-    height: 210px;
-    position: relative;
-    z-index: 1;
-    margin-top: -60px;
 }
 .footer-div {
     background-color: #52006b;
@@ -355,7 +348,72 @@
     border: solid 1px #f5f5f5;
     padding: 10px 60px;
 }
+#cart-button-phone {
+    display: none;
+}
+.team-user {
+    display: flex;
+    padding: 10px 12px;
+    width: 100%;
+    justify-content: space-between;
+    border: solid 1px #f5f5f5;
+    background-color: white;
+    border-radius: 16px;
+    box-sizing: border-box;
+}
+.team-name {
+    color: #77009b;
+    font-size: 20px;
+    font-family: "Estedad-Bold";
+    margin-top: 0;
+}
+.description {
+    display: flex;
+    padding-bottom: 20px;
+}
+.chosen-people {
+    width: 100%;
+    margin: 5px 0;
+    display: flex;
+    box-sizing: border-box;
+}
+.remove-user-button {
+    padding: 10px 0;
+    background-color: white;
+    border: solid 1px #f5f5f5;
+    border-bottom-left-radius: 16px;
+    border-top-left-radius: 16px;
+    color: #b00020;
+}
+.footer-image-div-phone{
+    display: none;
+}
 @media only screen and (max-width: 992px) {
+    .buttons{
+        font-size: 16px;
+        border-radius: 12px;
+        width: 100%;
+    }
+    .footer-image-div-phone{
+        padding-top: 30px;
+        display: initial;
+        width: 100%;
+        box-sizing: border-box;
+        margin: auto;
+        text-align: center;
+    }
+    .chosen-user{
+        padding:2px;
+    }
+    .remove-user-button{
+        padding: 2px;
+    }
+    #cart-button-phone {
+        display: initial;
+        padding: auto 20px;
+        width: 111px;
+        height: 44px;
+    }
     .supporters-card-div {
         flex-direction: column;
     }
@@ -372,10 +430,19 @@
     }
     .dash-teams-inner-div {
         flex-direction: column;
-        padding: 24px;
+    }
+    .description {
+        flex-direction: column;
+    }
+    .team-create-whole-div {
+        flex-direction: column;
+    }
+    .events-title {
+        margin-bottom: 0;
     }
     .right-part {
-        width: fit-content;
+        box-sizing: border-box;
+        width: 100%;
         padding: 16px;
         padding-top: 0;
         margin: auto;
@@ -410,26 +477,35 @@
         width: 100%;
     }
     .left-part {
-        width: max-content;
-        margin-right: 0;
-        margin: auto;
+        box-sizing: border-box;
+        width: 100%;
+        margin: auto 0;
         text-align: center;
-        padding: 5%;
-        // padding: 5px;
-        width: 80%;
+        padding: 2%;
         padding-top: 0;
     }
-    .footer-whole-div {
-        margin-top: -30%;
+
+    .form-field-div{
+        box-sizing: border-box;
+        padding: 3%;
     }
     .discription-footer-div {
         flex-direction: column;
         justify-content: initial;
         justify-content: center;
+        text-align: center;
+    }
+    .footer-image-div {
+        display: none;
+
     }
     .footer-image {
-        width: 360px;
-        height: 320px;
+        max-width: 100%;
+        height: auto;
+    }
+    .supporters-card-image{
+        max-width: 100%;
+        height: auto;
     }
     .discription-right-footer-div {
         padding: 38%;
@@ -437,11 +513,6 @@
         margin-bottom: 70%;
         padding-right: 36px;
         padding-left: 36px;
-    }
-    .footer-image-div {
-        text-align: center;
-        margin-left: 0;
-        margin-top: 200px;
     }
     .discription-right-footer-about-div {
         float: none;
@@ -455,15 +526,31 @@
     .discription-right-footer-about-discription {
         font-size: 20px;
     }
+    .user-image {
+        width: 48px;
+        height: 48px;
+        margin-top: 8px;
+        margin-right: 0;
+        margin-left: auto;
+    }
 }
-
+@media only screen and (max-width:588px){
+    .supporters-div{
+        margin-top: 100%;
+    }
+}
+@media only screen and (max-width:420px){
+    .supporters-div{
+        margin-top: 1000px;
+    }
+}
 @media only screen and (max-width: 375px) {
     .developers-image {
         text-align: center;
         justify-content: center;
         flex-direction: column;
     }
-    .ssc-image {
+    .ssc-image{
         margin: auto;
     }
 }

@@ -37,7 +37,7 @@ export class PublicService {
   public hasError: boolean;
   public talkPk;
   public workshopPk;
-  public discount_code : string= "";
+  public discount_code: string = "";
   Mockup() {
 
 
@@ -47,7 +47,7 @@ export class PublicService {
 
 
 
-  constructor(private http: Http, public dialog: MatDialog, public snackbar: MatSnackBar, private http2: HttpClient, public router: Router,private zone: NgZone) {
+  constructor(private http: Http, public dialog: MatDialog, public snackbar: MatSnackBar, private http2: HttpClient, public router: Router, private zone: NgZone) {
     this.Authorization = localStorage.getItem("Authorization");
     if (this.Authorization != null) {
       this.logedIn = true;
@@ -95,7 +95,7 @@ export class PublicService {
     return body || {};
   }
   private handleError(error: any) {
-        // In a real world app, we might send the error to remote logging infrastructure
+    // In a real world app, we might send the error to remote logging infrastructure
     let errMsg = JSON.parse(error._body);//error.message || 'Server error';
     console.error(errMsg); // log to console instead
     return Promise.reject(errMsg);
@@ -112,10 +112,10 @@ export class PublicService {
       toPromise().
       then((r) => {
         // if (window.innerWidth > 992) {
-          this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'عکس با موفقیت آپلود شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+        this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'عکس با موفقیت آپلود شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
         // }
         // else {
-          // this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'عکس با موفقیت آپلود شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+        // this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'عکس با موفقیت آپلود شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
         // }
         window.location.reload();
       })
@@ -130,7 +130,7 @@ export class PublicService {
       'Authorization': 'Bearer ' + this.Authorization
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/coupon/'+this.discount_code.trim()+'/', options)
+    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/coupon/' + this.discount_code.trim() + '/', options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
@@ -139,12 +139,13 @@ export class PublicService {
       this.APICalls.checkDiscount = false;
     }).catch(e => {
       this.APICalls.checkDiscount = false;
-      // if (window.innerWidth > 992) {
+      if (e.status == 401) {
+        localStorage.removeItem("Authorization");
+        this.router.navigate(['login']);
+      }
+      else {
         that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      // }
-      // else {
-        // that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
-      // }
+      }
     });
     return ret;
   }
@@ -171,15 +172,9 @@ export class PublicService {
       this.APICalls.SignUp = false;
     }).catch(e => {
       this.APICalls.SignUp = false;
-      // if (window.innerWidth > 992) {
+
         that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      // }
-      // else {
-        // that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
-       if (e.status == 401) {
-        localStorage.removeItem("Authorization");
-        this.router.navigate(['login']);
-      }
+
     });
     return ret;
   }
@@ -211,14 +206,12 @@ export class PublicService {
       }
     }).catch(e => {
       this.APICalls.Login = false;
-      // if (window.innerWidth > 992) {
-        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      // }
-      // else {
-        // that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
-       if (e.status == 401) {
+      if (e.status == 401) {
         localStorage.removeItem("Authorization");
-        this.router.navigate(['signup']);
+        this.router.navigate(['login']);
+      }
+      else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
       }
     });
     return ret;
@@ -240,12 +233,9 @@ export class PublicService {
       this.APICalls.getTalks = false;
     }).catch(e => {
       this.APICalls.getTalks = false;
-      // if (w/indow.innerWidth > 992) {
-        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      // }/
-      // else {
-        // that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
-      // }
+
+      that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+
     });
     return ret;
   }
@@ -265,12 +255,9 @@ export class PublicService {
       this.APICalls.getWorkshops = false;
     }).catch(e => {
       this.APICalls.getWorkshops = false;
-      // if (window.innerWidth > 992) {
-        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      // }
-      // else {
-        // that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
-      // }
+
+      that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+
     });
     return ret;
   }
@@ -290,14 +277,12 @@ export class PublicService {
       this.APICalls.getUsers = false;
     }).catch(e => {
       this.APICalls.getUsers = false;
-      // if (window.innerWidth > 992) {
-        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      // }
-      // else {
-        // that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
-       if (e.status == 401) {
+      if (e.status == 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
+      }
+      else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
       }
     });
     return ret;
@@ -319,14 +304,12 @@ export class PublicService {
       this.APICalls.getUsers = false;
     }).catch(e => {
       this.APICalls.getUsers = false;
-      // if (window.innerWidth > 992) {
-        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      // }
-      // else {
-        // that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
-       if (e.status == 401) {
+      if (e.status == 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
+      }
+      else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
       }
     });
     return ret;
@@ -348,14 +331,12 @@ export class PublicService {
     }).catch(e => {
       this.APICalls.ActivateUser = false;
       this.hasError = true;
-      // if (window.innerWidth > 992) {
-        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      // }
-      // else {
-        // that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
-       if (e.status == 401) {
+      if (e.status == 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
+      }
+      else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
       }
     });
     return ret;
@@ -374,24 +355,17 @@ export class PublicService {
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
-    
+
     ret.then(r => {
       this.APICalls.EnrollTalk = false;
     }).catch(e => {
       this.APICalls.EnrollTalk = false;
-      // if (window.innerWidth > 992) {
-        // this.zone.run(()=>{
-        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' })
-        // });
-      // }
-      // else {
-      //   this.zone.run(()=>{
-      //   that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' })
-      //   });
-      // } 
       if (e.status == 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
+      }
+      else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
       }
     });
     return ret;
@@ -416,14 +390,12 @@ export class PublicService {
       this.APICalls.EnrollWorkshop = false;
     }).catch(e => {
       this.APICalls.EnrollWorkshop = false;
-      // if (window.innerWidth > 992) {
-        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      // }
-      // /else {
-        // that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
-       if (e.status == 401) {
+      if (e.status == 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
+      }
+      else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
       }
     });
     return ret;
@@ -444,14 +416,12 @@ export class PublicService {
       this.APICalls.getUserTalks = false;
     }).catch(e => {
       this.APICalls.getUserTalks = false;
-      // if (window.innerWidth > 992) {
-        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      // }
-      // else {
-        // that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
-       if (e.status == 401) {
+      if (e.status == 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
+      }
+      else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
       }
     });
     return ret;
@@ -472,14 +442,12 @@ export class PublicService {
       this.APICalls.getUserTalks = false;
     }).catch(e => {
       this.APICalls.getUserTalks = false;
-      // if (window.innerWidth > 992) {
-        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      // }
-      // else {
-        // that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
-       if (e.status == 401) {
+      if (e.status == 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
+      }
+      else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
       }
     });
     return ret;
@@ -500,15 +468,12 @@ export class PublicService {
       this.APICalls.getUserTalks = false;
     }).catch(e => {
       this.APICalls.getUserTalks = false;
-      // if (window.innerWidth > 992) {
-        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      // }
-      // else {
-        // that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
-      
       if (e.status == 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
+      }
+      else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
       }
     });
     return ret;
@@ -529,12 +494,12 @@ export class PublicService {
       this.APICalls.getUserTalks = false;
     }).catch(e => {
       this.APICalls.getUserTalks = false;
-     
+      if (e.status == 401) {
+        localStorage.removeItem("Authorization");
+        this.router.navigate(['login']);
+      }
+      else {
         that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      
-        if (e.status == 401) {
-          localStorage.removeItem("Authorization");
-          this.router.navigate(['login']);
       }
     });
     return ret;
@@ -555,11 +520,8 @@ export class PublicService {
     }).catch(e => {
       this.APICalls.getUserTalks = false;
       // if (window.innerWidth > 992) {
-        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      // }
-      // else {
-        // that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
-      // }
+      that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+
     });
     return ret;
   }
@@ -568,7 +530,7 @@ export class PublicService {
     var that = this;
     this.APICalls.getUserTalks = true;
     let body = JSON.stringify({
-      'coupon' : this.discount_code.trim(),
+      'coupon': this.discount_code.trim(),
     });
     let headers = new Headers({
       'Content-Type': 'application/json',
@@ -583,15 +545,12 @@ export class PublicService {
       this.APICalls.getUserTalks = false;
     }).catch(e => {
       this.APICalls.getUserTalks = false;
-      // if (window.innerWidth > 992) {
-        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      // }
-      // else {
-        // that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
-      // }
       if (e.status == 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
+      }
+      else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
       }
     });
     return ret;
@@ -624,30 +583,42 @@ export class PublicService {
       }
     }).catch(e => {
       this.APICalls.Login = false;
-      // if (window.innerWidth > 992) {
-        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      // }
-      // else {
-        // that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
-       if (e.status == 401) {
+      if (e.status == 401) {
         localStorage.removeItem("Authorization");
-        this.router.navigate(['signup']);
+        this.router.navigate(['login']);
+      }
+      else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
       }
     });
     return ret;
   }
-  // DisplayErrorDialog(Error: any,that : any) {
-  //   let dialogRef = that.dialog.open(ErrorDialogComponent, {
-  //     data: { Type: Error}
-  //   });
-  // }
-
-  // DisplaySuccessDialog(Message: string) {
-  //   let dialogRef = this.dialog.open(AppDialogComponentDialog, {
-  //     data: { Type: 'Success', Message: Message }
-  //   });
-  // }
-
+  getTeam(pk): Promise<any> {
+    var that = this;
+    this.APICalls.getUserTalks = true;
+    let headers = new Headers({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + this.Authorization
+    });
+    let options = new RequestOptions({ headers: headers });
+    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/team/' + pk + "/", options)
+      .toPromise()
+      .then((r) => this.extractData(r, this))
+      .catch(this.handleError);
+    ret.then(r => {
+      this.APICalls.getUserTalks = false;
+    }).catch(e => {
+      this.APICalls.getUserTalks = false;
+      if (e.status == 401) {
+        localStorage.removeItem("Authorization");
+        this.router.navigate(['login']);
+      }
+      else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      }
+    });
+    return ret;
+  }
 
 
 }

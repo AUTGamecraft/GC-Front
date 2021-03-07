@@ -7,6 +7,7 @@ import { map, startWith } from 'rxjs/operators';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ErrorDialogComponent } from '../error-dialog/error-dialog.component';
 import { SuccessDialogComponent } from '../success-dialog/success-dialog.component';
+import { stringify } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-dashboard-teams',
@@ -26,6 +27,8 @@ export class DashboardTeamsComponent implements OnInit {
   usersArray: any = [];
   teamArray: any = [];
   isEmpty = true;
+  hasTeam = false;
+  teamInfo :any = [];
   constructor(private router: Router, public publicservice: PublicService, private snackbar: MatSnackBar) {
     if (!publicservice.logedIn) {
       this.router.navigate(['login']);
@@ -36,6 +39,12 @@ export class DashboardTeamsComponent implements OnInit {
         this.isStaff = r.data.is_staff;
         const image = document.getElementById('image') as HTMLImageElement;
         image.src = r.data.profile;
+        if(r.data.team != null){
+          this.hasTeam =  true;
+          publicservice.getTeam(r.data.team).then((r)=>{
+            this.teamInfo = r.data;
+          });
+        }
       });
       publicservice.getAvailableUsers().then((r) => {
         for (let i = 0; i < r.data.length; i++) {
@@ -57,7 +66,7 @@ export class DashboardTeamsComponent implements OnInit {
     }
   }
   ngOnInit(): void {
-    let that = this;
+    var that = this;
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''),
       map(value => this._filter(value))
@@ -169,7 +178,15 @@ export class DashboardTeamsComponent implements OnInit {
       this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'حداقل تعداد اعضا 3 نفر است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
       return;
     }
-    this.publicservice.createTeam(this.teamArray).then((r)=>{
+    if(this.nameFormControl.status != "VALID"){
+      this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'نام تیم اجباری است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      return;
+    }
+    let tmp : any = [];
+    for (let i = 0; i < this.teamArray.length; i++) {
+      tmp.push(this.teamArray[i].email);      
+    }
+    this.publicservice.createTeam(tmp).then((r)=>{
       this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'تیم با موفقیت تشکیل شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
       this.Teams();
     });

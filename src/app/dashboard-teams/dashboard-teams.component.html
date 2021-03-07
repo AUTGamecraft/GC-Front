@@ -16,8 +16,13 @@
                             {{userName}}</p>
                     </div>
                     <div style="display: flex;justify-content: center;">
-                        <button mat-stroked-button class="outlined-button"
-                            id="outlined-button-phone">{{publicservice.Texts.Texts["dash-event5"]}}</button>
+                        <!-- <button mat-stroked-button class="outlined-button"
+                            id="outlined-button-phone">{{publicservice.Texts.Texts["dash-event5"]}}</button> -->
+                        <div *ngIf="!isStaff" style="margin: auto 0;">
+                            <button mat-stroked-button matBadge="{{count}}" matBadgePosition="before" (click)="Cart()"
+                                id="cart-button-phone"
+                                class="outlined-button">{{publicservice.Texts.Texts['cart8']}}</button>
+                        </div>
                         <button mat-button (click)="logOut()"
                             class="normal-button">{{publicservice.Texts.Texts["header8"]}}</button>
                     </div>
@@ -53,11 +58,14 @@
             <div class="left-part">
                 <h1 class="events-title">
                     {{publicservice.Texts.Texts["dash-teams1"]}}</h1>
-                <div style="display: flex;padding-bottom: 20px;">
+                <h1 *ngIf="hasTeam" class="team-name">
+                    {{teamInfo.name}}
+                </h1>
+                <div class="description">
                     <h2 class="people">{{publicservice.Texts.Texts["dash-teams2"]}}</h2>
-                    <p class="people-discription">{{publicservice.Texts.Texts["dash-teams3"]}}</p>
+                    <p *ngIf="!hasTeam" class="people-discription">{{publicservice.Texts.Texts["dash-teams3"]}}</p>
                 </div>
-                <div class="team-create-whole-div">
+                <div *ngIf="!hasTeam" class="team-create-whole-div">
                     <div class="form-field-div">
                         <form>
                             <mat-form-field class="form-field">
@@ -97,8 +105,9 @@
                         <div *ngIf="isEmpty">
                             <p class="no-one-text">هیچکس انتخاب نشده</p>
                         </div>
-                        <div style="width: 100%;" *ngIf="!isEmpty">
-                            <div style="width: 100%;margin: 5px 0;display: flex;" *ngFor="let user of teamArray;let i = index">
+                        <div style="width: 100%;box-sizing: border-box;" *ngIf="!isEmpty">
+                            <div class="chosen-people"
+                                *ngFor="let user of teamArray;let i = index">
                                 <div class="chosen-user" [inline]="true">
                                     <div style="display: flex;">
                                         <img class="option-image" src="{{user.profile}}">
@@ -107,11 +116,25 @@
                                     <p class="email">{{user.email}}</p>
                                 </div>
                                 <div>
-                                    <button style="padding: 10px 0;background-color: white; border: solid 1px #f5f5f5;border-bottom-left-radius: 16px;border-top-left-radius: 16px;color: #b00020;" (click)="removeUser(i)" mat-button><mat-icon>remove</mat-icon></button>
+                                    <button class="remove-user-button"
+                                        (click)="removeUser(i)" mat-button>
+                                        <mat-icon>remove</mat-icon>
+                                    </button>
                                 </div>
                             </div>
-                            <button mat-flat-button (click)="confirm()"
-                            class="green-button">تایید</button>
+                            <button mat-flat-button (click)="confirm()" class="green-button">تایید</button>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="hasTeam">
+                    <div style="width:50%;margin: 5px 0;display: flex;"
+                        *ngFor="let user of teamInfo.members;let i = index">
+                        <div class="team-user" [inline]="true">
+                            <div style="display: flex;">
+                                <img class="option-image" src="{{user.profile}}">
+                                <p class="name">{{user.first_name}}</p>
+                            </div>
+                            <p class="email">{{user.email}}</p>
                         </div>
                     </div>
                 </div>
@@ -119,8 +142,7 @@
         </div>
     </div>
     <div class="footer-whole-div">
-        <div class="purple-wave-above-footer">
-        </div>
+        <img class="purple-wave-above-footer" src="assets/svg/wave-purple.svg">
         <div class="footer-div">
             <div class="discription-footer-div">
                 <div class="discription-right-footer-div">
@@ -135,6 +157,9 @@
                         <div style="text-align: center;">
                             <button mat-flat-button (click)="People()"
                                 class="green-button">{{publicservice.Texts.Texts["home47"]}}</button>
+                                <div class="footer-image-div-phone">
+                                    <img class="footer-image" src="assets/images/folan.png">
+                                </div>
                         </div>
                     </div>
                     <div class="discription-right-footer-bubble">
