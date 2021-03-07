@@ -188,7 +188,7 @@ export class DashboardTeamsComponent implements OnInit {
     }
     this.publicservice.createTeam(tmp).then((r)=>{
       this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'تیم با موفقیت تشکیل شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      location.reload();
+      location.reload(true);
     });
   }
 }

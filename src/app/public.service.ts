@@ -117,7 +117,7 @@ export class PublicService {
         // else {
         // this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'عکس با موفقیت آپلود شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
         // }
-        window.location.reload();
+        location.reload(true);
       })
       .catch(this.handleError);
 
