@@ -21,7 +21,7 @@
                     <mat-form-field class="form-field">
                         <mat-label class="label">{{publicservice.Texts.Texts["login3"]}}
                         </mat-label>
-                        <input matInput [formControl]="emailFormControl" id="inputEmail"
+                        <input matInput [formControl]="emailFormControl" id="inputEmail" type="email"
                             placeholder="Ex. pat@example.com" class="input" [(ngModel)]="publicservice.Email">
                         <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')"
                             class="error">
