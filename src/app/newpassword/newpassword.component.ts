@@ -41,6 +41,8 @@ export class NewpasswordComponent implements OnInit {
   Home() {
     this.router.navigate(['home'], { fragment: 'home' });
   }
-
+  newpassword() {
+    
+  }
 }
 
