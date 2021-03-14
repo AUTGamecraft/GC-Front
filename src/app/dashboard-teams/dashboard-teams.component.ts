@@ -79,6 +79,8 @@ export class DashboardTeamsComponent implements OnInit {
       }
     });
     this.route.queryParams.subscribe(params=>{
+      console.log(params['mid']);
+      console.log(params['tid']);
       this.publicservice.enrollTeam(params['mid'],params['tid']).then(()=>{
         this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'با موفقیت به تیم اضافه شدید!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
         this.Teams();
