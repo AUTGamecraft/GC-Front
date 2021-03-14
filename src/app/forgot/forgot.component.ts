@@ -6,11 +6,11 @@ import { ErrorDialogComponent } from '../error-dialog/error-dialog.component';
 import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+  selector: 'app-forgot',
+  templateUrl: './forgot.component.html',
+  styleUrls: ['./forgot.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class ForgotComponent implements OnInit {
   hide = true;
   emailFormControl = new FormControl('', [
     Validators.required,

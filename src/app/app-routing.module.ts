@@ -6,6 +6,7 @@ import { DashboardEventComponent } from './dashboard-event/dashboard-event.compo
 import { DashboardMediaComponent } from './dashboard-media/dashboard-media.component';
 import { DashboardTeamsComponent } from './dashboard-teams/dashboard-teams.component';
 import { EmailConfirmComponent } from './email-confirm/email-confirm.component';
+import { ForgotComponent } from './forgot/forgot.component';
 import { HomeComponent } from './home/home.component';
 import { InvalidPageComponent } from './invalid-page/invalid-page.component';
 import { LoginComponent } from './login/login.component';
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'dashboard-teams', component: DashboardTeamsComponent },
   { path: 'confirm-confirm', component: ConfirmConfirmComponent },
   { path: 'cart', component: CartComponent },
+  {path : 'forgot',component : ForgotComponent},
 ];
 
 

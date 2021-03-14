@@ -142,6 +142,7 @@ export class Texts{
         this.FaTexts["login10"] = "وارد کردن رمز عبور"
         this.FaTexts["login11"] = "ورود"
         this.FaTexts["login12"] = "ثبت نام"
+        this.FaTexts["login13"] ="فراموشی رمز عبور"
         
         this.FaTexts["signup1"] = "ثبت نام"
         this.FaTexts["signup2"] = "گیمـ"
@@ -256,6 +257,10 @@ export class Texts{
         this.FaTexts["dash-teams12"] = "وضعیت تیم"
         this.FaTexts["dash-teams12"] = "وضعیت تیم"
         this.FaTexts["dash-teams12"] = "وضعیت تیم"
+
+
+        this.FaTexts["forgot1"]="تایید"
+        this.FaTexts["forgot2"]="فراموشی رمز"
 
         this.Texts=this.FaTexts;
 
