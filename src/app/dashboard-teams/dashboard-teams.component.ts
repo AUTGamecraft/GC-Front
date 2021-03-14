@@ -28,7 +28,7 @@ export class DashboardTeamsComponent implements OnInit {
   teamArray: any = [];
   isEmpty = true;
   hasTeam = false;
-  teamInfo :any = [];
+  teamInfo: any = [];
   constructor(private router: Router, public publicservice: PublicService, private snackbar: MatSnackBar, private route: ActivatedRoute) {
     if (!publicservice.logedIn) {
       this.router.navigate(['login']);
@@ -39,9 +39,9 @@ export class DashboardTeamsComponent implements OnInit {
         this.isStaff = r.data.is_staff;
         const image = document.getElementById('image') as HTMLImageElement;
         image.src = r.data.profile;
-        if(r.data.team != null){
-          this.hasTeam =  true;
-          publicservice.getTeam(r.data.team).then((r)=>{
+        if (r.data.team != null) {
+          this.hasTeam = true;
+          publicservice.getTeam(r.data.team).then((r) => {
             this.teamInfo = r.data;
           });
         }
@@ -71,11 +71,13 @@ export class DashboardTeamsComponent implements OnInit {
       startWith(''),
       map(value => this._filter(value))
     );
-    this.route.queryParams.subscribe(params=>{
-      this.publicservice.enrollTeam(params['mid'],params['tid']).then(()=>{
-        this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'با موفقیت به تیم اضافه شدید!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-        this.Teams();
-      });
+    this.route.queryParams.subscribe(params => {
+      if (params['mid'] != undefined || params['tid'] != undefined) {
+        this.publicservice.enrollTeam(params['mid'], params['tid']).then(() => {
+          this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'با موفقیت به تیم اضافه شدید!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+          this.Teams();
+        });
+      }
     });
   }
   Schedule(el: HTMLElement) {
@@ -86,11 +88,11 @@ export class DashboardTeamsComponent implements OnInit {
   }
   events(): void {
     const navigationDetails: string[] = ['dashboard-event'];
-    this.router.navigate(navigationDetails,{fragment:'dash'});
+    this.router.navigate(navigationDetails, { fragment: 'dash' });
   }
   media(): void {
     const navigationDetails2: string[] = ['dashboard-media'];
-    this.router.navigate(navigationDetails2,{fragment:'dash'});
+    this.router.navigate(navigationDetails2, { fragment: 'dash' });
   }
   logOut() {
     this.publicservice.logedIn = false;
@@ -101,33 +103,21 @@ export class DashboardTeamsComponent implements OnInit {
     this.router.navigate(['home'], { fragment: 'home' });
   }
   Teams() {
-    this.router.navigate(['dashboard-teams'],{fragment:'dash'});
+    this.router.navigate(['dashboard-teams'], { fragment: 'dash' });
   }
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
-    // if (this.options.filter(option => option.toLowerCase().indexOf(filterValue) === 0).length == 0) {
-    //   return ['fuck you'];
-    // }
+
     return this.options.filter(option => option.toLowerCase().indexOf(filterValue) === 0);
   }
-  // Upload() {
-  //   document.getElementById('imgUpload').click();
-  // }
-  // handleFileInput(imageInput: any) {
-  //   const file = imageInput.item(0);
-  //   const reader = new FileReader();
-  //   reader.readAsDataURL(file);
-  //   // console.log(file); 
-  //   this.publicservice.fileName = file.name;
-  //   this.publicservice.UpdateImage();
-  // }
+
   Add(option) {
     for (let i = 0; i < this.teamArray.length; i++) {
       if (this.teamArray[i].email == option) {
         return;
       }
     }
-    if(this.teamArray.length == 4){
+    if (this.teamArray.length == 4) {
       this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'حداکثر تعداد اعضا 5 نفر است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
       return;
     }
@@ -172,20 +162,20 @@ export class DashboardTeamsComponent implements OnInit {
       this.isEmpty = true;
     }
   }
-  confirm(){
-    if(this.teamArray.length < 2){
+  confirm() {
+    if (this.teamArray.length < 2) {
       this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'حداقل تعداد اعضا 3 نفر است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
       return;
     }
-    if(this.nameFormControl.status != "VALID"){
+    if (this.nameFormControl.status != "VALID") {
       this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'نام تیم اجباری است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
       return;
     }
-    let tmp : any = [];
+    let tmp: any = [];
     for (let i = 0; i < this.teamArray.length; i++) {
-      tmp.push(this.teamArray[i].email);      
+      tmp.push(this.teamArray[i].email);
     }
-    this.publicservice.createTeam(tmp).then((r)=>{
+    this.publicservice.createTeam(tmp).then((r) => {
       this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'تیم با موفقیت تشکیل شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
       location.reload(true);
     });
