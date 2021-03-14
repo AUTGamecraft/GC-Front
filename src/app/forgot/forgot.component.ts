@@ -23,16 +23,6 @@ export class ForgotComponent implements OnInit {
   constructor(private router: Router, public publicservice: PublicService,public snackbar: MatSnackBar) { 
 
   }
-
-  signup(): void {
-    const navigationDetails: string[] = ['signup'];
-    this.router.navigate(navigationDetails);
-  }
-  forgot():void{
-    const navigationDetails2: string[] = ['forgot'];
-    this.router.navigate(navigationDetails2);
-
-  }
   ngOnInit(): void {
 
 
@@ -46,21 +36,16 @@ export class ForgotComponent implements OnInit {
       }
     })
     var inputPassword = document.getElementById("inputPassword");
-    inputPassword.addEventListener("keyup", function (event) {
-      if (event.key == 'Enter') {
-        event.preventDefault();
-        document.getElementById("loginButton").click();
-      }
-    })
+    
   }
-  Login() {
-    if (this.emailFormControl.status == "VALID" && this.passwordFormControl.status == "VALID") {
-      this.publicservice.Login().then(r => {
-        if (r.error == null) {
-          console.log(r);
-          this.router.navigate(['home'])
-        }
-      })
+  sendmail() {
+    if (this.emailFormControl.status == "VALID" ) {
+       this.publicservice.sendmail().then(r => {
+         if (r.error == null) {
+           console.log(r);
+           //this.router.navigate(['home'])
+         }
+       })
     }
     else {
       // if (  window.innerWidth<992){
