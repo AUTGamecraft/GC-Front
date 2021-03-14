@@ -34,6 +34,7 @@ import {MatBadgeModule} from '@angular/material/badge';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { SuccessDialogComponent } from './success-dialog/success-dialog.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ForgotComponent } from './forgot/forgot.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     EmailConfirmComponent,
     ConfirmConfirmComponent,
     CartComponent,
-    SuccessDialogComponent,  
+    SuccessDialogComponent,
+    ForgotComponent,  
   ],
   imports: [
     BrowserModule,

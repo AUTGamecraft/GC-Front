@@ -28,6 +28,11 @@ export class LoginComponent implements OnInit {
     const navigationDetails: string[] = ['signup'];
     this.router.navigate(navigationDetails);
   }
+  forgot():void{
+    const navigationDetails2: string[] = ['forgot'];
+    this.router.navigate(navigationDetails2);
+
+  }
   ngOnInit(): void {
 
 
