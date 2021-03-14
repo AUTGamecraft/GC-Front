@@ -62,7 +62,7 @@ export class DashboardTeamsComponent implements OnInit {
   }
   ngAfterViewInit(): void {
     if (this.router.url.split('#')[1] == 'dash') {
-      setTimeout((() => this.Schedule(document.getElementById('dash'))), 200)
+      setTimeout((() => this.Schedule(document.getElementById('dash'))), 200);
     }
   }
   ngOnInit(): void {
