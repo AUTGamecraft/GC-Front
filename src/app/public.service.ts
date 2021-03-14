@@ -618,7 +618,32 @@ export class PublicService {
       }
     });
     return ret;
-  }
-
+  };
+  enrollTeam(mid,tid): Promise<any> {
+    var that = this;
+    this.APICalls.getUserTalks = true;
+    let headers = new Headers({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + this.Authorization
+    });
+    let options = new RequestOptions({ headers: headers });
+    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/team/join/' + tid + "/"+mid, options)
+      .toPromise()
+      .then((r) => this.extractData(r, this))
+      .catch(this.handleError);
+    ret.then(r => {
+      this.APICalls.getUserTalks = false;
+    }).catch(e => {
+      this.APICalls.getUserTalks = false;
+      if (e.status == 401) {
+        localStorage.removeItem("Authorization");
+        this.router.navigate(['login']);
+      }
+      else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      }
+    });
+    return ret;
+  };
 
 }

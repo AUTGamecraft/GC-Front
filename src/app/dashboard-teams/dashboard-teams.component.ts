@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { PublicService } from '../public.service';
 import { map, startWith } from 'rxjs/operators';
@@ -29,7 +29,7 @@ export class DashboardTeamsComponent implements OnInit {
   isEmpty = true;
   hasTeam = false;
   teamInfo :any = [];
-  constructor(private router: Router, public publicservice: PublicService, private snackbar: MatSnackBar) {
+  constructor(private router: Router, public publicservice: PublicService, private snackbar: MatSnackBar, private route: ActivatedRoute) {
     if (!publicservice.logedIn) {
       this.router.navigate(['login']);
     }
@@ -62,7 +62,7 @@ export class DashboardTeamsComponent implements OnInit {
   }
   ngAfterViewInit(): void {
     if (this.router.url.split('#')[1] == 'dash') {
-      setTimeout((() => this.Schedule(document.getElementById('dash'))), 200)
+      setTimeout((() => this.Schedule(document.getElementById('dash'))), 200);
     }
   }
   ngOnInit(): void {
@@ -77,7 +77,16 @@ export class DashboardTeamsComponent implements OnInit {
         event.preventDefault();
         that.Add(inputEmail.value);
       }
-    })
+    });
+    this.route.queryParams.subscribe(params=>{
+      console.log(params['mid']);
+      console.log(params['tid']);
+      this.publicservice.enrollTeam(params['mid'],params['tid']).then(()=>{
+        this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'با موفقیت به تیم اضافه شدید!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+        this.Teams();
+        location.reload();
+      });
+    });
   }
   Schedule(el: HTMLElement) {
     el.scrollIntoView({ behavior: "smooth" });
