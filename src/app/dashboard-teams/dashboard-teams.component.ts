@@ -71,13 +71,6 @@ export class DashboardTeamsComponent implements OnInit {
       startWith(''),
       map(value => this._filter(value))
     );
-    var inputEmail = <HTMLInputElement>document.getElementById("inputEmail");
-    inputEmail.addEventListener("keyup", function (event) {
-      if (event.key == 'Enter') {
-        event.preventDefault();
-        that.Add(inputEmail.value);
-      }
-    });
     this.route.queryParams.subscribe(params=>{
       console.log(params['mid']);
       console.log(params['tid']);
