@@ -10,6 +10,7 @@ import { ForgotComponent } from './forgot/forgot.component';
 import { HomeComponent } from './home/home.component';
 import { InvalidPageComponent } from './invalid-page/invalid-page.component';
 import { LoginComponent } from './login/login.component';
+import { NewpasswordComponent } from './newpassword/newpassword.component';
 import { PeopleComponent } from './people/people.component';
 import { RulesComponent } from './rules/rules.component';
 import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'confirm-confirm', component: ConfirmConfirmComponent },
   { path: 'cart', component: CartComponent },
   {path : 'forgot',component : ForgotComponent},
+  {path : 'newpassword',component : NewpasswordComponent}
 ];
 
 

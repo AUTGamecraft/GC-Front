@@ -216,6 +216,47 @@ export class PublicService {
     });
     return ret;
   }
+  sendmail(): Promise<any> {
+    var that = this;
+    this.APICalls.Login = true;
+    let body = JSON.stringify({
+      "email": this.Email.toLowerCase(),
+      
+    });
+    let headers = new Headers({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + this.Authorization
+    });
+    let options = new RequestOptions({ headers: headers });
+    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/token/', body, options)
+      .toPromise()
+      .then((r) => this.extractData(r, this))
+      .catch(this.handleError);
+    ret.then(r => {
+      this.APICalls.Login = false;
+      if (r.error == null || r.error == undefined) {
+        this.Authorization = r.access;
+        localStorage.setItem("Authorization", this.Authorization);
+        this.logedIn = true;
+      }
+      else {
+
+      }
+    }).catch(e => {
+      this.APICalls.Login = false;
+      if (e.status == 401) {
+        localStorage.removeItem("Authorization");
+        this.router.navigate(['forgot']);
+      }
+      else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      }
+    });
+    return ret;
+  }
+
+
+
 
   getTalks(): Promise<any> {
     var that = this;
