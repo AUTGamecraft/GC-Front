@@ -258,6 +258,10 @@ export class Texts{
         this.FaTexts["dash-teams12"] = "وضعیت تیم"
         this.FaTexts["dash-teams12"] = "وضعیت تیم"
 
+
+        this.FaTexts["forgot1"]="تایید"
+        this.FaTexts["forgot2"]="فراموشی رمز"
+
         this.Texts=this.FaTexts;
 
     }

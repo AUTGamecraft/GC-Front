@@ -1,0 +1,191 @@
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: #52006b !important;
+  }
+  ::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: #52006b !important;
+  }
+  ::ng-deep.mat-form-field-ripple {
+    /*change color of underline when focused*/
+    background-color: #52006b !important;
+  }
+  ::ng-deep .snackbar {
+    background-color: transparent;
+    box-shadow: none;
+    height: 0;
+  }
+  .logo-text {
+    display: none;
+    font-family: "Estedad-Black";
+    color: #a04db9;
+    font-size: 24px;
+    z-index: 0;
+  }
+  .Rectangle-35 {
+    width: 380px;
+    height: 378px;
+    margin: 0 219.5px 0 0;
+    padding: 36px 28px 0;
+    border-radius: 16px;
+    border: solid 1px #f5f5f5;
+    background-color: var(--white);
+  }
+  .green-button {
+    font-family: "Estedad-Bold";
+    color: #52006b;
+    background-color: #6af9c5;
+    border-radius: 24px;
+    padding: 11px 16px;
+    font-size: large;
+    width: 102px;
+    height: 57px;
+  }
+  .normal-button {
+    font-family: "Estedad-Bold";
+    font-size: large;
+    color: #00b583;
+    padding: 9px 9px 9px 9px;
+    border-radius: 24px;
+    background-color: rgba(255, 255, 255, 0);
+    width: 94px;
+    height: 57px;
+  }
+  .login {
+    display: flex;
+    justify-content: space-evenly;
+    direction: rtl;
+    height: 100%;
+    padding-bottom: 30px;
+  }
+  .login-title-div {
+    direction: rtl;
+    text-align: center;
+    margin-top: 15%;
+  }
+  .login-title1 {
+    font-size: 35px;
+    font-family: "Estedad-Bold";
+    color: #07f49e;
+    margin-bottom: 0;
+  }
+  .login-title2 {
+    font-size: 70px;
+    font-family: "Estedad-Black";
+    color: #07f49e;
+    margin-bottom: 0;
+  }
+  .form-fields-div {
+    background-color: white;
+    margin-top: 12%;
+    text-align: center;
+    border-radius: 20px;
+    height: fit-content;
+    padding: 40px 60px 40px 60px;
+    width: 20%;
+  }
+  .form-field {
+    text-align: right;
+    width: 100%;
+  }
+  .label {
+    font-family: "Estedad-SemiBold";
+  }
+  .input {
+    text-align: right;
+    font-family: "Estedad-Regular";
+    color: #52006b;
+  }
+  .error {
+    font-family: "Estedad-Regular";
+  }
+  .form-field-div {
+    margin-top: 5%;
+  }
+  .buttons {
+    direction: rtl;
+    text-align: center;
+    margin-top: 5%;
+  }
+  
+  //start of logo
+  .logo {
+    padding-top: 20px;
+    justify-content: center;
+    display: flex;
+    direction: rtl;
+    cursor: pointer;
+  }
+  .logo-image {
+    z-index: 1;
+    width: 198.1px;
+  }
+  .logo-text {
+    font-family: "Estedad-Black";
+    color: #a04db9;
+    font-size: 24px;
+    z-index: 0;
+  }
+  //end of logo
+  .login-whole {
+    display: block;
+    overflow: auto;
+    background-color: #52006b;
+    background-image: url("/assets/svg/pattern.svg");
+    height: 100%;
+  }
+  
+  @media only screen and (max-width: 992px) {
+    .login-title-div {
+      margin: 0;
+    }
+    .login {
+      flex-direction: column;
+      margin: 0 auto;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .form-fields-div {
+      flex-direction: column;
+      margin: 0 auto;
+      width: 60%;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .input {
+      text-align: right;
+      font-family: "Estedad-Regular";
+      width: 80%;
+      margin: 0 auto;
+    }
+    .form-field-div {
+      width: 80%;
+      margin: 0 auto;
+    }
+    .logo-text {
+      display: initial;
+    }
+    .logo-image {
+      margin: 0;
+      width: 150px;
+    }
+    #left-logo-text {
+      margin-right: -10px;
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    .form-fields-div{
+      width: 100%;
+    }
+  }
+  .forgot-button{
+   // text-align: left;
+    font-family: "Estedad-Bold";
+    font-size: medium;
+    color: #52006b;
+    //padding: 9px 9px 9px 9px;
+    border-radius: 24px;
+    background-color: rgba(255, 255, 255, 0);
+    
+  
+  }
