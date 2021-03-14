@@ -627,7 +627,7 @@ export class PublicService {
       'Authorization': 'Bearer ' + this.Authorization
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/team/' + tid + "/"+mid, options)
+    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/team/join/' + tid + "/"+mid, options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
