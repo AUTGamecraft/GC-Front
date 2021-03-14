@@ -35,6 +35,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { SuccessDialogComponent } from './success-dialog/success-dialog.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ForgotComponent } from './forgot/forgot.component';
+import { NewpasswordComponent } from './newpassword/newpassword.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { ForgotComponent } from './forgot/forgot.component';
     ConfirmConfirmComponent,
     CartComponent,
     SuccessDialogComponent,
-    ForgotComponent,  
+    ForgotComponent,
+    NewpasswordComponent,  
   ],
   imports: [
     BrowserModule,
