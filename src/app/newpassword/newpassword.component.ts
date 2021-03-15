@@ -36,12 +36,14 @@ export class NewpasswordComponent implements OnInit {
       }
     })
     var inputPassword = document.getElementById("inputPassword");
+    var inputPassword2 = document.getElementById("inputPassword2");
 
   }
   Home() {
     this.router.navigate(['home'], { fragment: 'home' });
   }
   newpassword() {
+  
     
   }
 }
