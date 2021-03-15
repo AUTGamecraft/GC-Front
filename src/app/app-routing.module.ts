@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'people', component: PeopleComponent },
-  { path: 'ruless', component: RulesComponent },
+  { path: 'rules', component: RulesComponent },
   { path: 'email-confirm', component: EmailConfirmComponent },
   { path: 'dashboard-teams', component: DashboardTeamsComponent },
   { path: 'confirm-confirm', component: ConfirmConfirmComponent },

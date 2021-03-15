@@ -5,10 +5,10 @@
     display: flex;
     box-shadow: none !important;
 }
-.supporters-div{
+.supporters-div {
     padding-top: 10%;
 }
-.no-shadow{
+.no-shadow {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) !important;
 }
 .big-right-header {
@@ -94,7 +94,7 @@
     padding-right: 95px;
     padding-left: 95px;
     margin-bottom: 15%;
-    padding-bottom:74px ;
+    padding-bottom: 74px;
 }
 .people-title {
     font-family: "Estedad-Black";
@@ -253,7 +253,7 @@
     color: white;
     font-size: large;
 }
-.mat-focus-indicator.normal-button.mat-button.mat-button-base.mat-button-disabled{
+.mat-focus-indicator.normal-button.mat-button.mat-button-base.mat-button-disabled {
     color: white;
 }
 .developers-div {
@@ -261,90 +261,123 @@
     text-align: center;
     padding: 10px;
 }
+.developers-image {
+    display: flex;
+    justify-content: center;
+}
 .developers {
+    padding: 30px;
+    direction: rtl;
     color: white;
     margin: 0;
     font-family: "Estedad-SemiBold";
 }
+
 //start of logo
-.logo{
+.logo {
     // padding-top: 20px;
     justify-content: center;
     display: flex;
     direction: rtl;
 }
-.logo-image{
+.logo-image {
     width: 100.8px;
     z-index: 1;
     cursor: pointer;
 }
-.logo-text{
-    font-family: 'Estedad-Black';
+.logo-text {
+    font-family: "Estedad-Black";
     color: #a04db9;
     font-size: 24px;
     z-index: 0;
 }
 //end of logo
-.rules-title{
+.rules-title {
     text-align: center;
-    font-family: 'Estedad-Black';
+    font-family: "Estedad-Black";
     color: #52006b;
     font-size: 36px;
 }
-.rules-subtitle1{
+.rules-subtitle1 {
     text-align: right;
-    font-family: 'Estedad-Black';
+    font-family: "Estedad-Black";
     color: #00b583;
-    font-size:40px;
+    font-size: 40px;
     margin-bottom: 0;
 }
-.text{
+.text {
+    box-sizing: border-box;
     direction: rtl;
     text-align: right;
-    font-family: 'Estedad-Medium';
+    font-family: "Vazir-Medium";
     font-size: 20px;
     color: #52006b;
     font-weight: 500;
     margin-top: 0;
 }
-.rules-subtitle2{
+.footer-image-div-phone {
+    display: none;
+}
+.developers-image {
+    display: flex;
+    justify-content: center;
+}
+.ssc-image{
+    padding: 10px 30px;
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+.rules-subtitle2 {
     text-align: right;
-    font-family: 'Estedad-Black';
+    font-family: "Estedad-Black";
     color: #77009b;
     font-size: 28px;
     margin-bottom: 0;
 }
-.whole-header-phone{
+.whole-header-phone {
     display: none;
 }
-@media only screen and (max-width: 1130px){
-    .supporters-card-div{
-        flex-direction: column;
+@media only screen and (max-width: 1130px) {
+    .footer-image-div-phone {
+        padding-top: 30px;
+        display: initial;
+        width: 100%;
+        box-sizing: border-box;
+        margin: auto;
+        text-align: center;
     }
-    .whole-header{
-        display: none;
-    }
-    .introduction-div{
-        padding: 24px;
-        padding-top: 20%;
-    }
-    .supporters-card-image{
+    .footer-image {
         max-width: 100%;
         height: auto;
     }
-    .white-part{
-        padding: 20px 36px 20px 36px;
+    .supporters-card-div {
+        flex-direction: column;
     }
-    .rules-title{
+    .whole-header {
+        display: none;
+    }
+    .introduction-div {
+        padding: 24px;
+        padding-top: 20%;
+    }
+    .supporters-card-image {
+        max-width: 100%;
+        height: auto;
+    }
+    .white-part {
+        padding: 20px;
+    }
+    .rules-title {
         font-size: 36px;
     }
-    .rules-subtitle1{
-        font-size: 40px;
+    .rules-subtitle1 {
+        font-size: 34px;
     }
-    .text{
+    .text {
         font-size: 20px;
     }
-    .rules-subtitle2{
+    .rules-subtitle2 {
         font-size: 28px;
     }
     // .footer-whole-div{
@@ -368,12 +401,11 @@
         padding-left: 36px;
     }
     .footer-image-div {
-        text-align: center;
-        margin-left: 0;
-        margin-top: 0;
+        display: none;
     }
     .discription-right-footer-about-div {
         float: none;
+        text-align: center;
     }
     .discription-right-footer-about-title {
         font-size: 40px;
@@ -381,7 +413,7 @@
     .discription-right-footer-about-subtitle {
         font-size: 28px;
     }
-    .discription-right-footer-about-discription{
+    .discription-right-footer-about-discription {
         font-size: 20px;
     }
     .whole-header-phone {
@@ -394,22 +426,41 @@
     .logo {
         padding: 0;
     }
-    .footer-div{
+    .footer-div {
         margin-top: -10px;
         padding-top: 0;
     }
-    .purple-wave-above-footer{
+    .purple-wave-above-footer {
         margin-top: 20px;
     }
 }
-@media only screen and (max-width:606px){
-    .discription-right-footer-div{
+@media only screen and (max-width: 606px) {
+    .discription-right-footer-div {
         margin-bottom: 50%;
     }
 }
-@media only screen and (max-width: 500px){
-    .introduction-div{
+@media only screen and (max-width: 500px) {
+    .introduction-div {
         padding-top: 30%;
     }
-
+}
+@media only screen and (max-width: 375px) {
+    .developers-image {
+        text-align: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .ssc-image{
+        margin: auto;
+    }
+}
+@media only screen and (max-width: 588px) {
+    .supporters-div {
+        margin-top: 100%;
+    }
+}
+@media only screen and (max-width: 420px) {
+    .supporters-div {
+        margin-top: 1000px;
+    }
 }

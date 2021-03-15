@@ -48,8 +48,7 @@
                 </div>
                 <div class="after-login" *ngIf="publicservice.logedIn">
                     <div class="left-button">
-                        <button mat-button [disabled]="true"
-                            class="normal-button">{{publicservice.Texts.Texts["header10"]}}</button>
+                        <button mat-button [disabled]="true" class="normal-button">{{userName}}</button>
                     </div>
 
                     <div>
@@ -72,14 +71,42 @@
         <div class="white-part">
             <div class="inside-white-part">
                 <h1 class="rules-title">{{publicservice.Texts.Texts['rules1']}}</h1>
-                <h1 class="rules-subtitle1">{{publicservice.Texts.Texts['rules2']}}</h1>
-                <p class="text">{{publicservice.Texts.Texts['rules3']}}</p>
-                <h1 class="rules-subtitle2">{{publicservice.Texts.Texts['rules4']}}</h1>
-                <p class="text">{{publicservice.Texts.Texts['rules5']}}</p>
-                <h1 class="rules-subtitle1">{{publicservice.Texts.Texts['rules2']}}</h1>
-                <p class="text">{{publicservice.Texts.Texts['rules3']}}</p>
-                <h1 class="rules-subtitle2">{{publicservice.Texts.Texts['rules4']}}</h1>
-                <p class="text">{{publicservice.Texts.Texts['rules5']}}</p>
+                <h1 class="rules-subtitle2" style="text-align: center;">تم مسابقه به‌زودی در تاریخ ۶ فروردین ۱۴۰۰ اعلام
+                    می‌شود</h1>
+                <h1 class="rules-subtitle1">چگونه در مسابقه ثبت‌نام کنیم؟</h1>
+                <p class="text">
+                    برای ثبت‌نام، ابتدا باید در این سایت ثبت‌نام کنید و سپس تیم خود را در قسمت داشبورد تکمیل کنید.
+                    سپس به صفحه مسابقه در سایت <a href="https://itch.io">itch.io</a> یعنی فلان لینک وارد شوید و در
+                    مسابقه عضو شوید.
+                    از هر تیم حداقل یک نفر نیاز است که عضو مسابقه در سایت <a href="https://itch.io">itch.io</a> شوند؛
+                    زیرا برای سابمیت فایل نهایی فقط
+                    یکی از اعضای تیم نیاز است که آن را آپلود کند.
+                    حتماً برای پیدا کردن هم‌تیمی و مطلع شدن از آخرین اخبار مسابقه در سرور دیسکورد و کانال تلگرام رویداد
+                    عضو شوید.</p>
+                <h1 class="rules-subtitle1">قوانین مسابقه</h1>
+                <p class="text">
+                    1. بازی شما باید در بازه‌ی زمانی مسابقه ساخته شده باشه، ولی می‌تونین از کد‌های ساده‌ای که قبلاً زدین
+                    تو مسیر ساخت بازی استفاده کنید.<br>
+                    2. هیچ محدودیتی تو استفاده از موتور‌ بازی‌سازی و تکنولوژی‌هایی که استفاده می‌کنین نیست.<br>
+                    3. کپی‌رایت رو رعایت کنید.<br>
+                    4. تعداد افراد تیم‌ها از ۳ تا ۵ نفر می‌تونه متغیر باشه.<br>
+                    5. تنها چیزی که باید سابمیت کنید، فایل اجرای بازی بر روی ویندوزه.<br>
+                    6. تو محتوای بازیتون حتماً باید موازین اخلاقی رعایت شده باشه.<br>
+                    7. از بازی ساختن لذت ببرید!</p>
+                <h1 class="rules-subtitle1">داوری و جوایز</h1>
+                <p class="text">بعد از اتمام مسابقه داوری بازی‌ها شروع می‌شود و در تاریخ ۱۶ ام فلان ماه در مراسم
+                    اختتامیه که جزییاتش را به زودی در اختیارتان قرار می‌دهیم،‌ برندگان مسابقه اعلام می‌شوند.</p>
+                <h1 class="rules-subtitle2">معیارهای داوری</h1>
+                <p class="text">وفادار بودن به تم مسابقه<br>
+                    قابل بازی بودن (گیم‌پلی)<br>
+                    طراحی بازی و مراحل<br>
+                    کیفیت بصری<br>
+                    تازگی<br>
+                    فان بودن</p>
+                <h1 class="rules-subtitle2">جوایز مسابقه</h1>
+                <p class="text">به ترتیب به تیم‌های اول تا سوم مبالغ ۳، ۲ و ۱ میلیون تومان به عنوان جایزه اهدا می‌شود.
+                    ضمناً راه ارتباطی با تیم‌های برتر در اختیار حامیان مسابقه قرار می‌گیرد تا با آن‌ها برای همکاری
+                    ارتباط برقرار کنند.</p>
             </div>
         </div>
     </div>
@@ -101,6 +128,9 @@
                         <div style="text-align: center;">
                             <button mat-flat-button (click)="People()" class="green-button"
                                 style="margin: 0 auto;">{{publicservice.Texts.Texts["home47"]}}</button>
+                            <div class="footer-image-div-phone">
+                                <img class="footer-image" src="assets/images/folan.png">
+                            </div>
                         </div>
                     </div>
                     <div class="discription-right-footer-bubble">
@@ -133,5 +163,9 @@
     </div>
 </div>
 <div class="developers-div">
+    <div class="developers-image">
+        <img class="ssc-image" src="assets/images/Asset 4.png">
+        <img class="ssc-image" src="assets/images/ssc_white.png">
+    </div>
     <p class="developers">{{publicservice.Texts.Texts["home42"]}}</p>
 </div>

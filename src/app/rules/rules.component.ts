@@ -9,9 +9,13 @@ import { ErrorDialogComponent } from '../error-dialog/error-dialog.component'
   styleUrls: ['./rules.component.scss']
 })
 export class RulesComponent implements OnInit {
-
+  userName: string = '';
   constructor(public publicservice: PublicService, public router: Router,private snackbar:MatSnackBar) { 
-
+    if (publicservice.logedIn) {
+      publicservice.getUser().then((r) => {
+        this.userName = r.data.first_name;
+      })
+    }
   }
 
   ngOnInit(): void {
