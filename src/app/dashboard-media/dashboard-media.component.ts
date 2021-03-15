@@ -82,6 +82,9 @@ export class DashboardMediaComponent implements OnInit {
     this.router.navigate(['home'], { fragment: 'home' });
   }
   Teams() {
+    this.router.navigate(['dashboard-teams'], { fragment: 'dash' });
+  }
+  others() {
     this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
   }
   // Upload() {

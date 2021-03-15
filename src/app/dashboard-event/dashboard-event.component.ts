@@ -159,7 +159,7 @@ export class DashboardEventComponent implements OnInit {
   }
   Teams() {
     // if (window.innerWidth > 992) {
-    this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+    this.router.navigate(['dashboard-teams'], { fragment: 'dash' });
     // }
     // else {
     // th/is.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
@@ -168,6 +168,9 @@ export class DashboardEventComponent implements OnInit {
   }
   Cart() {
     this.router.navigate(['cart'], { fragment: 'cart' });
+  }
+  others() {
+    this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
   }
   Upload() {
     document.getElementById('imgUpload').click();
