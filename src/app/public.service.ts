@@ -668,7 +668,6 @@ export class PublicService {
     this.APICalls.getUserTalks = true;
     let headers = new Headers({
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + this.Authorization
     });
     let options = new RequestOptions({ headers: headers });
     let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/team/join/' + tid + "/"+mid, options)

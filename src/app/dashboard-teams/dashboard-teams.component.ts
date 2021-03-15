@@ -30,10 +30,7 @@ export class DashboardTeamsComponent implements OnInit {
   hasTeam = false;
   teamInfo: any = [];
   constructor(private router: Router, public publicservice: PublicService, private snackbar: MatSnackBar, private route: ActivatedRoute) {
-    if (!publicservice.logedIn) {
-      this.router.navigate(['login']);
-    }
-    else {
+    if(publicservice.logedIn) {
       publicservice.getUser().then((r) => {
         this.userName = r.data.first_name;
         this.isStaff = r.data.is_staff;
@@ -79,6 +76,9 @@ export class DashboardTeamsComponent implements OnInit {
         });
       }
     });
+    if(!this.publicservice.logedIn){
+      this.router.navigate(['login']);
+    }
   }
   Schedule(el: HTMLElement) {
     el.scrollIntoView({ behavior: "smooth" });
