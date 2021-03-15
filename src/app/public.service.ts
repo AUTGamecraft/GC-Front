@@ -38,6 +38,9 @@ export class PublicService {
   public talkPk;
   public workshopPk;
   public discount_code: string = "";
+  public newPassword: String = "";
+  public newPassword2: String = "";
+  
   Mockup() {
 
 

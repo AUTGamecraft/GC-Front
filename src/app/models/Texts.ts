@@ -261,6 +261,7 @@ export class Texts{
 
         this.FaTexts["forgot1"]="تغییر رمز"
         this.FaTexts["forgot2"]="فراموشی رمز"
+        this.FaTexts["newpassword"]="تکرار رمز"
 
         this.Texts=this.FaTexts;
 
