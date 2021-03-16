@@ -43,7 +43,22 @@ export class NewpasswordComponent implements OnInit {
     this.router.navigate(['home'], { fragment: 'home' });
   }
   newpassword() {
-  
+    if (this.publicservice.newPassword=this.publicservice.newPassword2 ) {
+      this.publicservice.changepassword().then(r => {
+        if (r.error == null) {
+          console.log(r);
+          //this.router.navigate(['home'])
+        }
+      })
+   }
+   else {
+     // if (  window.innerWidth<992){
+       this.snackbar.openFromComponent(ErrorDialogComponent,{duration:2000,data:'فیلد ها را پر کنید',panelClass:['snackbar'],verticalPosition:'bottom',direction:'rtl'});
+     // }
+     // else{
+     // this.snackbar.openFromComponent(ErrorDialogComponent,{duration:2000,data:'فیلد ها را پر کنید',panelClass:['snackbar'],verticalPosition:'top',direction:'rtl'});
+     // }
+   }
     
   }
 }
