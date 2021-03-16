@@ -48,12 +48,17 @@ export class NewpasswordComponent implements OnInit {
     this.router.navigate(['home'], { fragment: 'home' });
   }
   newpassword() {
-   
+   console.log("fuck");
     if (this.publicservice.newPassword == this.publicservice.newPassword2 ) {
+   
+      
       this.route.queryParams.subscribe(params => {
         this.hash = params['code'];
       });
-      this.publicservice.changepassword(this.hash+'/').then(r => {
+      console.log(this.hash);
+      
+      
+      this.publicservice.changepassword(this.hash).then(r => {
         if (r.error == null) {
           console.log(r);
           //this.router.navigate(['home'])
