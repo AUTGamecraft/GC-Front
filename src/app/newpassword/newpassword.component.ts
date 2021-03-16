@@ -5,6 +5,8 @@ import { FormControl, Validators } from '@angular/forms';
 import { ErrorDialogComponent } from '../error-dialog/error-dialog.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router , NavigationEnd } from '@angular/router';
+import { SuccessDialogComponent } from '../success-dialog/success-dialog.component';
+
 
 @Component({
   selector: 'app-newpassword',
@@ -48,21 +50,26 @@ export class NewpasswordComponent implements OnInit {
     this.router.navigate(['home'], { fragment: 'home' });
   }
   newpassword() {
-   
+   console.log("fuck");
     if (this.publicservice.newPassword == this.publicservice.newPassword2 ) {
+   
+      
       this.route.queryParams.subscribe(params => {
         this.hash = params['code'];
       });
-      this.publicservice.changepassword(this.hash+'/').then(r => {
-        if (r.error == null) {
-          console.log(r);
-          //this.router.navigate(['home'])
-        }
+      console.log(this.hash);
+      
+      
+      this.publicservice.changepassword(this.hash).then(r => {
+      
+          this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'رمز با موفق تغییر کرد', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+          this.router.navigate(['login'])
+        
       })
    }
    else {
      // if (  window.innerWidth<992){
-       this.snackbar.openFromComponent(ErrorDialogComponent,{duration:2000,data:'فیلد ها را پر کنید',panelClass:['snackbar'],verticalPosition:'bottom',direction:'rtl'});
+       this.snackbar.openFromComponent(ErrorDialogComponent,{duration:2000,data:'رمز ها باید تطابق داشته باشند',panelClass:['snackbar'],verticalPosition:'bottom',direction:'rtl'});
      // }
      // else{
      // this.snackbar.openFromComponent(ErrorDialogComponent,{duration:2000,data:'فیلد ها را پر کنید',panelClass:['snackbar'],verticalPosition:'top',direction:'rtl'});
