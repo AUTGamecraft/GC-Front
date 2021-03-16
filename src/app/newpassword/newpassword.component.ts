@@ -4,6 +4,7 @@ import { PublicService } from '../public.service';
 import { FormControl, Validators } from '@angular/forms';
 import { ErrorDialogComponent } from '../error-dialog/error-dialog.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-newpassword',
@@ -11,6 +12,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./newpassword.component.scss']
 })
 export class NewpasswordComponent implements OnInit {
+  hash: string = '';
   hide = true;
   emailFormControl = new FormControl('', [
     Validators.required,
@@ -20,10 +22,15 @@ export class NewpasswordComponent implements OnInit {
     Validators.required,
     Validators.minLength(8)
   ]);
-  constructor(private router: Router, public publicservice: PublicService, public snackbar: MatSnackBar) {
+  constructor(private router: Router, public publicservice: PublicService, public snackbar: MatSnackBar, private route: ActivatedRoute) {
 
   }
   ngOnInit(): void {
+    this.route.queryParams.subscribe(params => {
+      this.hash = params['code'];
+    });
+    
+    
 
 
   }
@@ -43,8 +50,9 @@ export class NewpasswordComponent implements OnInit {
     this.router.navigate(['home'], { fragment: 'home' });
   }
   newpassword() {
+    
     if (this.publicservice.newPassword=this.publicservice.newPassword2 ) {
-      this.publicservice.changepassword().then(r => {
+      this.publicservice.changepassword( this.hash).then(r => {
         if (r.error == null) {
           console.log(r);
           //this.router.navigate(['home'])
