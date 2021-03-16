@@ -181,11 +181,11 @@ export class PublicService {
     });
     return ret;
   }
-  changepassword(): Promise<any> {
+  changepassword(token: string): Promise<any> {
     var that = this;
     //this.APICalls.SignUp = true;
     let body = JSON.stringify({
-      "password": this.Password,
+      "password": this.newPassword,
       //"phone_number": this.PhoneNumber,
       //"email": this.Email.toLowerCase(),
       //"first_name": this.Name,
@@ -195,7 +195,7 @@ export class PublicService {
       'Content-Type': 'application/json'
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/activation/reset-pass/askjdnasjkdn', body, options)
+    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/activation/reset-pass/'+token, body, options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
