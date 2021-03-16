@@ -74,12 +74,12 @@ export class PeopleComponent implements OnInit {
   }
   Rules() {
     // if (window.innerWidth > 992) {
-      this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      // this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
     // }
     // else {
       // this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
     // }
-    // this.router.navigate(['rules'],{fragment:'rules'});
+    this.router.navigate(['rules'],{fragment:'rules'});
   }
   Home() {
     this.router.navigate(['home'], { fragment: 'home' });
