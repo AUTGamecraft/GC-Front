@@ -181,6 +181,35 @@ export class PublicService {
     });
     return ret;
   }
+  changepassword(token: string): Promise<any> {
+    var that = this;
+    //this.APICalls.SignUp = true;
+    let body = JSON.stringify({
+      "password": this.newPassword,
+      //"phone_number": this.PhoneNumber,
+      //"email": this.Email.toLowerCase(),
+      //"first_name": this.Name,
+      //"user_name": this.Email
+    });
+    let headers = new Headers({
+      'Content-Type': 'application/json'
+    });
+    let options = new RequestOptions({ headers: headers });
+    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/activation/reset-pass/'+token, body, options)
+      .toPromise()
+      .then((r) => this.extractData(r, this))
+      .catch(this.handleError);
+
+    ret.then(r => {
+     // this.APICalls.SignUp = false;
+    }).catch(e => {
+      // this.APICalls.SignUp = false;
+
+        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+
+    });
+    return ret;
+  }
   Login(): Promise<any> {
     var that = this;
     this.APICalls.Login = true;
@@ -221,22 +250,22 @@ export class PublicService {
   }
   sendmail(): Promise<any> {
     var that = this;
-    this.APICalls.Login = true;
+   // this.APICalls.Login = true;
     let body = JSON.stringify({
       "email": this.Email.toLowerCase(),
       
     });
     let headers = new Headers({
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + this.Authorization
+      //'Authorization': 'Bearer ' + this.Authorization
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/token/', body, options)
+    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/users/reset_pass/', body, options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
     ret.then(r => {
-      this.APICalls.Login = false;
+      //this.APICalls.Login = false;
       if (r.error == null || r.error == undefined) {
         this.Authorization = r.access;
         localStorage.setItem("Authorization", this.Authorization);
