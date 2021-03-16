@@ -59,12 +59,76 @@
             </div>
         </div>
         <div class="whole-header-phone">
-            <button mat-button>
-                <mat-icon style="color: white;font-size: 32px;" [inline]="true">menu</mat-icon>
+            <button mat-button (click)=" onPress();icon =(icon == 'menu' ? 'close' : 'menu')">
+                <mat-icon style="color: white;font-size: 32px;" [inline]="true">{{icon}}</mat-icon>
             </button>
-            <div class="logo" routerLink="home">
+            <div class="logo" routerLink="home" (click)="Home()">
                 <img class="logo-image" src="assets/svg/dark-3d.svg">
             </div>
+        </div>
+        <div *ngIf="display">
+            <mat-sidenav-container class="example-sidenav-container">
+                <!-- <mat-sidenav #snav >
+          
+        </mat-sidenav> -->
+
+                <mat-sidenav-content class="side-route">
+                    <mat-divider class="side-divider"></mat-divider>
+                    <div class="side-button-1">
+                        <div *ngIf="!publicservice.logedIn">
+                            <button mat-button (click)="login()"
+                                class="normal-button">{{publicservice.Texts.Texts["header6"]}}</button>
+                            <button mat-flat-button (click)="Signup()"
+                                class="normal-button-1">{{publicservice.Texts.Texts["header7"]}}</button>
+                        </div>
+                        <div *ngIf="publicservice.logedIn">
+                            <div class="left-button">
+                                <button mat-button [disabled]="true" class="normal-button">{{userName}}</button>
+
+                                <button mat-flat-button class="normal-button-1"
+                                    (click)="Dashboard()">{{publicservice.Texts.Texts["header9"]}}</button>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <mat-divider class="side-divider"></mat-divider>
+
+                    <div class="side-button">
+                        <button mat-button class="normal-button"
+                            (click)="Schedule(schedule)">{{publicservice.Texts.Texts["header2"]}}</button>
+                    </div>
+                    <mat-divider class="side-divider"></mat-divider>
+                    <div class="side-button">
+                        <button mat-button (click)="Rules()"
+                            class="normal-button">{{publicservice.Texts.Texts["header11"]}}</button>
+                    </div>
+                    <mat-divider class="side-divider"></mat-divider>
+                    <div class="side-button">
+                        <button mat-button (click)="Workshop(workshop)"
+                            class="normal-button">{{publicservice.Texts.Texts["header3"]}}</button>
+                    </div>
+                    <mat-divider class="side-divider"></mat-divider>
+                    <div class="side-button">
+                        <button mat-button (click)="Talk(talk)"
+                            class="normal-button">{{publicservice.Texts.Texts["header4"]}}</button>
+                    </div>
+                    <mat-divider class="side-divider"></mat-divider>
+                    <div class="side-button">
+                        <button mat-button (click)="Talk(footer)"
+                            class="normal-button">{{publicservice.Texts.Texts["header5"]}}</button>
+                    </div>
+                    <mat-divider class="side-divider"></mat-divider>
+                    <div class="side-button">
+                        <button mat-button (click)="People()"
+                            class="normal-button">{{publicservice.Texts.Texts["header12"]}}</button>
+                    </div>
+                    <mat-divider class="side-divider"></mat-divider>
+
+
+
+                </mat-sidenav-content>
+            </mat-sidenav-container>
         </div>
     </header>
     <div class="introduction-div">

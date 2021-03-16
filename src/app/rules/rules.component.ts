@@ -60,4 +60,18 @@ export class RulesComponent implements OnInit {
   Footer(el: HTMLElement) {
     el.scrollIntoView({ behavior: "smooth" });
   }
+  display = false;
+  icon = "menu"
+  onPress() {
+
+    this.display = !this.display;
+    // if (this.icon=="menu"){
+    //   this.icon="close"
+    // }
+    // else {
+    // this.icon=="menu"
+    // }
+
+    // return this.icon 
+  }
 }
