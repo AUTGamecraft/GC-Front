@@ -250,22 +250,22 @@ export class PublicService {
   }
   sendmail(): Promise<any> {
     var that = this;
-    this.APICalls.Login = true;
+   // this.APICalls.Login = true;
     let body = JSON.stringify({
       "email": this.Email.toLowerCase(),
       
     });
     let headers = new Headers({
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + this.Authorization
+      //'Authorization': 'Bearer ' + this.Authorization
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/reset_pass/', body, options)
+    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/users/reset_pass/', body, options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
     ret.then(r => {
-      this.APICalls.Login = false;
+      //this.APICalls.Login = false;
       if (r.error == null || r.error == undefined) {
         this.Authorization = r.access;
         localStorage.setItem("Authorization", this.Authorization);
