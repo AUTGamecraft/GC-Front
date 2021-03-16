@@ -73,12 +73,12 @@ export class DashboardTeamsComponent implements OnInit {
         this.publicservice.enrollTeam(params['mid'], params['tid']).then(() => {
           this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'با موفقیت به تیم اضافه شدید!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
           this.Teams();
+          if(!this.publicservice.logedIn){
+            this.router.navigate(['login']);
+          }
         });
       }
     });
-    if(!this.publicservice.logedIn){
-      this.router.navigate(['login']);
-    }
   }
   Schedule(el: HTMLElement) {
     el.scrollIntoView({ behavior: "smooth" });
