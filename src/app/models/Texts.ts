@@ -29,7 +29,7 @@ export class Texts{
         this.FaTexts["home9"] = "ثبت نام"
         this.FaTexts["home10"] = "7 اسفند"
         this.FaTexts["home11"] = "تعریف مسابقه"
-        this.FaTexts["home12"] = "7 فروردین"
+        this.FaTexts["home12"] = "6 فروردین"
         this.FaTexts["home13"] = "داوری"
         this.FaTexts["home14"] = "21 فروردین"
         this.FaTexts["home15"] = "کارگاه ها"
