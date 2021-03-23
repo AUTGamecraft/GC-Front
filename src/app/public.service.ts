@@ -238,13 +238,7 @@ export class PublicService {
       }
     }).catch(e => {
       this.APICalls.Login = false;
-      if (e.status == 401) {
-        localStorage.removeItem("Authorization");
-        this.router.navigate(['login']);
-      }
-      else {
         that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      }
     });
     return ret;
   }
