@@ -110,7 +110,7 @@ export class PublicService {
     this.APICalls.UpdateImage = true;
     let h = new HttpHeaders();
     h = h.set('Authorization', 'Bearer ' + this.Authorization);
-    const req = new HttpRequest("PUT", this.ApiUrl + '/api/users/profile/update/', uploadData, { headers: h });
+    const req = new HttpRequest("PUT", this.ApiUrl + '/api/v1/users/profile/update/', uploadData, { headers: h });
     this.http2.request(req).
       toPromise().
       then((r) => {
@@ -133,7 +133,7 @@ export class PublicService {
       'Authorization': 'Bearer ' + this.Authorization
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/coupon/' + this.discount_code.trim() + '/', options)
+    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v1/coupon/' + this.discount_code.trim() + '/', options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
@@ -166,7 +166,7 @@ export class PublicService {
       'Content-Type': 'application/json'
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/users/sign_up/', body, options)
+    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/v1/users/sign_up/', body, options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
@@ -195,7 +195,7 @@ export class PublicService {
       'Content-Type': 'application/json'
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.put(this.ApiUrl + '/api/activation/reset-pass/'+token, body, options)
+    let ret: Promise<any> = this.http.put(this.ApiUrl + '/api/v1/activation/reset-pass/'+token, body, options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
@@ -222,7 +222,7 @@ export class PublicService {
       'Authorization': 'Bearer ' + this.Authorization
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/token/', body, options)
+    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/v1/token/', body, options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
@@ -254,7 +254,7 @@ export class PublicService {
       //'Authorization': 'Bearer ' + this.Authorization
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/users/reset_pass/', body, options)
+    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/v1/users/reset_pass/', body, options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
@@ -291,7 +291,7 @@ export class PublicService {
       'Content-Type': 'application/json'
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/talk/', options)
+    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v1/talk/', options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
@@ -313,7 +313,7 @@ export class PublicService {
       'Content-Type': 'application/json'
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/workshop/', options)
+    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v1/workshop/', options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
@@ -336,7 +336,7 @@ export class PublicService {
       'Authorization': 'Bearer ' + this.Authorization
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/users/available_list/', options)
+    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v1/users/available_list/', options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
@@ -362,7 +362,7 @@ export class PublicService {
       'Authorization': 'Bearer ' + this.Authorization
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/users/profile/', options)
+    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v1/users/profile/', options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
@@ -388,7 +388,7 @@ export class PublicService {
       'Content-Type': 'application/json'
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/activation/' + token, options)
+    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v1/activation/' + token, options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
@@ -418,7 +418,7 @@ export class PublicService {
       'Authorization': 'Bearer ' + this.Authorization
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/talk/' + this.talkPk + '/enroll/', body, options)
+    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/v1/talk/' + this.talkPk + '/enroll/', body, options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
@@ -448,7 +448,7 @@ export class PublicService {
       'Authorization': 'Bearer ' + this.Authorization
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/workshop/' + this.workshopPk + '/enroll/', body, options)
+    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/v1/workshop/' + this.workshopPk + '/enroll/', body, options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
@@ -475,7 +475,7 @@ export class PublicService {
       'Authorization': 'Bearer ' + this.Authorization
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/service/cart/', options)
+    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v1/service/cart/', options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
@@ -501,7 +501,7 @@ export class PublicService {
       'Authorization': 'Bearer ' + this.Authorization
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/service/dashboard/', options)
+    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v1/service/dashboard/', options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
@@ -527,7 +527,7 @@ export class PublicService {
       'Authorization': 'Bearer ' + this.Authorization
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.delete(this.ApiUrl + '/api/service/' + this.workshopPk + '/', options)
+    let ret: Promise<any> = this.http.delete(this.ApiUrl + '/api/v1/service/' + this.workshopPk + '/', options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
@@ -553,7 +553,7 @@ export class PublicService {
       'Authorization': 'Bearer ' + this.Authorization
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.delete(this.ApiUrl + '/api/service/' + this.talkPk + '/', options)
+    let ret: Promise<any> = this.http.delete(this.ApiUrl + '/api/v1/service/' + this.talkPk + '/', options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
@@ -578,7 +578,7 @@ export class PublicService {
       'Content-Type': 'application/json',
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/users/count/', options)
+    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v1/users/count/', options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
@@ -604,7 +604,7 @@ export class PublicService {
       'Authorization': 'Bearer ' + this.Authorization
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/service/payment/', body, options)
+    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/v1/service/payment/', body, options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
@@ -634,7 +634,7 @@ export class PublicService {
       'Authorization': 'Bearer ' + this.Authorization
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/team/create_team/', body, options)
+    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/v1/team/create_team/', body, options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
@@ -668,7 +668,7 @@ export class PublicService {
       'Authorization': 'Bearer ' + this.Authorization
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/team/' + pk + "/", options)
+    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v1/team/' + pk + "/", options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
@@ -693,7 +693,7 @@ export class PublicService {
       'Content-Type': 'application/json',
     });
     let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/team/join/' + tid + "/"+mid, options)
+    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v1/team/join/' + tid + "/"+mid, options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
