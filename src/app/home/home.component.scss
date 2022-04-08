@@ -399,6 +399,7 @@
     background-color: #474666;
     text-align: center;
     padding: 10px;
+    margin-top: 0px;
 }
 .developers {
     padding: 30px;
@@ -625,7 +626,7 @@
     // margin-top: 20px;
 }
 .right-button {
-    margin: 0 5% 0 0;
+    margin: 0 3% 0 0;
 }
 .left-button {
     margin: 0 0 0 5%;
@@ -1318,4 +1319,19 @@
     .ssc-image{
         margin: auto;
     }
+}
+
+
+
+.coming-soon-img {
+    background-image: url("/assets/images/coming_soon_poster.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+@media only screen and (max-width: 1100px) {
+    .coming-soon-poster {
+        padding-top: 75px;
+    }  
 }

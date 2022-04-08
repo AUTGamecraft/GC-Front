@@ -17,19 +17,19 @@ import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'dashboard-media', component: DashboardMediaComponent },
-  { path: 'signup', component: SignUpPageComponent },
-  { path: 'dashboard-event', component: DashboardEventComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'people', component: PeopleComponent },
-  { path: 'rules', component: RulesComponent },
-  { path: 'email-confirm', component: EmailConfirmComponent },
-  { path: 'dashboard-teams', component: DashboardTeamsComponent },
-  { path: 'confirm-confirm', component: ConfirmConfirmComponent },
-  { path: 'cart', component: CartComponent },
-  {path : 'forgot',component : ForgotComponent},
-  {path : 'newpassword',component : NewpasswordComponent}
+  // { path: 'dashboard-media', component: DashboardMediaComponent },
+  // { path: 'signup', component: SignUpPageComponent },
+  // { path: 'dashboard-event', component: DashboardEventComponent },
+  // { path: 'home', component: HomeComponent },
+  // { path: 'login', component: LoginComponent },
+  // { path: 'people', component: PeopleComponent },
+  // { path: 'rules', component: RulesComponent },
+  // { path: 'email-confirm', component: EmailConfirmComponent },
+  // { path: 'dashboard-teams', component: DashboardTeamsComponent },
+  // { path: 'confirm-confirm', component: ConfirmConfirmComponent },
+  // { path: 'cart', component: CartComponent },
+  // {path : 'forgot',component : ForgotComponent},
+  // {path : 'newpassword',component : NewpasswordComponent}
 ];
 
 
