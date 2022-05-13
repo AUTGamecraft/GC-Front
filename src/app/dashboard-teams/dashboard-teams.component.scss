@@ -284,10 +284,12 @@
     margin: 20px;
 }
 .supporters-card-image {
-    height: 250px;
+    height: 150px;
     width: 250px;
+    margin: 0px 20px 10px 20px;
     border-radius: 0%;
     object-fit: contain;
+    object-position: bottom;
 }
 .developers-image {
     display: flex;

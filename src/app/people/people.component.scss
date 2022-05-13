@@ -254,6 +254,8 @@
     text-align: center;
     display: flex;
     justify-content: center;
+    padding: 20px;
+
 }
 .mat-focus-indicator.normal-button.mat-button.mat-button-base.mat-button-disabled {
     color: white;
@@ -264,8 +266,10 @@
 .supporters-card-image {
     height: 250px;
     width: 250px;
+    margin: 0px 20px 10px 20px;
     border-radius: 0%;
     object-fit: contain;
+    object-position: bottom;
 }
 .supportes-card-name {
     font-family: "Estedad-Bold";
