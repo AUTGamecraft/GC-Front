@@ -1,0 +1,192 @@
+[
+    {
+        "name": "تیم برگزاری",
+        "peoples": [
+            {
+                "name": "احمد فروغی",
+                "role": "دبیر رویداد",
+                "img":"Ahmad.png"
+            },
+            {
+                "name": "مینا بیکی",
+                "role": "دبیر رویداد",
+                "img":"MinaBeiki.JPG"
+            },
+            {
+                "name": "سروناز سروقد",
+                "role": "دبیر انجمن",
+                "img":"Sarvnaz.jpg"
+            }
+        ]
+    },
+    {
+        "name": "تیم فنی",
+        "peoples": [
+            {
+                "name": "علی نوروزی",
+                "role": "سرپرست تیم فنی، توسعه‌دهنده بک‌اند",
+                "img":"AliNowrouzi.jpg"
+            },
+            {
+                "name": "اشکان شکیبا",
+                "role": "توسعه‌دهنده فرانت‌اند",
+                "img":"default_prof.jpg"
+            }
+        ]
+    },
+    {
+        "name": "تیم هنری",
+        "peoples": [
+            {
+                "name": "روژینا آزادی",
+                "role": "سرپرست تیم هنری",
+                "img":"default_prof.jpg"
+            },
+            {
+                "name": "فاطمه کمانکش",
+                "role": "عضو تیم هنری",
+                "img":"FatemeKamankesh.jpg"
+            },
+            {
+                "name": "یگانه رجبی",
+                "role": "عضو تیم هنری",
+                "img":"YeganeRajabi.jpg"
+            },
+            {
+                "name": "فاطمه رحمانی",
+                "role": "عضو تیم هنری",
+                "img":"default_prof.jpg"
+            },
+            {
+                "name": "نگین دهقان",
+                "role": "عضو تیم هنری",
+                "img":"NeginDehghan.jpg"
+            },
+            {
+                "name": "شقایق امجدی",
+                "role": "عضو تیم هنری",
+                "img":"ShaghayeghAmjadi.jpg"
+            }
+        ]
+    },
+    {
+        "name": "تیم علمی",
+        "peoples": [
+            {
+                "name": "مهلا شریفی",
+                "role": "سرپرست تیم علمی",
+                "img":"default_prof.jpg"
+            },
+            {
+                "name": "امیر بینش",
+                "role": "سرپرست تیم علمی",
+                "img":"default_prof.jpg"
+            },
+            {
+                "name": "بردیا اردکانیان",
+                "role": "عضو تیم علمی",
+                "img":"BardiaArdakanian.JPG"
+            },
+            {
+                "name": "محمود صانعیان",
+                "role": "عضو تیم علمی",
+                "img":"default_prof.jpg"
+            },
+            {
+                "name": "حنانه منتظر",
+                "role": "عضو تیم علمی",
+                "img":"default_prof.jpg"
+            },
+            {
+                "name": "مریم کرمانشاهانی",
+                "role": "عضو تیم علمی",
+                "img":"MaryamKermanshahani.JPG"
+            },
+            {
+                "name": "زهرا قندی",
+                "role": "عضو تیم علمی",
+                "img":"default_prof.jpg"
+            },
+            {
+                "name": "حاج آرمین گودرزی",
+                "role": "عضو تیم علمی",
+                "img":"HaajArmin.JPG"
+            },
+            {
+                "name": "اشکان شکیبا",
+                "role": "عضو تیم علمی",
+                "img":"default_prof.jpg"
+            }
+        ]
+    },
+    {
+        "name": "تیم مارکتینگ",
+        "peoples": [
+            {
+                "name": "امیر بینش",
+                "role": "سرپرست تیم مارکتینگ",
+                "img":"default_prof.jpg"
+            },
+            {
+                "name": "سروناز سروقد",
+                "role": "عضو تیم مارکتینگ",
+                "img":"Sarvnaz.jpg"
+            },
+            {
+                "name": "چمران معینی",
+                "role": "عضو تیم مارکتینگ",
+                "img":"default_prof.jpg"
+            },
+            {
+                "name": "سید امید محکم‌کار",
+                "role": "عضو تیم مارکتینگ",
+                "img":"default_prof.jpg"
+            },
+            {
+                "name": "عرفانه خان‌محمدی",
+                "role": "عضو تیم مارکتینگ",
+                "img":"default_prof.jpg"
+            },
+            {
+                "name": "امیرفاضل کوزه گر کالجی",
+                "role": "عضو تیم مارکتینگ",
+                "img":"default_prof.jpg"
+            },
+            {
+                "name": "روژینا کاشفی",
+                "role": "عضو تیم مارکتینگ",
+                "img":"default_prof.jpg"
+            },
+            {
+                "name": "مهران غفاریان",
+                "role": "عضو تیم مارکتینگ",
+                "img":"mehranGhafarian.jpg"
+            }
+        ]
+    },
+    {
+        "name": "تیم اجرایی",
+        "peoples": [
+            {
+                "name": "آرمین جلالی",
+                "role": "سرپرست تیم اجرایی",
+                "img":"default_prof.jpg"
+            },
+            {
+                "name": "امیر بیژه",
+                "role": "عضو تیم اجرایی",
+                "img":"default_prof.jpg"
+            },
+            {
+                "name": "سمانه یاری",
+                "role": "عضو تیم اجرایی",
+                "img":"default_prof.jpg"
+            },
+            {
+                "name": "مهران مهابادی",
+                "role": "عضو تیم اجرایی",
+                "img":"default_prof.jpg"
+            }
+        ]
+    }
+]

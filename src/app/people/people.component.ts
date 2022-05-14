@@ -3,6 +3,10 @@ import { PublicService } from '../public.service';
 import { Router, NavigationEnd } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ErrorDialogComponent } from '../error-dialog/error-dialog.component'
+
+declare var require: any;
+var people_info: any = require('../../assets/people.json');
+
 @Component({
   selector: 'app-people',
   templateUrl: './people.component.html',
@@ -10,6 +14,7 @@ import { ErrorDialogComponent } from '../error-dialog/error-dialog.component'
 })
 export class PeopleComponent implements OnInit {
   userName: string = '';
+  peoples: any = []
   constructor(public publicservice: PublicService, public router: Router, public snackbar: MatSnackBar) {
     // router.events.subscribe(s => {
     //   if (s instanceof NavigationEnd) {
@@ -25,6 +30,8 @@ export class PeopleComponent implements OnInit {
         this.userName = r.data.first_name;
       })
     }
+    console.log(people_info)
+    this.peoples = people_info
   }
 
   ngOnInit(): void {
@@ -89,6 +96,9 @@ export class PeopleComponent implements OnInit {
   }
   Footer(el: HTMLElement) {
     el.scrollIntoView({ behavior: "smooth" });
+  }
+  GetPeoples() {
+    return this.peoples
   }
 
 }
