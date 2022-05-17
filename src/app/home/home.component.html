@@ -528,6 +528,28 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="collapse-presenters-title-div">
+                                        <h1 class="collapse-persenters-title">
+                                            {{publicservice.Texts.Texts["home63"]}}
+                                        </h1>
+                                    </div>
+                                    <div
+                                        style="display: flex;justify-content: center;flex-wrap: wrap;grid-auto-rows: auto;">
+                                        <div class="presenter-card">
+                                            <div class="assistant-card-inside"
+                                                *ngFor="let assistant of workshop.assistants;">
+                                                <div>
+                                                    <img class="presenter-image" src="{{assistant.profile}}">
+                                                    <div style="text-align: center;">
+                                                        <h2 class="presenter-name">
+                                                        {{assistant.first_name}} {{assistant.last_name}}
+                                                        </h2>
+                                                        <h4 class="presenter-about">{{assistant.role}} </h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -614,6 +636,30 @@
                                                         </a>
                                                     </div> -->
                                                     <h4 class="presenter-about">{{presenter.descriptions}} </h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="collapse-presenters-title-div">
+                                        <h1 class="collapse-persenters-title">
+                                            {{publicservice.Texts.Texts["home63"]}}
+                                        </h1>
+                                    </div>
+                                    <div
+                                        style="display: flex;justify-content: center;flex-wrap: wrap;grid-auto-rows: auto;">
+                                        <div class="presenter-card">
+                                            <div class="assistant-card-inside"
+                                                *ngFor="let assistant of workshop.assistants;let j = index">
+                                                <div>
+                                                    <img class="presenter-image" src="{{assistant.profile}}">
+                                                    <div style="text-align: center;">
+                                                        <h2 class="presenter-name">
+                                                            {{assistant.first_name}} {{assistant.last_name}}
+                                                        </h2>
+                                                        <h4 class="presenter-about">{{assistant.role}} </h4>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

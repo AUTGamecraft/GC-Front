@@ -21,8 +21,8 @@ export class PublicService {
   public APICalls: any = {};
   public Authorization: string = "";
   public User: any = {};
-  public ApiUrl: String = "https://gamecraft.ce.aut.ac.ir";
-  // public ApiUrl: String = "http://127.0.0.1:8000";
+  // public ApiUrl: String = "https://gamecraft.ce.aut.ac.ir";
+  public ApiUrl: String = "http://127.0.0.1:8000";
   public Email: String = "";
   public PhoneNumber: String = "";
   public Password: String = "";
