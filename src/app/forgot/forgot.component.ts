@@ -4,6 +4,7 @@ import { PublicService } from '../public.service';
 import { FormControl, Validators } from '@angular/forms';
 import { ErrorDialogComponent } from '../error-dialog/error-dialog.component';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { SuccessDialogComponent } from '../../app/success-dialog/success-dialog.component';
 
 @Component({
   selector: 'app-forgot',
@@ -43,7 +44,9 @@ export class ForgotComponent implements OnInit {
        this.publicservice.sendmail().then(r => {
          if (r.error == null) {
            console.log(r);
-           //this.router.navigate(['home'])
+           console.log("email was sent")
+           this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'ایمیل تغییر گذرواژه با موفقیت ارسال شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+           this.router.navigate(['login']);
          }
        })
     }
