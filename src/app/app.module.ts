@@ -4,7 +4,7 @@ import {MatInputModule} from '@angular/material/input';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule , ReactiveFormsModule} from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material/button';
@@ -36,6 +36,7 @@ import { SuccessDialogComponent } from './success-dialog/success-dialog.componen
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ForgotComponent } from './forgot/forgot.component';
 import { NewpasswordComponent } from './newpassword/newpassword.component';
+import { GamesComponent } from './games/games.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { NewpasswordComponent } from './newpassword/newpassword.component';
     CartComponent,
     SuccessDialogComponent,
     ForgotComponent,
-    NewpasswordComponent,  
+    NewpasswordComponent,
+    GamesComponent
   ],
   imports: [
     BrowserModule,

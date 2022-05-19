@@ -1,19 +1,15 @@
-import { Injectable } from '@angular/core';
+import {Injectable, NgZone} from '@angular/core';
 // import { User, Car, Service } from './models/Models'
-import { Texts } from './models/Texts';
-import { Http, HttpModule, Headers, RequestOptions, Response } from '@angular/http';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import {Texts} from './models/Texts';
+import {Headers, Http, RequestOptions, Response} from '@angular/http';
+import {MatDialog} from '@angular/material/dialog';
 // import { AppDialogComponentDialog } from './app-dialog/app-dialog.component';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { ErrorDialogComponent } from '../app/error-dialog/error-dialog.component'
-import { formatCurrency, HashLocationStrategy } from '@angular/common';
-import { HttpClient, HttpHeaders, HttpRequest } from '@angular/common/http';
-import { coerceStringArray } from '@angular/cdk/coercion';
-import { SuccessDialogComponent } from '../app/success-dialog/success-dialog.component';
-import { NavigationEnd, Router } from '@angular/router';
-import { computeDecimalDigest } from '@angular/compiler/src/i18n/digest';
-import { BoundElementProperty } from '@angular/compiler';
-import { NgZone } from '@angular/core';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import {ErrorDialogComponent} from '../app/error-dialog/error-dialog.component'
+import {HttpClient, HttpHeaders, HttpRequest} from '@angular/common/http';
+import {SuccessDialogComponent} from '../app/success-dialog/success-dialog.component';
+import {Router} from '@angular/router';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -40,7 +36,7 @@ export class PublicService {
   public discount_code: string = "";
   public newPassword: String = "";
   public newPassword2: String = "";
-  
+
   Mockup() {
 
 
@@ -247,7 +243,7 @@ export class PublicService {
    // this.APICalls.Login = true;
     let body = JSON.stringify({
       "email": this.Email.toLowerCase(),
-      
+
     });
     let headers = new Headers({
       'Content-Type': 'application/json',
@@ -380,6 +376,66 @@ export class PublicService {
       }
     });
     return ret;
+  }
+  getGames(): any {
+    return [
+      {
+        "title": "poster",
+        "poster": "http://gamecraft.ce.aut.ac.ir/staticfiles/web/media/shit.jpg",
+        "description": "here's third desc",
+        "game_link": "google.com",
+        "creator": {
+          "first_name": "alinowrouzi",
+          "about": "",
+          "email": "alinowrouzii@gmail.com",
+          "profile": "http://gamecraft.ce.aut.ac.ir/staticfiles/web/media/AliNowrouzi.jpg"
+        },
+        "other_creators": [
+          {
+            "first_name": "alinowrouzi",
+            "about": "",
+            "email": "alinowrouzii@gmail.com",
+            "profile": "http://gamecraft.ce.aut.ac.ir/staticfiles/web/media/AliNowrouzi.jpg"
+          },
+          {
+            "first_name": "Admin",
+            "about": "",
+            "email": "admin@admin.com",
+            "profile": "http://gamecraft.ce.aut.ac.ir/staticfiles/web/media/default/avatar-3.png"
+          }
+        ],
+        "is_verified": true,
+        "timestamp": "2022-04-27T13:46:17.963450+04:30"
+      },
+      {
+        "title": "poster",
+        "poster": "http://gamecraft.ce.aut.ac.ir/staticfiles/web/media/shit_rF5p1p7.jpg",
+        "description": "here's third desc",
+        "game_link": "google.com",
+        "creator": {
+          "first_name": "alinowrouzi",
+          "about": "",
+          "email": "alinowrouzii@gmail.com",
+          "profile": "http://gamecraft.ce.aut.ac.ir/staticfiles/web/media/AliNowrouzi.jpg"
+        },
+        "other_creators": [
+          {
+            "first_name": "alinowrouzi",
+            "about": "",
+            "email": "alinowrouzii@gmail.com",
+            "profile": "http://gamecraft.ce.aut.ac.ir/staticfiles/web/media/AliNowrouzi.jpg"
+          },
+          {
+            "first_name": "Admin",
+            "about": "",
+            "email": "admin@admin.com",
+            "profile": "http://gamecraft.ce.aut.ac.ir/staticfiles/web/media/default/avatar-3.png"
+          }
+        ],
+        "is_verified": true,
+        "timestamp": "2022-04-27T13:46:30.426623+04:30"
+      }
+    ]
   }
   ActivateUser(token: string): Promise<any> {
     var that = this;

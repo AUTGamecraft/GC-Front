@@ -14,6 +14,7 @@ import { NewpasswordComponent } from './newpassword/newpassword.component';
 import { PeopleComponent } from './people/people.component';
 import { RulesComponent } from './rules/rules.component';
 import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
+import {GamesComponent} from "./games/games.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -29,7 +30,8 @@ const routes: Routes = [
   { path: 'confirm-confirm', component: ConfirmConfirmComponent },
   { path: 'cart', component: CartComponent },
   {path : 'forgot',component : ForgotComponent},
-  {path : 'newpassword',component : NewpasswordComponent}
+  {path : 'newpassword',component : NewpasswordComponent},
+  { path: 'games', component: GamesComponent },
 ];
 
 
