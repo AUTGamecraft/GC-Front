@@ -1,0 +1,30 @@
+h1 {
+  font-size: 50px;
+  word-break: break-all;
+}
+
+.row > .column {
+  padding: 8px;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+.content {
+  background-color: white;
+  padding: 10px;
+}
+
+@media screen and (max-width: 900px) {
+  .column {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}

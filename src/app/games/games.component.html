@@ -2,5 +2,7 @@
   <h1>بازی‌ها</h1>
   <h2>بازی‌های ارائه شده در رویداد بازی‌سازی امیرکبیر</h2>
 
-  <app-game *ngFor="let game of games" [game]="game"></app-game>
+  <div class="row">
+    <app-game *ngFor="let game of games" [game]="game"></app-game>
+  </div>
 </div>
