@@ -37,6 +37,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ForgotComponent } from './forgot/forgot.component';
 import { NewpasswordComponent } from './newpassword/newpassword.component';
 import { GamesComponent } from './games/games.component';
+import { GameComponent } from './game/game.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { GamesComponent } from './games/games.component';
     SuccessDialogComponent,
     ForgotComponent,
     NewpasswordComponent,
-    GamesComponent
+    GamesComponent,
+    GameComponent
   ],
   imports: [
     BrowserModule,
