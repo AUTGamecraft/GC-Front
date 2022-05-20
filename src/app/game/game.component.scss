@@ -1,6 +1,9 @@
-h1 {
-  font-size: 50px;
-  word-break: break-all;
+* {
+  text-decoration: none;
+}
+
+h3, h5, p {
+  color: #e8e7ff;
 }
 
 .row > .column {
@@ -13,7 +16,10 @@ h1 {
 }
 
 .content {
+  margin: 5px;
   padding: 10px;
+  border-radius: 5px;
+  background-color: #63619B;
 }
 
 @media screen and (max-width: 900px) {
