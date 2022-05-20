@@ -1,22 +1,20 @@
 * {
   color: #e8e7ff;
-  background-color: #34334b;
   box-sizing: border-box;
   font-family: "Estedad-Black", sans-serif;
 }
 
 .body {
   width: 100%;
-  background-color: #34334b;
   padding: 20px;
 }
 
 .main {
-  //max-width: 1000px;
   margin: auto 50px;
 }
 
 h1 {
+  margin-top: 100px;
   font-size: 50px;
   word-break: break-all;
 }
@@ -33,4 +31,514 @@ h2, h1 {
   content: "";
   display: table;
   clear: both;
+}
+
+.whole-header {
+  direction: rtl;
+  padding: 10px 10px 10px 10px;
+  justify-content: space-between;
+  display: flex;
+  box-shadow: none !important;
+}
+.header {
+  position: fixed;
+  width: 100%;
+  background-color: #34334B;
+  z-index: 100;
+}
+.no-shadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) !important;
+}
+.big-right-header {
+  display: flex;
+}
+.title-div {
+  margin-right: 50px;
+}
+.title {
+  font-family: "Estedad-Black";
+  color: #636198;
+}
+.header-line {
+  width: 0;
+  height: 48px;
+  margin: 20px 40px 5px 0;
+  border: solid 1.5px #636198 !important;
+  background-color: #636198;
+  border-radius: 20px;
+}
+.right-header {
+  display: flex;
+  margin-right: 50px;
+  // margin-top: 20px;
+}
+.right-button {
+  margin: 0 5% 0 0;
+}
+.normal-button {
+  font-family: "Estedad-Bold";
+  font-size: large;
+  color: white;
+  padding: 9px 9px 9px 9px;
+  border-radius: 24px;
+  background-color: rgba(255, 255, 255, 0);
+}
+.left-header {
+  display: flex;
+  margin-left: 50px;
+  // margin-top: 20px;
+}
+.left-header-line {
+  width: 0;
+  height: 48px;
+  margin-left: 15px;
+  border: solid 1.5px #636198 !important;
+  background-color: #636198;
+  border-radius: 20px;
+}
+.before-login {
+  display: flex;
+}
+.left-button {
+  margin: 0 0 0 5%;
+}
+.green-button {
+  font-family: "Estedad-Bold";
+  color: #34334B;
+  background-color: #6af9c5;
+  border-radius: 24px;
+  padding: 11px 16px;
+  font-size: large;
+}
+.after-login {
+  display: flex;
+}
+.people {
+  overflow: hidden;
+  background-color: #34334B;
+  // padding-bottom: 100px;
+  height: fit-content;
+}
+.introduction-div {
+  background-image: url("/assets/svg/pattern.svg");
+  padding: 60px 70px 60px 70px;
+  height: fit-content;
+  padding-top: 10%;
+}
+.white-part {
+  background-color: #fafafa;
+  border-radius: 16px;
+  height: fit-content;
+  padding: 0.5px;
+  margin-bottom: 15%;
+  padding-bottom: 70px;
+}
+.people-title {
+  font-family: "Estedad-Black";
+  color: #34334B;
+  text-align: center;
+  font-size: 36px;
+}
+.people-subtitle {
+  font-family: "Estedad-Bold";
+  color: #00b583;
+  text-align: center;
+  font-size: 28px;
+}
+.collapse-presenters-card-div {
+  display: flex;
+  flex-wrap: wrap;
+  grid-auto-rows: auto;
+  align-items: center;
+  padding-right: 70px;
+  padding-left: 70px;
+  padding-bottom: 20px;
+  justify-content:center;
+  direction: rtl;
+}
+.ssc-image{
+  padding: 10px 30px;
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}
+.collapse-presenters-card {
+  flex: 0 0 30%;
+  direction: rtl;
+  text-align: center;
+  background-color: white;
+  border-radius: 24px;
+  border: solid 2px #f5f5f5;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 10px;
+}
+.collapse-presenters-image {
+  height: 140px;
+  width: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  padding: 20px;
+}
+.collapse-presenters-name {
+  font-family: "Estedad-Black";
+  color: #34334B;
+  margin-bottom: 0;
+  font-size: medium;
+}
+.collapse-presenters-discription {
+  font-family: "Estedad-Regular";
+  color: #636198;
+  margin-top: 0;
+}
+#people-button {
+  border-radius: 24px;
+  border: solid 2px #63DAA4 !important;
+}
+.footer-whole-div {
+  margin-top: -15%;
+}
+.purple-wave-above-footer {
+  // background-image: url("/assets/svg/wave-purple.svg");
+  // background-repeat: no-repeat;
+  // background-size: 100% 100%;
+  transform: scaleY(-1);
+  width: 100%;
+  // margin-top: 10%;
+  // height: 210px;
+  // position: relative;
+  // z-index: 1;
+  // margin-top: -60px;
+}
+.footer-div {
+  background-color: #34334B;
+  padding-top: 10px;
+  margin-top: -10px;
+}
+.discription-footer-div {
+  direction: rtl;
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 50px;
+}
+.discription-right-footer-div {
+  width: 50%;
+  margin-right: 10%;
+  position: relative;
+  direction: rtl;
+}
+.discription-right-footer-about-div {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: transparent;
+  z-index: 1;
+}
+.discription-right-footer-about-title {
+  font-family: "Estedad-Black";
+  font-size: xxx-large;
+  color: white;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.discription-right-footer-about-subtitle {
+  font-family: "Estedad-Bold";
+  color: white;
+  font-size: xx-large;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.discription-right-footer-about-discription {
+  font-family: "Estedad-Regular";
+  color: white;
+  font-size: large;
+  margin-top: 0;
+}
+.discription-right-footer-bubble {
+  position: absolute;
+  background-image: url("/assets/svg/bubble-purple.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  transform: scaleX(-1);
+  z-index: 0;
+}
+.footer-image-div {
+  padding-top: 3%;
+  padding-right: 10%;
+  margin-left: 10%;
+}
+.footer-image {
+  height: 320px;
+  width: 360px;
+  object-fit: contain;
+  border-radius: 36px;
+}
+.supporters-title {
+  font-family: "Estedad-Black";
+  font-size: xxx-large;
+  color: white;
+  text-align: center;
+  margin-bottom: 0;
+}
+.supporters-card-div {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+
+}
+.mat-focus-indicator.normal-button.mat-button.mat-button-base.mat-button-disabled {
+  color: white;
+}
+.supportes-card-image-div {
+  margin: 20px;
+}
+.supporters-card-image {
+  height: 250px;
+  width: 250px;
+  margin: 0px 20px 10px 20px;
+  border-radius: 0%;
+  object-fit: contain;
+  object-position: bottom;
+}
+.supportes-card-name {
+  font-family: "Estedad-Bold";
+  color: white;
+  font-size: large;
+}
+.developers-div {
+  background-color: #474666;
+  text-align: center;
+  padding: 10px;
+}
+.developers-image {
+  display: flex;
+  justify-content: center;
+}
+.developers {
+  padding: 30px;
+  direction: rtl;
+  color: white;
+  margin: 0;
+  font-family: "Estedad-SemiBold";
+}
+.supporters-div{
+  padding-top: 10%;
+}
+//start of logo
+.logo {
+  // padding-top: 20px;
+  justify-content: center;
+  display: flex;
+  direction: rtl;
+  cursor: pointer;
+}
+.logo-image {
+  width: 100.8px;
+  z-index: 1;
+  cursor: pointer;
+}
+.logo-text {
+  font-family: "Estedad-Black";
+  color: #636198;
+  font-size: 24px;
+  z-index: 0;
+}
+//end of logo
+.whole-header-phone {
+  display: none;
+}
+.people-secondry {
+  display: flex;
+}
+// @media only screen and (max-width:1085px){
+//     .people-secondry{
+//     }
+// }
+.footer-image-div-phone {
+  display: none;
+}
+
+@media only screen and (max-width: 1192px) {
+  .footer-image-div-phone {
+    padding-top: 30px;
+    display: initial;
+    width: 100%;
+    box-sizing: border-box;
+    margin: auto;
+    text-align: center;
+  }
+  .footer-image {
+    max-width: 100%;
+    height: auto;
+  }
+  .supporters-card-div {
+    flex-direction: column;
+  }
+  .whole-header {
+    display: none;
+  }
+  .introduction-div {
+    padding: 24px;
+    padding-top: 20%;
+  }
+  // .footer-whole-div{
+  //     // margin-top: -20%;
+  // }
+  .discription-footer-div {
+    flex-direction: column;
+    justify-content: initial;
+    justify-content: center;
+  }
+  .footer-image {
+    width: 360px;
+    height: 320px;
+  }
+  .discription-right-footer-div {
+    padding: 38%;
+    margin: 0 auto;
+    margin-bottom: 70%;
+    padding-right: 36px;
+    padding-left: 36px;
+  }
+  .footer-image-div{
+    display: none;
+  }
+  .discription-right-footer-about-div {
+    text-align: center;
+    float: none;
+  }
+  .discription-right-footer-about-title {
+    font-size: 40px;
+  }
+  .discription-right-footer-about-subtitle {
+    font-size: 28px;
+  }
+  .discription-right-footer-about-discription {
+    font-size: 20px;
+  }
+  .whole-header-phone {
+    display: initial;
+    display: flex;
+    direction: rtl;
+    justify-content: space-between;
+    padding: 15px;
+  }
+  .logo {
+    padding: 0;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .introduction-div {
+    padding-top: 30%;
+  }
+}
+
+@media only screen and (max-width : 900px){
+  .example-sidenav-container {
+    /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+       causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+    //margin-top: px;
+    position: fixed;
+    flex: 1;
+    width: 100%;
+    height: 30px;
+    //display: none;
+    //overflow: auto;
+    //overscroll-behavior:unset;
+    //overscroll-behavior-block:initial;
+
+
+
+  }
+}
+
+.side-route{
+  width: 100%;
+  background-color: #34334B;
+
+  overflow:hidden;
+
+}
+.side-button{
+
+  margin-left: 70%;
+  margin-right: 30%;
+  direction: rtl;
+  // border: solid 2px var(--primary-light);
+  // border-radius: 24px;
+
+}
+.side-divider{
+  width: 99%;
+  height: 0.5px;
+  //margin: 20px 0 0;
+  border: solid 1px ;
+  border-color:#636198 ;
+  background-color: #636198;
+
+  //border-color: #636198 !important;
+}
+.supporters-card-image{
+  max-width: 100%;
+  height: auto;
+}
+//    .mat-divider{
+//     width: 100%;
+//     height: 0;
+//     margin: 20px 0 0;
+//     border: solid 2px var(--primary-light);
+
+//     border-top-color: #636198;
+
+//   }
+
+.side-button-1{
+
+  // margin-left: 70%;
+  margin-right: 30%;
+  direction: rtl;
+  // display: flex;
+  // justify-content: center;
+  // border: solid 2px var(--primary-light);
+  // border-radius: 24px;
+
+}
+.normal-button-1 {
+  font-family: "Estedad-Bold";
+  color: #34334B;
+  background-color: #6af9c5;
+  border-radius: 20px;
+
+  padding: 8px 8px 4px 4px;
+  font-size: large;
+  margin-right: 30%;
+
+
+
+}
+@media only screen and (max-width: 375px) {
+  .developers-image {
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .ssc-image{
+    margin: auto;
+  }
+}
+@media only screen and (max-width: 588px) {
+  .supporters-div {
+    margin-top: 100%;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .supporters-div {
+    margin-top: 1000px;
+  }
 }
