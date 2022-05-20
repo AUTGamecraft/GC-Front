@@ -155,8 +155,9 @@
                             {{publicservice.Texts.Texts["home1"]}}</h1>
                         <p class="intro-discription-about-subtitle">
                             {{publicservice.Texts.Texts["home2"]}}</p>
-                        <p class="intro-discription-about-discription">
-                            {{publicservice.Texts.Texts["home3"]}}</p>
+                        <p class="intro-discription-about-discription" [innerHTML]="publicservice.Texts.Texts['home3']">
+                            <!-- {{publicservice.Texts.Texts["home3"]|safe}} -->
+                        </p>
                     </div>
                     <div class="intro-discription-bubble">
                     </div>
