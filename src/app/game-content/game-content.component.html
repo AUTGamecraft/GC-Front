@@ -3,12 +3,14 @@
   <div style="text-align: center">
     <img src="{{data.poster}}" alt="Game Poster" class="poster">
   </div>
-  <h2>{{data.title}}</h2>
-  <h3>{{data.team}}</h3>
+  <h2 style="font-family: 'Estedad-Regular', sans-serif;">{{data.title}}</h2>
+  <h3 style="font-family: 'Estedad-Regular', sans-serif;">{{data.team}}</h3>
   <p>{{data.description}}</p>
 
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close>Cancel</button>
-  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
+  <button mat-button mat-dialog-close class="button">بازگشت</button>
+  <a href="{{data.link}}" class="link">
+    <button mat-button [mat-dialog-close]="true" class="button" cdkFocusInitial>دریافت</button>
+  </a>
 </mat-dialog-actions>

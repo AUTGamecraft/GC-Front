@@ -1,3 +1,22 @@
 .title, .content {
+  color: #E8E7FF;
   text-align: right;
+  font-family: "Estedad-Regular", sans-serif;
 }
+
+.title {
+  font-weight: bold;
+}
+
+.content {
+
+  .link {
+    text-decoration: none;
+  }
+}
+
+.button {
+  color: #E8E7FF;
+  font-family: "Estedad-Regular", sans-serif;
+}
+
