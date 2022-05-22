@@ -448,19 +448,19 @@ export class PublicService {
         "team": "گیم‌کرفت",
         "creators": [
           {
-            "first_name": "علی نوروزی",
+            "name": "علی نوروزی",
             "about": "خفن و کاربلد",
             "email": "alinowrouzii@gmail.com",
             "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AliNowrouzi.jpg"
           },
           {
-            "first_name": "اشکان شکیبا",
+            "name": "اشکان شکیبا",
             "about": "نوب سگ",
             "email": "AshkanShakiba11@gmail.com",
             "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AshkanShakiba.jpg"
           },
           {
-            "first_name": "سروناز سروقد",
+            "name": "سروناز سروقد",
             "about": "مهربون و دوست‌داشتنی",
             "email": "sarvghad79@gmail.com",
             "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/Sarvnaz.jpg"
@@ -480,19 +480,19 @@ export class PublicService {
         "team": "گیم‌کرفت",
         "creators": [
           {
-            "first_name": "علی نوروزی",
+            "name": "علی نوروزی",
             "about": "خفن و کاربلد",
             "email": "alinowrouzii@gmail.com",
             "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AliNowrouzi.jpg"
           },
           {
-            "first_name": "اشکان شکیبا",
+            "name": "اشکان شکیبا",
             "about": "نوب سگ",
             "email": "AshkanShakiba11@gmail.com",
             "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AshkanShakiba.jpg"
           },
           {
-            "first_name": "سروناز سروقد",
+            "name": "سروناز سروقد",
             "about": "مهربون و دوست‌داشتنی",
             "email": "sarvghad79@gmail.com",
             "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/Sarvnaz.jpg"
@@ -512,19 +512,19 @@ export class PublicService {
         "team": "گیم‌کرفت",
         "creators": [
           {
-            "first_name": "علی نوروزی",
+            "name": "علی نوروزی",
             "about": "خفن و کاربلد",
             "email": "alinowrouzii@gmail.com",
             "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AliNowrouzi.jpg"
           },
           {
-            "first_name": "اشکان شکیبا",
+            "name": "اشکان شکیبا",
             "about": "نوب سگ",
             "email": "AshkanShakiba11@gmail.com",
             "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AshkanShakiba.jpg"
           },
           {
-            "first_name": "سروناز سروقد",
+            "name": "سروناز سروقد",
             "about": "مهربون و دوست‌داشتنی",
             "email": "sarvghad79@gmail.com",
             "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/Sarvnaz.jpg"
@@ -544,19 +544,19 @@ export class PublicService {
         "team": "گیم‌کرفت",
         "creators": [
           {
-            "first_name": "علی نوروزی",
+            "name": "علی نوروزی",
             "about": "خفن و کاربلد",
             "email": "alinowrouzii@gmail.com",
             "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AliNowrouzi.jpg"
           },
           {
-            "first_name": "اشکان شکیبا",
+            "name": "اشکان شکیبا",
             "about": "نوب سگ",
             "email": "AshkanShakiba11@gmail.com",
             "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AshkanShakiba.jpg"
           },
           {
-            "first_name": "سروناز سروقد",
+            "name": "سروناز سروقد",
             "about": "مهربون و دوست‌داشتنی",
             "email": "sarvghad79@gmail.com",
             "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/Sarvnaz.jpg"
@@ -576,19 +576,19 @@ export class PublicService {
         "team": "گیم‌کرفت",
         "creators": [
           {
-            "first_name": "علی نوروزی",
+            "name": "علی نوروزی",
             "about": "خفن و کاربلد",
             "email": "alinowrouzii@gmail.com",
             "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AliNowrouzi.jpg"
           },
           {
-            "first_name": "اشکان شکیبا",
+            "name": "اشکان شکیبا",
             "about": "نوب سگ",
             "email": "AshkanShakiba11@gmail.com",
             "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AshkanShakiba.jpg"
           },
           {
-            "first_name": "سروناز سروقد",
+            "name": "سروناز سروقد",
             "about": "مهربون و دوست‌داشتنی",
             "email": "sarvghad79@gmail.com",
             "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/Sarvnaz.jpg"
@@ -608,19 +608,19 @@ export class PublicService {
         "team": "گیم‌کرفت",
         "creators": [
           {
-            "first_name": "علی نوروزی",
+            "name": "علی نوروزی",
             "about": "خفن و کاربلد",
             "email": "alinowrouzii@gmail.com",
             "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AliNowrouzi.jpg"
           },
           {
-            "first_name": "اشکان شکیبا",
+            "name": "اشکان شکیبا",
             "about": "نوب سگ",
             "email": "AshkanShakiba11@gmail.com",
             "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AshkanShakiba.jpg"
           },
           {
-            "first_name": "سروناز سروقد",
+            "name": "سروناز سروقد",
             "about": "مهربون و دوست‌داشتنی",
             "email": "sarvghad79@gmail.com",
             "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/Sarvnaz.jpg"
@@ -640,19 +640,19 @@ export class PublicService {
         "team": "گیم‌کرفت",
         "creators": [
           {
-            "first_name": "علی نوروزی",
+            "name": "علی نوروزی",
             "about": "خفن و کاربلد",
             "email": "alinowrouzii@gmail.com",
             "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AliNowrouzi.jpg"
           },
           {
-            "first_name": "اشکان شکیبا",
+            "name": "اشکان شکیبا",
             "about": "نوب سگ",
             "email": "AshkanShakiba11@gmail.com",
             "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AshkanShakiba.jpg"
           },
           {
-            "first_name": "سروناز سروقد",
+            "name": "سروناز سروقد",
             "about": "مهربون و دوست‌داشتنی",
             "email": "sarvghad79@gmail.com",
             "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/Sarvnaz.jpg"

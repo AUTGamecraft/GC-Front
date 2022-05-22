@@ -39,6 +39,7 @@ import { NewpasswordComponent } from './newpassword/newpassword.component';
 import { GamesComponent } from './games/games.component';
 import { GameComponent } from './game/game.component';
 import { GameContentComponent } from './game-content/game-content.component';
+import { CreatorComponent } from './creator/creator.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { GameContentComponent } from './game-content/game-content.component';
     NewpasswordComponent,
     GamesComponent,
     GameComponent,
-    GameContentComponent
+    GameContentComponent,
+    CreatorComponent
   ],
   imports: [
     BrowserModule,

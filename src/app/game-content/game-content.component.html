@@ -3,9 +3,11 @@
   <div style="text-align: center">
     <img src="{{data.poster}}" alt="Game Poster" class="poster">
   </div>
-  <h2 style="font-family: 'Estedad-Regular', sans-serif;">{{data.title}}</h2>
-  <h3 style="font-family: 'Estedad-Regular', sans-serif;">{{data.team}}</h3>
-  <p>{{data.description}}</p>
+  <h1 style="font-family: 'Estedad-Regular', sans-serif; direction: rtl;">{{data.title}}</h1>
+  <h2 style="font-family: 'Estedad-Regular', sans-serif; direction: rtl;">{{data.team}}</h2>
+  <p style="direction: rtl;">{{data.description}}</p>
+  <p style="font-weight: bold; direction: rtl;">سازندگان:</p>
+  <app-creator *ngFor="let creator of data.creators" [creator]="creator" style="direction: rtl;"></app-creator>
 
 </mat-dialog-content>
 <mat-dialog-actions align="end">
