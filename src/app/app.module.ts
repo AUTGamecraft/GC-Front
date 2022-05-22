@@ -38,6 +38,7 @@ import { ForgotComponent } from './forgot/forgot.component';
 import { NewpasswordComponent } from './newpassword/newpassword.component';
 import { GamesComponent } from './games/games.component';
 import { GameComponent } from './game/game.component';
+import { GameContentComponent } from './game-content/game-content.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { GameComponent } from './game/game.component';
     ForgotComponent,
     NewpasswordComponent,
     GamesComponent,
-    GameComponent
+    GameComponent,
+    GameContentComponent
   ],
   imports: [
     BrowserModule,

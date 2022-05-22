@@ -95,7 +95,4 @@ export class GamesComponent implements OnInit {
   Footer(el: HTMLElement) {
     el.scrollIntoView({ behavior: "smooth" });
   }
-  GetPeoples() {
-    return this.peoples
-  }
 }

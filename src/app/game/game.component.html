@@ -1,10 +1,7 @@
 <div class="column">
-  <a href="{{game.game_link}}">
-    <div class="content">
-      <img src="{{game.poster}}" alt="game" style="width:100%; height: 200px">
-      <h3>{{game.title}}</h3>
-      <h5>{{game.creator.first_name}}</h5>
-      <p>{{game.description}}</p>
-    </div>
-  </a>
+  <div class="content" (click)="openGameDialog()">
+    <img src="{{game.poster}}" alt="game" style="width:100%; height: 200px">
+    <h3>{{game.title}}</h3>
+    <h5>{{game.team}}</h5>
+  </div>
 </div>

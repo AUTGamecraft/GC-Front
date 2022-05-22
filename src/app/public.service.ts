@@ -40,10 +40,7 @@ export class PublicService {
   Mockup() {
 
 
-
   }
-
-
 
 
   constructor(private http: Http, public dialog: MatDialog, public snackbar: MatSnackBar, private http2: HttpClient, public router: Router, private zone: NgZone) {
@@ -86,6 +83,7 @@ export class PublicService {
     }
 
   }
+
   private extractData2(res: Response) {
     if (res.status < 200 || res.status >= 300) {
       throw new Error('Bad response status: ' + res.status);
@@ -93,6 +91,7 @@ export class PublicService {
     let body = res.json();
     return body || {};
   }
+
   private handleError(error: any) {
     // In a real world app, we might send the error to remote logging infrastructure
     let errMsg = JSON.parse(error._body);//error.message || 'Server error';
@@ -106,21 +105,26 @@ export class PublicService {
     this.APICalls.UpdateImage = true;
     let h = new HttpHeaders();
     h = h.set('Authorization', 'Bearer ' + this.Authorization);
-    const req = new HttpRequest("PUT", this.ApiUrl + '/api/v2/users/profile/update/', uploadData, { headers: h });
-    this.http2.request(req).
-      toPromise().
-      then((r) => {
-        // if (window.innerWidth > 992) {
-        this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'عکس با موفقیت آپلود شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-        // }
-        // else {
-        // this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'عکس با موفقیت آپلود شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
-        // }
-        location.reload(true);
-      })
+    const req = new HttpRequest("PUT", this.ApiUrl + '/api/v2/users/profile/update/', uploadData, {headers: h});
+    this.http2.request(req).toPromise().then((r) => {
+      // if (window.innerWidth > 992) {
+      this.snackbar.openFromComponent(SuccessDialogComponent, {
+        duration: 2000,
+        data: 'عکس با موفقیت آپلود شد!',
+        panelClass: ['snackbar'],
+        verticalPosition: 'top',
+        direction: 'rtl'
+      });
+      // }
+      // else {
+      // this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'عکس با موفقیت آپلود شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+      // }
+      location.reload(true);
+    })
       .catch(this.handleError);
 
   }
+
   checkDiscount(): Promise<any> {
     var that = this;
     this.APICalls.checkDiscount = true;
@@ -128,7 +132,7 @@ export class PublicService {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + this.Authorization
     });
-    let options = new RequestOptions({ headers: headers });
+    let options = new RequestOptions({headers: headers});
     let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/coupon/' + this.discount_code.trim() + '/', options)
       .toPromise()
       .then((r) => this.extractData(r, this))
@@ -141,13 +145,19 @@ export class PublicService {
       if (e.status == 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
-      }
-      else {
-        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      } else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, {
+          duration: 2000,
+          data: e.message,
+          panelClass: ['snackbar'],
+          verticalPosition: 'top',
+          direction: 'rtl'
+        });
       }
     });
     return ret;
   }
+
   SignUp(): Promise<any> {
     var that = this;
     this.APICalls.SignUp = true;
@@ -161,7 +171,7 @@ export class PublicService {
     let headers = new Headers({
       'Content-Type': 'application/json'
     });
-    let options = new RequestOptions({ headers: headers });
+    let options = new RequestOptions({headers: headers});
     let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/v2/users/sign_up/', body, options)
       .toPromise()
       .then((r) => this.extractData(r, this))
@@ -172,11 +182,18 @@ export class PublicService {
     }).catch(e => {
       this.APICalls.SignUp = false;
 
-        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      that.snackbar.openFromComponent(ErrorDialogComponent, {
+        duration: 2000,
+        data: e.message,
+        panelClass: ['snackbar'],
+        verticalPosition: 'top',
+        direction: 'rtl'
+      });
 
     });
     return ret;
   }
+
   changepassword(token: string): Promise<any> {
     var that = this;
     //this.APICalls.SignUp = true;
@@ -190,22 +207,29 @@ export class PublicService {
     let headers = new Headers({
       'Content-Type': 'application/json'
     });
-    let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.put(this.ApiUrl + '/api/v2/activation/reset-pass/'+token, body, options)
+    let options = new RequestOptions({headers: headers});
+    let ret: Promise<any> = this.http.put(this.ApiUrl + '/api/v2/activation/reset-pass/' + token, body, options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
 
     ret.then(r => {
-     // this.APICalls.SignUp = false;
+      // this.APICalls.SignUp = false;
     }).catch(e => {
       // this.APICalls.SignUp = false;
 
-        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      that.snackbar.openFromComponent(ErrorDialogComponent, {
+        duration: 2000,
+        data: e.message,
+        panelClass: ['snackbar'],
+        verticalPosition: 'top',
+        direction: 'rtl'
+      });
 
     });
     return ret;
   }
+
   Login(): Promise<any> {
     var that = this;
     this.APICalls.Login = true;
@@ -217,7 +241,7 @@ export class PublicService {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + this.Authorization
     });
-    let options = new RequestOptions({ headers: headers });
+    let options = new RequestOptions({headers: headers});
     let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/v2/token/', body, options)
       .toPromise()
       .then((r) => this.extractData(r, this))
@@ -228,19 +252,25 @@ export class PublicService {
         this.Authorization = r.access;
         localStorage.setItem("Authorization", this.Authorization);
         this.logedIn = true;
-      }
-      else {
+      } else {
 
       }
     }).catch(e => {
       this.APICalls.Login = false;
-        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      that.snackbar.openFromComponent(ErrorDialogComponent, {
+        duration: 2000,
+        data: e.message,
+        panelClass: ['snackbar'],
+        verticalPosition: 'top',
+        direction: 'rtl'
+      });
     });
     return ret;
   }
+
   sendmail(): Promise<any> {
     var that = this;
-   // this.APICalls.Login = true;
+    // this.APICalls.Login = true;
     let body = JSON.stringify({
       "email": this.Email.toLowerCase(),
 
@@ -249,7 +279,7 @@ export class PublicService {
       'Content-Type': 'application/json',
       //'Authorization': 'Bearer ' + this.Authorization
     });
-    let options = new RequestOptions({ headers: headers });
+    let options = new RequestOptions({headers: headers});
     let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/v2/users/reset_pass/', body, options)
       .toPromise()
       .then((r) => this.extractData(r, this))
@@ -260,8 +290,7 @@ export class PublicService {
         this.Authorization = r.access;
         localStorage.setItem("Authorization", this.Authorization);
         this.logedIn = true;
-      }
-      else {
+      } else {
 
       }
     }).catch(e => {
@@ -269,15 +298,18 @@ export class PublicService {
       if (e.status == 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['forgot']);
-      }
-      else {
-        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      } else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, {
+          duration: 2000,
+          data: e.message,
+          panelClass: ['snackbar'],
+          verticalPosition: 'top',
+          direction: 'rtl'
+        });
       }
     });
     return ret;
   }
-
-
 
 
   getTalks(): Promise<any> {
@@ -286,7 +318,7 @@ export class PublicService {
     let headers = new Headers({
       'Content-Type': 'application/json'
     });
-    let options = new RequestOptions({ headers: headers });
+    let options = new RequestOptions({headers: headers});
     let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/talk/', options)
       .toPromise()
       .then((r) => this.extractData(r, this))
@@ -297,18 +329,25 @@ export class PublicService {
     }).catch(e => {
       this.APICalls.getTalks = false;
 
-      that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      that.snackbar.openFromComponent(ErrorDialogComponent, {
+        duration: 2000,
+        data: e.message,
+        panelClass: ['snackbar'],
+        verticalPosition: 'top',
+        direction: 'rtl'
+      });
 
     });
     return ret;
   }
+
   getWorkshops(): Promise<any> {
     var that = this;
     this.APICalls.getWorkshops = true;
     let headers = new Headers({
       'Content-Type': 'application/json'
     });
-    let options = new RequestOptions({ headers: headers });
+    let options = new RequestOptions({headers: headers});
     let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/workshop/', options)
       .toPromise()
       .then((r) => this.extractData(r, this))
@@ -319,11 +358,18 @@ export class PublicService {
     }).catch(e => {
       this.APICalls.getWorkshops = false;
 
-      that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      that.snackbar.openFromComponent(ErrorDialogComponent, {
+        duration: 2000,
+        data: e.message,
+        panelClass: ['snackbar'],
+        verticalPosition: 'top',
+        direction: 'rtl'
+      });
 
     });
     return ret;
   }
+
   getAvailableUsers(): Promise<any> {
     var that = this;
     this.APICalls.getUsers = true;
@@ -331,7 +377,7 @@ export class PublicService {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + this.Authorization
     });
-    let options = new RequestOptions({ headers: headers });
+    let options = new RequestOptions({headers: headers});
     let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/users/available_list/', options)
       .toPromise()
       .then((r) => this.extractData(r, this))
@@ -343,13 +389,19 @@ export class PublicService {
       if (e.status == 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
-      }
-      else {
-        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      } else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, {
+          duration: 2000,
+          data: e.message,
+          panelClass: ['snackbar'],
+          verticalPosition: 'top',
+          direction: 'rtl'
+        });
       }
     });
     return ret;
   }
+
   getUser(): Promise<any> {
     var that = this;
     this.APICalls.getUsers = true;
@@ -357,7 +409,7 @@ export class PublicService {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + this.Authorization
     });
-    let options = new RequestOptions({ headers: headers });
+    let options = new RequestOptions({headers: headers});
     let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/users/profile/', options)
       .toPromise()
       .then((r) => this.extractData(r, this))
@@ -370,192 +422,255 @@ export class PublicService {
       if (e.status == 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
-      }
-      else {
-        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      } else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, {
+          duration: 2000,
+          data: e.message,
+          panelClass: ['snackbar'],
+          verticalPosition: 'top',
+          direction: 'rtl'
+        });
       }
     });
     return ret;
   }
+
   getGames(): any {
     return [
       {
-        "title": "poster",
+        "title": "سوپر ماریو",
         "poster": "https://assets.telegraphindia.com/telegraph/2022/Jan/1641295024_resized2.jpg",
-        "description": "here's third desc",
-        "game_link": "google.com",
-        "creator": {
-          "first_name": "alinowrouzi",
-          "about": "",
-          "email": "alinowrouzii@gmail.com",
-          "profile": "http://gamecraft.ce.aut.ac.ir/staticfiles/web/media/AliNowrouzi.jpg"
-        },
-        "other_creators": [
+        "description": "قارچ قارچ قارچ!   قارچ از همه رنگ!\n" +
+          "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.\n" +
+          "\n" +
+          "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.",
+        "link": "https://supermariorun.com/en/index.html",
+        "team": "گیم‌کرفت",
+        "creators": [
           {
-            "first_name": "alinowrouzi",
-            "about": "",
+            "first_name": "علی نوروزی",
+            "about": "خفن و کاربلد",
             "email": "alinowrouzii@gmail.com",
-            "profile": "http://gamecraft.ce.aut.ac.ir/staticfiles/web/media/AliNowrouzi.jpg"
+            "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AliNowrouzi.jpg"
           },
           {
-            "first_name": "Admin",
-            "about": "",
-            "email": "admin@admin.com",
-            "profile": "http://gamecraft.ce.aut.ac.ir/staticfiles/web/media/default/avatar-3.png"
+            "first_name": "اشکان شکیبا",
+            "about": "نوب سگ",
+            "email": "AshkanShakiba11@gmail.com",
+            "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AshkanShakiba.jpg"
+          },
+          {
+            "first_name": "سروناز سروقد",
+            "about": "مهربون و دوست‌داشتنی",
+            "email": "sarvghad79@gmail.com",
+            "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/Sarvnaz.jpg"
           }
         ],
         "is_verified": true,
         "timestamp": "2022-04-27T13:46:17.963450+04:30"
       },
       {
-        "title": "poster",
+        "title": "سوپر ماریو",
         "poster": "https://assets.telegraphindia.com/telegraph/2022/Jan/1641295024_resized2.jpg",
-        "description": "here's third desc",
-        "game_link": "google.com",
-        "creator": {
-          "first_name": "alinowrouzi",
-          "about": "",
-          "email": "alinowrouzii@gmail.com",
-          "profile": "http://gamecraft.ce.aut.ac.ir/staticfiles/web/media/AliNowrouzi.jpg"
-        },
-        "other_creators": [
+        "description": "قارچ قارچ قارچ!   قارچ از همه رنگ!\n" +
+          "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.\n" +
+          "\n" +
+          "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.",
+        "link": "https://supermariorun.com/en/index.html",
+        "team": "گیم‌کرفت",
+        "creators": [
           {
-            "first_name": "alinowrouzi",
-            "about": "",
+            "first_name": "علی نوروزی",
+            "about": "خفن و کاربلد",
             "email": "alinowrouzii@gmail.com",
-            "profile": "http://gamecraft.ce.aut.ac.ir/staticfiles/web/media/AliNowrouzi.jpg"
+            "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AliNowrouzi.jpg"
           },
           {
-            "first_name": "Admin",
-            "about": "",
-            "email": "admin@admin.com",
-            "profile": "http://gamecraft.ce.aut.ac.ir/staticfiles/web/media/default/avatar-3.png"
-          }
-        ],
-        "is_verified": true,
-        "timestamp": "2022-04-27T13:46:30.426623+04:30"
-      },
-      {
-        "title": "poster",
-        "poster": "https://assets.telegraphindia.com/telegraph/2022/Jan/1641295024_resized2.jpg",
-        "description": "here's third desc",
-        "game_link": "google.com",
-        "creator": {
-          "first_name": "alinowrouzi",
-          "about": "",
-          "email": "alinowrouzii@gmail.com",
-          "profile": "http://gamecraft.ce.aut.ac.ir/staticfiles/web/media/AliNowrouzi.jpg"
-        },
-        "other_creators": [
-          {
-            "first_name": "alinowrouzi",
-            "about": "",
-            "email": "alinowrouzii@gmail.com",
-            "profile": "http://gamecraft.ce.aut.ac.ir/staticfiles/web/media/AliNowrouzi.jpg"
+            "first_name": "اشکان شکیبا",
+            "about": "نوب سگ",
+            "email": "AshkanShakiba11@gmail.com",
+            "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AshkanShakiba.jpg"
           },
           {
-            "first_name": "Admin",
-            "about": "",
-            "email": "admin@admin.com",
-            "profile": "http://gamecraft.ce.aut.ac.ir/staticfiles/web/media/default/avatar-3.png"
+            "first_name": "سروناز سروقد",
+            "about": "مهربون و دوست‌داشتنی",
+            "email": "sarvghad79@gmail.com",
+            "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/Sarvnaz.jpg"
           }
         ],
         "is_verified": true,
         "timestamp": "2022-04-27T13:46:17.963450+04:30"
       },
       {
-        "title": "poster",
+        "title": "سوپر ماریو",
         "poster": "https://assets.telegraphindia.com/telegraph/2022/Jan/1641295024_resized2.jpg",
-        "description": "here's third desc",
-        "game_link": "google.com",
-        "creator": {
-          "first_name": "alinowrouzi",
-          "about": "",
-          "email": "alinowrouzii@gmail.com",
-          "profile": "http://gamecraft.ce.aut.ac.ir/staticfiles/web/media/AliNowrouzi.jpg"
-        },
-        "other_creators": [
+        "description": "قارچ قارچ قارچ!   قارچ از همه رنگ!\n" +
+          "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.\n" +
+          "\n" +
+          "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.",
+        "link": "https://supermariorun.com/en/index.html",
+        "team": "گیم‌کرفت",
+        "creators": [
           {
-            "first_name": "alinowrouzi",
-            "about": "",
+            "first_name": "علی نوروزی",
+            "about": "خفن و کاربلد",
             "email": "alinowrouzii@gmail.com",
-            "profile": "http://gamecraft.ce.aut.ac.ir/staticfiles/web/media/AliNowrouzi.jpg"
+            "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AliNowrouzi.jpg"
           },
           {
-            "first_name": "Admin",
-            "about": "",
-            "email": "admin@admin.com",
-            "profile": "http://gamecraft.ce.aut.ac.ir/staticfiles/web/media/default/avatar-3.png"
-          }
-        ],
-        "is_verified": true,
-        "timestamp": "2022-04-27T13:46:30.426623+04:30"
-      },
-      {
-        "title": "poster",
-        "poster": "https://assets.telegraphindia.com/telegraph/2022/Jan/1641295024_resized2.jpg",
-        "description": "here's third desc",
-        "game_link": "google.com",
-        "creator": {
-          "first_name": "alinowrouzi",
-          "about": "",
-          "email": "alinowrouzii@gmail.com",
-          "profile": "http://gamecraft.ce.aut.ac.ir/staticfiles/web/media/AliNowrouzi.jpg"
-        },
-        "other_creators": [
-          {
-            "first_name": "alinowrouzi",
-            "about": "",
-            "email": "alinowrouzii@gmail.com",
-            "profile": "http://gamecraft.ce.aut.ac.ir/staticfiles/web/media/AliNowrouzi.jpg"
+            "first_name": "اشکان شکیبا",
+            "about": "نوب سگ",
+            "email": "AshkanShakiba11@gmail.com",
+            "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AshkanShakiba.jpg"
           },
           {
-            "first_name": "Admin",
-            "about": "",
-            "email": "admin@admin.com",
-            "profile": "http://gamecraft.ce.aut.ac.ir/staticfiles/web/media/default/avatar-3.png"
+            "first_name": "سروناز سروقد",
+            "about": "مهربون و دوست‌داشتنی",
+            "email": "sarvghad79@gmail.com",
+            "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/Sarvnaz.jpg"
           }
         ],
         "is_verified": true,
         "timestamp": "2022-04-27T13:46:17.963450+04:30"
       },
       {
-        "title": "poster",
+        "title": "سوپر ماریو",
         "poster": "https://assets.telegraphindia.com/telegraph/2022/Jan/1641295024_resized2.jpg",
-        "description": "here's third desc",
-        "game_link": "google.com",
-        "creator": {
-          "first_name": "alinowrouzi",
-          "about": "",
-          "email": "alinowrouzii@gmail.com",
-          "profile": "http://gamecraft.ce.aut.ac.ir/staticfiles/web/media/AliNowrouzi.jpg"
-        },
-        "other_creators": [
+        "description": "قارچ قارچ قارچ!   قارچ از همه رنگ!\n" +
+          "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.\n" +
+          "\n" +
+          "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.",
+        "link": "https://supermariorun.com/en/index.html",
+        "team": "گیم‌کرفت",
+        "creators": [
           {
-            "first_name": "alinowrouzi",
-            "about": "",
+            "first_name": "علی نوروزی",
+            "about": "خفن و کاربلد",
             "email": "alinowrouzii@gmail.com",
-            "profile": "http://gamecraft.ce.aut.ac.ir/staticfiles/web/media/AliNowrouzi.jpg"
+            "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AliNowrouzi.jpg"
           },
           {
-            "first_name": "Admin",
-            "about": "",
-            "email": "admin@admin.com",
-            "profile": "http://gamecraft.ce.aut.ac.ir/staticfiles/web/media/default/avatar-3.png"
+            "first_name": "اشکان شکیبا",
+            "about": "نوب سگ",
+            "email": "AshkanShakiba11@gmail.com",
+            "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AshkanShakiba.jpg"
+          },
+          {
+            "first_name": "سروناز سروقد",
+            "about": "مهربون و دوست‌داشتنی",
+            "email": "sarvghad79@gmail.com",
+            "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/Sarvnaz.jpg"
           }
         ],
         "is_verified": true,
-        "timestamp": "2022-04-27T13:46:30.426623+04:30"
+        "timestamp": "2022-04-27T13:46:17.963450+04:30"
+      },
+      {
+        "title": "سوپر ماریو",
+        "poster": "https://assets.telegraphindia.com/telegraph/2022/Jan/1641295024_resized2.jpg",
+        "description": "قارچ قارچ قارچ!   قارچ از همه رنگ!\n" +
+          "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.\n" +
+          "\n" +
+          "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.",
+        "link": "https://supermariorun.com/en/index.html",
+        "team": "گیم‌کرفت",
+        "creators": [
+          {
+            "first_name": "علی نوروزی",
+            "about": "خفن و کاربلد",
+            "email": "alinowrouzii@gmail.com",
+            "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AliNowrouzi.jpg"
+          },
+          {
+            "first_name": "اشکان شکیبا",
+            "about": "نوب سگ",
+            "email": "AshkanShakiba11@gmail.com",
+            "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AshkanShakiba.jpg"
+          },
+          {
+            "first_name": "سروناز سروقد",
+            "about": "مهربون و دوست‌داشتنی",
+            "email": "sarvghad79@gmail.com",
+            "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/Sarvnaz.jpg"
+          }
+        ],
+        "is_verified": true,
+        "timestamp": "2022-04-27T13:46:17.963450+04:30"
+      },
+      {
+        "title": "سوپر ماریو",
+        "poster": "https://assets.telegraphindia.com/telegraph/2022/Jan/1641295024_resized2.jpg",
+        "description": "قارچ قارچ قارچ!   قارچ از همه رنگ!\n" +
+          "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.\n" +
+          "\n" +
+          "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.",
+        "link": "https://supermariorun.com/en/index.html",
+        "team": "گیم‌کرفت",
+        "creators": [
+          {
+            "first_name": "علی نوروزی",
+            "about": "خفن و کاربلد",
+            "email": "alinowrouzii@gmail.com",
+            "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AliNowrouzi.jpg"
+          },
+          {
+            "first_name": "اشکان شکیبا",
+            "about": "نوب سگ",
+            "email": "AshkanShakiba11@gmail.com",
+            "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AshkanShakiba.jpg"
+          },
+          {
+            "first_name": "سروناز سروقد",
+            "about": "مهربون و دوست‌داشتنی",
+            "email": "sarvghad79@gmail.com",
+            "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/Sarvnaz.jpg"
+          }
+        ],
+        "is_verified": true,
+        "timestamp": "2022-04-27T13:46:17.963450+04:30"
+      },
+      {
+        "title": "سوپر ماریو",
+        "poster": "https://assets.telegraphindia.com/telegraph/2022/Jan/1641295024_resized2.jpg",
+        "description": "قارچ قارچ قارچ!   قارچ از همه رنگ!\n" +
+          "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.\n" +
+          "\n" +
+          "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.",
+        "link": "https://supermariorun.com/en/index.html",
+        "team": "گیم‌کرفت",
+        "creators": [
+          {
+            "first_name": "علی نوروزی",
+            "about": "خفن و کاربلد",
+            "email": "alinowrouzii@gmail.com",
+            "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AliNowrouzi.jpg"
+          },
+          {
+            "first_name": "اشکان شکیبا",
+            "about": "نوب سگ",
+            "email": "AshkanShakiba11@gmail.com",
+            "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AshkanShakiba.jpg"
+          },
+          {
+            "first_name": "سروناز سروقد",
+            "about": "مهربون و دوست‌داشتنی",
+            "email": "sarvghad79@gmail.com",
+            "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/Sarvnaz.jpg"
+          }
+        ],
+        "is_verified": true,
+        "timestamp": "2022-04-27T13:46:17.963450+04:30"
       },
     ]
   }
+
   ActivateUser(token: string): Promise<any> {
     var that = this;
     this.APICalls.ActivateUser = true;
     let headers = new Headers({
       'Content-Type': 'application/json'
     });
-    let options = new RequestOptions({ headers: headers });
+    let options = new RequestOptions({headers: headers});
     let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/activation/' + token, options)
       .toPromise()
       .then((r) => this.extractData(r, this))
@@ -569,23 +684,28 @@ export class PublicService {
       if (e.status == 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
-      }
-      else {
-        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      } else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, {
+          duration: 2000,
+          data: e.message,
+          panelClass: ['snackbar'],
+          verticalPosition: 'top',
+          direction: 'rtl'
+        });
       }
     });
     return ret;
   }
+
   EnrollTalk(): Promise<any> {
     var that = this;
     this.APICalls.EnrollTalk = true;
-    let body = JSON.stringify({
-    });
+    let body = JSON.stringify({});
     let headers = new Headers({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + this.Authorization
     });
-    let options = new RequestOptions({ headers: headers });
+    let options = new RequestOptions({headers: headers});
     let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/v2/talk/' + this.talkPk + '/enroll/', body, options)
       .toPromise()
       .then((r) => this.extractData(r, this))
@@ -598,9 +718,14 @@ export class PublicService {
       if (e.status == 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
-      }
-      else {
-        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      } else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, {
+          duration: 2000,
+          data: e.message,
+          panelClass: ['snackbar'],
+          verticalPosition: 'top',
+          direction: 'rtl'
+        });
       }
     });
     return ret;
@@ -609,13 +734,12 @@ export class PublicService {
   EnrollWorkshop(): Promise<any> {
     var that = this;
     this.APICalls.EnrollWorkshop = true;
-    let body = JSON.stringify({
-    });
+    let body = JSON.stringify({});
     let headers = new Headers({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + this.Authorization
     });
-    let options = new RequestOptions({ headers: headers });
+    let options = new RequestOptions({headers: headers});
     let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/v2/workshop/' + this.workshopPk + '/enroll/', body, options)
       .toPromise()
       .then((r) => this.extractData(r, this))
@@ -628,13 +752,19 @@ export class PublicService {
       if (e.status == 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
-      }
-      else {
-        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      } else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, {
+          duration: 2000,
+          data: e.message,
+          panelClass: ['snackbar'],
+          verticalPosition: 'top',
+          direction: 'rtl'
+        });
       }
     });
     return ret;
   }
+
   getUserCart(): Promise<any> {
     var that = this;
     this.APICalls.getUserTalks = true;
@@ -642,7 +772,7 @@ export class PublicService {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + this.Authorization
     });
-    let options = new RequestOptions({ headers: headers });
+    let options = new RequestOptions({headers: headers});
     let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/service/cart/', options)
       .toPromise()
       .then((r) => this.extractData(r, this))
@@ -654,13 +784,19 @@ export class PublicService {
       if (e.status == 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
-      }
-      else {
-        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      } else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, {
+          duration: 2000,
+          data: e.message,
+          panelClass: ['snackbar'],
+          verticalPosition: 'top',
+          direction: 'rtl'
+        });
       }
     });
     return ret;
   }
+
   getUserDashboard(): Promise<any> {
     var that = this;
     this.APICalls.getUserTalks = true;
@@ -668,7 +804,7 @@ export class PublicService {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + this.Authorization
     });
-    let options = new RequestOptions({ headers: headers });
+    let options = new RequestOptions({headers: headers});
     let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/service/dashboard/', options)
       .toPromise()
       .then((r) => this.extractData(r, this))
@@ -680,13 +816,19 @@ export class PublicService {
       if (e.status == 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
-      }
-      else {
-        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      } else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, {
+          duration: 2000,
+          data: e.message,
+          panelClass: ['snackbar'],
+          verticalPosition: 'top',
+          direction: 'rtl'
+        });
       }
     });
     return ret;
   }
+
   deleteCartItem(): Promise<any> {
     var that = this;
     this.APICalls.getUserTalks = true;
@@ -694,7 +836,7 @@ export class PublicService {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + this.Authorization
     });
-    let options = new RequestOptions({ headers: headers });
+    let options = new RequestOptions({headers: headers});
     let ret: Promise<any> = this.http.delete(this.ApiUrl + '/api/v2/service/' + this.workshopPk + '/', options)
       .toPromise()
       .then((r) => this.extractData(r, this))
@@ -706,13 +848,19 @@ export class PublicService {
       if (e.status == 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
-      }
-      else {
-        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      } else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, {
+          duration: 2000,
+          data: e.message,
+          panelClass: ['snackbar'],
+          verticalPosition: 'top',
+          direction: 'rtl'
+        });
       }
     });
     return ret;
   }
+
   deleteTalk(): Promise<any> {
     var that = this;
     this.APICalls.getUserTalks = true;
@@ -720,7 +868,7 @@ export class PublicService {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + this.Authorization
     });
-    let options = new RequestOptions({ headers: headers });
+    let options = new RequestOptions({headers: headers});
     let ret: Promise<any> = this.http.delete(this.ApiUrl + '/api/v2/service/' + this.talkPk + '/', options)
       .toPromise()
       .then((r) => this.extractData(r, this))
@@ -732,20 +880,26 @@ export class PublicService {
       if (e.status == 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
-      }
-      else {
-        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      } else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, {
+          duration: 2000,
+          data: e.message,
+          panelClass: ['snackbar'],
+          verticalPosition: 'top',
+          direction: 'rtl'
+        });
       }
     });
     return ret;
   }
+
   getUsersCount(): Promise<any> {
     var that = this;
     this.APICalls.getUserTalks = true;
     let headers = new Headers({
       'Content-Type': 'application/json',
     });
-    let options = new RequestOptions({ headers: headers });
+    let options = new RequestOptions({headers: headers});
     let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/users/count/', options)
       .toPromise()
       .then((r) => this.extractData(r, this))
@@ -755,7 +909,13 @@ export class PublicService {
     }).catch(e => {
       this.APICalls.getUserTalks = false;
       // if (window.innerWidth > 992) {
-      that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      that.snackbar.openFromComponent(ErrorDialogComponent, {
+        duration: 2000,
+        data: e.message,
+        panelClass: ['snackbar'],
+        verticalPosition: 'top',
+        direction: 'rtl'
+      });
 
     });
     return ret;
@@ -771,7 +931,7 @@ export class PublicService {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + this.Authorization
     });
-    let options = new RequestOptions({ headers: headers });
+    let options = new RequestOptions({headers: headers});
     let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/v2/service/payment/', body, options)
       .toPromise()
       .then((r) => this.extractData(r, this))
@@ -783,13 +943,19 @@ export class PublicService {
       if (e.status == 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
-      }
-      else {
-        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      } else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, {
+          duration: 2000,
+          data: e.message,
+          panelClass: ['snackbar'],
+          verticalPosition: 'top',
+          direction: 'rtl'
+        });
       }
     });
     return ret;
   }
+
   createTeam(emails): Promise<any> {
     var that = this;
     this.APICalls.Login = true;
@@ -801,7 +967,7 @@ export class PublicService {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + this.Authorization
     });
-    let options = new RequestOptions({ headers: headers });
+    let options = new RequestOptions({headers: headers});
     let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/v2/team/create_team/', body, options)
       .toPromise()
       .then((r) => this.extractData(r, this))
@@ -812,8 +978,7 @@ export class PublicService {
         this.Authorization = r.access;
         localStorage.setItem("Authorization", this.Authorization);
         this.logedIn = true;
-      }
-      else {
+      } else {
 
       }
     }).catch(e => {
@@ -821,13 +986,19 @@ export class PublicService {
       if (e.status == 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
-      }
-      else {
-        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      } else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, {
+          duration: 2000,
+          data: e.message,
+          panelClass: ['snackbar'],
+          verticalPosition: 'top',
+          direction: 'rtl'
+        });
       }
     });
     return ret;
   }
+
   getTeam(pk): Promise<any> {
     var that = this;
     this.APICalls.getUserTalks = true;
@@ -835,7 +1006,7 @@ export class PublicService {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + this.Authorization
     });
-    let options = new RequestOptions({ headers: headers });
+    let options = new RequestOptions({headers: headers});
     let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/team/' + pk + "/", options)
       .toPromise()
       .then((r) => this.extractData(r, this))
@@ -847,21 +1018,27 @@ export class PublicService {
       if (e.status == 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
-      }
-      else {
-        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      } else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, {
+          duration: 2000,
+          data: e.message,
+          panelClass: ['snackbar'],
+          verticalPosition: 'top',
+          direction: 'rtl'
+        });
       }
     });
     return ret;
   };
-  enrollTeam(mid,tid): Promise<any> {
+
+  enrollTeam(mid, tid): Promise<any> {
     var that = this;
     this.APICalls.getUserTalks = true;
     let headers = new Headers({
       'Content-Type': 'application/json',
     });
-    let options = new RequestOptions({ headers: headers });
-    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/team/join/' + tid + "/"+mid, options)
+    let options = new RequestOptions({headers: headers});
+    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/team/join/' + tid + "/" + mid, options)
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
@@ -872,9 +1049,14 @@ export class PublicService {
       if (e.status == 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
-      }
-      else {
-        that.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: e.message, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      } else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, {
+          duration: 2000,
+          data: e.message,
+          panelClass: ['snackbar'],
+          verticalPosition: 'top',
+          direction: 'rtl'
+        });
       }
     });
     return ret;

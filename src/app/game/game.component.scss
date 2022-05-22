@@ -11,7 +11,7 @@ h3, h5, p {
 }
 
 .column {
-  float: left;
+  float: right;
   width: 25%;
 }
 
@@ -20,6 +20,8 @@ h3, h5, p {
   padding: 10px;
   border-radius: 5px;
   background-color: #474666;
+  cursor: pointer;
+  text-align: right;
 }
 
 @media screen and (max-width: 900px) {
