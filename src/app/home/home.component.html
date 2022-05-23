@@ -29,10 +29,10 @@
                                 <button mat-button (click)="Talk(talk)"
                                     class="normal-button">{{publicservice.Texts.Texts["header4"]}}</button>
                             </div>
-                            <div class="right-button">
+                            <!-- <div class="right-button">
                                 <button mat-button (click)="goToLink('https://gamecraft.ce.aut.ac.ir/2021')"
                                     class="normal-button">{{publicservice.Texts.Texts["header13"]}}</button>
-                            </div>
+                            </div> -->
                             <div class="right-button">
                                 <button mat-button (click)="Talk(footer)"
                                     class="normal-button">{{publicservice.Texts.Texts["header5"]}}</button>
@@ -123,11 +123,11 @@
                                 <button mat-button (click)="Talk(talk)"
                                     class="normal-button">{{publicservice.Texts.Texts["header4"]}}</button>
                             </div>
-                            <mat-divider class="side-divider"></mat-divider>
+                            <!-- <mat-divider class="side-divider"></mat-divider>
                             <div class="side-button">
                                 <button mat-button  (click)="goToLink('https://gamecraft.ce.aut.ac.ir/2021')"
                                     class="normal-button">{{publicservice.Texts.Texts["header13"]}}</button>
-                            </div>
+                            </div> -->
                             <mat-divider class="side-divider"></mat-divider>
                             <div class="side-button">
                                 <button mat-button (click)="Talk(footer)"
@@ -509,7 +509,7 @@
                                             {{publicservice.Texts.Texts['home57']}}{{workshop.cost}}{{publicservice.Texts.Texts['home58']}}
                                         </h3>
                                     </div>
-                                    <div class="collapse-presenters-title-div">
+                                    <div class="collapse-presenters-title-div" *ngIf="workshop.presenters.length > 0">
                                         <h1 class="collapse-persenters-title">
                                             {{publicservice.Texts.Texts["home23"]}}
                                         </h1>
@@ -538,7 +538,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="collapse-presenters-title-div">
+                                    <div class="collapse-presenters-title-div" *ngIf="workshop.assistants.length > 0">
                                         <h1 class="collapse-persenters-title">
                                             {{publicservice.Texts.Texts["home63"]}}
                                         </h1>
@@ -621,7 +621,7 @@
                                     <h3 class="collapse-cost">
                                         {{publicservice.Texts.Texts['home57']}}{{workshop.cost}}{{publicservice.Texts.Texts['home58']}}
                                     </h3>
-                                    <div class="collapse-presenters-title-div">
+                                    <div class="collapse-presenters-title-div" *ngIf="workshop.presenters.length > 0">
                                         <h1 class="collapse-persenters-title">
                                             {{publicservice.Texts.Texts["home23"]}}
                                         </h1>
@@ -652,7 +652,7 @@
                                     </div>
 
 
-                                    <div class="collapse-presenters-title-div">
+                                    <div class="collapse-presenters-title-div" *ngIf="workshop.assistants.length > 0">
                                         <h1 class="collapse-persenters-title">
                                             {{publicservice.Texts.Texts["home63"]}}
                                         </h1>
