@@ -499,8 +499,7 @@
                             <div [class]="workshopsActive[i]">
                                 <div class="collapse-background">
                                     <div>
-                                        <p class="collapse-about">
-                                            {{workshop.content}}</p>
+                                        <p class="collapse-about" [innerHTML]="workshop.content"></p>
                                         <h3 class="collapse-hour">ساعت : {{workshopsStartHour[i]}} الی {{workshopsEndHour[i]}}
                                         </h3>
                                     </div>
@@ -612,8 +611,7 @@
                             <div [class]="workshopsActive[i]">
                                 <div class="collapse-background">
                                     <div>
-                                        <p class="collapse-about">
-                                            {{workshop.content}}</p>
+                                        <p class="collapse-about" [innerHTML]="workshop.content"></p>
                                         <h3 class="collapse-hour">ساعت : {{workshopsStartHour[i]}} الی
                                             {{workshopsEndHour[i]}}
                                         </h3>
@@ -714,8 +712,7 @@
                     <div [class]="talksActive[i]">
                         <div class="collapse-background">
                             <div>
-                                <p class="collapse-about">
-                                    {{talk.content}}</p>
+                                <p class="collapse-about" [innerHTML]="talk.content"></p>
                                 <h3 class="collapse-hour">ساعت : {{talksStartHour[i]}} الی {{talksEndHour[i]}}</h3>
                             </div>
                             <div class="collapse-cost-div">
@@ -791,8 +788,7 @@
                     <div [class]="talksActive[i]">
                         <div class="collapse-background">
                             <div>
-                                <p class="collapse-about">
-                                    {{talk.content}}</p>
+                                <p class="collapse-about" [innerHTML]="talk.content"></p>
                                 <h3 class="collapse-hour">ساعت : {{talksStartHour[i]}} الی {{talksEndHour[i]}}</h3>
                             </div>
                             <h3 class="collapse-cost">

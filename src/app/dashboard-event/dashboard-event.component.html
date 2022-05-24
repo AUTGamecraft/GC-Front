@@ -84,8 +84,7 @@
                     <div [class]="workshopsActive[i]">
                         <div class="workshops-inside">
                             <div style="text-align: right;">
-                                <p class="workshops-discription">
-                                    {{workshop.content}}</p>
+                                <p class="workshops-discription" [innerHTML]="workshop.content"></p>
                                     <h3 class="collapse-hour">ساعت : {{workshopsStartHour[i]}} الی {{workshopsEndHour[i]}}
                                     </h3>
                             </div>
@@ -156,8 +155,7 @@
                     <div [class]="workshopsActive[i]">
                         <div class="workshops-inside">
                             <div>
-                                <p class="workshops-discription">
-                                    {{workshop.content}}</p>
+                                <p class="workshops-discription" [innerHTML]="workshop.content"></p>
                                     <h3 class="collapse-hour">ساعت : {{workshopsStartHour[i]}} الی {{workshopsEndHour[i]}}
                                     </h3>
                             </div>
@@ -220,7 +218,7 @@
                     <div [class]="talksActive[i]">
                         <div class="workshops-inside" style="text-align: right;">
                             <div>
-                                <p class="workshops-discription">{{talk.content}}</p>
+                                <p class="workshops-discription" [innerHTML]="talk.content"></p>
                                 <h3 class="collapse-hour">ساعت : {{talksStartHour[i]}} الی {{talksEndHour[i]}}</h3>
                             </div>
                             <div class="presenters-title-div">
@@ -289,7 +287,7 @@
                     <div [class]="talksActive[i]" >
                         <div class="workshops-inside" >
                             <div>
-                                <p class="workshops-discription">{{talk.content}}</p>
+                                <p class="workshops-discription" [innerHTML]="talk.content"></p>
                                 <h3 class="collapse-hour">ساعت : {{talksStartHour[i]}} الی {{talksEndHour[i]}}</h3>
                             </div>
                             <div class="presenters-title-div">
