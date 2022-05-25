@@ -34,6 +34,7 @@ export class HomeComponent implements OnInit {
   noShadow = 'noshadow';
   userName: string = "";
   count = 0;
+  cart_count = 0;
   isHideWorkshops: any = [];
   isHideTalks: any = [];
   workshopsStartHour: any = [];
@@ -125,6 +126,8 @@ export class HomeComponent implements OnInit {
       // console.log(r);
       this.count = r.data.count;
     })
+
+    this.updateCart()
   }
 
   ngOnInit(): void {
@@ -254,7 +257,8 @@ export class HomeComponent implements OnInit {
       this.publicservice.EnrollWorkshop().then(() => {
         // if (window.innerWidth > 992) {
         this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'کارگاه مورد نظر به سبد خریدتان اضافه شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-        this.router.navigate(['cart'], { fragment: 'cart' });
+        this.updateCart();
+        // this.router.navigate(['cart'], { fragment: 'cart' });
         // }
         // else {
         // this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'کارگاه مورد نظر به سبد خریدتان اضافه شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
@@ -288,6 +292,17 @@ export class HomeComponent implements OnInit {
   }
   goToLink(url: string){
     window.open(url, "_blank");
+  }
+
+  updateCart() {
+    const _this = this;
+    this.publicservice.getUserCart().then((r) => {
+      _this.cart_count = r.data.length;
+    });
+  }
+
+  Cart(){
+    this.router.navigate(['cart'], { fragment: 'cart' });
   }
 
 }

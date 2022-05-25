@@ -44,7 +44,7 @@
                         </div>
                     </div>
                     <div class="left-header">
-                        <div class="left-header-line"></div>
+                        <div class="left-header-line" *ngIf="!publicservice.logedIn"></div>
                         <div class="before-login" *ngIf="!publicservice.logedIn">
                             <div class="left-button">
                                 <button mat-button (click)="login()"
@@ -57,12 +57,24 @@
                         </div>
                         <div class="after-login" *ngIf="publicservice.logedIn">
                             <div class="left-button">
+                                <div *ngIf="!isStaff">
+                                    <button mat-stroked-button matBadge="{{cart_count}}" matBadgePosition="before" (click)="Cart()"
+                                        class="outlined-button">
+                                        {{publicservice.Texts.Texts['cart8']}}
+                                    </button>
+                                </div>                                
+                            </div>
+                            <div class="left-header-line" *ngIf="publicservice.logedIn"></div>
+
+
+                            <div class="left-button">
                                 <button mat-button [disabled]="true" class="normal-button">{{userName}}</button>
                             </div>
 
                             <div>
                                 <button mat-flat-button class="green-button"
-                                    (click)="Dashboard()">{{publicservice.Texts.Texts["header9"]}}</button>
+                                    (click)="Dashboard()">
+                                    {{publicservice.Texts.Texts["header9"]}}</button>
                             </div>
                         </div>
                     </div>

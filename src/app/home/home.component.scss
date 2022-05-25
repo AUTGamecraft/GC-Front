@@ -697,7 +697,7 @@
 }
 .left-header-line {
     width: 0;
-    height: 48px;
+    height: 55px;
     margin-left: 15px;
     border: solid 1.5px #636198 !important;
     background-color: #636198;
@@ -1327,4 +1327,24 @@
     .ssc-image{
         margin: auto;
     }
+}
+
+
+
+.outlined-button {
+    font-family: "Estedad-Bold";
+    color: #00b583;
+    font-size: large;
+    border: 3px solid #63DAA4 !important;
+    border-radius: 15px;
+    // height: 10%;
+    margin-top: 12px;
+    margin-bottom: 16px;
+    // padding: 0;
+}
+.outlined-button:hover {
+    background-color: #6af9c5;
+    color: #34334B;
+    border-color: #6af9c5 !important;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.08);
 }
