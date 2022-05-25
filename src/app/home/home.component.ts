@@ -282,7 +282,7 @@ export class HomeComponent implements OnInit {
       this.publicservice.EnrollTalk().then(() => {
         // if (window.innerWidth > 992) {
         this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'ثبت نام با موفقیت انجام شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-        this.router.navigate(['dashboard-event'], { fragment: 'dash' });
+        //this.router.navigate(['dashboard-event'], { fragment: 'dash' });
         // }
         // else {
         // this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'ثبت نام با موفقیت انجام شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
