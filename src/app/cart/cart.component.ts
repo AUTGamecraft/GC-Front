@@ -39,7 +39,7 @@ export class CartComponent implements OnInit {
         this.count = this.cartArray.length;
         for (let i = 0; i < this.cartArray.length; i++) {
           this.cartDelete.push('noDelete');
-          this.cartArray[i].workshop.start = moment(this.cartArray[i].workshop.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('dddd') + " " + moment(this.cartArray[i].workshop.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('DD') + " " + moment(this.cartArray[i].workshop.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('MMMM') + " " + moment(this.cartArray[i].workshop.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('YY');
+          this.cartArray[i].workshop.start = moment(this.cartArray[i].workshop.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('dddd') + " " + moment(this.cartArray[i].workshop.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('DD') + " " + moment(this.cartArray[i].workshop.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('MMMM') + " " + moment(this.cartArray[i].workshop.start.split('T', 2)[0], 'YYYY-MM-DD').locale('fa').format('YYYY');
           this.totalCost = this.totalCost + this.cartArray[i].workshop.cost;
 
         }
