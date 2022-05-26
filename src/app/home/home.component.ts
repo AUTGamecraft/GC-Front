@@ -296,9 +296,11 @@ export class HomeComponent implements OnInit {
 
   updateCart() {
     const _this = this;
-    this.publicservice.getUserCart().then((r) => {
-      _this.cart_count = r.data.length;
-    });
+    if(this.publicservice.logedIn){
+      this.publicservice.getUserCart().then((r) => {
+        _this.cart_count = r.data.length;
+      });
+    }
   }
 
   Cart(){
