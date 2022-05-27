@@ -141,7 +141,7 @@
       <app-game *ngFor="let game of games" [game]="game"></app-game>
     </div>
   </div>
-  <div class="footer-whole-div" #footer>
+  <div class="footer-whole-div" #footer id="footer">
     <div>
       <img class="purple-wave-above-footer" src="assets/svg/wave-purple.svg">
     </div>
@@ -158,7 +158,7 @@
             </p>
             <div style="text-align: center;">
               <button mat-flat-button (click)="People()"
-                      class="green-button">{{publicservice.Texts.Texts["home47"]}}</button>
+                      class="green-button" id="green-button-phone">{{publicservice.Texts.Texts["home47"]}}</button>
               <div class="footer-image-div-phone">
                 <img class="footer-image" src="assets/images/folan.png">
               </div>
@@ -207,7 +207,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>
