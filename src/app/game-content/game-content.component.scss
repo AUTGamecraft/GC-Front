@@ -1,15 +1,17 @@
 .title, .content {
   color: #E8E7FF;
   text-align: right;
-  font-family: "Estedad-Regular", sans-serif;
 }
 
 .title {
-  font-weight: bold;
+  font-size: x-large;
+  font-family: "Estedad-Bold", sans-serif;
 }
 
 .content {
-
+  font-size: medium;
+  line-height: 200%;
+  font-family: "Estedad-Regular", sans-serif;
   .link {
     text-decoration: none;
   }

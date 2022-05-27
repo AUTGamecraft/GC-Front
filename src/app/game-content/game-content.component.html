@@ -3,8 +3,8 @@
   <div style="text-align: center">
     <img src="{{data.poster}}" alt="Game Poster" class="poster">
   </div>
-  <h1 style="font-family: 'Estedad-Regular', sans-serif; direction: rtl;">{{data.title}}</h1>
-  <h2 style="font-family: 'Estedad-Regular', sans-serif; direction: rtl;">{{data.team}}</h2>
+  <h1 style="font-family: 'Estedad-Bold', sans-serif; font-size: x-large; direction: rtl;">{{data.title}}</h1>
+  <h2 style="font-family: 'Estedad-Bold', sans-serif; font-size: x-large; direction: rtl;">{{data.team}}</h2>
   <p style="direction: rtl;">{{data.description}}</p>
   <p style="font-weight: bold; direction: rtl;">سازندگان:</p>
   <app-creator *ngFor="let creator of data.creators" [creator]="creator" style="direction: rtl;"></app-creator>
