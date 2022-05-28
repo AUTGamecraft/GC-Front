@@ -408,6 +408,9 @@
     background-color: #474666;
     text-align: center;
     padding: 10px;
+    // display: flex;
+    // flex-wrap: wrap;
+    // // flex-direction: row;
 }
 .developers {
     padding: 30px;
@@ -415,7 +418,18 @@
     color: white;
     margin: 0;
     font-family: "Estedad-SemiBold";
+    font-size: 23px;
 }
+
+.socials {
+    padding: 30px;
+    direction: rtl;
+    color: white;
+    margin: 0;
+    font-family: "Estedad-SemiBold";
+    font-size: 27px;
+}
+
 .home {
     background-color: #fafafa;
 }
