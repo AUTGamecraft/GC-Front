@@ -295,6 +295,13 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    flex-grow: 3;
+}
+.social-image {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-grow: 3;
 }
 .purple-wave-above-footer {
     // background-image: url("/assets/svg/wave-purple.svg");
@@ -922,7 +929,7 @@
         margin: auto;
     }
     .intro-discription-div {
-        padding-bottom: 750px;
+        padding-bottom: 900px;
         margin-bottom: 20%;
     }
     .intro-discription-about-title {
@@ -1335,6 +1342,9 @@
 }
 @media only screen and (max-width: 450px) {
     .developers-image {
+        gap: 35px;
+    }
+    .social-image {
         gap: 35px;
     }
 }
