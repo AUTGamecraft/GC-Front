@@ -42,7 +42,7 @@ export class HomeComponent implements OnInit {
   talksStartHour: any = [];
   talksEndHour: any = [];
   constructor(public publicservice: PublicService, public router: Router, public snackbar: MatSnackBar) {
-    this.time = parseInt('' + (new Date("Tue May 31 2022 23:59:59 GMT+0430").getTime() - new Date().getTime()) / 1000);
+    this.time = parseInt('' + (new Date("Tue May 31 2022 07:30:59 GMT+0430").getTime() - new Date().getTime()) / 1000);
     publicservice.getTalks().then((r) => {
       // console.log(r);
       this.talksArray = r.data;
