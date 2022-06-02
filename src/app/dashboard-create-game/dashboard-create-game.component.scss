@@ -1,0 +1,565 @@
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: #34334B !important;
+}
+::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: #34334B !important;
+}
+::ng-deep.mat-form-field-ripple {
+    /*change color of underline when focused*/
+    background-color: #34334B !important;
+}
+.whole {
+    background-color: #34334B;
+    background-image: url("/assets/svg/pattern.svg");
+}
+.dash-teams {
+    padding: 20px;
+    direction: rtl;
+    padding-right: 5%;
+    padding-left: 5%;
+    padding-top: 30px;
+}
+//start of logo
+.logo {
+    justify-content: center;
+    display: flex;
+    direction: rtl;
+    margin-bottom: 10px;
+    margin-top: -10px;
+}
+.logo-image {
+    width: 100.8px;
+    z-index: 1;
+    cursor: pointer;
+}
+.logo-text {
+    font-family: "Estedad-Black";
+    color: #636198;
+    font-size: 24px;
+    z-index: 0;
+}
+//end of logo
+.dash-teams-inner-div {
+    display: flex;
+    padding-bottom: 100px;
+    margin-top: 20px;
+}
+.right-part {
+    background-color: #fafafa;
+    text-align: center;
+    border-radius: 20px;
+    height: fit-content;
+    width: 25%;
+    padding-top: 20px;
+}
+.user-image {
+    border-radius: 50%;
+    margin: auto auto auto 0;
+    height: 160px;
+    width: 160px;
+    object-fit: cover;
+}
+.user-name {
+    font-family: "Estedad-Bold";
+    color: #34334B;
+    font-size: large;
+    margin-bottom: 0;
+}
+.outlined-button {
+    font-family: "Estedad-Bold";
+    color: #00b583;
+    font-size: large;
+    border: 3px solid #63DAA4 !important;
+    border-radius: 15px;
+    margin-top: 12px;
+    margin-bottom: 16px;
+    // height: 10%;
+    // margin: auto 0;
+    // padding: 0;
+}
+.outlined-button:hover {
+    background-color: #6af9c5;
+    color: #34334B;
+    border-color: #6af9c5 !important;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.08);
+}
+#outlined-button-phone {
+    display: none;
+}
+.normal-button {
+    font-family: "Estedad-Bold";
+    font-size: large;
+    color: #b00020;
+    border-radius: 16px;
+    background-color: rgba(255, 255, 255, 0);
+    width: 84px;
+    height: 44px;
+    margin: 8px 99px 8px 102px;
+}
+.buttons {
+    color: #34334B;
+    font-family: "Estedad-SemiBold";
+    width: 100%;
+    font-size: large;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-right: 10%;
+    text-align: right;
+}
+.left-part {
+    background-color: #fafafa;
+    text-align: center;
+    border-radius: 20px;
+    width: 75%;
+    margin-right: 20px;
+    padding: 0 72px;
+    padding-bottom: 2%;
+}
+.events-title {
+    font-family: "Estedad-Black";
+    font-size: 36px;
+    color: #34334B;
+    // margin-bottom: 0;
+}
+.people {
+    color: #474666;
+    font-size: 24px;
+    font-family: "Estedad-Regular";
+    height: fit-content;
+    margin: auto 0;
+}
+.people-discription {
+    color: #474666;
+    font-family: "Estedad-Medium";
+    font-size: 12px;
+    font-weight: 500;
+    padding-right: 10px;
+    height: fit-content;
+    margin: auto 0;
+}
+.form-field-div {
+    // margin-top: 5%;
+    padding-left: 28px;
+    width: 100%;
+}
+.form-field {
+    text-align: right;
+    width: 100%;
+}
+.label {
+    font-family: "Estedad-SemiBold";
+}
+.input {
+    text-align: right;
+    font-family: "Estedad-Regular";
+}
+.error {
+    font-family: "Estedad-Regular";
+}
+.option {
+    display: flex;
+    direction: rtl;
+    justify-content: space-between;
+}
+.option-image {
+    margin: auto 0;
+    border-radius: 50%;
+    object-fit: cover;
+    width: 28px;
+    height: 28px;
+    padding: 0 10px;
+}
+.name {
+    font-family: "Estedad-Black";
+    font-size: 12px;
+    color: #34334B;
+    margin: auto 0;
+}
+.email {
+    font-size: 12px;
+    font-family: "Estedad-Medium";
+    color: #636198;
+    margin: auto 0;
+}
+//start of footer
+
+.purple-wave-above-footer {
+    transform: scaleY(-1);
+    width: 100%;
+}
+.footer-div {
+    background-color: #34334B;
+    padding-top: 10px;
+    margin-top: -10px;
+}
+.supporters-div {
+    padding-top: 10%;
+}
+.discription-footer-div {
+    direction: rtl;
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 50px;
+}
+.discription-right-footer-div {
+    width: 50%;
+    margin-right: 10%;
+    position: relative;
+    direction: rtl;
+}
+.discription-right-footer-about-div {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: transparent;
+    z-index: 1;
+}
+.discription-right-footer-about-title {
+    font-family: "Estedad-Black";
+    font-size: xxx-large;
+    color: white;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.discription-right-footer-about-subtitle {
+    font-family: "Estedad-Bold";
+    color: white;
+    font-size: xx-large;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.discription-right-footer-about-discription {
+    font-family: "Estedad-Regular";
+    color: white;
+    font-size: large;
+    margin-top: 0;
+}
+.discription-right-footer-bubble {
+    position: absolute;
+    background-image: url("/assets/svg/bubble-purple.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transform: scaleX(-1);
+    z-index: 0;
+}
+.ssc-image {
+    padding: 10px 30px;
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+.footer-image-div {
+    padding-top: 3%;
+    // padding-right: 10%;
+    margin-left: 10%;
+}
+.footer-image {
+    height: 360px;
+    width: 360px;
+    // object-fit: contain;
+    border-radius: 36px;
+}
+.supporters-title {
+    font-family: "Estedad-Black";
+    font-size: xxx-large;
+    color: white;
+    text-align: center;
+    margin-bottom: 0;
+}
+.supporters-card-div {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+.supportes-card-image-div {
+    margin: 20px;
+}
+.supporters-card-image {
+    height: 150px;
+    width: 250px;
+    margin: 0px 20px 10px 20px;
+    border-radius: 0%;
+    object-fit: contain;
+    object-position: bottom;
+}
+.developers-image {
+    display: flex;
+    justify-content: center;
+}
+.supportes-card-name {
+    font-family: "Estedad-Bold";
+    color: white;
+    font-size: large;
+}
+.developers-div {
+    background-color: #474666;
+    text-align: center;
+    padding: 10px;
+}
+.developers {
+    padding: 30px;
+    direction: rtl;
+    color: white;
+    margin: 0;
+    font-family: "Estedad-SemiBold";
+}
+.green-button {
+    font-family: "Estedad-Bold";
+    color: #34334B;
+    background-color: #6af9c5;
+    border-radius: 24px;
+    padding: 11px 16px;
+    font-size: large;
+}
+//end of footer
+.team-create-whole-div {
+    // width: fit-content;
+    box-sizing: border-box;
+    display: flex;
+    // justify-content: space-between;
+}
+.chosen-user {
+    display: flex;
+    padding: 10px 12px;
+    width: 100%;
+    justify-content: space-between;
+    border: solid 1px #f5f5f5;
+    background-color: white;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    box-sizing: border-box;
+}
+.no-one-text {
+    // text-align: ri;
+    box-sizing: border-box;
+    width: 100%;
+    color: #636198;
+    font-family: "Estedad-Regular";
+    font-size: 12px;
+    background-color: white;
+    border-radius: 12px;
+    border: solid 1px #f5f5f5;
+    padding: 10px 60px;
+}
+#cart-button-phone {
+    display: none;
+}
+.team-user {
+    display: flex;
+    padding: 10px 12px;
+    width: 100%;
+    justify-content: space-between;
+    border: solid 1px #f5f5f5;
+    background-color: white;
+    border-radius: 16px;
+    box-sizing: border-box;
+}
+.team-name {
+    color: #474666;
+    font-size: 20px;
+    font-family: "Estedad-Bold";
+    margin-top: 0;
+}
+.description {
+    display: flex;
+    padding-bottom: 20px;
+}
+.chosen-people {
+    width: 100%;
+    margin: 5px 0;
+    display: flex;
+    box-sizing: border-box;
+}
+.remove-user-button {
+    padding: 10px 0;
+    background-color: white;
+    border: solid 1px #f5f5f5;
+    border-bottom-left-radius: 16px;
+    border-top-left-radius: 16px;
+    color: #b00020;
+}
+.footer-image-div-phone {
+    display: none;
+}
+.team {
+    width: 50%;
+    margin: 5px 0;
+    display: flex;
+}
+@media only screen and (max-width: 992px) {
+    .team{
+        width: 100%;
+    }
+    .buttons {
+        font-size: 16px;
+        border-radius: 12px;
+        width: 100%;
+    }
+    .footer-image-div-phone {
+        padding-top: 30px;
+        display: initial;
+        width: 100%;
+        box-sizing: border-box;
+        margin: auto;
+        text-align: center;
+    }
+    .chosen-user {
+        padding: 2px;
+    }
+    .remove-user-button {
+        padding: 2px;
+    }
+    #cart-button-phone {
+        display: initial;
+        padding: auto 20px;
+        width: 111px;
+        height: 44px;
+    }
+    .supporters-card-div {
+        flex-direction: column;
+    }
+    .right-part-header {
+        display: flex;
+        justify-content: space-between;
+    }
+    .name-image-phone {
+        display: flex;
+    }
+    .user-name {
+        font-size: 16px;
+        margin: auto 0;
+    }
+    .dash-teams-inner-div {
+        flex-direction: column;
+    }
+    .description {
+        flex-direction: column;
+    }
+    .team-create-whole-div {
+        flex-direction: column;
+    }
+    .events-title {
+        margin-bottom: 0;
+    }
+    .right-part {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 16px;
+        padding-top: 0;
+        margin: auto;
+        margin-bottom: 5%;
+    }
+    #outlined-button-phone {
+        display: initial;
+        font-size: 16px;
+        width: 121px;
+        height: 44px;
+    }
+    .outlined-button {
+        display: none;
+        font-size: 16px;
+        margin: auto 0;
+        padding: 0;
+    }
+    .normal-button {
+        font-size: 16px;
+        // width: 36px;
+        // height: 28px;
+        margin: auto;
+    }
+    .header-buttons {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .right-header-button {
+        width: 100%;
+    }
+    .left-header-button {
+        width: 100%;
+    }
+    .left-part {
+        box-sizing: border-box;
+        width: 100%;
+        margin: auto 0;
+        text-align: center;
+        padding: 2%;
+        padding-top: 0;
+    }
+
+    .form-field-div {
+        box-sizing: border-box;
+        padding: 3%;
+    }
+    .discription-footer-div {
+        flex-direction: column;
+        justify-content: initial;
+        justify-content: center;
+        text-align: center;
+    }
+    .footer-image-div {
+        display: none;
+    }
+    .footer-image {
+        max-width: 100%;
+        height: auto;
+    }
+    .supporters-card-image {
+        max-width: 100%;
+        height: auto;
+    }
+    .discription-right-footer-div {
+        padding: 38%;
+        margin: 0 auto;
+        margin-bottom: 70%;
+        padding-right: 36px;
+        padding-left: 36px;
+    }
+    .discription-right-footer-about-div {
+        float: none;
+    }
+    .discription-right-footer-about-title {
+        font-size: 40px;
+    }
+    .discription-right-footer-about-subtitle {
+        font-size: 28px;
+    }
+    .discription-right-footer-about-discription {
+        font-size: 20px;
+    }
+    .user-image {
+        width: 48px;
+        height: 48px;
+        margin-top: 8px;
+        margin-right: 0;
+        margin-left: auto;
+    }
+}
+@media only screen and (max-width: 588px) {
+    .supporters-div {
+        margin-top: 100%;
+    }
+}
+@media only screen and (max-width: 420px) {
+    .supporters-div {
+        margin-top: 1000px;
+    }
+}
+@media only screen and (max-width: 375px) {
+    .developers-image {
+        text-align: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .ssc-image {
+        margin: auto;
+    }
+}
