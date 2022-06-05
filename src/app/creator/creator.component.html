@@ -1,24 +1,35 @@
-<!--<p>{{creator.name}} ({{creator.about}})</p>-->
-<div
-  style="display: flex;justify-content: center;flex-wrap: wrap;grid-auto-rows: auto;">
-  <div class="presenter-card">
-    <div class="presenter-card-inside">
-      <div>
-        <img class="presenter-image" src="{{creator.profile}}">
-      </div>
-      <div style="text-align: right;height: 30%;">
-        <h2 class="presenter-name">
-          {{creator.name}}
-        </h2>
-        <!-- <div style="display: flex;">
-            <a href="{{presenter.linked_in}}">
-                <mat-icon class="icon"
-                    style="font-size: 25px;margin-right: 10px;">
-                    link</mat-icon>
-            </a>
-        </div> -->
-        <h4 class="presenter-about">{{creator.about}} </h4>
-      </div>
-    </div>
-  </div>
-</div>
+<mat-card class="example-card">
+  <mat-card-title-group>
+    <mat-card-title style="font-size: x-large" class="title">{{creator.name}}</mat-card-title>
+    <mat-card-subtitle style="font-size: large" class="title">{{creator.title}}</mat-card-subtitle>
+    <img mat-card-sm-image src="{{creator.profile}}" class="user-image" alt="{{creator.name}}">
+  </mat-card-title-group>
+  <mat-card-content>
+    {{creator.about}}
+  </mat-card-content>
+</mat-card>
+
+<!--<div-->
+<!--  style="display: flex;justify-content: center;flex-wrap: wrap;grid-auto-rows: auto;">-->
+<!--  <div class="presenter-card">-->
+<!--    <div class="presenter-card-inside">-->
+<!--      <div>-->
+<!--        <img class="presenter-image" src="{{creator.profile}}">-->
+<!--      </div>-->
+<!--      <div style="text-align: right;height: 30%;">-->
+<!--        <h2 class="presenter-name">-->
+<!--          {{creator.name}}-->
+<!--        </h2>-->
+<!--        &lt;!&ndash; <div style="display: flex;">-->
+<!--            <a href="{{presenter.linked_in}}">-->
+<!--                <mat-icon class="icon"-->
+<!--                    style="font-size: 25px;margin-right: 10px;">-->
+<!--                    link</mat-icon>-->
+<!--            </a>-->
+<!--        </div> &ndash;&gt;-->
+<!--        <h4 class="presenter-about">{{creator.about}} </h4>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+

@@ -449,18 +449,21 @@ export class PublicService {
         "creators": [
           {
             "name": "علی نوروزی",
+            "title": "هد فنی",
             "about": "خفن و کاربلد",
             "email": "alinowrouzii@gmail.com",
             "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AliNowrouzi.jpg"
           },
           {
             "name": "اشکان شکیبا",
+            "title": "فرانت‌زن",
             "about": "نوب سگ",
             "email": "AshkanShakiba11@gmail.com",
             "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AshkanShakiba.jpg"
           },
           {
             "name": "سروناز سروقد",
+            "title": "دبیر انجمن",
             "about": "مهربون و دوست‌داشتنی",
             "email": "sarvghad79@gmail.com",
             "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/Sarvnaz.jpg"
@@ -481,18 +484,21 @@ export class PublicService {
         "creators": [
           {
             "name": "علی نوروزی",
+            "title": "هد فنی",
             "about": "خفن و کاربلد",
             "email": "alinowrouzii@gmail.com",
             "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AliNowrouzi.jpg"
           },
           {
             "name": "اشکان شکیبا",
+            "title": "فرانت‌زن",
             "about": "نوب سگ",
             "email": "AshkanShakiba11@gmail.com",
             "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AshkanShakiba.jpg"
           },
           {
             "name": "سروناز سروقد",
+            "title": "دبیر انجمن",
             "about": "مهربون و دوست‌داشتنی",
             "email": "sarvghad79@gmail.com",
             "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/Sarvnaz.jpg"
@@ -513,18 +519,21 @@ export class PublicService {
         "creators": [
           {
             "name": "علی نوروزی",
+            "title": "هد فنی",
             "about": "خفن و کاربلد",
             "email": "alinowrouzii@gmail.com",
             "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AliNowrouzi.jpg"
           },
           {
             "name": "اشکان شکیبا",
+            "title": "فرانت‌زن",
             "about": "نوب سگ",
             "email": "AshkanShakiba11@gmail.com",
             "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AshkanShakiba.jpg"
           },
           {
             "name": "سروناز سروقد",
+            "title": "دبیر انجمن",
             "about": "مهربون و دوست‌داشتنی",
             "email": "sarvghad79@gmail.com",
             "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/Sarvnaz.jpg"
@@ -545,18 +554,21 @@ export class PublicService {
         "creators": [
           {
             "name": "علی نوروزی",
+            "title": "هد فنی",
             "about": "خفن و کاربلد",
             "email": "alinowrouzii@gmail.com",
             "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AliNowrouzi.jpg"
           },
           {
             "name": "اشکان شکیبا",
+            "title": "فرانت‌زن",
             "about": "نوب سگ",
             "email": "AshkanShakiba11@gmail.com",
             "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AshkanShakiba.jpg"
           },
           {
             "name": "سروناز سروقد",
+            "title": "دبیر انجمن",
             "about": "مهربون و دوست‌داشتنی",
             "email": "sarvghad79@gmail.com",
             "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/Sarvnaz.jpg"
@@ -577,18 +589,21 @@ export class PublicService {
         "creators": [
           {
             "name": "علی نوروزی",
+            "title": "هد فنی",
             "about": "خفن و کاربلد",
             "email": "alinowrouzii@gmail.com",
             "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AliNowrouzi.jpg"
           },
           {
             "name": "اشکان شکیبا",
+            "title": "فرانت‌زن",
             "about": "نوب سگ",
             "email": "AshkanShakiba11@gmail.com",
             "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AshkanShakiba.jpg"
           },
           {
             "name": "سروناز سروقد",
+            "title": "دبیر انجمن",
             "about": "مهربون و دوست‌داشتنی",
             "email": "sarvghad79@gmail.com",
             "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/Sarvnaz.jpg"
@@ -609,18 +624,21 @@ export class PublicService {
         "creators": [
           {
             "name": "علی نوروزی",
+            "title": "هد فنی",
             "about": "خفن و کاربلد",
             "email": "alinowrouzii@gmail.com",
             "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AliNowrouzi.jpg"
           },
           {
             "name": "اشکان شکیبا",
+            "title": "فرانت‌زن",
             "about": "نوب سگ",
             "email": "AshkanShakiba11@gmail.com",
             "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AshkanShakiba.jpg"
           },
           {
             "name": "سروناز سروقد",
+            "title": "دبیر انجمن",
             "about": "مهربون و دوست‌داشتنی",
             "email": "sarvghad79@gmail.com",
             "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/Sarvnaz.jpg"
@@ -641,18 +659,21 @@ export class PublicService {
         "creators": [
           {
             "name": "علی نوروزی",
+            "title": "هد فنی",
             "about": "خفن و کاربلد",
             "email": "alinowrouzii@gmail.com",
             "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AliNowrouzi.jpg"
           },
           {
             "name": "اشکان شکیبا",
+            "title": "فرانت‌زن",
             "about": "نوب سگ",
             "email": "AshkanShakiba11@gmail.com",
             "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AshkanShakiba.jpg"
           },
           {
             "name": "سروناز سروقد",
+            "title": "دبیر انجمن",
             "about": "مهربون و دوست‌داشتنی",
             "email": "sarvghad79@gmail.com",
             "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/Sarvnaz.jpg"

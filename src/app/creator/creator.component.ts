@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 
 export interface Creator {
   name: string;
+  title: string;
   about: string;
   email: string;
   profile: string
