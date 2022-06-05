@@ -664,6 +664,47 @@ export class PublicService {
     ]
   }
 
+  getComments(gameCode: number): any {
+    return [
+      {
+        "text": "بجنب مرد! وقت ظهور حضرت دیگ بکارمون نمیاد",
+        "score": 3,
+        "game": 2,
+        "user": {
+          "name": "علی نوروزی",
+          "about": "خفن و کاربلد",
+          "email": "alinowrouzii@gmail.com",
+          "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AliNowrouzi.jpg"
+        },
+        "timestamp": "2022-04-27T13:47:14.586807+04:30"
+      },
+      {
+        "text": "به زودی میرسه ایشالا، به زودی...",
+        "score": 5,
+        "game": 2,
+        "user": {
+          "name": "اشکان شکیبا",
+          "about": "نوب سگ",
+          "email": "AshkanShakiba11@gmail.com",
+          "profile": "https://gamecraft.ce.aut.ac.ir/assets/images/AshkanShakiba.jpg"
+        },
+        "timestamp": "2022-04-27T13:47:14.586807+04:30"
+      },
+      {
+        "text": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.",
+        "score": 2,
+        "game": 2,
+        "user": {
+          "name": "ربات اسپم و فتح کامنت اول",
+          "about": "",
+          "email": "bot@spam.ir",
+          "profile": "https://botostore.com/netcat_files/6/7/preview_153367_1618236665.jpg"
+        },
+        "timestamp": "2022-04-27T13:47:14.586807+04:30"
+      },
+    ]
+  }
+
   ActivateUser(token: string): Promise<any> {
     var that = this;
     this.APICalls.ActivateUser = true;
