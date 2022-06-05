@@ -1,0 +1,8 @@
+<h2 mat-dialog-title class="title">نظرات</h2>
+<mat-dialog-content class="mat-typography content">
+  <app-comment *ngFor="let comment of comments" [comment]="comment" style="direction: rtl;"></app-comment>
+
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+  <button mat-button mat-dialog-close class="button">بازگشت</button>
+</mat-dialog-actions>

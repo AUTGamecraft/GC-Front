@@ -1,5 +1,6 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {CommentsComponent} from "../comments/comments.component";
 
 export interface DialogData {
   title: string;
@@ -19,6 +20,7 @@ export interface DialogData {
 })
 export class GameContentComponent implements OnInit {
   constructor(
+    public matDialog: MatDialog,
     public dialog: MatDialogRef<GameContentComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData,
   ) {
@@ -27,4 +29,14 @@ export class GameContentComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  openGameDialog() {
+    const dialog = this.matDialog.open(CommentsComponent, {
+      data: {
+        gameCode: 2
+      },
+    });
+
+    dialog.afterClosed().subscribe(result => {
+    });
+  }
 }
