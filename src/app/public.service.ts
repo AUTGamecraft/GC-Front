@@ -438,6 +438,8 @@ export class PublicService {
   getGames(): any {
     return [
       {
+        "game_code": 1,
+        "average_score": 4,
         "title": "سوپر ماریو",
         "poster": "https://assets.telegraphindia.com/telegraph/2022/Jan/1641295024_resized2.jpg",
         "description": "قارچ قارچ قارچ!   قارچ از همه رنگ!\n" +
@@ -473,6 +475,8 @@ export class PublicService {
         "timestamp": "2022-04-27T13:46:17.963450+04:30"
       },
       {
+        "game_code": 1,
+        "average_score": 4,
         "title": "سوپر ماریو",
         "poster": "https://assets.telegraphindia.com/telegraph/2022/Jan/1641295024_resized2.jpg",
         "description": "قارچ قارچ قارچ!   قارچ از همه رنگ!\n" +
@@ -508,6 +512,8 @@ export class PublicService {
         "timestamp": "2022-04-27T13:46:17.963450+04:30"
       },
       {
+        "game_code": 1,
+        "average_score": 4,
         "title": "سوپر ماریو",
         "poster": "https://assets.telegraphindia.com/telegraph/2022/Jan/1641295024_resized2.jpg",
         "description": "قارچ قارچ قارچ!   قارچ از همه رنگ!\n" +
@@ -543,6 +549,8 @@ export class PublicService {
         "timestamp": "2022-04-27T13:46:17.963450+04:30"
       },
       {
+        "game_code": 1,
+        "average_score": 4,
         "title": "سوپر ماریو",
         "poster": "https://assets.telegraphindia.com/telegraph/2022/Jan/1641295024_resized2.jpg",
         "description": "قارچ قارچ قارچ!   قارچ از همه رنگ!\n" +
@@ -578,6 +586,8 @@ export class PublicService {
         "timestamp": "2022-04-27T13:46:17.963450+04:30"
       },
       {
+        "game_code": 1,
+        "average_score": 4,
         "title": "سوپر ماریو",
         "poster": "https://assets.telegraphindia.com/telegraph/2022/Jan/1641295024_resized2.jpg",
         "description": "قارچ قارچ قارچ!   قارچ از همه رنگ!\n" +
@@ -613,6 +623,8 @@ export class PublicService {
         "timestamp": "2022-04-27T13:46:17.963450+04:30"
       },
       {
+        "game_code": 1,
+        "average_score": 4,
         "title": "سوپر ماریو",
         "poster": "https://assets.telegraphindia.com/telegraph/2022/Jan/1641295024_resized2.jpg",
         "description": "قارچ قارچ قارچ!   قارچ از همه رنگ!\n" +
@@ -648,6 +660,8 @@ export class PublicService {
         "timestamp": "2022-04-27T13:46:17.963450+04:30"
       },
       {
+        "game_code": 1,
+        "average_score": 4,
         "title": "سوپر ماریو",
         "poster": "https://assets.telegraphindia.com/telegraph/2022/Jan/1641295024_resized2.jpg",
         "description": "قارچ قارچ قارچ!   قارچ از همه رنگ!\n" +
@@ -685,7 +699,7 @@ export class PublicService {
     ]
   }
 
-  getComments(gameCode: number): any {
+  getComments(game_code: number): any {
     return [
       {
         "text": "بجنب مرد! وقت ظهور حضرت دیگ بکارمون نمیاد",
