@@ -40,6 +40,11 @@ export class PublicService {
   public discount_code: string = "";
   public newPassword: String = "";
   public newPassword2: String = "";
+
+  // field of create-game-component
+  public createGame= {
+    gameName:""
+  }
   
   Mockup() {
 
@@ -120,7 +125,7 @@ export class PublicService {
         // else {
         // this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'عکس با موفقیت آپلود شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
         // }
-        location.reload(true);
+        location.reload();
       })
       .catch(this.handleError);
 
