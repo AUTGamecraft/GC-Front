@@ -38,6 +38,11 @@ export class PublicService {
   public newPassword: String = "";
   public newPassword2: String = "";
 
+  // field of create-game-component
+  public createGame= {
+    gameName:""
+  }
+  
   public currentGame: {
     game: any;
     averageScore: number;
@@ -113,22 +118,18 @@ export class PublicService {
     this.APICalls.UpdateImage = true;
     let h = new HttpHeaders();
     h = h.set('Authorization', 'Bearer ' + this.Authorization);
-    const req = new HttpRequest("PUT", this.ApiUrl + '/api/v2/users/profile/update/', uploadData, {headers: h});
-    this.http2.request(req).toPromise().then((r) => {
-      // if (window.innerWidth > 992) {
-      this.snackbar.openFromComponent(SuccessDialogComponent, {
-        duration: 2000,
-        data: 'عکس با موفقیت آپلود شد!',
-        panelClass: ['snackbar'],
-        verticalPosition: 'top',
-        direction: 'rtl'
-      });
-      // }
-      // else {
-      // this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'عکس با موفقیت آپلود شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
-      // }
-      location.reload();
-    })
+    const req = new HttpRequest("PUT", this.ApiUrl + '/api/v2/users/profile/update/', uploadData, { headers: h });
+    this.http2.request(req).
+      toPromise().
+      then((r) => {
+        // if (window.innerWidth > 992) {
+        this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'عکس با موفقیت آپلود شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+        // }
+        // else {
+        // this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'عکس با موفقیت آپلود شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+        // }
+        location.reload();
+      })
       .catch(this.handleError);
 
   }

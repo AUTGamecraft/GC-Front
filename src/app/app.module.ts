@@ -26,6 +26,7 @@ import { PeopleComponent } from './people/people.component';
 import { RulesComponent } from './rules/rules.component';
 import { InvalidPageComponent } from './invalid-page/invalid-page.component';
 import { DashboardTeamsComponent } from './dashboard-teams/dashboard-teams.component';
+import { DashboardCreateGameComponent } from './dashboard-create-game/dashboard-create-game.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { EmailConfirmComponent } from './email-confirm/email-confirm.component';
 import { ConfirmConfirmComponent } from './confirm-confirm/confirm-confirm.component';
@@ -56,6 +57,7 @@ import { CommentComponent } from './comment/comment.component';
     RulesComponent,
     InvalidPageComponent,
     DashboardTeamsComponent,
+    DashboardCreateGameComponent,
     EmailConfirmComponent,
     ConfirmConfirmComponent,
     CartComponent,

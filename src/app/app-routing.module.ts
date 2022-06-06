@@ -5,6 +5,7 @@ import { ConfirmConfirmComponent } from './confirm-confirm/confirm-confirm.compo
 import { DashboardEventComponent } from './dashboard-event/dashboard-event.component';
 import { DashboardMediaComponent } from './dashboard-media/dashboard-media.component';
 import { DashboardTeamsComponent } from './dashboard-teams/dashboard-teams.component';
+import { DashboardCreateGameComponent } from './dashboard-create-game/dashboard-create-game.component';
 import { EmailConfirmComponent } from './email-confirm/email-confirm.component';
 import { ForgotComponent } from './forgot/forgot.component';
 import { HomeComponent } from './home/home.component';
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'rules', component: RulesComponent },
   { path: 'email-confirm', component: EmailConfirmComponent },
   { path: 'dashboard-teams', component: DashboardTeamsComponent },
+  { path: 'dashboard-create-game', component: DashboardCreateGameComponent },
   { path: 'confirm-confirm', component: ConfirmConfirmComponent },
   { path: 'cart', component: CartComponent },
   {path : 'forgot',component : ForgotComponent},

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -29,6 +29,18 @@ export class DashboardCreateGameComponent implements OnInit {
   isEmpty = true;
   hasTeam = false;
   teamInfo: any = [];
+  createGame: {
+    gameName: string,
+    gameLink: string,
+    gameAvatar: string
+  } = {
+    gameName: "",
+    gameLink: "",
+    gameAvatar: ""
+  }
+  @Output() onChange: EventEmitter<File> = new EventEmitter<File>();
+
+
   constructor(private router: Router, public publicservice: PublicService, private snackbar: MatSnackBar, private route: ActivatedRoute) {
     if(publicservice.logedIn) {
       publicservice.getUser().then((r) => {
@@ -186,4 +198,19 @@ export class DashboardCreateGameComponent implements OnInit {
   addGame(){
     this.router.navigate(['dashboard-create-game']);
   }
+  updateCreateGameImage($event: Event) {
+        // We access he file with $event.target['files'][0]
+        this.projectImage($event.target['files'][0]);
+  }
+  projectImage(file: File) {
+    let reader = new FileReader;
+    // TODO: Define type of 'e'
+    reader.onload = (e: any) => {
+        // Simply set e.target.result as our <img> src in the layout
+        this.createGame.gameAvatar = e.target.result;
+        this.onChange.emit(file);
+    };
+    // This will process our file and get it's attributes/data
+    reader.readAsDataURL(file);
+}
 }

@@ -65,6 +65,47 @@
                 <h1 class="events-title">
                     افزودن بازی</h1>
                 <div class="description">
+                    <h2 class="people">نام بازی</h2>
+                </div>
+                <div class="team-create-whole-div">
+                    <div class="form-field-div">
+                        <form>
+                            <mat-form-field class="form-field">
+                                <mat-label class="label">نام بازی
+                                </mat-label>
+                                <input matInput [formControl]="nameFormControl" class="input"
+                                    [(ngModel)]="createGame.gameName">
+                                <mat-error *ngIf="nameFormControl.hasError('required')" class="error">
+                                    وارد کردن نام بازی
+                                    <strong>{{publicservice.Texts.Texts["login6"]}}</strong>
+                                    {{publicservice.Texts.Texts["login5"]}}
+                                </mat-error>
+                            </mat-form-field>
+                        </form>
+                    </div>    
+                </div>
+                <div class="team-create-whole-div">
+                    <div class="form-field-div">
+                        <form>
+                            <mat-form-field class="form-field">
+                                <mat-label class="label">نام بازی
+                                </mat-label>
+                                <!-- Icon as placeholder when no file picked -->
+                                <i class="material-icons">cloud_upload</i>
+                                <!-- file input, accepts images only. Detect when file has been picked/changed with Angular's native (change) event listener -->
+                                <input type="file" accept="image/*" (change)="updateCreateGameImage($event)">
+                                <!-- img placeholder when a file has been picked. shows only when 'source' is not empty -->
+                                <img *ngIf="createGame.gameAvatar" [src]="createGame.gameAvatar" src="" style="width:50px; height: 50px;">
+                                <mat-error *ngIf="nameFormControl.hasError('required')" class="error">
+                                    وارد کردن نام بازی
+                                    <strong>{{publicservice.Texts.Texts["login6"]}}</strong>
+                                    {{publicservice.Texts.Texts["login5"]}}
+                                </mat-error>
+                            </mat-form-field>
+                        </form>
+                    </div>    
+                </div>
+                <div class="description">
                     <h2 class="people">{{publicservice.Texts.Texts["dash-teams2"]}}</h2>
                 </div>
                 <div class="team-create-whole-div">
