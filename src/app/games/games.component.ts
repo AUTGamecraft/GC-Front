@@ -57,15 +57,10 @@ export class GamesComponent implements OnInit {
           // TODO what should we do with this field
           el['title'] = "nothing"
 
+          el['about'] = "shit2"
+
           return el
         });
-
-        element['comments'] = element['comments'].map(element => {
-          element['user']['name'] = element['user']['first_name']
-          delete element['user']['first_name']
-    
-          return element
-        })
 
         return element
         
