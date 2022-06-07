@@ -32,7 +32,49 @@ export class GamesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.games = this.publicservice.getGames()
+    this.publicservice.getGames().subscribe(res=>{
+      console.log("resssssssssssss")
+      let games = this.publicservice.extractData(res, this)
+      console.log(games[0])
+      games = games.map(element => {
+        element['link'] = element['game_link']
+        element['game_code'] = element['game_id']
+        // for now!
+        element['average_score'] = 4
+        // for now
+        element['team'] = "shit"
+
+        // Also for now!
+        element['creators'] = element['other_creators']
+        element['creators'].push(element['creator'])
+        delete element['other_creators']
+        delete element['creator']
+
+        console.log( element['creators'])
+
+        element['creators'] = element['creators'].map(el => {
+          el['name'] = el['first_name']
+          // TODO what should we do with this field
+          el['title'] = "nothing"
+
+          return el
+        });
+
+        element['comments'] = element['comments'].map(element => {
+          element['user']['name'] = element['user']['first_name']
+          delete element['user']['first_name']
+    
+          return element
+        })
+
+        return element
+        
+      });
+      console.log("======")
+      console.log(games)
+      console.log("======")
+      this.games = games
+    })
   }
   ngAfterViewInit(): void {
     if (this.router.url.split('#')[1] == 'people') {

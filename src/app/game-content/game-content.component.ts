@@ -34,7 +34,15 @@ export class GameContentComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.comments = this.publicservice.getComments(this.data.game_code)
+    this.comments = this.publicservice.getComments(this.data.game_code).subscribe(res=>{
+        let comments = this.publicservice.extractData(res, this)
+        comments = comments.map(element => {
+          element['user']['name'] = element['user']['first_name']
+    
+          return element
+        })
+        this.comments=comments
+      })
   }
 
   openGameDialog() {
