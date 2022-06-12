@@ -41,18 +41,11 @@ export class GamesComponent implements OnInit {
         element['game_code'] = element['game_id']
         // for now!
         element['average_score'] = 4
-        // for now
-        element['team'] = "shit"
+        
+        // TODO for now
+        // console.log("team", element['team'].description)
 
-        // Also for now!
-        element['creators'] = element['other_creators']
-        element['creators'].push(element['creator'])
-        delete element['other_creators']
-        delete element['creator']
-
-        console.log( element['creators'])
-
-        element['creators'] = element['creators'].map(el => {
+        element['team']['members'] = element['team']['members'].map(el => {
           el['name'] = el['first_name']
           // TODO what should we do with this field
           el['title'] = "nothing"

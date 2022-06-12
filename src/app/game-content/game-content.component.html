@@ -5,10 +5,12 @@
       <img src="{{data.poster}}" alt="Game Poster" class="poster" style="min-width: 65%;max-width: 95%">
     </div>
     <h1 style="font-family: 'Estedad-Bold', sans-serif; font-size: x-large; direction: rtl;">{{data.title}}</h1>
-    <h2 style="font-family: 'Estedad-SemiBold', sans-serif; font-size: x-large; direction: rtl;">{{data.team}}</h2>
-    <p style="direction: rtl;">{{data.description}}</p>
+    <h2 style="font-family: 'Estedad-SemiBold', sans-serif; font-size: x-large; direction: rtl;">{{data.team.name}}</h2>
+    <p style="direction: rtl;" [innerHTML]="data.description">
+    </p>
+    ----average score {{publicservice.currentGame.averageScore}}----
     <p style="font-weight: bold; font-size: large; direction: rtl;">سازندگان:</p>
-    <app-creator *ngFor="let creator of data.creators" [creator]="creator" style="direction: rtl;"></app-creator>
+    <app-creator *ngFor="let creator of data.team.members" [creator]="creator" style="direction: rtl;"></app-creator>
   </mat-dialog-content>
   <mat-dialog-actions align="end">
   <!--  <button mat-button (click)="openGameDialog()" class="button">نظرات</button>-->
