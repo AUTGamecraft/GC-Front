@@ -41,11 +41,12 @@ export class GameContentComponent implements OnInit {
     
           return element
         })
-
-        console.log("comments===", comments)
-        this.publicservice.currentGame.averageScore = Math.floor(comments.reduce(
-                (previousValue, currentValue) => previousValue + currentValue.score, 0
-        )/comments.length);
+        if(comments.length){
+          console.log("comments===", comments)
+          this.publicservice.currentGame.averageScore = Math.floor(comments.reduce(
+            (previousValue, currentValue) => previousValue + currentValue.score, 0
+            )/comments.length);
+        }
 
         this.comments=comments
       })
