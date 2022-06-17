@@ -1,19 +1,37 @@
-<h2 mat-dialog-title class="title">{{data.title}}</h2>
-<mat-dialog-content class="mat-typography content">
-  <div style="text-align: center">
-    <img src="{{data.poster}}" alt="Game Poster" class="poster" style="min-width: 65%;max-width: 95%">
-  </div>
-  <h1 style="font-family: 'Estedad-Bold', sans-serif; font-size: x-large; direction: rtl;">{{data.title}}</h1>
-  <h2 style="font-family: 'Estedad-SemiBold', sans-serif; font-size: x-large; direction: rtl;">{{data.team}}</h2>
-  <p style="direction: rtl;">{{data.description}}</p>
-  <p style="font-weight: bold; font-size: large; direction: rtl;">سازندگان:</p>
-  <app-creator *ngFor="let creator of data.creators" [creator]="creator" style="direction: rtl;"></app-creator>
+<span *ngIf="!showComments">
+  <h2 mat-dialog-title class="title">{{data.title}}</h2>
+  <mat-dialog-content class="mat-typography content">
+    <div style="text-align: center">
+      <img src="{{data.poster}}" alt="Game Poster" class="poster" style="min-width: 65%;max-width: 95%">
+    </div>
+    <h1 style="font-family: 'Estedad-Bold', sans-serif; font-size: x-large; direction: rtl;">{{data.title}}</h1>
+    <h2 style="font-family: 'Estedad-SemiBold', sans-serif; font-size: x-large; direction: rtl;">{{data.team.name}}</h2>
+    <p style="direction: rtl;" [innerHTML]="data.description">
+    </p>
+    ----average score {{publicservice.currentGame.averageScore}}----
+    <p style="font-weight: bold; font-size: large; direction: rtl;">سازندگان:</p>
+    <app-creator *ngFor="let creator of data.team.members" [creator]="creator" style="direction: rtl;"></app-creator>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+  <!--  <button mat-button (click)="openGameDialog()" class="button">نظرات</button>-->
+    <button mat-button mat-dialog-close class="button">بازگشت</button>
+    <button mat-button (click)="openComments()" class="button">نظرات</button>
+    <a href="{{data.link}}" class="link">
+      <button mat-button [mat-dialog-close]="true" class="button" cdkFocusInitial>دریافت</button>
+    </a>
+  </mat-dialog-actions>
+</span>
 
-</mat-dialog-content>
-<mat-dialog-actions align="end">
-  <button mat-button (click)="openGameDialog()" class="button">نظرات</button>
-  <button mat-button mat-dialog-close class="button">بازگشت</button>
-  <a href="{{data.link}}" class="link">
-    <button mat-button [mat-dialog-close]="true" class="button" cdkFocusInitial>دریافت</button>
-  </a>
-</mat-dialog-actions>
+<span *ngIf="showComments">
+  <h2 mat-dialog-title class="title">نظرات</h2>
+  <mat-dialog-content class="mat-typography content">
+    <app-comment *ngFor="let comment of comments" [comment]="comment" style="direction: rtl;"></app-comment>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close class="button">بازگشت</button>
+    <button mat-button (click)="closeComments()" class="button">توضیحات</button>
+    <a href="{{data.link}}" class="link">
+      <button mat-button [mat-dialog-close]="true" class="button" cdkFocusInitial>دریافت</button>
+    </a>
+  </mat-dialog-actions>
+</span>

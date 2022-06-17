@@ -26,7 +26,9 @@ export class GameComponent implements OnInit {
         team: this.game.team,
         creators: this.game.creators,
         is_verified: this.game.is_verified,
-        timestamp: this.game.timestamp
+        timestamp: this.game.timestamp,
+        game_code: this.game.game_code,
+        average_score: this.game.average_score
       },
     });
 

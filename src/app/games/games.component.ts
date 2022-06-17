@@ -32,7 +32,37 @@ export class GamesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.games = this.publicservice.getGames()
+    this.publicservice.getGames().subscribe(res=>{
+      console.log("resssssssssssss")
+      let games = this.publicservice.extractData(res, this)
+      console.log(games[0])
+      games = games.map(element => {
+        element['link'] = element['game_link']
+        element['game_code'] = element['game_id']
+        // for now!
+        element['average_score'] = 4
+        
+        // TODO for now
+        // console.log("team", element['team'].description)
+
+        element['team']['members'] = element['team']['members'].map(el => {
+          el['name'] = el['first_name']
+          // TODO what should we do with this field
+          el['title'] = "nothing"
+
+          el['about'] = "shit2"
+
+          return el
+        });
+
+        return element
+        
+      });
+      console.log("======")
+      console.log(games)
+      console.log("======")
+      this.games = games
+    })
   }
   ngAfterViewInit(): void {
     if (this.router.url.split('#')[1] == 'people') {

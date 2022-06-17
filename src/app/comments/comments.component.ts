@@ -3,7 +3,7 @@ import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {PublicService} from "../public.service";
 
 export interface DialogData {
-  gameCode: number;
+  game_code: number;
 }
 
 @Component({
@@ -12,7 +12,7 @@ export interface DialogData {
   styleUrls: ['./comments.component.scss']
 })
 export class CommentsComponent implements OnInit {
-  comments: any
+  comments: []
 
   constructor(
     public publicservice: PublicService,
@@ -21,7 +21,17 @@ export class CommentsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.comments = this.publicservice.getComments(this.data.gameCode)
+    console.log("inside comment========")
+    this.publicservice.getComments(this.data.game_code).subscribe(res=>{
+      let comments = this.publicservice.extractData(res, this)
+      comments = comments.map(element => {
+        element['user']['name'] = element['user']['first_name']
+  
+        return element
+      })
+      this.comments=comments
+    })
+    
   }
 
 }
