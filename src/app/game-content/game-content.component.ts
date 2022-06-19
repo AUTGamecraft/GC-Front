@@ -25,6 +25,14 @@ export class GameContentComponent implements OnInit {
   comments: any
   showComments: boolean = false
 
+  commentToSubmit: {
+    text: string,
+    score: number
+  } = {
+    text: "",
+    score: 5
+  }
+
   constructor(
     public publicservice: PublicService,
     public matDialog: MatDialog,
@@ -72,4 +80,30 @@ export class GameContentComponent implements OnInit {
   closeComments() {
     this.showComments = false
   }
+
+  submitComment() {
+    // TODO API call to backend
+    console.log("current game is", this.data)
+    console.log("typed comment is", this.commentToSubmit.text)
+
+    const body = {
+      text: this.commentToSubmit.text,
+      score: this.commentToSubmit.score,
+      game: this.data.game_code,
+    }
+
+    this.publicservice.submitComment(body).subscribe(res =>{
+      console.log("comment was submitted", res)
+      this.commentToSubmit = {
+        text: "",
+        score: 5
+      }
+      this.showComments = false;
+      // TODO show success dialog to the user
+    })
+
+
+  }
 }
+
+

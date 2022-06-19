@@ -448,6 +448,26 @@ export class PublicService {
     return res
   }
 
+  submitComment(body): Observable<Response> {
+
+    // boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+    let headers = new Headers({
+      'Authorization': 'Bearer ' + this.Authorization
+    });
+    // let options = new RequestOptions({headers: headers});
+    const options = {
+      headers,
+    }
+
+    const formData = new FormData();
+    formData.append('text',body.text)
+    formData.append('score',body.score)
+    formData.append('game',body.game)
+
+    const res: Observable<Response> = this.http.post(this.ApiUrl + '/api/v2/game/comment/', formData, options)
+    return res
+  }
+
   getComments(game_code: number): Observable<Response> {
     const res: Observable<Response> = this.http.get(this.ApiUrl + `/api/v2/game/${game_code}/comments/`, {})
     return res

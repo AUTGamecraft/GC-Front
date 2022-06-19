@@ -35,11 +35,18 @@
     <app-comment *ngFor="let comment of comments" [comment]="comment" style="direction: rtl;"></app-comment>
   </mat-dialog-content>
   <div style="width: 100%; display: flex; flex-direction: row; justify-content: flex-start;">
-    <textarea dir="rtl" placeholder="به این بازی نظر بده!" rows="2" name="comment[text]" id="comment_text" class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true"></textarea>
+    <textarea [(ngModel)]="commentToSubmit.text" dir="rtl" placeholder="به این بازی نظر بده!" rows="2" name="comment[text]" id="comment_text" class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true"></textarea>
   </div>
   <mat-dialog-actions align="end" style="display:flex; flex-direction: row; justify-content: space-between;">
     <span style="margin-bottom: 10px;">
-      <button mat-button mat-dialog-close class="button" style="background-color: #6af9c5;color: #34334B;" (click)="submitComment">ثبت نظر</button>
+      <button [disabled]="!publicservice.logedIn || commentToSubmit.text.length === 0" mat-button class="button" style="background-color: #6af9c5;color: #34334B;" (click)="submitComment()">
+        <span *ngIf="publicservice.logedIn">
+          ثبت نظر
+        </span>
+        <span dir="rtl"  *ngIf="!publicservice.logedIn">
+          برای ثبت نظر باید لاگین کنید!
+        </span>
+      </button>
     </span>
     <span>
       <button mat-button mat-dialog-close class="button">بازگشت</button>
