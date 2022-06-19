@@ -60,8 +60,229 @@ export class GamesComponent implements OnInit {
       });
       console.log("======")
       console.log(games)
+      const mock = []
+      // for(let i=0; i<10; i++){
+      //   mock.push(
+      //     {
+      //       "title": "shit",
+      //       "poster": "http://gamecraft.ce.aut.ac.ir/staticfiles/web/media/dark-3d-bulb.png",
+      //       "description": "<p>here's third desc</p>",
+      //       "game_link": "google.com",
+      //       "team": {
+      //           "members": [
+      //             {
+      //                   "team": 36,
+      //                   "team_role": "HE",
+      //                   "pk": 2,
+      //                   "profile": "http://gamecraft.ce.aut.ac.ir/staticfiles/web/media/AliNowrouzi.jpg",
+      //                   "email": "alinowrouzii@gmail.com",
+      //                   "first_name": "alinowrouzi",
+      //                   "user_name": "alinowrouzii@gmail.com",
+      //                   "name": "alinowrouzi",
+      //                   "title": "nothing",
+      //                   "about": "shit2"
+      //                 }
+      //               ],
+      //               "state": "ACTIVATED",
+      //               "name": "dj2",
+      //               "pk": 36
+      //             },
+      //       "is_verified": true,
+      //       "timestamp": "2022-06-12T20:55:11.455158+04:30",
+      //       "game_id": "3",
+      //       "comments": [],
+      //       "link": "google.com",
+      //       "game_code": "3",
+      //       "average_score": 4
+      //     }
+      //   )
+      // }
+
+      mock.push(
+        {
+                "title": "shit",
+                "poster": "http://gamecraft.ce.aut.ac.ir/staticfiles/web/media/dark-3d-bulb.png",
+                "description": "<p>here's third desc</p>",
+                "game_link": "google.com",
+                "team": {
+                    "members": [
+                      {
+                            "team": 36,
+                            "team_role": "HE",
+                            "pk": 2,
+                            "profile": "http://gamecraft.ce.aut.ac.ir/staticfiles/web/media/AliNowrouzi.jpg",
+                            "email": "alinowrouzii@gmail.com",
+                            "first_name": "alinowrouzi",
+                            "user_name": "alinowrouzii@gmail.com",
+                            "name": "alinowrouzi",
+                            "title": "nothing",
+                            "about": "shit2"
+                          }
+                        ],
+                        "state": "ACTIVATED",
+                        "name": "dj2",
+                        "pk": 36
+                      },
+                "is_verified": true,
+                "timestamp": "2022-06-12T20:55:11.455158+04:30",
+                "game_id": "3",
+                "comments": [],
+                "link": "google.com",
+                "game_code": "3",
+                "average_score": 4
+              }
+      )
+
+
+      mock.push(
+        {
+                "title": "shit",
+                "poster": "https://blog.ipleaders.in/wp-content/uploads/2018/02/BV-Acharya-17.jpg",
+                "description": "<p>here's third desc</p>",
+                "game_link": "google.com",
+                "team": {
+                    "members": [
+                      {
+                            "team": 36,
+                            "team_role": "HE",
+                            "pk": 2,
+                            "profile": "http://gamecraft.ce.aut.ac.ir/staticfiles/web/media/AliNowrouzi.jpg",
+                            "email": "alinowrouzii@gmail.com",
+                            "first_name": "alinowrouzi",
+                            "user_name": "alinowrouzii@gmail.com",
+                            "name": "alinowrouzi",
+                            "title": "nothing",
+                            "about": "shit2"
+                          }
+                        ],
+                        "state": "ACTIVATED",
+                        "name": "dj2",
+                        "pk": 36
+                      },
+                "is_verified": true,
+                "timestamp": "2022-06-12T20:55:11.455158+04:30",
+                "game_id": "3",
+                "comments": [],
+                "link": "google.com",
+                "game_code": "3",
+                "average_score": 4
+              }
+      )
+
+
+
+      mock.push(
+        {
+                "title": "shit",
+                "poster": "http://gamecraft.ce.aut.ac.ir/staticfiles/web/media/dark-3d-bulb.png",
+                "description": "<p>here's third desc</p>",
+                "game_link": "google.com",
+                "team": {
+                    "members": [
+                      {
+                            "team": 36,
+                            "team_role": "HE",
+                            "pk": 2,
+                            "profile": "http://gamecraft.ce.aut.ac.ir/staticfiles/web/media/AliNowrouzi.jpg",
+                            "email": "alinowrouzii@gmail.com",
+                            "first_name": "alinowrouzi",
+                            "user_name": "alinowrouzii@gmail.com",
+                            "name": "alinowrouzi",
+                            "title": "nothing",
+                            "about": "shit2"
+                          }
+                        ],
+                        "state": "ACTIVATED",
+                        "name": "dj2",
+                        "pk": 36
+                      },
+                "is_verified": true,
+                "timestamp": "2022-06-12T20:55:11.455158+04:30",
+                "game_id": "3",
+                "comments": [],
+                "link": "google.com",
+                "game_code": "3",
+                "average_score": 4
+              }
+      )
+
+
+
+
+      mock.push(
+        {
+                "title": "shit",
+                "poster": "http://gamecraft.ce.aut.ac.ir/staticfiles/web/media/dark-3d-bulb.png",
+                "description": "<p>here's third desc</p>",
+                "game_link": "google.com",
+                "team": {
+                    "members": [
+                      {
+                            "team": 36,
+                            "team_role": "HE",
+                            "pk": 2,
+                            "profile": "http://gamecraft.ce.aut.ac.ir/staticfiles/web/media/AliNowrouzi.jpg",
+                            "email": "alinowrouzii@gmail.com",
+                            "first_name": "alinowrouzi",
+                            "user_name": "alinowrouzii@gmail.com",
+                            "name": "alinowrouzi",
+                            "title": "nothing",
+                            "about": "shit2"
+                          }
+                        ],
+                        "state": "ACTIVATED",
+                        "name": "dj2",
+                        "pk": 36
+                      },
+                "is_verified": true,
+                "timestamp": "2022-06-12T20:55:11.455158+04:30",
+                "game_id": "3",
+                "comments": [],
+                "link": "google.com",
+                "game_code": "3",
+                "average_score": 4
+              }
+      )
+      mock.push(
+        {
+                "title": "shit",
+                "poster": "http://gamecraft.ce.aut.ac.ir/staticfiles/web/media/dark-3d-bulb.png",
+                "description": "<p>here's third desc</p>",
+                "game_link": "google.com",
+                "team": {
+                    "members": [
+                      {
+                            "team": 36,
+                            "team_role": "HE",
+                            "pk": 2,
+                            "profile": "http://gamecraft.ce.aut.ac.ir/staticfiles/web/media/AliNowrouzi.jpg",
+                            "email": "alinowrouzii@gmail.com",
+                            "first_name": "alinowrouzi",
+                            "user_name": "alinowrouzii@gmail.com",
+                            "name": "alinowrouzi",
+                            "title": "nothing",
+                            "about": "shit2"
+                          }
+                        ],
+                        "state": "ACTIVATED",
+                        "name": "dj2",
+                        "pk": 36
+                      },
+                "is_verified": true,
+                "timestamp": "2022-06-12T20:55:11.455158+04:30",
+                "game_id": "3",
+                "comments": [],
+                "link": "google.com",
+                "game_code": "3",
+                "average_score": 4
+              }
+      )
+
+
+
       console.log("======")
-      this.games = games
+      this.games = mock
+      // this.games = games
     })
   }
   ngAfterViewInit(): void {

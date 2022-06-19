@@ -12,6 +12,8 @@
 
 .main {
   margin: auto 50px;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
 h1 {
@@ -536,6 +538,10 @@ h2, h1 {
 @media only screen and (max-width: 588px) {
   .supporters-div {
     margin-top: 100%;
+  }
+  .row {
+    padding-right: 0px;
+    padding-left: 0px;
   }
 }
 @media only screen and (max-width: 420px) {
@@ -1782,6 +1788,10 @@ h2, h1 {
 // }
 
 @media only screen and (max-width: 900) {
+  .main {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
   .example-sidenav-container {
     /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
    causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */

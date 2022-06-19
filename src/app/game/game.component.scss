@@ -12,7 +12,7 @@ h3, h5, p {
 
 .column {
   float: right;
-  width: 25%;
+  width: 33%;
 }
 
 .content {
@@ -33,5 +33,8 @@ h3, h5, p {
 @media screen and (max-width: 600px) {
   .column {
     width: 100%;
+  }
+  .content {
+    height: auto;
   }
 }
