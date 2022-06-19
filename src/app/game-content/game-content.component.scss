@@ -50,3 +50,38 @@
 .gray-icon {
   color: #909090;
 }
+
+
+textarea {
+  margin-top: 10px;
+  width: 100%;
+  height: 100px;
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0.07);
+  border-color: #FFFFFF;
+
+  border-image: none;
+  border-radius: 6px 6px 6px 6px;
+  border-style: solid;
+  border-width: 1px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.4em;
+  transition: background-color 0.2s ease 0s;
+  resize: none;
+}
+
+
+textarea:focus {
+    background: none repeat scroll 0 0 #FFFFFF;
+    outline-width: 0;
+}
+
+textarea::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(255, 255, 255);
+  opacity: 1; /* Firefox */
+}
+
+textarea:focus::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(25, 20, 20);
+  opacity: 1; /* Firefox */
+}

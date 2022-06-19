@@ -34,6 +34,8 @@ export class GameContentComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.publicservice.currentGame.averageScore = 0;
+    this.comments = []
     this.publicservice.getComments(this.data.game_code).subscribe(res=>{
         let comments = this.publicservice.extractData(res, this)
         comments = comments.map(element => {
@@ -46,8 +48,6 @@ export class GameContentComponent implements OnInit {
           this.publicservice.currentGame.averageScore = Math.floor(comments.reduce(
             (previousValue, currentValue) => previousValue + currentValue.score, 0
             )/comments.length);
-        }else {
-          this.publicservice.currentGame.averageScore = 0;
         }
         console.log("==================> here")
         this.comments=comments

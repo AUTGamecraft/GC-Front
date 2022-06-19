@@ -34,11 +34,19 @@
   <mat-dialog-content class="mat-typography content">
     <app-comment *ngFor="let comment of comments" [comment]="comment" style="direction: rtl;"></app-comment>
   </mat-dialog-content>
-  <mat-dialog-actions align="end">
-    <button mat-button mat-dialog-close class="button">بازگشت</button>
-    <button mat-button (click)="closeComments()" class="button">توضیحات</button>
-    <a href="{{data.link}}" class="link">
-      <button mat-button [mat-dialog-close]="true" class="button" cdkFocusInitial>دریافت</button>
-    </a>
+  <div style="width: 100%; display: flex; flex-direction: row; justify-content: flex-start;">
+    <textarea dir="rtl" placeholder="به این بازی نظر بده!" rows="2" name="comment[text]" id="comment_text" class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true"></textarea>
+  </div>
+  <mat-dialog-actions align="end" style="display:flex; flex-direction: row; justify-content: space-between;">
+    <span style="margin-bottom: 10px;">
+      <button mat-button mat-dialog-close class="button" style="background-color: #6af9c5;color: #34334B;" (click)="submitComment">ثبت نظر</button>
+    </span>
+    <span>
+      <button mat-button mat-dialog-close class="button">بازگشت</button>
+      <button mat-button (click)="closeComments()" class="button">توضیحات</button>
+      <a href="{{data.link}}" class="link">
+        <button mat-button [mat-dialog-close]="true" class="button" cdkFocusInitial>دریافت</button>
+      </a>
+    </span>
   </mat-dialog-actions>
 </div>
