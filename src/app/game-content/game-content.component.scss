@@ -22,3 +22,31 @@
   font-family: "Estedad-Regular", sans-serif;
 }
 
+
+.game-dialog {
+  width: 600px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+@media only screen and (max-width: 992px) {
+  .game-dialog {
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.golden-icon{
+  color: #FFD700;
+}
+
+
+.gray-icon {
+  color: #909090;
+}

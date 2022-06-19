@@ -281,8 +281,8 @@ export class GamesComponent implements OnInit {
 
 
       console.log("======")
-      this.games = mock
-      // this.games = games
+      // this.games = mock
+      this.games = games
     })
   }
   ngAfterViewInit(): void {

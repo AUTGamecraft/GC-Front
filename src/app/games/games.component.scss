@@ -1787,11 +1787,12 @@ h2, h1 {
 //     display: initial;
 // }
 
-@media only screen and (max-width: 900) {
+@media only screen and (max-width: 900px) {
   .main {
     padding-left: 0px;
     padding-right: 0px;
   }
+
   .example-sidenav-container {
     /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
    causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */

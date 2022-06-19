@@ -1,4 +1,4 @@
-<span *ngIf="!showComments">
+<div *ngIf="!showComments" class="game-dialog">
   <h2 mat-dialog-title class="title">{{data.title}}</h2>
   <mat-dialog-content class="mat-typography content">
     <div style="text-align: center">
@@ -6,9 +6,16 @@
     </div>
     <h1 style="font-family: 'Estedad-Bold', sans-serif; font-size: x-large; direction: rtl;">{{data.title}}</h1>
     <h2 style="font-family: 'Estedad-SemiBold', sans-serif; font-size: x-large; direction: rtl;">{{data.team.name}}</h2>
+    <div>
+      <span *ngFor="let star of [].constructor(5-publicservice.currentGame.averageScore); let i = index" style="display: inline">
+        <mat-icon aria-hidden="false" aria-label="gray icon" class="gray-icon">grade</mat-icon>
+      </span>
+      <span *ngFor="let star of [].constructor(publicservice.currentGame.averageScore); let i = index" style="display: inline">
+        <mat-icon aria-hidden="false" aria-label="golden icon" class="golden-icon">grade</mat-icon>
+      </span>
+    </div>
     <p style="direction: rtl;" [innerHTML]="data.description">
     </p>
-    ----average score {{publicservice.currentGame.averageScore}}----
     <p style="font-weight: bold; font-size: large; direction: rtl;">سازندگان:</p>
     <app-creator *ngFor="let creator of data.team.members" [creator]="creator" style="direction: rtl;"></app-creator>
   </mat-dialog-content>
@@ -20,9 +27,9 @@
       <button mat-button [mat-dialog-close]="true" class="button" cdkFocusInitial>دریافت</button>
     </a>
   </mat-dialog-actions>
-</span>
+</div>
 
-<span *ngIf="showComments">
+<div *ngIf="showComments"  class="game-dialog">
   <h2 mat-dialog-title class="title">نظرات</h2>
   <mat-dialog-content class="mat-typography content">
     <app-comment *ngFor="let comment of comments" [comment]="comment" style="direction: rtl;"></app-comment>
@@ -34,4 +41,4 @@
       <button mat-button [mat-dialog-close]="true" class="button" cdkFocusInitial>دریافت</button>
     </a>
   </mat-dialog-actions>
-</span>
+</div>
