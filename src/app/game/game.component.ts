@@ -18,6 +18,7 @@ export class GameComponent implements OnInit {
 
   openGameDialog() {
     const dialog = this.dialog.open(GameContentComponent, {
+      width: '80vw',
       data: {
         title: this.game.title,
         poster: this.game.poster,

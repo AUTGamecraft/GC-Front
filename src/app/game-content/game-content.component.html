@@ -16,7 +16,7 @@
   <!--  <button mat-button (click)="openGameDialog()" class="button">نظرات</button>-->
     <button mat-button mat-dialog-close class="button">بازگشت</button>
     <button mat-button (click)="openComments()" class="button">نظرات</button>
-    <a href="{{data.link}}" class="link">
+    <a href="{{data.link}}" class="link" target="_blank">
       <button mat-button [mat-dialog-close]="true" class="button" cdkFocusInitial>دریافت</button>
     </a>
   </mat-dialog-actions>
@@ -30,7 +30,7 @@
   <mat-dialog-actions align="end">
     <button mat-button mat-dialog-close class="button">بازگشت</button>
     <button mat-button (click)="closeComments()" class="button">توضیحات</button>
-    <a href="{{data.link}}" class="link">
+    <a href="{{data.link}}" class="link" target="_blank">
       <button mat-button [mat-dialog-close]="true" class="button" cdkFocusInitial>دریافت</button>
     </a>
   </mat-dialog-actions>
