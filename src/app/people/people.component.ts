@@ -56,7 +56,7 @@ export class PeopleComponent implements OnInit {
     // this.icon=="menu"
     // }
 
-    // return this.icon 
+    // return this.icon
   }
 
   Signup() {
@@ -90,6 +90,10 @@ export class PeopleComponent implements OnInit {
   }
   Home() {
     this.router.navigate(['home'], { fragment: 'home' });
+  }
+  Games() {
+    this.router.navigate(['games']);
+    this.display = false;
   }
   getNavClass() {
     return window.scrollY > 0 ? 'no-shadow' : '';

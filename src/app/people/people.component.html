@@ -1,235 +1,238 @@
 <div id="people" #people></div>
 <div class="people">
-    <!-- <header style="position: fixed;width: 100%;background-color: #34334B;z-index: 100;"> -->
-    <div class="header">
-        <div class="whole-header"  [class]="getNavClass()">
-            <div class="big-right-header">
-                <div class="title-div">
-                    <div class="logo" (click)="Home()">
-                        <img class="logo-image" src="assets/svg/dark-3d.svg">
-                    </div>
-                </div>
-                <div class="right-header">
-                    <div class="right-button">
-                        <button mat-button class="normal-button"
-                            (click)="Schedule()">{{publicservice.Texts.Texts["header2"]}}</button>
-                    </div>
-                    <!-- <div class="right-button">
-                        <button mat-button (click)="Rules()" id="rules-button"
-                            class="normal-button">{{publicservice.Texts.Texts["header11"]}}</button>
-                    </div> -->
-                    <div class="right-button">
-                        <button mat-button (click)="Workshop()"
-                            class="normal-button">{{publicservice.Texts.Texts["header3"]}}</button>
-                    </div>
-                    <div class="right-button">
-                        <button mat-button (click)="Talk()"
-                            class="normal-button">{{publicservice.Texts.Texts["header4"]}}</button>
-                    </div>
-                    <div class="right-button">
-                        <button mat-button (click)="Footer(footer)"
-                            class="normal-button">{{publicservice.Texts.Texts["header5"]}}</button>
-                    </div>
-                    <div class="right-button">
-                        <button mat-button (click)="Footer(people)" class="normal-button"
-                            id="people-button">{{publicservice.Texts.Texts["header12"]}}</button>
-                    </div>
-                </div>
-            </div>
-            <div class="left-header">
-                <div class="left-header-line"></div>
-                <div class="before-login" *ngIf="!publicservice.logedIn">
-                    <div class="left-button">
-                        <button mat-button (click)="login()"
-                            class="normal-button">{{publicservice.Texts.Texts["header6"]}}</button>
-                    </div>
-                    <div>
-                        <button mat-flat-button (click)="Signup()"
-                            class="green-button">{{publicservice.Texts.Texts["header7"]}}</button>
-                    </div>
-                </div>
-                <div class="after-login" *ngIf="publicservice.logedIn">
-                    <div class="left-button">
-                        <button mat-button [disabled]="true" class="normal-button">{{userName}}</button>
-                    </div>
-
-                    <div>
-                        <button mat-flat-button class="green-button"
-                            (click)="Dashboard()">{{publicservice.Texts.Texts["header9"]}}</button>
-                    </div>
-                </div>
-            </div>
+  <!-- <header style="position: fixed;width: 100%;background-color: #34334B;z-index: 100;"> -->
+  <div class="header">
+    <div class="whole-header" [class]="getNavClass()">
+      <div class="big-right-header">
+        <div class="title-div">
+          <div class="logo" (click)="Home()">
+            <img class="logo-image" src="assets/svg/dark-3d.svg">
+          </div>
         </div>
-        <div class="whole-header-phone">
-            <button mat-button (click)=" onPress();icon =(icon == 'menu' ? 'close' : 'menu')">
-                <mat-icon style="color: white;font-size: 32px;" [inline]="true">{{icon}}</mat-icon>
-            </button>
-            <div class="logo" (click)="Home()">
-                <img class="logo-image" src="assets/svg/dark-3d.svg">
-            </div>
+        <div class="right-header">
+          <div class="right-button">
+            <button mat-button class="normal-button"
+                    (click)="Schedule()">{{publicservice.Texts.Texts["header2"]}}</button>
+          </div>
+          <!-- <div class="right-button">
+              <button mat-button (click)="Rules()" id="rules-button"
+                  class="normal-button">{{publicservice.Texts.Texts["header11"]}}</button>
+          </div> -->
+          <div class="right-button">
+            <button mat-button (click)="Workshop()"
+                    class="normal-button">{{publicservice.Texts.Texts["header3"]}}</button>
+          </div>
+          <div class="right-button">
+            <button mat-button (click)="Talk()"
+                    class="normal-button">{{publicservice.Texts.Texts["header4"]}}</button>
+          </div>
+          <div class="right-button">
+            <button mat-button (click)="Footer(footer)"
+                    class="normal-button">{{publicservice.Texts.Texts["header5"]}}</button>
+          </div>
+          <div class="right-button">
+            <button mat-button (click)="Footer(people)" class="normal-button"
+                    id="people-button">{{publicservice.Texts.Texts["header12"]}}</button>
+          </div>
+          <div class="right-button">
+            <button mat-button class="normal-button" (click)="Games()"
+                    >{{publicservice.Texts.Texts["header14"]}}</button>
+          </div>
         </div>
-        <!-- </header> -->
-        <div *ngIf="display">
-            <mat-sidenav-container class="example-sidenav-container">
-                <!-- <mat-sidenav #snav >
-
-        </mat-sidenav> -->
-
-                <mat-sidenav-content class="side-route">
-                    <mat-divider class="side-divider"></mat-divider>
-                    <div class="side-button-1">
-                        <div *ngIf="!publicservice.logedIn">
-                            <button mat-button (click)="login()"
-                                class="normal-button">{{publicservice.Texts.Texts["header6"]}}</button>
-                            <button mat-flat-button (click)="Signup()"
-                                class="normal-button-1">{{publicservice.Texts.Texts["header7"]}}</button>
-                        </div>
-                        <div *ngIf="publicservice.logedIn">
-                            <div class="left-button">
-                                <button mat-button [disabled]="true" class="normal-button">{{userName}}</button>
-
-                                <button mat-flat-button class="normal-button-1"
-                                    (click)="Dashboard()">{{publicservice.Texts.Texts["header9"]}}</button>
-                            </div>
-
-
-                        </div>
-                    </div>
-                    <mat-divider class="side-divider"></mat-divider>
-
-                    <div class="side-button">
-                        <button mat-button class="normal-button"
-                            (click)="Schedule(schedule)">{{publicservice.Texts.Texts["header2"]}}</button>
-                    </div>
-                    <!-- <mat-divider class="side-divider"></mat-divider>
-                    <div class="side-button">
-                        <button mat-button (click)="Rules()"
-                            class="normal-button">{{publicservice.Texts.Texts["header11"]}}</button>
-                    </div> -->
-                    <mat-divider class="side-divider"></mat-divider>
-                    <div class="side-button">
-                        <button mat-button (click)="Workshop(workshop)"
-                            class="normal-button">{{publicservice.Texts.Texts["header3"]}}</button>
-                    </div>
-                    <mat-divider class="side-divider"></mat-divider>
-                    <div class="side-button">
-                        <button mat-button (click)="Talk(talk)"
-                            class="normal-button">{{publicservice.Texts.Texts["header4"]}}</button>
-                    </div>
-                    <mat-divider class="side-divider"></mat-divider>
-                    <div class="side-button">
-                        <button mat-button (click)="Talk(footer)"
-                            class="normal-button">{{publicservice.Texts.Texts["header5"]}}</button>
-                    </div>
-                    <mat-divider class="side-divider"></mat-divider>
-                    <div class="side-button">
-                        <button mat-button (click)="People()"
-                            class="normal-button">{{publicservice.Texts.Texts["header12"]}}</button>
-                    </div>
-                    <mat-divider class="side-divider"></mat-divider>
-
-
-
-                </mat-sidenav-content>
-            </mat-sidenav-container>
+      </div>
+      <div class="left-header">
+        <div class="left-header-line"></div>
+        <div class="before-login" *ngIf="!publicservice.logedIn">
+          <div class="left-button">
+            <button mat-button (click)="login()"
+                    class="normal-button">{{publicservice.Texts.Texts["header6"]}}</button>
+          </div>
+          <div>
+            <button mat-flat-button (click)="Signup()"
+                    class="green-button">{{publicservice.Texts.Texts["header7"]}}</button>
+          </div>
         </div>
+        <div class="after-login" *ngIf="publicservice.logedIn">
+          <div class="left-button">
+            <button mat-button [disabled]="true" class="normal-button">{{userName}}</button>
+          </div>
+
+          <div>
+            <button mat-flat-button class="green-button"
+                    (click)="Dashboard()">{{publicservice.Texts.Texts["header9"]}}</button>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div class="introduction-div">
-        <div class="white-part">
-            <h1 class="people-title">{{publicservice.Texts.Texts["people1"]}}</h1>
-
-            <div *ngFor="let group of GetPeoples();">
-                <h1 class="people-subtitle">{{group.name}}</h1>
-                <div class="collapse-presenters-card-div">
-                    <div class="collapse-presenters-card" *ngFor="let people of group.peoples;">
-                        <div>
-                            <img class="collapse-presenters-image" src='{{"assets/images/"+people.img}}'>
-                        </div>
-                        <h2 class="collapse-presenters-name">
-                            {{people.name}}
-                        </h2>
-                        <h4 class="collapse-presenters-discription">
-                            {{people.role}}</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="whole-header-phone">
+      <button mat-button (click)=" onPress();icon =(icon == 'menu' ? 'close' : 'menu')">
+        <mat-icon style="color: white;font-size: 32px;" [inline]="true">{{icon}}</mat-icon>
+      </button>
+      <div class="logo" (click)="Home()">
+        <img class="logo-image" src="assets/svg/dark-3d.svg">
+      </div>
     </div>
-    <div class="footer-whole-div" #footer>
-        <div>
-            <img class="purple-wave-above-footer" src="assets/svg/wave-purple.svg">
-        </div>
-        <div class="footer-div">
-            <div class="discription-footer-div">
-                <div class="discription-right-footer-div">
-                    <div class="discription-right-footer-about-div">
-                        <h1 class="discription-right-footer-about-title">
-                            {{publicservice.Texts.Texts["home37"]}}</h1>
-                        <p class="discription-right-footer-about-discription">
-                            {{publicservice.Texts.Texts["home39"]}}
-                            <br>
-                            {{publicservice.Texts.Texts["home62"]}}
-                        </p>
-<!--                        <div style="text-align: center;">-->
-<!--                            <button mat-flat-button (click)="People()"-->
-<!--                                class="green-button">{{publicservice.Texts.Texts["home47"]}}</button>-->
-<!--                                <div class="footer-image-div-phone">-->
-<!--                                    <img class="footer-image" src="assets/images/folan.png">-->
-<!--                                </div>-->
-<!--                        </div>-->
-                    </div>
-                    <div class="discription-right-footer-bubble">
-                    </div>
-                </div>
-                <div class="footer-image-div">
-                    <img class="footer-image" src="assets/images/folan.png">
-                </div>
-            </div>
-            <div class="supporters-div">
-                <h1 class="supporters-title">
-                    {{publicservice.Texts.Texts["home40"]}}
-                </h1>
-                <div class="supporters-card-div">
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/institue.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/funtory.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/tod.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/dropout.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/medrick-logo.png">
-                    </div>
-                </div>
-                <div class="supporters-card-div">
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/avngames.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/brainladder.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/black-cube.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/myket.png">
-                    </div>
-                </div>
-            </div>
+    <!-- </header> -->
+    <div *ngIf="display">
+      <mat-sidenav-container class="example-sidenav-container">
+        <!-- <mat-sidenav #snav >
 
-        </div>
+</mat-sidenav> -->
+
+        <mat-sidenav-content class="side-route">
+          <mat-divider class="side-divider"></mat-divider>
+          <div class="side-button-1">
+            <div *ngIf="!publicservice.logedIn">
+              <button mat-button (click)="login()"
+                      class="normal-button">{{publicservice.Texts.Texts["header6"]}}</button>
+              <button mat-flat-button (click)="Signup()"
+                      class="normal-button-1">{{publicservice.Texts.Texts["header7"]}}</button>
+            </div>
+            <div *ngIf="publicservice.logedIn">
+              <div class="left-button">
+                <button mat-button [disabled]="true" class="normal-button">{{userName}}</button>
+
+                <button mat-flat-button class="normal-button-1"
+                        (click)="Dashboard()">{{publicservice.Texts.Texts["header9"]}}</button>
+              </div>
+
+
+            </div>
+          </div>
+          <mat-divider class="side-divider"></mat-divider>
+
+          <div class="side-button">
+            <button mat-button class="normal-button"
+                    (click)="Schedule(schedule)">{{publicservice.Texts.Texts["header2"]}}</button>
+          </div>
+          <!-- <mat-divider class="side-divider"></mat-divider>
+          <div class="side-button">
+              <button mat-button (click)="Rules()"
+                  class="normal-button">{{publicservice.Texts.Texts["header11"]}}</button>
+          </div> -->
+          <mat-divider class="side-divider"></mat-divider>
+          <div class="side-button">
+            <button mat-button (click)="Workshop(workshop)"
+                    class="normal-button">{{publicservice.Texts.Texts["header3"]}}</button>
+          </div>
+          <mat-divider class="side-divider"></mat-divider>
+          <div class="side-button">
+            <button mat-button (click)="Talk(talk)"
+                    class="normal-button">{{publicservice.Texts.Texts["header4"]}}</button>
+          </div>
+          <mat-divider class="side-divider"></mat-divider>
+          <div class="side-button">
+            <button mat-button (click)="Talk(footer)"
+                    class="normal-button">{{publicservice.Texts.Texts["header5"]}}</button>
+          </div>
+          <mat-divider class="side-divider"></mat-divider>
+          <div class="side-button">
+            <button mat-button (click)="People()"
+                    class="normal-button">{{publicservice.Texts.Texts["header12"]}}</button>
+          </div>
+          <mat-divider class="side-divider"></mat-divider>
+
+
+        </mat-sidenav-content>
+      </mat-sidenav-container>
     </div>
+  </div>
+
+  <div class="introduction-div">
+    <div class="white-part">
+      <h1 class="people-title">{{publicservice.Texts.Texts["people1"]}}</h1>
+
+      <div *ngFor="let group of GetPeoples();">
+        <h1 class="people-subtitle">{{group.name}}</h1>
+        <div class="collapse-presenters-card-div">
+          <div class="collapse-presenters-card" *ngFor="let people of group.peoples;">
+            <div>
+              <img class="collapse-presenters-image" src='{{"assets/images/"+people.img}}'>
+            </div>
+            <h2 class="collapse-presenters-name">
+              {{people.name}}
+            </h2>
+            <h4 class="collapse-presenters-discription">
+              {{people.role}}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-whole-div" #footer>
+    <div>
+      <img class="purple-wave-above-footer" src="assets/svg/wave-purple.svg">
+    </div>
+    <div class="footer-div">
+      <div class="discription-footer-div">
+        <div class="discription-right-footer-div">
+          <div class="discription-right-footer-about-div">
+            <h1 class="discription-right-footer-about-title">
+              {{publicservice.Texts.Texts["home37"]}}</h1>
+            <p class="discription-right-footer-about-discription">
+              {{publicservice.Texts.Texts["home39"]}}
+              <br>
+              {{publicservice.Texts.Texts["home62"]}}
+            </p>
+            <!--                        <div style="text-align: center;">-->
+            <!--                            <button mat-flat-button (click)="People()"-->
+            <!--                                class="green-button">{{publicservice.Texts.Texts["home47"]}}</button>-->
+            <!--                                <div class="footer-image-div-phone">-->
+            <!--                                    <img class="footer-image" src="assets/images/folan.png">-->
+            <!--                                </div>-->
+            <!--                        </div>-->
+          </div>
+          <div class="discription-right-footer-bubble">
+          </div>
+        </div>
+        <div class="footer-image-div">
+          <img class="footer-image" src="assets/images/folan.png">
+        </div>
+      </div>
+      <div class="supporters-div">
+        <h1 class="supporters-title">
+          {{publicservice.Texts.Texts["home40"]}}
+        </h1>
+        <div class="supporters-card-div">
+          <div class="supportes-card-image-div">
+            <img class="supporters-card-image" src="assets/images/institue.png">
+          </div>
+          <div class="supportes-card-image-div">
+            <img class="supporters-card-image" src="assets/images/funtory.png">
+          </div>
+          <div class="supportes-card-image-div">
+            <img class="supporters-card-image" src="assets/images/tod.png">
+          </div>
+          <div class="supportes-card-image-div">
+            <img class="supporters-card-image" src="assets/images/dropout.png">
+          </div>
+          <div class="supportes-card-image-div">
+            <img class="supporters-card-image" src="assets/images/medrick-logo.png">
+          </div>
+        </div>
+        <div class="supporters-card-div">
+          <div class="supportes-card-image-div">
+            <img class="supporters-card-image" src="assets/images/avngames.png">
+          </div>
+          <div class="supportes-card-image-div">
+            <img class="supporters-card-image" src="assets/images/brainladder.png">
+          </div>
+          <div class="supportes-card-image-div">
+            <img class="supporters-card-image" src="assets/images/black-cube.png">
+          </div>
+          <div class="supportes-card-image-div">
+            <img class="supporters-card-image" src="assets/images/myket.png">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </div>
 <div class="developers-div">
-    <div class="developers-image">
-        <img class="ssc-image" src="assets/images/Asset 4.png">
-        <img class="ssc-image" src="assets/images/ssc_white.png">
-    </div>
-    <p class="developers">{{publicservice.Texts.Texts["home42"]}}</p>
+  <div class="developers-image">
+    <img class="ssc-image" src="assets/images/Asset 4.png">
+    <img class="ssc-image" src="assets/images/ssc_white.png">
+  </div>
+  <p class="developers">{{publicservice.Texts.Texts["home42"]}}</p>
 </div>

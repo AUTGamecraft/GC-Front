@@ -174,7 +174,7 @@ export class HomeComponent implements OnInit {
     // this.icon=="menu"
     // }
 
-    // return this.icon 
+    // return this.icon
   }
 
   Dashboard() {
@@ -219,6 +219,10 @@ export class HomeComponent implements OnInit {
   }
   People() {
     this.router.navigate(['people'], { fragment: 'people' });
+    this.display = false;
+  }
+  Games() {
+    this.router.navigate(['games']);
     this.display = false;
   }
   Rules() {
