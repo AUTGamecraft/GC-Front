@@ -1,0 +1,1240 @@
+.example-card {
+  width: 95%;
+  margin: auto auto 8px;
+  background-color: #63619B;
+  font-family: "Estedad-Regular", sans-serif;
+  font-size: medium;
+  color: #E8E7FF;
+}
+
+.title {
+  color: #E8E7FF;
+  font-size: x-large;
+  font-family: "Estedad-Bold", sans-serif;
+}
+
+.subtitle {
+  color: #E8E7FF;
+  font-size: large;
+  font-family: "Estedad-SemiBold", sans-serif;
+}
+
+.user-image {
+  border-radius: 800px;
+}
+
+//.presenter-card {
+//  width: 100%;
+//  height: 130px;
+//  display: flex;
+//  flex-wrap: wrap;
+//  grid-auto-rows: auto;
+//  justify-content: center;
+//}
+//.presenter-card-inside {
+//  padding: 10px;
+//  // padding-left: 20px;
+//  width: 100%;
+//  display: flex;
+//  direction: rtl;
+//  text-align: center;
+//  background-color: #63619B;
+//  border-radius: 25px;
+//  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+//  margin: 10px;
+//}
+//.assistant-card-inside {
+//  padding: 10px;
+//  // padding-left: 20px;
+//  background-color: white;
+//  border-radius: 25px;
+//  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+//  margin: 10px;
+//}
+//.presenter-image {
+//  height: 90px;
+//  width: 90px;
+//  object-fit: cover;
+//  border-radius: 50%;
+//  //padding: 20px;
+//  margin: 0 15px;
+//}
+//.presenter-name {
+//  font-family: "Estedad-Bold";
+//  color: #E8E7FF;
+//  margin-bottom: 0;
+//  font-size: medium;
+//}
+//.presenter-about {
+//  font-family: "Estedad-Regular";
+//  color: #E8E7FF;
+//  font-size: 16px;
+//  margin-top: 0;
+//}
+//
+//.Ellipse {
+//  width: 50px;
+//  height: 50px;
+//  padding: 10px;
+//  margin: 30px 0 30px 0;
+//  border: solid 8px;
+//  border-radius: 50%;
+//  border-color:#4F7B7A;
+//  text-align: center;
+//}
+//.Line {
+//  width: 0;
+//  height: 320px;
+//  border: solid 6px;
+//  border-radius: 10px;
+//  border-color: #63DAA4;
+//  background-color: #63DAA4;
+//  margin-right: 44%;
+//}
+//.image {
+//  width: 252.5px;
+//  height: 252.5px;
+//  margin: 30px 0 30px 0;
+//}
+//.text {
+//  width: 100%;
+//  margin: 30px 0 30px 0;
+//}
+//.register-button {
+//  font-family: "Estedad-Bold";
+//  color: #00b583;
+//  font-size: large;
+//  border: 2px solid #63DAA4 !important;
+//  border-radius: 24px;
+//  width: 94px;
+//  height: 57px;
+//}
+//.register-button-div {
+//  width: fit-content;
+//  margin: auto;
+//  padding: 20px 16px 19px;
+//}
+//.collapse-title {
+//  width: 300px;
+//  font-family: "Estedad-Bold";
+//  font-size: 24px;
+//  color: #34334B;
+//  margin: auto;
+//  margin-right: 2%;
+//
+//}
+//.collapse-hour {
+//  font-family: "Vazir-Regular";
+//  color: #34334B;
+//}
+//.collapse-subject {
+//  font-family: "Vazir-Regular";
+//  color: #34334B;
+//  font-size: 24px;
+//  // margin-top: 25px;
+//  // margin-bottom: 15px;
+//  margin: auto;
+//  font-weight: bold;
+//}
+//.collapse {
+//  direction: ltr;
+//  font-family: "Estedad-Bold";
+//  color: #636198;
+//  font-size: large;
+//  margin-top: 15px;
+//  margin-bottom: 15px;
+//  width: fit-content;
+//  border-radius: 28px;
+//}
+//.register-button:hover {
+//  background-color: #6af9c5;
+//  color: #34334B;
+//  border-color: #6af9c5 !important;
+//  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.08);
+//}
+//.workshops-background {
+//  // background-color: #4F7B7A;
+//  margin-bottom: 0;
+//  // padding-bottom: 120px;
+//}
+//.workshops-whole-collapse {
+//  direction: rtl;
+//  display: flex;
+//  justify-content: space-between;
+//  border: 1px;
+//  background-color: white;
+//  margin-right: 5%;
+//  margin-left: 5%;
+//  border-radius: 28px;
+//  margin-bottom: 15px;
+//  height: fit-content;
+//  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.08);
+//}
+//.orange-collapse {
+//  width: 30px;
+//  background-color: #ffe0b2;
+//  border-bottom-right-radius: 28px;
+//  border-top-right-radius: 28px;
+//}
+//.components-collapse {
+//  display: flex;
+//  justify-content: space-between;
+//  padding-left: 16px;
+//}
+//.collapse-icon {
+//  color: #636198;
+//  font-size: xx-large !important;
+//}
+//// .green-rectangle-under-workshops {
+////     width: 100%;
+////     height: 20px;
+////     background-color: #4F7B7A;
+////     z-index: -1;
+////     margin-top: -5px;
+////     padding-top: 100px;
+////     margin-top: -90px;
+//// }
+//.collapse-header {
+//  font-size: xxx-large;
+//  font-family: "Estedad-Black";
+//  color: #34334B;
+//  text-align: center;
+//  margin-top: 0;
+//  // transform: scaleY(-1);
+//}
+//.green-wave-above-wrokshops {
+//  // background-image: url("/assets/svg/wave-green.svg");
+//  // background-repeat: no-repeat;
+//  // background-size: 100% 100%;
+//  transform: scaleY(-1);
+//  width: 100%;
+//  // height: 210px;
+//  // position: relative;
+//  // z-index: 1;
+//}
+//.collapse-about {
+//  white-space: pre-line;
+//  font-family: "Vazir-Medium";
+//  font-size: large;
+//  direction: rtl;
+//  color: #34334B;
+//  margin-top: 0;
+//}
+//.collapse-presenters-title-div {
+//  text-align: center;
+//}
+//.collapse-persenters-title {
+//  font-family: "Estedad-Bold";
+//  color: #34334B;
+//}
+//.collapse-presenters-card-div {
+//  display: flex;
+//  padding-bottom: 20px;
+//  justify-content: center;
+//}
+//.collapse-presenters-card {
+//  direction: rtl;
+//  text-align: center;
+//  background-color: white;
+//  border-radius: 24px;
+//  border: solid 2px #f5f5f5;
+//  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+//  margin: 10px;
+//}
+//.collapse-background {
+//  padding: 20px 50px;
+//  border-bottom-left-radius: 24px;
+//  background-color: #fafafa;
+//}
+//.collapse-presenters-image {
+//  height: 140px;
+//  width: 140px;
+//  object-fit: cover;
+//  border-radius: 50%;
+//  padding: 20px;
+//}
+//.collapse-presenters-name {
+//  font-family: "Estedad-Bold";
+//  color: #34334B;
+//  margin-bottom: 0;
+//  font-size: medium;
+//}
+//.collapse-presenters-discription {
+//  font-family: "Estedad-Regular";
+//  color: #636198;
+//  margin-top: 0;
+//}
+//.green-wave-under-workshops {
+//  // background-image: url("/assets/svg/wave-green.svg");
+//  // background-size: 100% 100%;
+//  background-color: #57B98C;
+//  width: 100%;
+//  padding-bottom: 30px;
+//  // height: 210px;
+//  // background-repeat: no-repeat;
+//  // margin-top: -100px;
+//  // position: absolute;
+//}
+//.talks-title-div {
+//  background-color: #57B98C;
+//  padding-top: 50px;
+//  margin-top: -20px;
+//  // z-index: 0;
+//}
+//.talks-title {
+//  font-family: "Estedad-Black";
+//  font-size: xxx-large;
+//  color: #34334B;
+//  text-align: center;
+//  margin-bottom: 0;
+//}
+//.talks-background {
+//  background-color: #57B98C;
+//  padding-top: 20px;
+//  padding-bottom: 10%;
+//}
+//.pink-collapse {
+//  width: 30px;
+//  background-color: #f8bbd0;
+//  border-bottom-right-radius: 28px;
+//  border-top-right-radius: 28px;
+//}
+//// .rectangle-under-talks-div {
+////     width: 100%;
+////     height: 100px;
+////     background-color: #57B98C;
+////     z-index: -1;
+////     padding-bottom: 30px;
+//// }
+//.footer-whole-div {
+//  margin-top: -70px;
+//}
+//.developers-image {
+//  display: flex;
+//  justify-content: center;
+//}
+//.purple-wave-above-footer {
+//  // background-image: url("/assets/svg/wave-purple.svg");
+//  // background-repeat: no-repeat;
+//  // background-size: 100% 100%;
+//  transform: scaleY(-1);
+//  width: 100%;
+//  // height: 210px;
+//  // position: relative;
+//  // z-index: 1;
+//  // margin-top: -60px;
+//}
+//.supporters-div {
+//  padding-top: 10%;
+//}
+//.footer-div {
+//  background-color: #34334B;
+//  padding-top: 10px;
+//  margin-top: -10px;
+//}
+//.discription-footer-div {
+//  direction: rtl;
+//  display: flex;
+//  justify-content: space-evenly;
+//  padding-bottom: 50px;
+//}
+//.discription-right-footer-div {
+//  flex: 0 0 50%;
+//  margin-right: 10%;
+//  position: relative;
+//  direction: rtl;
+//}
+//.discription-right-footer-about-div {
+//  position: absolute;
+//  right: 0;
+//  left: 0;
+//  top: 0;
+//  bottom: 0;
+//  background: transparent;
+//  z-index: 1;
+//}
+//.discription-right-footer-about-title {
+//  font-family: "Estedad-Black";
+//  font-size: xxx-large;
+//  color: white;
+//  margin-bottom: 0;
+//  margin-top: 0;
+//}
+//.discription-right-footer-about-subtitle {
+//  font-family: "Estedad-Bold";
+//  color: white;
+//  font-size: xx-large;
+//  margin-top: 0;
+//  margin-bottom: 0;
+//}
+//.discription-right-footer-about-discription {
+//  font-family: "Estedad-Regular";
+//  color: white;
+//  font-size: large;
+//  margin-top: 0;
+//}
+//.discription-right-footer-bubble {
+//  position: absolute;
+//  background-image: url("/assets/svg/bubble-purple.svg");
+//  background-repeat: no-repeat;
+//  background-size: contain;
+//  right: 0;
+//  left: 0;
+//  top: 0;
+//  bottom: 0;
+//  transform: scaleX(-1);
+//  z-index: 0;
+//}
+//.footer-image-div {
+//  padding-top: 3%;
+//  padding-right: 10%;
+//  margin-left: 10%;
+//}
+//.footer-image {
+//  height: 320px;
+//  width: 360px;
+//  object-fit: contain;
+//  border-radius: 36px;
+//}
+//.supporters-title {
+//  font-family: "Estedad-Black";
+//  font-size: xxx-large;
+//  color: white;
+//  text-align: center;
+//  margin-bottom: 0;
+//}
+//.supporters-card-div {
+//  text-align: center;
+//  display: flex;
+//  justify-content: center;
+//  padding: 20px;
+//}
+//.supporters-card-image {
+//  height: 150px;
+//  width: 250px;
+//  margin: 0px 20px 10px 20px;
+//  border-radius: 0%;
+//  object-fit: contain;
+//  object-position: bottom;
+//}
+//.supportes-card-name {
+//  font-family: "Estedad-Bold";
+//  color: white;
+//  font-size: large;
+//}
+//.developers-div {
+//  background-color: #474666;
+//  text-align: center;
+//  padding: 10px;
+//}
+//.developers {
+//  padding: 30px;
+//  direction: rtl;
+//  color: white;
+//  margin: 0;
+//  font-family: "Estedad-SemiBold";
+//}
+//.home {
+//  background-color: #fafafa;
+//}
+//.intro {
+//  background-color: #34334B;
+//  // padding-bottom: 100px;
+//}
+//.subintro-div {
+//  direction: rtl;
+//  display: flex;
+//  padding-top: 10%;
+//  padding-right: 10%;
+//  padding-left: 10%;
+//  justify-content: space-evenly;
+//}
+//.intro-discription-div {
+//  flex: 0 0 50%;
+//  position: relative;
+//}
+//.intro-discription-about-div {
+//  position: absolute;
+//  right: 0;
+//  left: 0;
+//  top: 0;
+//  bottom: 0;
+//  background: transparent;
+//  z-index: 1;
+//}
+//.intro-discription-about-title {
+//  font-size: 70px;
+//  font-family: "Estedad-Black";
+//  color: #63DAA4;
+//  margin: 0;
+//}
+//.intro-discription-about-subtitle {
+//  font-size: x-large;
+//  font-family: "Estedad-Black";
+//  color: #E8E7FF;
+//  margin-bottom: 12px;
+//}
+//.intro-discription-about-discription {
+//  font-family: "Estedad-Medium";
+//  font-size: 20px;
+//  color: #E8E7FF;
+//  margin-top: 0;
+//}
+//.intro-discription-bubble {
+//  position: absolute;
+//  background-image: url("/assets/svg/bubble-purple.svg");
+//  background-repeat: no-repeat;
+//  background-size: contain;
+//  right: 0;
+//  left: 0;
+//  top: 0;
+//  bottom: 0;
+//  transform: scaleX(-1);
+//  z-index: 0;
+//}
+//.intro-image {
+//  height: 360px;
+//  width: 360px;
+//  border-radius: 50%;
+//  object-fit: cover;
+//
+//}
+//.event-about-div {
+//  direction: rtl;
+//  display: flex;
+//  justify-content: space-evenly;
+//  padding-top: 10%;
+//}
+//.event-about-right-div {
+//  // margin-bottom: 100px;
+//  text-align: center;
+//}
+//
+//.event-about-right-text {
+//  font-size: xx-large;
+//  font-family: "Estedad-SemiBold";
+//  color: #636198;
+//  margin-top: 0;
+//}
+//.event-about-left-div {
+//  text-align: center;
+//}
+//.event-about-left-number {
+//  font-size: 70px;
+//  font-family: "Vazir-Black";
+//  color: #E8E7FF;
+//  margin-bottom: 0;
+//  font-weight: bold;
+//}
+//.event-about-left-text {
+//  font-size: xx-large;
+//  font-family: "Estedad-SemiBold";
+//  color: #636198;
+//  margin-top: 0;
+//}
+//.purple-wave-under-intro {
+//  // background-image: url("/assets/svg/wave-purple.svg");
+//  // background-color: #00b583;
+//
+//  // background-repeat: no-repeat;
+//  // background-size: 100% 100%;
+//  width: 100%;
+//  margin-top: -10px;
+//  // height: 210px;
+//  // margin-top: -90px;
+//}
+//.event-schedule-div {
+//  direction: rtl;
+//  text-align: center;
+//  background-color: #fafafa;
+//}
+//.event-schedule-title-div {
+//  text-align: center;
+//  margin-top: 10%;
+//}
+//.event-schedule-title {
+//  font-family: "Estedad-Black";
+//  font-size: xxx-large;
+//  color: #474666;
+//}
+//.event-schedule-whole {
+//  direction: rtl;
+//  position: relative;
+//  padding-bottom: 5%;
+//}
+//.event-schedule-schematic {
+//  right: 0;
+//  left: 0;
+//  top: 0;
+//  bottom: 0;
+//  background: transparent;
+//  z-index: 1;
+//  background-image: url("/assets/svg/bubble-white.svg");
+//  background-repeat: no-repeat;
+//  background-size: contain;
+//}
+//.event-schedule {
+//  display: flex;
+//  justify-content: space-evenly;
+//  padding: 10px 10%;
+//}
+//// .schedule-right-div {
+////     // margin-right: 25%;
+////     // margin-top: 5%;
+//// }
+//.schedule-image {
+//  height: 252.5px;
+//  width: 252.5px;
+//  object-fit: contain;
+//  // border-radius: 50%;
+//}
+//.text-title {
+//  font-family: "Estedad-Regular";
+//  font-size: xxx-large;
+//  color: #474666;
+//  margin-bottom: 0;
+//}
+//.text-subtitle1 {
+//  font-family: "Vazir-Bold";
+//  font-size: xx-large;
+//  color: #636198;
+//  margin-top: 0;
+//}
+//.schedule-middle-div {
+//  //     // margin: auto;
+//  //     // margin-left: 5%;
+//  margin-top: 3%;
+//}
+//// .schedule-left-div {
+////     // margin-left: 25%;
+////     // margin-top: 5%;
+//// }
+//.text-subtitle2 {
+//  font-family: "Vazir-Light";
+//  font-size: xx-large;
+//  color: #636198;
+//  margin-top: 0;
+//  margin-bottom: 0;
+//}
+//.text-subtitle3 {
+//  font-family: "Vazir-Light";
+//  font-size: xx-large;
+//  color: #636198;
+//  margin-top: 0;
+//}
+//.green-button {
+//  font-family: "Estedad-Bold";
+//  color: #34334B;
+//  background-color: #6af9c5;
+//  border-radius: 24px;
+//  padding: 11px 16px;
+//  font-size: large;
+//}
+//.normal-button {
+//  font-family: "Estedad-Bold";
+//  font-size: large;
+//  color: white;
+//  padding: 9px 9px 9px 9px;
+//  // margin: auto 0;
+//  border-radius: 24px;
+//  background-color: rgba(255, 255, 255, 0);
+//}
+//.mat-focus-indicator.normal-button.mat-button.mat-button-base.mat-button-disabled {
+//  color: white;
+//}
+//.title {
+//  font-family: "Estedad-Black";
+//  color: #636198;
+//}
+//.right-header {
+//  display: flex;
+//  margin-right: 50px;
+//  // margin-top: 20px;
+//}
+//.right-button {
+//  margin: 0 5% 0 0;
+//}
+//.left-button {
+//  margin: 0 0 0 5%;
+//}
+//.before-login {
+//  display: flex;
+//}
+//.after-login {
+//  display: flex;
+//}
+//.header {
+//  position: fixed;
+//  width: 100%;
+//  background-color: #34334B;
+//  z-index: 100;
+//}
+//.left-header {
+//  display: flex;
+//  margin-left: 50px;
+//  // margin-top: 20px;
+//}
+//.title-div {
+//  margin-right: 50px;
+//}
+//.big-right-header {
+//  display: flex;
+//}
+//.whole-header {
+//  height: fit-content;
+//  direction: rtl;
+//  padding: 10px 10px 10px 10px;
+//  justify-content: space-between;
+//  display: flex;
+//  box-shadow: none !important;
+//}
+//.no-shadow {
+//  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) !important;
+//}
+//.numbers {
+//  font-size: 70px;
+//  font-family: "Vazir-Bold";
+//  color: #E8E7FF;
+//  margin-bottom: 0;
+//  font-weight: bold;
+//}
+//.dots {
+//  font-size: 70px;
+//  font-family: "Estedad-Regular";
+//  color: #E8E7FF;
+//  margin: 60px 10px 0 10px;
+//  font-weight: bold;
+//}
+//.header-line {
+//  width: 0;
+//  height: 48px;
+//  margin: 20px 40px 5px 0;
+//  border: solid 1.5px #636198 !important;
+//  background-color: #636198;
+//  border-radius: 20px;
+//}
+//.left-header-line {
+//  width: 0;
+//  height: 48px;
+//  margin-left: 15px;
+//  border: solid 1.5px #636198 !important;
+//  background-color: #636198;
+//  border-radius: 20px;
+//}
+//.prizes-title {
+//  text-align: center;
+//  font-family: "Estedad-Black";
+//  font-size: x-large;
+//  color: #474666;
+//  margin-top: 0;
+//}
+//.prizes {
+//  background-image: url("/assets/svg/bubble-light-purple.svg");
+//  background-repeat: no-repeat;
+//  transform: scaleX(-1);
+//  background-size: contain;
+//  padding-bottom: 10%;
+//}
+//.inner-prizes {
+//  transform: scaleX(-1);
+//}
+//.prize-cards {
+//  text-align: center;
+//  align-content: center;
+//  justify-content: center;
+//  width: fit-content;
+//  display: block;
+//  // width: 50%;
+//  // justify-content: center;
+//  // justify-items: center ;
+//}
+//.prize-card-image {
+//  // height: fit-content;
+//  margin: auto;
+//  object-fit: contain;
+//  // border-radius: 50%;
+//  width: 252.5px;
+//  height: 252.5px;
+//}
+//.prize-card-image-div {
+//  width: 252.5px;
+//  height: 252.5px;
+//}
+//.prize-card-title {
+//  text-align: center;
+//  color: #474666;
+//  font-family: "Estedad-Regular";
+//  font-size: 36px;
+//  margin: auto;
+//  // margin: 0;
+//  // margin-bottom: 0;
+//}
+//.prize-card-discription {
+//  direction: rtl;
+//  color: #636198;
+//  font-family: "Vazir-Regular";
+//  font-size: 28px;
+//  margin: auto;
+//  // margin-top: 5px;
+//}
+//.prize-cards-whole-div {
+//  justify-content: center;
+//}
+//.timer-div {
+//  display: flex;
+//  text-align: center;
+//  width: 250px;
+//  justify-content: center;
+//  //margin-top: 500px;
+//}
+////start of logo
+//.logo {
+//  // padding-top: 20px;
+//  justify-content: center;
+//  display: flex;
+//  direction: rtl;
+//}
+//.logo-image {
+//  width: 100.8px;
+//  z-index: 1;
+//  cursor: pointer;
+//}
+//.logo-text {
+//  font-family: "Estedad-Black";
+//  color: #636198;
+//  font-size: 24px;
+//  z-index: 0;
+//}
+////end of logo
+//.event-schedule-phone {
+//  display: none;
+//}
+//// .light-purple-wave{
+////     display: none;
+//// }
+//.prize-cards-inner-div {
+//  display: flex;
+//  direction: rtl;
+//  justify-content: space-evenly;
+//}
+//// .whole-workshop {
+////     // margin-top: -1%;
+//// }
+//.whole-workshop-phone {
+//  display: none;
+//}
+//.workshops-whole-collapse-phone {
+//  display: none;
+//}
+//.light-purple-wave {
+//  display: none;
+//}
+//.light-putple-rectangle {
+//  display: none;
+//}
+//.talks-background-phone {
+//  display: none;
+//}
+//.whole-header-phone {
+//  display: none;
+//}
+//.collapse-cost {
+//  margin: 0;
+//  margin-left: 0;
+//  width: fit-content;
+//  color: #00b583;
+//  font-family: "Vazir-Black";
+//  font-size: 20px;
+//  text-align: left;
+//  border: solid 2px #00b583 !important;
+//  // float: left;
+//  padding: 10px;
+//  border-radius: 16px;
+//}
+//.collapse-cost-div {
+//  width: 100%;
+//  direction: ltr;
+//  justify-content: left;
+//  text-align: left;
+//}
+//.ssc-image {
+//  padding: 10px 30px;
+//  width: 150px;
+//  height: 150px;
+//  object-fit: contain;
+//}
+//.footer-image-div-phone {
+//  display: none;
+//}
+//@media only screen and (max-width: 1190px) {
+//  .hide{
+//    max-height: 250px;
+//  }
+//  .presenter-card-inside{
+//    flex-direction: column;
+//  }
+//  .presenter-about {
+//    font-size: 12px;
+//  }
+//  .footer-image-div-phone {
+//    padding-top: 30px;
+//    display: initial;
+//    width: 100%;
+//    box-sizing: border-box;
+//    margin: auto;
+//    text-align: center;
+//  }
+//  .footer-image {
+//    max-width: 100%;
+//    height: auto;
+//  }
+//  .supporters-card-div {
+//    flex-direction: column;
+//  }
+//  .header {
+//    width: 100%;
+//  }
+//  .collapse-cost {
+//    font-size: 14px;
+//  }
+//  .prize-cards-whole-div {
+//    text-align: center;
+//    width: 100%;
+//    justify-content: center;
+//  }
+//  .prize-cards {
+//    margin: 0 auto;
+//    padding: 20px 0;
+//  }
+//  .whole-header {
+//    display: none;
+//  }
+//  .subintro-div {
+//    flex-direction: column;
+//    display: block;
+//    text-align: center;
+//  }
+//  .intro-image {
+//    display: none;
+//  }
+//  .event-about-div {
+//    flex-direction: column;
+//    padding-top: 0;
+//  }
+//  .timer-div {
+//    margin: auto;
+//  }
+//  .intro-discription-div {
+//    padding-bottom: 750px;
+//    margin-bottom: 20%;
+//  }
+//  .intro-discription-about-title {
+//    font-size: 66px;
+//  }
+//  .intro-discription-about-subtitle {
+//    font-size: 24px;
+//  }
+//  .intro-discription-about-discription {
+//    font-size: 20px;
+//  }
+//  .subintro-div {
+//    padding: 30px;
+//    padding-bottom: 0;
+//    padding-top: 20%;
+//  }
+//  .numbers {
+//    margin-top: 0;
+//    font-size: 55px;
+//  }
+//  .dots {
+//    margin-top: -10px;
+//    font-size: 55px;
+//  }
+//  .event-about-left-number {
+//    margin-top: 0;
+//    font-size: 55px;
+//  }
+//  .event-about-right-text {
+//    font-size: 36px;
+//  }
+//  .event-about-left-text {
+//    font-size: 36px;
+//  }
+//  .event-schedule-title {
+//    font-size: 44px;
+//    margin-bottom: 0;
+//    padding-bottom: 10px;
+//  }
+//  .green-button {
+//    font-size: 11px;
+//    width: 90px;
+//    height: 57px;
+//    text-align: center;
+//    margin-left: 50%;
+//    padding-left: 50%;
+//    margin-right: 0%;
+//    border-radius: 20px;
+//    padding: 11px 11px;
+//  }
+//  .event-schedule-phone {
+//    display: initial;
+//    display: flex;
+//    background-color: #fafafa;
+//    justify-content: center;
+//    padding-left: 10%;
+//  }
+//  .schedule-middle-div {
+//    margin: 0;
+//    padding-top: 60px;
+//    // padding-right: 10%;
+//    z-index: 0;
+//    // display: flex;
+//  }
+//  .middle-div-phone {
+//    justify-content: center;
+//    text-align: center;
+//    // margin: 0 auto;
+//    // width: 100%;
+//    z-index: 1;
+//    // display: flex;
+//  }
+//  .Ellipse {
+//    width: 16px;
+//    height: 16px;
+//    margin: 20px;
+//  }
+//  .event-schedule {
+//    display: none;
+//  }
+//  .event-schedule-schematic {
+//    background-image: none;
+//  }
+//  .text-title {
+//    font-size: 36px;
+//  }
+//  .text-subtitle {
+//    font-size: 28px;
+//    font-family: "Estedad";
+//    color: #636198;
+//    margin-top: 0;
+//    margin-bottom: 0;
+//  }
+//  .Line {
+//    width: 0px;
+//    height: 290px;
+//    border: solid 4px #63DAA4;
+//  }
+//  .schedule-image {
+//    width: 180px;
+//    height: 180px;
+//  }
+//  .image {
+//    // margin-top: 0;
+//    margin: 0 auto;
+//  }
+//  .prizes {
+//    // background-color: #E8E7FF;
+//    background-image: none;
+//    padding-top: 5%;
+//    // margin-top: -20%;
+//    // padding-bottom: 20%;
+//  }
+//  .inner-prizes {
+//    background-color: #E8E7FF;
+//    padding-bottom: 30px;
+//  }
+//  .prizes-title {
+//    margin-top: 0;
+//    font-size: large;
+//  }
+//  .light-purple-wave {
+//    // display: initial;
+//    display: flex;
+//    // background-image: url("/assets/svg/wave-purple-light.svg");
+//    // background-repeat: no-repeat;
+//    // background-size: 100% 100%;
+//    transform: scaleY(-1);
+//    // width: 100%;
+//    // height: 210px;
+//    // position: relative;
+//    z-index: 1;
+//    // margin-bottom: 6%;
+//  }
+//  .prize-cards-inner-div {
+//    flex-direction: column;
+//    justify-content: center;
+//    text-align: center;
+//  }
+//  .collapse-header {
+//    font-size: 44px;
+//  }
+//  .collapse-title {
+//    width: 100%;
+//    font-size: 16px;
+//  }
+//  .whole-workshop {
+//    display: none;
+//  }
+//  .workshops-background-phone {
+//    background-color: #4F7B7A !important;
+//    margin-bottom: 0;
+//    padding-bottom: 120px;
+//  }
+//  .collapse-discription-div {
+//    padding-right: 20px;
+//    padding-left: 20px;
+//    display: flex;
+//    justify-content: space-between;
+//  }
+//  .collapse-subject {
+//    margin: 0;
+//    font-size: 16px;
+//    padding: 0;
+//  }
+//  .supporters-card-image{
+//    max-width: 100%;
+//    height: auto;
+//  }
+//  .footer-image-div {
+//    display: none;
+//  }
+//  .collapse-discription-inner-div {
+//    display: flex;
+//    justify-content: space-evenly;
+//  }
+//  .register-button {
+//    height: 44px;
+//    border-radius: 16px;
+//    font-size: 16px;
+//    width: fit-content;
+//  }
+//  .orange-collapse {
+//    width: 24px;
+//    border-bottom-right-radius: 0;
+//    border-top-right-radius: 12px;
+//  }
+//  .workshops-whole-collapse {
+//    border-radius: 12px;
+//  }
+//  .collapse-button {
+//    text-align: center;
+//  }
+//  .collapse {
+//    font-size: 12px;
+//    width: 100%;
+//    border-radius: 0;
+//    margin-bottom: 0;
+//  }
+//  .collapse-icon {
+//    font-size: 10px;
+//  }
+//  .green-rectangle-under-workshops {
+//    z-index: 100;
+//    height: 80px;
+//  }
+//  .green-wave-above-wrokshops {
+//    margin-top: -30px;
+//    margin-bottom: 0;
+//    background-color: #E8E7FF;
+//  }
+//  .whole-workshop-phone {
+//    display: initial;
+//  }
+//  .components-collapse{
+//    padding: 0;
+//  }
+//  .collapse-about {
+//    font-size: 14px;
+//  }
+//  .collapse-persenters-title {
+//    font-size: 20px;
+//  }
+//  .collapse-presenters-name {
+//    margin-top: 0;
+//    font-size: 16px;
+//  }
+//  .talks-background {
+//    display: none;
+//  }
+//  .talks-background-phone {
+//    display: initial;
+//    display: list-item;
+//    background-color: #57B98C;
+//    padding-top: 20px;
+//    padding-bottom: 20px;
+//  }
+//  .pink-collapse {
+//    border-top-right-radius: 12px;
+//    border-bottom-right-radius: 0;
+//  }
+//  .discription-footer-div {
+//    flex-direction: column;
+//    //justify-content: initial;
+//    justify-content: center;
+//    display: flex;
+//  }
+//  .footer-image {
+//    // width: 360px;
+//    //height: 320px;
+//    //display: block;
+//    margin-left: auto;
+//    margin-right: auto;
+//    display: flex;
+//    justify-content: center;
+//    align-items: center;
+//  }
+//  .discription-right-footer-div {
+//    padding: 38%;
+//    margin-bottom: 80%;
+//    justify-content: center;
+//  }
+//  .footer-image-div {
+//    text-align: center;
+//    margin-left: 0;
+//    margin-top: 300px;
+//  }
+//  .discription-right-footer-about-div {
+//    padding-left: 10%;
+//    margin-bottom: 1000px;
+//    font-size: 15px;
+//    text-align: center;
+//    // display: inline;
+//  }
+//  .discription-right-footer-about-title {
+//    font-size: 40px;
+//  }
+//  .discription-right-footer-about-subtitle {
+//    font-size: 28px;
+//  }
+//  .discription-right-footer-about-discription {
+//    font-size: 20px;
+//  }
+//  #green-button-phone {
+//    margin: 0;
+//  }
+//  .collapse-background {
+//    border-bottom-right-radius: 12px;
+//  }
+//  .footer-whole-div {
+//    margin-top: -40px;
+//  }
+//  .whole-header-phone {
+//    display: initial;
+//    display: flex;
+//    direction: rtl;
+//    justify-content: space-between;
+//    padding: 10px 15px;
+//  }
+//  .logo {
+//    padding: 0;
+//  }
+//  .collapse-presenters-card-div {
+//    flex-direction: column;
+//  }
+//  .collapse-cost {
+//    margin: auto;
+//    text-align: center;
+//    justify-content: center;
+//    float: initial;
+//  }
+//}

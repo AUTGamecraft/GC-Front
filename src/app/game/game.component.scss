@@ -1,0 +1,40 @@
+* {
+  text-decoration: none;
+}
+
+h3, h5, p {
+  color: #e8e7ff;
+}
+
+.row > .column {
+  padding: 8px;
+}
+
+.column {
+  float: right;
+  width: 33%;
+}
+
+.content {
+  margin: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #474666;
+  cursor: pointer;
+  text-align: center;
+}
+
+@media screen and (max-width: 900px) {
+  .column {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+  .content {
+    height: auto;
+  }
+}

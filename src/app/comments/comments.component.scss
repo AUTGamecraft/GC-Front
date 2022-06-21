@@ -1,0 +1,24 @@
+.title, .content {
+  color: #E8E7FF;
+  text-align: right;
+}
+
+.title {
+  font-size: xx-large;
+  font-family: "Estedad-Black", sans-serif;
+}
+
+.content {
+  font-size: medium;
+  line-height: 200%;
+  font-family: "Estedad-Regular", sans-serif;
+  .link {
+    text-decoration: none;
+  }
+}
+
+.button {
+  color: #E8E7FF;
+  font-family: "Estedad-Regular", sans-serif;
+}
+

@@ -1,0 +1,59 @@
+<div *ngIf="!showComments" class="game-dialog">
+  <h2 mat-dialog-title class="title">{{data.title}}</h2>
+  <mat-dialog-content class="mat-typography content">
+    <div style="text-align: center">
+      <img src="{{data.poster}}" alt="Game Poster" class="poster" style="min-width: 65%;max-width: 95%">
+    </div>
+    <h1 style="font-family: 'Estedad-Bold', sans-serif; font-size: x-large; direction: rtl;">{{data.title}}</h1>
+    <h2 style="font-family: 'Estedad-SemiBold', sans-serif; font-size: x-large; direction: rtl;">{{data.team.name}}</h2>
+    <div>
+      <span *ngFor="let star of [].constructor(5-publicservice.currentGame.averageScore); let i = index" style="display: inline">
+        <mat-icon aria-hidden="false" aria-label="gray icon" class="gray-icon">grade</mat-icon>
+      </span>
+      <span *ngFor="let star of [].constructor(publicservice.currentGame.averageScore); let i = index" style="display: inline">
+        <mat-icon aria-hidden="false" aria-label="golden icon" class="golden-icon">grade</mat-icon>
+      </span>
+    </div>
+    <p style="direction: rtl;" [innerHTML]="data.description">
+    </p>
+    <p style="font-weight: bold; font-size: large; direction: rtl;">سازندگان:</p>
+    <app-creator *ngFor="let creator of data.team.members" [creator]="creator" style="direction: rtl;"></app-creator>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+  <!--  <button mat-button (click)="openGameDialog()" class="button">نظرات</button>-->
+    <button mat-button mat-dialog-close class="button">بازگشت</button>
+    <button mat-button (click)="openComments()" class="button">نظرات</button>
+    <a href="{{data.link}}" class="link">
+      <button mat-button [mat-dialog-close]="true" class="button" cdkFocusInitial>دریافت</button>
+    </a>
+  </mat-dialog-actions>
+</div>
+
+<div *ngIf="showComments"  class="game-dialog">
+  <h2 mat-dialog-title class="title">نظرات</h2>
+  <mat-dialog-content class="mat-typography content">
+    <app-comment *ngFor="let comment of comments" [comment]="comment" style="direction: rtl;"></app-comment>
+  </mat-dialog-content>
+  <div style="width: 100%; display: flex; flex-direction: row; justify-content: flex-start;">
+    <textarea [(ngModel)]="commentToSubmit.text" dir="rtl" placeholder="به این بازی نظر بده!" rows="2" name="comment[text]" id="comment_text" class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true"></textarea>
+  </div>
+  <mat-dialog-actions align="end" style="display:flex; flex-direction: row; justify-content: space-between;">
+    <span style="margin-bottom: 10px;">
+      <button [disabled]="!publicservice.logedIn || commentToSubmit.text.length === 0" mat-button class="button" style="background-color: #6af9c5;color: #34334B;" (click)="submitComment()">
+        <span *ngIf="publicservice.logedIn">
+          ثبت نظر
+        </span>
+        <span dir="rtl"  *ngIf="!publicservice.logedIn">
+          برای ثبت نظر باید لاگین کنید!
+        </span>
+      </button>
+    </span>
+    <span>
+      <button mat-button mat-dialog-close class="button">بازگشت</button>
+      <button mat-button (click)="closeComments()" class="button">توضیحات</button>
+      <a href="{{data.link}}" class="link">
+        <button mat-button [mat-dialog-close]="true" class="button" cdkFocusInitial>دریافت</button>
+      </a>
+    </span>
+  </mat-dialog-actions>
+</div>

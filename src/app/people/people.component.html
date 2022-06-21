@@ -27,6 +27,10 @@
                             class="normal-button">{{publicservice.Texts.Texts["header4"]}}</button>
                     </div>
                     <div class="right-button">
+                        <button mat-button class="normal-button" (click)="Games()"
+                                id="people-button">{{publicservice.Texts.Texts["header14"]}}</button>
+                    </div>
+                    <div class="right-button">
                         <button mat-button (click)="Footer(footer)"
                             class="normal-button">{{publicservice.Texts.Texts["header5"]}}</button>
                     </div>
@@ -72,7 +76,7 @@
         <div *ngIf="display">
             <mat-sidenav-container class="example-sidenav-container">
                 <!-- <mat-sidenav #snav >
-          
+
         </mat-sidenav> -->
 
                 <mat-sidenav-content class="side-route">
@@ -115,6 +119,11 @@
                     <div class="side-button">
                         <button mat-button (click)="Talk(talk)"
                             class="normal-button">{{publicservice.Texts.Texts["header4"]}}</button>
+                    </div>
+                    <mat-divider class="side-divider"></mat-divider>
+                    <div class="side-button">
+                        <button mat-button (click)="Games()"
+                                class="normal-button">{{publicservice.Texts.Texts["header14"]}}</button>
                     </div>
                     <mat-divider class="side-divider"></mat-divider>
                     <div class="side-button">
@@ -171,13 +180,13 @@
                             <br>
                             {{publicservice.Texts.Texts["home62"]}}
                         </p>
-                        <div style="text-align: center;">
-                            <button mat-flat-button (click)="People()"
-                                class="green-button">{{publicservice.Texts.Texts["home47"]}}</button>
-                                <div class="footer-image-div-phone">
-                                    <img class="footer-image" src="assets/images/folan.png">
-                                </div>
-                        </div>
+<!--                        <div style="text-align: center;">-->
+<!--                            <button mat-flat-button (click)="People()"-->
+<!--                                class="green-button">{{publicservice.Texts.Texts["home47"]}}</button>-->
+<!--                                <div class="footer-image-div-phone">-->
+<!--                                    <img class="footer-image" src="assets/images/folan.png">-->
+<!--                                </div>-->
+<!--                        </div>-->
                     </div>
                     <div class="discription-right-footer-bubble">
                     </div>

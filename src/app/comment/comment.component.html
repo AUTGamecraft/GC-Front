@@ -1,0 +1,17 @@
+<mat-card class="example-card">
+  <mat-card-title-group>
+    <mat-card-title style="font-size: large">{{comment.user.name}}</mat-card-title>
+    <mat-card-subtitle>
+      <div *ngFor="let star of goldenStars" style="display: inline">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" class="golden-icon">grade</mat-icon>
+      </div>
+      <div *ngFor="let star of grayStars" style="display: inline">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" class="gray-icon">grade</mat-icon>
+      </div>
+    </mat-card-subtitle>
+    <img mat-card-sm-image src="{{comment.user.profile}}" class="user-image" alt="{{comment.user.name}}">
+  </mat-card-title-group>
+  <mat-card-content>
+    {{comment.text}}
+  </mat-card-content>
+</mat-card>

@@ -306,5 +306,9 @@ export class HomeComponent implements OnInit {
   Cart(){
     this.router.navigate(['cart'], { fragment: 'cart' });
   }
+  
+  Games(){
+    this.router.navigate(['games']);
+  }
 
 }

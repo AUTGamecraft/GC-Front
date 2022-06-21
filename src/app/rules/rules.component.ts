@@ -74,4 +74,8 @@ export class RulesComponent implements OnInit {
 
     // return this.icon 
   }
+
+  Games(){
+    this.router.navigate(['games']);
+  }
 }

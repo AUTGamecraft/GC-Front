@@ -18,6 +18,7 @@ export class Texts{
         this.FaTexts["header11"] = "شرایط مسابقه"
         this.FaTexts["header12"] = "تیم ما"
         this.FaTexts["header13"] = "رویداد ۲۰۲۱"
+        this.FaTexts["header14"] = "بازی‌ها"
 
         this.FaTexts["home1"] = "گیمـ کرفت"
         this.FaTexts["home2"] = "دومین رویداد بازی سازی دانشگاه صنعتی امیرکبیر"
@@ -146,7 +147,7 @@ export class Texts{
         this.FaTexts["login11"] = "ورود"
         this.FaTexts["login12"] = "ثبت نام"
         this.FaTexts["login13"] ="فراموشی رمز عبور"
-        
+
         this.FaTexts["signup1"] = "ثبت نام"
         this.FaTexts["signup2"] = "گیمـ"
         this.FaTexts["signup3"] = "نام و نام خانوادگی"
