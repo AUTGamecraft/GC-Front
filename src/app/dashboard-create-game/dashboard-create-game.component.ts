@@ -118,7 +118,7 @@ export class DashboardCreateGameComponent implements OnInit {
     this.router.navigate(['dashboard-teams'], { fragment: 'dash' });
   }
   gameStatus() {
-    this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+    this.router.navigate(['dashboard-create-game'])
   }
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();

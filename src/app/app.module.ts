@@ -92,7 +92,7 @@ import { CommentComponent } from './comment/comment.component';
     MatAutocompleteModule,
     MatBadgeModule,
     MatSidenavModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
   ],
