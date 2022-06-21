@@ -105,7 +105,7 @@ export class DashboardTeamsComponent implements OnInit {
   Teams() {
     this.router.navigate(['dashboard-teams'], { fragment: 'dash' });
   }
-  others() {
+  gameStatus() {
     this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
   }
   private _filter(value: string): string[] {

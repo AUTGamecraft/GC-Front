@@ -133,7 +133,7 @@ export class CartComponent implements OnInit {
     // }
     // this.router.navigate(['dashboard-teams']);
   }
-  others() {
+  gameStatus() {
     this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
   }
   Cart() {
@@ -179,5 +179,9 @@ export class CartComponent implements OnInit {
       // }
       location.href = r.data.link;
     })
+  }
+
+  CreateGame() {
+
   }
 }
