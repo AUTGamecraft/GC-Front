@@ -170,7 +170,7 @@ export class DashboardEventComponent implements OnInit {
     this.router.navigate(['cart'], { fragment: 'cart' });
   }
   gameStatus() {
-    this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+    this.router.navigate(['dashboard-create-game'])
   }
   Upload() {
     document.getElementById('imgUpload').click();

@@ -80,7 +80,7 @@ import { NewpasswordComponent } from './newpassword/newpassword.component';
     MatAutocompleteModule,
     MatBadgeModule,
     MatSidenavModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
   ],
