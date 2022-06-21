@@ -169,7 +169,7 @@ export class DashboardEventComponent implements OnInit {
   Cart() {
     this.router.navigate(['cart'], { fragment: 'cart' });
   }
-  others() {
+  gameStatus() {
     this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
   }
   Upload() {

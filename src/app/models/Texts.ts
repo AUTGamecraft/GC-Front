@@ -118,7 +118,7 @@ export class Texts{
         this.FaTexts["dash-event30"] = "perm_media "
         this.FaTexts["dash-event31"] = "groups"
         this.FaTexts["dash-event32"] = "movie"
-        this.FaTexts["dash-event33"] = "تیم های رقیب"
+        this.FaTexts["dash-event33"] = "وضعیت بازی"
 
         this.FaTexts["error1"] = "error"
 
@@ -179,7 +179,7 @@ export class Texts{
         this.FaTexts["dash-media12"] = "perm_media "
         this.FaTexts["dash-media13"] = "groups"
         this.FaTexts["dash-media14"] = "movie"
-        this.FaTexts["dash-media15"] = "تیم های رقیب"
+        this.FaTexts["dash-media15"] = "وضعیت بازی"
 
         this.FaTexts["people1"] = "افراد"
         this.FaTexts["people2"] = "تیم فنی"
