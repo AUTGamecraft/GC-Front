@@ -100,5 +100,9 @@ export class PeopleComponent implements OnInit {
   GetPeoples() {
     return this.peoples
   }
+  
+  Games(){
+    this.router.navigate(['games']);
+  }
 
 }

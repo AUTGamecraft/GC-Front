@@ -346,4 +346,8 @@ export class GamesComponent implements OnInit {
   Footer(el: HTMLElement) {
     el.scrollIntoView({ behavior: "smooth" });
   }
+
+  Games(){
+    this.router.navigate(['games']);
+  }
 }

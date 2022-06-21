@@ -1,6 +1,7 @@
 import {Component, OnInit, Input} from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
 import {GameContentComponent} from "../game-content/game-content.component";
+import { PublicService } from '../public.service';
 
 @Component({
   selector: 'app-game',
@@ -10,13 +11,14 @@ import {GameContentComponent} from "../game-content/game-content.component";
 export class GameComponent implements OnInit {
   @Input() game: any
 
-  constructor(public dialog: MatDialog) {
+  constructor(public dialog: MatDialog, public publicService: PublicService) {
   }
 
   ngOnInit(): void {
   }
 
   openGameDialog() {
+    const dialogInstance = this.dialog
     const dialog = this.dialog.open(GameContentComponent, {
       data: {
         title: this.game.title,
@@ -28,11 +30,17 @@ export class GameComponent implements OnInit {
         is_verified: this.game.is_verified,
         timestamp: this.game.timestamp,
         game_code: this.game.game_code,
-        average_score: this.game.average_score
+        average_score: this.game.average_score,
+        dialogInstance,
       },
     });
 
     dialog.afterClosed().subscribe(result => {
     });
+  }
+
+  public Games(){
+    this.publicService.router.navigate(['home']);
+
   }
 }

@@ -2,6 +2,8 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {CommentsComponent} from "../comments/comments.component";
 import {PublicService} from '../public.service';
+import { SuccessDialogComponent } from '../success-dialog/success-dialog.component';
+import { ErrorDialogComponent } from '../error-dialog/error-dialog.component'
 
 export interface DialogData {
   title: string;
@@ -14,6 +16,7 @@ export interface DialogData {
   timestamp: string;
   game_code: number;
   average_score: number;
+  dialogInstance: any;
 }
 
 @Component({
@@ -99,7 +102,24 @@ export class GameContentComponent implements OnInit {
         score: 5
       }
       this.showComments = false;
+
+      this.data.dialogInstance.closeAll()
+      this.publicservice.snackbar
+      this.publicservice.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'نظر شما با موفقیت ثبت شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+
       // TODO show success dialog to the user
+    }, error => {
+      console.log("====================")
+      console.log(error)
+      
+      console.log("====================###")
+      console.log(error["_body"]["error"])
+      if(error["_body"] && error["_body"].includes("The fields user, game must make a unique set")){
+        console.log("shitttttttttttttt==========>")
+        this.publicservice.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'شما قبلا نظر داده‌اید!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      }else{
+        this.publicservice.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'مشکلی پیش آمده: لطفا مجددا تلاش نمایید!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      }
     })
 
 

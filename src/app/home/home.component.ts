@@ -290,4 +290,8 @@ export class HomeComponent implements OnInit {
     window.open(url, "_blank");
   }
 
+  Games(){
+    this.router.navigate(['games']);
+  }
+
 }
