@@ -53,6 +53,11 @@ export class DashboardCreateGameComponent implements OnInit {
 
   imageToShowAsGameAvatar: any = ""
 
+
+  uploadedGame = {
+    
+  }
+
   @Output() onChange: EventEmitter<File> = new EventEmitter<File>();
 
 
@@ -224,5 +229,50 @@ export class DashboardCreateGameComponent implements OnInit {
       console.log(reader.result)
         this.imageToShowAsGameAvatar = reader.result; 
     }
+  }
+
+  
+  submitGame() {
+    // TODO API call to backend
+    const body = {
+      title: this.createGame.gameName,
+      description: this.createGame.gameDescription,
+      game_link: this.createGame.gameLink,
+      team: this.teamInfo.pk,
+      poster: this.createGame.posterToUpload,
+    }
+
+
+    console.log("here is user team")
+    console.log(this.teamInfo.pk)
+
+    this.publicservice.submitGame(body).subscribe(res =>{
+      
+      this.createGame = {
+        gameName: "",
+        gameLink: "",
+        gameDescription:"",
+        posterToUpload: null,
+        teamID:""
+      }
+
+      this.publicservice.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'بازی با موفقیت ساخته شد. پس از تایید در صفحه بازی‌ها قابل نمایش خواهد بود.', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+
+      // TODO show success dialog to the user
+    }, error => {
+      console.log("====================")
+      console.log(error)
+      
+      console.log("====================###")
+      console.log(error["_body"]["error"])
+      if(error["_body"] && error["_body"].includes("The fields team must make a unique set")){
+        console.log("shitttttttttttttt==========>")
+        this.publicservice.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'شما قبلا بازی ساخته اید!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      }else{
+        this.publicservice.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'مشکلی پیش آمده: لطفا مجددا تلاش نمایید!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      }
+    })
+
+
   }
 }

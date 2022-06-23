@@ -444,6 +444,29 @@ export class PublicService {
     return ret;
   }
 
+  submitGame(body): Observable<Response> {
+
+    // boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+    let headers = new Headers({
+      'Authorization': 'Bearer ' + this.Authorization
+    });
+    // let options = new RequestOptions({headers: headers});
+    const options = {
+      headers,
+    }
+
+    const formData = new FormData();
+    formData.append('title',body.title)
+    formData.append('description',body.description)
+    formData.append('game_link',body.game_link)
+    formData.append('team',body.team)
+    formData.append('poster',body.poster)
+
+    const res: Observable<Response> = this.http.post(this.ApiUrl + '/api/v2/game/', formData, options)
+    return res
+  }
+
+
   getGames(): Observable<Response> {
     const res: Observable<Response> = this.http.get(this.ApiUrl + '/api/v2/game/', {})
     return res
