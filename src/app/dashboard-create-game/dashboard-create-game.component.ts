@@ -19,6 +19,13 @@ export class DashboardCreateGameComponent implements OnInit {
   nameFormControl = new FormControl('', [
     Validators.required,
   ]);
+  linkFormControl = new FormControl('', [
+    Validators.required,
+  ]);
+  descFormControl = new FormControl('', [
+    Validators.required,
+  ]);
+  
   myControl = new FormControl();
   options: string[] = [];
   filteredOptions: Observable<string[]>;
@@ -29,15 +36,23 @@ export class DashboardCreateGameComponent implements OnInit {
   isEmpty = true;
   hasTeam = false;
   teamInfo: any = [];
+
   createGame: {
     gameName: string,
     gameLink: string,
-    gameAvatar: string
+    gameDescription: string,
+    posterToUpload: File | null,
+    teamID: string
   } = {
     gameName: "",
     gameLink: "",
-    gameAvatar: ""
+    gameDescription:"",
+    posterToUpload: null,
+    teamID:""
   }
+
+  imageToShowAsGameAvatar: any = ""
+
   @Output() onChange: EventEmitter<File> = new EventEmitter<File>();
 
 
@@ -198,19 +213,16 @@ export class DashboardCreateGameComponent implements OnInit {
   addGame(){
     this.router.navigate(['dashboard-create-game']);
   }
-  updateCreateGameImage($event: Event) {
-        // We access he file with $event.target['files'][0]
-        this.projectImage($event.target['files'][0]);
+  
+  handleFileInput(files: FileList) {
+    console.log("new file selected======>")
+    this.createGame.posterToUpload = files.item(0);
+
+    const reader = new FileReader();
+    reader.readAsDataURL(files[0]); 
+    reader.onload = (_event) => { 
+      console.log(reader.result)
+        this.imageToShowAsGameAvatar = reader.result; 
+    }
   }
-  projectImage(file: File) {
-    let reader = new FileReader;
-    // TODO: Define type of 'e'
-    reader.onload = (e: any) => {
-        // Simply set e.target.result as our <img> src in the layout
-        this.createGame.gameAvatar = e.target.result;
-        this.onChange.emit(file);
-    };
-    // This will process our file and get it's attributes/data
-    reader.readAsDataURL(file);
-}
 }

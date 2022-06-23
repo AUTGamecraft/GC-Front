@@ -39,7 +39,7 @@
                         </button>
                     </div>
                     <div class="left-header-button">
-                        <button mat-button (click)="Teams()" style="background-color: #fafafa;" class="buttons">
+                        <button mat-button (click)="Teams()" style="background-color: #eceff1;" class="buttons">
                             <mat-icon>{{publicservice.Texts.Texts["dash-media13"]}}</mat-icon>
                             {{publicservice.Texts.Texts["dash-media4"]}}
                         </button>
@@ -57,11 +57,15 @@
             </div>
             <div class="left-part">
                 <h1 class="events-title">
-                    افزودن بازی</h1>
-                <div class="description">
-                    <h2 class="people">نام بازی</h2>
+                    وضعیت بازی</h1>
+                <h1 *ngIf="hasTeam" class="team-name">
+                    نام تیم: {{teamInfo.name}}
+                </h1>
+
+                <div *ngIf="!hasTeam" class="description" style="margin-top: 100px;">
+                    <h2 class="people" style="text-align: center;">برای افزودن بازی در ابتدا باید تیم بسازید!</h2>
                 </div>
-                <div class="team-create-whole-div">
+                <div *ngIf="hasTeam" class="team-create-whole-div">
                     <div class="form-field-div">
                         <form>
                             <mat-form-field class="form-field">
@@ -70,100 +74,85 @@
                                 <input matInput [formControl]="nameFormControl" class="input"
                                     [(ngModel)]="createGame.gameName">
                                 <mat-error *ngIf="nameFormControl.hasError('required')" class="error">
-                                    وارد کردن نام بازی
+                                    نام بازی
                                     <strong>{{publicservice.Texts.Texts["login6"]}}</strong>
-                                    {{publicservice.Texts.Texts["login5"]}}
+                                    است.
                                 </mat-error>
-                            </mat-form-field>
-                        </form>
-                    </div>    
-                </div>
-                <div class="team-create-whole-div">
-                    <div class="form-field-div">
-                        <form>
-                            <mat-form-field class="form-field">
-                                <mat-label class="label">نام بازی
-                                </mat-label>
-                                <!-- Icon as placeholder when no file picked -->
-                                <i class="material-icons">cloud_upload</i>
-                                <!-- file input, accepts images only. Detect when file has been picked/changed with Angular's native (change) event listener -->
-                                <input type="file" accept="image/*" (change)="updateCreateGameImage($event)">
-                                <!-- img placeholder when a file has been picked. shows only when 'source' is not empty -->
-                                <img *ngIf="createGame.gameAvatar" [src]="createGame.gameAvatar" src="" style="width:50px; height: 50px;">
-                                <mat-error *ngIf="nameFormControl.hasError('required')" class="error">
-                                    وارد کردن نام بازی
-                                    <strong>{{publicservice.Texts.Texts["login6"]}}</strong>
-                                    {{publicservice.Texts.Texts["login5"]}}
-                                </mat-error>
-                            </mat-form-field>
-                        </form>
-                    </div>    
-                </div>
-                <div class="description">
-                    <h2 class="people">{{publicservice.Texts.Texts["dash-teams2"]}}</h2>
-                </div>
-                <div class="team-create-whole-div">
-                    <div class="form-field-div">
-                        <form>
-                            <mat-form-field class="form-field">
-                                <mat-label class="label">{{publicservice.Texts.Texts["dash-teams4"]}}
-                                </mat-label>
-                                <input matInput [formControl]="nameFormControl" class="input"
-                                    [(ngModel)]="publicservice.Name">
-                                <mat-error *ngIf="nameFormControl.hasError('required')" class="error">
-                                    {{publicservice.Texts.Texts["dash-teams5"]}}
-                                    <strong>{{publicservice.Texts.Texts["login6"]}}</strong>
-                                    {{publicservice.Texts.Texts["login5"]}}
-                                </mat-error>
-                            </mat-form-field>
-                        </form>
-                        <form>
-                            <mat-form-field class="form-field">
-                                <mat-label class="label">{{publicservice.Texts.Texts["dash-teams6"]}}</mat-label>
-                                <input type="email" placeholder="Ex. pat@example.com" matInput [formControl]="myControl"
-                                    [matAutocomplete]="auto" id="inputEmail">
-                                <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-                                    <mat-option *ngFor="let option of filteredOptions | async;let i = index"
-                                        [value]="option" (click)="Add(option)" id="matOption">
-                                        <div class="option" [inline]="true">
-                                            <div style="display: flex;">
-                                                <img class="option-image" src="{{returnProfile(option)}}">
-                                                <p class="name">{{returnName(option)}}</p>
-                                            </div>
-                                            <p class="email">{{returnEmail(option)}}</p>
-                                        </div>
-                                    </mat-option>
-                                </mat-autocomplete>
                             </mat-form-field>
                         </form>
                     </div>
+                    <div class="form-field-div">
+                        <form>
+                            <mat-form-field class="form-field">
+                                <mat-label class="label">لینک بازی
+                                </mat-label>
+                                <input matInput [formControl]="linkFormControl" class="input"
+                                    [(ngModel)]="createGame.gameLink">
+                                <mat-error *ngIf="linkFormControl.hasError('required')" class="error">
+                                    لینک بازی
+                                    <strong>{{publicservice.Texts.Texts["login6"]}}</strong>
+                                    است.
+                                </mat-error>
+                            </mat-form-field>
+                        </form>
+                    </div>
+                </div>
 
-                    <div style="width: 100%;box-sizing: border-box;">
-                        <div *ngIf="isEmpty">
-                            <p class="no-one-text">هیچکس انتخاب نشده</p>
+                <div *ngIf="hasTeam" class="team-create-whole-div">
+                    <div style="width: 100%; display: flex; flex-direction: row; justify-content: flex-start;">
+                        <textarea [formControl]="descFormControl" [(ngModel)]="createGame.gameDescription" dir="rtl" placeholder="توضیحات بازی..." rows="2" name="comment[text]" id="comment_text" class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true"></textarea>
+                        <!-- <textarea [(ngModel)]="createGame.gameDescription" dir="rtl" placeholder="توضیحات بازی..." rows="2" name="comment[text]" id="comment_text" class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true"></textarea> -->
+                    </div>
+                </div>
+                <div *ngIf="hasTeam" class="team-create-whole-div">
+                    
+                    <div style="display: flex; flex-wrap: wrap; flex-direction:row; align-items: center; justify-content: space-between; width: 100%; margin-top: 30px;">
+                        <div class="team-name">
+                            آواتار بازی را انتخاب نمایید:
                         </div>
-                        <div style="width: 100%;box-sizing: border-box;" *ngIf="!isEmpty">
-                            <div class="chosen-people"
-                                *ngFor="let user of teamArray;let i = index">
-                                <div class="chosen-user" [inline]="true">
-                                    <div style="display: flex;">
-                                        <img class="option-image" src="{{user.profile}}">
-                                        <p class="name">{{user.first_name}}</p>
-                                    </div>
-                                    <p class="email">{{user.email}}</p>
-                                </div>
-                                <div>
-                                    <button class="remove-user-button"
-                                        (click)="removeUser(i)" mat-button>
-                                        <mat-icon>remove</mat-icon>
-                                    </button>
-                                </div>
-                            </div>
-                            <button mat-flat-button (click)="confirm()" class="green-button">تایید</button>
-                            <p class="people-discription">پس از تایید امکان تغییر وجود ندارد!</p>
+                        <div>
+                            <input 
+                                type="file" 
+                                name="file-1[]" 
+                                id="file-1" 
+                                class="inputfile inputfile-1" 
+                                style="display: none;"
+                                (change)="handleFileInput($event.target.files)"
+                                accept="image/*"
+                            />
+                            <label for="file-1" style="margin-top: 20px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg>
+                                &nbsp;&nbsp;
+                                <span class="avatar-select">انتخاب آواتار</span>
+                            </label>
+                        </div>
+                        <div *ngIf="imageToShowAsGameAvatar" class="circle">
+                            <img src="{{imageToShowAsGameAvatar}}"/>
                         </div>
                     </div>
                 </div>
+
+                <div *ngIf="hasTeam" class="team-create-whole-div" style="display: flex; justify-content: end; margin-top: 100px;">
+                    <div style="display:flex; flex-direction: column;">
+                        <button 
+                            mat-flat-button 
+                            (click)="People()"
+                            class="green-button"
+                            [disabled]="!(createGame.gameName && createGame.gameLink && createGame.gameDescription && createGame.posterToUpload)"
+                        >
+                            ثبت بازی!
+                        </button>
+                        <div 
+                            *ngIf="!(createGame.gameName && createGame.gameLink && createGame.gameDescription && createGame.posterToUpload)"
+                            class="team-name" 
+                            style="margin-top: 20px"
+                        >
+                            لطفا همه مشخصات را کامل نمایید.
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
         </div>
     </div>
