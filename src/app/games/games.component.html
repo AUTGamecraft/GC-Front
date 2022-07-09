@@ -138,7 +138,7 @@
     <h2>بازی‌های ارائه شده در رویداد بازی‌سازی امیرکبیر</h2>
 
     <div class="row">
-      <app-game *ngFor="let game of publicservice.games" [game]="game"></app-game>
+      <app-game *ngFor="let game of sortGames()" [game]="game"></app-game>
     </div>
   </div>
   <div class="footer-whole-div" #footer id="footer">

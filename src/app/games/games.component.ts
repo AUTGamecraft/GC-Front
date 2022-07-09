@@ -131,4 +131,8 @@ export class GamesComponent implements OnInit {
   Games(){
     this.router.navigate(['games']);
   }
+
+  sortGames() {
+    return this.publicservice.games.sort((game1, game2)=> game2.likes.length - game1.likes.length)
+  }
 }

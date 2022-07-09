@@ -12,7 +12,7 @@ export interface DialogData {
   link: string;
   team: string;
   creators: [];
-  likes: []
+  likes: any[]
   is_verified: boolean;
   timestamp: string;
   game_code: number;
@@ -139,6 +139,7 @@ export class GameContentComponent implements OnInit {
 
         currGame.likes.push(likeObj)
         this.publicservice.games[currGameIndex] = currGame
+        this.data.likes = currGame.likes
         console.log("here at push")
         
       }else{
@@ -149,6 +150,8 @@ export class GameContentComponent implements OnInit {
 
         currGame.likes = currGame.likes.filter(like => like['user']['email'] !== likeObj['user']['email'])
         this.publicservice.games[currGameIndex] = currGame
+
+        this.data.likes = currGame.likes
         console.log("here at remove")
       }
     })
