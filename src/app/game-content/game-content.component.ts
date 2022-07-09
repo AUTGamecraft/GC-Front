@@ -45,20 +45,8 @@ export class GameContentComponent implements OnInit {
   ) {
     if(this.publicservice.logedIn){
       this.publicservice.getUser().then((r) => {
-        console.log(r.data)
-        // this.publicservice.loggedInUserEmail = r.data.email;
-        console.log("==============")
         const userEmail = r.data.email
-        console.log(this.data.likes)
-        console.log(userEmail)
-        console.log("==============")
-        const gameIsLikeByUser = this.data.likes.some(like => 
-        { 
-          console.log(like['user']['email'])
-          return like['user']['email'] === userEmail
-        })
-        
-        console.log(gameIsLikeByUser)
+        const gameIsLikeByUser = this.data.likes.some(like => like['user']['email'] === userEmail)        
         this.isLiked = gameIsLikeByUser
     });
     }
@@ -137,7 +125,33 @@ export class GameContentComponent implements OnInit {
 
   }
   handleFav() {
-    this.isLiked = !this.isLiked
+    const body = {
+      game: this.data.game_code,
+    }
+    this.publicservice.submitLike(body).subscribe(res=>{
+      let likeObj = this.publicservice.extractData(res, this)
+      console.log("after like a game. is_deleted=", likeObj['is_deleted'])
+      if(likeObj['is_deleted'] === false){
+        this.isLiked = true
+        // add to likes list
+        const currGame = this.publicservice.games.find(game => game.game_code === this.data.game_code)
+        const currGameIndex = this.publicservice.games.findIndex(game => game.game_code === this.data.game_code)
+
+        currGame.likes.push(likeObj)
+        this.publicservice.games[currGameIndex] = currGame
+        console.log("here at push")
+        
+      }else{
+        this.isLiked = false
+        // remove from likes list
+        const currGame = this.publicservice.games.find(game => game.game_code === this.data.game_code)
+        const currGameIndex = this.publicservice.games.findIndex(game => game.game_code === this.data.game_code)
+
+        currGame.likes = currGame.likes.filter(like => like['user']['email'] !== likeObj['user']['email'])
+        this.publicservice.games[currGameIndex] = currGame
+        console.log("here at remove")
+      }
+    })
   }
 }
 

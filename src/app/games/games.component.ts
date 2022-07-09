@@ -13,7 +13,7 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 export class GamesComponent implements OnInit {
   userName: string = '';
   peoples: any = []
-  games: any
+  // games: any
   constructor(public publicservice: PublicService, public router: Router, public snackbar: MatSnackBar) {
     // router.events.subscribe(s => {
     //   if (s instanceof NavigationEnd) {
@@ -63,7 +63,7 @@ export class GamesComponent implements OnInit {
 
       console.log("======")
       // this.games = mock
-      this.games = games
+      this.publicservice.games = games
     })
   }
   ngAfterViewInit(): void {

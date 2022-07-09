@@ -49,6 +49,22 @@ export class PublicService {
   } = {
     game: undefined,
   };
+
+  public games: {
+    title: string;
+    poster: string;
+    description: string;
+    link: string;
+    team: string;
+    creators: [];
+    likes: any[];
+    is_verified: boolean;
+    timestamp: string;
+    game_code: number;
+    // TODO: remove below line
+    average_score: number;
+  }[] = [];
+
   Mockup() {
 
 
@@ -490,6 +506,25 @@ export class PublicService {
     const res: Observable<Response> = this.http.post(this.ApiUrl + '/api/v2/game/comment/', formData, options)
     return res
   }
+
+  submitLike(body): Observable<Response> {
+
+    // boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+    let headers = new Headers({
+      'Authorization': 'Bearer ' + this.Authorization
+    });
+    // let options = new RequestOptions({headers: headers});
+    const options = {
+      headers,
+    }
+
+    const formData = new FormData();
+    formData.append('game',body.game)
+
+    const res: Observable<Response> = this.http.post(this.ApiUrl + '/api/v2/game/like/', formData, options)
+    return res
+  }
+
 
   getComments(game_code: number): Observable<Response> {
     const res: Observable<Response> = this.http.get(this.ApiUrl + `/api/v2/game/${game_code}/comments/`, {})

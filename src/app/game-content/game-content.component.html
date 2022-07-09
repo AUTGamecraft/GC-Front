@@ -15,8 +15,8 @@
       </span>
     </div> -->
     <div>
-      <mat-icon *ngIf="!isLiked" (click)="handleFav()" class="fav-icon" style="color:red; font-size: 2rem;">favorite</mat-icon>
-      <mat-icon *ngIf="isLiked" (click)="handleFav()" class="fav-icon" style="color:red; font-size: 2rem;">favorite_border</mat-icon>
+      <mat-icon *ngIf="isLiked" (click)="handleFav()" class="fav-icon" style="color:red; font-size: 2rem;">favorite</mat-icon>
+      <mat-icon *ngIf="!isLiked" (click)="handleFav()" class="fav-icon" style="color:red; font-size: 2rem;">favorite_border</mat-icon>
     </div>
     <p style="direction: rtl;" [innerHTML]="data.description">
     </p>
