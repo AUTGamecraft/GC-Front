@@ -268,6 +268,10 @@ export class DashboardCreateGameComponent implements OnInit {
       if(error["_body"] && error["_body"].includes("The fields team must make a unique set")){
         console.log("shitttttttttttttt==========>")
         this.publicservice.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'شما قبلا بازی ساخته اید!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      } else if(error["_body"] && error["_body"].includes("User should be head of team")){
+        this.publicservice.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'تنها هد تیم امکان ساختن بازی را دارد.', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      } else if(error["_body"] && error["_body"].includes("Team is not activated yet")){
+        this.publicservice.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'تیم شما هنوز فعال نشده است.', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
       }else{
         this.publicservice.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'مشکلی پیش آمده: لطفا مجددا تلاش نمایید!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
       }
