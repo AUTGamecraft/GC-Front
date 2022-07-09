@@ -87,3 +87,13 @@ textarea:focus::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: rgb(25, 20, 20);
   opacity: 1; /* Firefox */
 }
+
+
+.fav-icon {
+
+}
+
+.fav-icon:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}

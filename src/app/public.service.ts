@@ -31,6 +31,7 @@ export class PublicService {
   public file: File;
   public isStaff: boolean;
   public userName: string = "";
+  public loggedInUserEmail: string = "";
   public hasError: boolean;
   public talkPk;
   public workshopPk;
@@ -45,10 +46,8 @@ export class PublicService {
   
   public currentGame: {
     game: any;
-    averageScore: number;
   } = {
     game: undefined,
-    averageScore:0
   };
   Mockup() {
 

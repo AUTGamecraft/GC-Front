@@ -27,6 +27,7 @@ export class GameComponent implements OnInit {
         link: this.game.link,
         team: this.game.team,
         creators: this.game.creators,
+        likes: this.game.likes,
         is_verified: this.game.is_verified,
         timestamp: this.game.timestamp,
         game_code: this.game.game_code,

@@ -12,6 +12,7 @@ export interface DialogData {
   link: string;
   team: string;
   creators: [];
+  likes: []
   is_verified: boolean;
   timestamp: string;
   game_code: number;
@@ -30,11 +31,11 @@ export class GameContentComponent implements OnInit {
 
   commentToSubmit: {
     text: string,
-    score: number
   } = {
     text: "",
-    score: 5
   }
+
+  isLiked: boolean = false
 
   constructor(
     public publicservice: PublicService,
@@ -42,10 +43,29 @@ export class GameContentComponent implements OnInit {
     public dialog: MatDialogRef<GameContentComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData,
   ) {
+    if(this.publicservice.logedIn){
+      this.publicservice.getUser().then((r) => {
+        console.log(r.data)
+        // this.publicservice.loggedInUserEmail = r.data.email;
+        console.log("==============")
+        const userEmail = r.data.email
+        console.log(this.data.likes)
+        console.log(userEmail)
+        console.log("==============")
+        const gameIsLikeByUser = this.data.likes.some(like => 
+        { 
+          console.log(like['user']['email'])
+          return like['user']['email'] === userEmail
+        })
+        
+        console.log(gameIsLikeByUser)
+        this.isLiked = gameIsLikeByUser
+    });
+    }
   }
 
   ngOnInit(): void {
-    this.publicservice.currentGame.averageScore = 0;
+    // this.publicservice.currentGame.averageScore = 0;
     this.comments = []
     this.publicservice.getComments(this.data.game_code).subscribe(res=>{
         let comments = this.publicservice.extractData(res, this)
@@ -54,12 +74,6 @@ export class GameContentComponent implements OnInit {
     
           return element
         })
-        if(comments.length){
-          console.log("comments===", comments)
-          this.publicservice.currentGame.averageScore = Math.floor(comments.reduce(
-            (previousValue, currentValue) => previousValue + currentValue.score, 0
-            )/comments.length);
-        }
         console.log("==================> here")
         this.comments=comments
       })
@@ -91,7 +105,6 @@ export class GameContentComponent implements OnInit {
 
     const body = {
       text: this.commentToSubmit.text,
-      score: this.commentToSubmit.score,
       game: this.data.game_code,
     }
 
@@ -99,7 +112,6 @@ export class GameContentComponent implements OnInit {
       console.log("comment was submitted", res)
       this.commentToSubmit = {
         text: "",
-        score: 5
       }
       this.showComments = false;
 
@@ -123,6 +135,9 @@ export class GameContentComponent implements OnInit {
     })
 
 
+  }
+  handleFav() {
+    this.isLiked = !this.isLiked
   }
 }
 

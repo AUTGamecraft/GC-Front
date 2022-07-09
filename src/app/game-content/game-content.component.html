@@ -6,13 +6,17 @@
     </div>
     <h1 style="font-family: 'Estedad-Bold', sans-serif; font-size: x-large; direction: rtl;">{{data.title}}</h1>
     <h2 style="font-family: 'Estedad-SemiBold', sans-serif; font-size: x-large; direction: rtl;">{{data.team.name}}</h2>
-    <div>
+    <!-- <div>
       <span *ngFor="let star of [].constructor(5-publicservice.currentGame.averageScore); let i = index" style="display: inline">
         <mat-icon aria-hidden="false" aria-label="gray icon" class="gray-icon">grade</mat-icon>
       </span>
       <span *ngFor="let star of [].constructor(publicservice.currentGame.averageScore); let i = index" style="display: inline">
         <mat-icon aria-hidden="false" aria-label="golden icon" class="golden-icon">grade</mat-icon>
       </span>
+    </div> -->
+    <div>
+      <mat-icon *ngIf="!isLiked" (click)="handleFav()" class="fav-icon" style="color:red; font-size: 2rem;">favorite</mat-icon>
+      <mat-icon *ngIf="isLiked" (click)="handleFav()" class="fav-icon" style="color:red; font-size: 2rem;">favorite_border</mat-icon>
     </div>
     <p style="direction: rtl;" [innerHTML]="data.description">
     </p>
