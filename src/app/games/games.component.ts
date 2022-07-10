@@ -110,12 +110,6 @@ export class GamesComponent implements OnInit {
     this.router.navigate(['home'], { fragment: 'schedule' });
   }
   Rules() {
-    // if (window.innerWidth > 992) {
-    // this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-    // }
-    // else {
-    // this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
-    // }
     this.router.navigate(['rules'],{fragment:'rules'});
   }
   Home() {
