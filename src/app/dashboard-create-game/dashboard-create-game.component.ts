@@ -31,10 +31,11 @@ export class DashboardCreateGameComponent implements OnInit {
   filteredOptions: Observable<string[]>;
   userName: string = "";
   count = 0;
-  usersArray: any = [];
+  // usersArray: any = [];
   teamArray: any = [];
   isEmpty = true;
   hasTeam = false;
+  hasGame = false;
   teamInfo: any = [];
 
   createGame: {
@@ -42,13 +43,15 @@ export class DashboardCreateGameComponent implements OnInit {
     gameLink: string,
     gameDescription: string,
     posterToUpload: File | null,
-    teamID: string
+    teamID: string,
+    is_verified: boolean,
   } = {
     gameName: "",
     gameLink: "",
     gameDescription:"",
     posterToUpload: null,
-    teamID:""
+    teamID:"",
+    is_verified: false,
   }
 
   imageToShowAsGameAvatar: any = ""
@@ -75,18 +78,23 @@ export class DashboardCreateGameComponent implements OnInit {
           });
         }
       });
-      publicservice.getAvailableUsers().then((r) => {
-        for (let i = 0; i < r.data.length; i++) {
-          if (!r.data[i].has_team) {
-            this.usersArray.push(r.data[i]);
-            this.options.push(r.data[i].email)
-          }
-        }
-        this.options.sort();
-      });
       publicservice.getUserCart().then((r) => {
         this.count = r.data.length;
       });
+
+      publicservice.getUserGame().subscribe((res)=>{
+        this.hasGame = true;
+        const game = this.publicservice.extractData(res, this)
+        console.log("user game is..." ,game)
+        this.createGame.gameDescription = game['description']
+        this.createGame.gameName = game['title']
+        this.createGame.gameLink = game['game_link']
+        this.createGame.is_verified = game['is_verified']
+        this.imageToShowAsGameAvatar = game['poster']
+      }, error => {
+        console.log("error is..." ,error)
+      })
+
     }
   }
   ngAfterViewInit(): void {
@@ -146,81 +154,16 @@ export class DashboardCreateGameComponent implements OnInit {
     return this.options.filter(option => option.toLowerCase().indexOf(filterValue) === 0);
   }
 
-  Add(option) {
-    for (let i = 0; i < this.teamArray.length; i++) {
-      if (this.teamArray[i].email == option) {
-        return;
-      }
-    }
-    if (this.teamArray.length == 4) {
-      this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'حداکثر تعداد اعضا 5 نفر است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      return;
-    }
-    for (let i = 0; i < this.usersArray.length; i++) {
-      if (this.usersArray[i].email == option) {
-        this.teamArray.push(this.usersArray[i]);
-        this.isEmpty = false;
-        return;
-      }
-    }
-    if (option.length != 0) {
-      this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'یافت نشد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-    }
-  }
+
   Cart() {
     this.router.navigate(['cart'], { fragment: 'cart' });
   }
-  returnProfile(option) {
-    for (let i = 0; i < this.usersArray.length; i++) {
-      if (this.usersArray[i].email == option) {
-        return this.usersArray[i].profile;
-      }
-    }
-  }
-  returnEmail(option) {
-    for (let i = 0; i < this.usersArray.length; i++) {
-      if (this.usersArray[i].email == option) {
-        return this.usersArray[i].email;
-      }
-    }
-  }
-  returnName(option) {
-    for (let i = 0; i < this.usersArray.length; i++) {
-      if (this.usersArray[i].email == option) {
-        return this.usersArray[i].first_name;
-      }
-    }
-  }
-  removeUser(i) {
-    this.teamArray.splice(i, 1);
-    if (this.teamArray.length == 0) {
-      this.isEmpty = true;
-    }
-  }
-  confirm() {
-    if (this.teamArray.length < 2) {
-      this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'حداقل تعداد اعضا 3 نفر است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      return;
-    }
-    if (this.nameFormControl.status != "VALID") {
-      this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'نام تیم اجباری است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      return;
-    }
-    let tmp: any = [];
-    for (let i = 0; i < this.teamArray.length; i++) {
-      tmp.push(this.teamArray[i].email);
-    }
-    this.publicservice.createTeam(tmp).then((r) => {
-      this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'تیم با موفقیت تشکیل شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-      location.reload();
-    });
-  }
+  
   addGame(){
     this.router.navigate(['dashboard-create-game']);
   }
   
   handleFileInput(files: FileList) {
-    console.log("new file selected======>")
     this.createGame.posterToUpload = files.item(0);
 
     const reader = new FileReader();
@@ -233,7 +176,6 @@ export class DashboardCreateGameComponent implements OnInit {
 
   
   submitGame() {
-    // TODO API call to backend
     const body = {
       title: this.createGame.gameName,
       description: this.createGame.gameDescription,
@@ -242,31 +184,13 @@ export class DashboardCreateGameComponent implements OnInit {
       poster: this.createGame.posterToUpload,
     }
 
-
-    console.log("here is user team")
-    console.log(this.teamInfo.pk)
-
     this.publicservice.submitGame(body).subscribe(res =>{
-      
-      this.createGame = {
-        gameName: "",
-        gameLink: "",
-        gameDescription:"",
-        posterToUpload: null,
-        teamID:""
-      }
+      // const game = this.publicservice.extractData(res, this)
+      this.hasGame = true
 
       this.publicservice.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'بازی با موفقیت ساخته شد. پس از تایید در صفحه بازی‌ها قابل نمایش خواهد بود.', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-
-      // TODO show success dialog to the user
     }, error => {
-      console.log("====================")
-      console.log(error)
-      
-      console.log("====================###")
-      console.log(error["_body"]["error"])
       if(error["_body"] && error["_body"].includes("The fields team must make a unique set")){
-        console.log("shitttttttttttttt==========>")
         this.publicservice.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'شما قبلا بازی ساخته اید!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
       } else if(error["_body"] && error["_body"].includes("User should be head of team")){
         this.publicservice.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'تنها هد تیم امکان ساختن بازی را دارد.', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });

@@ -728,6 +728,21 @@ export class PublicService {
     return ret;
   }
 
+  getUserGame(): Observable<Response> {
+
+    // boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+    let headers = new Headers({
+      'Authorization': 'Bearer ' + this.Authorization
+    });
+    // let options = new RequestOptions({headers: headers});
+    const options = {
+      headers,
+    }
+
+    const res: Observable<Response> = this.http.get(this.ApiUrl + '/api/v2/game/my-game/', options)
+    return res
+  }
+
   deleteTalk(): Promise<any> {
     var that = this;
     this.APICalls.getUserTalks = true;
