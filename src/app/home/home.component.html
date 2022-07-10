@@ -10,7 +10,7 @@
                                 <img (click)="Schedule(home)" class="logo-image" src="assets/svg/dark-3d.svg">
                             </div>
                         </div>
-                        <!-- <div class="header-line">  
+                        <!-- <div class="header-line">
                         </div> -->
                         <div class="right-header">
                             <div class="right-button">
@@ -29,10 +29,10 @@
                                 <button mat-button (click)="Talk(talk)"
                                     class="normal-button">{{publicservice.Texts.Texts["header4"]}}</button>
                             </div>
-                            <div class="right-button">
+                            <!-- <div class="right-button">
                                 <button mat-button class="normal-button" (click)="Games()"
                                         id="people-button">{{publicservice.Texts.Texts["header14"]}}</button>
-                            </div>
+                            </div> -->
                             <div class="right-button">
                                 <button mat-button (click)="Talk(footer)"
                                     class="normal-button">{{publicservice.Texts.Texts["header5"]}}</button>
@@ -56,14 +56,14 @@
                             </div>
                         </div>
                         <div class="after-login" *ngIf="publicservice.logedIn">
-                            <div class="left-button">
+                            <!-- <div class="left-button">
                                 <div *ngIf="!isStaff">
                                     <button mat-stroked-button matBadge="{{cart_count}}" matBadgePosition="before" (click)="Cart()"
                                         class="outlined-button">
                                         {{publicservice.Texts.Texts['cart8']}}
                                     </button>
-                                </div>                                
-                            </div>
+                                </div>
+                            </div> -->
                             <div class="left-header-line" *ngIf="publicservice.logedIn"></div>
 
 
@@ -91,7 +91,7 @@
                 <div *ngIf="display">
                     <mat-sidenav-container class="example-sidenav-container">
                         <!-- <mat-sidenav #snav >
-                      
+
                     </mat-sidenav> -->
 
                         <mat-sidenav-content class="side-route">
@@ -136,10 +136,10 @@
                                     class="normal-button">{{publicservice.Texts.Texts["header4"]}}</button>
                             </div>
                             <mat-divider class="side-divider"></mat-divider>
-                            <div class="side-button">
+                            <!-- <div class="side-button">
                                 <button mat-button (click)="Games()"
                                         class="normal-button">{{publicservice.Texts.Texts["header14"]}}</button>
-                            </div>
+                            </div> -->
                             <mat-divider class="side-divider"></mat-divider>
                             <div class="side-button">
                                 <button mat-button (click)="Talk(footer)"
@@ -177,10 +177,10 @@
                                 <img src='{{"assets/svg/instagram.svg"}}' style="width: 85px; height:85px; border-radius:50%; margin-top: 5px;"/>
                             </a>
                             <a href="https://discord.gg/SpUZ89KKbn" target="_blank"  style="margin-right:30px;">
-                                <img src='{{"assets/svg/discord.svg"}}' style="width: 90px; height:90px; border-radius:50%;"/>                    
+                                <img src='{{"assets/svg/discord.svg"}}' style="width: 90px; height:90px; border-radius:50%;"/>
                             </a>
                             <a href="https://twitter.com/autgamecraft" target="_blank" style="margin-right:30px;">
-                                <img src='{{"assets/svg/twitter.svg"}}' style="width: 90px; height:90px; border-radius:50%;"/>                    
+                                <img src='{{"assets/svg/twitter.svg"}}' style="width: 90px; height:90px; border-radius:50%;"/>
                             </a>
                         </div>
                     </div>
@@ -232,7 +232,7 @@
                 <div class="event-schedule-schematic">
                     <div class="event-schedule">
                         <div class="schedule-right-div" style="padding-right:10%">
-                            
+
                             <div class="image" style="margin-top: 0;">
                                 <img class="schedule-image" src="assets/svg/timline-1.svg">
                             </div>
@@ -290,7 +290,7 @@
                             </div>
                         </div>
                         <div class="schedule-left-div">
-                            
+
                             <div class="text" style="margin-left: 20%;">
                                 <h1 class="text-title">
                                     {{publicservice.Texts.Texts["home9"]}}</h1>
@@ -935,10 +935,10 @@
                     <img src='{{"assets/svg/instagram.svg"}}' style="width: 85px; height:85px; border-radius:50%; margin-top: 5px;"/>
                 </a>
                 <a href="https://discord.gg/SpUZ89KKbn" target="_blank"  style="margin-right:30px;">
-                    <img src='{{"assets/svg/discord.svg"}}' style="width: 90px; height:90px; border-radius:50%;"/>                    
+                    <img src='{{"assets/svg/discord.svg"}}' style="width: 90px; height:90px; border-radius:50%;"/>
                 </a>
                 <a href="https://twitter.com/autgamecraft" target="_blank" style="margin-right:30px;">
-                    <img src='{{"assets/svg/twitter.svg"}}' style="width: 90px; height:90px; border-radius:50%;"/>                    
+                    <img src='{{"assets/svg/twitter.svg"}}' style="width: 90px; height:90px; border-radius:50%;"/>
                 </a>
             </div>
             <div class="developers-image">

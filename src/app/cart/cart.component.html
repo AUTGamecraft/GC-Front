@@ -28,20 +28,20 @@
                             <mat-icon>{{publicservice.Texts.Texts["dash-event29"]}}</mat-icon>
                             {{publicservice.Texts.Texts["dash-event2"]}}
                         </button>
-                        <button mat-button (click)="media()" style="background-color: #fafafa;" class="buttons">
+                        <!-- <button mat-button (click)="media()" style="background-color: #fafafa;" class="buttons">
                             <mat-icon>{{publicservice.Texts.Texts["dash-event30"]}}</mat-icon>
                             {{publicservice.Texts.Texts["dash-event3"]}}
-                        </button>
+                        </button> -->
                     </div>
                     <div class="left-header-button">
                         <button mat-button (click)="Teams()" style="background-color: #fafafa;" class="buttons">
                             <mat-icon>{{publicservice.Texts.Texts["dash-event31"]}}</mat-icon>
                             {{publicservice.Texts.Texts["dash-event4"]}}
                         </button>
-                        <button mat-button (click)="gameStatus()" style="background-color: #fafafa;" class="buttons">
+                        <!-- <button mat-button (click)="gameStatus()" style="background-color: #fafafa;" class="buttons">
                             <mat-icon>{{publicservice.Texts.Texts["dash-event32"]}}</mat-icon>
                             {{publicservice.Texts.Texts["dash-event33"]}}
-                        </button>
+                        </button> -->
                     </div>
                 </div>
                 <!-- <button mat-stroked-button class="outlined-button">{{publicservice.Texts.Texts["dash-event5"]}}</button> -->
@@ -94,21 +94,21 @@
                     </div>
                 </div> -->
                 <div class="discount-code">
-                    
+
                         <mat-label class="discount-lable">{{publicservice.Texts.Texts['cart9']}}</mat-label>
                         <input matInput class="discount-input" [(ngModel)]="publicservice.discount_code" >
-                        
-                        <button mat-flat-button 
+
+                        <button mat-flat-button
                         class="discount-button" (click) ="Discount()">{{publicservice.Texts.Texts['cart10']}}</button>
 
-                      
+
                     </div>
                 <div class="below-items">
                     <p class="cost">{{totalCost}}{{publicservice.Texts.Texts['cart6']}}</p>
                     <button mat-flat-button (click)="Pay()" id="payButton"
                         class="green-button">{{publicservice.Texts.Texts['cart7']}}</button>
                 </div>
-                
+
             </div>
         </div>
     </div>

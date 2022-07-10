@@ -16,11 +16,11 @@
                             {{userName}}</p>
                     </div>
                     <div style="display: flex;justify-content: center;">
-                        <div *ngIf="!isStaff" style="margin: auto 0;">
+                        <!-- <div *ngIf="!isStaff" style="margin: auto 0;">
                             <button mat-stroked-button matBadge="{{count}}" matBadgePosition="before" (click)="Cart()"
                                 id="cart-button-phone"
                                 class="outlined-button">{{publicservice.Texts.Texts['cart8']}}</button>
-                        </div>
+                        </div> -->
                         <button mat-button (click)="logOut()"
                             class="normal-button">{{publicservice.Texts.Texts["header8"]}}</button>
                     </div>
@@ -31,27 +31,27 @@
                             <mat-icon>{{publicservice.Texts.Texts["dash-media11"]}}</mat-icon>
                             {{publicservice.Texts.Texts["dash-media2"]}}
                         </button>
-                        <button mat-button (click)="media()" style="background-color: #eceff1;" class="buttons">
+                        <!-- <button mat-button (click)="media()" style="background-color: #eceff1;" class="buttons">
                             <mat-icon>{{publicservice.Texts.Texts["dash-media12"]}}</mat-icon>
                             {{publicservice.Texts.Texts["dash-media3"]}}
-                        </button>
+                        </button> -->
                     </div>
                     <div class="left-header-button">
                         <button mat-button (click)="Teams()" style="background-color: #fafafa;" class="buttons">
                             <mat-icon>{{publicservice.Texts.Texts["dash-media13"]}}</mat-icon>
                             {{publicservice.Texts.Texts["dash-media4"]}}
                         </button>
-                        <button mat-button (click)="gameStatus()" style="background-color: #fafafa;" class="buttons">
+                        <!-- <button mat-button (click)="gameStatus()" style="background-color: #fafafa;" class="buttons">
                             <mat-icon>{{publicservice.Texts.Texts["dash-media14"]}}</mat-icon>
                             {{publicservice.Texts.Texts["dash-media15"]}}
-                        </button>
+                        </button> -->
                     </div>
                 </div>
                 <!-- <button mat-stroked-button class="outlined-button">{{publicservice.Texts.Texts["dash-media5"]}}</button> -->
-                <div *ngIf="!isStaff">
+                <!-- <div *ngIf="!isStaff">
                     <button mat-stroked-button matBadge="{{count}}" matBadgePosition="before" (click)="Cart()"
                         class="outlined-button">{{publicservice.Texts.Texts['cart8']}}</button>
-                </div>
+                </div> -->
             </div>
             <div class="left-part">
                 <h1 class="events-title">

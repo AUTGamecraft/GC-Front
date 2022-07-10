@@ -19,11 +19,11 @@
                     <p class="user-name">{{userName}}</p>
                 </div>
                 <div style="display: flex;justify-content: center;">
-                    <div *ngIf="!isStaff" style="margin: auto 0;">
+                    <!-- <div *ngIf="!isStaff" style="margin: auto 0;">
                         <button mat-stroked-button matBadge="{{count}}" matBadgePosition="before" (click)="Cart()"
                             id="cart-button-phone"
                             class="outlined-button" >{{publicservice.Texts.Texts['cart8']}}</button>
-                    </div>
+                    </div> -->
                     <!-- <button mat-stroked-button class="outlined-button"
                         id="outlined-button-phone">{{publicservice.Texts.Texts["dash-event5"]}}</button> -->
                     <button mat-button (click)="logOut()"
@@ -36,27 +36,27 @@
                         <mat-icon>{{publicservice.Texts.Texts["dash-event29"]}}</mat-icon>
                         {{publicservice.Texts.Texts["dash-event2"]}}
                     </button>
-                    <button mat-button (click)="media()" style="background-color: #fafafa;" class="buttons">
+                    <!-- <button mat-button (click)="media()" style="background-color: #fafafa;" class="buttons">
                         <mat-icon>{{publicservice.Texts.Texts["dash-event30"]}}</mat-icon>
                         {{publicservice.Texts.Texts["dash-event3"]}}
-                    </button>
+                    </button> -->
                 </div>
                 <div class="left-header-button">
                     <button mat-button (click)="Teams()" style="background-color: #fafafa;" class="buttons">
                         <mat-icon>{{publicservice.Texts.Texts["dash-event31"]}}</mat-icon>
                         {{publicservice.Texts.Texts["dash-event4"]}}
                     </button>
-                    <button mat-button (click)="gameStatus()" style="background-color: #fafafa;" class="buttons">
+                    <!-- <button mat-button (click)="gameStatus()" style="background-color: #fafafa;" class="buttons">
                         <mat-icon>{{publicservice.Texts.Texts["dash-event32"]}}</mat-icon>
                         {{publicservice.Texts.Texts["dash-event33"]}}
-                    </button>
+                    </button> -->
                 </div>
             </div>
             <!-- <button mat-stroked-button class="outlined-button">{{publicservice.Texts.Texts["dash-event5"]}}</button> -->
-            <div *ngIf="!isStaff">
+            <!-- <div *ngIf="!isStaff">
                 <button mat-stroked-button matBadge="{{count}}" matBadgePosition="before" (click)="Cart()"
                     class="outlined-button">{{publicservice.Texts.Texts['cart8']}}</button>
-            </div>
+            </div> -->
         </div>
         <div class="left-part">
             <h1 class="events-title">{{publicservice.Texts.Texts["dash-event6"]}}</h1>
