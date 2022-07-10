@@ -167,7 +167,7 @@ export class DashboardTeamsComponent implements OnInit {
   }
   confirm() {
     if (this.teamArray.length < 2) {
-      this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'حداقل تعداد اعضا 3 نفر است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'حداقل تعداد اعضا 2 نفر است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
       return;
     }
     if (this.nameFormControl.status != "VALID") {
