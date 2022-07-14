@@ -181,6 +181,15 @@ export class DashboardTeamsComponent implements OnInit {
     this.publicservice.createTeam(tmp).then((r) => {
       this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'تیم با موفقیت تشکیل شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
       location.reload();
+    }).catch(err=> {
+      console.log("err at catch clause")
+      console.log(err)
+      if (err.error && err.error.includes("duplicate key value violates unique constraint \"user_team_name_key\"")) {
+        this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'نام تیم تکراری است.', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      } else {
+        this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'مشکلی پیش آمده. لطفا مجددا تلاش نمایید.', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+
+      }
     });
   }
 }
