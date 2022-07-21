@@ -21,12 +21,12 @@ export class DashboardCreateGameComponent implements OnInit {
   ]);
   linkFormControl = new FormControl('', [
     Validators.required,
-    Validators.pattern(/https:\/\/drive\.google\.com\/file\/d\/(.*?)\/.*?\?usp=sharing/),
+    Validators.pattern("https:\/\/drive\.google\.com\/.*?usp=sharing"),
   ]);
   descFormControl = new FormControl('', [
     Validators.required,
   ]);
-  
+
   myControl = new FormControl();
   options: string[] = [];
   filteredOptions: Observable<string[]>;
@@ -59,7 +59,7 @@ export class DashboardCreateGameComponent implements OnInit {
 
 
   uploadedGame = {
-    
+
   }
 
   @Output() onChange: EventEmitter<File> = new EventEmitter<File>();
@@ -159,23 +159,23 @@ export class DashboardCreateGameComponent implements OnInit {
   Cart() {
     this.router.navigate(['cart'], { fragment: 'cart' });
   }
-  
+
   addGame(){
     this.router.navigate(['dashboard-create-game']);
   }
-  
+
   handleFileInput(files: FileList) {
     this.createGame.posterToUpload = files.item(0);
 
     const reader = new FileReader();
-    reader.readAsDataURL(files[0]); 
-    reader.onload = (_event) => { 
+    reader.readAsDataURL(files[0]);
+    reader.onload = (_event) => {
       console.log(reader.result)
-        this.imageToShowAsGameAvatar = reader.result; 
+        this.imageToShowAsGameAvatar = reader.result;
     }
   }
 
-  
+
   submitGame() {
     const body = {
       title: this.createGame.gameName,
