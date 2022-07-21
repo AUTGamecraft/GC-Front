@@ -161,12 +161,12 @@
                             mat-flat-button
                             (click)="submitGame()"
                             class="green-button"
-                            [disabled]="!(createGame.gameName && createGame.gameLink && createGame.gameDescription && createGame.posterToUpload)"
+                            [disabled]="!(createGame.gameName && createGame.gameLink && createGame.gameDescription && createGame.posterToUpload && !linkFormControl.hasError('pattern') && !linkFormControl.hasError('required'))"
                         >
                             ثبت بازی!
                         </button>
                         <div
-                            *ngIf="!(createGame.gameName && createGame.gameLink && createGame.gameDescription && createGame.posterToUpload)"
+                            *ngIf="!(createGame.gameName && createGame.gameDescription && createGame.posterToUpload && !linkFormControl.hasError('pattern') && !linkFormControl.hasError('required'))"
                             class="team-name"
                             style="margin-top: 20px"
                         >
