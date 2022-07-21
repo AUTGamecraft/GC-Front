@@ -87,10 +87,17 @@
                                 <mat-label class="label">لینک بازی
                                 </mat-label>
                                 <input [readonly]="hasGame" matInput [formControl]="linkFormControl" class="input"
-                                    [(ngModel)]="createGame.gameLink">
+                                    [(ngModel)]="createGame.gameLink"
+                                    placeholder="like: https://drive.google.com/file/d/something/view?usp=sharing"
+                                    >
                                 <mat-error *ngIf="linkFormControl.hasError('required')" class="error">
                                     لینک بازی
                                     <strong>{{publicservice.Texts.Texts["login6"]}}</strong>
+                                    است.
+                                </mat-error>
+                                <mat-error *ngIf="linkFormControl.hasError('pattern')" class="error">
+                                    لینک بازی
+                                    <strong>نامعتبر</strong>
                                     است.
                                 </mat-error>
                             </mat-form-field>
