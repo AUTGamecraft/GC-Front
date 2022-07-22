@@ -21,7 +21,7 @@ export class DashboardCreateGameComponent implements OnInit {
   ]);
   linkFormControl = new FormControl('', [
     Validators.required,
-    Validators.pattern("https:\/\/drive\.google\.com\/.*?usp=sharing"),
+    Validators.pattern(".+"),
   ]);
   descFormControl = new FormControl('', [
     Validators.required,
