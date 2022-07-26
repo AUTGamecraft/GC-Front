@@ -483,7 +483,15 @@ export class PublicService {
 
 
   getGames(): Observable<Response> {
-    const res: Observable<Response> = this.http.get(this.ApiUrl + '/api/v2/game/', {})
+    let headers = new Headers({
+      'Content-Type': 'application/json',
+    });
+    if(this.logedIn && this.Authorization){
+      headers.append('Authorization', 'Bearer ' + this.Authorization)
+    }
+
+    let options = new RequestOptions({headers: headers});
+    const res: Observable<Response> = this.http.get(this.ApiUrl + '/api/v2/game/', options)
     return res
   }
 
