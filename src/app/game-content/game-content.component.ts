@@ -130,6 +130,10 @@ export class GameContentComponent implements OnInit {
     }
     this.publicservice.submitLike(body).subscribe(res=>{
       let likeObj = this.publicservice.extractData(res, this)
+      // we got an error. Therefore likeObj does not exist
+      if (!likeObj) {
+        return
+      }
       console.log("after like a game. is_deleted=", likeObj['is_deleted'])
       if(likeObj['is_deleted'] === false){
         this.isLiked = true
@@ -154,6 +158,9 @@ export class GameContentComponent implements OnInit {
         this.data.likes = currGame.likes
         console.log("here at remove")
       }
+    }, err => {
+      console.log("=========error======")
+      console.log(err)
     })
   }
 }

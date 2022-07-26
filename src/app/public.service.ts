@@ -18,8 +18,8 @@ export class PublicService {
   public APICalls: any = {};
   public Authorization: string = "";
   public User: any = {};
-  public ApiUrl: String = "https://gamecraft.ce.aut.ac.ir";
-  // public ApiUrl: String = "http://127.0.0.1:8000";
+  // public ApiUrl: String = "https://gamecraft.ce.aut.ac.ir";
+  public ApiUrl: String = "http://127.0.0.1:8000";
   public Email: String = "";
   public PhoneNumber: String = "";
   public Password: String = "";
@@ -104,12 +104,26 @@ export class PublicService {
     //   return Promise.reject(body);
     // }
     if (body.error) {
-      that.DisplayErrorDialog(body.message);
+      this.DisplayErrorDialog(body.error);
+      console.log("#########")
+      console.log(body.error)
       Promise.reject(body.error);
     } else {
       return body || {};
     }
 
+  }
+
+  private DisplayErrorDialog(message: any){
+    if(String(message).includes("Like submit time is over")){
+      this.snackbar.openFromComponent(ErrorDialogComponent, {
+        duration: 2000,
+        data: "مهلت لایک کردن به پایان رسیده است!",
+        panelClass: ['snackbar'],
+        verticalPosition: 'top',
+        direction: 'rtl'
+      });
+    }
   }
 
   private extractData2(res: Response) {
