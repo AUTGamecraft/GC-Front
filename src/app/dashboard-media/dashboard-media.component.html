@@ -16,11 +16,11 @@
                             {{userName}}</p>
                     </div>
                     <div style="display: flex;justify-content: center;">
-                        <!-- <div *ngIf="!isStaff" style="margin: auto 0;">
+                        <div *ngIf="!isStaff" style="margin: auto 0;">
                             <button mat-stroked-button matBadge="{{count}}" matBadgePosition="before" (click)="Cart()"
                                 id="cart-button-phone"
                                 class="outlined-button">{{publicservice.Texts.Texts['cart8']}}</button>
-                        </div> -->
+                        </div>
                         <button mat-button (click)="logOut()"
                             class="normal-button">{{publicservice.Texts.Texts["header8"]}}</button>
                     </div>
@@ -48,10 +48,10 @@
                     </div>
                 </div>
                 <!-- <button mat-stroked-button class="outlined-button">{{publicservice.Texts.Texts["dash-media5"]}}</button> -->
-                <!-- <div *ngIf="!isStaff">
+                <div *ngIf="!isStaff">
                     <button mat-stroked-button matBadge="{{count}}" matBadgePosition="before" (click)="Cart()"
                         class="outlined-button">{{publicservice.Texts.Texts['cart8']}}</button>
-                </div> -->
+                </div>
             </div>
             <div class="left-part">
                 <h1 class="events-title">
