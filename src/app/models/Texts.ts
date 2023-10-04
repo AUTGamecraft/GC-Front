@@ -74,7 +74,7 @@ export class Texts{
         this.FaTexts["home51"] = "شروع کارگاه‌ها و ارائه‌ها"
         this.FaTexts["home52"] = "16 مهر"
         this.FaTexts["home53"] = "پایان کارگاه ها و ارائه‌ها"
-        this.FaTexts["home54"] = "جمعه ۲۸ مهر"
+        this.FaTexts["home54"] = "جمعه 28 مهر"
         this.FaTexts["home55"] = "تیم دوم"
         this.FaTexts["home56"] = "تیم سوم"
         this.FaTexts["home57"] = "هزینه: "
