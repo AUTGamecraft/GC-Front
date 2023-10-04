@@ -5,12 +5,12 @@
             {
                 "name": "طاها علمی",
                 "role": "دبیر انجمن، دبیر رویداد",
-                "img":"default_prof.jpg"
+                "img":"./2023/default_prof.jpg"
             },
             {
                 "name": "الهه حبیب‌زاده",
                 "role": "دبیر رویداد",
-                "img":"default_prof.jpg"
+                "img":"./2023/default_prof.jpg"
             }
             
         ]
@@ -20,18 +20,18 @@
         "peoples": [
             {
                 "name": "علیرضا زارع",
-                "role": "سرپرست تیم فنی، توسعه دهنده فول استک",
-                "img":"default_prof.jpg"
+                "role": "سرپرست تیم فنی، توسعه دهنده بک‌اند",
+                "img":"./2023/sabz.jpg"
             },
             {
                 "name": "امیرفاضل کوزه‌گر",
                 "role": "توسعه دهنده فرانت‌اند",
-                "img":"default_prof.jpg"
+                "img":"./2023/fazel.jpg"
             },
             {
                 "name": "امیرمحمد کلاکی",
                 "role": "توسعه دهنده بک‌اند",
-                "img":"default_prof.jpg"
+                "img":"./2023/kalaki.jpg"
             }
 
         ]
@@ -47,7 +47,7 @@
             {
                 "name": "مهدیه سادات بنیس",
                 "role": "عضو تیم علمی",
-                "img":"default_prof.jpg"
+                "img":"./2023/mahdie_sadat.jpeg"
             }
         ]
     },
@@ -57,12 +57,12 @@
             {
                 "name": "عماد فردوسی",
                 "role": "سرپرست تیم مارکتینگ",
-                "img":"default_prof.jpg"
+                "img":"./2023/emad.jpg"
             },
             {
                 "name": "امید قانع",
                 "role": "عضو تیم مارکتینگ",
-                "img":"default_prof.jpg"
+                "img":"./2023/omid.jpg"
             }
         ]
     },
@@ -72,77 +72,77 @@
             {
                 "name": "حنانه منتظر",
                 "role": "سرپرست تیم اجرایی",
-                "img":"default_prof.jpg"
+                "img":"./2023/hana.JPG"
             },
             {
                 "name": "مصطفی مرادی",
                 "role": "عضو تیم اجرایی",
-                "img":"default_prof.jpg"
+                "img":"./2023/mostafa.jpg"
             },
             {
                 "name": "محمدحسین عارف",
                 "role": "عضو تیم اجرایی",
-                "img":"default_prof.jpg"
+                "img":"./2023/aref.jpg"
             },
             {
                 "name": "امیر بیژه",
                 "role": "عضو تیم اجرایی",
-                "img":"default_prof.jpg"
+                "img":"./2023/bizhe.png"
             },
             {
                 "name": "مهدی صفرزاده",
                 "role": "عضو تیم اجرایی",
-                "img":"default_prof.jpg"
+                "img":"./2023/mahdi.jpg"
             },
             {
                 "name": "علی هاشم‌پور",
                 "role": "عضو تیم اجرایی",
-                "img":"default_prof.jpg"
+                "img":"./2023/hashem.jpg"
             },
             {
                 "name": "امیرعرفان تیموری",
                 "role": "عضو تیم اجرایی",
-                "img":"default_prof.jpg"
+                "img":"./2023/erfan.jpeg"
             },
             {
                 "name": "علی بازشوشتری",
                 "role": "عضو تیم اجرایی",
-                "img":"default_prof.jpg"
+                "img":"./2023/alibaz.jpg"
             },
             {
                 "name": "ایلیا نورانی",
                 "role": "عضو تیم اجرایی",
-                "img":"default_prof.jpg"
+                "img":"./2023/iliaw.jpeg"
             },
             {
                 "name": "ابوالفضل کبیری",
                 "role": "عضو تیم اجرایی",
-                "img":"default_prof.jpg"
+                "img":"./2023/kabiri.jpg"
             },
             {
                 "name": "سعید مصباح",
                 "role": "عضو تیم اجرایی",
-                "img":"default_prof.jpg"
+                "img":"./2023/default_prof.jpg"
             },
             {
                 "name": "اشکان شکیبا",
                 "role": "عضو تیم اجرایی",
-                "img":"default_prof.jpg"
+                "img":"./2023/ashkan.jpg"
             },
             {
                 "name": "جمعه محمدی",
                 "role": "عضو تیم اجرایی",
-                "img":"default_prof.jpg"
+                "img":"./2023/joma_mohammadi.jpg"
             },
             {
                 "name": "مهدیه سادات بنیس",
                 "role": "عضو تیم اجرایی",
-                "img":"default_prof.jpg"
+                "img":"./2023/mahdie_sadat.jpeg"
             },
             {
                 "name": "امید قانع",
                 "role": "عضو تیم اجرایی",
-                "img": "default_prof.jpg"
+                "img": "./2023/omid.jpg"
             }
         ]
     }
