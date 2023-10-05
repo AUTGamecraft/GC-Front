@@ -1,14 +1,14 @@
 ::ng-deep .mat-focused .mat-form-field-label {
     /*change color of label*/
-    color: #34334B !important;
+    color: #3d3a7d !important;
   }
   ::ng-deep.mat-form-field-underline {
     /*change color of underline*/
-    background-color: #34334B !important;
+    background-color: #3d3a7d !important;
   }
   ::ng-deep.mat-form-field-ripple {
     /*change color of underline when focused*/
-    background-color: #34334B !important;
+    background-color: #3d3a7d !important;
   }
   ::ng-deep .snackbar {
     background-color: transparent;
@@ -33,7 +33,7 @@
   }
   .green-button {
     font-family: "Estedad-Bold";
-    color: #34334B;
+    color: #3d3a7d;
     background-color: #6af9c5;
     border-radius: 24px;
     padding: 11px 16px;
@@ -66,13 +66,13 @@
   .login-title1 {
     font-size: 35px;
     font-family: "Estedad-Bold";
-    color: #63DAA4;
+    color: #36df8e;
     margin-bottom: 0;
   }
   .login-title2 {
     font-size: 70px;
     font-family: "Estedad-Black";
-    color: #63DAA4;
+    color: #36df8e;
     margin-bottom: 0;
   }
   .form-fields-div {
@@ -94,7 +94,7 @@
   .input {
     text-align: right;
     font-family: "Estedad-Regular";
-    color: #34334B;
+    color: #3d3a7d;
   }
   .error {
     font-family: "Estedad-Regular";
@@ -130,7 +130,7 @@
   .login-whole {
     display: block;
     overflow: auto;
-    background-color: #34334B;
+    background-color: #3d3a7d;
     background-image: url("/assets/svg/pattern.svg");
     height: 100%;
   }
@@ -182,7 +182,7 @@
    // text-align: left;
     font-family: "Estedad-Bold";
     font-size: medium;
-    color: #34334B;
+    color: #3d3a7d;
     //padding: 9px 9px 9px 9px;
     border-radius: 24px;
     background-color: rgba(255, 255, 255, 0);

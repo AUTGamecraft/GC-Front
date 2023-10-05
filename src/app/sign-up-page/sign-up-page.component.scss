@@ -1,14 +1,14 @@
 ::ng-deep .mat-focused .mat-form-field-label {
     /*change color of label*/
-    color: #34334B !important;
+    color: #3d3a7d !important;
 }
 ::ng-deep.mat-form-field-underline {
     /*change color of underline*/
-    background-color: #34334B !important;
+    background-color: #3d3a7d !important;
 }
 ::ng-deep.mat-form-field-ripple {
     /*change color of underline when focused*/
-    background-color: #34334B !important;
+    background-color: #3d3a7d !important;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -27,7 +27,7 @@ input[type="number"] {
 }
 .green-button {
     font-family: "Estedad-Bold";
-    color: #34334B;
+    color: #3d3a7d;
     background-color: #6af9c5;
     border-radius: 24px;
     padding: 11px 16px;
@@ -49,7 +49,7 @@ input[type="number"] {
     display: flex;
     justify-content: space-evenly;
     direction: rtl;
-    background-color: #34334B;
+    background-color: #3d3a7d;
     height: 100%;
     background-image: url("/assets/svg/pattern.svg");
     padding-bottom: 30px;
@@ -64,13 +64,13 @@ input[type="number"] {
     margin-left: 20px;
     font-size: 35px;
     font-family: "Estedad-Bold";
-    color: #63DAA4;
+    color: #36df8e;
     margin-bottom: 0;
 }
 .signup-title2 {
     font-size: 70px;
     font-family: "Estedad-Black";
-    color: #63DAA4;
+    color: #36df8e;
     margin-bottom: 0;
 }
 .left-div {
@@ -95,7 +95,7 @@ input[type="number"] {
 .input {
     text-align: right;
     font-family: "Estedad-Regular";
-    color: #34334B;
+    color: #3d3a7d;
 }
 .error {
     font-family: "Estedad-Regular";

@@ -43,7 +43,7 @@
 }
 .presenter-name {
     font-family: "Estedad-Black";
-    color: #34334B;
+    color: #3d3a7d;
     margin-bottom: 0;
     font-size: medium;
 }
@@ -69,8 +69,8 @@
     height: 320px;
     border: solid 6px;
     border-radius: 10px;
-    border-color: #63DAA4;
-    background-color: #63DAA4;
+    border-color: #36df8e;
+    background-color: #36df8e;
     margin-right: 44%;
 }
 .image {
@@ -86,7 +86,7 @@
     font-family: "Estedad-Bold";
     color: #00b583;
     font-size: large;
-    border: 2px solid #63DAA4 !important;
+    border: 2px solid #36df8e !important;
     border-radius: 24px;
     width: 94px;
     height: 57px;
@@ -100,18 +100,18 @@
     width: 300px;
     font-family: "Estedad-Bold";
     font-size: 24px;
-    color: #34334B;
+    color: #3d3a7d;
     margin: auto;
     margin-right: 2%;
     
 }
 .collapse-hour {
     font-family: "Vazir-Regular";
-    color: #34334B;
+    color: #3d3a7d;
 }
 .collapse-subject {
     font-family: "Vazir-Regular";
-    color: #34334B;
+    color: #3d3a7d;
     font-size: 24px;
     // margin-top: 25px;
     // margin-bottom: 15px;
@@ -130,7 +130,7 @@
 }
 .register-button:hover {
     background-color: #6af9c5;
-    color: #34334B;
+    color: #3d3a7d;
     border-color: #6af9c5 !important;
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.08);
 }
@@ -179,7 +179,7 @@
 .collapse-header {
     font-size: xxx-large;
     font-family: "Estedad-Black";
-    color: #34334B;
+    color: #3d3a7d;
     text-align: center;
     margin-top: 0;
     // transform: scaleY(-1);
@@ -199,7 +199,7 @@
     font-family: "Vazir-Medium";
     font-size: large;
     direction: rtl;
-    color: #34334B;
+    color: #3d3a7d;
     margin-top: 0;
 }
 .collapse-presenters-title-div {
@@ -207,7 +207,7 @@
 }
 .collapse-persenters-title {
     font-family: "Estedad-Bold";
-    color: #34334B;
+    color: #3d3a7d;
 }
 .collapse-presenters-card-div {
     display: flex;
@@ -237,7 +237,7 @@
 }
 .collapse-presenters-name {
     font-family: "Estedad-Black";
-    color: #34334B;
+    color: #3d3a7d;
     margin-bottom: 0;
     font-size: medium;
 }
@@ -266,7 +266,7 @@
 .talks-title {
     font-family: "Estedad-Black";
     font-size: xxx-large;
-    color: #34334B;
+    color: #3d3a7d;
     text-align: center;
     margin-bottom: 0;
 }
@@ -318,7 +318,7 @@
     padding-top: 10%;
 }
 .footer-div {
-    background-color: #34334B;
+    background-color: #3d3a7d;
     padding-top: 10px;
     margin-top: -10px;
 }
@@ -442,7 +442,7 @@
     background-color: #fafafa;
 }
 .intro {
-    background-color: #34334B;
+    background-color: #3d3a7d;
     // padding-bottom: 100px;
 }
 .subintro-div {
@@ -469,7 +469,7 @@
 .intro-discription-about-title {
     font-size: 70px;
     font-family: "Estedad-Black";
-    color: #63DAA4;
+    color: #36df8e;
     margin: 0;
 }
 .intro-discription-about-subtitle {
@@ -495,6 +495,8 @@
     bottom: 0;
     transform: scaleX(-1);
     z-index: 0;
+    opacity: 0.75;
+    filter: brightness(160%);
 }
 .intro-image {
     height: 360px;
@@ -628,7 +630,7 @@
 }
 .green-button {
     font-family: "Estedad-Bold";
-    color: #34334B;
+    color: #3a3773;
     background-color: #6af9c5;
     border-radius: 24px;
     padding: 11px 16px;
@@ -670,7 +672,7 @@
 .header {
     position: fixed;
     width: 100%;
-    background-color: #34334B;
+    background-color: #3d3a7d;
     z-index: 100;
 }
 .left-header {
@@ -1026,7 +1028,7 @@
     .Line {
         width: 0px;
         height: 290px;
-        border: solid 4px #63DAA4;
+        border: solid 4px #36df8e;
     }
     .schedule-image {
         width: 180px;
@@ -1280,7 +1282,7 @@
 
 .side-route {
     width: 100%;
-    background-color: #34334B;
+    background-color: #3d3a7d;
 
     overflow: hidden;
 }
@@ -1322,7 +1324,7 @@
 }
 .normal-button-1 {
     font-family: "Estedad-Bold";
-    color: #34334B;
+    color: #3d3a7d;
     background-color: #6af9c5;
     border-radius: 20px;
 
@@ -1368,7 +1370,7 @@
     font-family: "Estedad-Bold";
     color: #00b583;
     font-size: large;
-    border: 3px solid #63DAA4 !important;
+    border: 3px solid #36df8e !important;
     border-radius: 15px;
     // height: 10%;
     margin-top: 12px;
@@ -1377,7 +1379,8 @@
 }
 .outlined-button:hover {
     background-color: #6af9c5;
-    color: #34334B;
+    color: #3d3a7d;
     border-color: #6af9c5 !important;
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.08);
 }
+
