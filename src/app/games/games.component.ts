@@ -33,7 +33,7 @@ export class GamesComponent implements OnInit {
   ngOnInit(): void {
     this.publicservice.getGames().subscribe(res => {
       console.log("resssssssssssss")
-      let games = this.publicservice.extractData(res, this)
+      let games = res.body
       console.log(games[0])
       games = games.map(element => {
         element['link'] = element['game_link']

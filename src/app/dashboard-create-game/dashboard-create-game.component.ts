@@ -83,7 +83,7 @@ export class DashboardCreateGameComponent implements OnInit {
 
       publicservice.getUserGame().subscribe((res) => {
         this.hasGame = true;
-        const game = this.publicservice.extractData(res, this)
+        const game = res.body;
         console.log("user game is...", game)
         this.createGame.gameDescription = game['description']
         this.createGame.gameName = game['title']

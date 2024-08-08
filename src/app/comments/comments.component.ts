@@ -18,20 +18,18 @@ export class CommentsComponent implements OnInit {
     public publicservice: PublicService,
     public dialog: MatDialogRef<CommentsComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData,
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
     console.log("inside comment========")
-    this.publicservice.getComments(this.data.game_code).subscribe(res=>{
-      let comments = this.publicservice.extractData(res, this)
+    this.publicservice.getComments(this.data.game_code).subscribe(res => {
+      let comments = res.body
       comments = comments.map(element => {
         element['user']['name'] = element['user']['first_name']
-  
         return element
       })
-      this.comments=comments
+      this.comments = comments
     })
-    
   }
-
 }

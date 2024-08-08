@@ -67,7 +67,6 @@ export class PublicService {
 
   }
 
-
   constructor(
     private http: HttpClient,
     public dialog: MatDialog,
@@ -82,22 +81,6 @@ export class PublicService {
     // this.dialog..PublicService=this;
     // this.Mockup();
     this.Texts.Init();
-  }
-
-
-  extractData(res: HttpResponse<any>, that: any) {
-    if (res.status < 200 || res.status >= 300) {
-      throw new Error('Bad response status: ' + res.status);
-    }
-
-    return res.body;
-  }
-
-  private handleError(error: any) {
-    // In a real world app, we might send the error to remote logging infrastructure
-    let errMsg = JSON.parse(error._body);//error.message || 'Server error';
-    console.error(errMsg); // log to console instead
-    return Promise.reject(errMsg);
   }
 
   UpdateImage(): void {
@@ -122,8 +105,6 @@ export class PublicService {
       // }
       location.reload();
     })
-      .catch(this.handleError);
-
   }
 
   checkDiscount(): Promise<any> {
