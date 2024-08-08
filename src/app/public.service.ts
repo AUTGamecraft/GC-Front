@@ -1,13 +1,10 @@
 import {Injectable, NgZone} from '@angular/core';
-// import { User, Car, Service } from './models/Models'
 import {Texts} from './models/Texts';
-import {Headers, Http, RequestOptions, Response} from '@angular/http';
 import {MatDialog} from '@angular/material/dialog';
-// import { AppDialogComponentDialog } from './app-dialog/app-dialog.component';
 import {MatSnackBar} from '@angular/material/snack-bar';
-import {ErrorDialogComponent} from '../app/error-dialog/error-dialog.component'
-import {HttpClient, HttpHeaders, HttpRequest} from '@angular/common/http';
-import {SuccessDialogComponent} from '../app/success-dialog/success-dialog.component';
+import {ErrorDialogComponent} from './error-dialog/error-dialog.component';
+import {HttpClient, HttpHeaders, HttpRequest, HttpResponse} from '@angular/common/http';
+import {SuccessDialogComponent} from './success-dialog/success-dialog.component';
 import {Router} from '@angular/router';
 import {Observable} from 'rxjs';
 import {environment} from '../environments/environment';
@@ -72,9 +69,9 @@ export class PublicService {
 
 
   constructor(
+    private http: HttpClient,
     public dialog: MatDialog,
     public snackbar: MatSnackBar,
-    private http: HttpClient,
     public router: Router,
     private zone: NgZone
   ) {
@@ -177,13 +174,11 @@ export class PublicService {
     var that = this;
     this.APICalls.checkDiscount = true;
 
-    // Create HttpHeaders
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + this.Authorization
     });
 
-    // Make HTTP GET request and convert Observable to Promise
     let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/coupon/' + this.discount_code.trim() + '/', {headers: headers})
       .toPromise()
       .then((r) => this.extractData(r, this))
@@ -193,7 +188,7 @@ export class PublicService {
       this.APICalls.checkDiscount = false;
     }).catch(e => {
       this.APICalls.checkDiscount = false;
-      if (e.status == 401) {
+      if (e.status === 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
       } else {
@@ -214,7 +209,6 @@ export class PublicService {
     var that = this;
     this.APICalls.SignUp = true;
 
-    // Prepare the request body
     let body = JSON.stringify({
       "password": this.Password,
       "phone_number": this.PhoneNumber,
@@ -223,12 +217,10 @@ export class PublicService {
       "user_name": this.Email
     });
 
-    // Create HttpHeaders directly in the request
     let headers = new HttpHeaders({
       'Content-Type': 'application/json'
     });
 
-    // Make HTTP POST request and convert Observable to Promise
     let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/v2/users/sign_up/', body, {headers: headers})
       .toPromise()
       .then((r) => this.extractData(r, this))
@@ -264,12 +256,10 @@ export class PublicService {
       //"user_name": this.Email
     });
 
-    // Create HttpHeaders directly in the request
     let headers = new HttpHeaders({
       'Content-Type': 'application/json'
     });
 
-    // Make HTTP PUT request and convert Observable to Promise
     let ret: Promise<any> = this.http.put(this.ApiUrl + '/api/v2/activation/reset-pass/' + token, body, {headers: headers})
       .toPromise()
       .then((r) => this.extractData(r, this))
@@ -294,19 +284,22 @@ export class PublicService {
   Login(): Promise<any> {
     var that = this;
     this.APICalls.Login = true;
+
     let body = JSON.stringify({
       "email": this.Email.toLowerCase(),
       "password": this.Password,
     });
-    let headers = new Headers({
+
+    let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + this.Authorization
     });
-    let options = new RequestOptions({headers: headers});
-    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/v2/token/', body, options)
+
+    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/v2/token/', body, {headers: headers})
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
+
     ret.then(r => {
       this.APICalls.Login = false;
       if (r.error == null || r.error == undefined) {
@@ -314,7 +307,7 @@ export class PublicService {
         localStorage.setItem("Authorization", this.Authorization);
         this.logedIn = true;
       } else {
-
+        // Handle specific error if needed
       }
     }).catch(e => {
       this.APICalls.Login = false;
@@ -326,25 +319,27 @@ export class PublicService {
         direction: 'rtl'
       });
     });
+
     return ret;
   }
 
   sendmail(): Promise<any> {
     var that = this;
     // this.APICalls.Login = true;
+
     let body = JSON.stringify({
       "email": this.Email.toLowerCase(),
+    });
 
-    });
-    let headers = new Headers({
+    let headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      //'Authorization': 'Bearer ' + this.Authorization
     });
-    let options = new RequestOptions({headers: headers});
-    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/v2/users/reset_pass/', body, options)
+
+    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/v2/users/reset_pass/', body, {headers: headers})
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
+
     ret.then(r => {
       //this.APICalls.Login = false;
       if (r.error == null || r.error == undefined) {
@@ -352,11 +347,11 @@ export class PublicService {
         localStorage.setItem("Authorization", this.Authorization);
         this.logedIn = true;
       } else {
-
+        // Handle specific error if needed
       }
     }).catch(e => {
       this.APICalls.Login = false;
-      if (e.status == 401) {
+      if (e.status === 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['forgot']);
       } else {
@@ -369,6 +364,7 @@ export class PublicService {
         });
       }
     });
+
     return ret;
   }
 
@@ -376,11 +372,12 @@ export class PublicService {
   getTalks(): Promise<any> {
     var that = this;
     this.APICalls.getTalks = true;
-    let headers = new Headers({
+
+    let headers = new HttpHeaders({
       'Content-Type': 'application/json'
     });
-    let options = new RequestOptions({headers: headers});
-    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/talk/', options)
+
+    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/talk/', {headers: headers})
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
@@ -397,19 +394,20 @@ export class PublicService {
         verticalPosition: 'top',
         direction: 'rtl'
       });
-
     });
+
     return ret;
   }
 
   getWorkshops(): Promise<any> {
     var that = this;
     this.APICalls.getWorkshops = true;
-    let headers = new Headers({
+
+    let headers = new HttpHeaders({
       'Content-Type': 'application/json'
     });
-    let options = new RequestOptions({headers: headers});
-    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/workshop/', options)
+
+    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/workshop/', {headers: headers})
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
@@ -426,28 +424,30 @@ export class PublicService {
         verticalPosition: 'top',
         direction: 'rtl'
       });
-
     });
+
     return ret;
   }
 
   getAvailableUsers(): Promise<any> {
     var that = this;
     this.APICalls.getUsers = true;
-    let headers = new Headers({
+
+    let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + this.Authorization
     });
-    let options = new RequestOptions({headers: headers});
-    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/users/available_list/', options)
+
+    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/users/available_list/', {headers: headers})
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
+
     ret.then(r => {
       this.APICalls.getUsers = false;
     }).catch(e => {
       this.APICalls.getUsers = false;
-      if (e.status == 401) {
+      if (e.status === 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
       } else {
@@ -460,18 +460,20 @@ export class PublicService {
         });
       }
     });
+
     return ret;
   }
 
   getUser(): Promise<any> {
     var that = this;
     this.APICalls.getUsers = true;
-    let headers = new Headers({
+
+    let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + this.Authorization
     });
-    let options = new RequestOptions({headers: headers});
-    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/users/profile/', options)
+
+    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/users/profile/', {headers: headers})
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
@@ -493,97 +495,109 @@ export class PublicService {
         });
       }
     });
+
     return ret;
   }
 
-  submitGame(body): Observable<Response> {
-
-    // boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
-    let headers = new Headers({
+  submitGame(body: any): Observable<HttpResponse<any>> {
+    // Create HttpHeaders
+    const headers = new HttpHeaders({
       'Authorization': 'Bearer ' + this.Authorization
     });
-    // let options = new RequestOptions({headers: headers});
-    const options = {
-      headers,
-    }
 
+    // Create FormData
     const formData = new FormData();
-    formData.append('title', body.title)
-    formData.append('description', body.description)
-    formData.append('game_link', body.game_link)
-    formData.append('team', body.team)
-    formData.append('poster', body.poster)
+    formData.append('title', body.title);
+    formData.append('description', body.description);
+    formData.append('game_link', body.game_link);
+    formData.append('team', body.team);
+    formData.append('poster', body.poster);
 
-    const res: Observable<Response> = this.http.post(this.ApiUrl + '/api/v2/game/', formData, options)
-    return res
+    // Make HTTP POST request
+    return this.http.post(this.ApiUrl + '/api/v2/game/', formData, {
+      headers: headers,
+      observe: 'response'  // To include the full HTTP response in the Observable
+    });
   }
 
-
-  getGames(): Observable<Response> {
-    let headers = new Headers({
-      'Content-Type': 'application/json',
+  getGames(): Observable<HttpResponse<any>> {
+    // Create HttpHeaders
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json'
     });
+
+    // Add Authorization header if logged in
     if (this.logedIn && this.Authorization) {
-      headers.append('Authorization', 'Bearer ' + this.Authorization)
+      headers = headers.append('Authorization', 'Bearer ' + this.Authorization);
     }
 
-    let options = new RequestOptions({headers: headers});
-    const res: Observable<Response> = this.http.get(this.ApiUrl + '/api/v2/game/', options)
-    return res
+    // Make HTTP GET request
+    return this.http.get(this.ApiUrl + '/api/v2/game/', {
+      headers: headers,
+      observe: 'response'  // To include the full HTTP response in the Observable
+    });
   }
 
-  submitComment(body): Observable<Response> {
-
-    // boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
-    let headers = new Headers({
+  submitComment(body): Observable<HttpResponse<any>> {
+    // Create HttpHeaders
+    let headers = new HttpHeaders({
       'Authorization': 'Bearer ' + this.Authorization
     });
-    // let options = new RequestOptions({headers: headers});
-    const options = {
-      headers,
-    }
 
+    // Create FormData
     const formData = new FormData();
-    formData.append('text', body.text)
-    formData.append('score', body.score)
-    formData.append('game', body.game)
+    formData.append('text', body.text);
+    formData.append('score', body.score);
+    formData.append('game', body.game);
 
-    const res: Observable<Response> = this.http.post(this.ApiUrl + '/api/v2/game/comment/', formData, options)
-    return res
+    // Make HTTP POST request
+    return this.http.post(this.ApiUrl + '/api/v2/game/comment/', formData, {
+      headers: headers,
+      observe: 'response'  // To include the full HTTP response in the Observable
+    });
   }
 
-  submitLike(body): Observable<Response> {
-
-    // boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
-    let headers = new Headers({
+  submitLike(body): Observable<HttpResponse<any>> {
+    // Create HttpHeaders
+    const headers = new HttpHeaders({
       'Authorization': 'Bearer ' + this.Authorization
     });
-    // let options = new RequestOptions({headers: headers});
-    const options = {
-      headers,
-    }
 
+    // Create FormData
     const formData = new FormData();
-    formData.append('game', body.game)
+    formData.append('game', body.game);
 
-    const res: Observable<Response> = this.http.post(this.ApiUrl + '/api/v2/game/like/', formData, options)
-    return res
+    // Make HTTP POST request
+    return this.http.post(this.ApiUrl + '/api/v2/game/like/', formData, {
+      headers: headers,
+      observe: 'response'  // To include the full HTTP response in the Observable
+    });
   }
 
 
-  getComments(game_code: number): Observable<Response> {
-    const res: Observable<Response> = this.http.get(this.ApiUrl + `/api/v2/game/${game_code}/comments/`, {})
-    return res
+  getComments(game_code: number): Observable<HttpResponse<any>> {
+    // Create HttpHeaders if necessary, or leave empty
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      // Add any other headers if needed
+    });
+
+    // Make HTTP GET request
+    return this.http.get(this.ApiUrl + `/api/v2/game/${game_code}/comments/`, {
+      headers: headers,
+      observe: 'response'  // To include the full HTTP response in the Observable
+    });
   }
 
   ActivateUser(token: string): Promise<any> {
     var that = this;
     this.APICalls.ActivateUser = true;
-    let headers = new Headers({
+
+    let headers = new HttpHeaders({
       'Content-Type': 'application/json'
     });
-    let options = new RequestOptions({headers: headers});
-    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/activation/' + token, options)
+
+    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/activation/' + token, {headers: headers})
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
@@ -593,7 +607,7 @@ export class PublicService {
     }).catch(e => {
       this.APICalls.ActivateUser = false;
       this.hasError = true;
-      if (e.status == 401) {
+      if (e.status === 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
       } else {
@@ -606,19 +620,22 @@ export class PublicService {
         });
       }
     });
+
     return ret;
   }
 
   EnrollTalk(): Promise<any> {
     var that = this;
     this.APICalls.EnrollTalk = true;
-    let body = JSON.stringify({});
-    let headers = new Headers({
+
+    let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + this.Authorization
     });
-    let options = new RequestOptions({headers: headers});
-    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/v2/talk/' + this.talkPk + '/enroll/', body, options)
+
+    let body = {};
+
+    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/v2/talk/' + this.talkPk + '/enroll/', body, {headers: headers})
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
@@ -640,19 +657,22 @@ export class PublicService {
         });
       }
     });
+
     return ret;
   }
 
   EnrollWorkshop(): Promise<any> {
     var that = this;
     this.APICalls.EnrollWorkshop = true;
-    let body = JSON.stringify({});
-    let headers = new Headers({
+
+    let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + this.Authorization
     });
-    let options = new RequestOptions({headers: headers});
-    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/v2/workshop/' + this.workshopPk + '/enroll/', body, options)
+
+    let body = {};    // Create HttpHeaders
+
+    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/v2/workshop/' + this.workshopPk + '/enroll/', body, {headers: headers})
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
@@ -661,7 +681,7 @@ export class PublicService {
       this.APICalls.EnrollWorkshop = false;
     }).catch(e => {
       this.APICalls.EnrollWorkshop = false;
-      if (e.status == 401) {
+      if (e.status === 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
       } else {
@@ -674,26 +694,29 @@ export class PublicService {
         });
       }
     });
+
     return ret;
   }
 
   getUserCart(): Promise<any> {
     var that = this;
     this.APICalls.getUserTalks = true;
-    let headers = new Headers({
+
+    let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + this.Authorization
     });
-    let options = new RequestOptions({headers: headers});
-    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/service/cart/', options)
+
+    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/service/cart/', {headers: headers})
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
+
     ret.then(r => {
       this.APICalls.getUserTalks = false;
     }).catch(e => {
       this.APICalls.getUserTalks = false;
-      if (e.status == 401) {
+      if (e.status === 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
       } else {
@@ -706,26 +729,29 @@ export class PublicService {
         });
       }
     });
+
     return ret;
   }
 
   getUserDashboard(): Promise<any> {
     var that = this;
     this.APICalls.getUserTalks = true;
-    let headers = new Headers({
+
+    let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + this.Authorization
     });
-    let options = new RequestOptions({headers: headers});
-    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/service/dashboard/', options)
+
+    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/service/dashboard/', {headers: headers})
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
+
     ret.then(r => {
       this.APICalls.getUserTalks = false;
     }).catch(e => {
       this.APICalls.getUserTalks = false;
-      if (e.status == 401) {
+      if (e.status === 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
       } else {
@@ -738,26 +764,29 @@ export class PublicService {
         });
       }
     });
+
     return ret;
   }
 
   deleteCartItem(): Promise<any> {
     var that = this;
     this.APICalls.getUserTalks = true;
-    let headers = new Headers({
+
+    let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + this.Authorization
     });
-    let options = new RequestOptions({headers: headers});
-    let ret: Promise<any> = this.http.delete(this.ApiUrl + '/api/v2/service/' + this.workshopPk + '/', options)
+
+    let ret: Promise<any> = this.http.delete(this.ApiUrl + '/api/v2/service/' + this.workshopPk + '/', {headers: headers})
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
+
     ret.then(r => {
       this.APICalls.getUserTalks = false;
     }).catch(e => {
       this.APICalls.getUserTalks = false;
-      if (e.status == 401) {
+      if (e.status === 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
       } else {
@@ -770,41 +799,39 @@ export class PublicService {
         });
       }
     });
+
     return ret;
   }
 
-  getUserGame(): Observable<Response> {
-
-    // boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
-    let headers = new Headers({
+  getUserGame(): Observable<any> {
+    // Prepare headers
+    let headers = new HttpHeaders({
       'Authorization': 'Bearer ' + this.Authorization
     });
-    // let options = new RequestOptions({headers: headers});
-    const options = {
-      headers,
-    }
 
-    const res: Observable<Response> = this.http.get(this.ApiUrl + '/api/v2/game/my-game/', options)
-    return res
+    // Make HTTP GET request
+    return this.http.get<any>(this.ApiUrl + '/api/v2/game/my-game/', {headers: headers});
   }
 
   deleteTalk(): Promise<any> {
     var that = this;
     this.APICalls.getUserTalks = true;
-    let headers = new Headers({
+
+    let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + this.Authorization
     });
-    let options = new RequestOptions({headers: headers});
-    let ret: Promise<any> = this.http.delete(this.ApiUrl + '/api/v2/service/' + this.talkPk + '/', options)
+
+    let ret: Promise<any> = this.http.delete(this.ApiUrl + '/api/v2/service/' + this.talkPk + '/', {headers: headers})
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
+
     ret.then(r => {
       this.APICalls.getUserTalks = false;
     }).catch(e => {
       this.APICalls.getUserTalks = false;
-      if (e.status == 401) {
+      if (e.status === 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
       } else {
@@ -817,25 +844,27 @@ export class PublicService {
         });
       }
     });
+
     return ret;
   }
 
   getUsersCount(): Promise<any> {
     var that = this;
     this.APICalls.getUserTalks = true;
-    let headers = new Headers({
-      'Content-Type': 'application/json',
+
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json'
     });
-    let options = new RequestOptions({headers: headers});
-    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/users/count/', options)
+
+    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/users/count/', {headers: headers})
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
+
     ret.then(r => {
       this.APICalls.getUserTalks = false;
     }).catch(e => {
       this.APICalls.getUserTalks = false;
-      // if (window.innerWidth > 992) {
       that.snackbar.openFromComponent(ErrorDialogComponent, {
         duration: 2000,
         data: e.message,
@@ -843,26 +872,29 @@ export class PublicService {
         verticalPosition: 'top',
         direction: 'rtl'
       });
-
     });
+
     return ret;
   }
 
   getPaymentLink(): Promise<any> {
     var that = this;
     this.APICalls.getUserTalks = true;
-    let body = JSON.stringify({
-      'coupon': this.discount_code.trim(),
-    });
-    let headers = new Headers({
+
+    let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + this.Authorization
     });
-    let options = new RequestOptions({headers: headers});
-    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/v2/service/payment/', body, options)
+
+    let body = {
+      'coupon': this.discount_code.trim(),
+    };
+
+    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/v2/service/payment/', body, {headers: headers})
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
+
     ret.then(r => {
       this.APICalls.getUserTalks = false;
     }).catch(e => {
@@ -880,33 +912,39 @@ export class PublicService {
         });
       }
     });
+
     return ret;
   }
 
   createTeam(emails): Promise<any> {
     var that = this;
     this.APICalls.Login = true;
-    let body = JSON.stringify({
-      "name": this.Name,
-      "emails": emails,
-    });
-    let headers = new Headers({
+
+    let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + this.Authorization
     });
-    let options = new RequestOptions({headers: headers});
-    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/v2/team/create_team/', body, options)
+
+    // Prepare the body and headers
+    let body = {
+      "name": this.Name,
+      "emails": emails,
+    };
+
+    // Make HTTP POST request and convert Observable to Promise
+    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/v2/team/create_team/', body, {headers: headers})
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
+
     ret.then(r => {
       this.APICalls.Login = false;
-      if (r.error == null || r.error == undefined) {
+      if (r.error == null) {
         this.Authorization = r.access;
         localStorage.setItem("Authorization", this.Authorization);
         this.logedIn = true;
       } else {
-
+        // Handle any additional logic if required
       }
     }).catch(e => {
       this.APICalls.Login = false;
@@ -923,26 +961,31 @@ export class PublicService {
         });
       }
     });
+
     return ret;
   }
 
   getTeam(pk): Promise<any> {
     var that = this;
     this.APICalls.getUserTalks = true;
-    let headers = new Headers({
+
+    // Prepare headers
+    let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + this.Authorization
     });
-    let options = new RequestOptions({headers: headers});
-    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/team/' + pk + "/", options)
+
+    // Make HTTP GET request and convert Observable to Promise
+    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/team/' + pk + '/', {headers: headers})
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
+
     ret.then(r => {
       this.APICalls.getUserTalks = false;
     }).catch(e => {
       this.APICalls.getUserTalks = false;
-      if (e.status == 401) {
+      if (e.status === 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
       } else {
@@ -955,25 +998,30 @@ export class PublicService {
         });
       }
     });
+
     return ret;
-  };
+  }
 
   enrollTeam(mid, tid): Promise<any> {
     var that = this;
     this.APICalls.getUserTalks = true;
-    let headers = new Headers({
+
+    // Prepare headers
+    let headers = new HttpHeaders({
       'Content-Type': 'application/json',
     });
-    let options = new RequestOptions({headers: headers});
-    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/team/join/' + tid + "/" + mid, options)
+
+    // Make HTTP GET request and convert Observable to Promise
+    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/team/join/' + tid + "/" + mid, {headers: headers})
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
+
     ret.then(r => {
       this.APICalls.getUserTalks = false;
     }).catch(e => {
       this.APICalls.getUserTalks = false;
-      if (e.status == 401) {
+      if (e.status === 401) {
         localStorage.removeItem("Authorization");
         this.router.navigate(['login']);
       } else {
@@ -986,7 +1034,7 @@ export class PublicService {
         });
       }
     });
-    return ret;
-  };
 
+    return ret;
+  }
 }
