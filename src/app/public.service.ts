@@ -9,7 +9,8 @@ import {ErrorDialogComponent} from '../app/error-dialog/error-dialog.component'
 import {HttpClient, HttpHeaders, HttpRequest} from '@angular/common/http';
 import {SuccessDialogComponent} from '../app/success-dialog/success-dialog.component';
 import {Router} from '@angular/router';
-import { Observable } from 'rxjs';
+import {Observable} from 'rxjs';
+import {environment} from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -18,8 +19,7 @@ export class PublicService {
   public APICalls: any = {};
   public Authorization: string = "";
   public User: any = {};
-  public ApiUrl: String = "https://gamecraft.ce.aut.ac.ir";
-  // public ApiUrl: String = "http://127.0.0.1:8000";
+  public ApiUrl: String = environment.apiUrl;
   public Email: String = "";
   public PhoneNumber: String = "";
   public Password: String = "";
@@ -40,10 +40,10 @@ export class PublicService {
   public newPassword2: String = "";
 
   // field of create-game-component
-  public createGame= {
-    gameName:""
+  public createGame = {
+    gameName: ""
   }
-  
+
   public currentGame: {
     game: any;
   } = {
@@ -114,8 +114,8 @@ export class PublicService {
 
   }
 
-  private DisplayErrorDialog(message: any){
-    if(String(message).includes("Like submit time is over")){
+  private DisplayErrorDialog(message: any) {
+    if (String(message).includes("Like submit time is over")) {
       this.snackbar.openFromComponent(ErrorDialogComponent, {
         duration: 2000,
         data: "مهلت لایک کردن به پایان رسیده است!",
@@ -147,18 +147,22 @@ export class PublicService {
     this.APICalls.UpdateImage = true;
     let h = new HttpHeaders();
     h = h.set('Authorization', 'Bearer ' + this.Authorization);
-    const req = new HttpRequest("PUT", this.ApiUrl + '/api/v2/users/profile/update/', uploadData, { headers: h });
-    this.http2.request(req).
-      toPromise().
-      then((r) => {
-        // if (window.innerWidth > 992) {
-        this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'عکس با موفقیت آپلود شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-        // }
-        // else {
-        // this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'عکس با موفقیت آپلود شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
-        // }
-        location.reload();
-      })
+    const req = new HttpRequest("PUT", this.ApiUrl + '/api/v2/users/profile/update/', uploadData, {headers: h});
+    this.http2.request(req).toPromise().then((r) => {
+      // if (window.innerWidth > 992) {
+      this.snackbar.openFromComponent(SuccessDialogComponent, {
+        duration: 2000,
+        data: 'عکس با موفقیت آپلود شد!',
+        panelClass: ['snackbar'],
+        verticalPosition: 'top',
+        direction: 'rtl'
+      });
+      // }
+      // else {
+      // this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'عکس با موفقیت آپلود شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
+      // }
+      location.reload();
+    })
       .catch(this.handleError);
 
   }
@@ -485,11 +489,11 @@ export class PublicService {
     }
 
     const formData = new FormData();
-    formData.append('title',body.title)
-    formData.append('description',body.description)
-    formData.append('game_link',body.game_link)
-    formData.append('team',body.team)
-    formData.append('poster',body.poster)
+    formData.append('title', body.title)
+    formData.append('description', body.description)
+    formData.append('game_link', body.game_link)
+    formData.append('team', body.team)
+    formData.append('poster', body.poster)
 
     const res: Observable<Response> = this.http.post(this.ApiUrl + '/api/v2/game/', formData, options)
     return res
@@ -500,7 +504,7 @@ export class PublicService {
     let headers = new Headers({
       'Content-Type': 'application/json',
     });
-    if(this.logedIn && this.Authorization){
+    if (this.logedIn && this.Authorization) {
       headers.append('Authorization', 'Bearer ' + this.Authorization)
     }
 
@@ -521,9 +525,9 @@ export class PublicService {
     }
 
     const formData = new FormData();
-    formData.append('text',body.text)
-    formData.append('score',body.score)
-    formData.append('game',body.game)
+    formData.append('text', body.text)
+    formData.append('score', body.score)
+    formData.append('game', body.game)
 
     const res: Observable<Response> = this.http.post(this.ApiUrl + '/api/v2/game/comment/', formData, options)
     return res
@@ -541,7 +545,7 @@ export class PublicService {
     }
 
     const formData = new FormData();
-    formData.append('game',body.game)
+    formData.append('game', body.game)
 
     const res: Observable<Response> = this.http.post(this.ApiUrl + '/api/v2/game/like/', formData, options)
     return res
