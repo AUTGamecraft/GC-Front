@@ -136,24 +136,25 @@ export class PublicService {
     });
 
     let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/coupon/' + this.discount_code.trim() + '/', {headers: headers})
-      .toPromise()
-      .then(r => {
-        this.APICalls.checkDiscount = false;
-      }).catch(e => {
-        this.APICalls.checkDiscount = false;
-        if (e.status === 401) {
-          localStorage.removeItem("Authorization");
-          this.router.navigate(['login']);
-        } else {
-          that.snackbar.openFromComponent(ErrorDialogComponent, {
-            duration: 2000,
-            data: e.message,
-            panelClass: ['snackbar'],
-            verticalPosition: 'top',
-            direction: 'rtl'
-          });
-        }
-      });
+      .toPromise();
+
+    ret.then(r => {
+      this.APICalls.checkDiscount = false;
+    }).catch(e => {
+      this.APICalls.checkDiscount = false;
+      if (e.status === 401) {
+        localStorage.removeItem("Authorization");
+        this.router.navigate(['login']);
+      } else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, {
+          duration: 2000,
+          data: e.message,
+          panelClass: ['snackbar'],
+          verticalPosition: 'top',
+          direction: 'rtl'
+        });
+      }
+    });
 
     return ret;
   }
@@ -176,20 +177,21 @@ export class PublicService {
 
     let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/v2/users/sign_up/', body, {headers: headers})
       .toPromise()
-      .then(r => {
-        this.APICalls.SignUp = false;
-      }).catch(e => {
-        this.APICalls.SignUp = false;
 
-        that.snackbar.openFromComponent(ErrorDialogComponent, {
-          duration: 2000,
-          data: e.message,
-          panelClass: ['snackbar'],
-          verticalPosition: 'top',
-          direction: 'rtl'
-        });
+    ret.then(r => {
+      this.APICalls.SignUp = false;
+    }).catch(e => {
+      this.APICalls.SignUp = false;
 
+      that.snackbar.openFromComponent(ErrorDialogComponent, {
+        duration: 2000,
+        data: e.message,
+        panelClass: ['snackbar'],
+        verticalPosition: 'top',
+        direction: 'rtl'
       });
+
+    });
 
     return ret;
   }
@@ -212,18 +214,19 @@ export class PublicService {
 
     let ret: Promise<any> = this.http.put(this.ApiUrl + '/api/v2/activation/reset-pass/' + token, body, {headers: headers})
       .toPromise()
-      .then(r => {
-        // Uncomment or handle any actions post-success if needed
-      }).catch(e => {
-        // Uncomment or handle any actions post-error if needed
-        that.snackbar.openFromComponent(ErrorDialogComponent, {
-          duration: 2000,
-          data: e.message,
-          panelClass: ['snackbar'],
-          verticalPosition: 'top',
-          direction: 'rtl'
-        });
+
+    ret.then(r => {
+      // Uncomment or handle any actions post-success if needed
+    }).catch(e => {
+      // Uncomment or handle any actions post-error if needed
+      that.snackbar.openFromComponent(ErrorDialogComponent, {
+        duration: 2000,
+        data: e.message,
+        panelClass: ['snackbar'],
+        verticalPosition: 'top',
+        direction: 'rtl'
       });
+    });
 
     return ret;
   }
@@ -243,12 +246,11 @@ export class PublicService {
     });
 
     let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/v2/token/', body, {headers: headers})
-      .toPromise()
-      .catch(this.handleError);
+      .toPromise();
 
     ret.then(r => {
       this.APICalls.Login = false;
-      if (r.error == null || r.error == undefined) {
+      if (r.error == null) {
         this.Authorization = r.access;
         localStorage.setItem("Authorization", this.Authorization);
         this.logedIn = true;
@@ -282,8 +284,7 @@ export class PublicService {
     });
 
     let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/v2/users/reset_pass/', body, {headers: headers})
-      .toPromise()
-      .catch(this.handleError);
+      .toPromise();
 
     ret.then(r => {
       //this.APICalls.Login = false;
@@ -324,19 +325,20 @@ export class PublicService {
 
     let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/talk/', {headers: headers})
       .toPromise()
-      .then(r => {
-        this.APICalls.getTalks = false;
-      }).catch(e => {
-        this.APICalls.getTalks = false;
 
-        that.snackbar.openFromComponent(ErrorDialogComponent, {
-          duration: 2000,
-          data: e.message,
-          panelClass: ['snackbar'],
-          verticalPosition: 'top',
-          direction: 'rtl'
-        });
+    ret.then(r => {
+      this.APICalls.getTalks = false;
+    }).catch(e => {
+      this.APICalls.getTalks = false;
+
+      that.snackbar.openFromComponent(ErrorDialogComponent, {
+        duration: 2000,
+        data: e.message,
+        panelClass: ['snackbar'],
+        verticalPosition: 'top',
+        direction: 'rtl'
       });
+    });
 
     return ret;
   }
@@ -350,20 +352,22 @@ export class PublicService {
     });
 
     let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/workshop/', {headers: headers})
-      .toPromise()
-      .then(r => {
-        this.APICalls.getWorkshops = false;
-      }).catch(e => {
-        this.APICalls.getWorkshops = false;
+      .toPromise();
 
-        that.snackbar.openFromComponent(ErrorDialogComponent, {
-          duration: 2000,
-          data: e.message,
-          panelClass: ['snackbar'],
-          verticalPosition: 'top',
-          direction: 'rtl'
-        });
+
+    ret.then(r => {
+      this.APICalls.getWorkshops = false;
+    }).catch(e => {
+      this.APICalls.getWorkshops = false;
+
+      that.snackbar.openFromComponent(ErrorDialogComponent, {
+        duration: 2000,
+        data: e.message,
+        panelClass: ['snackbar'],
+        verticalPosition: 'top',
+        direction: 'rtl'
       });
+    });
 
     return ret;
   }
@@ -378,24 +382,25 @@ export class PublicService {
     });
 
     let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/users/available_list/', {headers: headers})
-      .toPromise()
-      .then(r => {
-        this.APICalls.getUsers = false;
-      }).catch(e => {
-        this.APICalls.getUsers = false;
-        if (e.status === 401) {
-          localStorage.removeItem("Authorization");
-          this.router.navigate(['login']);
-        } else {
-          that.snackbar.openFromComponent(ErrorDialogComponent, {
-            duration: 2000,
-            data: e.message,
-            panelClass: ['snackbar'],
-            verticalPosition: 'top',
-            direction: 'rtl'
-          });
-        }
-      });
+      .toPromise();
+
+    ret.then(r => {
+      this.APICalls.getUsers = false;
+    }).catch(e => {
+      this.APICalls.getUsers = false;
+      if (e.status === 401) {
+        localStorage.removeItem("Authorization");
+        this.router.navigate(['login']);
+      } else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, {
+          duration: 2000,
+          data: e.message,
+          panelClass: ['snackbar'],
+          verticalPosition: 'top',
+          direction: 'rtl'
+        });
+      }
+    });
 
     return ret;
   }
@@ -410,24 +415,25 @@ export class PublicService {
     });
 
     let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/users/profile/', {headers: headers})
-      .toPromise()
-      .then(r => {
-        this.APICalls.getUsers = false;
-      }).catch(e => {
-        this.APICalls.getUsers = false;
-        if (e.status == 401) {
-          localStorage.removeItem("Authorization");
-          this.router.navigate(['login']);
-        } else {
-          that.snackbar.openFromComponent(ErrorDialogComponent, {
-            duration: 2000,
-            data: e.message,
-            panelClass: ['snackbar'],
-            verticalPosition: 'top',
-            direction: 'rtl'
-          });
-        }
-      });
+      .toPromise();
+
+    ret.then(r => {
+      this.APICalls.getUsers = false;
+    }).catch(e => {
+      this.APICalls.getUsers = false;
+      if (e.status == 401) {
+        localStorage.removeItem("Authorization");
+        this.router.navigate(['login']);
+      } else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, {
+          duration: 2000,
+          data: e.message,
+          panelClass: ['snackbar'],
+          verticalPosition: 'top',
+          direction: 'rtl'
+        });
+      }
+    });
 
     return ret;
   }
@@ -531,25 +537,26 @@ export class PublicService {
     });
 
     let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/activation/' + token, {headers: headers})
-      .toPromise()
-      .then(r => {
-        this.APICalls.ActivateUser = false;
-      }).catch(e => {
-        this.APICalls.ActivateUser = false;
-        this.hasError = true;
-        if (e.status === 401) {
-          localStorage.removeItem("Authorization");
-          this.router.navigate(['login']);
-        } else {
-          that.snackbar.openFromComponent(ErrorDialogComponent, {
-            duration: 2000,
-            data: e.message,
-            panelClass: ['snackbar'],
-            verticalPosition: 'top',
-            direction: 'rtl'
-          });
-        }
-      });
+      .toPromise();
+
+    ret.then(r => {
+      this.APICalls.ActivateUser = false;
+    }).catch(e => {
+      this.APICalls.ActivateUser = false;
+      this.hasError = true;
+      if (e.status === 401) {
+        localStorage.removeItem("Authorization");
+        this.router.navigate(['login']);
+      } else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, {
+          duration: 2000,
+          data: e.message,
+          panelClass: ['snackbar'],
+          verticalPosition: 'top',
+          direction: 'rtl'
+        });
+      }
+    });
 
     return ret;
   }
@@ -566,24 +573,25 @@ export class PublicService {
     let body = {};
 
     let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/v2/talk/' + this.talkPk + '/enroll/', body, {headers: headers})
-      .toPromise()
-      .then(r => {
-        this.APICalls.EnrollTalk = false;
-      }).catch(e => {
-        this.APICalls.EnrollTalk = false;
-        if (e.status === 401) {
-          localStorage.removeItem("Authorization");
-          this.router.navigate(['login']);
-        } else {
-          that.snackbar.openFromComponent(ErrorDialogComponent, {
-            duration: 2000,
-            data: e.message,
-            panelClass: ['snackbar'],
-            verticalPosition: 'top',
-            direction: 'rtl'
-          });
-        }
-      });
+      .toPromise();
+
+    ret.then(r => {
+      this.APICalls.EnrollTalk = false;
+    }).catch(e => {
+      this.APICalls.EnrollTalk = false;
+      if (e.status === 401) {
+        localStorage.removeItem("Authorization");
+        this.router.navigate(['login']);
+      } else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, {
+          duration: 2000,
+          data: e.message,
+          panelClass: ['snackbar'],
+          verticalPosition: 'top',
+          direction: 'rtl'
+        });
+      }
+    });
 
     return ret;
   }
@@ -600,24 +608,25 @@ export class PublicService {
     let body = {};    // Create HttpHeaders
 
     let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/v2/workshop/' + this.workshopPk + '/enroll/', body, {headers: headers})
-      .toPromise()
-      .then(r => {
-        this.APICalls.EnrollWorkshop = false;
-      }).catch(e => {
-        this.APICalls.EnrollWorkshop = false;
-        if (e.status === 401) {
-          localStorage.removeItem("Authorization");
-          this.router.navigate(['login']);
-        } else {
-          that.snackbar.openFromComponent(ErrorDialogComponent, {
-            duration: 2000,
-            data: e.message,
-            panelClass: ['snackbar'],
-            verticalPosition: 'top',
-            direction: 'rtl'
-          });
-        }
-      });
+      .toPromise();
+
+    ret.then(r => {
+      this.APICalls.EnrollWorkshop = false;
+    }).catch(e => {
+      this.APICalls.EnrollWorkshop = false;
+      if (e.status === 401) {
+        localStorage.removeItem("Authorization");
+        this.router.navigate(['login']);
+      } else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, {
+          duration: 2000,
+          data: e.message,
+          panelClass: ['snackbar'],
+          verticalPosition: 'top',
+          direction: 'rtl'
+        });
+      }
+    });
 
     return ret;
   }
@@ -632,24 +641,25 @@ export class PublicService {
     });
 
     let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/service/cart/', {headers: headers})
-      .toPromise()
-      .then(r => {
-        this.APICalls.getUserTalks = false;
-      }).catch(e => {
-        this.APICalls.getUserTalks = false;
-        if (e.status === 401) {
-          localStorage.removeItem("Authorization");
-          this.router.navigate(['login']);
-        } else {
-          that.snackbar.openFromComponent(ErrorDialogComponent, {
-            duration: 2000,
-            data: e.message,
-            panelClass: ['snackbar'],
-            verticalPosition: 'top',
-            direction: 'rtl'
-          });
-        }
-      });
+      .toPromise();
+
+    ret.then(r => {
+      this.APICalls.getUserTalks = false;
+    }).catch(e => {
+      this.APICalls.getUserTalks = false;
+      if (e.status === 401) {
+        localStorage.removeItem("Authorization");
+        this.router.navigate(['login']);
+      } else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, {
+          duration: 2000,
+          data: e.message,
+          panelClass: ['snackbar'],
+          verticalPosition: 'top',
+          direction: 'rtl'
+        });
+      }
+    });
 
     return ret;
   }
@@ -664,24 +674,25 @@ export class PublicService {
     });
 
     let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/service/dashboard/', {headers: headers})
-      .toPromise()
-      .then(r => {
-        this.APICalls.getUserTalks = false;
-      }).catch(e => {
-        this.APICalls.getUserTalks = false;
-        if (e.status === 401) {
-          localStorage.removeItem("Authorization");
-          this.router.navigate(['login']);
-        } else {
-          that.snackbar.openFromComponent(ErrorDialogComponent, {
-            duration: 2000,
-            data: e.message,
-            panelClass: ['snackbar'],
-            verticalPosition: 'top',
-            direction: 'rtl'
-          });
-        }
-      });
+      .toPromise();
+
+    ret.then(r => {
+      this.APICalls.getUserTalks = false;
+    }).catch(e => {
+      this.APICalls.getUserTalks = false;
+      if (e.status === 401) {
+        localStorage.removeItem("Authorization");
+        this.router.navigate(['login']);
+      } else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, {
+          duration: 2000,
+          data: e.message,
+          panelClass: ['snackbar'],
+          verticalPosition: 'top',
+          direction: 'rtl'
+        });
+      }
+    });
 
     return ret;
   }
@@ -696,24 +707,25 @@ export class PublicService {
     });
 
     let ret: Promise<any> = this.http.delete(this.ApiUrl + '/api/v2/service/' + this.workshopPk + '/', {headers: headers})
-      .toPromise()
-      .then(r => {
-        this.APICalls.getUserTalks = false;
-      }).catch(e => {
-        this.APICalls.getUserTalks = false;
-        if (e.status === 401) {
-          localStorage.removeItem("Authorization");
-          this.router.navigate(['login']);
-        } else {
-          that.snackbar.openFromComponent(ErrorDialogComponent, {
-            duration: 2000,
-            data: e.message,
-            panelClass: ['snackbar'],
-            verticalPosition: 'top',
-            direction: 'rtl'
-          });
-        }
-      });
+      .toPromise();
+
+    ret.then(r => {
+      this.APICalls.getUserTalks = false;
+    }).catch(e => {
+      this.APICalls.getUserTalks = false;
+      if (e.status === 401) {
+        localStorage.removeItem("Authorization");
+        this.router.navigate(['login']);
+      } else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, {
+          duration: 2000,
+          data: e.message,
+          panelClass: ['snackbar'],
+          verticalPosition: 'top',
+          direction: 'rtl'
+        });
+      }
+    });
 
     return ret;
   }
@@ -738,24 +750,25 @@ export class PublicService {
     });
 
     let ret: Promise<any> = this.http.delete(this.ApiUrl + '/api/v2/service/' + this.talkPk + '/', {headers: headers})
-      .toPromise()
-      .then(r => {
-        this.APICalls.getUserTalks = false;
-      }).catch(e => {
-        this.APICalls.getUserTalks = false;
-        if (e.status === 401) {
-          localStorage.removeItem("Authorization");
-          this.router.navigate(['login']);
-        } else {
-          that.snackbar.openFromComponent(ErrorDialogComponent, {
-            duration: 2000,
-            data: e.message,
-            panelClass: ['snackbar'],
-            verticalPosition: 'top',
-            direction: 'rtl'
-          });
-        }
-      });
+      .toPromise();
+
+    ret.then(r => {
+      this.APICalls.getUserTalks = false;
+    }).catch(e => {
+      this.APICalls.getUserTalks = false;
+      if (e.status === 401) {
+        localStorage.removeItem("Authorization");
+        this.router.navigate(['login']);
+      } else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, {
+          duration: 2000,
+          data: e.message,
+          panelClass: ['snackbar'],
+          verticalPosition: 'top',
+          direction: 'rtl'
+        });
+      }
+    });
 
     return ret;
   }
@@ -769,19 +782,20 @@ export class PublicService {
     });
 
     let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/users/count/', {headers: headers})
-      .toPromise()
-      .then(r => {
-        this.APICalls.getUserTalks = false;
-      }).catch(e => {
-        this.APICalls.getUserTalks = false;
-        that.snackbar.openFromComponent(ErrorDialogComponent, {
-          duration: 2000,
-          data: e.message,
-          panelClass: ['snackbar'],
-          verticalPosition: 'top',
-          direction: 'rtl'
-        });
+      .toPromise();
+
+    ret.then(r => {
+      this.APICalls.getUserTalks = false;
+    }).catch(e => {
+      this.APICalls.getUserTalks = false;
+      that.snackbar.openFromComponent(ErrorDialogComponent, {
+        duration: 2000,
+        data: e.message,
+        panelClass: ['snackbar'],
+        verticalPosition: 'top',
+        direction: 'rtl'
       });
+    });
 
     return ret;
   }
@@ -800,24 +814,25 @@ export class PublicService {
     };
 
     let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/v2/service/payment/', body, {headers: headers})
-      .toPromise()
-      .then(r => {
-        this.APICalls.getUserTalks = false;
-      }).catch(e => {
-        this.APICalls.getUserTalks = false;
-        if (e.status === 401) {
-          localStorage.removeItem("Authorization");
-          this.router.navigate(['login']);
-        } else {
-          that.snackbar.openFromComponent(ErrorDialogComponent, {
-            duration: 2000,
-            data: e.message,
-            panelClass: ['snackbar'],
-            verticalPosition: 'top',
-            direction: 'rtl'
-          });
-        }
-      });
+      .toPromise();
+
+    ret.then(r => {
+      this.APICalls.getUserTalks = false;
+    }).catch(e => {
+      this.APICalls.getUserTalks = false;
+      if (e.status === 401) {
+        localStorage.removeItem("Authorization");
+        this.router.navigate(['login']);
+      } else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, {
+          duration: 2000,
+          data: e.message,
+          panelClass: ['snackbar'],
+          verticalPosition: 'top',
+          direction: 'rtl'
+        });
+      }
+    });
 
     return ret;
   }
@@ -839,8 +854,7 @@ export class PublicService {
 
     // Make HTTP POST request and convert Observable to Promise
     let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/v2/team/create_team/', body, {headers: headers})
-      .toPromise()
-      .catch(this.handleError);
+      .toPromise();
 
     ret.then(r => {
       this.APICalls.Login = false;
@@ -882,24 +896,25 @@ export class PublicService {
 
     // Make HTTP GET request and convert Observable to Promise
     let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/team/' + pk + '/', {headers: headers})
-      .toPromise()
-      .then(r => {
-        this.APICalls.getUserTalks = false;
-      }).catch(e => {
-        this.APICalls.getUserTalks = false;
-        if (e.status === 401) {
-          localStorage.removeItem("Authorization");
-          this.router.navigate(['login']);
-        } else {
-          that.snackbar.openFromComponent(ErrorDialogComponent, {
-            duration: 2000,
-            data: e.message,
-            panelClass: ['snackbar'],
-            verticalPosition: 'top',
-            direction: 'rtl'
-          });
-        }
-      });
+      .toPromise();
+
+    ret.then(r => {
+      this.APICalls.getUserTalks = false;
+    }).catch(e => {
+      this.APICalls.getUserTalks = false;
+      if (e.status === 401) {
+        localStorage.removeItem("Authorization");
+        this.router.navigate(['login']);
+      } else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, {
+          duration: 2000,
+          data: e.message,
+          panelClass: ['snackbar'],
+          verticalPosition: 'top',
+          direction: 'rtl'
+        });
+      }
+    });
 
     return ret;
   }
@@ -915,24 +930,25 @@ export class PublicService {
 
     // Make HTTP GET request and convert Observable to Promise
     let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/team/join/' + tid + "/" + mid, {headers: headers})
-      .toPromise()
-      .then(r => {
-        this.APICalls.getUserTalks = false;
-      }).catch(e => {
-        this.APICalls.getUserTalks = false;
-        if (e.status === 401) {
-          localStorage.removeItem("Authorization");
-          this.router.navigate(['login']);
-        } else {
-          that.snackbar.openFromComponent(ErrorDialogComponent, {
-            duration: 2000,
-            data: e.message,
-            panelClass: ['snackbar'],
-            verticalPosition: 'top',
-            direction: 'rtl'
-          });
-        }
-      });
+      .toPromise();
+
+    ret.then(r => {
+      this.APICalls.getUserTalks = false;
+    }).catch(e => {
+      this.APICalls.getUserTalks = false;
+      if (e.status === 401) {
+        localStorage.removeItem("Authorization");
+        this.router.navigate(['login']);
+      } else {
+        that.snackbar.openFromComponent(ErrorDialogComponent, {
+          duration: 2000,
+          data: e.message,
+          panelClass: ['snackbar'],
+          verticalPosition: 'top',
+          direction: 'rtl'
+        });
+      }
+    });
 
     return ret;
   }
