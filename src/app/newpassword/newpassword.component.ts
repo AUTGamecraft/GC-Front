@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 //import { NavigationEnd, Router } from '@angular/router';
 import { PublicService } from '../public.service';
-import { FormControl, Validators } from '@angular/forms';
+import { UntypedFormControl, Validators } from '@angular/forms';
 import { ErrorDialogComponent } from '../error-dialog/error-dialog.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router , NavigationEnd } from '@angular/router';
@@ -20,7 +20,7 @@ export class NewpasswordComponent implements OnInit {
   //   Validators.required,
   //   Validators.email,
   // ]);
-  passwordFormControl = new FormControl('', [
+  passwordFormControl = new UntypedFormControl('', [
     Validators.required,
     Validators.minLength(8)
   ]);

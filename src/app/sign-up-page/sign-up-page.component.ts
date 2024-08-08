@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { UntypedFormControl, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { LoginComponent } from '../login/login.component';
 import { NavigationEnd, Router } from '@angular/router';
@@ -16,19 +16,19 @@ import { SuccessDialogComponent } from '../success-dialog/success-dialog.compone
 
 export class SignUpPageComponent implements OnInit {
   hide = true;
-  emailFormControl1 = new FormControl('', [
+  emailFormControl1 = new UntypedFormControl('', [
     Validators.required,
     Validators.email,
   ]);
-  emailFormControl2 = new FormControl('', [
+  emailFormControl2 = new UntypedFormControl('', [
     Validators.required,
     Validators.pattern("^09[0-9]{9}"),
   ]);
-  emailFormControl3 = new FormControl('', [
+  emailFormControl3 = new UntypedFormControl('', [
     Validators.required,
     Validators.minLength(8)
   ]);
-  emailFormControl4 = new FormControl('', [
+  emailFormControl4 = new UntypedFormControl('', [
     Validators.required,
   ]);
   scrHeight: any;

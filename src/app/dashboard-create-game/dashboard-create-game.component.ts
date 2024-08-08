@@ -1,5 +1,5 @@
 import {Component, OnInit, EventEmitter, Output} from '@angular/core';
-import {FormControl, Validators} from '@angular/forms';
+import {UntypedFormControl, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Observable} from 'rxjs';
 import {PublicService} from '../public.service';
@@ -16,18 +16,18 @@ import {stringify} from '@angular/compiler/src/util';
 })
 export class DashboardCreateGameComponent implements OnInit {
   isStaff: boolean;
-  nameFormControl = new FormControl('', [
+  nameFormControl = new UntypedFormControl('', [
     Validators.required,
   ]);
-  linkFormControl = new FormControl('', [
+  linkFormControl = new UntypedFormControl('', [
     Validators.required,
     Validators.pattern(".+"),
   ]);
-  descFormControl = new FormControl('', [
+  descFormControl = new UntypedFormControl('', [
     Validators.required,
   ]);
 
-  myControl = new FormControl();
+  myControl = new UntypedFormControl();
   options: string[] = [];
   filteredOptions: Observable<string[]>;
   userName: string = "";

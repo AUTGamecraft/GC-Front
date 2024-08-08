@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { UntypedFormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { PublicService } from '../public.service';
@@ -16,10 +16,10 @@ import { stringify } from '@angular/compiler/src/util';
 })
 export class DashboardTeamsComponent implements OnInit {
   isStaff: boolean;
-  nameFormControl = new FormControl('', [
+  nameFormControl = new UntypedFormControl('', [
     Validators.required,
   ]);
-  myControl = new FormControl();
+  myControl = new UntypedFormControl();
   options: string[] = [];
   filteredOptions: Observable<string[]>;
   userName: string = "";
