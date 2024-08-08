@@ -75,18 +75,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "gdFront:build"
+            "buildTarget": "gdFront:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "gdFront:build:production"
+              "buildTarget": "gdFront:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "gdFront:build"
+            "buildTarget": "gdFront:build"
           }
         },
         "test": {
