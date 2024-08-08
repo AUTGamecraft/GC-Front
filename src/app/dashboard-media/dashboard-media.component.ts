@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PublicService } from '../public.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatLegacySnackBar as MatSnackBar } from '@angular/material/legacy-snack-bar';
 import { ErrorDialogComponent } from '../error-dialog/error-dialog.component';
 @Component({
   selector: 'app-dashboard-media',

@@ -3,7 +3,7 @@ import { NavigationEnd, Router } from '@angular/router';
 import { PublicService } from '../public.service';
 import { UntypedFormControl, Validators } from '@angular/forms';
 import { ErrorDialogComponent } from '../error-dialog/error-dialog.component';
-import {MatSnackBar} from '@angular/material/snack-bar';
+import {MatLegacySnackBar as MatSnackBar} from '@angular/material/legacy-snack-bar';
 import { SuccessDialogComponent } from '../../app/success-dialog/success-dialog.component';
 
 @Component({

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Inject } from '@angular/core';
 
-import {MAT_SNACK_BAR_DATA} from '@angular/material/snack-bar';
+import {MAT_LEGACY_SNACK_BAR_DATA as MAT_SNACK_BAR_DATA} from '@angular/material/legacy-snack-bar';
 @Component({
   selector: 'app-success-dialog',
   templateUrl: './success-dialog.component.html',

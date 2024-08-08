@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PublicService } from '../public.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatLegacySnackBar as MatSnackBar } from '@angular/material/legacy-snack-bar';
 import { ErrorDialogComponent } from '../error-dialog/error-dialog.component';
 import * as moment from 'jalali-moment';
 import { SuccessDialogComponent } from '../success-dialog/success-dialog.component';

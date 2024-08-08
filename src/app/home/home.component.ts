@@ -5,7 +5,7 @@ import { NavigationEnd, Router } from '@angular/router';
 import * as moment from 'jalali-moment';
 import { timeout } from 'rxjs/operators';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatLegacySnackBar as MatSnackBar } from '@angular/material/legacy-snack-bar';
 import { ErrorDialogComponent } from '../error-dialog/error-dialog.component'
 import { SuccessDialogComponent } from '../success-dialog/success-dialog.component';
 

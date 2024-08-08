@@ -2,7 +2,7 @@ import { Component, OnInit, Query } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PublicService } from '../public.service';
 import { SuccessDialogComponent } from '../success-dialog/success-dialog.component';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatLegacySnackBar as MatSnackBar } from '@angular/material/legacy-snack-bar';
 @Component({
   selector: 'app-confirm-confirm',
   templateUrl: './confirm-confirm.component.html',

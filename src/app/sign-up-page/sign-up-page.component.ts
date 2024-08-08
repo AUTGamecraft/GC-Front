@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, Validators } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { LoginComponent } from '../login/login.component';
 import { NavigationEnd, Router } from '@angular/router';
 import { PublicService } from '../public.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatLegacySnackBar as MatSnackBar } from '@angular/material/legacy-snack-bar';
 import { ErrorDialogComponent } from '../error-dialog/error-dialog.component';
 import { SuccessDialogComponent } from '../success-dialog/success-dialog.component';
 @Component({

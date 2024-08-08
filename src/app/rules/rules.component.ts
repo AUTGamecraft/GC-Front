@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PublicService } from '../public.service';
 import { Router, NavigationEnd } from '@angular/router';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatLegacySnackBar as MatSnackBar } from '@angular/material/legacy-snack-bar';
 import { ErrorDialogComponent } from '../error-dialog/error-dialog.component'
 @Component({
   selector: 'app-rules',

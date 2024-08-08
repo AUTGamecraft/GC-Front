@@ -1,7 +1,7 @@
 import {Injectable, NgZone} from '@angular/core';
 import {Texts} from './models/Texts';
-import {MatDialog} from '@angular/material/dialog';
-import {MatSnackBar} from '@angular/material/snack-bar';
+import {MatLegacyDialog as MatDialog} from '@angular/material/legacy-dialog';
+import {MatLegacySnackBar as MatSnackBar} from '@angular/material/legacy-snack-bar';
 import {ErrorDialogComponent} from './error-dialog/error-dialog.component';
 import {HttpClient, HttpHeaders, HttpRequest, HttpResponse} from '@angular/common/http';
 import {SuccessDialogComponent} from './success-dialog/success-dialog.component';

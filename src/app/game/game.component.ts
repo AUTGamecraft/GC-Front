@@ -1,5 +1,5 @@
 import {Component, OnInit, Input} from '@angular/core';
-import {MatDialog} from "@angular/material/dialog";
+import {MatLegacyDialog as MatDialog} from "@angular/material/legacy-dialog";
 import {GameContentComponent} from "../game-content/game-content.component";
 import { PublicService } from '../public.service';
 
