@@ -71,7 +71,13 @@ export class PublicService {
   }
 
 
-  constructor(private http: Http, public dialog: MatDialog, public snackbar: MatSnackBar, private http2: HttpClient, public router: Router, private zone: NgZone) {
+  constructor(
+    public dialog: MatDialog,
+    public snackbar: MatSnackBar,
+    private http: HttpClient,
+    public router: Router,
+    private zone: NgZone
+  ) {
     this.Authorization = localStorage.getItem("Authorization");
     if (this.Authorization != null) {
       this.logedIn = true;
@@ -170,12 +176,15 @@ export class PublicService {
   checkDiscount(): Promise<any> {
     var that = this;
     this.APICalls.checkDiscount = true;
-    let headers = new Headers({
+
+    // Create HttpHeaders
+    let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + this.Authorization
     });
-    let options = new RequestOptions({headers: headers});
-    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/coupon/' + this.discount_code.trim() + '/', options)
+
+    // Make HTTP GET request and convert Observable to Promise
+    let ret: Promise<any> = this.http.get(this.ApiUrl + '/api/v2/coupon/' + this.discount_code.trim() + '/', {headers: headers})
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
@@ -197,12 +206,15 @@ export class PublicService {
         });
       }
     });
+
     return ret;
   }
 
   SignUp(): Promise<any> {
     var that = this;
     this.APICalls.SignUp = true;
+
+    // Prepare the request body
     let body = JSON.stringify({
       "password": this.Password,
       "phone_number": this.PhoneNumber,
@@ -210,11 +222,14 @@ export class PublicService {
       "first_name": this.Name,
       "user_name": this.Email
     });
-    let headers = new Headers({
+
+    // Create HttpHeaders directly in the request
+    let headers = new HttpHeaders({
       'Content-Type': 'application/json'
     });
-    let options = new RequestOptions({headers: headers});
-    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/v2/users/sign_up/', body, options)
+
+    // Make HTTP POST request and convert Observable to Promise
+    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/v2/users/sign_up/', body, {headers: headers})
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
@@ -233,12 +248,14 @@ export class PublicService {
       });
 
     });
+
     return ret;
   }
 
   changepassword(token: string): Promise<any> {
     var that = this;
     //this.APICalls.SignUp = true;
+
     let body = JSON.stringify({
       "password": this.newPassword,
       //"phone_number": this.PhoneNumber,
@@ -246,20 +263,22 @@ export class PublicService {
       //"first_name": this.Name,
       //"user_name": this.Email
     });
-    let headers = new Headers({
+
+    // Create HttpHeaders directly in the request
+    let headers = new HttpHeaders({
       'Content-Type': 'application/json'
     });
-    let options = new RequestOptions({headers: headers});
-    let ret: Promise<any> = this.http.put(this.ApiUrl + '/api/v2/activation/reset-pass/' + token, body, options)
+
+    // Make HTTP PUT request and convert Observable to Promise
+    let ret: Promise<any> = this.http.put(this.ApiUrl + '/api/v2/activation/reset-pass/' + token, body, {headers: headers})
       .toPromise()
       .then((r) => this.extractData(r, this))
       .catch(this.handleError);
 
     ret.then(r => {
-      // this.APICalls.SignUp = false;
+      // Uncomment or handle any actions post-success if needed
     }).catch(e => {
-      // this.APICalls.SignUp = false;
-
+      // Uncomment or handle any actions post-error if needed
       that.snackbar.openFromComponent(ErrorDialogComponent, {
         duration: 2000,
         data: e.message,
@@ -267,8 +286,8 @@ export class PublicService {
         verticalPosition: 'top',
         direction: 'rtl'
       });
-
     });
+
     return ret;
   }
 
