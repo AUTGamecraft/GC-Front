@@ -7,7 +7,6 @@ import {map, startWith} from 'rxjs/operators';
 import {MatLegacySnackBar as MatSnackBar} from '@angular/material/legacy-snack-bar';
 import {ErrorDialogComponent} from '../error-dialog/error-dialog.component';
 import {SuccessDialogComponent} from '../success-dialog/success-dialog.component';
-import {stringify} from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-dashboard-create-game',
