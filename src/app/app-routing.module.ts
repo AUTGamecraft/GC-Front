@@ -34,7 +34,7 @@ const routes: Routes = [
   {path: 'forgot', component: ForgotComponent},
   {path: 'newpassword', component: NewpasswordComponent},
   {path: 'games', component: GamesComponent},
-  {path: '**', component: InvalidPageComponent}  // This will catch all invalid routes
+  // {path: '**', component: InvalidPageComponent}  // This will catch all invalid routes
 ];
 
 @NgModule({
