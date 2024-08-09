@@ -2,7 +2,7 @@ import {Injectable, NgZone} from '@angular/core';
 import {Texts} from './models/Texts';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {ErrorDialogComponent} from './error-dialog/error-dialog.component';
-import {HttpClient, HttpHeaders, HttpRequest, HttpResponse} from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpRequest, HttpResponse } from '@angular/common/http';
 import {SuccessDialogComponent} from './success-dialog/success-dialog.component';
 import {Router} from '@angular/router';
 import {Observable} from 'rxjs';

@@ -23,7 +23,7 @@ import {CartComponent} from './cart/cart.component';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {SuccessDialogComponent} from './success-dialog/success-dialog.component';
-import {HttpClientModule} from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import {ForgotComponent} from './forgot/forgot.component';
 import {NewpasswordComponent} from './newpassword/newpassword.component';
 import {GamesComponent} from './games/games.component';
@@ -37,59 +37,52 @@ import {MatFormField, MatInput, MatLabel} from '@angular/material/input';
 import {MatDialogActions, MatDialogClose, MatDialogContent, MatDialogTitle} from '@angular/material/dialog';
 import {MatCard, MatCardContent, MatCardTitleGroup, MatCardModule} from '@angular/material/card';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    SignUpPageComponent,
-    HomeComponent,
-    DashboardEventComponent,
-    DashboardMediaComponent,
-    ErrorDialogComponent,
-    PeopleComponent,
-    RulesComponent,
-    InvalidPageComponent,
-    DashboardTeamsComponent,
-    DashboardCreateGameComponent,
-    EmailConfirmComponent,
-    ConfirmConfirmComponent,
-    CartComponent,
-    SuccessDialogComponent,
-    ForgotComponent,
-    NewpasswordComponent,
-    GamesComponent,
-    GameComponent,
-    GameContentComponent,
-    CreatorComponent,
-    CommentsComponent,
-    CommentComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    BrowserAnimationsModule,
-    ReactiveFormsModule,
-    MatIconModule,
-    MatExpansionModule,
-    MatBadgeModule,
-    MatSidenavModule,
-    HttpClientModule,
-    MatButton,
-    MatInput,
-    MatLabel,
-    MatDialogActions,
-    MatDialogContent,
-    MatDialogTitle,
-    MatDialogClose,
-    MatCardModule,
-    MatCard,
-    MatCardTitleGroup,
-    MatCardContent,
-    MatFormField,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        LoginComponent,
+        SignUpPageComponent,
+        HomeComponent,
+        DashboardEventComponent,
+        DashboardMediaComponent,
+        ErrorDialogComponent,
+        PeopleComponent,
+        RulesComponent,
+        InvalidPageComponent,
+        DashboardTeamsComponent,
+        DashboardCreateGameComponent,
+        EmailConfirmComponent,
+        ConfirmConfirmComponent,
+        CartComponent,
+        SuccessDialogComponent,
+        ForgotComponent,
+        NewpasswordComponent,
+        GamesComponent,
+        GameComponent,
+        GameContentComponent,
+        CreatorComponent,
+        CommentsComponent,
+        CommentComponent
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        BrowserAnimationsModule,
+        ReactiveFormsModule,
+        MatIconModule,
+        MatExpansionModule,
+        MatBadgeModule,
+        MatSidenavModule,
+        MatButton,
+        MatInput,
+        MatLabel,
+        MatDialogActions,
+        MatDialogContent,
+        MatDialogTitle,
+        MatDialogClose,
+        MatCardModule,
+        MatCard,
+        MatCardTitleGroup,
+        MatCardContent,
+        MatFormField], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule {
 }
