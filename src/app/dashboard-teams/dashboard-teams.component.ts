@@ -4,7 +4,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {Observable} from 'rxjs';
 import {PublicService} from '../public.service';
 import {map, startWith} from 'rxjs/operators';
-import {MatLegacySnackBar as MatSnackBar} from '@angular/material/legacy-snack-bar';
+import {MatSnackBar} from '@angular/material/snack-bar';
 import {ErrorDialogComponent} from '../error-dialog/error-dialog.component';
 import {SuccessDialogComponent} from '../success-dialog/success-dialog.component';
 
@@ -29,21 +29,26 @@ export class DashboardTeamsComponent implements OnInit {
   hasTeam = false;
   teamInfo: any = [];
 
-  constructor(private router: Router, public publicservice: PublicService, private snackbar: MatSnackBar, private route: ActivatedRoute) {
-    if (publicservice.logedIn) {
-      publicservice.getUser().then((r) => {
+  constructor(
+    private router: Router,
+    public publicService: PublicService,
+    private snackbar: MatSnackBar,
+    private route: ActivatedRoute
+  ) {
+    if (publicService.logedIn) {
+      publicService.getUser().then((r) => {
         this.userName = r.data.first_name;
         this.isStaff = r.data.is_staff;
         const image = document.getElementById('image') as HTMLImageElement;
         image.src = r.data.profile;
         if (r.data.team != null) {
           this.hasTeam = true;
-          publicservice.getTeam(r.data.team).then((r) => {
+          publicService.getTeam(r.data.team).then((r) => {
             this.teamInfo = r.data;
           });
         }
       });
-      publicservice.getAvailableUsers().then((r) => {
+      publicService.getAvailableUsers().then((r) => {
         for (let i = 0; i < r.data.length; i++) {
           if (!r.data[i].has_team) {
             this.usersArray.push(r.data[i]);
@@ -52,7 +57,7 @@ export class DashboardTeamsComponent implements OnInit {
         }
         this.options.sort();
       });
-      publicservice.getUserCart().then((r) => {
+      publicService.getUserCart().then((r) => {
         this.count = r.data.length;
       });
     }
@@ -72,7 +77,7 @@ export class DashboardTeamsComponent implements OnInit {
     );
     this.route.queryParams.subscribe(params => {
       if (params['mid'] != undefined || params['tid'] != undefined) {
-        this.publicservice.enrollTeam(params['mid'], params['tid']).then(() => {
+        this.publicService.enrollTeam(params['mid'], params['tid']).then(() => {
           this.snackbar.openFromComponent(SuccessDialogComponent, {
             duration: 2000,
             data: 'با موفقیت به تیم اضافه شدید!',
@@ -81,7 +86,7 @@ export class DashboardTeamsComponent implements OnInit {
             direction: 'rtl'
           });
           this.Teams();
-          if (!this.publicservice.logedIn) {
+          if (!this.publicService.logedIn) {
             this.router.navigate(['login']);
           }
         });
@@ -108,7 +113,7 @@ export class DashboardTeamsComponent implements OnInit {
   }
 
   logOut() {
-    this.publicservice.logedIn = false;
+    this.publicService.logedIn = false;
     localStorage.removeItem("Authorization");
     this.router.navigate(['home']);
   }
@@ -225,7 +230,7 @@ export class DashboardTeamsComponent implements OnInit {
     for (let i = 0; i < this.teamArray.length; i++) {
       tmp.push(this.teamArray[i].email);
     }
-    this.publicservice.createTeam(tmp).then((r) => {
+    this.publicService.createTeam(tmp).then((r) => {
       this.snackbar.openFromComponent(SuccessDialogComponent, {
         duration: 2000,
         data: 'تیم با موفقیت تشکیل شد!',

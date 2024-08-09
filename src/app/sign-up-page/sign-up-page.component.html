@@ -1,105 +1,107 @@
 <div class="signup">
-    <div class="signup-title-div">
-        <h4 class="signup-title1">
-            {{publicservice.Texts.Texts["signup1"]}}</h4>
-        
-            <div class="logo" (click)='Home()'>
-                <p class="logo-text" style="margin-left: -5px;">{{publicservice.Texts.Texts["logo1"]}}</p>
-                <img class="logo-image" src="assets/svg/dark-3d.svg">
-                <p class="logo-text" id="left-logo-text" style="margin-left: -5px;">{{publicservice.Texts.Texts["logo2"]}}</p>
-            </div>
-    </div>
-    <div class="left-div">
-        <div class="form-fields-div">
-            <div class="form-field-div">
-                <form>
-                    <mat-form-field class="form-field">
-                        <mat-label class="label">{{publicservice.Texts.Texts["signup3"]}}
-                        </mat-label>
-                        <input matInput [formControl]="emailFormControl4" id="inputName" class="input"
-                            [(ngModel)]="publicservice.Name">
-                        <mat-error *ngIf="emailFormControl4.hasError('required')" class="error">
-                            {{publicservice.Texts.Texts["signup6"]}}
-                            <strong>{{publicservice.Texts.Texts["signup5"]}}</strong>
-                            {{publicservice.Texts.Texts["signup4"]}}
-                        </mat-error>
-                    </mat-form-field>
-                </form>
-            </div>
-            <div class="form-field-div">
-                <form>
-                    <mat-form-field class="form-field">
-                        <mat-label class="label">{{publicservice.Texts.Texts["signup7"]}}
-                        </mat-label>
-                        <input matInput [formControl]="emailFormControl1" id="inputEmail" type="email"
-                            placeholder="Ex. pat@example.com" class="input" [(ngModel)]="publicservice.Email">
-                        <mat-error
-                            *ngIf="emailFormControl1.hasError('email') && !emailFormControl1.hasError('required')"
-                            class="error">
-                            {{publicservice.Texts.Texts["signup8"]}}
-                        </mat-error>
-                        <mat-error *ngIf="emailFormControl1.hasError('required')" class="error">
-                            {{publicservice.Texts.Texts["signup9"]}}
-                            <strong>{{publicservice.Texts.Texts["signup5"]}}</strong>
-                            {{publicservice.Texts.Texts["signup4"]}}
-                        </mat-error>
-                    </mat-form-field>
-                </form>
-            </div>
-            <div class="form-field-div">
-                <form>
-                    <mat-form-field class="form-field">
-                        <mat-label class="label">{{publicservice.Texts.Texts["signup10"]}}
-                        </mat-label>
-                        <input matInput [formControl]="emailFormControl2" id="inputPhone" placeholder="*********09"
-                            class="input" [(ngModel)]="publicservice.PhoneNumber" type="text" pattern="[0-9]*">
-                        <mat-error
-                            *ngIf="emailFormControl2.hasError('pattern') && !emailFormControl2.hasError('required')"
-                            class="error">
-                            {{publicservice.Texts.Texts["signup11"]}}
-                        </mat-error>
-                        <mat-error *ngIf="emailFormControl2.hasError('required')" class="error">
-                            {{publicservice.Texts.Texts["signup12"]}}
-                            <strong>{{publicservice.Texts.Texts["signup5"]}}</strong>
-                            {{publicservice.Texts.Texts["signup4"]}}
-                        </mat-error>
-                    </mat-form-field>
-                </form>
-            </div>
-            <div class="form-field-div">
-                <form>
-                    <mat-form-field class="form-field">
-                        <mat-label class="label">{{publicservice.Texts.Texts["signup13"]}}
-                        </mat-label>
-                        <input matInput [formControl]="emailFormControl3" id="inputPassword"
-                            class="input"
-                            [(ngModel)]="publicservice.Password" [type]="hide ? 'password' : 'text'">
-                        <mat-error
-                            *ngIf="emailFormControl3.hasError('minlength') && !emailFormControl3.hasError('required')"
-                            class="error">
-                            {{publicservice.Texts.Texts["signup14"]}}
-                        </mat-error>
-                        <mat-error *ngIf="emailFormControl3.hasError('required')"
-                            class="error">
-                            {{publicservice.Texts.Texts["signup15"]}}
-                            <strong>{{publicservice.Texts.Texts["signup5"]}}</strong>
-                            {{publicservice.Texts.Texts["signup4"]}}
-                        </mat-error>
-                        <button mat-icon-button matSuffix (click)="hide = !hide" type="button">
-                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                        </button>
+  <div class="signup-title-div">
+    <h4 class="signup-title1">
+      {{ publicService.Texts.Texts["signup1"] }}</h4>
 
-                    </mat-form-field>
-                </form>
-            </div>
-        </div>
-        <div>
-            <button mat-flat-button id="signUpButton" (click)="signUp()"
-                class="green-button">{{publicservice.Texts.Texts["signup16"]}}</button>
-        </div>
-        <div class="left-button">
-            <button mat-button (click)="login()"
-                class="normal-button">{{publicservice.Texts.Texts["signup17"]}}</button>
-        </div>
+    <div class="logo" (click)='Home()'>
+      <p class="logo-text" style="margin-left: -5px;">{{ publicService.Texts.Texts["logo1"] }}</p>
+      <img class="logo-image" src="assets/svg/dark-3d.svg">
+      <p class="logo-text" id="left-logo-text" style="margin-left: -5px;">{{ publicService.Texts.Texts["logo2"] }}</p>
     </div>
+  </div>
+  <div class="left-div">
+    <div class="form-fields-div">
+      <div class="form-field-div">
+        <form>
+          <mat-form-field class="form-field">
+            <mat-label class="label">{{ publicService.Texts.Texts["signup3"] }}
+            </mat-label>
+            <input matInput [formControl]="emailFormControl4" id="inputName" class="input"
+                   [(ngModel)]="publicService.Name">
+            <mat-error *ngIf="emailFormControl4.hasError('required')" class="error">
+              {{ publicService.Texts.Texts["signup6"] }}
+              <strong>{{ publicService.Texts.Texts["signup5"] }}</strong>
+              {{ publicService.Texts.Texts["signup4"] }}
+            </mat-error>
+          </mat-form-field>
+        </form>
+      </div>
+      <div class="form-field-div">
+        <form>
+          <mat-form-field class="form-field">
+            <mat-label class="label">{{ publicService.Texts.Texts["signup7"] }}
+            </mat-label>
+            <input matInput [formControl]="emailFormControl1" id="inputEmail" type="email"
+                   placeholder="Ex. pat@example.com" class="input" [(ngModel)]="publicService.Email">
+            <mat-error
+              *ngIf="emailFormControl1.hasError('email') && !emailFormControl1.hasError('required')"
+              class="error">
+              {{ publicService.Texts.Texts["signup8"] }}
+            </mat-error>
+            <mat-error *ngIf="emailFormControl1.hasError('required')" class="error">
+              {{ publicService.Texts.Texts["signup9"] }}
+              <strong>{{ publicService.Texts.Texts["signup5"] }}</strong>
+              {{ publicService.Texts.Texts["signup4"] }}
+            </mat-error>
+          </mat-form-field>
+        </form>
+      </div>
+      <div class="form-field-div">
+        <form>
+          <mat-form-field class="form-field">
+            <mat-label class="label">{{ publicService.Texts.Texts["signup10"] }}
+            </mat-label>
+            <input matInput [formControl]="emailFormControl2" id="inputPhone" placeholder="*********09"
+                   class="input" [(ngModel)]="publicService.PhoneNumber" type="text" pattern="[0-9]*">
+            <mat-error
+              *ngIf="emailFormControl2.hasError('pattern') && !emailFormControl2.hasError('required')"
+              class="error">
+              {{ publicService.Texts.Texts["signup11"] }}
+            </mat-error>
+            <mat-error *ngIf="emailFormControl2.hasError('required')" class="error">
+              {{ publicService.Texts.Texts["signup12"] }}
+              <strong>{{ publicService.Texts.Texts["signup5"] }}</strong>
+              {{ publicService.Texts.Texts["signup4"] }}
+            </mat-error>
+          </mat-form-field>
+        </form>
+      </div>
+      <div class="form-field-div">
+        <form>
+          <mat-form-field class="form-field">
+            <mat-label class="label">{{ publicService.Texts.Texts["signup13"] }}
+            </mat-label>
+            <input matInput [formControl]="emailFormControl3" id="inputPassword"
+                   class="input"
+                   [(ngModel)]="publicService.Password" [type]="hide ? 'password' : 'text'">
+            <mat-error
+              *ngIf="emailFormControl3.hasError('minlength') && !emailFormControl3.hasError('required')"
+              class="error">
+              {{ publicService.Texts.Texts["signup14"] }}
+            </mat-error>
+            <mat-error *ngIf="emailFormControl3.hasError('required')"
+                       class="error">
+              {{ publicService.Texts.Texts["signup15"] }}
+              <strong>{{ publicService.Texts.Texts["signup5"] }}</strong>
+              {{ publicService.Texts.Texts["signup4"] }}
+            </mat-error>
+            <button mat-icon-button matSuffix (click)="hide = !hide" type="button">
+              <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+
+          </mat-form-field>
+        </form>
+      </div>
+    </div>
+    <div>
+      <button mat-flat-button id="signUpButton" (click)="signUp()"
+              class="green-button">{{ publicService.Texts.Texts["signup16"] }}
+      </button>
+    </div>
+    <div class="left-button">
+      <button mat-button (click)="login()"
+              class="normal-button">{{ publicService.Texts.Texts["signup17"] }}
+      </button>
+    </div>
+  </div>
 </div>

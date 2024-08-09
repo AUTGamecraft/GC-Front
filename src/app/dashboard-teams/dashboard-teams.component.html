@@ -1,227 +1,231 @@
 <div class="whole" #dash>
-    <div class="dash-teams" id="dash">
-        <div class="logo">
-            <p class="logo-text" style="margin-left: -5px;">{{publicservice.Texts.Texts["logo1"]}}</p>
-            <img class="logo-image" (click)='Home()' src="assets/svg/dark-3d.svg">
-            <p class="logo-text" style="margin-right: -5px;">{{publicservice.Texts.Texts["logo2"]}}</p>
-        </div>
-        <div class="dash-teams-inner-div">
-            <div class="right-part">
-                <div class="right-part-header">
-                    <div class="name-image-phone">
-                        <div>
-                            <img class="user-image" id="image">
-                        </div>
-                        <p class="user-name">
-                            {{userName}}</p>
-                    </div>
-                    <div style="display: flex;justify-content: center;">
-                        <!-- <button mat-stroked-button class="outlined-button"
-                            id="outlined-button-phone">{{publicservice.Texts.Texts["dash-event5"]}}</button> -->
-                        <div *ngIf="!isStaff" style="margin: auto 0;">
-                            <button mat-stroked-button matBadge="{{count}}" matBadgePosition="before" (click)="Cart()"
-                                id="cart-button-phone"
-                                class="outlined-button">{{publicservice.Texts.Texts['cart8']}}</button>
-                        </div>
-                        <button mat-button (click)="logOut()"
-                            class="normal-button">{{publicservice.Texts.Texts["header8"]}}</button>
-                    </div>
-                </div>
-                <div class="header-buttons">
-                    <div class="right-header-button">
-                        <button mat-button style="background-color: #fafafa;" class="buttons" (click)="events()">
-                            <mat-icon>{{publicservice.Texts.Texts["dash-media11"]}}</mat-icon>
-                            {{publicservice.Texts.Texts["dash-media2"]}}
-                        </button>
-                        <!-- <button mat-button (click)="media()" style="background-color: #fafafa;" class="buttons">
-                            <mat-icon>{{publicservice.Texts.Texts["dash-media12"]}}</mat-icon>
-                            {{publicservice.Texts.Texts["dash-media3"]}}
-                        </button> -->
-                    </div>
-                    <div class="left-header-button">
-                        <button mat-button (click)="Teams()" style="background-color: #eceff1;" class="buttons">
-                            <mat-icon>{{publicservice.Texts.Texts["dash-media13"]}}</mat-icon>
-                            {{publicservice.Texts.Texts["dash-media4"]}}
-                        </button>
-                        <button mat-button (click)="gameStatus()" style="background-color: #fafafa;" class="buttons">
-                            <mat-icon>{{publicservice.Texts.Texts["dash-media14"]}}</mat-icon>
-                            {{publicservice.Texts.Texts["dash-media15"]}}
-                        </button>
-                    </div>
-                </div>
-                <!-- <button mat-stroked-button class="outlined-button">{{publicservice.Texts.Texts["dash-media5"]}}</button> -->
-                <div *ngIf="!isStaff">
-                    <button mat-stroked-button matBadge="{{count}}" matBadgePosition="before" (click)="Cart()"
-                        class="outlined-button">{{publicservice.Texts.Texts['cart8']}}</button>
-                </div>
+  <div class="dash-teams" id="dash">
+    <div class="logo">
+      <p class="logo-text" style="margin-left: -5px;">{{ publicService.Texts.Texts["logo1"] }}</p>
+      <img class="logo-image" (click)='Home()' src="assets/svg/dark-3d.svg">
+      <p class="logo-text" style="margin-right: -5px;">{{ publicService.Texts.Texts["logo2"] }}</p>
+    </div>
+    <div class="dash-teams-inner-div">
+      <div class="right-part">
+        <div class="right-part-header">
+          <div class="name-image-phone">
+            <div>
+              <img class="user-image" id="image">
             </div>
-            <div class="left-part">
-                <h1 class="events-title">
-                    {{publicservice.Texts.Texts["dash-teams1"]}}</h1>
-                <h1 *ngIf="hasTeam" class="team-name">
-                    {{teamInfo.name}}
-                </h1>
-                <div class="description">
-                    <h2 class="people">{{publicservice.Texts.Texts["dash-teams2"]}}</h2>
-                </div>
-                <div *ngIf="!hasTeam" class="team-create-whole-div">
-                    <div class="form-field-div">
-                        <form>
-                            <mat-form-field class="form-field">
-                                <mat-label class="label">{{publicservice.Texts.Texts["dash-teams4"]}}
-                                </mat-label>
-                                <input matInput [formControl]="nameFormControl" class="input"
-                                    [(ngModel)]="publicservice.Name">
-                                <mat-error *ngIf="nameFormControl.hasError('required')" class="error">
-                                    {{publicservice.Texts.Texts["dash-teams5"]}}
-                                    <strong>{{publicservice.Texts.Texts["login6"]}}</strong>
-                                    {{publicservice.Texts.Texts["login5"]}}
-                                </mat-error>
-                            </mat-form-field>
-                        </form>
-                        <form>
-                            <mat-form-field class="form-field">
-                                <mat-label class="label">{{publicservice.Texts.Texts["dash-teams6"]}}</mat-label>
-                                <input type="email" placeholder="Ex. pat@example.com" matInput [formControl]="myControl"
-                                    [matAutocomplete]="auto" id="inputEmail">
-                                <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-                                    <mat-option *ngFor="let option of filteredOptions | async;let i = index"
-                                        [value]="option" (click)="Add(option)" id="matOption">
-                                        <div class="option" [inline]="true">
-                                            <div style="display: flex;">
-                                                <img class="option-image" src="{{returnProfile(option)}}">
-                                                <p class="name">{{returnName(option)}}</p>
-                                            </div>
-                                            <p class="email">{{returnEmail(option)}}</p>
-                                        </div>
-                                    </mat-option>
-                                </mat-autocomplete>
-                            </mat-form-field>
-                        </form>
+            <p class="user-name">
+              {{ userName }}</p>
+          </div>
+          <div style="display: flex;justify-content: center;">
+            <!-- <button mat-stroked-button class="outlined-button"
+                id="outlined-button-phone">{{publicservice.Texts.Texts["dash-event5"]}}</button> -->
+            <div *ngIf="!isStaff" style="margin: auto 0;">
+              <button mat-stroked-button matBadge="{{count}}" matBadgePosition="before" (click)="Cart()"
+                      id="cart-button-phone"
+                      class="outlined-button">{{ publicService.Texts.Texts['cart8'] }}
+              </button>
+            </div>
+            <button mat-button (click)="logOut()"
+                    class="normal-button">{{ publicService.Texts.Texts["header8"] }}
+            </button>
+          </div>
+        </div>
+        <div class="header-buttons">
+          <div class="right-header-button">
+            <button mat-button style="background-color: #fafafa;" class="buttons" (click)="events()">
+              <mat-icon>{{ publicService.Texts.Texts["dash-media11"] }}</mat-icon>
+              {{ publicService.Texts.Texts["dash-media2"] }}
+            </button>
+            <!-- <button mat-button (click)="media()" style="background-color: #fafafa;" class="buttons">
+                <mat-icon>{{publicservice.Texts.Texts["dash-media12"]}}</mat-icon>
+                {{publicservice.Texts.Texts["dash-media3"]}}
+            </button> -->
+          </div>
+          <div class="left-header-button">
+            <button mat-button (click)="Teams()" style="background-color: #eceff1;" class="buttons">
+              <mat-icon>{{ publicService.Texts.Texts["dash-media13"] }}</mat-icon>
+              {{ publicService.Texts.Texts["dash-media4"] }}
+            </button>
+            <button mat-button (click)="gameStatus()" style="background-color: #fafafa;" class="buttons">
+              <mat-icon>{{ publicService.Texts.Texts["dash-media14"] }}</mat-icon>
+              {{ publicService.Texts.Texts["dash-media15"] }}
+            </button>
+          </div>
+        </div>
+        <!-- <button mat-stroked-button class="outlined-button">{{publicservice.Texts.Texts["dash-media5"]}}</button> -->
+        <div *ngIf="!isStaff">
+          <button mat-stroked-button matBadge="{{count}}" matBadgePosition="before" (click)="Cart()"
+                  class="outlined-button">{{ publicService.Texts.Texts['cart8'] }}
+          </button>
+        </div>
+      </div>
+      <div class="left-part">
+        <h1 class="events-title">
+          {{ publicService.Texts.Texts["dash-teams1"] }}</h1>
+        <h1 *ngIf="hasTeam" class="team-name">
+          {{ teamInfo.name }}
+        </h1>
+        <div class="description">
+          <h2 class="people">{{ publicService.Texts.Texts["dash-teams2"] }}</h2>
+        </div>
+        <div *ngIf="!hasTeam" class="team-create-whole-div">
+          <div class="form-field-div">
+            <form>
+              <mat-form-field class="form-field">
+                <mat-label class="label">{{ publicService.Texts.Texts["dash-teams4"] }}
+                </mat-label>
+                <input matInput [formControl]="nameFormControl" class="input"
+                       [(ngModel)]="publicService.Name">
+                <mat-error *ngIf="nameFormControl.hasError('required')" class="error">
+                  {{ publicService.Texts.Texts["dash-teams5"] }}
+                  <strong>{{ publicService.Texts.Texts["login6"] }}</strong>
+                  {{ publicService.Texts.Texts["login5"] }}
+                </mat-error>
+              </mat-form-field>
+            </form>
+            <form>
+              <mat-form-field class="form-field">
+                <mat-label class="label">{{ publicService.Texts.Texts["dash-teams6"] }}</mat-label>
+                <input type="email" placeholder="Ex. pat@example.com" matInput [formControl]="myControl"
+                       [matAutocomplete]="auto" id="inputEmail">
+                <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                  <mat-option *ngFor="let option of filteredOptions | async;let i = index"
+                              [value]="option" (click)="Add(option)" id="matOption">
+                    <div class="option" [inline]="true">
+                      <div style="display: flex;">
+                        <img class="option-image" src="{{returnProfile(option)}}">
+                        <p class="name">{{ returnName(option) }}</p>
+                      </div>
+                      <p class="email">{{ returnEmail(option) }}</p>
                     </div>
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
+            </form>
+          </div>
 
-                    <div style="width: 100%;box-sizing: border-box;">
-                        <div *ngIf="isEmpty">
-                            <p class="no-one-text">هیچکس انتخاب نشده</p>
-                        </div>
-                        <div style="width: 100%;box-sizing: border-box;" *ngIf="!isEmpty">
-                            <div class="chosen-people"
-                                *ngFor="let user of teamArray;let i = index">
-                                <div class="chosen-user" [inline]="true">
-                                    <div style="display: flex;">
-                                        <img class="option-image" src="{{user.profile}}">
-                                        <p class="name">{{user.first_name}}</p>
-                                    </div>
-                                    <p class="email">{{user.email}}</p>
-                                </div>
-                                <div>
-                                    <button class="remove-user-button"
-                                        (click)="removeUser(i)" mat-button>
-                                        <mat-icon>remove</mat-icon>
-                                    </button>
-                                </div>
-                            </div>
-                            <button mat-flat-button (click)="confirm()" class="green-button">تایید</button>
-                            <p *ngIf="!hasTeam" class="people-discription">پس از تایید امکان تغییر وجود ندارد!</p>
-                        </div>
-                    </div>
-                </div>
-                <div *ngIf="hasTeam">
-                    <div class="team"
-                        *ngFor="let user of teamInfo.members;let i = index">
-                        <div class="team-user" [inline]="true">
-                            <div style="display: flex;">
-                                <img class="option-image" src="{{user.profile}}">
-                                <p class="name">{{user.first_name}}</p>
-                            </div>
-                            <p class="email">{{user.email}}</p>
-                        </div>
-                    </div>
-                </div>
+          <div style="width: 100%;box-sizing: border-box;">
+            <div *ngIf="isEmpty">
+              <p class="no-one-text">هیچکس انتخاب نشده</p>
             </div>
+            <div style="width: 100%;box-sizing: border-box;" *ngIf="!isEmpty">
+              <div class="chosen-people"
+                   *ngFor="let user of teamArray;let i = index">
+                <div class="chosen-user" [inline]="true">
+                  <div style="display: flex;">
+                    <img class="option-image" src="{{user.profile}}">
+                    <p class="name">{{ user.first_name }}</p>
+                  </div>
+                  <p class="email">{{ user.email }}</p>
+                </div>
+                <div>
+                  <button class="remove-user-button"
+                          (click)="removeUser(i)" mat-button>
+                    <mat-icon>remove</mat-icon>
+                  </button>
+                </div>
+              </div>
+              <button mat-flat-button (click)="confirm()" class="green-button">تایید</button>
+              <p *ngIf="!hasTeam" class="people-discription">پس از تایید امکان تغییر وجود ندارد!</p>
+            </div>
+          </div>
         </div>
+        <div *ngIf="hasTeam">
+          <div class="team"
+               *ngFor="let user of teamInfo.members;let i = index">
+            <div class="team-user" [inline]="true">
+              <div style="display: flex;">
+                <img class="option-image" src="{{user.profile}}">
+                <p class="name">{{ user.first_name }}</p>
+              </div>
+              <p class="email">{{ user.email }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="footer-whole-div">
-        <img class="purple-wave-above-footer" src="assets/svg/wave-purple.svg">
-        <div class="footer-div">
-            <div class="discription-footer-div">
-                <div class="discription-right-footer-div">
-                    <div class="discription-right-footer-about-div">
-                        <h1 class="discription-right-footer-about-title">
-                            {{publicservice.Texts.Texts["home37"]}}</h1>
-                        <p class="discription-right-footer-about-discription">
-                            {{publicservice.Texts.Texts["home39"]}}
-                            <br>
-                            {{publicservice.Texts.Texts["home62"]}}
-                        </p>
-                        <div style="text-align: center;">
-                            <button mat-flat-button (click)="People()"
-                                class="green-button">{{publicservice.Texts.Texts["home47"]}}</button>
-                                <div class="footer-image-div-phone">
-                                    <img class="footer-image" src="assets/images/folan.png">
-                                </div>
-                        </div>
-                    </div>
-                    <div class="discription-right-footer-bubble">
-                    </div>
-                </div>
-                <div class="footer-image-div">
-                    <img class="footer-image" src="assets/images/folan.png">
-                </div>
+  </div>
+  <div class="footer-whole-div">
+    <img class="purple-wave-above-footer" src="assets/svg/wave-purple.svg">
+    <div class="footer-div">
+      <div class="discription-footer-div">
+        <div class="discription-right-footer-div">
+          <div class="discription-right-footer-about-div">
+            <h1 class="discription-right-footer-about-title">
+              {{ publicService.Texts.Texts["home37"] }}</h1>
+            <p class="discription-right-footer-about-discription">
+              {{ publicService.Texts.Texts["home39"] }}
+              <br>
+              {{ publicService.Texts.Texts["home62"] }}
+            </p>
+            <div style="text-align: center;">
+              <button mat-flat-button (click)="People()"
+                      class="green-button">{{ publicService.Texts.Texts["home47"] }}
+              </button>
+              <div class="footer-image-div-phone">
+                <img class="footer-image" src="assets/images/folan.png">
+              </div>
             </div>
-            <div class="supporters-div">
-                <h1 class="supporters-title">
-                    {{publicservice.Texts.Texts["home40"]}}
-                </h1>
-                <div class="supporters-card-div">
-                    <!-- <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/institue.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/funtory.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/tod.png">
-                    </div> -->
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/dropout.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/medrick-logo.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/dream-event.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/pgj.png">
-                    </div>
-                </div>
-                <!-- <div class="supporters-card-div">
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/avngames.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/brainladder.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/IranServer.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/black-cube.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/myket.png">
-                    </div>
-                </div> -->
+          </div>
+          <div class="discription-right-footer-bubble">
+          </div>
+        </div>
+        <div class="footer-image-div">
+          <img class="footer-image" src="assets/images/folan.png">
+        </div>
+      </div>
+      <div class="supporters-div">
+        <h1 class="supporters-title">
+          {{ publicService.Texts.Texts["home40"] }}
+        </h1>
+        <div class="supporters-card-div">
+          <!-- <div class="supportes-card-image-div">
+              <img class="supporters-card-image" src="assets/images/institue.png">
+          </div>
+          <div class="supportes-card-image-div">
+              <img class="supporters-card-image" src="assets/images/funtory.png">
+          </div>
+          <div class="supportes-card-image-div">
+              <img class="supporters-card-image" src="assets/images/tod.png">
+          </div> -->
+          <div class="supportes-card-image-div">
+            <img class="supporters-card-image" src="assets/images/dropout.png">
+          </div>
+          <div class="supportes-card-image-div">
+            <img class="supporters-card-image" src="assets/images/medrick-logo.png">
+          </div>
+          <div class="supportes-card-image-div">
+            <img class="supporters-card-image" src="assets/images/dream-event.png">
+          </div>
+          <div class="supportes-card-image-div">
+            <img class="supporters-card-image" src="assets/images/pgj.png">
+          </div>
+        </div>
+        <!-- <div class="supporters-card-div">
+            <div class="supportes-card-image-div">
+                <img class="supporters-card-image" src="assets/images/avngames.png">
             </div>
+            <div class="supportes-card-image-div">
+                <img class="supporters-card-image" src="assets/images/brainladder.png">
+            </div>
+            <div class="supportes-card-image-div">
+                <img class="supporters-card-image" src="assets/images/IranServer.png">
+            </div>
+            <div class="supportes-card-image-div">
+                <img class="supporters-card-image" src="assets/images/black-cube.png">
+            </div>
+            <div class="supportes-card-image-div">
+                <img class="supporters-card-image" src="assets/images/myket.png">
+            </div>
+        </div> -->
+      </div>
 
-        </div>
     </div>
-    <div class="developers-div">
-        <div class="developers-image">
-            <!-- <img class="ssc-image" src="assets/images/Asset 4.png"> -->
-            <img class="ssc-image" src="assets/images/ssc_white.png">
-        </div>
-        <p class="developers">{{publicservice.Texts.Texts["home42"]}}</p>
+  </div>
+  <div class="developers-div">
+    <div class="developers-image">
+      <!-- <img class="ssc-image" src="assets/images/Asset 4.png"> -->
+      <img class="ssc-image" src="assets/images/ssc_white.png">
     </div>
+    <p class="developers">{{ publicService.Texts.Texts["home42"] }}</p>
+  </div>
 </div>

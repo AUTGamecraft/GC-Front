@@ -1,7 +1,7 @@
 import {Component, OnInit, Input} from '@angular/core';
-import {MatLegacyDialog as MatDialog} from "@angular/material/legacy-dialog";
-import {GameContentComponent} from "../game-content/game-content.component";
-import { PublicService } from '../public.service';
+import {MatDialog} from '@angular/material/dialog';
+import {GameContentComponent} from '../game-content/game-content.component';
+import {PublicService} from '../public.service';
 
 @Component({
   selector: 'app-game',
@@ -9,16 +9,21 @@ import { PublicService } from '../public.service';
   styleUrls: ['./game.component.scss']
 })
 export class GameComponent implements OnInit {
-  @Input() game: any
+  @Input() game: any;
 
-  constructor(public dialog: MatDialog, public publicService: PublicService) {
+  constructor(
+    public dialog: MatDialog,
+    public publicService: PublicService
+  ) {
+
   }
 
   ngOnInit(): void {
+
   }
 
   openGameDialog() {
-    const dialogInstance = this.dialog
+    const dialogInstance = this.dialog;
     const dialog = this.dialog.open(GameContentComponent, {
       data: {
         title: this.game.title,
@@ -40,7 +45,7 @@ export class GameComponent implements OnInit {
     });
   }
 
-  public Games(){
+  public Games() {
     this.publicService.router.navigate(['home']);
 
   }

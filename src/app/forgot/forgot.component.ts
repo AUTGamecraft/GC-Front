@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
-import { PublicService } from '../public.service';
-import { UntypedFormControl, Validators } from '@angular/forms';
-import { ErrorDialogComponent } from '../error-dialog/error-dialog.component';
-import {MatLegacySnackBar as MatSnackBar} from '@angular/material/legacy-snack-bar';
-import { SuccessDialogComponent } from '../../app/success-dialog/success-dialog.component';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {PublicService} from '../public.service';
+import {UntypedFormControl, Validators} from '@angular/forms';
+import {ErrorDialogComponent} from '../error-dialog/error-dialog.component';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import {SuccessDialogComponent} from '../success-dialog/success-dialog.component';
 
 @Component({
   selector: 'app-forgot',
@@ -21,14 +21,20 @@ export class ForgotComponent implements OnInit {
     Validators.required,
     Validators.minLength(8)
   ]);
-  constructor(private router: Router, public publicservice: PublicService,public snackbar: MatSnackBar) { 
+
+  constructor(
+    private router: Router,
+    public publicService: PublicService,
+    public snackbar: MatSnackBar
+  ) {
 
   }
+
   ngOnInit(): void {
 
-
   }
-  ngAfterViewInit():void{
+
+  ngAfterViewInit(): void {
     var inputEmail = document.getElementById("inputEmail");
     inputEmail.addEventListener("keyup", function (event) {
       if (event.key == 'Enter') {
@@ -37,30 +43,42 @@ export class ForgotComponent implements OnInit {
       }
     })
     var inputPassword = document.getElementById("inputPassword");
-    
+
   }
+
   sendmail() {
-    if (this.emailFormControl.status == "VALID" ) {
-       this.publicservice.sendmail().then(r => {
-         if (r.error == null) {
-           console.log(r);
-           console.log("email was sent")
-           this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'ایمیل تغییر گذرواژه با موفقیت ارسال شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
-           this.router.navigate(['login']);
-         }
-       })
-    }
-    else {
+    if (this.emailFormControl.status == "VALID") {
+      this.publicService.sendmail().then(r => {
+        if (r.error == null) {
+          console.log(r);
+          console.log("email was sent")
+          this.snackbar.openFromComponent(SuccessDialogComponent, {
+            duration: 2000,
+            data: 'ایمیل تغییر گذرواژه با موفقیت ارسال شد!',
+            panelClass: ['snackbar'],
+            verticalPosition: 'top',
+            direction: 'rtl'
+          });
+          this.router.navigate(['login']);
+        }
+      })
+    } else {
       // if (  window.innerWidth<992){
-        this.snackbar.openFromComponent(ErrorDialogComponent,{duration:2000,data:'فیلد ها را پر کنید',panelClass:['snackbar'],verticalPosition:'bottom',direction:'rtl'});
+      this.snackbar.openFromComponent(ErrorDialogComponent, {
+        duration: 2000,
+        data: 'فیلد ها را پر کنید',
+        panelClass: ['snackbar'],
+        verticalPosition: 'bottom',
+        direction: 'rtl'
+      });
       // }
       // else{
       // this.snackbar.openFromComponent(ErrorDialogComponent,{duration:2000,data:'فیلد ها را پر کنید',panelClass:['snackbar'],verticalPosition:'top',direction:'rtl'});
       // }
     }
   }
-  Home(){
-    this.router.navigate(['home'],{fragment:'home'});
+
+  Home() {
+    this.router.navigate(['home'], {fragment: 'home'});
   }
-  
 }

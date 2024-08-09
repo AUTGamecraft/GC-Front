@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { PublicService } from '../public.service';
-import { MatLegacySnackBar as MatSnackBar } from '@angular/material/legacy-snack-bar';
-import { ErrorDialogComponent } from '../error-dialog/error-dialog.component';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {PublicService} from '../public.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import {ErrorDialogComponent} from '../error-dialog/error-dialog.component';
 import * as moment from 'jalali-moment';
-import { SuccessDialogComponent } from '../success-dialog/success-dialog.component';
+import {SuccessDialogComponent} from '../success-dialog/success-dialog.component';
 
 @Component({
   selector: 'app-dashboard-event',
@@ -36,18 +36,23 @@ export class DashboardEventComponent implements OnInit {
   workshopsEndHour: any = [];
   talksStartHour: any = [];
   talksEndHour: any = [];
-  constructor(private router: Router, public publicservice: PublicService, public snackbar: MatSnackBar, private route: ActivatedRoute) {
-    if (!publicservice.logedIn) {
+
+  constructor(
+    private router: Router,
+    public publicService: PublicService,
+    public snackbar: MatSnackBar,
+    private route: ActivatedRoute
+  ) {
+    if (!publicService.logedIn) {
       this.router.navigate(['login']);
-    }
-    else {
-      publicservice.getUser().then((r) => {
+    } else {
+      publicService.getUser().then((r) => {
         this.userName = r.data.first_name;
         const image = document.getElementById('image') as HTMLImageElement;
         image.src = r.data.profile;
         this.isStaff = r.data.is_staff;
       });
-      publicservice.getUserDashboard().then((r) => {
+      publicService.getUserDashboard().then((r) => {
         //  console.log(r);
         for (let i = 0; i < r.data.length; i++) {
           if (r.data[i].workshop == null) {
@@ -74,8 +79,7 @@ export class DashboardEventComponent implements OnInit {
             }
             this.talksArray.push(r.data[i].talk);
             this.talksActive.push('deactive');
-          }
-          else {
+          } else {
             this.workshopsStartHour.push(r.data[i].workshop.start.split('T', 2)[1].split('+', 2)[0].split('.', 2)[0].split(':', 3)[0] + ":" + r.data[i].workshop.start.split('T', 2)[1].split('+', 2)[0].split('.', 2)[0].split(':', 3)[1]);
             this.workshopsEndHour.push(r.data[i].workshop.end.split('T', 2)[1].split('+', 2)[0].split('.', 2)[0].split(':', 3)[0] + ":" + r.data[i].workshop.end.split('T', 2)[1].split('+', 2)[0].split('.', 2)[0].split(':', 3)[1]);
             // console.log(this.workshopsEndHour);
@@ -104,7 +108,7 @@ export class DashboardEventComponent implements OnInit {
         }
         // console.log(this.talksArray)
       })
-      publicservice.getUserCart().then((r) => {
+      publicService.getUserCart().then((r) => {
         this.count = r.data.length;
       });
     }
@@ -115,15 +119,26 @@ export class DashboardEventComponent implements OnInit {
       this.hash = params['status'];
       if (this.hash == 'true') {
         // if (window.innerWidth > 992) {
-        this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'خریدتان با موفقیت انجام شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+        this.snackbar.openFromComponent(SuccessDialogComponent, {
+          duration: 2000,
+          data: 'خریدتان با موفقیت انجام شد!',
+          panelClass: ['snackbar'],
+          verticalPosition: 'top',
+          direction: 'rtl'
+        });
         // }
         // else {
         // this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'خریدتان با موفقیت انجام شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
         // }
-      }
-      else if (this.hash == 'false') {
+      } else if (this.hash == 'false') {
         // if (window.innerWidth > 992) {
-        this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'خطایی در خریدتان رخ داد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+        this.snackbar.openFromComponent(ErrorDialogComponent, {
+          duration: 2000,
+          data: 'خطایی در خریدتان رخ داد!',
+          panelClass: ['snackbar'],
+          verticalPosition: 'top',
+          direction: 'rtl'
+        });
         // }
         // else {
         // this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'خطایی در خریدتان رخ داد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
@@ -132,69 +147,94 @@ export class DashboardEventComponent implements OnInit {
       this.events();
     });
   }
+
   ngAfterViewInit(): void {
     if (this.router.url.split('#')[1] == 'dash') {
       setTimeout((() => this.Schedule(document.getElementById('dash'))), 200)
     }
   }
+
   Schedule(el: HTMLElement) {
-    el.scrollIntoView({ behavior: "smooth" });
+    el.scrollIntoView({behavior: "smooth"});
   }
 
   events(): void {
     const navigationDetails: string[] = ['dashboard-event'];
     this.router.navigate(navigationDetails);
   }
+
   media(): void {
     const navigationDetails2: string[] = ['dashboard-media'];
     this.router.navigate(navigationDetails2);
   }
+
   logOut() {
-    this.publicservice.logedIn = false;
+    this.publicService.logedIn = false;
     localStorage.removeItem("Authorization");
     this.router.navigate(['home']);
   }
+
   Home() {
-    this.router.navigate(['home'], { fragment: 'home' });
+    this.router.navigate(['home'], {fragment: 'home'});
   }
+
   Teams() {
     // if (window.innerWidth > 992) {
-    this.router.navigate(['dashboard-teams'], { fragment: 'dash' });
+    this.router.navigate(['dashboard-teams'], {fragment: 'dash'});
     // }
     // else {
     // th/is.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
     // }
     // this.router.navigate(['dashboard-teams']);
   }
+
   Cart() {
-    this.router.navigate(['cart'], { fragment: 'cart' });
+    this.router.navigate(['cart'], {fragment: 'cart'});
   }
+
   gameStatus() {
     this.router.navigate(['dashboard-create-game'])
   }
+
   Upload() {
     document.getElementById('imgUpload').click();
   }
+
   People() {
-    this.router.navigate(['people'], { fragment: 'people' });
+    this.router.navigate(['people'], {fragment: 'people'});
   }
+
   handleFileInput(imageInput: any) {
     this.file = imageInput.item(0);
-    this.publicservice.fileName = this.file.name;
-    this.publicservice.file = this.file;
-    this.publicservice.UpdateImage();
+    this.publicService.fileName = this.file.name;
+    this.publicService.file = this.file;
+    this.publicService.UpdateImage();
   }
+
   Enter() {
     // if(window.innerWidth>992){
-    this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+    this.snackbar.openFromComponent(ErrorDialogComponent, {
+      duration: 2000,
+      data: 'این صفحه در دست ساخت است!',
+      panelClass: ['snackbar'],
+      verticalPosition: 'top',
+      direction: 'rtl'
+    });
     // }
     // else{
     // th/is.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
     // }
   }
+
   Delete(i) {
     //console.log(this.talksArray[i]);
-    this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'حذف ارائه امکان پذیر نیست!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+    this.snackbar.openFromComponent(ErrorDialogComponent, {
+      duration: 2000,
+      data: 'حذف ارائه امکان پذیر نیست!',
+      panelClass: ['snackbar'],
+      verticalPosition: 'top',
+      direction: 'rtl'
+    });
 
     // this.publicservice.talkPk = this.talksPk[i];
     // this.publicservice.deleteTalk().then((r) => {
@@ -203,7 +243,6 @@ export class DashboardEventComponent implements OnInit {
 
 
     //   this.talksDelete[i] = 'delete';
-
 
 
     //this.totalCost = this.totalCost *((100-this.percentage)/100);

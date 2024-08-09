@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { PublicService } from '../public.service';
-import { MatLegacySnackBar as MatSnackBar } from '@angular/material/legacy-snack-bar';
-import { ErrorDialogComponent } from '../error-dialog/error-dialog.component';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {PublicService} from '../public.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import {ErrorDialogComponent} from '../error-dialog/error-dialog.component';
 import * as moment from 'jalali-moment';
-import { SuccessDialogComponent } from '../success-dialog/success-dialog.component';
+import {SuccessDialogComponent} from '../success-dialog/success-dialog.component';
 
 @Component({
   selector: 'app-cart',
@@ -20,12 +20,16 @@ export class CartComponent implements OnInit {
   isDisabled = false;
   percentage = 0;
   discounted = false;
-  constructor(private router: Router, public publicservice: PublicService, public snackbar: MatSnackBar) {
-    if (!publicservice.logedIn) {
+
+  constructor(
+    private router: Router,
+    public publicService: PublicService,
+    public snackbar: MatSnackBar
+  ) {
+    if (!publicService.logedIn) {
       this.router.navigate(['login']);
-    }
-    else {
-      publicservice.getUser().then((r) => {
+    } else {
+      publicService.getUser().then((r) => {
         if (r.data.is_staff) {
           router.navigate(['**']);
         }
@@ -33,7 +37,7 @@ export class CartComponent implements OnInit {
         const image = document.getElementById('image') as HTMLImageElement;
         image.src = r.data.profile;
       });
-      publicservice.getUserCart().then((r) => {
+      publicService.getUserCart().then((r) => {
         console.log(r);
         this.cartArray = r.data;
         this.count = this.cartArray.length;
@@ -49,31 +53,40 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
   ngAfterViewInit(): void {
     if (this.router.url.split('#')[1] == 'cart') {
       setTimeout((() => this.Schedule(document.getElementById('cart'))), 200)
     }
   }
+
   Schedule(el: HTMLElement) {
-    el.scrollIntoView({ behavior: "smooth" });
+    el.scrollIntoView({behavior: "smooth"});
   }
+
   Discount() {
     if (this.discounted) {
       return;
     }
     if (this.totalCost == 0) {
       // if (window.innerWidth > 992) {
-      this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'سبد خرید شما خالی است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      this.snackbar.openFromComponent(ErrorDialogComponent, {
+        duration: 2000,
+        data: 'سبد خرید شما خالی است!',
+        panelClass: ['snackbar'],
+        verticalPosition: 'top',
+        direction: 'rtl'
+      });
       // }
       // else {
       // this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'سبد خرید شما خالی است!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
       // }
       return;
     }
-    if (this.publicservice.discount_code == "") {
+    if (this.publicService.discount_code == "") {
       return
     }
-    this.publicservice.checkDiscount().then((r) => {
+    this.publicService.checkDiscount().then((r) => {
       if (this.discounted) {
         return;
       }
@@ -83,67 +96,89 @@ export class CartComponent implements OnInit {
       this.totalCost = this.totalCost * (100 - this.percentage) / 100;
       this.discounted = true;
       // if (window.innerWidth > 992) {
-      this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'کد تخفیف اعمال شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      this.snackbar.openFromComponent(SuccessDialogComponent, {
+        duration: 2000,
+        data: 'کد تخفیف اعمال شد!',
+        panelClass: ['snackbar'],
+        verticalPosition: 'top',
+        direction: 'rtl'
+      });
       // }/
       // else {
       // this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'کد تخفیف اعمال شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
       // }
 
 
-
     })
 
   }
+
   Home() {
-    this.router.navigate(['home'], { fragment: 'home' });
+    this.router.navigate(['home'], {fragment: 'home'});
   }
+
   People() {
-    this.router.navigate(['people'], { fragment: 'people' });
+    this.router.navigate(['people'], {fragment: 'people'});
   }
+
   Upload() {
     document.getElementById('imgUpload').click();
   }
+
   handleFileInput(imageInput: any) {
     const file = imageInput.item(0);
     const reader = new FileReader();
     reader.readAsDataURL(file);
-    // console.log(file); 
-    this.publicservice.fileName = file.name;
-    this.publicservice.UpdateImage();
+    // console.log(file);
+    this.publicService.fileName = file.name;
+    this.publicService.UpdateImage();
   }
+
   logOut() {
-    this.publicservice.logedIn = false;
+    this.publicService.logedIn = false;
     localStorage.removeItem("Authorization");
     this.router.navigate(['home']);
   }
+
   events(): void {
     const navigationDetails: string[] = ['dashboard-event'];
     this.router.navigate(navigationDetails);
   }
+
   media(): void {
     const navigationDetails2: string[] = ['dashboard-media'];
     this.router.navigate(navigationDetails2);
   }
+
   Teams() {
     // if (window.innerWidth > 992) {
-    this.router.navigate(['dashboard-teams'], { fragment: 'dash' });
+    this.router.navigate(['dashboard-teams'], {fragment: 'dash'});
     // }
     // else {
     // this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'این صفحه در دست ساخت است!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
     // }
     // this.router.navigate(['dashboard-teams']);
   }
+
   gameStatus() {
     this.router.navigate(['dashboard-create-game'])
   }
+
   Cart() {
     this.router.navigate(['cart']);
   }
+
   Delete(i) {
-    this.publicservice.workshopPk = this.cartArray[i].pk
-    this.publicservice.deleteCartItem().then((r) => {
+    this.publicService.workshopPk = this.cartArray[i].pk
+    this.publicService.deleteCartItem().then((r) => {
       // if (window.innerWidth > 992) {
-      this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'کارگاه با موفقیت از سبد خریدتان حذف شد!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      this.snackbar.openFromComponent(SuccessDialogComponent, {
+        duration: 2000,
+        data: 'کارگاه با موفقیت از سبد خریدتان حذف شد!',
+        panelClass: ['snackbar'],
+        verticalPosition: 'top',
+        direction: 'rtl'
+      });
       // }
       // else {
       // this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'کارگاه با موفقیت از سبد خریدتان حذف شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
@@ -157,11 +192,18 @@ export class CartComponent implements OnInit {
       this.count = this.count - 1;
     })
   }
+
   Pay() {
     // console.log(this.totalCost);
     if (this.totalCost == 0) {
       // if (window.innerWidth > 992) {
-      this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'سبد خرید شما خالی است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      this.snackbar.openFromComponent(ErrorDialogComponent, {
+        duration: 2000,
+        data: 'سبد خرید شما خالی است!',
+        panelClass: ['snackbar'],
+        verticalPosition: 'top',
+        direction: 'rtl'
+      });
       // }
       // else {
       // this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'سبد خرید شما خالی است!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
@@ -170,9 +212,15 @@ export class CartComponent implements OnInit {
     }
     let element = <HTMLInputElement>document.getElementById('payButton');
     element.disabled = true;
-    this.publicservice.getPaymentLink().then((r) => {
+    this.publicService.getPaymentLink().then((r) => {
       // if (window.innerWidth > 992) {
-      this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'در حال انتقال به صفحه ی پرداخت ...', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      this.snackbar.openFromComponent(SuccessDialogComponent, {
+        duration: 2000,
+        data: 'در حال انتقال به صفحه ی پرداخت ...',
+        panelClass: ['snackbar'],
+        verticalPosition: 'top',
+        direction: 'rtl'
+      });
       // }
       // else {
       // this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'در حال انتقال به صفحه ی پرداخت ...', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
