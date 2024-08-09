@@ -1,9 +1,8 @@
 import {Injectable, NgZone} from '@angular/core';
 import {Texts} from './models/Texts';
-import {MatDialog} from '@angular/material/dialog';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {ErrorDialogComponent} from './error-dialog/error-dialog.component';
-import {HttpClient, HttpHeaders, HttpRequest, HttpResponse} from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpRequest, HttpResponse } from '@angular/common/http';
 import {SuccessDialogComponent} from './success-dialog/success-dialog.component';
 import {Router} from '@angular/router';
 import {Observable} from 'rxjs';
@@ -69,17 +68,15 @@ export class PublicService {
 
   constructor(
     private http: HttpClient,
-    public dialog: MatDialog,
     public snackbar: MatSnackBar,
     public router: Router,
-    private zone: NgZone
   ) {
     this.Authorization = localStorage.getItem("Authorization");
+
     if (this.Authorization != null) {
       this.logedIn = true;
     }
-    // this.dialog..PublicService=this;
-    // this.Mockup();
+
     this.Texts.Init();
   }
 
@@ -91,7 +88,6 @@ export class PublicService {
     h = h.set('Authorization', 'Bearer ' + this.Authorization);
     const req = new HttpRequest("PUT", this.ApiUrl + '/api/v2/users/profile/update/', uploadData, {headers: h});
     this.http.request(req).toPromise().then((r) => {
-      // if (window.innerWidth > 992) {
       this.snackbar.openFromComponent(SuccessDialogComponent, {
         duration: 2000,
         data: 'عکس با موفقیت آپلود شد!',
@@ -99,10 +95,6 @@ export class PublicService {
         verticalPosition: 'top',
         direction: 'rtl'
       });
-      // }
-      // else {
-      // this.snackbar.openFromComponent(SuccessDialogComponent, { duration: 2000, data: 'عکس با موفقیت آپلود شد!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
-      // }
       location.reload();
     })
   }
@@ -171,7 +163,6 @@ export class PublicService {
         verticalPosition: 'top',
         direction: 'rtl'
       });
-
     });
 
     return ret;

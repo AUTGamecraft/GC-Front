@@ -1,6 +1,6 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
-import {PublicService} from "../public.service";
+import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {PublicService} from '../public.service';
 
 export interface DialogData {
   game_code: number;
@@ -22,7 +22,7 @@ export class CommentsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log("inside comment========")
+    console.log('inside comment========')
     this.publicservice.getComments(this.data.game_code).subscribe(res => {
       let comments = res.body
       comments = comments.map(element => {

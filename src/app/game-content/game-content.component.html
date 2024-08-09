@@ -1,19 +1,23 @@
 <div *ngIf="!showComments" class="game-dialog">
-  <h2 mat-dialog-title class="title">{{data.title}}</h2>
+  <h2 mat-dialog-title class="title">{{ data.title }}</h2>
   <mat-dialog-content class="mat-typography content">
     <div style="text-align: center">
       <img src="{{data.poster}}" alt="Game Poster" class="poster" style="min-width: 65%;max-width: 95%">
     </div>
-    <h1 style="font-family: 'Estedad-Bold', sans-serif; font-size: x-large; direction: rtl;">{{data.title}}</h1>
-    <h2 style="font-family: 'Estedad-SemiBold', sans-serif; font-size: x-large; direction: rtl;">{{data.team.name}}</h2>
+    <h1 style="font-family: 'Estedad-Bold', sans-serif; font-size: x-large; direction: rtl;">{{ data.title }}</h1>
+    <h2
+      style="font-family: 'Estedad-SemiBold', sans-serif; font-size: x-large; direction: rtl;">{{ data.team.name }}</h2>
     <div style="display: flex; flex-direction: row; justify-content: end;">
       <div style="padding-bottom: 20px" dir="rtl">
-        {{data.likes.length}} لایک&nbsp; {{!publicservice.logedIn ? "(برای لایک کردن باید لاگین کنید)":""}}
+        {{ data.likes.length }} لایک&nbsp; {{ !publicService.logedIn ? "(برای لایک کردن باید لاگین کنید)" : "" }}
       </div>
       &nbsp;
       <div>
-        <mat-icon *ngIf="isLiked" (click)="handleFav()" class="fav-icon" style="color:red; font-size: 2rem;">favorite</mat-icon>
-        <mat-icon *ngIf="!isLiked" (click)="handleFav()" class="fav-icon" style="color:red; font-size: 2rem;">favorite_border</mat-icon>
+        <mat-icon *ngIf="isLiked" (click)="handleFav()" class="fav-icon" style="color:red; font-size: 2rem;">favorite
+        </mat-icon>
+        <mat-icon *ngIf="!isLiked" (click)="handleFav()" class="fav-icon" style="color:red; font-size: 2rem;">
+          favorite_border
+        </mat-icon>
       </div>
     </div>
     <p style="direction: rtl;" [innerHTML]="data.description">
@@ -22,7 +26,7 @@
     <app-creator *ngFor="let creator of data.team.members" [creator]="creator" style="direction: rtl;"></app-creator>
   </mat-dialog-content>
   <mat-dialog-actions align="end">
-  <!--  <button mat-button (click)="openGameDialog()" class="button">نظرات</button>-->
+    <!--  <button mat-button (click)="openGameDialog()" class="button">نظرات</button>-->
     <button mat-button mat-dialog-close class="button">بازگشت</button>
     <button mat-button (click)="openComments()" class="button">نظرات</button>
     <a href="{{data.link}}" target="_blank" rel="noopener noreferrer" class="link">
@@ -31,21 +35,24 @@
   </mat-dialog-actions>
 </div>
 
-<div *ngIf="showComments"  class="game-dialog">
+<div *ngIf="showComments" class="game-dialog">
   <h2 mat-dialog-title class="title">نظرات</h2>
   <mat-dialog-content class="mat-typography content">
     <app-comment *ngFor="let comment of comments" [comment]="comment" style="direction: rtl;"></app-comment>
   </mat-dialog-content>
   <div style="width: 100%; display: flex; flex-direction: row; justify-content: flex-start;">
-    <textarea [(ngModel)]="commentToSubmit.text" dir="rtl" placeholder="به این بازی نظر بده!" rows="2" name="comment[text]" id="comment_text" class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true"></textarea>
+    <textarea [(ngModel)]="commentToSubmit.text" dir="rtl" placeholder="به این بازی نظر بده!" rows="2"
+              name="comment[text]" id="comment_text" class="ui-autocomplete-input" autocomplete="off" role="textbox"
+              aria-autocomplete="list" aria-haspopup="true"></textarea>
   </div>
   <mat-dialog-actions align="end" style="display:flex; flex-direction: row; justify-content: space-between;">
     <span style="margin-bottom: 10px;">
-      <button [disabled]="!publicservice.logedIn || commentToSubmit.text.length === 0" mat-button class="button" style="background-color: #6af9c5;color: #3d3a7d;" (click)="submitComment()">
-        <span *ngIf="publicservice.logedIn">
+      <button [disabled]="!publicService.logedIn || commentToSubmit.text.length === 0" mat-button class="button"
+              style="background-color: #6af9c5;color: #3d3a7d;" (click)="submitComment()">
+        <span *ngIf="publicService.logedIn">
           ثبت نظر
         </span>
-        <span dir="rtl"  *ngIf="!publicservice.logedIn">
+        <span dir="rtl" *ngIf="!publicService.logedIn">
           برای ثبت نظر باید لاگین کنید!
         </span>
       </button>

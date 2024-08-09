@@ -10,54 +10,54 @@
                 <div class="right-header">
                     <div class="right-button">
                         <button mat-button class="normal-button"
-                            (click)="Schedule()">{{publicservice.Texts.Texts["header2"]}}</button>
+                            (click)="Schedule()">{{publicService.Texts.Texts["header2"]}}</button>
                     </div>
                     <div class="right-button">
                         <button mat-button (click)="Rules()" id="rules-button"
-                            class="normal-button">{{publicservice.Texts.Texts["header11"]}}</button>
+                            class="normal-button">{{publicService.Texts.Texts["header11"]}}</button>
                     </div>
                     <div class="right-button">
                         <button mat-button (click)="Workshop()"
-                            class="normal-button">{{publicservice.Texts.Texts["header3"]}}</button>
+                            class="normal-button">{{publicService.Texts.Texts["header3"]}}</button>
                     </div>
                     <div class="right-button">
                         <button mat-button (click)="Talk()"
-                            class="normal-button">{{publicservice.Texts.Texts["header4"]}}</button>
+                            class="normal-button">{{publicService.Texts.Texts["header4"]}}</button>
                     </div>
                     <div class="right-button">
                         <button mat-button class="normal-button" (click)="Games()"
-                                id="people-button">{{publicservice.Texts.Texts["header14"]}}</button>
+                                id="people-button">{{publicService.Texts.Texts["header14"]}}</button>
                     </div>
                     <div class="right-button">
                         <button mat-button (click)="Footer(footer)"
-                            class="normal-button">{{publicservice.Texts.Texts["header5"]}}</button>
+                            class="normal-button">{{publicService.Texts.Texts["header5"]}}</button>
                     </div>
                     <div class="right-button">
                         <button mat-button (click)="People()" class="normal-button"
-                            id="people-button">{{publicservice.Texts.Texts["header12"]}}</button>
+                            id="people-button">{{publicService.Texts.Texts["header12"]}}</button>
                     </div>
                 </div>
             </div>
             <div class="left-header">
                 <div class="left-header-line"></div>
-                <div class="before-login" *ngIf="!publicservice.logedIn">
+                <div class="before-login" *ngIf="!publicService.logedIn">
                     <div class="left-button">
                         <button mat-button (click)="login()"
-                            class="normal-button">{{publicservice.Texts.Texts["header6"]}}</button>
+                            class="normal-button">{{publicService.Texts.Texts["header6"]}}</button>
                     </div>
                     <div>
                         <button mat-flat-button (click)="Signup()"
-                            class="green-button">{{publicservice.Texts.Texts["header7"]}}</button>
+                            class="green-button">{{publicService.Texts.Texts["header7"]}}</button>
                     </div>
                 </div>
-                <div class="after-login" *ngIf="publicservice.logedIn">
+                <div class="after-login" *ngIf="publicService.logedIn">
                     <div class="left-button">
                         <button mat-button [disabled]="true" class="normal-button">{{userName}}</button>
                     </div>
 
                     <div>
                         <button mat-flat-button class="green-button"
-                            (click)="Dashboard()">{{publicservice.Texts.Texts["header9"]}}</button>
+                            (click)="Dashboard()">{{publicService.Texts.Texts["header9"]}}</button>
                     </div>
                 </div>
             </div>
@@ -79,18 +79,18 @@
                 <mat-sidenav-content class="side-route">
                     <mat-divider class="side-divider"></mat-divider>
                     <div class="side-button-1">
-                        <div *ngIf="!publicservice.logedIn">
+                        <div *ngIf="!publicService.logedIn">
                             <button mat-button (click)="login()"
-                                class="normal-button">{{publicservice.Texts.Texts["header6"]}}</button>
+                                class="normal-button">{{publicService.Texts.Texts["header6"]}}</button>
                             <button mat-flat-button (click)="Signup()"
-                                class="normal-button-1">{{publicservice.Texts.Texts["header7"]}}</button>
+                                class="normal-button-1">{{publicService.Texts.Texts["header7"]}}</button>
                         </div>
-                        <div *ngIf="publicservice.logedIn">
+                        <div *ngIf="publicService.logedIn">
                             <div class="left-button">
                                 <button mat-button [disabled]="true" class="normal-button">{{userName}}</button>
 
                                 <button mat-flat-button class="normal-button-1"
-                                    (click)="Dashboard()">{{publicservice.Texts.Texts["header9"]}}</button>
+                                    (click)="Dashboard()">{{publicService.Texts.Texts["header9"]}}</button>
                             </div>
 
 
@@ -100,37 +100,37 @@
 
                     <div class="side-button">
                         <button mat-button class="normal-button"
-                            (click)="Schedule(schedule)">{{publicservice.Texts.Texts["header2"]}}</button>
+                            (click)="Schedule(schedule)">{{publicService.Texts.Texts["header2"]}}</button>
                     </div>
                     <mat-divider class="side-divider"></mat-divider>
                     <div class="side-button">
                         <button mat-button (click)="Rules()"
-                            class="normal-button">{{publicservice.Texts.Texts["header11"]}}</button>
+                            class="normal-button">{{publicService.Texts.Texts["header11"]}}</button>
                     </div>
                     <mat-divider class="side-divider"></mat-divider>
                     <div class="side-button">
                         <button mat-button (click)="Workshop(workshop)"
-                            class="normal-button">{{publicservice.Texts.Texts["header3"]}}</button>
+                            class="normal-button">{{publicService.Texts.Texts["header3"]}}</button>
                     </div>
                     <mat-divider class="side-divider"></mat-divider>
                     <div class="side-button">
                         <button mat-button (click)="Talk(talk)"
-                            class="normal-button">{{publicservice.Texts.Texts["header4"]}}</button>
+                            class="normal-button">{{publicService.Texts.Texts["header4"]}}</button>
                     </div>
                     <mat-divider class="side-divider"></mat-divider>
                     <div class="side-button">
                         <button mat-button (click)="Games()"
-                                class="normal-button">{{publicservice.Texts.Texts["header14"]}}</button>
+                                class="normal-button">{{publicService.Texts.Texts["header14"]}}</button>
                     </div>
                     <mat-divider class="side-divider"></mat-divider>
                     <div class="side-button">
                         <button mat-button (click)="Talk(footer)"
-                            class="normal-button">{{publicservice.Texts.Texts["header5"]}}</button>
+                            class="normal-button">{{publicService.Texts.Texts["header5"]}}</button>
                     </div>
                     <mat-divider class="side-divider"></mat-divider>
                     <div class="side-button">
                         <button mat-button (click)="People()"
-                            class="normal-button">{{publicservice.Texts.Texts["header12"]}}</button>
+                            class="normal-button">{{publicService.Texts.Texts["header12"]}}</button>
                     </div>
                     <mat-divider class="side-divider"></mat-divider>
 
@@ -143,13 +143,13 @@
     <div class="introduction-div" dir="rtl">
         <div class="white-part">
             <div class="inside-white-part">
-                <h1 class="rules-title">{{publicservice.Texts.Texts['rules1']}}</h1>
+                <h1 class="rules-title">{{publicService.Texts.Texts['rules1']}}</h1>
                 <h1 class="rules-subtitle2" style="text-align: center;">
                     تم مسابقه به‌هنگام شروع مسابقه اعلام خواهد شد.</h1>
                 <h1 class="rules-subtitle1">چگونه در مسابقه شرکت کنیم؟</h1>
                 <p class="text">
                     برای ثبت‌نام، ابتدا باید در سایت رویداد حساب­ ­­کاربری بسازید و سپس تیم خود را در قسمت داشبورد تکمیل کنید.
-                    برای پیدا کردن هم‌تیمی و مطلع شدن از آخرین اخبار مسابقه، حتماً در 
+                    برای پیدا کردن هم‌تیمی و مطلع شدن از آخرین اخبار مسابقه، حتماً در
                     <!-- <a href="https://discord.gg/SpUZ89KKbn">سرور دیسکورد</a> و  -->
                     <a href="https://t.me/AUTGamecraft">کانال تلگرام</a> رویداد
                     عضو شوید.</p>
@@ -207,15 +207,15 @@
                 <div class="discription-right-footer-div">
                     <div class="discription-right-footer-about-div">
                         <h1 class="discription-right-footer-about-title">
-                            {{publicservice.Texts.Texts["home37"]}}</h1>
+                            {{publicService.Texts.Texts["home37"]}}</h1>
                         <p class="discription-right-footer-about-discription">
-                            {{publicservice.Texts.Texts["home39"]}}
+                            {{publicService.Texts.Texts["home39"]}}
                             <br>
-                            {{publicservice.Texts.Texts["home62"]}}
+                            {{publicService.Texts.Texts["home62"]}}
                         </p>
                         <div style="text-align: center;">
                             <button mat-flat-button (click)="People()" class="green-button"
-                                style="margin: 0 auto;">{{publicservice.Texts.Texts["home47"]}}</button>
+                                style="margin: 0 auto;">{{publicService.Texts.Texts["home47"]}}</button>
                             <div class="footer-image-div-phone">
                                 <img class="footer-image" src="assets/images/folan.png">
                             </div>
@@ -230,7 +230,7 @@
             </div>
             <div class="supporters-div">
                 <h1 class="supporters-title">
-                    {{publicservice.Texts.Texts["home40"]}}
+                    {{publicService.Texts.Texts["home40"]}}
                 </h1>
                 <div class="supporters-card-div">
                     <!-- <div class="supportes-card-image-div">
@@ -282,5 +282,5 @@
         <!-- <img class="ssc-image" src="assets/images/Asset 4.png"> -->
         <img class="ssc-image" src="assets/images/ssc_white.png">
     </div>
-    <p class="developers">{{publicservice.Texts.Texts["home42"]}}</p>
+    <p class="developers">{{publicService.Texts.Texts["home42"]}}</p>
 </div>

@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
-import { PublicService } from '../public.service';
-import { FormControl, Validators } from '@angular/forms';
-import { ErrorDialogComponent } from '../error-dialog/error-dialog.component';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {PublicService} from '../public.service';
+import {UntypedFormControl, Validators} from '@angular/forms';
+import {ErrorDialogComponent} from '../error-dialog/error-dialog.component';
 import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
@@ -12,15 +12,20 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 })
 export class LoginComponent implements OnInit {
   hide = true;
-  emailFormControl = new FormControl('', [
+  emailFormControl = new UntypedFormControl('', [
     Validators.required,
     Validators.email,
   ]);
-  passwordFormControl = new FormControl('', [
+  passwordFormControl = new UntypedFormControl('', [
     Validators.required,
     Validators.minLength(8)
   ]);
-  constructor(private router: Router, public publicservice: PublicService,public snackbar: MatSnackBar) { 
+
+  constructor(
+    private router: Router,
+    public publicService: PublicService,
+    public snackbar: MatSnackBar
+  ) {
 
   }
 
@@ -28,16 +33,18 @@ export class LoginComponent implements OnInit {
     const navigationDetails: string[] = ['signup'];
     this.router.navigate(navigationDetails);
   }
-  forgot():void{
+
+  forgot(): void {
     const navigationDetails2: string[] = ['forgot'];
     this.router.navigate(navigationDetails2);
 
   }
+
   ngOnInit(): void {
 
-
   }
-  ngAfterViewInit():void{
+
+  ngAfterViewInit(): void {
     var inputEmail = document.getElementById("inputEmail");
     inputEmail.addEventListener("keyup", function (event) {
       if (event.key == 'Enter') {
@@ -53,26 +60,32 @@ export class LoginComponent implements OnInit {
       }
     })
   }
+
   Login() {
     if (this.emailFormControl.status == "VALID" && this.passwordFormControl.status == "VALID") {
-      this.publicservice.Login().then(r => {
+      this.publicService.Login().then(r => {
         if (r.error == null) {
           console.log(r);
           this.router.navigate(['home'])
         }
       })
-    }
-    else {
+    } else {
       // if (  window.innerWidth<992){
-        this.snackbar.openFromComponent(ErrorDialogComponent,{duration:2000,data:'فیلد ها را پر کنید',panelClass:['snackbar'],verticalPosition:'bottom',direction:'rtl'});
+      this.snackbar.openFromComponent(ErrorDialogComponent, {
+        duration: 2000,
+        data: 'فیلد ها را پر کنید',
+        panelClass: ['snackbar'],
+        verticalPosition: 'bottom',
+        direction: 'rtl'
+      });
       // }
       // else{
       // this.snackbar.openFromComponent(ErrorDialogComponent,{duration:2000,data:'فیلد ها را پر کنید',panelClass:['snackbar'],verticalPosition:'top',direction:'rtl'});
       // }
     }
   }
-  Home(){
-    this.router.navigate(['home'],{fragment:'home'});
+
+  Home() {
+    this.router.navigate(['home'], {fragment: 'home'});
   }
-  
 }
