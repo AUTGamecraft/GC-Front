@@ -32,6 +32,10 @@ import {GameContentComponent} from './game-content/game-content.component';
 import {CreatorComponent} from './creator/creator.component';
 import {CommentsComponent} from './comments/comments.component';
 import {CommentComponent} from './comment/comment.component';
+import {MatButton} from '@angular/material/button';
+import {MatFormField, MatInput, MatLabel} from '@angular/material/input';
+import {MatDialogActions, MatDialogClose, MatDialogContent, MatDialogTitle} from '@angular/material/dialog';
+import {MatCard, MatCardContent, MatCardTitleGroup, MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -71,6 +75,18 @@ import {CommentComponent} from './comment/comment.component';
     MatBadgeModule,
     MatSidenavModule,
     HttpClientModule,
+    MatButton,
+    MatInput,
+    MatLabel,
+    MatDialogActions,
+    MatDialogContent,
+    MatDialogTitle,
+    MatDialogClose,
+    MatCardModule,
+    MatCard,
+    MatCardTitleGroup,
+    MatCardContent,
+    MatFormField,
   ],
   providers: [],
   bootstrap: [AppComponent]
