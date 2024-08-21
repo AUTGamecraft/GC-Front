@@ -360,7 +360,7 @@
         display: none;
     }
     .introduction-div {
-        padding: 24px;
+        padding: 2%;
         padding-top: 20%;
     }
     .supporters-card-image {
@@ -463,10 +463,10 @@
 }
 @media only screen and (max-width: 420px) {
     .supporters-div {
-        margin-top: 1000px;
+        margin-top: 600px;
     }
 }
-@media only screen and (max-width: 900) {
+@media only screen and (max-width: 900px) {
     .example-sidenav-container {
         /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
        causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
@@ -474,7 +474,7 @@
         position: fixed;
         flex: 1;
         width: 100%;
-        height: 30px;
+        //height: 30px;
         //display: none;
         //overflow: auto;
         //overscroll-behavior:unset;
@@ -534,40 +534,38 @@
     font-size: large;
     margin-right: 30%;
 }
-@media only screen and (max-width : 900){
+@media only screen and (max-width : 900px){
     .example-sidenav-container {
      /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
         causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
-    margin-top: px;
+    //margin-top: px;
     position: fixed;
      flex: 1;
      width: 100%;
-     height: 30px;
+     //height: 30px;
      //display: none;
      //overflow: auto;
      //overscroll-behavior:unset;
      //overscroll-behavior-block:initial;
-    
-     
- 
+
+
+
    }
  }
-   
+
  .side-route{
        width: 100%;
        background-color: #3d3a7d;
-      
-     overflow:hidden;    
- 
+       overflow:hidden;
    }
    .side-button{
-      
+
        margin-left: 70%;
        margin-right: 30%;
        direction: rtl;
       // border: solid 2px var(--primary-light);
       // border-radius: 24px;
-       
+
    }
    .side-divider{
        width: 99%;
@@ -576,8 +574,8 @@
        border: solid 1px ;
        border-color:#636198 ;
        background-color: #636198;
-    
-       //border-color: #636198 !important; 
+
+       //border-color: #636198 !important;
    }
    .supporters-card-image{
     max-width: 100%;
@@ -588,34 +586,34 @@
  //     height: 0;
  //     margin: 20px 0 0;
  //     border: solid 2px var(--primary-light);
-  
+
  //     border-top-color: #636198;
- 
+
  //   }
- 
+
  .side-button-1{
-      
+
     // margin-left: 70%;
    margin-right: 30%;
-     direction: rtl; 
+     direction: rtl;
     // display: flex;
     // justify-content: center;
     // border: solid 2px var(--primary-light);
     // border-radius: 24px;
-     
+
  }
  .normal-button-1 {
      font-family: "Estedad-Bold";
      color: #3d3a7d;
      background-color: #6af9c5;
      border-radius: 20px;
-     
+
      padding: 8px 8px 4px 4px;
      font-size: large;
      margin-right: 30%;
-     
-  
- 
+
+
+
  }
 
 
