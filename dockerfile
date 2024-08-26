@@ -1,4 +1,4 @@
-FROM node:12.11.1 AS node
+FROM node:16.14.2 AS node
 
 # ARG build_env=develpoment
 WORKDIR /dist/src/app
