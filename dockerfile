@@ -8,7 +8,7 @@ RUN npm cache clean --force
 COPY . .
 
 RUN npm install
-RUN npm run build --prod
+RUN npm run build:prod
 # RUN ls /dist/src/app/dist/
 FROM nginx:latest as nginx
 COPY --from=node /dist/src/app/dist/gdFront /usr/share/nginx/html
