@@ -526,8 +526,8 @@
         justify-content: space-between;
     }
     .header-buttons {
-        display: flex;
-        justify-content: space-evenly;
+        display: block;
+        //justify-content: space-evenly;
     }
     .outlined-button {
         display: none;

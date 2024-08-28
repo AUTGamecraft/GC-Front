@@ -90,9 +90,10 @@
 }
 .label {
   font-family: "Estedad-SemiBold";
+  color: black;
 }
 .input {
-  text-align: left;
+  text-align: right;
   font-family: "Estedad-Regular";
   color: #3d3a7d;
 }
@@ -100,7 +101,7 @@
   font-family: "Estedad-Regular";
 }
 .form-field-div {
-  margin-bottom: 15%;
+  margin-bottom: 15px;
 }
 .buttons {
   direction: rtl;
@@ -153,14 +154,13 @@
     box-sizing: border-box;
   }
   .input {
-    text-align: left;
     font-family: "Estedad-Regular";
     //width: 80%;
     margin: 0 auto;
   }
   .form-field-div {
     //width: 80%;
-    margin: 0 auto 12% auto;
+    //margin: 0 auto 12% auto;
   }
   .logo-text {
     display: initial;

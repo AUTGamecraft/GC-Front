@@ -90,9 +90,10 @@ input[type="number"] {
 }
 .label {
     font-family: "Estedad-SemiBold";
+    color: black;
 }
 .input {
-    text-align: left;
+    text-align: right;
     font-family: "Estedad-Regular";
     color: #3d3a7d;
 }
@@ -100,7 +101,7 @@ input[type="number"] {
     font-family: "Estedad-Regular";
 }
 .form-field-div {
-    margin-bottom: 40px;
+    margin-bottom: 15px;
 }
 //start of logo
 .logo {
