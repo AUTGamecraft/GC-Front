@@ -288,6 +288,7 @@
   background-color: #57B98C;
   width: 100%;
   padding-bottom: 30px;
+  //margin-top: -1px;
   // height: 210px;
   // background-repeat: no-repeat;
   // margin-top: -100px;
@@ -621,7 +622,7 @@
   // background-repeat: no-repeat;
   // background-size: 100% 100%;
   width: 100%;
-  margin-top: -10px;
+  margin-top: -1px;
   // height: 210px;
   // margin-top: -90px;
 }
@@ -1097,7 +1098,7 @@
 
   .subintro-div {
     padding: 30px;
-    padding-bottom: 0;
+    //padding-bottom: 0;
     padding-top: 20%;
   }
 
@@ -1333,7 +1334,7 @@
   .green-wave-above-wrokshops {
     margin-top: -30px;
     margin-bottom: 0;
-    background-color: #E8E7FF;
+    background-color: transparent;
   }
 
   .whole-workshop-phone {
@@ -1367,6 +1368,7 @@
     background-color: #57B98C;
     padding-top: 20px;
     padding-bottom: 20px;
+    margin-top: -1px;
   }
 
   .pink-collapse {
@@ -1484,7 +1486,7 @@
 //     display: initial;
 // }
 
-@media only screen and (max-width: 900) {
+@media only screen and (max-width: 900px) {
   .example-sidenav-container {
     /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
        causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
@@ -1492,7 +1494,7 @@
     position: fixed;
     flex: 1;
     width: 100%;
-    height: 30px;
+    //height: 30px;
     //display: none;
     //overflow: auto;
     //overscroll-behavior:unset;
@@ -1565,7 +1567,7 @@
 
 @media only screen and (max-width: 420px) {
   .supporters-div {
-    margin-top: 1000px;
+    margin-top: 500px;
   }
 }
 

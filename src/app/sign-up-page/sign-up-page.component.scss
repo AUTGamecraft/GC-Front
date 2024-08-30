@@ -52,7 +52,6 @@ input[type="number"] {
     background-color: #3d3a7d;
     height: 100%;
     background-image: url("/assets/svg/pattern.svg");
-    padding-bottom: 30px;
 }
 .signup-title-div {
     direction: rtl;
@@ -79,11 +78,11 @@ input[type="number"] {
     margin-top: 10%;
     text-align: center;
     border-radius: 20px;
-    padding: 20px 40px 20px 40px;
-    width: 20%;
+    padding: 40px;
+    width: 30%;
 }
 .form-fields-div {
-    padding: 10px;
+    //padding: 10px;
 }
 .form-field {
     text-align: right;
@@ -91,6 +90,7 @@ input[type="number"] {
 }
 .label {
     font-family: "Estedad-SemiBold";
+    color: black;
 }
 .input {
     text-align: right;
@@ -101,7 +101,7 @@ input[type="number"] {
     font-family: "Estedad-Regular";
 }
 .form-field-div {
-    margin-top: 5%;
+    margin-bottom: 15px;
 }
 //start of logo
 .logo {
@@ -143,17 +143,18 @@ input[type="number"] {
     }
     .signup {
         flex-direction: column;
-        height: 120%;
-        padding: 20px;
+        height: 100%;
+        padding: 20px 20px 100px 20px;
         box-sizing: border-box;
     }
     .form-fields-div {
         margin: 0 auto;
     }
     .left-div {
-        width: 60%;
+        width: 100%;
         margin: 0 auto;
         box-sizing: border-box;
+        padding: 20px;
     }
     .signup-title-div {
         margin: 0 auto;
@@ -171,6 +172,6 @@ input[type="number"] {
         width: 100%;
     }
     .signup {
-        padding-bottom: 50px;
+        //padding-bottom: 50px;
     }
 }

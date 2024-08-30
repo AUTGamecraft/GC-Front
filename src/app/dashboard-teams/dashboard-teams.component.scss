@@ -147,14 +147,22 @@
 .form-field {
     text-align: right;
     width: 100%;
+    margin-bottom: 15px;
 }
 .label {
     font-family: "Estedad-SemiBold";
+    color: black;
 }
 .input {
     text-align: right;
     font-family: "Estedad-Regular";
 }
+
+.mat-input-element {
+  text-align: left;
+  height: 25px;
+}
+
 .error {
     font-family: "Estedad-Regular";
 }
@@ -477,8 +485,8 @@
         margin: auto;
     }
     .header-buttons {
-        display: flex;
-        justify-content: space-evenly;
+        display: block;
+        //justify-content: space-evenly;
     }
     .right-header-button {
         width: 100%;
@@ -550,7 +558,7 @@
 }
 @media only screen and (max-width: 420px) {
     .supporters-div {
-        margin-top: 1000px;
+        margin-top: 600px;
     }
 }
 @media only screen and (max-width: 375px) {

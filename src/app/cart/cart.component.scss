@@ -86,8 +86,8 @@
     border-color: #b00020;
     width: 82px;
     height: 44px;
-    margin: auto 0; 
-    border-radius: 16px;   
+    margin: auto 0;
+    border-radius: 16px;
     border: solid 2px #b00020;
     font-family: 'Estedad-SemiBold';
     font-size: 16px;
@@ -299,8 +299,8 @@
     text-align: center;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
-    border: 1px solid white;
+    align-items: center;
+    //border: 1px solid white;
     padding: 20px;
 }
 .supportes-card-image-div {
@@ -478,8 +478,8 @@
         text-align: center;
     }
     .header-buttons {
-        display: flex;
-        justify-content: space-evenly;
+        display: block;
+        //justify-content: space-evenly;
     }
     .right-header-button {
         width: 100%;
@@ -557,6 +557,7 @@
     margin-top: 50px;
     margin-bottom: 20px;
    justify-content: space-between;
+    align-items: center;
 }
 .discount-lable{
     font-family: "Estedad-Bold";
@@ -569,6 +570,7 @@
     border-radius: 10px;
     border-color:#3d3a7d;
     padding-right: 20px;
+    min-height: 40px;
 }
 .discount-button{
     //font-family: "Estedad-Bold";
@@ -576,8 +578,8 @@
     border-color: #3d3a7d;
     width: 82px;
     height: 44px;
-    margin: auto 0; 
-    border-radius: 16px;   
+    margin: auto 0;
+    border-radius: 16px;
     border: solid 2px #3d3a7d;
     font-family: 'Estedad-SemiBold';
     font-size: 16px;

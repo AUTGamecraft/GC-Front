@@ -56,7 +56,6 @@
     justify-content: space-evenly;
     direction: rtl;
     height: 100%;
-    padding-bottom: 30px;
   }
   .login-title-div {
     direction: rtl;
@@ -81,8 +80,8 @@
     text-align: center;
     border-radius: 20px;
     height: fit-content;
-    padding: 40px 60px 40px 60px;
-    width: 20%;
+    padding: 40px;
+    width: 30%;
   }
   .form-field {
     text-align: right;
@@ -90,6 +89,7 @@
   }
   .label {
     font-family: "Estedad-SemiBold";
+    color: black;
   }
   .input {
     text-align: right;
@@ -100,14 +100,14 @@
     font-family: "Estedad-Regular";
   }
   .form-field-div {
-    margin-top: 5%;
+    margin-bottom: 15px;
   }
   .buttons {
     direction: rtl;
     text-align: center;
     margin-top: 5%;
   }
-  
+
   //start of logo
   .logo {
     padding-top: 20px;
@@ -134,7 +134,7 @@
     background-image: url("/assets/svg/pattern.svg");
     height: 100%;
   }
-  
+
   @media only screen and (max-width: 992px) {
     .login-title-div {
       margin: 0;
@@ -142,25 +142,23 @@
     .login {
       flex-direction: column;
       margin: 0 auto;
-      padding: 20px;
+      padding: 20px 20px 100px 20px;
       box-sizing: border-box;
     }
     .form-fields-div {
       flex-direction: column;
       margin: 0 auto;
-      width: 60%;
+      width: 100%;
       padding: 20px;
       box-sizing: border-box;
     }
     .input {
-      text-align: right;
       font-family: "Estedad-Regular";
-      width: 80%;
+      //width: 80%;
       margin: 0 auto;
     }
     .form-field-div {
-      width: 80%;
-      margin: 0 auto;
+      width: 100%;
     }
     .logo-text {
       display: initial;
@@ -186,6 +184,6 @@
     //padding: 9px 9px 9px 9px;
     border-radius: 24px;
     background-color: rgba(255, 255, 255, 0);
-    
-  
+
+
   }

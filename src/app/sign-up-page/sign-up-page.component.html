@@ -2,7 +2,7 @@
     <div class="signup-title-div">
         <h4 class="signup-title1">
             {{publicservice.Texts.Texts["signup1"]}}</h4>
-        
+
             <div class="logo" (click)='Home()'>
                 <p class="logo-text" style="margin-left: -5px;">{{publicservice.Texts.Texts["logo1"]}}</p>
                 <img class="logo-image" src="assets/svg/dark-3d.svg">
@@ -69,10 +69,10 @@
             <div class="form-field-div">
                 <form>
                     <mat-form-field class="form-field">
-                        <mat-label class="label">{{publicservice.Texts.Texts["signup13"]}}
+                        <mat-label class="label" style="margin-right: 16px">{{publicservice.Texts.Texts["signup13"]}}
                         </mat-label>
                         <input matInput [formControl]="emailFormControl3" id="inputPassword"
-                            class="input"
+                            class="input" style="margin-right: 16px"
                             [(ngModel)]="publicservice.Password" [type]="hide ? 'password' : 'text'">
                         <mat-error
                             *ngIf="emailFormControl3.hasError('minlength') && !emailFormControl3.hasError('required')"

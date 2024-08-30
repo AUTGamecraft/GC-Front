@@ -526,8 +526,8 @@
         justify-content: space-between;
     }
     .header-buttons {
-        display: flex;
-        justify-content: space-evenly;
+        display: block;
+        //justify-content: space-evenly;
     }
     .outlined-button {
         display: none;
@@ -671,7 +671,7 @@
 }
 @media only screen and (max-width:420px){
     .supporters-div{
-        margin-top: 1000px;
+        margin-top: 500px;
     }
 }
 @media only screen and (max-width: 375px) {
@@ -689,8 +689,8 @@
     border-color: #b00020;
     width: 82px;
     height: 44px;
-    margin: auto 0; 
-    border-radius: 16px;   
+    margin: auto 0;
+    border-radius: 16px;
     border: solid 2px #b00020;
     font-family: 'Estedad-SemiBold';
     font-size: 16px;
