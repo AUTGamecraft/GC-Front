@@ -165,6 +165,7 @@ export class Texts{
         this.FaTexts["signup15"] = "وارد کردن رمز عبور"
         this.FaTexts["signup16"] = "ثبت نام"
         this.FaTexts["signup17"] = "ورود"
+        this.FaTexts["signup18"] = "بازی موردعلاقه شما"
 
         this.FaTexts["dash-media1"] = "محتواها در google drive قرار دارند برای دانلود محتوا ها به آنجا منتقل می شوید."
         this.FaTexts["dash-media2"] = "رویداد ها"

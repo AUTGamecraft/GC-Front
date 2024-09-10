@@ -92,6 +92,16 @@
                     </mat-form-field>
                 </form>
             </div>
+            <div class="form-field-div">
+              <form>
+                <mat-form-field class="form-field">
+                  <mat-label class="label">{{publicservice.Texts.Texts["signup18"]}}
+                  </mat-label>
+                  <input matInput [formControl]="" class="input" placeholder="God of War"
+                         [(ngModel)]="publicservice.Name">
+                </mat-form-field>
+              </form>
+            </div>
         </div>
         <div>
             <button mat-flat-button id="signUpButton" (click)="signUp()"
