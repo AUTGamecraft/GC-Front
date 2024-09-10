@@ -75,7 +75,7 @@ input[type="number"] {
 .left-div {
     background-color: white;
     height: fit-content;
-    margin-top: 10%;
+    margin-top: 10vh;
     text-align: center;
     border-radius: 20px;
     padding: 40px;
@@ -146,6 +146,7 @@ input[type="number"] {
         height: 100%;
         padding: 20px 20px 100px 20px;
         box-sizing: border-box;
+        overflow: auto;
     }
     .form-fields-div {
         margin: 0 auto;
