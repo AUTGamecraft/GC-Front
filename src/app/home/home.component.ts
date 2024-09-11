@@ -72,6 +72,7 @@ export class HomeComponent implements OnInit {
         else {
           this.talksArray[index].remain_capacity = this.talksArray[index].remain_capacity + ' نفر'
         }
+        console.log(this.talksArray[index].is_registration_active)
         for (let i = 0; i < this.talksArray[index].presenters.length; i++) {
           this.isHideTalks.push('hide');
         }
@@ -177,7 +178,7 @@ export class HomeComponent implements OnInit {
     // this.icon=="menu"
     // }
 
-    // return this.icon 
+    // return this.icon
   }
 
   Dashboard() {
@@ -252,6 +253,10 @@ export class HomeComponent implements OnInit {
       // }
       return;
     }
+    else if (!(this.workshopsArray[i].is_registration_active ?? true)) {
+      this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'ثبت نام این کارگاه غیرفعال است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+      return;
+    }
     else {
       this.publicservice.workshopPk = this.workshopsArray[i].pk;
       this.publicservice.EnrollWorkshop().then(() => {
@@ -275,6 +280,10 @@ export class HomeComponent implements OnInit {
       // else {
       // this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'اول وارد شوید!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
       // }
+      return;
+    }
+    else if (!(this.talksArray[i].is_registration_active ?? true)) {
+      this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'ثبت نام این ارائه غیرفعال است!', panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
       return;
     }
     else {
@@ -306,7 +315,7 @@ export class HomeComponent implements OnInit {
   Cart(){
     this.router.navigate(['cart'], { fragment: 'cart' });
   }
-  
+
   Games(){
     this.router.navigate(['games']);
   }

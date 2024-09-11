@@ -93,14 +93,15 @@
                 </form>
             </div>
             <div class="form-field-div">
-              <form>
-                <mat-form-field class="form-field">
-                  <mat-label class="label">{{publicservice.Texts.Texts["signup18"]}}
-                  </mat-label>
-                  <input matInput [formControl]="" class="input" placeholder="God of War"
-                         [(ngModel)]="publicservice.Name">
-                </mat-form-field>
-              </form>
+                <form>
+                    <mat-form-field class="form-field">
+                        <mat-label class="label" style="margin-right: 16px">{{publicservice.Texts.Texts["signup18"]}}
+                        </mat-label>
+                        <input matInput [formControl]="favoriteGameFormControl" id="inputFavGame"
+                            class="input"
+                            [(ngModel)]="publicservice.favoriteGame" [type]="'text'">
+                    </mat-form-field>
+                </form>
             </div>
         </div>
         <div>

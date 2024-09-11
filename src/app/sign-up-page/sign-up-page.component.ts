@@ -31,6 +31,7 @@ export class SignUpPageComponent implements OnInit {
   emailFormControl4 = new UntypedFormControl('', [
     Validators.required,
   ]);
+  favoriteGameFormControl = new UntypedFormControl('', []);
   scrHeight: any;
   constructor(private router: Router, public publicservice: PublicService, private snackbar: MatSnackBar, private dialog: MatDialog) {
 

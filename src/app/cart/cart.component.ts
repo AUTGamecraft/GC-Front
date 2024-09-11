@@ -107,7 +107,7 @@ export class CartComponent implements OnInit {
     const file = imageInput.item(0);
     const reader = new FileReader();
     reader.readAsDataURL(file);
-    // console.log(file); 
+    // console.log(file);
     this.publicservice.fileName = file.name;
     this.publicservice.UpdateImage();
   }
@@ -167,6 +167,13 @@ export class CartComponent implements OnInit {
       // this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: 'سبد خرید شما خالی است!', panelClass: ['snackbar'], verticalPosition: 'bottom', direction: 'rtl' });
       // }
       return;
+    }
+    for (let item of this.cartArray) {
+      if (item?.workshop?.is_registration_active === false) {
+        this.snackbar.openFromComponent(ErrorDialogComponent, { duration: 2000, data: `مورد "${item?.workshop?.title}" غیرفعال است!
+آن را حذف کنید و دوباره امتحان کنید.`, panelClass: ['snackbar'], verticalPosition: 'top', direction: 'rtl' });
+        return
+      }
     }
     let element = <HTMLInputElement>document.getElementById('payButton');
     element.disabled = true;

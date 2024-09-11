@@ -35,6 +35,7 @@ export class PublicService {
   public discount_code: string = "";
   public newPassword: String = "";
   public newPassword2: String = "";
+  public favoriteGame: String = "";
 
   // field of create-game-component
   public createGame = {
@@ -149,7 +150,8 @@ export class PublicService {
       "phone_number": this.PhoneNumber,
       "email": this.Email.toLowerCase(),
       "first_name": this.Name,
-      "user_name": this.Email
+      "user_name": this.Email,
+      "favorite_game_title": this.favoriteGame
     });
 
     let headers = new HttpHeaders({
