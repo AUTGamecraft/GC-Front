@@ -1,967 +1,1001 @@
 <div style="width:100%;overflow: hidden;">
-    <div class="home" id="home" #home>
-        <div class="intro">
+  <div class="home" id="home" #home>
+    <div class="intro">
 
-            <div class="header">
-                <div class="whole-header" [class]="getNavClass()">
-                    <div class="big-right-header">
-                        <div class="title-div">
-                            <div class="logo">
-                                <img (click)="Schedule(home)" class="logo-image" src="assets/svg/dark-3d.svg">
-                            </div>
-                        </div>
-                        <!-- <div class="header-line">
-                        </div> -->
-                        <div class="right-header">
-                            <div class="right-button">
-                                <button mat-button class="normal-button"
-                                    (click)="Schedule(schedule)">{{publicservice.Texts.Texts["header2"]}}</button>
-                            </div>
-                            <div class="right-button">
-                                <button mat-button (click)="Rules()"
-                                    class="normal-button">{{publicservice.Texts.Texts["header11"]}}</button>
-                            </div>
-                            <div class="right-button">
-                                <button mat-button (click)="Workshop(workshop)"
-                                    class="normal-button">{{publicservice.Texts.Texts["header3"]}}</button>
-                            </div>
-                            <div class="right-button">
-                                <button mat-button (click)="Talk(talk)"
-                                    class="normal-button">{{publicservice.Texts.Texts["header4"]}}</button>
-                            </div>
-                            <div class="right-button">
-                                <button mat-button class="normal-button" (click)="Games()"
-                                        id="people-button">{{publicservice.Texts.Texts["header14"]}}</button>
-                            </div>
-                            <div class="right-button">
-                                <button mat-button (click)="Talk(footer)"
-                                    class="normal-button">{{publicservice.Texts.Texts["header5"]}}</button>
-                            </div>
-                            <div class="right-button">
-                                <button mat-button (click)="People()"
-                                    class="normal-button">{{publicservice.Texts.Texts["header12"]}}</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="left-header">
-                        <div class="left-header-line" *ngIf="!publicservice.logedIn"></div>
-                        <div class="before-login" *ngIf="!publicservice.logedIn">
-                            <div class="left-button">
-                                <button mat-button (click)="login()"
-                                    class="normal-button">{{publicservice.Texts.Texts["header6"]}}</button>
-                            </div>
-                            <div>
-                                <button mat-flat-button (click)="Signup()"
-                                    class="green-button">{{publicservice.Texts.Texts["header7"]}}</button>
-                            </div>
-                        </div>
-                        <div class="after-login" *ngIf="publicservice.logedIn">
-                            <div class="left-button">
-                                <div *ngIf="!isStaff">
-                                    <button mat-stroked-button matBadge="{{cart_count}}" matBadgePosition="before" (click)="Cart()"
-                                        class="outlined-button">
-                                        {{publicservice.Texts.Texts['cart8']}}
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="left-header-line" *ngIf="publicservice.logedIn"></div>
-
-
-                            <div class="left-button">
-                                <button mat-button [disabled]="true" class="normal-button">{{userName}}</button>
-                            </div>
-
-                            <div>
-                                <button mat-flat-button class="green-button"
-                                    (click)="Dashboard()">
-                                    {{publicservice.Texts.Texts["header9"]}}</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="whole-header-phone">
-                    <button mat-button (click)=" onPress();icon =(icon == 'menu' ? 'close' : 'menu')">
-                        <mat-icon style="color: indigo;font-size: 32px;" [inline]="true">{{icon}}</mat-icon>
-                    </button>
-                    <div class="logo" (click)="Home()">
-                        <img class="logo-image" src="assets/svg/dark-3d.svg">
-                    </div>
-
-                </div>
-                <div *ngIf="display">
-                    <mat-sidenav-container class="example-sidenav-container">
-                        <!-- <mat-sidenav #snav >
-
-                    </mat-sidenav> -->
-
-                        <mat-sidenav-content class="side-route">
-                            <mat-divider class="side-divider"></mat-divider>
-                            <div class="side-button-1">
-                                <div *ngIf="!publicservice.logedIn">
-                                    <button mat-button (click)="login()"
-                                        class="normal-button">{{publicservice.Texts.Texts["header6"]}}</button>
-                                    <button mat-flat-button (click)="Signup()"
-                                        class="normal-button-1">{{publicservice.Texts.Texts["header7"]}}</button>
-                                </div>
-                                <div *ngIf="publicservice.logedIn">
-                                    <div class="left-button">
-                                        <button mat-button [disabled]="true" class="normal-button">{{userName}}</button>
-
-                                        <button mat-flat-button class="normal-button-1"
-                                            (click)="Dashboard()">{{publicservice.Texts.Texts["header9"]}}</button>
-                                    </div>
-
-
-                                </div>
-                            </div>
-                            <mat-divider class="side-divider"></mat-divider>
-
-                            <div class="side-button">
-                                <button mat-button class="normal-button"
-                                    (click)="Schedule(schedule)">{{publicservice.Texts.Texts["header2"]}}</button>
-                            </div>
-                            <mat-divider class="side-divider"></mat-divider>
-                            <div class="side-button">
-                                <button mat-button (click)="Rules()"
-                                    class="normal-button">{{publicservice.Texts.Texts["header11"]}}</button>
-                            </div>
-                            <mat-divider class="side-divider"></mat-divider>
-                            <div class="side-button">
-                                <button mat-button (click)="Workshop(workshop)"
-                                    class="normal-button">{{publicservice.Texts.Texts["header3"]}}</button>
-                            </div>
-                            <mat-divider class="side-divider"></mat-divider>
-                            <div class="side-button">
-                                <button mat-button (click)="Talk(talk)"
-                                    class="normal-button">{{publicservice.Texts.Texts["header4"]}}</button>
-                            </div>
-                            <mat-divider class="side-divider"></mat-divider>
-                            <div class="side-button">
-                                <button mat-button (click)="Games()"
-                                        class="normal-button">{{publicservice.Texts.Texts["header14"]}}</button>
-                            </div>
-                            <mat-divider class="side-divider"></mat-divider>
-                            <div class="side-button">
-                                <button mat-button (click)="Talk(footer)"
-                                    class="normal-button">{{publicservice.Texts.Texts["header5"]}}</button>
-                            </div>
-                            <mat-divider class="side-divider"></mat-divider>
-                            <div class="side-button">
-                                <button mat-button (click)="People()"
-                                    class="normal-button">{{publicservice.Texts.Texts["header12"]}}</button>
-                            </div>
-                            <mat-divider class="side-divider"></mat-divider>
-
-
-
-                        </mat-sidenav-content>
-                    </mat-sidenav-container>
-                </div>
-
-
+      <div class="header">
+        <div class="whole-header" [class]="getNavClass()">
+          <div class="big-right-header">
+            <div class="title-div">
+              <div class="logo">
+                <img (click)="Schedule(home)" class="logo-image" src="assets/svg/dark-3d.svg">
+              </div>
             </div>
-            <div class="subintro-div">
-                <div class="intro-discription-div">
-                    <div class="intro-discription-about-div">
-                        <img src="../../assets/images/2023/hayahool.png" class="event-creature" alt="">
-                        <h1 class="intro-discription-about-title">
-                            {{publicservice.Texts.Texts["home1"]}}</h1>
-                        <p class="intro-discription-about-subtitle">
-                            {{publicservice.Texts.Texts["home2"]}}</p>
-                        <p class="intro-discription-about-discription" [innerHTML]="publicservice.Texts.Texts['home3']">
-                        </p>
-                        <div class="social-image" style="margin-bottom: 30px;">
-                            <a href="https://t.me/AUTGamecraft" target="_blank" style="margin-right:30px;">
-                                <img src='{{"assets/svg/telegram.svg"}}' style="width: 85px; height:85px; border-radius:50%; margin-top: 5px;"/>
-                            </a>
-                            <a href="https://www.instagram.com/autgamecraft/" target="_blank" style="margin-right:30px;">
-                                <img src='{{"assets/svg/instagram.svg"}}' style="width: 85px; height:85px; border-radius:50%; margin-top: 5px;"/>
-                            </a>
-                            <!-- <a href="https://discord.gg/SpUZ89KKbn" target="_blank"  style="margin-right:30px;">
-                                <img src='{{"assets/svg/discord.svg"}}' style="width: 90px; height:90px; border-radius:50%;"/>
-                            </a> -->
-                            <a href="https://twitter.com/autgamecraft" target="_blank" style="margin-right:30px;">
-                                <img src='{{"assets/svg/twitter.svg"}}' style="width: 90px; height:90px; border-radius:50%;"/>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="intro-discription-bubble">
-                    </div>
-                </div>
-                <div class="intro-image-div">
-                    <img class="intro-image" src="assets/svg/dark-3d-bulb.svg">
-                </div>
-            </div>
-            <!-- <div class="event-about-div">
-                <div class="event-about-right-div">
-                    <div class="timer-div">
-                        <p class="numbers">{{getSecond()}}</p>
-                        <p class="dots"> : </p>
-                        <p class="numbers">{{getMinute()}}</p>
-                        <p class="dots"> : </p>
-                        <p class="numbers">
-                            {{getHour()}}
-                        </p>
-                    </div>
-                    <p class="event-about-right-text">
-                        {{publicservice.Texts.Texts["home5"]}}
-                    </p>
-                </div>
-                <div class="event-about-left-div">
-                    <div>
-                        <p class="event-about-left-number">
-                            {{count}}
-                        </p>
-                    </div>
-                    <div>
-                        <p class="event-about-left-text">
-                            {{publicservice.Texts.Texts["home7"]}}
-                        </p>
-                    </div>
-                </div>
+            <!-- <div class="header-line">
             </div> -->
-        </div>
-        <div>
-            <img id="schedule" #schedule class="purple-wave-under-intro" src="assets/svg/wave-purple.svg">
-        </div>
-        <div class="event-schedule-div">
-            <div class="event-schedule-title-div">
-                <h1 class="event-schedule-title">
-                    {{publicservice.Texts.Texts["home8"]}}</h1>
+            <div class="right-header">
+              <div class="right-button">
+                <button mat-button class="normal-button"
+                        (click)="Schedule(schedule)">{{ publicservice.Texts.Texts["header2"] }}
+                </button>
+              </div>
+              <div class="right-button">
+                <button mat-button (click)="Rules()"
+                        class="normal-button">{{ publicservice.Texts.Texts["header11"] }}
+                </button>
+              </div>
+              <div class="right-button">
+                <button mat-button (click)="Workshop(workshop)"
+                        class="normal-button">{{ publicservice.Texts.Texts["header3"] }}
+                </button>
+              </div>
+              <div class="right-button">
+                <button mat-button (click)="Talk(talk)"
+                        class="normal-button">{{ publicservice.Texts.Texts["header4"] }}
+                </button>
+              </div>
+              <div class="right-button">
+                <button mat-button class="normal-button" (click)="Games()"
+                        id="people-button">{{ publicservice.Texts.Texts["header14"] }}
+                </button>
+              </div>
+              <div class="right-button">
+                <button mat-button (click)="Talk(footer)"
+                        class="normal-button">{{ publicservice.Texts.Texts["header5"] }}
+                </button>
+              </div>
+              <div class="right-button">
+                <button mat-button (click)="People()"
+                        class="normal-button">{{ publicservice.Texts.Texts["header12"] }}
+                </button>
+              </div>
             </div>
-            <div class="event-schedule-whole">
-                <div class="event-schedule-schematic">
-                    <div class="event-schedule">
-                        <div class="schedule-right-div" style="padding-right:10%">
-
-                            <div class="image" style="margin-top: 0;">
-                                <img class="schedule-image" src="assets/svg/timline-1.svg">
-                            </div>
-                            <div class="text" style="padding-top: 80%;">
-                                <h1 class="text-title">
-                                    {{publicservice.Texts.Texts["home49"]}}</h1>
-                                <h1 class="text-subtitle2">
-                                    {{publicservice.Texts.Texts["home50"]}}
-                                </h1>
-                            </div>
-                            <div class="image" style="padding-top: 90%;">
-                                <img class="schedule-image" src="assets/svg/timline-3.svg">
-                            </div>
-                            <div class="text" style="padding-top: 90%;">
-                                <h1 class="text-title">
-                                    {{publicservice.Texts.Texts["home53"]}}</h1>
-                                <h1 class="text-subtitle2">
-                                    {{publicservice.Texts.Texts["home54"]}}
-                                </h1>
-                            </div>
-
-                            <div class="image" style="padding-top: 90%;">
-                                <img class="schedule-image" src="assets/svg/timline-5.svg">
-                            </div>
-                            <div class="text" style="padding-top: 90%;">
-                                <h1 class="text-title">
-                                    {{publicservice.Texts.Texts["home13"]}}</h1>
-                                <h1 class="text-subtitle2">
-                                    {{publicservice.Texts.Texts["home14"]}}
-                                </h1>
-                            </div>
-                        </div>
-                        <div class="schedule-middle-div" style="padding-right: 2%;">
-                            <div class="Ellipse">
-                                <img src="../../assets/images/2023/hayahool.png" width="50px" height="50px" alt="">
-                            </div>
-                            <div class="Line">
-                            </div>
-                            <div class="Ellipse">
-                                <img src="../../assets/images/2023/hayahool.png" width="50px" height="50px" alt="">
-                            </div>
-                            <div class="Line">
-                            </div>
-                            <div class="Ellipse">
-                                <img src="../../assets/images/2023/hayahool.png" width="50px" height="50px" alt="">
-                            </div>
-                            <div class="Line">
-                            </div>
-                            <div class="Ellipse">
-                                <img src="../../assets/images/2023/hayahool.png" width="50px" height="50px" alt="">
-                            </div>
-                            <div class="Line">
-                            </div>
-                            <div class="Ellipse">
-                                <img src="../../assets/images/2023/hayahool.png" width="50px" height="50px" alt="">
-                            </div>
-                            <div class="Line">
-                            </div>
-                            <div class="Ellipse">
-                                <img src="../../assets/images/2023/hayahool.png" width="50px" height="50px" alt="">
-                            </div>
-                        </div>
-                        <div class="schedule-left-div">
-
-                            <div class="text" style="margin-left: 20%;">
-                                <h1 class="text-title">
-                                    {{publicservice.Texts.Texts["home9"]}}</h1>
-                                <h1 class="text-subtitle2">
-                                    {{publicservice.Texts.Texts["home10"]}}
-                                </h1>
-                            </div>
-                            <div class="image" style="padding-top: 50%;">
-                                <img class="schedule-image" src="assets/svg/timline-2.svg">
-                            </div>
-                            <div class="text" style="padding-top: 70%;margin-left: 25%;">
-                                <h1 class="text-title">
-                                    {{publicservice.Texts.Texts["home51"]}}
-                                </h1>
-                                <h1 class="text-subtitle3">
-                                    {{publicservice.Texts.Texts["home52"]}}
-                                </h1>
-                            </div>
-                            <div class="image" style="padding-top: 50%;">
-                                <img class="schedule-image" src="assets/svg/timline-4.svg">
-                            </div>
-                            <div class="text" style="padding-top: 50%;">
-                                <div style="display: flex;width: 100%;">
-                                    <div style="padding-left:10px;">
-                                        <h1 class="text-title">
-                                            {{publicservice.Texts.Texts["home11"]}}
-                                        </h1>
-                                        <h1 class="text-subtitle3">
-                                            {{publicservice.Texts.Texts["home12"]}}
-                                        </h1>
-                                    </div>
-                                    <div style="text-align: center;margin: auto 0;">
-                                        <button mat-flat-button (click)="Rules()"
-                                            class="green-button">{{publicservice.Texts.Texts["home48"]}}</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="image" style="padding-top: 50%;">
-                                <img class="schedule-image" src="assets/svg/timline-6.svg">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="event-schedule-phone">
-                        <div class="schedule-middle-div">
-                            <div class="Ellipse">
-                            </div>
-                            <div class="Line">
-                            </div>
-                            <div class="Ellipse">
-                            </div>
-                            <div class="Line">
-                            </div>
-                            <div class="Ellipse">
-                            </div>
-                            <div class="Line">
-                            </div>
-                            <div class="Ellipse">
-                            </div>
-                            <div class="Line">
-                            </div>
-                            <div class="Ellipse">
-                            </div>
-                            <div class="Line">
-                            </div>
-                            <div class="Ellipse">
-                            </div>
-                        </div>
-                        <div class="middle-div-phone">
-                            <div class="text" style="padding-top: 20px;">
-                                <h1 class="text-title">
-                                    {{publicservice.Texts.Texts["home9"]}}</h1>
-                                <h1 class="text-subtitle">
-                                    {{publicservice.Texts.Texts["home10"]}}
-                                </h1>
-                            </div>
-                            <div class="image">
-                                <img class="schedule-image" src="assets/svg/timline-1.svg">
-                            </div>
-                            <div class="text" style="padding-top: 0;margin-top: 0;">
-                                <h1 class="text-title" style="margin-top: 0;">
-                                    {{publicservice.Texts.Texts["home49"]}}
-                                </h1>
-                                <h1 class="text-subtitle">
-                                    {{publicservice.Texts.Texts["home50"]}}
-                                </h1>
-                            </div>
-                            <div class="image">
-                                <img class="schedule-image" src="assets/svg/timline-2.svg">
-                            </div>
-                            <div class="text" style="margin-top: 0;">
-                                <h1 class="text-title" style="margin-top: 0;">
-                                    {{publicservice.Texts.Texts["home51"]}}
-                                </h1>
-                                <h1 class="text-subtitle">
-                                    {{publicservice.Texts.Texts["home52"]}}
-                                </h1>
-                            </div>
-                            <div class="image">
-                                <img class="schedule-image" src="assets/svg/timline-3.svg">
-                            </div>
-                            <div class="text" style="margin-top: 0;">
-                                <h1 class="text-title" style="margin-top: 0;">
-                                    {{publicservice.Texts.Texts["home53"]}}
-                                </h1>
-                                <h1 class="text-subtitle">
-                                    {{publicservice.Texts.Texts["home54"]}}
-                                </h1>
-                            </div>
-                            <div class="image">
-                                <img class="schedule-image" src="assets/svg/timline-4.svg">
-                            </div>
-                            <div class="text" style="margin-top: 0;">
-                                <div style="display: flex;width: 100%;">
-                                    <div style="padding-left:10px;">
-                                        <h1 class="text-title" style="margin-top: 0;">
-                                            {{publicservice.Texts.Texts["home11"]}}
-                                        </h1>
-                                        <h1 class="text-subtitle">
-                                            {{publicservice.Texts.Texts["home12"]}}
-                                        </h1>
-                                    </div>
-                                    <div style="text-align: center;margin: auto ;">
-                                        <button mat-flat-button (click)="Rules()"
-                                            class="green-button">{{publicservice.Texts.Texts["home48"]}}</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="image">
-                                <img class="schedule-image" src="assets/svg/timline-5.svg">
-                            </div>
-                            <div class="text" style="margin-top: 0;">
-                                <h1 class="text-title" style="margin-top: 0;">
-                                    {{publicservice.Texts.Texts["home13"]}}
-                                </h1>
-                                <h1 class="text-subtitle">
-                                    {{publicservice.Texts.Texts["home14"]}}
-                                </h1>
-                            </div>
-                            <div class="image">
-                                <img class="schedule-image" src="assets/svg/timline-6.svg">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div class="left-header">
+            <div class="left-header-line" *ngIf="!publicservice.logedIn"></div>
+            <div class="before-login" *ngIf="!publicservice.logedIn">
+              <div class="left-button">
+                <button mat-button (click)="login()"
+                        class="normal-button">{{ publicservice.Texts.Texts["header6"] }}
+                </button>
+              </div>
+              <div>
+                <button mat-flat-button (click)="Signup()"
+                        class="green-button">{{ publicservice.Texts.Texts["header7"] }}
+                </button>
+              </div>
             </div>
-        </div>
-        <div>
-
-            <!-- <div class="light-putple-rectangle"></div> -->
-            <div class="prizes" style="padding-bottom: 0;">
-                <div>
-                    <img class="light-purple-wave" src="assets/svg/wave-purple-light.svg">
+            <div class="after-login" *ngIf="publicservice.logedIn">
+              <div class="left-button">
+                <div *ngIf="!isStaff">
+                  <button mat-stroked-button matBadge="{{cart_count}}" matBadgePosition="before" (click)="Cart()"
+                          class="outlined-button">
+                    {{ publicservice.Texts.Texts['cart8'] }}
+                  </button>
                 </div>
-                <div class="inner-prizes">
-                    <div class="prizes-title">
-                        <h1 style="margin-top: -10px;">{{publicservice.Texts.Texts["home43"]}}</h1>
-                    </div>
-                    <div class="prize-cards-whole-div">
-                        <div class="prize-cards-inner-div">
-                            <div class="prize-cards">
-                                <div class="prize-card-image-div">
-                                    <img class="prize-card-image" src="assets/svg/prize-1.svg">
-                                </div>
-                                <!-- <div style="padding-top: 20%;"> -->
-                                <h2 class="prize-card-title">{{publicservice.Texts.Texts["home45"]}}</h2>
-                                <h3 class="prize-card-discription">{{publicservice.Texts.Texts["home46"]}}</h3>
-                                <!-- </div> -->
-                            </div>
-                            <div class="prize-cards">
-                                <div class="prize-card-image-div">
-                                    <img class="prize-card-image" src="assets/svg/prize-2.svg">
-                                </div>
-                                <!-- <div style="padding-top: 20%;width: 100%;"> -->
-                                <h2 class="prize-card-title" style="width: 100%;">
-                                    {{publicservice.Texts.Texts["home55"]}}</h2>
-                                <h3 class="prize-card-discription" style="width: 100%;">
-                                    {{publicservice.Texts.Texts["home60"]}}</h3>
-                                <!-- </div> -->
-                            </div>
-                        </div>
-                        <div class="prize-cards-inner-div">
-                            <div class="prize-cards">
-                                <div class="prize-card-image-div" style="justify-content: center;">
-                                    <img class="prize-card-image" src="assets/svg/prize-3.svg">
-                                </div>
-                                <!-- <div style="padding-top: 20%;"> -->
-                                <h2 class="prize-card-title">{{publicservice.Texts.Texts["home56"]}}</h2>
-                                <h3 class="prize-card-discription">{{publicservice.Texts.Texts["home61"]}}</h3>
-                                <!-- </div> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div #workshop id="workshop"></div>
-        <div class="whole-workshop" >
-
-            <!-- <div class="green-rectangle-under-workshops">
-        </div> -->
-
-            <div class="workshops-background">
-                <div style="margin-bottom: -1%;">
-                    <img class="green-wave-above-wrokshops" src="assets/svg/wave-green.svg">
-                </div>
-                <div style="background-color: #4F7B7A;padding: 30px 0;">
-                    <h1 class="collapse-header">
-                        {{publicservice.Texts.Texts["home15"]}}</h1>
-                    <div *ngFor="let workshop of workshopsArray;let i = index" class="workshops-whole-collapse">
-                        <img src="../../assets/images/2023/hayahool.png" class="workshop_creature" alt="">
-                        <div class="orange-collapse">
-                        </div>
-                        <div style="width: 100%;padding: 10px 0;">
-                            <div class="components-collapse">
-                                <h3 class="collapse-title">
-                                    {{workshop.title}}</h3>
-                                <h4 class="collapse-subject">
-                                    {{workshopsDate[i]}}</h4>
-                                <h4 class="collapse-subject">
-                                    ظرفیت باقیمانده: {{workshop.remain_capacity}}</h4>
-                                <!-- <h4 class="collapse-subject">
-                                    {{workshopsLevel[i]}}</h4> -->
-                                <div class="register-button-div">
-                                    <button mat-stroked-button (click)="registerWorkshop(i)"
-                                        class="register-button">{{publicservice.Texts.Texts["home20"]}}</button>
-                                </div>
-                                <button mat-button class="collapse"
-                                    (click)="workshopsActive[i] =(workshopsActive[i] == 'active' ? 'deactive' : 'active');iconW[i] = (iconW[i] == 'keyboard_arrow_down' ? 'keyboard_arrow_up' : 'keyboard_arrow_down') ">{{publicservice.Texts.Texts["home21"]}}
-                                    <mat-icon class="collapse-icon" [inline]="true">{{iconW[i]}}</mat-icon>
-                                </button>
-                            </div>
-                            <div [class]="workshopsActive[i]">
-                                <div class="collapse-background">
-                                    <div>
-                                        <p class="collapse-about" [innerHTML]="workshop.content"></p>
-                                        <h3 class="collapse-hour">ساعت : {{workshopsStartHour[i]}} الی {{workshopsEndHour[i]}}
-                                        </h3>
-                                    </div>
-                                    <div class="collapse-cost-div">
-                                        <h3 class="collapse-cost">
-                                            {{publicservice.Texts.Texts['home57']}}{{workshop.cost}}{{publicservice.Texts.Texts['home58']}}
-                                        </h3>
-                                    </div>
-                                    <div class="collapse-presenters-title-div" *ngIf="workshop.presenters.length > 0">
-                                        <h1 class="collapse-persenters-title">
-                                            {{publicservice.Texts.Texts["home23"]}}
-                                        </h1>
-                                    </div>
-                                    <div
-                                        style="display: flex;justify-content: center;flex-wrap: wrap;grid-auto-rows: auto;">
-                                        <div class="presenter-card">
-                                            <div class="presenter-card-inside"
-                                                *ngFor="let presenter of workshop.presenters;">
-                                                <div>
-                                                    <img class="presenter-image" src="{{presenter.profile}}">
-                                                </div>
-                                                <div style="text-align: right;height: 30%;">
-                                                    <h2 class="presenter-name">
-                                                        {{presenter.first_name}} {{presenter.last_name}}
-                                                    </h2>
-                                                    <!-- <div style="display: flex;">
-                                                        <a href="{{presenter.linked_in}}">
-                                                            <mat-icon class="icon"
-                                                                style="font-size: 25px;margin-right: 10px;">
-                                                                link</mat-icon>
-                                                        </a>
-                                                    </div> -->
-                                                    <h4 class="presenter-about" [innerHTML]="presenter.descriptions"></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="collapse-presenters-title-div" *ngIf="workshop.assistants.length > 0">
-                                        <h1 class="collapse-persenters-title">
-                                            {{publicservice.Texts.Texts["home63"]}}
-                                        </h1>
-                                    </div>
-                                    <div
-                                        style="display: flex;justify-content: center;flex-wrap: wrap;grid-auto-rows: auto;">
-                                        <div class="presenter-card">
-                                            <div class="assistant-card-inside"
-                                                *ngFor="let assistant of workshop.assistants;">
-                                                <div>
-                                                    <img class="presenter-image" src="{{assistant.profile}}">
-                                                    <div style="text-align: center;">
-                                                        <h2 class="presenter-name">
-                                                        {{assistant.first_name}} {{assistant.last_name}}
-                                                        </h2>
-                                                        <h4 class="presenter-about">{{assistant.role}} </h4>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="whole-workshop-phone">
-            <div class="workshops-background" style="padding-top: 10px;margin-top: -1%;">
-                <div>
-                    <img class="green-wave-above-wrokshops" src="assets/svg/wave-green.svg">
-                </div>
-
-                <div style="background-color: #4F7B7A;padding: 30px 0;margin-top: -40px;">
-                    <h1 class="collapse-header" style="background-color: #4F7B7A;">
-                        {{publicservice.Texts.Texts["home15"]}}</h1>
-                    <div *ngFor="let workshop of workshopsArray;let i = index" class="workshops-whole-collapse">
-                        <div style="width: 100%;">
-                            <div class="components-collapse">
-                                <div style="display: flex;width: 100%;justify-content: space-between; ">
-                                    <div class="orange-collapse">
-                                    </div>
-                                    <h3 class="collapse-title">
-                                        {{workshop.title}}</h3>
-                                </div>
-                                <div class="register-button-div">
-                                    <button mat-stroked-button
-                                        class="register-button" (click)="registerWorkshop(i)">{{publicservice.Texts.Texts["home20"]}}</button>
-                                </div>
-                            </div>
-                            <div
-                                style="background-color: #D6FFD6;border-bottom-left-radius: 12px;border-bottom-right-radius: 12px;">
-                                <div class="collapse-discription-div">
-                                    <h4 class="collapse-subject">
-                                        {{workshopsDate[i]}}</h4>
-                                    <div class="collapse-discription-inner-div">
-                                        <h4 class="collapse-subject">
-                                            {{workshop.remain_capacity}}</h4>
-                                        <!-- <h4 class="collapse-subject">
-                                            {{workshopsLevel[i]}}</h4> -->
-                                    </div>
-                                </div>
-                                <div class="collapse-button">
-                                    <button mat-button class="collapse"
-                                        (click)="workshopsActive[i] =(workshopsActive[i] == 'active' ? 'deactive' : 'active');iconW[i] = (iconW[i] == 'keyboard_arrow_down' ? 'keyboard_arrow_up' : 'keyboard_arrow_down') ">{{publicservice.Texts.Texts["home21"]}}
-                                        <mat-icon class="collapse-icon" [inline]="true">{{iconW[i]}}</mat-icon>
-                                    </button>
-                                </div>
-                            </div>
-                            <div [class]="workshopsActive[i]">
-                                <div class="collapse-background">
-                                    <div>
-                                        <p class="collapse-about" [innerHTML]="workshop.content"></p>
-                                        <h3 class="collapse-hour">ساعت : {{workshopsStartHour[i]}} الی
-                                            {{workshopsEndHour[i]}}
-                                        </h3>
-                                    </div>
-                                    <h3 class="collapse-cost">
-                                        {{publicservice.Texts.Texts['home57']}}{{workshop.cost}}{{publicservice.Texts.Texts['home58']}}
-                                    </h3>
-                                    <div class="collapse-presenters-title-div" *ngIf="workshop.presenters.length > 0">
-                                        <h1 class="collapse-persenters-title">
-                                            {{publicservice.Texts.Texts["home23"]}}
-                                        </h1>
-                                    </div>
-                                    <div
-                                        style="display: flex;justify-content: center;flex-wrap: wrap;grid-auto-rows: auto;">
-                                        <div class="presenter-card">
-                                            <div class="presenter-card-inside"
-                                                *ngFor="let presenter of workshop.presenters;let j = index">
-                                                <div>
-                                                    <img class="presenter-image" src="{{presenter.profile}}">
-                                                </div>
-                                                <div style="text-align: right;height: 30%;">
-                                                    <h2 class="presenter-name">
-                                                        {{presenter.first_name}} {{presenter.last_name}}
-                                                    </h2>
-                                                    <!-- <div style="display: flex;">
-                                                        <a href="{{presenter.linked_in}}">
-                                                            <mat-icon class="icon"
-                                                                style="font-size: 25px;cursor: pointer;margin-right: 10px;">
-                                                                link</mat-icon>
-                                                        </a>
-                                                    </div> -->
-                                                    <h4 class="presenter-about" [innerHTML]="presenter.descriptions"></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+              </div>
+              <div class="left-header-line" *ngIf="publicservice.logedIn"></div>
 
 
-                                    <div class="collapse-presenters-title-div" *ngIf="workshop.assistants.length > 0">
-                                        <h1 class="collapse-persenters-title">
-                                            {{publicservice.Texts.Texts["home63"]}}
-                                        </h1>
-                                    </div>
-                                    <div
-                                        style="display: flex;justify-content: center;flex-wrap: wrap;grid-auto-rows: auto;">
-                                        <div class="presenter-card">
-                                            <div class="assistant-card-inside"
-                                                *ngFor="let assistant of workshop.assistants;let j = index">
-                                                <div>
-                                                    <img class="presenter-image" src="{{assistant.profile}}">
-                                                    <div style="text-align: center;">
-                                                        <h2 class="presenter-name">
-                                                            {{assistant.first_name}} {{assistant.last_name}}
-                                                        </h2>
-                                                        <h4 class="presenter-about">{{assistant.role}} </h4>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div>
-            <img #talk id="talk" class="green-wave-under-workshops" src="assets/svg/wave-green.svg">
-        </div>
-        <div class="talks-title-div">
-            <h1 class="talks-title">
-                {{publicservice.Texts.Texts["home26"]}}</h1>
-        </div>
-        <div class="talks-background">
-            <div *ngFor="let talk of talksArray; let i = index" class="workshops-whole-collapse">
-                <img src="../../assets/images/2023/hayahool.png" class="workshop_creature" alt="">
-                <div class="pink-collapse">
-                </div>
-                <div style="width: 100%;padding: 10px 0;">
-                    <div class="components-collapse">
-                        <h3 class="collapse-title">
-                            {{talk.title}}</h3>
-                        <h4 class="collapse-subject">
-                            {{talksDate[i]}}</h4>
-                        <h4 class="collapse-subject">
-                            ظرفیت باقیمانده: {{talk.remain_capacity}}</h4>
-                        <!-- <h4 class="collapse-subject">
-                            {{talksLevel[i]}}</h4> -->
-                        <div class="register-button-div">
-                            <button mat-stroked-button (click)="registerTalk(i)"
-                                class="register-button">{{publicservice.Texts.Texts["home31"]}}</button>
-                        </div>
-                        <button mat-button class="collapse"
-                            (click)="talksActive[i] = (talksActive[i] == 'active' ? 'deactive' : 'active') ;iconT[i] = (iconT[i] == 'keyboard_arrow_down' ? 'keyboard_arrow_up' : 'keyboard_arrow_down') ">{{publicservice.Texts.Texts["home32"]}}
-                            <mat-icon class="collapse-icon" [inline]="true">{{iconT[i]}}</mat-icon>
-                        </button>
-                    </div>
-                    <div [class]="talksActive[i]">
-                        <div class="collapse-background">
-                            <div>
-                                <p class="collapse-about" [innerHTML]="talk.content"></p>
-                                <h3 class="collapse-hour">ساعت : {{talksStartHour[i]}} الی {{talksEndHour[i]}}</h3>
-                            </div>
-                            <div class="collapse-cost-div">
-                                <h3 class="collapse-cost">
-                                    {{publicservice.Texts.Texts['home59']}}
-                                </h3>
-                            </div>
-                            <div class="collapse-presenters-title-div">
-                                <h1 class="collapse-persenters-title">
-                                    {{publicservice.Texts.Texts["home34"]}}
-                                </h1>
-                            </div>
-                            <div style="display: flex;justify-content: center;flex-wrap: wrap;grid-auto-rows: auto;">
-                                <div class="presenter-card">
-                                    <div class="presenter-card-inside" *ngFor="let presenter of talk.presenters;">
-                                        <div>
-                                            <img class="presenter-image" src="{{presenter.profile}}">
-                                        </div>
-                                        <div style="text-align: right;height: 30%;">
-                                            <h2 class="presenter-name">
-                                                {{presenter.first_name}} {{presenter.last_name}}
-                                            </h2>
-                                            <!-- <div style="display: flex;">
-                                                <a href="{{presenter.linked_in}}">
-                                                    <mat-icon class="icon" style="font-size: 25px;margin-right: 10px;">
-                                                        link
-                                                    </mat-icon>
-                                                </a>
-                                            </div> -->
-                                            <h4 class="presenter-about" [innerHTML]="presenter.descriptions"></h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="talks-background-phone" style="padding-bottom: 50px;">
-            <div *ngFor="let talk of talksArray; let i = index" class="workshops-whole-collapse">
-                <div style="width: 100%;">
-                    <div class="components-collapse">
-                        <div style="display: flex;width: 100%;justify-content: space-between;">
-                            <div class="pink-collapse">
-                            </div>
-                            <h3 class="collapse-title">
-                                {{talk.title}}</h3>
-                        </div>
-                        <div class="register-button-div">
-                            <button mat-stroked-button (click)="registerTalk(i)"
-                                class="register-button">{{publicservice.Texts.Texts["home31"]}}</button>
-                        </div>
-                    </div>
-                    <div
-                        style="background-color: #D6FFD6;border-bottom-left-radius: 12px;border-bottom-right-radius: 12px;">
-                        <div
-                            style="display: flex;justify-content: space-between;padding-right: 20px;padding-left: 20px;width: 100%;box-sizing: border-box;">
-                            <h4 class="collapse-subject">
-                                {{talksDate[i]}}</h4>
-                            <div style="display: flex;">
-                                <h4 class="collapse-subject">
-                                    {{talk.remain_capacity}}</h4>
-                                <!-- <h4 class="collapse-subject">
-                                    {{talksLevel[i]}}</h4> -->
-                            </div>
-                        </div>
-                        <button mat-button class="collapse"
-                            (click)="talksActive[i] = (talksActive[i] == 'active' ? 'deactive' : 'active') ;iconT[i] = (iconT[i] == 'keyboard_arrow_down' ? 'keyboard_arrow_up' : 'keyboard_arrow_down') ">{{publicservice.Texts.Texts["home32"]}}
-                            <mat-icon class="collapse-icon" [inline]="true">{{iconT[i]}}</mat-icon>
-                        </button>
-                    </div>
-                    <div [class]="talksActive[i]">
-                        <div class="collapse-background">
-                            <div>
-                                <p class="collapse-about" [innerHTML]="talk.content"></p>
-                                <h3 class="collapse-hour">ساعت : {{talksStartHour[i]}} الی {{talksEndHour[i]}}</h3>
-                            </div>
-                            <h3 class="collapse-cost">
-                                {{publicservice.Texts.Texts['home59']}}
-                            </h3>
-                            <div class="collapse-presenters-title-div">
-                                <h1 class="collapse-persenters-title">
-                                    {{publicservice.Texts.Texts["home34"]}}
-                                </h1>
-                            </div>
-                            <div style="display: flex;justify-content: center;flex-wrap: wrap;grid-auto-rows: auto;">
-                                <div class="presenter-card">
-                                    <div class="presenter-card-inside"
-                                        *ngFor="let presenter of talk.presenters;let j = index">
-                                        <div>
-                                            <img class="presenter-image" src="{{presenter.profile}}">
-                                        </div>
-                                        <div style="text-align: right;height: 30%;">
-                                            <h2 class="presenter-name">
-                                                {{presenter.first_name}} {{presenter.last_name}}
-                                            </h2>
-                                            <div style="display: flex;">
-                                                <!-- <a href="{{presenter.linked_in}}">
-                                                    <mat-icon class="icon"
-                                                        style="font-size: 25px;cursor: pointer;margin-right: 10px;">link
-                                                    </mat-icon>
-                                                </a>
-                                            </div> -->
-                                                <h4 class="presenter-about" [innerHTML]="presenter.descriptions"></h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="rectangle-under-talks-div"></div>
-        <div class="footer-whole-div" #footer id="footer">
-            <div>
-                <img class="purple-wave-above-footer" src="assets/svg/wave-purple.svg">
-            </div>
-            <div class="footer-div">
-                <div class="discription-footer-div">
-                    <div class="discription-right-footer-div">
-                        <div class="discription-right-footer-about-div">
-                            <h1 class="discription-right-footer-about-title">
-                                {{publicservice.Texts.Texts["home37"]}}</h1>
-                            <p class="discription-right-footer-about-discription">
-                                {{publicservice.Texts.Texts["home39"]}}
-                                <br>
-                                {{publicservice.Texts.Texts["home62"]}}
-                            </p>
-                            <div style="text-align: center;">
-                                <button mat-flat-button (click)="People()"
-                                    class="green-button" id="green-button-phone">{{publicservice.Texts.Texts["home47"]}}</button>
-                                    <div class="footer-image-div-phone">
-                                        <img class="footer-image" src="assets/images/folan.png">
-                                    </div>
-                            </div>
-                        </div>
-                        <div class="discription-right-footer-bubble">
-                        </div>
-                    </div>
-                    <div class="footer-image-div">
-                        <img class="footer-image" src="assets/images/folan.png">
-                    </div>
-                </div>
-                <div class="supporters-div">
-                    <h1 class="supporters-title">
-                        {{publicservice.Texts.Texts["home40"]}}
-                    </h1>
-                    <div class="supporters-card-div">
-                        <!-- <div class="supportes-card-image-div">
-                            <img class="supporters-card-image" src="assets/images/institue.png">
-                        </div>
-                        <div class="supportes-card-image-div">
-                            <img class="supporters-card-image" src="assets/images/funtory.png">
-                        </div>
-                        <div class="supportes-card-image-div">
-                            <img class="supporters-card-image" src="assets/images/tod.png">
-                        </div> -->
-                        <div class="supportes-card-image-div">
-                            <img class="supporters-card-image" src="assets/images/dropout.png">
-                        </div>
-                        <div class="supportes-card-image-div">
-                            <img class="supporters-card-image" src="assets/images/medrick-logo.png">
-                        </div>
-                        <div class="supportes-card-image-div">
-                            <img class="supporters-card-image" src="assets/images/dream-event.png">
-                        </div>
-                        <div class="supportes-card-image-div">
-                            <img class="supporters-card-image" src="assets/images/pgj.png">
-                        </div>
-                    </div>
-                    <!-- <div class="supporters-card-div">
-                        <div class="supportes-card-image-div">
-                            <img class="supporters-card-image" src="assets/images/avngames.png">
-                        </div>
-                        <div class="supportes-card-image-div">
-                            <img class="supporters-card-image" src="assets/images/brainladder.png">
-                        </div>
-                        <div class="supportes-card-image-div">
-                            <img class="supporters-card-image" src="assets/images/IranServer.png">
-                        </div>
-                        <div class="supportes-card-image-div">
-                            <img class="supporters-card-image" src="assets/images/black-cube.png">
-                        </div>
-                        <div class="supportes-card-image-div">
-                            <img class="supporters-card-image" src="assets/images/myket.png">
-                        </div>
-                    </div> -->
-                </div>
-            </div>
-        </div>
-        <div class="developers-div">
-            <p class="socials">ما را در شبکه‌های اجتماعی دنبال کنید:</p>
-            <div class="developers-image" style="margin-bottom: 30px;">
-                <a href="https://t.me/AUTGamecraft" target="_blank" style="margin-right:30px;">
-                    <img src='{{"assets/svg/telegram.svg"}}' style="width: 85px; height:85px; border-radius:50%; margin-top: 5px;"/>
-                </a>
-                <a href="https://www.instagram.com/autgamecraft/" target="_blank" style="margin-right:30px;">
-                    <img src='{{"assets/svg/instagram.svg"}}' style="width: 85px; height:85px; border-radius:50%; margin-top: 5px;"/>
-                </a>
-                <!-- <a href="https://discord.gg/SpUZ89KKbn" target="_blank"  style="margin-right:30px;">
-                    <img src='{{"assets/svg/discord.svg"}}' style="width: 90px; height:90px; border-radius:50%;"/>
-                </a> -->
-                <a href="https://twitter.com/autgamecraft" target="_blank" style="margin-right:30px;">
-                    <img src='{{"assets/svg/twitter.svg"}}' style="width: 90px; height:90px; border-radius:50%;"/>
-                </a>
-            </div>
-            <div class="developers-image">
+              <div class="left-button">
+                <button mat-button [disabled]="true" class="normal-button">{{ userName }}</button>
+              </div>
 
-                <!-- <img class="ssc-image" src="assets/images/Asset 4.png"> -->
-                <img class="ssc-image" src="assets/images/ssc_white.png">
+              <div>
+                <button mat-flat-button class="green-button"
+                        (click)="Dashboard()">
+                  {{ publicservice.Texts.Texts["header9"] }}
+                </button>
+              </div>
             </div>
-            <p class="developers">{{publicservice.Texts.Texts["home42"]}}</p>
+          </div>
         </div>
+        <div class="whole-header-phone">
+          <button mat-button (click)=" onPress();icon =(icon == 'menu' ? 'close' : 'menu')">
+            <mat-icon style="color: indigo;font-size: 32px;" [inline]="true">{{ icon }}</mat-icon>
+          </button>
+          <div class="logo" (click)="Home()">
+            <img class="logo-image" src="assets/svg/dark-3d.svg">
+          </div>
+
+        </div>
+        <div *ngIf="display">
+          <mat-sidenav-container class="example-sidenav-container">
+            <!-- <mat-sidenav #snav >
+
+        </mat-sidenav> -->
+
+            <mat-sidenav-content class="side-route">
+              <mat-divider class="side-divider"></mat-divider>
+              <div class="side-button-1">
+                <div *ngIf="!publicservice.logedIn">
+                  <button mat-button (click)="login()"
+                          class="normal-button">{{ publicservice.Texts.Texts["header6"] }}
+                  </button>
+                  <button mat-flat-button (click)="Signup()"
+                          class="normal-button-1">{{ publicservice.Texts.Texts["header7"] }}
+                  </button>
+                </div>
+                <div *ngIf="publicservice.logedIn">
+                  <div class="left-button">
+                    <button mat-button [disabled]="true" class="normal-button">{{ userName }}</button>
+
+                    <button mat-flat-button class="normal-button-1"
+                            (click)="Dashboard()">{{ publicservice.Texts.Texts["header9"] }}
+                    </button>
+                  </div>
+
+
+                </div>
+              </div>
+              <mat-divider class="side-divider"></mat-divider>
+
+              <div class="side-button">
+                <button mat-button class="normal-button"
+                        (click)="Schedule(schedule)">{{ publicservice.Texts.Texts["header2"] }}
+                </button>
+              </div>
+              <mat-divider class="side-divider"></mat-divider>
+              <div class="side-button">
+                <button mat-button (click)="Rules()"
+                        class="normal-button">{{ publicservice.Texts.Texts["header11"] }}
+                </button>
+              </div>
+              <mat-divider class="side-divider"></mat-divider>
+              <div class="side-button">
+                <button mat-button (click)="Workshop(workshop)"
+                        class="normal-button">{{ publicservice.Texts.Texts["header3"] }}
+                </button>
+              </div>
+              <mat-divider class="side-divider"></mat-divider>
+              <div class="side-button">
+                <button mat-button (click)="Talk(talk)"
+                        class="normal-button">{{ publicservice.Texts.Texts["header4"] }}
+                </button>
+              </div>
+              <mat-divider class="side-divider"></mat-divider>
+              <div class="side-button">
+                <button mat-button (click)="Games()"
+                        class="normal-button">{{ publicservice.Texts.Texts["header14"] }}
+                </button>
+              </div>
+              <mat-divider class="side-divider"></mat-divider>
+              <div class="side-button">
+                <button mat-button (click)="Talk(footer)"
+                        class="normal-button">{{ publicservice.Texts.Texts["header5"] }}
+                </button>
+              </div>
+              <mat-divider class="side-divider"></mat-divider>
+              <div class="side-button">
+                <button mat-button (click)="People()"
+                        class="normal-button">{{ publicservice.Texts.Texts["header12"] }}
+                </button>
+              </div>
+              <mat-divider class="side-divider"></mat-divider>
+
+
+            </mat-sidenav-content>
+          </mat-sidenav-container>
+        </div>
+
+
+      </div>
+      <div class="subintro-div">
+        <div class="intro-discription-div">
+          <div class="intro-discription-about-div">
+            <img src="../../assets/images/2023/hayahool.png" class="event-creature" alt="">
+            <h1 class="intro-discription-about-title">
+              {{ publicservice.Texts.Texts["home1"] }}</h1>
+            <p class="intro-discription-about-subtitle">
+              {{ publicservice.Texts.Texts["home2"] }}</p>
+            <p class="intro-discription-about-discription" [innerHTML]="publicservice.Texts.Texts['home3']">
+            </p>
+            <div class="social-image" style="margin-bottom: 30px;">
+              <a href="https://t.me/AUTGamecraft" target="_blank" style="margin-right:30px;">
+                <img src='{{"assets/svg/telegram.svg"}}'
+                     style="width: 85px; height:85px; border-radius:50%; margin-top: 5px;"/>
+              </a>
+              <a href="https://www.instagram.com/autgamecraft/" target="_blank" style="margin-right:30px;">
+                <img src='{{"assets/svg/instagram.svg"}}'
+                     style="width: 85px; height:85px; border-radius:50%; margin-top: 5px;"/>
+              </a>
+              <!-- <a href="https://discord.gg/SpUZ89KKbn" target="_blank"  style="margin-right:30px;">
+                  <img src='{{"assets/svg/discord.svg"}}' style="width: 90px; height:90px; border-radius:50%;"/>
+              </a> -->
+              <a href="https://twitter.com/autgamecraft" target="_blank" style="margin-right:30px;">
+                <img src='{{"assets/svg/twitter.svg"}}' style="width: 90px; height:90px; border-radius:50%;"/>
+              </a>
+            </div>
+          </div>
+          <div class="intro-discription-bubble">
+          </div>
+        </div>
+        <div class="intro-image-div">
+          <img class="intro-image" src="assets/svg/dark-3d-bulb.svg">
+        </div>
+      </div>
+      <!-- <div class="event-about-div">
+          <div class="event-about-right-div">
+              <div class="timer-div">
+                  <p class="numbers">{{getSecond()}}</p>
+                  <p class="dots"> : </p>
+                  <p class="numbers">{{getMinute()}}</p>
+                  <p class="dots"> : </p>
+                  <p class="numbers">
+                      {{getHour()}}
+                  </p>
+              </div>
+              <p class="event-about-right-text">
+                  {{publicservice.Texts.Texts["home5"]}}
+              </p>
+          </div>
+          <div class="event-about-left-div">
+              <div>
+                  <p class="event-about-left-number">
+                      {{count}}
+                  </p>
+              </div>
+              <div>
+                  <p class="event-about-left-text">
+                      {{publicservice.Texts.Texts["home7"]}}
+                  </p>
+              </div>
+          </div>
+      </div> -->
     </div>
+    <div>
+      <img id="schedule" #schedule class="purple-wave-under-intro" src="assets/svg/wave-purple.svg">
+    </div>
+    <div class="event-schedule-div">
+      <div class="event-schedule-title-div">
+        <h1 class="event-schedule-title">
+          {{ publicservice.Texts.Texts["home8"] }}</h1>
+      </div>
+      <div class="event-schedule-whole">
+        <div class="event-schedule-schematic">
+          <div class="event-schedule">
+            <div class="schedule-right-div" style="padding-right:10%">
+
+              <div class="image" style="margin-top: 0;">
+                <img class="schedule-image" src="assets/svg/timline-1.svg">
+              </div>
+              <div class="text" style="padding-top: 80%;">
+                <h1 class="text-title">
+                  {{ publicservice.Texts.Texts["home49"] }}</h1>
+                <h1 class="text-subtitle2">
+                  {{ publicservice.Texts.Texts["home50"] }}
+                </h1>
+              </div>
+              <div class="image" style="padding-top: 90%;">
+                <img class="schedule-image" src="assets/svg/timline-3.svg">
+              </div>
+              <div class="text" style="padding-top: 90%;">
+                <h1 class="text-title">
+                  {{ publicservice.Texts.Texts["home53"] }}</h1>
+                <h1 class="text-subtitle2">
+                  {{ publicservice.Texts.Texts["home54"] }}
+                </h1>
+              </div>
+
+              <div class="image" style="padding-top: 90%;">
+                <img class="schedule-image" src="assets/svg/timline-5.svg">
+              </div>
+              <div class="text" style="padding-top: 90%;">
+                <h1 class="text-title">
+                  {{ publicservice.Texts.Texts["home13"] }}</h1>
+                <h1 class="text-subtitle2">
+                  {{ publicservice.Texts.Texts["home14"] }}
+                </h1>
+              </div>
+            </div>
+            <div class="schedule-middle-div" style="padding-right: 2%;">
+              <div class="Ellipse">
+                <img src="../../assets/images/2023/hayahool.png" width="50px" height="50px" alt="">
+              </div>
+              <div class="Line">
+              </div>
+              <div class="Ellipse">
+                <img src="../../assets/images/2023/hayahool.png" width="50px" height="50px" alt="">
+              </div>
+              <div class="Line">
+              </div>
+              <div class="Ellipse">
+                <img src="../../assets/images/2023/hayahool.png" width="50px" height="50px" alt="">
+              </div>
+              <div class="Line">
+              </div>
+              <div class="Ellipse">
+                <img src="../../assets/images/2023/hayahool.png" width="50px" height="50px" alt="">
+              </div>
+              <div class="Line">
+              </div>
+              <div class="Ellipse">
+                <img src="../../assets/images/2023/hayahool.png" width="50px" height="50px" alt="">
+              </div>
+              <div class="Line">
+              </div>
+              <div class="Ellipse">
+                <img src="../../assets/images/2023/hayahool.png" width="50px" height="50px" alt="">
+              </div>
+            </div>
+            <div class="schedule-left-div">
+
+              <div class="text" style="margin-left: 20%;">
+                <h1 class="text-title">
+                  {{ publicservice.Texts.Texts["home9"] }}</h1>
+                <h1 class="text-subtitle2">
+                  {{ publicservice.Texts.Texts["home10"] }}
+                </h1>
+              </div>
+              <div class="image" style="padding-top: 50%;">
+                <img class="schedule-image" src="assets/svg/timline-2.svg">
+              </div>
+              <div class="text" style="padding-top: 70%;margin-left: 25%;">
+                <h1 class="text-title">
+                  {{ publicservice.Texts.Texts["home51"] }}
+                </h1>
+                <h1 class="text-subtitle3">
+                  {{ publicservice.Texts.Texts["home52"] }}
+                </h1>
+              </div>
+              <div class="image" style="padding-top: 50%;">
+                <img class="schedule-image" src="assets/svg/timline-4.svg">
+              </div>
+              <div class="text" style="padding-top: 50%;">
+                <div style="display: flex;width: 100%;">
+                  <div style="padding-left:10px;">
+                    <h1 class="text-title">
+                      {{ publicservice.Texts.Texts["home11"] }}
+                    </h1>
+                    <h1 class="text-subtitle3">
+                      {{ publicservice.Texts.Texts["home12"] }}
+                    </h1>
+                  </div>
+                  <div style="text-align: center;margin: auto 0;">
+                    <button mat-flat-button (click)="Rules()"
+                            class="green-button">{{ publicservice.Texts.Texts["home48"] }}
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="image" style="padding-top: 50%;">
+                <img class="schedule-image" src="assets/svg/timline-6.svg">
+              </div>
+            </div>
+          </div>
+          <div class="event-schedule-phone">
+            <div class="schedule-middle-div">
+              <div class="Ellipse">
+              </div>
+              <div class="Line">
+              </div>
+              <div class="Ellipse">
+              </div>
+              <div class="Line">
+              </div>
+              <div class="Ellipse">
+              </div>
+              <div class="Line">
+              </div>
+              <div class="Ellipse">
+              </div>
+              <div class="Line">
+              </div>
+              <div class="Ellipse">
+              </div>
+              <div class="Line">
+              </div>
+              <div class="Ellipse">
+              </div>
+            </div>
+            <div class="middle-div-phone">
+              <div class="text" style="padding-top: 20px;">
+                <h1 class="text-title">
+                  {{ publicservice.Texts.Texts["home9"] }}</h1>
+                <h1 class="text-subtitle">
+                  {{ publicservice.Texts.Texts["home10"] }}
+                </h1>
+              </div>
+              <div class="image">
+                <img class="schedule-image" src="assets/svg/timline-1.svg">
+              </div>
+              <div class="text" style="padding-top: 0;margin-top: 0;">
+                <h1 class="text-title" style="margin-top: 0;">
+                  {{ publicservice.Texts.Texts["home49"] }}
+                </h1>
+                <h1 class="text-subtitle">
+                  {{ publicservice.Texts.Texts["home50"] }}
+                </h1>
+              </div>
+              <div class="image">
+                <img class="schedule-image" src="assets/svg/timline-2.svg">
+              </div>
+              <div class="text" style="margin-top: 0;">
+                <h1 class="text-title" style="margin-top: 0;">
+                  {{ publicservice.Texts.Texts["home51"] }}
+                </h1>
+                <h1 class="text-subtitle">
+                  {{ publicservice.Texts.Texts["home52"] }}
+                </h1>
+              </div>
+              <div class="image">
+                <img class="schedule-image" src="assets/svg/timline-3.svg">
+              </div>
+              <div class="text" style="margin-top: 0;">
+                <h1 class="text-title" style="margin-top: 0;">
+                  {{ publicservice.Texts.Texts["home53"] }}
+                </h1>
+                <h1 class="text-subtitle">
+                  {{ publicservice.Texts.Texts["home54"] }}
+                </h1>
+              </div>
+              <div class="image">
+                <img class="schedule-image" src="assets/svg/timline-4.svg">
+              </div>
+              <div class="text" style="margin-top: 0;">
+                <div style="display: flex;width: 100%;">
+                  <div style="padding-left:10px;">
+                    <h1 class="text-title" style="margin-top: 0;">
+                      {{ publicservice.Texts.Texts["home11"] }}
+                    </h1>
+                    <h1 class="text-subtitle">
+                      {{ publicservice.Texts.Texts["home12"] }}
+                    </h1>
+                  </div>
+                  <div style="text-align: center;margin: auto ;">
+                    <button mat-flat-button (click)="Rules()"
+                            class="green-button">{{ publicservice.Texts.Texts["home48"] }}
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="image">
+                <img class="schedule-image" src="assets/svg/timline-5.svg">
+              </div>
+              <div class="text" style="margin-top: 0;">
+                <h1 class="text-title" style="margin-top: 0;">
+                  {{ publicservice.Texts.Texts["home13"] }}
+                </h1>
+                <h1 class="text-subtitle">
+                  {{ publicservice.Texts.Texts["home14"] }}
+                </h1>
+              </div>
+              <div class="image">
+                <img class="schedule-image" src="assets/svg/timline-6.svg">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+
+      <!-- <div class="light-putple-rectangle"></div> -->
+      <div class="prizes" style="padding-bottom: 0;">
+        <div>
+          <img class="light-purple-wave" src="assets/svg/wave-purple-light.svg">
+        </div>
+        <div class="inner-prizes">
+          <div class="prizes-title">
+            <h1 style="margin-top: -10px;">{{ publicservice.Texts.Texts["home43"] }}</h1>
+          </div>
+          <div class="prize-cards-whole-div">
+            <div class="prize-cards-inner-div">
+              <div class="prize-cards">
+                <div class="prize-card-image-div">
+                  <img class="prize-card-image" src="assets/svg/prize-1.svg">
+                </div>
+                <!-- <div style="padding-top: 20%;"> -->
+                <h2 class="prize-card-title">{{ publicservice.Texts.Texts["home45"] }}</h2>
+                <h3 class="prize-card-discription">{{ publicservice.Texts.Texts["home46"] }}</h3>
+                <!-- </div> -->
+              </div>
+              <div class="prize-cards">
+                <div class="prize-card-image-div">
+                  <img class="prize-card-image" src="assets/svg/prize-2.svg">
+                </div>
+                <!-- <div style="padding-top: 20%;width: 100%;"> -->
+                <h2 class="prize-card-title" style="width: 100%;">
+                  {{ publicservice.Texts.Texts["home55"] }}</h2>
+                <h3 class="prize-card-discription" style="width: 100%;">
+                  {{ publicservice.Texts.Texts["home60"] }}</h3>
+                <!-- </div> -->
+              </div>
+            </div>
+            <div class="prize-cards-inner-div">
+              <div class="prize-cards">
+                <div class="prize-card-image-div" style="justify-content: center;">
+                  <img class="prize-card-image" src="assets/svg/prize-3.svg">
+                </div>
+                <!-- <div style="padding-top: 20%;"> -->
+                <h2 class="prize-card-title">{{ publicservice.Texts.Texts["home56"] }}</h2>
+                <h3 class="prize-card-discription">{{ publicservice.Texts.Texts["home61"] }}</h3>
+                <!-- </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div #workshop id="workshop"></div>
+    <div class="whole-workshop">
+
+      <!-- <div class="green-rectangle-under-workshops">
+  </div> -->
+
+      <div class="workshops-background">
+        <div style="margin-bottom: -1%;">
+          <img class="green-wave-above-wrokshops" src="assets/svg/wave-green.svg">
+        </div>
+        <div style="background-color: #4F7B7A;padding: 30px 0;">
+          <h1 class="collapse-header">
+            {{ publicservice.Texts.Texts["home15"] }}</h1>
+          <div *ngFor="let workshop of workshopsArray;let i = index" class="workshops-whole-collapse">
+            <img src="../../assets/images/2023/hayahool.png" class="workshop_creature" alt="">
+            <div class="orange-collapse">
+            </div>
+            <div style="width: 100%;padding: 10px 0;">
+              <div class="components-collapse">
+                <h3 class="collapse-title">
+                  {{ workshop.title }}</h3>
+                <h4 class="collapse-subject">
+                  {{ workshopsDate[i] }}</h4>
+                <h4 class="collapse-subject">
+                  ظرفیت باقیمانده: {{ workshop.remain_capacity }}</h4>
+                <!-- <h4 class="collapse-subject">
+                    {{workshopsLevel[i]}}</h4> -->
+                <div class="register-button-div">
+                  <button mat-stroked-button (click)="registerWorkshop(i)"
+                          class="register-button">{{ publicservice.Texts.Texts["home20"] }}
+                  </button>
+                </div>
+                <button mat-button class="collapse"
+                        (click)="workshopsActive[i] =(workshopsActive[i] == 'active' ? 'deactive' : 'active');iconW[i] = (iconW[i] == 'keyboard_arrow_down' ? 'keyboard_arrow_up' : 'keyboard_arrow_down') ">{{ publicservice.Texts.Texts["home21"] }}
+                  <mat-icon class="collapse-icon" [inline]="true">{{ iconW[i] }}</mat-icon>
+                </button>
+              </div>
+              <div [class]="workshopsActive[i]">
+                <div class="collapse-background">
+                  <div>
+                    <p class="collapse-about" [innerHTML]="workshop.content"></p>
+                    <h3 class="collapse-hour">ساعت : {{ workshopsStartHour[i] }} الی {{ workshopsEndHour[i] }}
+                    </h3>
+                  </div>
+                  <div class="collapse-cost-div">
+                    <h3 class="collapse-cost">
+                      {{ publicservice.Texts.Texts['home57'] }}{{ workshop.cost }}{{ publicservice.Texts.Texts['home58'] }}
+                    </h3>
+                  </div>
+                  <div class="collapse-presenters-title-div" *ngIf="workshop.presenters.length > 0">
+                    <h1 class="collapse-persenters-title">
+                      {{ publicservice.Texts.Texts["home23"] }}
+                    </h1>
+                  </div>
+                  <div
+                    style="display: flex;justify-content: center;flex-wrap: wrap;grid-auto-rows: auto;">
+                    <div class="presenter-card">
+                      <div class="presenter-card-inside"
+                           *ngFor="let presenter of workshop.presenters;">
+                        <div>
+                          <img class="presenter-image" src="{{presenter.profile}}">
+                        </div>
+                        <div style="text-align: right;height: 30%;">
+                          <h2 class="presenter-name">
+                            {{ presenter.first_name }} {{ presenter.last_name }}
+                          </h2>
+                          <!-- <div style="display: flex;">
+                              <a href="{{presenter.linked_in}}">
+                                  <mat-icon class="icon"
+                                      style="font-size: 25px;margin-right: 10px;">
+                                      link</mat-icon>
+                              </a>
+                          </div> -->
+                          <h4 class="presenter-about" [innerHTML]="presenter.descriptions"></h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="collapse-presenters-title-div" *ngIf="workshop.assistants.length > 0">
+                    <h1 class="collapse-persenters-title">
+                      {{ publicservice.Texts.Texts["home63"] }}
+                    </h1>
+                  </div>
+                  <div
+                    style="display: flex;justify-content: center;flex-wrap: wrap;grid-auto-rows: auto;">
+                    <div class="presenter-card">
+                      <div class="assistant-card-inside"
+                           *ngFor="let assistant of workshop.assistants;">
+                        <div>
+                          <img class="presenter-image" src="{{assistant.profile}}">
+                          <div style="text-align: center;">
+                            <h2 class="presenter-name">
+                              {{ assistant.first_name }} {{ assistant.last_name }}
+                            </h2>
+                            <h4 class="presenter-about">{{ assistant.role }} </h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="whole-workshop-phone">
+      <div class="workshops-background" style="padding-top: 10px;margin-top: -1%;">
+        <div>
+          <img class="green-wave-above-wrokshops" src="assets/svg/wave-green.svg">
+        </div>
+
+        <div style="background-color: #4F7B7A;padding: 30px 0;margin-top: -40px;">
+          <h1 class="collapse-header" style="background-color: #4F7B7A;">
+            {{ publicservice.Texts.Texts["home15"] }}</h1>
+          <div *ngFor="let workshop of workshopsArray;let i = index" class="workshops-whole-collapse">
+            <div style="width: 100%;">
+              <div class="components-collapse">
+                <div style="display: flex;width: 100%;justify-content: space-between; ">
+                  <div class="orange-collapse">
+                  </div>
+                  <h3 class="collapse-title">
+                    {{ workshop.title }}</h3>
+                </div>
+                <div class="register-button-div">
+                  <button mat-stroked-button
+                          class="register-button"
+                          (click)="registerWorkshop(i)">{{ publicservice.Texts.Texts["home20"] }}
+                  </button>
+                </div>
+              </div>
+              <div
+                style="background-color: #D6FFD6;border-bottom-left-radius: 12px;border-bottom-right-radius: 12px;">
+                <div class="collapse-discription-div">
+                  <h4 class="collapse-subject">
+                    {{ workshopsDate[i] }}</h4>
+                  <div class="collapse-discription-inner-div">
+                    <h4 class="collapse-subject">
+                      {{ workshop.remain_capacity }}</h4>
+                    <!-- <h4 class="collapse-subject">
+                        {{workshopsLevel[i]}}</h4> -->
+                  </div>
+                </div>
+                <div class="collapse-button">
+                  <button mat-button class="collapse"
+                          (click)="workshopsActive[i] =(workshopsActive[i] == 'active' ? 'deactive' : 'active');iconW[i] = (iconW[i] == 'keyboard_arrow_down' ? 'keyboard_arrow_up' : 'keyboard_arrow_down') ">{{ publicservice.Texts.Texts["home21"] }}
+                    <mat-icon class="collapse-icon" [inline]="true">{{ iconW[i] }}</mat-icon>
+                  </button>
+                </div>
+              </div>
+              <div [class]="workshopsActive[i]">
+                <div class="collapse-background">
+                  <div>
+                    <p class="collapse-about" [innerHTML]="workshop.content"></p>
+                    <h3 class="collapse-hour">ساعت : {{ workshopsStartHour[i] }} الی
+                      {{ workshopsEndHour[i] }}
+                    </h3>
+                  </div>
+                  <h3 class="collapse-cost">
+                    {{ publicservice.Texts.Texts['home57'] }}{{ workshop.cost }}{{ publicservice.Texts.Texts['home58'] }}
+                  </h3>
+                  <div class="collapse-presenters-title-div" *ngIf="workshop.presenters.length > 0">
+                    <h1 class="collapse-persenters-title">
+                      {{ publicservice.Texts.Texts["home23"] }}
+                    </h1>
+                  </div>
+                  <div
+                    style="display: flex;justify-content: center;flex-wrap: wrap;grid-auto-rows: auto;">
+                    <div class="presenter-card">
+                      <div class="presenter-card-inside"
+                           *ngFor="let presenter of workshop.presenters;let j = index">
+                        <div>
+                          <img class="presenter-image" src="{{presenter.profile}}">
+                        </div>
+                        <div style="text-align: right;height: 30%;">
+                          <h2 class="presenter-name">
+                            {{ presenter.first_name }} {{ presenter.last_name }}
+                          </h2>
+                          <!-- <div style="display: flex;">
+                              <a href="{{presenter.linked_in}}">
+                                  <mat-icon class="icon"
+                                      style="font-size: 25px;cursor: pointer;margin-right: 10px;">
+                                      link</mat-icon>
+                              </a>
+                          </div> -->
+                          <h4 class="presenter-about" [innerHTML]="presenter.descriptions"></h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="collapse-presenters-title-div" *ngIf="workshop.assistants.length > 0">
+                    <h1 class="collapse-persenters-title">
+                      {{ publicservice.Texts.Texts["home63"] }}
+                    </h1>
+                  </div>
+                  <div
+                    style="display: flex;justify-content: center;flex-wrap: wrap;grid-auto-rows: auto;">
+                    <div class="presenter-card">
+                      <div class="assistant-card-inside"
+                           *ngFor="let assistant of workshop.assistants;let j = index">
+                        <div>
+                          <img class="presenter-image" src="{{assistant.profile}}">
+                          <div style="text-align: center;">
+                            <h2 class="presenter-name">
+                              {{ assistant.first_name }} {{ assistant.last_name }}
+                            </h2>
+                            <h4 class="presenter-about">{{ assistant.role }} </h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <img #talk id="talk" class="green-wave-under-workshops" src="assets/svg/wave-green.svg">
+    </div>
+    <div class="talks-title-div">
+      <h1 class="talks-title">
+        {{ publicservice.Texts.Texts["home26"] }}</h1>
+    </div>
+    <div class="talks-background">
+      <div *ngFor="let talk of talksArray; let i = index" class="workshops-whole-collapse">
+        <img src="../../assets/images/2023/hayahool.png" class="workshop_creature" alt="">
+        <div class="pink-collapse">
+        </div>
+        <div style="width: 100%;padding: 10px 0;">
+          <div class="components-collapse">
+            <h3 class="collapse-title">
+              {{ talk.title }}</h3>
+            <h4 class="collapse-subject">
+              {{ talksDate[i] }}</h4>
+            <h4 class="collapse-subject">
+              ظرفیت باقیمانده: {{ talk.remain_capacity }}</h4>
+            <!-- <h4 class="collapse-subject">
+                {{talksLevel[i]}}</h4> -->
+            <div class="register-button-div">
+              <button mat-stroked-button (click)="registerTalk(i)"
+                      class="register-button">{{ publicservice.Texts.Texts["home31"] }}
+              </button>
+            </div>
+            <button mat-button class="collapse"
+                    (click)="talksActive[i] = (talksActive[i] == 'active' ? 'deactive' : 'active') ;iconT[i] = (iconT[i] == 'keyboard_arrow_down' ? 'keyboard_arrow_up' : 'keyboard_arrow_down') ">{{ publicservice.Texts.Texts["home32"] }}
+              <mat-icon class="collapse-icon" [inline]="true">{{ iconT[i] }}</mat-icon>
+            </button>
+          </div>
+          <div [class]="talksActive[i]">
+            <div class="collapse-background">
+              <div>
+                <p class="collapse-about" [innerHTML]="talk.content"></p>
+                <h3 class="collapse-hour">ساعت : {{ talksStartHour[i] }} الی {{ talksEndHour[i] }}</h3>
+              </div>
+              <div class="collapse-cost-div">
+                <h3 class="collapse-cost">
+                  {{ publicservice.Texts.Texts['home59'] }}
+                </h3>
+              </div>
+              <div class="collapse-presenters-title-div">
+                <h1 class="collapse-persenters-title">
+                  {{ publicservice.Texts.Texts["home34"] }}
+                </h1>
+              </div>
+              <div style="display: flex;justify-content: center;flex-wrap: wrap;grid-auto-rows: auto;">
+                <div class="presenter-card">
+                  <div class="presenter-card-inside" *ngFor="let presenter of talk.presenters;">
+                    <div>
+                      <img class="presenter-image" src="{{presenter.profile}}">
+                    </div>
+                    <div style="text-align: right;height: 30%;">
+                      <h2 class="presenter-name">
+                        {{ presenter.first_name }} {{ presenter.last_name }}
+                      </h2>
+                      <!-- <div style="display: flex;">
+                          <a href="{{presenter.linked_in}}">
+                              <mat-icon class="icon" style="font-size: 25px;margin-right: 10px;">
+                                  link
+                              </mat-icon>
+                          </a>
+                      </div> -->
+                      <h4 class="presenter-about" [innerHTML]="presenter.descriptions"></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="talks-background-phone" style="padding-bottom: 50px;">
+      <div *ngFor="let talk of talksArray; let i = index" class="workshops-whole-collapse">
+        <div style="width: 100%;">
+          <div class="components-collapse">
+            <div style="display: flex;width: 100%;justify-content: space-between;">
+              <div class="pink-collapse">
+              </div>
+              <h3 class="collapse-title">
+                {{ talk.title }}</h3>
+            </div>
+            <div class="register-button-div">
+              <button mat-stroked-button (click)="registerTalk(i)"
+                      class="register-button">{{ publicservice.Texts.Texts["home31"] }}
+              </button>
+            </div>
+          </div>
+          <div
+            style="background-color: #D6FFD6;border-bottom-left-radius: 12px;border-bottom-right-radius: 12px;">
+            <div
+              style="display: flex;justify-content: space-between;padding-right: 20px;padding-left: 20px;width: 100%;box-sizing: border-box;">
+              <h4 class="collapse-subject">
+                {{ talksDate[i] }}</h4>
+              <div style="display: flex;">
+                <h4 class="collapse-subject">
+                  {{ talk.remain_capacity }}</h4>
+                <!-- <h4 class="collapse-subject">
+                    {{talksLevel[i]}}</h4> -->
+              </div>
+            </div>
+            <button mat-button class="collapse"
+                    (click)="talksActive[i] = (talksActive[i] == 'active' ? 'deactive' : 'active') ;iconT[i] = (iconT[i] == 'keyboard_arrow_down' ? 'keyboard_arrow_up' : 'keyboard_arrow_down') ">{{ publicservice.Texts.Texts["home32"] }}
+              <mat-icon class="collapse-icon" [inline]="true">{{ iconT[i] }}</mat-icon>
+            </button>
+          </div>
+          <div [class]="talksActive[i]">
+            <div class="collapse-background">
+              <div>
+                <p class="collapse-about" [innerHTML]="talk.content"></p>
+                <h3 class="collapse-hour">ساعت : {{ talksStartHour[i] }} الی {{ talksEndHour[i] }}</h3>
+              </div>
+              <h3 class="collapse-cost">
+                {{ publicservice.Texts.Texts['home59'] }}
+              </h3>
+              <div class="collapse-presenters-title-div">
+                <h1 class="collapse-persenters-title">
+                  {{ publicservice.Texts.Texts["home34"] }}
+                </h1>
+              </div>
+              <div style="display: flex;justify-content: center;flex-wrap: wrap;grid-auto-rows: auto;">
+                <div class="presenter-card">
+                  <div class="presenter-card-inside"
+                       *ngFor="let presenter of talk.presenters;let j = index">
+                    <div>
+                      <img class="presenter-image" src="{{presenter.profile}}">
+                    </div>
+                    <div style="text-align: right;height: 30%;">
+                      <h2 class="presenter-name">
+                        {{ presenter.first_name }} {{ presenter.last_name }}
+                      </h2>
+                      <div style="display: flex;">
+                        <!-- <a href="{{presenter.linked_in}}">
+                            <mat-icon class="icon"
+                                style="font-size: 25px;cursor: pointer;margin-right: 10px;">link
+                            </mat-icon>
+                        </a>
+                    </div> -->
+                        <h4 class="presenter-about" [innerHTML]="presenter.descriptions"></h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="rectangle-under-talks-div"></div>
+    <div class="footer-whole-div" #footer id="footer">
+      <div>
+        <img class="purple-wave-above-footer" src="assets/svg/wave-purple.svg">
+      </div>
+      <div class="footer-div">
+        <div class="discription-footer-div">
+          <div class="discription-right-footer-div">
+            <div class="discription-right-footer-about-div">
+              <h1 class="discription-right-footer-about-title">
+                {{ publicservice.Texts.Texts["home37"] }}</h1>
+              <p class="discription-right-footer-about-discription">
+                {{ publicservice.Texts.Texts["home39"] }}
+                <br>
+                {{ publicservice.Texts.Texts["home62"] }}
+              </p>
+              <div style="text-align: center;">
+                <button mat-flat-button (click)="People()"
+                        class="green-button" id="green-button-phone">{{ publicservice.Texts.Texts["home47"] }}
+                </button>
+                <div class="footer-image-div-phone">
+                  <img class="footer-image" src="assets/images/folan.png">
+                </div>
+              </div>
+            </div>
+            <div class="discription-right-footer-bubble">
+            </div>
+          </div>
+          <div class="footer-image-div">
+            <img class="footer-image" src="assets/images/folan.png">
+          </div>
+        </div>
+        <div class="supporters-div">
+          <h1 class="supporters-title">
+            {{ publicservice.Texts.Texts["home40"] }}
+          </h1>
+          <div class="supporters-card-div">
+            <!-- <div class="supportes-card-image-div">
+                <img class="supporters-card-image" src="assets/images/institue.png">
+            </div>
+            <div class="supportes-card-image-div">
+                <img class="supporters-card-image" src="assets/images/funtory.png">
+            </div>
+            <div class="supportes-card-image-div">
+                <img class="supporters-card-image" src="assets/images/tod.png">
+            </div> -->
+            <div class="supportes-card-image-div">
+              <img class="supporters-card-image" src="assets/images/2024/sponsors/dropout.png">
+            </div>
+            <div class="supportes-card-image-div">
+              <img class="supporters-card-image" src="assets/images/2024/sponsors/bazar.png">
+            </div>
+            <div class="supportes-card-image-div">
+              <img class="supporters-card-image" src="assets/images/2024/sponsors/quizOfKings.png">
+            </div>
+            <div class="supportes-card-image-div">
+              <img class="supporters-card-image" src="assets/images/2024/sponsors/paeezan.png">
+            </div>
+            <div class="supportes-card-image-div">
+              <img class="supporters-card-image" src="assets/images/2024/sponsors/incytelGames.png">
+            </div>
+          </div>
+          <!-- <div class="supporters-card-div">
+              <div class="supportes-card-image-div">
+                  <img class="supporters-card-image" src="assets/images/avngames.png">
+              </div>
+              <div class="supportes-card-image-div">
+                  <img class="supporters-card-image" src="assets/images/brainladder.png">
+              </div>
+              <div class="supportes-card-image-div">
+                  <img class="supporters-card-image" src="assets/images/IranServer.png">
+              </div>
+              <div class="supportes-card-image-div">
+                  <img class="supporters-card-image" src="assets/images/black-cube.png">
+              </div>
+              <div class="supportes-card-image-div">
+                  <img class="supporters-card-image" src="assets/images/myket.png">
+              </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+    <div class="developers-div">
+      <p class="socials">ما را در شبکه‌های اجتماعی دنبال کنید:</p>
+      <div class="developers-image" style="margin-bottom: 30px;">
+        <a href="https://t.me/AUTGamecraft" target="_blank" style="margin-right:30px;">
+          <img src='{{"assets/svg/telegram.svg"}}'
+               style="width: 85px; height:85px; border-radius:50%; margin-top: 5px;"/>
+        </a>
+        <a href="https://www.instagram.com/autgamecraft/" target="_blank" style="margin-right:30px;">
+          <img src='{{"assets/svg/instagram.svg"}}'
+               style="width: 85px; height:85px; border-radius:50%; margin-top: 5px;"/>
+        </a>
+        <!-- <a href="https://discord.gg/SpUZ89KKbn" target="_blank"  style="margin-right:30px;">
+            <img src='{{"assets/svg/discord.svg"}}' style="width: 90px; height:90px; border-radius:50%;"/>
+        </a> -->
+        <a href="https://twitter.com/autgamecraft" target="_blank" style="margin-right:30px;">
+          <img src='{{"assets/svg/twitter.svg"}}' style="width: 90px; height:90px; border-radius:50%;"/>
+        </a>
+      </div>
+      <div class="developers-image">
+
+        <!-- <img class="ssc-image" src="assets/images/Asset 4.png"> -->
+        <img class="ssc-image" src="assets/images/ssc_white.png">
+      </div>
+      <p class="developers">{{ publicservice.Texts.Texts["home42"] }}</p>
+    </div>
+  </div>
 </div>

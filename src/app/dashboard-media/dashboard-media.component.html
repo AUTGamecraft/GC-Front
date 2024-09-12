@@ -1,172 +1,179 @@
 <div class="whole" id="dash" #dash>
-    <div class="dash-media">
-        <div class="logo">
-            <p class="logo-text" style="margin-left: -5px;">{{publicservice.Texts.Texts["logo1"]}}</p>
-            <img class="logo-image" (click)='Home()' src="assets/svg/dark-3d.svg">
-            <p class="logo-text" style="margin-right: -5px;">{{publicservice.Texts.Texts["logo2"]}}</p>
+  <div class="dash-media">
+    <div class="logo">
+      <p class="logo-text" style="margin-left: -5px;">{{ publicservice.Texts.Texts["logo1"] }}</p>
+      <img class="logo-image" (click)='Home()' src="assets/svg/dark-3d.svg">
+      <p class="logo-text" style="margin-right: -5px;">{{ publicservice.Texts.Texts["logo2"] }}</p>
+    </div>
+    <div class="dash-media-inner-div" style="margin-top: 20px;">
+      <div class="right-part">
+        <div class="right-part-header">
+          <div class="name-image-phone">
+            <div>
+              <img class="user-image" id="image">
+            </div>
+            <p class="user-name">
+              {{ userName }}</p>
+          </div>
+          <div style="display: flex;justify-content: center;">
+            <div *ngIf="!isStaff" style="margin: auto 0;">
+              <button mat-stroked-button matBadge="{{count}}" matBadgePosition="before" (click)="Cart()"
+                      id="cart-button-phone"
+                      class="outlined-button">{{ publicservice.Texts.Texts['cart8'] }}
+              </button>
+            </div>
+            <button mat-button (click)="logOut()"
+                    class="normal-button">{{ publicservice.Texts.Texts["header8"] }}
+            </button>
+          </div>
         </div>
-        <div class="dash-media-inner-div" style="margin-top: 20px;">
-            <div class="right-part">
-                <div class="right-part-header">
-                    <div class="name-image-phone">
-                        <div>
-                            <img class="user-image" id="image">
-                        </div>
-                        <p class="user-name">
-                            {{userName}}</p>
-                    </div>
-                    <div style="display: flex;justify-content: center;">
-                        <div *ngIf="!isStaff" style="margin: auto 0;">
-                            <button mat-stroked-button matBadge="{{count}}" matBadgePosition="before" (click)="Cart()"
-                                id="cart-button-phone"
-                                class="outlined-button">{{publicservice.Texts.Texts['cart8']}}</button>
-                        </div>
-                        <button mat-button (click)="logOut()"
-                            class="normal-button">{{publicservice.Texts.Texts["header8"]}}</button>
-                    </div>
-                </div>
-                <div class="header-buttons">
-                    <div class="right-header-button">
-                        <button mat-button style="background-color: #fafafa;" class="buttons" (click)="events()">
-                            <mat-icon>{{publicservice.Texts.Texts["dash-media11"]}}</mat-icon>
-                            {{publicservice.Texts.Texts["dash-media2"]}}
-                        </button>
-                        <!-- <button mat-button (click)="media()" style="background-color: #eceff1;" class="buttons">
-                            <mat-icon>{{publicservice.Texts.Texts["dash-media12"]}}</mat-icon>
-                            {{publicservice.Texts.Texts["dash-media3"]}}
-                        </button> -->
-                    </div>
-                    <div class="left-header-button">
-                        <button mat-button (click)="Teams()" style="background-color: #fafafa;" class="buttons">
-                            <mat-icon>{{publicservice.Texts.Texts["dash-media13"]}}</mat-icon>
-                            {{publicservice.Texts.Texts["dash-media4"]}}
-                        </button>
-                        <button mat-button (click)="gameStatus()" style="background-color: #fafafa;" class="buttons">
-                            <mat-icon>{{publicservice.Texts.Texts["dash-media14"]}}</mat-icon>
-                            {{publicservice.Texts.Texts["dash-media15"]}}
-                        </button>
-                    </div>
-                </div>
-                <!-- <button mat-stroked-button class="outlined-button">{{publicservice.Texts.Texts["dash-media5"]}}</button> -->
-                <div *ngIf="!isStaff">
-                    <button mat-stroked-button matBadge="{{count}}" matBadgePosition="before" (click)="Cart()"
-                        class="outlined-button">{{publicservice.Texts.Texts['cart8']}}</button>
-                </div>
+        <div class="header-buttons">
+          <div class="right-header-button">
+            <button mat-button style="background-color: #fafafa;" class="buttons" (click)="events()">
+              <mat-icon>{{ publicservice.Texts.Texts["dash-media11"] }}</mat-icon>
+              {{ publicservice.Texts.Texts["dash-media2"] }}
+            </button>
+            <!-- <button mat-button (click)="media()" style="background-color: #eceff1;" class="buttons">
+                <mat-icon>{{publicservice.Texts.Texts["dash-media12"]}}</mat-icon>
+                {{publicservice.Texts.Texts["dash-media3"]}}
+            </button> -->
+          </div>
+          <div class="left-header-button">
+            <button mat-button (click)="Teams()" style="background-color: #fafafa;" class="buttons">
+              <mat-icon>{{ publicservice.Texts.Texts["dash-media13"] }}</mat-icon>
+              {{ publicservice.Texts.Texts["dash-media4"] }}
+            </button>
+            <button mat-button (click)="gameStatus()" style="background-color: #fafafa;" class="buttons">
+              <mat-icon>{{ publicservice.Texts.Texts["dash-media14"] }}</mat-icon>
+              {{ publicservice.Texts.Texts["dash-media15"] }}
+            </button>
+          </div>
+        </div>
+        <!-- <button mat-stroked-button class="outlined-button">{{publicservice.Texts.Texts["dash-media5"]}}</button> -->
+        <div *ngIf="!isStaff">
+          <button mat-stroked-button matBadge="{{count}}" matBadgePosition="before" (click)="Cart()"
+                  class="outlined-button">{{ publicservice.Texts.Texts['cart8'] }}
+          </button>
+        </div>
+      </div>
+      <div class="left-part">
+        <h1 class="events-title">
+          {{ publicservice.Texts.Texts["dash-media6"] }}</h1>
+        <p style="font-family: 'Estedad-Regular';color:#3d3a7d ;">{{ publicservice.Texts.Texts["dash-media1"] }}
+        </p>
+        <div class="workshops-div">
+          <h3 class="workshops-title">
+            {{ publicservice.Texts.Texts["dash-media7"] }} </h3>
+          <div class="mat-card" *ngFor="let workshop of workshopsArray;let i=index">
+            <div style="display: flex;direction: rtl;justify-content: space-between;">
+              <p style="margin: auto 0;text-align: right;">{{ workshop.title }}</p>
+              <button mat-stroked-button (click)="downloadWorkshop(i)"
+                      class="download-button">{{ publicservice.Texts.Texts["dash-media9"] }}
+              </button>
             </div>
-            <div class="left-part">
-                <h1 class="events-title">
-                    {{publicservice.Texts.Texts["dash-media6"]}}</h1>
-                <p style="font-family: 'Estedad-Regular';color:#3d3a7d ;">{{publicservice.Texts.Texts["dash-media1"]}}
-                </p>
-                <div class="workshops-div">
-                    <h3 class="workshops-title">
-                        {{publicservice.Texts.Texts["dash-media7"]}} </h3>
-                    <div class="mat-card" *ngFor="let workshop of workshopsArray;let i=index" >
-                        <div style="display: flex;direction: rtl;justify-content: space-between;">
-                            <p style="margin: auto 0;text-align: right;">{{workshop.title}}</p>
-                            <button mat-stroked-button (click)="downloadWorkshop(i)"
-                                class="download-button">{{publicservice.Texts.Texts["dash-media9"]}}
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="talks-div">
-                    <h3 class="talks-title">
-                        {{publicservice.Texts.Texts["dash-media10"]}}</h3>
-                    <div class="mat-card" *ngFor="let talk of talksArray;let i=index" >
-                        <div style="display: flex;direction: rtl;justify-content: space-between;">
-                            <p style="margin: auto 0;text-align: right;">{{talk.title}}</p>
-                            <button mat-stroked-button (click)="downloadTalk(i)"
-                                class="download-button">{{publicservice.Texts.Texts["dash-media9"]}}
-                            </button>
-                        </div>
-                    </div>
-                </div>
+          </div>
+        </div>
+        <div class="talks-div">
+          <h3 class="talks-title">
+            {{ publicservice.Texts.Texts["dash-media10"] }}</h3>
+          <div class="mat-card" *ngFor="let talk of talksArray;let i=index">
+            <div style="display: flex;direction: rtl;justify-content: space-between;">
+              <p style="margin: auto 0;text-align: right;">{{ talk.title }}</p>
+              <button mat-stroked-button (click)="downloadTalk(i)"
+                      class="download-button">{{ publicservice.Texts.Texts["dash-media9"] }}
+              </button>
             </div>
+          </div>
+        </div>
+      </div>
 
-        </div>
     </div>
-    <div class="footer-whole-div">
-        <img class="purple-wave-above-footer" src="assets/svg/wave-purple.svg">
-        <div class="footer-div">
-            <div class="discription-footer-div">
-                <div class="discription-right-footer-div">
-                    <div class="discription-right-footer-about-div">
-                        <h1 class="discription-right-footer-about-title">
-                            {{publicservice.Texts.Texts["home37"]}}</h1>
-                        <p class="discription-right-footer-about-discription">
-                            {{publicservice.Texts.Texts["home39"]}}
-                            <br>
-                            {{publicservice.Texts.Texts["home62"]}}
-                        </p>
-                        <div style="text-align: center;">
-                            <button mat-flat-button (click)="People()"
-                                class="green-button">{{publicservice.Texts.Texts["home47"]}}</button>
-                            <div class="footer-image-div-phone">
-                                <img class="footer-image" src="assets/images/folan.png">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="discription-right-footer-bubble">
-                    </div>
-                </div>
-                <div class="footer-image-div">
-                    <img class="footer-image" src="assets/images/folan.png">
-                </div>
+  </div>
+  <div class="footer-whole-div">
+    <img class="purple-wave-above-footer" src="assets/svg/wave-purple.svg">
+    <div class="footer-div">
+      <div class="discription-footer-div">
+        <div class="discription-right-footer-div">
+          <div class="discription-right-footer-about-div">
+            <h1 class="discription-right-footer-about-title">
+              {{ publicservice.Texts.Texts["home37"] }}</h1>
+            <p class="discription-right-footer-about-discription">
+              {{ publicservice.Texts.Texts["home39"] }}
+              <br>
+              {{ publicservice.Texts.Texts["home62"] }}
+            </p>
+            <div style="text-align: center;">
+              <button mat-flat-button (click)="People()"
+                      class="green-button">{{ publicservice.Texts.Texts["home47"] }}
+              </button>
+              <div class="footer-image-div-phone">
+                <img class="footer-image" src="assets/images/folan.png">
+              </div>
             </div>
-            <div class="supporters-div">
-                <h1 class="supporters-title">
-                    {{publicservice.Texts.Texts["home40"]}}
-                </h1>
-                <div class="supporters-card-div">
-                    <!-- <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/institue.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/funtory.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/tod.png">
-                    </div> -->
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/dropout.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/medrick-logo.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/dream-event.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/pgj.png">
-                    </div>
-                </div>
-                <!-- <div class="supporters-card-div">
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/avngames.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/brainladder.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/IranServer.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/black-cube.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/myket.png">
-                    </div>
-                </div> -->
+          </div>
+          <div class="discription-right-footer-bubble">
+          </div>
+        </div>
+        <div class="footer-image-div">
+          <img class="footer-image" src="assets/images/folan.png">
+        </div>
+      </div>
+      <div class="supporters-div">
+        <h1 class="supporters-title">
+          {{ publicservice.Texts.Texts["home40"] }}
+        </h1>
+        <div class="supporters-card-div">
+          <!-- <div class="supportes-card-image-div">
+              <img class="supporters-card-image" src="assets/images/institue.png">
+          </div>
+          <div class="supportes-card-image-div">
+              <img class="supporters-card-image" src="assets/images/funtory.png">
+          </div>
+          <div class="supportes-card-image-div">
+              <img class="supporters-card-image" src="assets/images/tod.png">
+          </div> -->
+          <div class="supportes-card-image-div">
+            <img class="supporters-card-image" src="assets/images/2024/sponsors/dropout.png">
+          </div>
+          <div class="supportes-card-image-div">
+            <img class="supporters-card-image" src="assets/images/2024/sponsors/bazar.png">
+          </div>
+          <div class="supportes-card-image-div">
+            <img class="supporters-card-image" src="assets/images/2024/sponsors/quizOfKings.png">
+          </div>
+          <div class="supportes-card-image-div">
+            <img class="supporters-card-image" src="assets/images/2024/sponsors/paeezan.png">
+          </div>
+          <div class="supportes-card-image-div">
+            <img class="supporters-card-image" src="assets/images/2024/sponsors/incytelGames.png">
+          </div>
+        </div>
+        <!-- <div class="supporters-card-div">
+            <div class="supportes-card-image-div">
+                <img class="supporters-card-image" src="assets/images/avngames.png">
             </div>
+            <div class="supportes-card-image-div">
+                <img class="supporters-card-image" src="assets/images/brainladder.png">
+            </div>
+            <div class="supportes-card-image-div">
+                <img class="supporters-card-image" src="assets/images/IranServer.png">
+            </div>
+            <div class="supportes-card-image-div">
+                <img class="supporters-card-image" src="assets/images/black-cube.png">
+            </div>
+            <div class="supportes-card-image-div">
+                <img class="supporters-card-image" src="assets/images/myket.png">
+            </div>
+        </div> -->
+      </div>
 
-        </div>
     </div>
-    <div class="developers-div">
-        <div class="developers-image">
-            <!-- <img class="ssc-image" src="assets/images/Asset 4.png"> -->
-            <img class="ssc-image" src="assets/images/ssc_white.png">
-        </div>
-        <p class="developers">{{publicservice.Texts.Texts["home42"]}}</p>
+  </div>
+  <div class="developers-div">
+    <div class="developers-image">
+      <!-- <img class="ssc-image" src="assets/images/Asset 4.png"> -->
+      <img class="ssc-image" src="assets/images/ssc_white.png">
     </div>
+    <p class="developers">{{ publicservice.Texts.Texts["home42"] }}</p>
+  </div>
 </div>

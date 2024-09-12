@@ -1,198 +1,210 @@
 <div class="whole" #cart id="cart">
-    <div class="cart">
-        <div class="logo">
-            <p class="logo-text" style="margin-left: -5px;">{{publicservice.Texts.Texts["logo1"]}}</p>
-            <img class="logo-image" (click)='Home()' src="assets/svg/dark-3d.svg">
-            <p class="logo-text" style="margin-right: -5px;">{{publicservice.Texts.Texts["logo2"]}}</p>
-        </div>
-        <div class="dash-event">
-            <div class="right-part">
-                <div class="right-part-header">
-                    <div class="name-image-phone">
-                        <div>
-                            <img class="user-image" id="image">
-                        </div>
-                        <p class="user-name">{{userName}}</p>
-                    </div>
-                    <div style="display: flex;justify-content: center;">
-                        <button mat-stroked-button matBadge="{{count}}" matBadgePosition="before" (click)="Cart()"
-                            id="cart-button-phone" class="outlined-button"
-                            style="margin: auto 0;">{{publicservice.Texts.Texts['cart8']}}</button>
-                        <button mat-button (click)="logOut()"
-                            class="normal-button">{{publicservice.Texts.Texts["header8"]}}</button>
-                    </div>
-                </div>
-                <div class="header-buttons">
-                    <div class="right-header-button">
-                        <button mat-button style="background-color: #fafafa;" class="buttons" (click)="events()">
-                            <mat-icon>{{publicservice.Texts.Texts["dash-event29"]}}</mat-icon>
-                            {{publicservice.Texts.Texts["dash-event2"]}}
-                        </button>
-                        <!-- <button mat-button (click)="media()" style="background-color: #fafafa;" class="buttons">
-                            <mat-icon>{{publicservice.Texts.Texts["dash-event30"]}}</mat-icon>
-                            {{publicservice.Texts.Texts["dash-event3"]}}
-                        </button> -->
-                    </div>
-                    <div class="left-header-button">
-                        <button mat-button (click)="Teams()" style="background-color: #fafafa;" class="buttons">
-                            <mat-icon>{{publicservice.Texts.Texts["dash-event31"]}}</mat-icon>
-                            {{publicservice.Texts.Texts["dash-event4"]}}
-                        </button>
-                        <button mat-button (click)="gameStatus()" style="background-color: #fafafa;" class="buttons">
-                            <mat-icon>{{publicservice.Texts.Texts["dash-event32"]}}</mat-icon>
-                            {{publicservice.Texts.Texts["dash-event33"]}}
-                        </button>
-                    </div>
-                </div>
-                <!-- <button mat-stroked-button class="outlined-button">{{publicservice.Texts.Texts["dash-event5"]}}</button> -->
-                <button mat-stroked-button matBadge="{{count}}" matBadgePosition="before" (click)="Cart()"
-                    id="cart-button" class="outlined-button">{{publicservice.Texts.Texts['cart8']}}</button>
-            </div>
-            <div class="left-part">
-                <h1 class="title">{{publicservice.Texts.Texts['cart1']}}</h1>
-                <div *ngFor="let cart of cartArray;let i = index">
-                    <div class="item-workshop-phone" *ngIf="cart.talk == null" [class]="cartDelete[i]">
-                        <div class="orange"></div>
-                        <div style="width: 100%;">
-                            <p class="item-title" style="text-align: right;">{{cart.workshop.title}}</p>
-                            <div style="display: flex;justify-content: space-between;padding: 0 10px;">
-                                <p class="item-date">{{cart.workshop.start}}</p>
-                                <div style="display: flex;">
-                                    <p class="item-cost">{{cart.workshop.cost}}</p>
-                                    <button class="delete-button" (click)="Delete(i)"
-                                        mat-stroked-button>{{publicservice.Texts.Texts['cart5']}}</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div *ngFor="let cart of cartArray;let i = index">
-                    <div class="item-workshop" *ngIf="cart.talk == null" [class]="cartDelete[i]">
-                        <div style="display: flex;">
-                            <div class="orange"></div>
-                            <p class="item-title">{{cart.workshop.title}}</p>
-                        </div>
-                        <p class="item-date">{{cart.workshop.start}}</p>
-                        <div style="display: flex;">
-                            <p class="item-cost">{{cart.workshop.cost}}</p>
-                            <button class="delete-button" (click)="Delete(i)"
-                                mat-stroked-button>{{publicservice.Texts.Texts['cart5']}}</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- <div class="item-workshop" [class]="Delete()">
-                    <div style="display: flex;">
-                        <div class="pink"></div>
-                        <p class="item-title">{{publicservice.Texts.Texts['cart2']}}</p>
-                    </div>
-                    <p class="item-date">{{publicservice.Texts.Texts['cart3']}}</p>
-                    <div style="display: flex;">
-                        <p class="item-cost">{{publicservice.Texts.Texts['cart4']}}</p>
-                        <button class="delete-button" (click)="Delete()"
-                            mat-stroked-button>{{publicservice.Texts.Texts['cart5']}}</button>
-                    </div>
-                </div> -->
-                <div class="discount-code">
-
-                        <mat-label class="discount-lable">{{publicservice.Texts.Texts['cart9']}}</mat-label>
-                        <input matInput class="discount-input" [(ngModel)]="publicservice.discount_code" >
-
-                        <button mat-flat-button
-                        class="discount-button" (click) ="Discount()">{{publicservice.Texts.Texts['cart10']}}</button>
-
-
-                    </div>
-                <div class="below-items">
-                    <p class="cost">{{totalCost}}{{publicservice.Texts.Texts['cart6']}}</p>
-                    <button mat-flat-button (click)="Pay()" id="payButton"
-                        class="green-button">{{publicservice.Texts.Texts['cart7']}}</button>
-                </div>
-
-            </div>
-        </div>
+  <div class="cart">
+    <div class="logo">
+      <p class="logo-text" style="margin-left: -5px;">{{ publicservice.Texts.Texts["logo1"] }}</p>
+      <img class="logo-image" (click)='Home()' src="assets/svg/dark-3d.svg">
+      <p class="logo-text" style="margin-right: -5px;">{{ publicservice.Texts.Texts["logo2"] }}</p>
     </div>
-    <div class="footer-whole-div">
-        <img class="purple-wave-above-footer" src="assets/svg/wave-purple.svg">
-        <div class="footer-div">
-            <div class="discription-footer-div">
-                <div class="discription-right-footer-div">
-                    <div class="discription-right-footer-about-div">
-                        <h1 class="discription-right-footer-about-title">
-                            {{publicservice.Texts.Texts["home37"]}}</h1>
-                        <p class="discription-right-footer-about-discription">
-                            {{publicservice.Texts.Texts["home39"]}}
-                            <br>
-                            {{publicservice.Texts.Texts["home62"]}}
-                        </p>
-                        <div style="text-align: center;">
-                            <button mat-flat-button (click)="People()"
-                                class="green-button">{{publicservice.Texts.Texts["home47"]}}</button>
-                        </div>
-                        <div class="footer-image-div-phone">
-                            <img class="footer-image" src="assets/images/folan.png">
-                        </div>
-                    </div>
-                    <div class="discription-right-footer-bubble">
-                    </div>
-                </div>
-                <div class="footer-image-div">
-                    <img class="footer-image" src="assets/images/folan.png">
-                </div>
+    <div class="dash-event">
+      <div class="right-part">
+        <div class="right-part-header">
+          <div class="name-image-phone">
+            <div>
+              <img class="user-image" id="image">
             </div>
-            <div class="supporters-div">
-                <h1 class="supporters-title">
-                    {{publicservice.Texts.Texts["home40"]}}
-                </h1>
-                <div class="supporters-card-div">
-                    <!-- <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/institue.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/funtory.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/tod.png">
-                    </div> -->
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/dropout.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/medrick-logo.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/dream-event.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/pgj.png">
-                    </div>
+            <p class="user-name">{{ userName }}</p>
+          </div>
+          <div style="display: flex;justify-content: center;">
+            <button mat-stroked-button matBadge="{{count}}" matBadgePosition="before" (click)="Cart()"
+                    id="cart-button-phone" class="outlined-button"
+                    style="margin: auto 0;">{{ publicservice.Texts.Texts['cart8'] }}
+            </button>
+            <button mat-button (click)="logOut()"
+                    class="normal-button">{{ publicservice.Texts.Texts["header8"] }}
+            </button>
+          </div>
+        </div>
+        <div class="header-buttons">
+          <div class="right-header-button">
+            <button mat-button style="background-color: #fafafa;" class="buttons" (click)="events()">
+              <mat-icon>{{ publicservice.Texts.Texts["dash-event29"] }}</mat-icon>
+              {{ publicservice.Texts.Texts["dash-event2"] }}
+            </button>
+            <!-- <button mat-button (click)="media()" style="background-color: #fafafa;" class="buttons">
+                <mat-icon>{{publicservice.Texts.Texts["dash-event30"]}}</mat-icon>
+                {{publicservice.Texts.Texts["dash-event3"]}}
+            </button> -->
+          </div>
+          <div class="left-header-button">
+            <button mat-button (click)="Teams()" style="background-color: #fafafa;" class="buttons">
+              <mat-icon>{{ publicservice.Texts.Texts["dash-event31"] }}</mat-icon>
+              {{ publicservice.Texts.Texts["dash-event4"] }}
+            </button>
+            <button mat-button (click)="gameStatus()" style="background-color: #fafafa;" class="buttons">
+              <mat-icon>{{ publicservice.Texts.Texts["dash-event32"] }}</mat-icon>
+              {{ publicservice.Texts.Texts["dash-event33"] }}
+            </button>
+          </div>
+        </div>
+        <!-- <button mat-stroked-button class="outlined-button">{{publicservice.Texts.Texts["dash-event5"]}}</button> -->
+        <button mat-stroked-button matBadge="{{count}}" matBadgePosition="before" (click)="Cart()"
+                id="cart-button" class="outlined-button">{{ publicservice.Texts.Texts['cart8'] }}
+        </button>
+      </div>
+      <div class="left-part">
+        <h1 class="title">{{ publicservice.Texts.Texts['cart1'] }}</h1>
+        <div *ngFor="let cart of cartArray;let i = index">
+          <div class="item-workshop-phone" *ngIf="cart.talk == null" [class]="cartDelete[i]">
+            <div class="orange"></div>
+            <div style="width: 100%;">
+              <p class="item-title" style="text-align: right;">{{ cart.workshop.title }}</p>
+              <div style="display: flex;justify-content: space-between;padding: 0 10px;">
+                <p class="item-date">{{ cart.workshop.start }}</p>
+                <div style="display: flex;">
+                  <p class="item-cost">{{ cart.workshop.cost }}</p>
+                  <button class="delete-button" (click)="Delete(i)"
+                          mat-stroked-button>{{ publicservice.Texts.Texts['cart5'] }}
+                  </button>
                 </div>
-                <!-- <div class="supporters-card-div">
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/avngames.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/brainladder.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/IranServer.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/black-cube.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/myket.png">
-                    </div>
-                </div> -->
+              </div>
             </div>
+          </div>
+        </div>
+        <div *ngFor="let cart of cartArray;let i = index">
+          <div class="item-workshop" *ngIf="cart.talk == null" [class]="cartDelete[i]">
+            <div style="display: flex;">
+              <div class="orange"></div>
+              <p class="item-title">{{ cart.workshop.title }}</p>
+            </div>
+            <p class="item-date">{{ cart.workshop.start }}</p>
+            <div style="display: flex;">
+              <p class="item-cost">{{ cart.workshop.cost }}</p>
+              <button class="delete-button" (click)="Delete(i)"
+                      mat-stroked-button>{{ publicservice.Texts.Texts['cart5'] }}
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="item-workshop" [class]="Delete()">
+            <div style="display: flex;">
+                <div class="pink"></div>
+                <p class="item-title">{{publicservice.Texts.Texts['cart2']}}</p>
+            </div>
+            <p class="item-date">{{publicservice.Texts.Texts['cart3']}}</p>
+            <div style="display: flex;">
+                <p class="item-cost">{{publicservice.Texts.Texts['cart4']}}</p>
+                <button class="delete-button" (click)="Delete()"
+                    mat-stroked-button>{{publicservice.Texts.Texts['cart5']}}</button>
+            </div>
+        </div> -->
+        <div class="discount-code">
+
+          <mat-label class="discount-lable">{{ publicservice.Texts.Texts['cart9'] }}</mat-label>
+          <input matInput class="discount-input" [(ngModel)]="publicservice.discount_code">
+
+          <button mat-flat-button
+                  class="discount-button" (click)="Discount()">{{ publicservice.Texts.Texts['cart10'] }}
+          </button>
+
 
         </div>
-    </div>
-    <div class="developers-div">
-        <div class="developers-image">
-            <!-- <img class="ssc-image" src="assets/images/Asset 4.png"> -->
-            <img class="ssc-image" src="assets/images/ssc_white.png">
+        <div class="below-items">
+          <p class="cost">{{ totalCost }}{{ publicservice.Texts.Texts['cart6'] }}</p>
+          <button mat-flat-button (click)="Pay()" id="payButton"
+                  class="green-button">{{ publicservice.Texts.Texts['cart7'] }}
+          </button>
         </div>
-        <p class="developers">{{publicservice.Texts.Texts["home42"]}}</p>
+
+      </div>
     </div>
+  </div>
+  <div class="footer-whole-div">
+    <img class="purple-wave-above-footer" src="assets/svg/wave-purple.svg">
+    <div class="footer-div">
+      <div class="discription-footer-div">
+        <div class="discription-right-footer-div">
+          <div class="discription-right-footer-about-div">
+            <h1 class="discription-right-footer-about-title">
+              {{ publicservice.Texts.Texts["home37"] }}</h1>
+            <p class="discription-right-footer-about-discription">
+              {{ publicservice.Texts.Texts["home39"] }}
+              <br>
+              {{ publicservice.Texts.Texts["home62"] }}
+            </p>
+            <div style="text-align: center;">
+              <button mat-flat-button (click)="People()"
+                      class="green-button">{{ publicservice.Texts.Texts["home47"] }}
+              </button>
+            </div>
+            <div class="footer-image-div-phone">
+              <img class="footer-image" src="assets/images/folan.png">
+            </div>
+          </div>
+          <div class="discription-right-footer-bubble">
+          </div>
+        </div>
+        <div class="footer-image-div">
+          <img class="footer-image" src="assets/images/folan.png">
+        </div>
+      </div>
+      <div class="supporters-div">
+        <h1 class="supporters-title">
+          {{ publicservice.Texts.Texts["home40"] }}
+        </h1>
+        <div class="supporters-card-div">
+          <!-- <div class="supportes-card-image-div">
+              <img class="supporters-card-image" src="assets/images/institue.png">
+          </div>
+          <div class="supportes-card-image-div">
+              <img class="supporters-card-image" src="assets/images/funtory.png">
+          </div>
+          <div class="supportes-card-image-div">
+              <img class="supporters-card-image" src="assets/images/tod.png">
+          </div> -->
+
+          <div class="supportes-card-image-div">
+            <img class="supporters-card-image" src="assets/images/2024/sponsors/dropout.png">
+          </div>
+          <div class="supportes-card-image-div">
+            <img class="supporters-card-image" src="assets/images/2024/sponsors/bazar.png">
+          </div>
+          <div class="supportes-card-image-div">
+            <img class="supporters-card-image" src="assets/images/2024/sponsors/quizOfKings.png">
+          </div>
+          <div class="supportes-card-image-div">
+            <img class="supporters-card-image" src="assets/images/2024/sponsors/paeezan.png">
+          </div>
+          <div class="supportes-card-image-div">
+            <img class="supporters-card-image" src="assets/images/2024/sponsors/incytelGames.png">
+          </div>
+        </div>
+        <!-- <div class="supporters-card-div">
+            <div class="supportes-card-image-div">
+                <img class="supporters-card-image" src="assets/images/avngames.png">
+            </div>
+            <div class="supportes-card-image-div">
+                <img class="supporters-card-image" src="assets/images/brainladder.png">
+            </div>
+            <div class="supportes-card-image-div">
+                <img class="supporters-card-image" src="assets/images/IranServer.png">
+            </div>
+            <div class="supportes-card-image-div">
+                <img class="supporters-card-image" src="assets/images/black-cube.png">
+            </div>
+            <div class="supportes-card-image-div">
+                <img class="supporters-card-image" src="assets/images/myket.png">
+            </div>
+        </div> -->
+      </div>
+
+    </div>
+  </div>
+  <div class="developers-div">
+    <div class="developers-image">
+      <!-- <img class="ssc-image" src="assets/images/Asset 4.png"> -->
+      <img class="ssc-image" src="assets/images/ssc_white.png">
+    </div>
+    <p class="developers">{{ publicservice.Texts.Texts["home42"] }}</p>
+  </div>
 </div>

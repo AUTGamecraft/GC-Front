@@ -1,262 +1,278 @@
 <div class="whole" #dash>
-    <div class="dash-teams" id="dash">
-        <div class="logo">
-            <p class="logo-text" style="margin-left: -5px;">{{publicservice.Texts.Texts["logo1"]}}</p>
-            <img class="logo-image" (click)='Home()' src="assets/svg/dark-3d.svg">
-            <p class="logo-text" style="margin-right: -5px;">{{publicservice.Texts.Texts["logo2"]}}</p>
-        </div>
-        <div class="dash-teams-inner-div">
-            <div class="right-part">
-                <div class="right-part-header">
-                    <div class="name-image-phone">
-                        <div>
-                            <img class="user-image" id="image">
-                        </div>
-                        <p class="user-name">
-                            {{userName}}</p>
-                    </div>
-                    <div style="display: flex;justify-content: center;">
-                        <!-- <button mat-stroked-button class="outlined-button"
-                            id="outlined-button-phone">{{publicservice.Texts.Texts["dash-event5"]}}</button> -->
-                        <div *ngIf="!isStaff" style="margin: auto 0;">
-                            <button mat-stroked-button matBadge="{{count}}" matBadgePosition="before" (click)="Cart()"
-                                id="cart-button-phone"
-                                class="outlined-button">{{publicservice.Texts.Texts['cart8']}}</button>
-                        </div>
-                        <button mat-button (click)="logOut()"
-                            class="normal-button">{{publicservice.Texts.Texts["header8"]}}</button>
-                    </div>
-                </div>
-                <div class="header-buttons">
-                    <div class="right-header-button">
-                        <button mat-button style="background-color: #fafafa;" class="buttons" (click)="events()">
-                            <mat-icon>{{publicservice.Texts.Texts["dash-media11"]}}</mat-icon>
-                            {{publicservice.Texts.Texts["dash-media2"]}}
-                        </button>
-                        <!-- <button mat-button (click)="media()" style="background-color: #fafafa;" class="buttons">
-                            <mat-icon>{{publicservice.Texts.Texts["dash-media12"]}}</mat-icon>
-                            {{publicservice.Texts.Texts["dash-media3"]}}
-                        </button> -->
-                    </div>
-                    <div class="left-header-button">
-                        <button mat-button (click)="Teams()" style="background-color: #fafafa;" class="buttons">
-                            <mat-icon>{{publicservice.Texts.Texts["dash-media13"]}}</mat-icon>
-                            {{publicservice.Texts.Texts["dash-media4"]}}
-                        </button>
-                        <button mat-button (click)="gameStatus()" style="background-color: #eceff1;" class="buttons">
-                            <mat-icon>{{publicservice.Texts.Texts["dash-media14"]}}</mat-icon>
-                            {{publicservice.Texts.Texts["dash-media15"]}}
-                        </button>
-                    </div>
-                </div>
-                <!-- <button mat-stroked-button class="outlined-button">{{publicservice.Texts.Texts["dash-media5"]}}</button> -->
-                <div *ngIf="!isStaff">
-                    <button mat-stroked-button matBadge="{{count}}" matBadgePosition="before" (click)="Cart()"
-                        class="outlined-button">{{publicservice.Texts.Texts['cart8']}}</button>
-                </div>
+  <div class="dash-teams" id="dash">
+    <div class="logo">
+      <p class="logo-text" style="margin-left: -5px;">{{ publicservice.Texts.Texts["logo1"] }}</p>
+      <img class="logo-image" (click)='Home()' src="assets/svg/dark-3d.svg">
+      <p class="logo-text" style="margin-right: -5px;">{{ publicservice.Texts.Texts["logo2"] }}</p>
+    </div>
+    <div class="dash-teams-inner-div">
+      <div class="right-part">
+        <div class="right-part-header">
+          <div class="name-image-phone">
+            <div>
+              <img class="user-image" id="image">
             </div>
-            <div class="left-part">
-                <h1 class="events-title">
-                    وضعیت </h1>
-                <h1 *ngIf="hasTeam" class="team-name">
-                    نام تیم: {{teamInfo.name}}
-                </h1>
+            <p class="user-name">
+              {{ userName }}</p>
+          </div>
+          <div style="display: flex;justify-content: center;">
+            <!-- <button mat-stroked-button class="outlined-button"
+                id="outlined-button-phone">{{publicservice.Texts.Texts["dash-event5"]}}</button> -->
+            <div *ngIf="!isStaff" style="margin: auto 0;">
+              <button mat-stroked-button matBadge="{{count}}" matBadgePosition="before" (click)="Cart()"
+                      id="cart-button-phone"
+                      class="outlined-button">{{ publicservice.Texts.Texts['cart8'] }}
+              </button>
+            </div>
+            <button mat-button (click)="logOut()"
+                    class="normal-button">{{ publicservice.Texts.Texts["header8"] }}
+            </button>
+          </div>
+        </div>
+        <div class="header-buttons">
+          <div class="right-header-button">
+            <button mat-button style="background-color: #fafafa;" class="buttons" (click)="events()">
+              <mat-icon>{{ publicservice.Texts.Texts["dash-media11"] }}</mat-icon>
+              {{ publicservice.Texts.Texts["dash-media2"] }}
+            </button>
+            <!-- <button mat-button (click)="media()" style="background-color: #fafafa;" class="buttons">
+                <mat-icon>{{publicservice.Texts.Texts["dash-media12"]}}</mat-icon>
+                {{publicservice.Texts.Texts["dash-media3"]}}
+            </button> -->
+          </div>
+          <div class="left-header-button">
+            <button mat-button (click)="Teams()" style="background-color: #fafafa;" class="buttons">
+              <mat-icon>{{ publicservice.Texts.Texts["dash-media13"] }}</mat-icon>
+              {{ publicservice.Texts.Texts["dash-media4"] }}
+            </button>
+            <button mat-button (click)="gameStatus()" style="background-color: #eceff1;" class="buttons">
+              <mat-icon>{{ publicservice.Texts.Texts["dash-media14"] }}</mat-icon>
+              {{ publicservice.Texts.Texts["dash-media15"] }}
+            </button>
+          </div>
+        </div>
+        <!-- <button mat-stroked-button class="outlined-button">{{publicservice.Texts.Texts["dash-media5"]}}</button> -->
+        <div *ngIf="!isStaff">
+          <button mat-stroked-button matBadge="{{count}}" matBadgePosition="before" (click)="Cart()"
+                  class="outlined-button">{{ publicservice.Texts.Texts['cart8'] }}
+          </button>
+        </div>
+      </div>
+      <div class="left-part">
+        <h1 class="events-title">
+          وضعیت </h1>
+        <h1 *ngIf="hasTeam" class="team-name">
+          نام تیم: {{ teamInfo.name }}
+        </h1>
 
-                <div *ngIf="!hasTeam" class="description" style="margin-top: 100px;">
-                    <h2 class="people" style="text-align: center;">برای افزودن بازی در ابتدا باید تیم بسازید!</h2>
-                </div>
-                <div *ngIf="hasTeam" class="team-create-whole-div">
-                    <div class="form-field-div">
-                        <form>
-                            <mat-form-field class="form-field">
-                                <mat-label class="label">نام بازی
-                                </mat-label>
-                                <input [readonly]="hasGame" matInput [formControl]="nameFormControl" class="input"
-                                    [(ngModel)]="createGame.gameName">
-                                <mat-error *ngIf="nameFormControl.hasError('required')" class="error">
-                                    نام بازی
-                                    <strong>{{publicservice.Texts.Texts["login6"]}}</strong>
-                                    است.
-                                </mat-error>
-                            </mat-form-field>
-                        </form>
-                    </div>
-                    <div class="form-field-div">
-                        <form>
-                            <mat-form-field class="form-field">
-                                <mat-label class="label">لینک بازی
-                                </mat-label>
-                                <input [readonly]="hasGame" matInput [formControl]="linkFormControl" class="input"
-                                    [(ngModel)]="createGame.gameLink"
-                                    placeholder="like: https://drive.google.com/file/d/something/view?usp=sharing"
-                                    >
-                                <mat-error *ngIf="linkFormControl.hasError('required')" class="error">
-                                    لینک بازی
-                                    <strong>{{publicservice.Texts.Texts["login6"]}}</strong>
-                                    است.
-                                </mat-error>
-                                <mat-error *ngIf="linkFormControl.hasError('pattern')" class="error">
-                                    لینک بازی
-                                    <strong>نامعتبر</strong>
-                                    است.
-                                </mat-error>
-                            </mat-form-field>
-                        </form>
-                    </div>
-                </div>
+        <div *ngIf="!hasTeam" class="description" style="margin-top: 100px;">
+          <h2 class="people" style="text-align: center;">برای افزودن بازی در ابتدا باید تیم بسازید!</h2>
+        </div>
+        <div *ngIf="hasTeam" class="team-create-whole-div">
+          <div class="form-field-div">
+            <form>
+              <mat-form-field class="form-field">
+                <mat-label class="label">نام بازی
+                </mat-label>
+                <input [readonly]="hasGame" matInput [formControl]="nameFormControl" class="input"
+                       [(ngModel)]="createGame.gameName">
+                <mat-error *ngIf="nameFormControl.hasError('required')" class="error">
+                  نام بازی
+                  <strong>{{ publicservice.Texts.Texts["login6"] }}</strong>
+                  است.
+                </mat-error>
+              </mat-form-field>
+            </form>
+          </div>
+          <div class="form-field-div">
+            <form>
+              <mat-form-field class="form-field">
+                <mat-label class="label">لینک بازی
+                </mat-label>
+                <input [readonly]="hasGame" matInput [formControl]="linkFormControl" class="input"
+                       [(ngModel)]="createGame.gameLink"
+                       placeholder="like: https://drive.google.com/file/d/something/view?usp=sharing"
+                >
+                <mat-error *ngIf="linkFormControl.hasError('required')" class="error">
+                  لینک بازی
+                  <strong>{{ publicservice.Texts.Texts["login6"] }}</strong>
+                  است.
+                </mat-error>
+                <mat-error *ngIf="linkFormControl.hasError('pattern')" class="error">
+                  لینک بازی
+                  <strong>نامعتبر</strong>
+                  است.
+                </mat-error>
+              </mat-form-field>
+            </form>
+          </div>
+        </div>
 
-                <div *ngIf="hasTeam" class="team-create-whole-div">
-                    <div style="width: 100%; display: flex; flex-direction: row; justify-content: flex-start;">
-                        <textarea [readonly]="hasGame" [formControl]="descFormControl" [(ngModel)]="createGame.gameDescription" dir="rtl" placeholder="توضیحات بازی..." rows="2" name="comment[text]" id="comment_text" class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true"></textarea>
-                        <!-- <textarea [(ngModel)]="createGame.gameDescription" dir="rtl" placeholder="توضیحات بازی..." rows="2" name="comment[text]" id="comment_text" class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true"></textarea> -->
-                    </div>
-                </div>
-                <div *ngIf="hasTeam" class="team-create-whole-div">
+        <div *ngIf="hasTeam" class="team-create-whole-div">
+          <div style="width: 100%; display: flex; flex-direction: row; justify-content: flex-start;">
+            <textarea [readonly]="hasGame" [formControl]="descFormControl" [(ngModel)]="createGame.gameDescription"
+                      dir="rtl" placeholder="توضیحات بازی..." rows="2" name="comment[text]" id="comment_text"
+                      class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list"
+                      aria-haspopup="true"></textarea>
+            <!-- <textarea [(ngModel)]="createGame.gameDescription" dir="rtl" placeholder="توضیحات بازی..." rows="2" name="comment[text]" id="comment_text" class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true"></textarea> -->
+          </div>
+        </div>
+        <div *ngIf="hasTeam" class="team-create-whole-div">
 
-                    <div style="display: flex; flex-wrap: wrap; flex-direction:row; align-items: center; justify-content: space-between; width: 100%; margin-top: 30px;">
-                        <div class="team-name">
-                            آواتار بازی
-                            <span *ngIf="!hasGame">
+          <div
+            style="display: flex; flex-wrap: wrap; flex-direction:row; align-items: center; justify-content: space-between; width: 100%; margin-top: 30px;">
+            <div class="team-name">
+              آواتار بازی
+              <span *ngIf="!hasGame">
                             را انتخاب نمایید
                             </span>
-                            :
-                        </div>
-                        <div *ngIf="!hasGame">
-                            <input
-                                type="file"
-                                name="file-1[]"
-                                id="file-1"
-                                class="inputfile inputfile-1"
-                                style="display: none;"
-                                (change)="handleFileInput($event.target.files)"
-                                accept="image/*"
-                            />
-                            <label for="file-1" style="margin-top: 20px;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg>
-                                &nbsp;&nbsp;
-                                <span class="avatar-select">انتخاب آواتار</span>
-                            </label>
-                        </div>
-                        <div *ngIf="imageToShowAsGameAvatar" class="circle">
-                            <img src="{{imageToShowAsGameAvatar}}"/>
-                        </div>
-                    </div>
-                </div>
-
-                <div *ngIf="hasTeam && hasGame" class="team-create-whole-div" style="display: flex; justify-content: end; margin-top: 100px;">
-                    <button
-                        mat-flat-button
-                        class="green-button"
-                        [disabled]="true"
-                        style="color: red"
-                        [ngStyle]="{'color': createGame.is_verified ? 'green' : 'red'}"
-                    >
-                    وضعیت بازی: {{createGame.is_verified ? 'تایید شده': 'در انتظار تایید'}}
-                    </button>
-                </div>
-
-                <div *ngIf="hasTeam && !hasGame" class="team-create-whole-div" style="display: flex; justify-content: end; margin-top: 100px;">
-                    <div style="display:flex; flex-direction: column;">
-                        <button
-                            mat-flat-button
-                            (click)="submitGame()"
-                            class="green-button"
-                            [disabled]="!(createGame.gameName && createGame.gameLink && createGame.gameDescription && createGame.posterToUpload && !linkFormControl.hasError('pattern') && !linkFormControl.hasError('required'))"
-                        >
-                            ثبت بازی!
-                        </button>
-                        <div
-                            *ngIf="!(createGame.gameName && createGame.gameDescription && createGame.posterToUpload && !linkFormControl.hasError('pattern') && !linkFormControl.hasError('required'))"
-                            class="team-name"
-                            style="margin-top: 20px"
-                        >
-                            لطفا همه مشخصات را کامل نمایید.
-                        </div>
-                    </div>
-                </div>
-
-
+              :
             </div>
+            <div *ngIf="!hasGame">
+              <input
+                type="file"
+                name="file-1[]"
+                id="file-1"
+                class="inputfile inputfile-1"
+                style="display: none;"
+                (change)="handleFileInput($event.target.files)"
+                accept="image/*"
+              />
+              <label for="file-1" style="margin-top: 20px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17">
+                  <path
+                    d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/>
+                </svg>
+                &nbsp;&nbsp;
+                <span class="avatar-select">انتخاب آواتار</span>
+              </label>
+            </div>
+            <div *ngIf="imageToShowAsGameAvatar" class="circle">
+              <img src="{{imageToShowAsGameAvatar}}"/>
+            </div>
+          </div>
         </div>
-    </div>
-    <div class="footer-whole-div">
-        <img class="purple-wave-above-footer" src="assets/svg/wave-purple.svg">
-        <div class="footer-div">
-            <div class="discription-footer-div">
-                <div class="discription-right-footer-div">
-                    <div class="discription-right-footer-about-div">
-                        <h1 class="discription-right-footer-about-title">
-                            {{publicservice.Texts.Texts["home37"]}}</h1>
-                        <p class="discription-right-footer-about-discription">
-                            {{publicservice.Texts.Texts["home39"]}}
-                            <br>
-                            {{publicservice.Texts.Texts["home62"]}}
-                        </p>
-                        <div style="text-align: center;">
-                            <button mat-flat-button (click)="People()"
-                                class="green-button">{{publicservice.Texts.Texts["home47"]}}</button>
-                                <div class="footer-image-div-phone">
-                                    <img class="footer-image" src="assets/images/folan.png">
-                                </div>
-                        </div>
-                    </div>
-                    <div class="discription-right-footer-bubble">
-                    </div>
-                </div>
-                <div class="footer-image-div">
-                    <img class="footer-image" src="assets/images/folan.png">
-                </div>
-            </div>
-            <div class="supporters-div">
-                <h1 class="supporters-title">
-                    {{publicservice.Texts.Texts["home40"]}}
-                </h1>
-                <div class="supporters-card-div">
-                    <!-- <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/institue.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/funtory.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/tod.png">
-                    </div> -->
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/dropout.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/medrick-logo.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/dream-event.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/pgj.png">
-                    </div>
-                </div>
-                <!-- <div class="supporters-card-div">
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/avngames.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/brainladder.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/black-cube.png">
-                    </div>
-                    <div class="supportes-card-image-div">
-                        <img class="supporters-card-image" src="assets/images/myket.png">
-                    </div>
-                </div> -->
-            </div>
 
+        <div *ngIf="hasTeam && hasGame" class="team-create-whole-div"
+             style="display: flex; justify-content: end; margin-top: 100px;">
+          <button
+            mat-flat-button
+            class="green-button"
+            [disabled]="true"
+            style="color: red"
+            [ngStyle]="{'color': createGame.is_verified ? 'green' : 'red'}"
+          >
+            وضعیت بازی: {{ createGame.is_verified ? 'تایید شده' : 'در انتظار تایید' }}
+          </button>
         </div>
-    </div>
-    <div class="developers-div">
-        <div class="developers-image">
-            <!-- <img class="ssc-image" src="assets/images/Asset 4.png"> -->
-            <img class="ssc-image" src="assets/images/ssc_white.png">
+
+        <div *ngIf="hasTeam && !hasGame" class="team-create-whole-div"
+             style="display: flex; justify-content: end; margin-top: 100px;">
+          <div style="display:flex; flex-direction: column;">
+            <button
+              mat-flat-button
+              (click)="submitGame()"
+              class="green-button"
+              [disabled]="!(createGame.gameName && createGame.gameLink && createGame.gameDescription && createGame.posterToUpload && !linkFormControl.hasError('pattern') && !linkFormControl.hasError('required'))"
+            >
+              ثبت بازی!
+            </button>
+            <div
+              *ngIf="!(createGame.gameName && createGame.gameDescription && createGame.posterToUpload && !linkFormControl.hasError('pattern') && !linkFormControl.hasError('required'))"
+              class="team-name"
+              style="margin-top: 20px"
+            >
+              لطفا همه مشخصات را کامل نمایید.
+            </div>
+          </div>
         </div>
-        <p class="developers">{{publicservice.Texts.Texts["home42"]}}</p>
+
+
+      </div>
     </div>
+  </div>
+  <div class="footer-whole-div">
+    <img class="purple-wave-above-footer" src="assets/svg/wave-purple.svg">
+    <div class="footer-div">
+      <div class="discription-footer-div">
+        <div class="discription-right-footer-div">
+          <div class="discription-right-footer-about-div">
+            <h1 class="discription-right-footer-about-title">
+              {{ publicservice.Texts.Texts["home37"] }}</h1>
+            <p class="discription-right-footer-about-discription">
+              {{ publicservice.Texts.Texts["home39"] }}
+              <br>
+              {{ publicservice.Texts.Texts["home62"] }}
+            </p>
+            <div style="text-align: center;">
+              <button mat-flat-button (click)="People()"
+                      class="green-button">{{ publicservice.Texts.Texts["home47"] }}
+              </button>
+              <div class="footer-image-div-phone">
+                <img class="footer-image" src="assets/images/folan.png">
+              </div>
+            </div>
+          </div>
+          <div class="discription-right-footer-bubble">
+          </div>
+        </div>
+        <div class="footer-image-div">
+          <img class="footer-image" src="assets/images/folan.png">
+        </div>
+      </div>
+      <div class="supporters-div">
+        <h1 class="supporters-title">
+          {{ publicservice.Texts.Texts["home40"] }}
+        </h1>
+        <div class="supporters-card-div">
+          <!-- <div class="supportes-card-image-div">
+              <img class="supporters-card-image" src="assets/images/institue.png">
+          </div>
+          <div class="supportes-card-image-div">
+              <img class="supporters-card-image" src="assets/images/funtory.png">
+          </div>
+          <div class="supportes-card-image-div">
+              <img class="supporters-card-image" src="assets/images/tod.png">
+          </div> -->
+          <div class="supportes-card-image-div">
+            <img class="supporters-card-image" src="assets/images/2024/sponsors/dropout.png">
+          </div>
+          <div class="supportes-card-image-div">
+            <img class="supporters-card-image" src="assets/images/2024/sponsors/bazar.png">
+          </div>
+          <div class="supportes-card-image-div">
+            <img class="supporters-card-image" src="assets/images/2024/sponsors/quizOfKings.png">
+          </div>
+          <div class="supportes-card-image-div">
+            <img class="supporters-card-image" src="assets/images/2024/sponsors/paeezan.png">
+          </div>
+          <div class="supportes-card-image-div">
+            <img class="supporters-card-image" src="assets/images/2024/sponsors/incytelGames.png">
+          </div>
+        </div>
+        <!-- <div class="supporters-card-div">
+            <div class="supportes-card-image-div">
+                <img class="supporters-card-image" src="assets/images/avngames.png">
+            </div>
+            <div class="supportes-card-image-div">
+                <img class="supporters-card-image" src="assets/images/brainladder.png">
+            </div>
+            <div class="supportes-card-image-div">
+                <img class="supporters-card-image" src="assets/images/black-cube.png">
+            </div>
+            <div class="supportes-card-image-div">
+                <img class="supporters-card-image" src="assets/images/myket.png">
+            </div>
+        </div> -->
+      </div>
+
+    </div>
+  </div>
+  <div class="developers-div">
+    <div class="developers-image">
+      <!-- <img class="ssc-image" src="assets/images/Asset 4.png"> -->
+      <img class="ssc-image" src="assets/images/ssc_white.png">
+    </div>
+    <p class="developers">{{ publicservice.Texts.Texts["home42"] }}</p>
+  </div>
 </div>
