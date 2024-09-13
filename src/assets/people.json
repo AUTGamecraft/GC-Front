@@ -1,207 +1,161 @@
 [
-    {
-        "name": "تیم برگزاری",
-        "peoples": [
-            {
-                "name": "طاها علمی",
-                "role": "دبیر انجمن، دبیر رویداد",
-                "img":"./2023/taha.jpg"
-            },
-            {
-                "name": "الهه حبیب‌زاده",
-                "role": "دبیر رویداد",
-                "img":"./2023/elahe.jpg"
-            }
-            
-        ]
-    },
-    {
-        "name": "تیم فنی",
-        "peoples": [
-            {
-                "name": "علیرضا زارع",
-                "role": "سرپرست تیم فنی، توسعه دهنده بک‌اند",
-                "img":"./2023/sabz.jpg"
-            },
-            {
-                "name": "امیرفاضل کوزه‌گر",
-                "role": "توسعه دهنده فرانت‌اند",
-                "img":"./2023/fazel.jpg"
-            },
-            {
-                "name": "امیرمحمد کلاکی",
-                "role": "توسعه دهنده بک‌اند",
-                "img":"./2023/kalaki.jpg"
-            }
-
-        ]
-    },
-    {
-        "name": "تیم علمی",
-        "peoples": [
-            {
-                "name": "امیر بینش",
-                "role": "سرپرست تیم علمی",
-                "img": "./2023/binesh.jpg"
-            },
-            {
-                "name": "مهدیه سادات بنیس",
-                "role": "عضو تیم علمی",
-                "img":"./2023/mahdie_sadat.jpeg"
-            },
-            {
-                "name": "تینا توحیدخواه",
-                "role": "عضو تیم علمی",
-                "img":"./2023/tina.png"
-            },
-            {
-                "name": "مهران غفاریان",
-                "role": "عضو تیم علمی",
-                "img":"./2023/mehran.jpg"
-            },
-            {
-                "name": "چمران معینی",
-                "role": "عضو تیم علمی",
-                "img":"./2023/chamrun.png"
-            },
-            {
-                "name": "دانیال کردمدانلو",
-                "role": "عضو تیم علمی",
-                "img":"./2023/danial.jpg"
-            }
-        ]
-    },
-    {
-        "name": "تیم مارکتینگ",
-        "peoples": [
-            {
-                "name": "عماد فردوسی",
-                "role": "سرپرست تیم مارکتینگ",
-                "img":"./2023/emad.jpg"
-            },
-            {
-                "name": "امید قانع",
-                "role": "عضو تیم مارکتینگ",
-                "img":"./2023/omid.jpg"
-            },
-            {
-                "name": "سیدامیرحسین صلاحی  ",
-                "role": "عضو تیم مارکتینگ",
-                "img":"./2023/salahi.jpg"
-            },
-            {
-                "name": "یاسمن گودرزی",
-                "role": "عضو تیم مارکتینگ",
-                "img":"./2023/default_prof.jpg"
-            }
-        ]
-    },
-    {
-        "name": "تیم تولید محتوا",
-        "peoples" : [
-            {
-                "name": "طاها علمی",
-                "role": "عضو تیم تولید محتوا",
-                "img":"./2023/taha.jpg"
-            },
-            {
-                "name": "الهه حبیب‌زاده",
-                "role": "عضو تیم تولید محتوا",
-                "img":"./2023/elahe.jpg"
-            },
-            {
-                "name": "پرهام میروکیلی",
-                "role": "عضو تیم تولید محتوا",
-                "img":"./2023/parham.jpg"
-            }
-
-        ]
-    },
-
-    {
-        "name": "تیم اجرایی",
-        "peoples": [
-            {
-                "name": "حنانه منتظر",
-                "role": "سرپرست تیم اجرایی",
-                "img":"./2023/hana.JPG"
-            },
-            {
-                "name": "مصطفی مرادی",
-                "role": "عضو تیم اجرایی",
-                "img":"./2023/mostafa.jpg"
-            },
-            {
-                "name": "محمدحسین عارف",
-                "role": "عضو تیم اجرایی",
-                "img":"./2023/aref.jpg"
-            },
-            {
-                "name": "امیر بیژه",
-                "role": "عضو تیم اجرایی",
-                "img":"./2023/bizhe.png"
-            },
-            {
-                "name": "مهدی صفرزاده",
-                "role": "عضو تیم اجرایی",
-                "img":"./2023/mahdi.jpg"
-            },
-            {
-                "name": "علی هاشم‌پور",
-                "role": "عضو تیم اجرایی",
-                "img":"./2023/hashem.jpg"
-            },
-            {
-                "name": "امیرعرفان تیموری",
-                "role": "عضو تیم اجرایی",
-                "img":"./2023/erfan.jpeg"
-            },
-            {
-                "name": "علی بازشوشتری",
-                "role": "عضو تیم اجرایی",
-                "img":"./2023/alibaz.jpg"
-            },
-            {
-                "name": "ایلیا نورانی",
-                "role": "عضو تیم اجرایی",
-                "img":"./2023/iliaw.jpeg"
-            },
-            {
-                "name": "ابوالفضل کبیری",
-                "role": "عضو تیم اجرایی",
-                "img":"./2023/kabiri.jpg"
-            },
-            {
-                "name": "سعید مصباح",
-                "role": "عضو تیم اجرایی",
-                "img":"./2023/default_prof.jpg"
-            },
-            {
-                "name": "اشکان شکیبا",
-                "role": "عضو تیم اجرایی",
-                "img":"./2023/ashkan.jpg"
-            },
-            {
-                "name": "جمعه محمدی",
-                "role": "عضو تیم اجرایی",
-                "img":"./2023/joma_mohammadi.jpg"
-            },
-            {
-                "name": "مهدیه سادات بنیس",
-                "role": "عضو تیم اجرایی",
-                "img":"./2023/mahdie_sadat.jpeg"
-            },
-            {
-                "name": "امید قانع",
-                "role": "عضو تیم اجرایی",
-                "img": "./2023/omid.jpg"
-            },
-            {
-                "name": "سیدعلی محمد داستان",
-                "role": "عضو تیم اجرایی",
-                "img": "./2023/dastan.jpg"
-            }
-            
-        ]
-    }
+  {
+    "name": "تیم برگزاری",
+    "peoples": [
+      {
+        "name": "آرمین حامدعظیمی",
+        "role": "دبیر انجمن، دبیر رویداد",
+        "img": "./2024/staffs/alirezaZare.png"
+      },
+      {
+        "name": "بیتا شایگان",
+        "role": "دبیر رویداد",
+        "img": "./2023/elahe.jpg"
+      }
+    ]
+  },
+  {
+    "name": "تیم فنی",
+    "peoples": [
+      {
+        "name": "علیرضا زارع",
+        "role": "سرپرست تیم فنی",
+        "img": "./2024/staffs/alirezaZare.png"
+      },
+      {
+        "name": "علیرضا یوسف\u200Cپور",
+        "role": "توسعه دهنده و اسکرام مستر",
+        "img": "./2024/staffs/alirezaYousefpour.jpg"
+      },
+      {
+        "name": "سینا صادقی",
+        "role": "DevOps",
+        "img": "./2024/staffs/sinaSadeghi.jpg"
+      },
+      {
+        "name": "محمد جواد اکبری",
+        "role": "توسعه دهنده بک اند",
+        "img": "./2024/staffs/mohammadJavadAkbari.jpg"
+      },
+      {
+        "name": "پوریا فهیمی",
+        "role": "توسعه دهنده فرانت اند",
+        "img": "./2024/staffs/pouryaFahimi.png"
+      },
+      {
+        "name": "مهدی حائری",
+        "role": "توسعه دهنده فرانت اند",
+        "img": "./2024/staffs/mahdiHaeri.jpg"
+      }
+    ]
+  },
+  {
+    "name": "تیم علمی",
+    "peoples": [
+      {
+        "name": "مهدیه تهامی",
+        "role": "سرپرست تیم علمی",
+        "img": "./2024/staffs/mahdiehTahami.jpg"
+      },
+      {
+        "name": "امیرعباس انتظاری",
+        "role": "عضو تیم علمی",
+        "img": "./2024/staffs/amirabbasEntezari.jpg"
+      },
+      {
+        "name": "صبا سیدطبایی",
+        "role": "عضو تیم علمی",
+        "img": "./2024/staffs/sabaSeyedtabaei.jpg"
+      }
+    ]
+  },
+  {
+    "name": "تیم مارکتینگ",
+    "peoples": [
+      {
+        "name": "مصطفی دلاکی",
+        "role": "سرپرست تیم مارکتینگ",
+        "img": "./2024/staffs/mostafaDallaki.png"
+      },
+      {
+        "name": "سبحان حیدری",
+        "role": "عضو تیم مارکتینگ",
+        "img": "./2024/staffs/sobhan.png"
+      },
+      {
+        "name": "مهدی نجیب پور",
+        "role": "عضو تیم مارکتینگ",
+        "img": "./2024/staffs/mahdiNajibpour.png"
+      },
+      {
+        "name": "آرین محسنی",
+        "role": "عضو تیم مارکتینگ",
+        "img": "./2024/staffs/arianMohseni.png"
+      },
+      {
+        "name": "محمد رفیع حاجیلی دوجی",
+        "role": "عضو تیم مارکتینگ",
+        "img": "./2024/staffs/mohammadRafiHajiliDavaji.png"
+      },
+      {
+        "name": "دلارام روحانی",
+        "role": "عضو تیم مارکتینگ",
+        "img": "./2024/staffs/delaraamRoohani.png"
+      }
+    ]
+  },
+  {
+    "name": "تیم تولید محتوا",
+    "peoples": []
+  },
+  {
+    "name": "تزئینات",
+    "peoples": [
+      {
+        "name": "صدف مرادی",
+        "role": "عضو تیم تزئینات",
+        "img": "./2024/staffs/sadafMoradi.png"
+      },
+      {
+        "name": "صبا سیدطبایی",
+        "role": "عضو تیم تزئینات",
+        "img": "./2024/staffs/sabaSeyedtabaei.jpg"
+      },
+      {
+        "name": "دلارام روحانی",
+        "role": "عضو تیم تزئینات",
+        "img": "./2024/staffs/delaraamRoohani.png"
+      },
+      {
+        "name": "امیرعباس انتظاری",
+        "role": "عضو تیم تزئینات",
+        "img": "./2024/staffs/amirabbasEntezari.jpg"
+      },
+      {
+        "name": "علیرضا یوسف\u200Cپور",
+        "role": "عضو تیم تزئینات",
+        "img": "./2024/staffs/alirezaYousefpour.jpg"
+      }
+    ]
+  },
+  {
+    "name": "تیم مالی",
+    "peoples": [
+      {
+        "name": "پارسا حمیدی",
+        "role": "حسابدار",
+        "img": "./2024/staffs/parsaHamidi.png"
+      }
+    ]
+  },
+  {
+    "name": "تیم اجرایی",
+    "peoples": [
+      {
+        "name": "سیدعلی محمد داستان",
+        "role": "عضو تیم اجرایی",
+        "img": "./2024/staffs/seyedAliDastan.png"
+      }
+    ]
+  }
 ]
