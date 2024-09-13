@@ -4,13 +4,13 @@
     "peoples": [
       {
         "name": "آرمین حامدعظیمی",
-        "role": "دبیر انجمن، دبیر رویداد",
-        "img": "./2024/staffs/alirezaZare.png"
+        "role": "دبیر انجمن علمی",
+        "img": "./2024/staffs/arminHamedazimi.jpg"
       },
       {
         "name": "بیتا شایگان",
         "role": "دبیر رویداد",
-        "img": "./2023/elahe.jpg"
+        "img": "./2024/staffs/bitaShayegan.jpg"
       }
     ]
   },
@@ -29,7 +29,7 @@
       },
       {
         "name": "سینا صادقی",
-        "role": "DevOps",
+        "role": "دواپس",
         "img": "./2024/staffs/sinaSadeghi.jpg"
       },
       {
@@ -145,6 +145,11 @@
         "name": "پارسا حمیدی",
         "role": "حسابدار",
         "img": "./2024/staffs/parsaHamidi.png"
+      },
+      {
+        "name": "لیلا آل\u200Cحبیب",
+        "role": "اسپانسرشیپ",
+        "img": "./2024/staffs/leila.jpeg"
       }
     ]
   },
@@ -155,6 +160,16 @@
         "name": "سیدعلی محمد داستان",
         "role": "عضو تیم اجرایی",
         "img": "./2024/staffs/seyedAliDastan.png"
+      },
+      {
+        "name": "پوریا صادقی",
+        "role": "عضو تیم اجرایی",
+        "img": "./2024/staffs/poor3a.jpg"
+      },
+      {
+        "name": "امیرحسین صبوری خسروشاهی",
+        "role": "عضو تیم اجرایی",
+        "img": "./2024/staffs/amirhosseinSabouri.jpg"
       }
     ]
   }
