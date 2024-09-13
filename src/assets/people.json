@@ -105,8 +105,14 @@
     ]
   },
   {
-    "name": "تیم تولید محتوا",
-    "peoples": []
+    "name": "تیم رسانه",
+    "peoples": [
+      {
+        "name": "محمدعلی حاجی فتحعلی",
+        "role": "سرپرست تیم رسانه",
+        "img": "./2024/staffs/mohamadaliHajifathali.png"
+      }
+    ]
   },
   {
     "name": "تزئینات",
