@@ -101,6 +101,11 @@
         "name": "دلارام روحانی",
         "role": "عضو تیم مارکتینگ",
         "img": "./2024/staffs/delaraamRoohani.png"
+      },
+      {
+        "name": "عرشیا هاشم\u200Cزاده",
+        "role": "عضو تیم مارکتینگ",
+        "img": "./2024/staffs/arshiyaHashemzadeh.jpg"
       }
     ]
   },
@@ -111,12 +116,32 @@
         "name": "محمدعلی حاجی فتحعلی",
         "role": "سرپرست تیم رسانه",
         "img": "./2024/staffs/mohamadaliHajifathali.png"
+      },
+      {
+        "name": "اشکان چاجی",
+        "role": "عضو تیم رسانه",
+        "img": "./2024/staffs/ashkanChaji.png"
+      }
+    ]
+  },
+  {
+    "name": "تیم گرافیک",
+    "peoples": [
+      {
+        "name": "بهار رفیع نژاد",
+        "role": "گرافیست",
+        "img": "./2024/staffs/baharRafinezhad.jpg"
       }
     ]
   },
   {
     "name": "تزئینات",
     "peoples": [
+      {
+        "name": "نیکان رجبی",
+        "role": "سرپرست تیم تزئینات",
+        "img": "./2024/staffs/nikanRajabi.png"
+      },
       {
         "name": "صدف مرادی",
         "role": "عضو تیم تزئینات",
