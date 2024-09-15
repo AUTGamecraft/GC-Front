@@ -173,11 +173,6 @@
     "name": "تیم مالی",
     "peoples": [
       {
-        "name": "پارسا حمیدی",
-        "role": "حسابدار",
-        "img": "./2024/staffs/parsaHamidi.png"
-      },
-      {
         "name": "لیلا آل\u200Cحبیب",
         "role": "اسپانسرشیپ",
         "img": "./2024/staffs/leila.jpeg"
@@ -186,6 +181,11 @@
         "name": "محمد باقر حسینی",
         "role": "مسئول مالی",
         "img": "./2024/staffs/bagherHosseini.png"
+      },
+      {
+        "name": "پارسا حمیدی",
+        "role": "حسابدار",
+        "img": "./2024/staffs/parsaHamidi.png"
       }
     ]
   },
