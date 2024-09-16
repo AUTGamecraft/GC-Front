@@ -3,14 +3,14 @@
     "name": "تیم برگزاری",
     "peoples": [
       {
-        "name": "آرمین حامدعظیمی",
-        "role": "دبیر انجمن علمی",
-        "img": "./2024/staffs/arminHamedazimi.jpg"
-      },
-      {
         "name": "بیتا شایگان",
         "role": "دبیر رویداد",
         "img": "./2024/staffs/bitaShayegan.jpg"
+      },
+      {
+        "name": "آرمین حامدعظیمی",
+        "role": "دبیر انجمن علمی",
+        "img": "./2024/staffs/arminHamedazimi.jpg"
       }
     ]
   },
