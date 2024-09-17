@@ -130,7 +130,7 @@ export class PublicService {
       } else {
         that.snackbar.openFromComponent(ErrorDialogComponent, {
           duration: 2000,
-          data: e.message,
+          data: e.error.error,
           panelClass: ['snackbar'],
           verticalPosition: 'top',
           direction: 'rtl'
