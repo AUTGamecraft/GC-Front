@@ -225,7 +225,7 @@ export class PublicService {
 
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + this.Authorization
+      // 'Authorization': 'Bearer ' + this.Authorization
     });
 
     let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/v2/token/', body, {headers: headers})
@@ -244,7 +244,7 @@ export class PublicService {
       this.APICalls.Login = false;
       that.snackbar.openFromComponent(ErrorDialogComponent, {
         duration: 2000,
-        data: e.message,
+        data: "نام کاربری یا رمز عبور اشتباه است، در صورت فعال نکردن اکانت خود، ایمیلتان را چک کنید",
         panelClass: ['snackbar'],
         verticalPosition: 'top',
         direction: 'rtl'
