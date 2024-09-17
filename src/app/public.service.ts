@@ -568,7 +568,7 @@ export class PublicService {
       } else {
         that.snackbar.openFromComponent(ErrorDialogComponent, {
           duration: 2000,
-          data: e.message,
+          data: e.error.message,
           panelClass: ['snackbar'],
           verticalPosition: 'top',
           direction: 'rtl'
@@ -603,7 +603,7 @@ export class PublicService {
       } else {
         that.snackbar.openFromComponent(ErrorDialogComponent, {
           duration: 2000,
-          data: e.message,
+          data: e.error.message,
           panelClass: ['snackbar'],
           verticalPosition: 'top',
           direction: 'rtl'
