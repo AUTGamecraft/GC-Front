@@ -42,6 +42,7 @@ import {CommentComponent} from './comment/comment.component';
 import {MatInputModule} from "@angular/material/input";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatSelectModule} from "@angular/material/select";
+import {DashboardCompetitionComponent} from './dashboard-competition/dashboard-competition.component';
 
 @NgModule({
     declarations: [
@@ -68,7 +69,8 @@ import {MatSelectModule} from "@angular/material/select";
         GameContentComponent,
         CreatorComponent,
         CommentsComponent,
-        CommentComponent
+        CommentComponent,
+      DashboardCompetitionComponent
     ],
     imports: [
         BrowserModule,

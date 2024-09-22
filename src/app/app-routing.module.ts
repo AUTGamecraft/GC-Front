@@ -16,6 +16,7 @@ import { PeopleComponent } from './people/people.component';
 import { RulesComponent } from './rules/rules.component';
 import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
 import {GamesComponent} from "./games/games.component";
+import {DashboardCompetitionComponent} from './dashboard-competition/dashboard-competition.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'rules', component: RulesComponent },
   { path: 'email-confirm', component: EmailConfirmComponent },
   { path: 'dashboard-teams', component: DashboardTeamsComponent },
+  { path: 'dashboard-competition', component: DashboardCompetitionComponent },
   { path: 'dashboard-create-game', component: DashboardCreateGameComponent },
   { path: 'confirm-confirm', component: ConfirmConfirmComponent },
   { path: 'cart', component: CartComponent },

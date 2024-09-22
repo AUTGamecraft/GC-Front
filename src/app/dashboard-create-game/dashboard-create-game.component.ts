@@ -159,6 +159,10 @@ export class DashboardCreateGameComponent implements OnInit {
     this.router.navigate(['dashboard-teams'], {fragment: 'dash'});
   }
 
+  Competition() {
+    this.router.navigate(['dashboard-competition'], {fragment: 'dash'});
+  }
+
   gameStatus() {
     this.router.navigate(['dashboard-create-game'])
   }

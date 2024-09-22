@@ -140,7 +140,9 @@ export class DashboardEventComponent implements OnInit {
   Schedule(el: HTMLElement) {
     el.scrollIntoView({ behavior: "smooth" });
   }
-
+  Competition() {
+    this.router.navigate(['dashboard-competition'], {fragment: 'dash'});
+  }
   events(): void {
     const navigationDetails: string[] = ['dashboard-event'];
     this.router.navigate(navigationDetails);

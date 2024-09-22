@@ -9,11 +9,11 @@ import {ErrorDialogComponent} from '../error-dialog/error-dialog.component';
 import {SuccessDialogComponent} from '../success-dialog/success-dialog.component';
 
 @Component({
-  selector: 'app-dashboard-teams',
-  templateUrl: './dashboard-teams.component.html',
-  styleUrls: ['./dashboard-teams.component.scss']
+  selector: 'app-dashboard-competition',
+  templateUrl: './dashboard-competition.component.html',
+  styleUrls: ['./dashboard-competition.component.scss']
 })
-export class DashboardTeamsComponent implements OnInit {
+export class DashboardCompetitionComponent implements OnInit {
   isStaff: boolean;
   nameFormControl = new UntypedFormControl('', [
     Validators.required,
@@ -64,29 +64,34 @@ export class DashboardTeamsComponent implements OnInit {
     }
   }
 
+  submitTeamRegistration(): void {
+    this.publicservice.registerTeamForCompetition()
+      .then(() => {
+        this.snackbar.openFromComponent(SuccessDialogComponent, {
+          duration: 2000,
+          data: 'تیم با موفقیت ثبت شد!',
+          panelClass: ['snackbar'],
+          verticalPosition: 'top',
+          direction: 'rtl'
+        });
+      })
+      .catch((error) => {
+        this.snackbar.openFromComponent(ErrorDialogComponent, {
+          duration: 2000,
+          data: error?.error?.message,
+          panelClass: ['snackbar'],
+          verticalPosition: 'top',
+          direction: 'rtl'
+        });
+      })
+  }
+
   ngOnInit(): void {
     var that = this;
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''),
       map(value => this._filter(value))
     );
-    this.route.queryParams.subscribe(params => {
-      if (params['mid'] != undefined || params['tid'] != undefined) {
-        this.publicservice.enrollTeam(params['mid'], params['tid']).then(() => {
-          this.snackbar.openFromComponent(SuccessDialogComponent, {
-            duration: 2000,
-            data: 'با موفقیت به تیم اضافه شدید!',
-            panelClass: ['snackbar'],
-            verticalPosition: 'top',
-            direction: 'rtl'
-          });
-          this.Teams();
-          if (!this.publicservice.logedIn) {
-            this.router.navigate(['login']);
-          }
-        });
-      }
-    });
   }
 
   Schedule(el: HTMLElement) {

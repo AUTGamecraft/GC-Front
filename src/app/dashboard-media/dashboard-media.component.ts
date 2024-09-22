@@ -81,6 +81,9 @@ export class DashboardMediaComponent implements OnInit {
   Home() {
     this.router.navigate(['home'], { fragment: 'home' });
   }
+  Competition() {
+    this.router.navigate(['dashboard-competition'], {fragment: 'dash'});
+  }
   Teams() {
     this.router.navigate(['dashboard-teams'], { fragment: 'dash' });
   }
@@ -94,7 +97,7 @@ export class DashboardMediaComponent implements OnInit {
   //   const file = imageInput.item(0);
   //   const reader = new FileReader();
   //   reader.readAsDataURL(file);
-  //   // console.log(file); 
+  //   // console.log(file);
   //   this.publicservice.fileName = file.name;
   //   this.publicservice.UpdateImage();
   // }

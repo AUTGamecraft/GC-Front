@@ -214,6 +214,21 @@ export class PublicService {
     return ret;
   }
 
+  registerTeamForCompetition(): Promise<any> {
+    var that = this;
+    this.APICalls.registerTeamForCompetition = true;
+
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + this.Authorization
+    });
+
+    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/v2/teams/enroll/', null, {headers: headers})
+      .toPromise();
+
+    return ret
+  }
+
   Login(): Promise<any> {
     var that = this;
     this.APICalls.Login = true;

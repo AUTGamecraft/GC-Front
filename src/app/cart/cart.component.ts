@@ -188,6 +188,10 @@ export class CartComponent implements OnInit {
     })
   }
 
+  Competition() {
+    this.router.navigate(['dashboard-competition'], {fragment: 'dash'});
+  }
+
   CreateGame() {
 
   }

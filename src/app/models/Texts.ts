@@ -178,7 +178,9 @@ export class Texts {
     this.FaTexts["dash-media12"] = "perm_media "
     this.FaTexts["dash-media13"] = "groups"
     this.FaTexts["dash-media14"] = "movie"
-    this.FaTexts["dash-media15"] = "بازی"
+    this.FaTexts["dash-media15"] = "بازی",
+    this.FaTexts["dash-media16"] = "quiz",
+    this.FaTexts["dash-media17"] = "مسابقه",
 
     this.FaTexts["people1"] = "افراد"
     this.FaTexts["people2"] = "تیم فنی"
@@ -250,7 +252,8 @@ export class Texts {
     this.FaTexts["dash-teams8"] = "وضعیت تیم"
     this.FaTexts["dash-teams9"] = "وضعیت تیم"
     this.FaTexts["dash-teams10"] = "وضعیت تیم"
-    this.FaTexts["dash-teams11"] = "وضعیت تیم"
+    this.FaTexts["dash-teams11"] = "وضعیت تیم",
+    this.FaTexts["dash-teams12"] = "وضعیت تیم",
 
     this.FaTexts["not-found1"] = "۴۰۴"
     this.FaTexts["not-found2"] = "!یافت می نشود"
