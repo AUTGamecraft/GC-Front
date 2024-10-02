@@ -77,6 +77,8 @@ export class DashboardCompetitionComponent implements OnInit {
 
         if (r?.data?.link != null)
           location.href = r.data.link;
+        else
+          location.reload()
       })
       .catch((error) => {
         this.snackbar.openFromComponent(ErrorDialogComponent, {
