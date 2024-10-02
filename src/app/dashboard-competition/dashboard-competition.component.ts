@@ -66,7 +66,7 @@ export class DashboardCompetitionComponent implements OnInit {
 
   submitTeamRegistration(): void {
     this.publicservice.registerTeamForCompetition()
-      .then(() => {
+      .then((r) => {
         this.snackbar.openFromComponent(SuccessDialogComponent, {
           duration: 2000,
           data: 'تیم با موفقیت ثبت شد!',
@@ -74,6 +74,9 @@ export class DashboardCompetitionComponent implements OnInit {
           verticalPosition: 'top',
           direction: 'rtl'
         });
+
+        if (r?.data?.link != null)
+          location.href = r.data.link;
       })
       .catch((error) => {
         this.snackbar.openFromComponent(ErrorDialogComponent, {
