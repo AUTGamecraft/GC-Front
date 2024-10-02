@@ -223,7 +223,7 @@ export class PublicService {
       'Authorization': 'Bearer ' + this.Authorization
     });
 
-    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/v2/teams/enroll/', null, {headers: headers})
+    let ret: Promise<any> = this.http.post(this.ApiUrl + '/api/v2/team/enroll/', null, {headers: headers})
       .toPromise();
 
     return ret
